@@ -14,6 +14,8 @@ collections:
     label_singular: Query
     folder: queries
     create: true
+    extension: json
+    slug: '{{fields.slug}}'
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'slug', label: 'Slug', widget: 'string' }
@@ -23,6 +25,8 @@ collections:
     label_singular: Control
     folder: controls
     create: true
+    extension: json
+    slug: '{{fields.slug}}'
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'slug', label: 'Slug', widget: 'string' }
@@ -64,7 +68,69 @@ collections:
               - { label: 'Empty array', value: '[]' }
               - { label: 'True', value: 'true' }
               - { label: 'False', value: 'false' }
-          - { label: 'Subjects', name: 'subjects', widget: 'list' }
+          - label: 'Subjects'
+            name: 'subjects'
+            widget: 'select'
+            multiple: true
+            options:
+              [
+                'AutoProvisioningSetting',
+                'BigQueryTable',
+                'Bucket',
+                'CloudSQLInstance',
+                'Cluster',
+                'ConfigurationRecorder',
+                'DBInstance',
+                'Disk',
+                'Domain',
+                'FirewallRule',
+                'FlowLog',
+                'Function',
+                'HTTPListener',
+                'IAMAccountSummary',
+                'IAMCustomRole',
+                'IAMGroup',
+                'IAMPasswordPolicy',
+                'IAMPolicy',
+                'IAMRole',
+                'IAMServerCertificate',
+                'IAMServiceAccount',
+                'IAMServiceAccountKey',
+                'IAMUser',
+                'Image',
+                'KMSKey',
+                'KMSSecret',
+                'KMSVault',
+                'KinesisDataStream',
+                'LoadBalancer',
+                'LogBucket',
+                'LogProfile',
+                'ManagedZone',
+                'MySQLServer',
+                'NetworkACL',
+                'NetworkInterface',
+                'NetworkWatcher',
+                'PasswordPolicy',
+                'Policy',
+                'PostgreSQLServer',
+                'Pricing',
+                'Project',
+                'SNSTopic',
+                'SQLDatabase',
+                'SQLServer',
+                'SQLUser',
+                'SecurityContact',
+                'SecurityGroup',
+                'Site',
+                'StorageAccount',
+                'SubscriptionDiagnosticSetting',
+                'TargetHTTPSProxy',
+                'TargetSSLProxy',
+                'Trail',
+                'User',
+                'VM',
+                'VPC',
+              ]
           - label: 'Query'
             name: 'query'
             widget: 'relation'
