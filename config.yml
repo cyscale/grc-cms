@@ -30,7 +30,7 @@ collections:
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'slug', label: 'Slug', widget: 'string' }
-      - { name: 'body', label: 'Body', widget: 'markdown' }
+      - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Severity'
         name: 'severity'
         widget: 'select'
@@ -41,6 +41,7 @@ collections:
       - name: 'remediationDescription'
         label: 'Remediation'
         widget: 'markdown'
+        modes: ['raw']
       - label: 'Rules'
         name: 'rules'
         widget: 'list'
@@ -138,3 +139,36 @@ collections:
             search_fields: ['slug', 'name']
             value_field: '{{slug}}'
             display_fields: ['{{slug}}: {{name}}']
+  - name: policies
+    label: Policies & Standards
+    label_singular: Policy
+    folder: policies
+    create: true
+    extension: json
+    slug: '{{fields.slug}}'
+    fields:
+      - { name: 'name', label: 'Name', widget: 'string' }
+      - { name: 'isStandard', label: 'Standard', widget: 'boolean' }
+      - { name: 'enabled', label: 'Enabled', widget: 'boolean', default: true }
+      - { name: 'slug', label: 'Slug', widget: 'string' }
+      - { name: 'version', label: 'Version', widget: 'string' }
+      - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
+      - label: 'Procedures'
+        name: 'procedures'
+        widget: 'list'
+        summary: '{{fields.name}}'
+        fields:
+          - { name: 'name', label: 'Name', widget: 'string' }
+          - { name: 'slug', label: 'Slug', widget: 'string' }
+          - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
+          - label: 'Controls'
+            name: 'controls'
+            widget: 'list'
+            fields:
+              - label: 'Control'
+                name: 'control'
+                widget: 'relation'
+                collection: 'controls'
+                search_fields: ['slug', 'name']
+                value_field: '{{slug}}'
+                display_fields: ['{{slug}}: {{name}}']
