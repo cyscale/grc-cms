@@ -21,7 +21,7 @@ remediationDescription: >
   By default, SSH access from internet is not `enabled`.
 
 
-  **References:**
+  **References**
 
 
   1. [https://docs.microsoft.com/en-us/azure/security/azure-security-network-security-best-practices#disable-rdpssh-access-to-azure-virtual-machines](https://docs.microsoft.com/en-us/azure/security/azure-security-network-security-best-practices#disable-rdpssh-access-to-azure-virtual-machines)
@@ -37,6 +37,6 @@ rules:
 ---
 Disable SSH access on network security groups from the Internet.
 
-**Rationale:**
+**Rationale**
 
 The potential security problem with using SSH over the Internet is that attackers can use various brute force techniques to gain access to Azure Virtual Machines. Once the attackers gain access, they can use a virtual machine as a launch point for compromising other machines on the Azure Virtual Network or even attack networked devices outside of Azure.
