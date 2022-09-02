@@ -1,0 +1,73 @@
+backend:
+  name: github
+  branch: main
+  repo: cyscale/grc-cms
+
+media_folder: media
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: queries
+    label: Queries
+    label_singular: Query
+    folder: queries
+    create: true
+    fields:
+      - { name: 'name', label: 'Name', widget: 'string' }
+      - { name: 'slug', label: 'Slug', widget: 'string' }
+      - { name: 'query', label: 'Query', widget: 'string' }
+  - name: controls
+    label: Controls
+    label_singular: Control
+    folder: controls
+    create: true
+    fields:
+      - { name: 'name', label: 'Name', widget: 'string' }
+      - { name: 'slug', label: 'Slug', widget: 'string' }
+      - { name: 'body', label: 'Body', widget: 'markdown' }
+      - label: 'Severity'
+        name: 'severity'
+        widget: 'select'
+        options:
+          - { label: 'Low', value: 1 }
+          - { label: 'Medium', value: 2 }
+          - { label: 'High', value: 3 }
+      - name: 'remediationDescription'
+        label: 'Remediation'
+        widget: 'markdown'
+      - label: 'Rules'
+        name: 'rules'
+        widget: 'list'
+        summary: '{{fields.query.slug}}'
+        fields:
+          - label: 'Provider'
+            name: 'provider'
+            widget: 'select'
+            options:
+              - { label: 'AWS', value: 'aws' }
+              - { label: 'Azure', value: 'azure' }
+              - { label: 'Alibaba', value: 'alibaba' }
+              - { label: 'GCP', value: 'gcp' }
+              - { label: 'Okta', value: 'okta' }
+          - label: 'Comparator'
+            name: 'comparator'
+            widget: 'select'
+            options:
+              - { label: 'Equal', value: 'eq' }
+              - { label: 'Not equal', value: 'neq' }
+          - label: 'Expected result'
+            name: 'expectedResult'
+            widget: 'select'
+            options:
+              - { label: 'Empty array', value: '[]' }
+              - { label: 'True', value: 'true' }
+              - { label: 'False', value: 'false' }
+          - { label: 'Subjects', name: 'subjects', widget: 'list' }
+          - label: 'Query'
+            name: 'query'
+            widget: 'relation'
+            collection: 'queries'
+            search_fields: ['slug', 'name']
+            value_field: '{{slug}}'
+            display_fields: ['{{slug}}: {{name}}']
