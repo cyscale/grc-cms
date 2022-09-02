@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "name": "ISO 27001 - International Organization for Standardization",
+  "isStandard": true,
+  "slug": "iso-27001",
+  "version": "27001:2013",
+  "body": "## Statement\n\nISO 27001 is the international standard which is recognized globally for managing risks to the security of information you hold. Certification to ISO 27001 allows you to prove to your clients and other stakeholders that you are managing the security of your information. ISO 27001:2013 (the current version of ISO 27001) provides a set of standardized requirements for an Information Security Management System (ISMS). The standard adopts a process-based approach for establishing, implementing, operating, monitoring, maintaining, and improving your ISMS.\n\nThe ISO 27001 standard and ISMS provides a framework for information security management best practice that helps organizations to:\n- Protect client and employee information\n- Manage risks to information security effectively\n- Achieve compliance with regulations such as the European Union General Data Protection Regulation (EU GDPR)\n- Protect the company's brand image\n\n### What is an ISMS?\n\nAn ISMS is a holistic approach to securing the confidentiality, integrity and availability (CIA) of corporate information assets. It consists of policies, procedures and other controls involving people, processes and technology.\n\nInformed by regular information security risk assessments, an ISMS is an efficient, risk-based and technology-neutral approach to keeping your information assets secure.\n\n## About ISO 27001 Clauses and Controls\n\nThe Standard has ten management system clauses. Together with 114 information security controls (also known as safeguards), they support the implementation and maintenance of an ISMS:\n1. Scope\n1. Normative references\n1. Terms and definitions\n1. Context\n1. Leadership\n1. Planning and risk management\n1. Support\n1. Operations\n1. Performance evaluation\n1. Improvement\n\n### How do you implement ISO 27001 controls?\n\n**Technical controls** are primarily implemented in information systems, using software, hardware, and firmware components added to the system. E.g. backup, antivirus software, etc.\n\n**Organizational controls** are implemented by defining rules to be followed, and expected behavior from users, equipment, software, and systems. E.g. Access Control Policy, BYOD Policy, etc.\n\n**Legal controls** are implemented by ensuring that rules and expected behaviors follow and enforce the laws, regulations, contracts, and other similar legal instruments that the organization must comply with. E.g. NDA (non-disclosure agreement), SLA (service level agreement), etc.\n\n**Physical controls** are primarily implemented by using equipment or devices that have a physical interaction with people and objects. E.g. CCTV cameras, alarm systems, locks, etc.\n\n**Human resource controls** are implemented by providing knowledge, education, skills, or experience to persons to enable them to perform their activities in a secure way. E.g. security awareness training, ISO 27001 internal auditor training, etc.\n\n## Control Objectives and Controls",
+  "procedures": [
+    {
+      "name": "A.13.1.2: Security of network services",
+      "slug": "iso27001-A1312",
+      "body": "Requires making sure that security mechanisms, service levels and requirements of network services are included in network services agreements.",
+      "controls": [
+        {
+          "control": "azure-networking-ssh-from-internet"
+        }
+      ]
+    }
+  ]
+}
