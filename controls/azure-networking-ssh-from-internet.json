@@ -6,7 +6,7 @@
   "severity": 3,
   "rules": [
     {
-      "provider": "azure",
+      "cloudProvider": "azure",
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [

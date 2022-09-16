@@ -47,8 +47,8 @@ collections:
         widget: 'list'
         summary: '{{fields.query.slug}}'
         fields:
-          - label: 'Provider'
-            name: 'provider'
+          - label: 'Cloud Provider'
+            name: 'cloudProvider'
             widget: 'select'
             options:
               - { label: 'AWS', value: 'aws' }
