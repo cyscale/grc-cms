@@ -1,0 +1,5 @@
+{
+  "name": "Generic Public Object Containers",
+  "slug": "generic-public-object-containers",
+  "query": "objectContainers(where: { publicAccessBlocked: false  }){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"
+}
