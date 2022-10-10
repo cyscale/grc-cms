@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Writable AWS Buckets",
+  "slug": "publicly-writable-aws-buckets",
+  "query": "{ buckets( where: { cloudProvider: \"aws\" publicAccessBlocked: false OR: [ { hasBucketACLGrant_SOME: { OR: [ { granteeURI: \"http://acs.amazonaws.com/groups/global/AllUsers\" } { granteeURI: \"http://acs.amazonaws.com/groups/global/AuthenticatedUsers\" } ] permission_IN: [\"WRITE\", \"WRITE_ACP\", \"FULL_CONTROL\"] } } { AND: [ { policyDocument_MATCHES: \".+\\\"Effect\\\":\\\"Allow\\\".+\" } { policyDocument_MATCHES: \".+\\\"Action\\\":\\\"s3:PutObject\\\".+\" } { policyDocument_MATCHES: \".+\\\"Principal\\\":\\\"*\\\".+\" } ] } ] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+}
