@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Readable Azure Blob Containers",
+  "slug": "publicly-readable-azure-blob-containers",
+  "query": "{ blobContainers( where: { cloudProvider: \"azure\" publicAccessBlocked: false publicAccess_IN: [\"Blob\", \"Container\"] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash modified } } "
+}
