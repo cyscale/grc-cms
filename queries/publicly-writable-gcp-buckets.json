@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Writable GCP Buckets",
+  "slug": "publicly-writable-gcp-buckets",
+  "query": "{ buckets( where: { cloudProvider: \"gcp\" publicAccessBlocked: false hasIAMPolicy_SOME: { hasBucketIAMPolicyBinding_SOME: { OR: [ { members_INCLUDES: \"allUsers\" } { members_INCLUDES: \"allAuthenticatedUsers\" } ] role: { OR: [ { includedPermissions_INCLUDES: \"storage.objects.create\" } { includedPermissions_INCLUDES: \"storage.objects.delete\" } { includedPermissions_INCLUDES: \"storage.objects.update\" } { includedPermissions_INCLUDES: \"storage.objects.setIamPolicy\" } { includedPermissions_INCLUDES: \"storage.multipartUploads.create\" } { includedPermissions_INCLUDES: \"storage.objects.*\" } { includedPermissions_INCLUDES: \"storage.multipartUploads.*\" } ] } } } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+}
