@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Writable Alibaba Buckets",
+  "slug": "publicly-writable-alibaba-buckets",
+  "query": "{ buckets( where: { cloudProvider: \"alibaba\" publicAccessBlocked: false acl_IN: [\"public-read-write\"] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+}
