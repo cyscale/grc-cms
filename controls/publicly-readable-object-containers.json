@@ -19,9 +19,27 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Bucket"
+        "BlobContainer"
       ],
       "query": "publicly-readable-azure-blob-containers"
+    },
+    {
+      "cloudProvider": "alibaba",
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "publicly-readable-alibaba-buckets"
+    },
+    {
+      "cloudProvider": "gcp",
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "publicly-readable-gcp-buckets"
     }
   ]
 }
