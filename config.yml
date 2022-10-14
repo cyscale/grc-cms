@@ -28,7 +28,8 @@ collections:
     extension: json
     slug: '{{fields.slug}}'
     fields:
-      - { name: 'name', label: 'Name', widget: 'string' }
+      - { name: 'name', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Issue Description', widget: 'string' }
       - { name: 'slug', label: 'Slug', widget: 'string' }
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Severity'
