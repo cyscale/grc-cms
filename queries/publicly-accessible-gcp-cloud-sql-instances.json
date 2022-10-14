@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible GCP Cloud SQL Instances",
+  "slug": "publicly-accessible-gcp-cloud-sql-instances",
+  "query": "{ cloudSqlInstances( where: { ipAddresses_SOME: { type: \"PRIMARY\" } authorizedNetworks_SOME: { value: \"0.0.0.0/0\" } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } } "
+}
