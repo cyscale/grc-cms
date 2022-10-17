@@ -1,0 +1,5 @@
+{
+  "name": "Encryption Keys expiring within the next 14 days",
+  "slug": "kms-keys-expiring",
+  "query": "{ EncryptionKeysExpiration(days: 14) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } }"
+}
