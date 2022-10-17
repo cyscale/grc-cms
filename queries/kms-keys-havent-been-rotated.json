@@ -1,0 +1,5 @@
+{
+  "name": "Encryption Keys haven’t been rotated in more than 90 days",
+  "slug": "kms-keys-havent-been-rotated",
+  "query": "{ EncryptionKeysRotation(days: 90) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } }"
+}
