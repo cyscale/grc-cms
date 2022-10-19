@@ -52,6 +52,7 @@ collections:
             name: 'cloudProvider'
             widget: 'select'
             options:
+              - { label: 'Provider agnostic', value: '' }
               - { label: 'AWS', value: 'aws' }
               - { label: 'Azure', value: 'azure' }
               - { label: 'Alibaba', value: 'alibaba' }
