@@ -58,6 +58,15 @@
         "PostgreSQLFlexibleServer"
       ],
       "query": "publicly-accessible-azure-postgres-flex-servers"
+    },
+    {
+      "cloudProvider": "alibaba",
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "publicly-accessible-alibaba-apsaradb-instances"
     }
   ],
   "description": "Publicly Accessible Databases"
