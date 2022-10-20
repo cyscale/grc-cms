@@ -1,5 +1,5 @@
 {
-  "name": "Publicly Accessible Alibaba ApsaraDB Instances From Whitelist",
-  "slug": "publicly-accessible-alibaba-apsaradb-instances-from-whitelist",
+  "name": "Publicly Accessible Alibaba ApsaraDB Instances",
+  "slug": "publicly-accessible-alibaba-apsaradb-instances",
   "query": "query { dbInstances ( where: { cloudProvider: \"alibaba\" publicAccessBlocked: false whitelist: { rules_SOME: { sources_INCLUDES: \"cidr:0.0.0.0/0\" } }}){ identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
 }
