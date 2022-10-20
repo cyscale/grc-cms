@@ -78,17 +78,6 @@
       "subjects": [
         "DBInstance"
       ],
-      "query": "publicly-accessible-alibaba-apsaradb-instances-from-security-rule"
-    },
-    {
-      "cloudProvider": [
-        "alibaba"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "DBInstance"
-      ],
       "query": "publicly-accessible-alibaba-apsaradb-instances"
     }
   ],
