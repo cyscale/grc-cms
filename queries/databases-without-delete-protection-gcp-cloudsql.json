@@ -1,0 +1,5 @@
+{
+  "name": "Databases without delete protection GCP CloudSQL",
+  "slug": "databases-without-delete-protection-gcp-cloudsql",
+  "query": "{ cloudSqlInstances (where: {deletionPrevention: \"disabled\"}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
