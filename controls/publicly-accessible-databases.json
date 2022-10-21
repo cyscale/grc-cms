@@ -79,6 +79,17 @@
         "DBInstance"
       ],
       "query": "publicly-accessible-alibaba-apsaradb-instances"
+    },
+    {
+      "cloudProvider": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SQLServer"
+      ],
+      "query": "publicly-accessible-azure-sql-servers"
     }
   ],
   "description": "Publicly Accessible Databases"
