@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible Azure SQL Servers",
+  "slug": "publicly-accessible-azure-sql-servers",
+  "query": "{ sqlServers (where: {hasSQLServerFirewallRule_SOME: { startIpAddress: \"0.0.0.0\" endIpAddress: \"255.255.255.255\" }}){ identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
