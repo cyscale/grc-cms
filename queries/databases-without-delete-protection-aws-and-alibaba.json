@@ -1,0 +1,5 @@
+{
+  "name": "Databases without delete protection aws and alibaba",
+  "slug": "databases-without-delete-protection-aws-and-alibaba",
+  "query": "{ dbInstances (where: {deletionPrevention: \"disabled\"}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
