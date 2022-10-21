@@ -1,0 +1,21 @@
+{
+  "name": "Ensure that Encryption key is not scheduled for deletion",
+  "description": "Encryption Key scheduled for deletion",
+  "slug": "kms-keys-scheduled-for-deletion",
+  "body": "C﻿yscale looks for encryption keys scheduled for deletion.",
+  "severity": 3,
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n*﻿ [Deleting AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html)",
+  "rules": [
+    {
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-scheduled-for-deletion",
+      "cloudProvider": [
+        "aws"
+      ]
+    }
+  ]
+}
