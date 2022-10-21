@@ -14,7 +14,7 @@
       ],
       "query": "kms-keys-scheduled-for-deletion",
       "cloudProvider": [
-        "aws"
+        "alibaba"
       ]
     }
   ]
