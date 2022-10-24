@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible GCP Cloud SQL Instances with no/old TLS",
+  "slug": "publicly-accessible-gcp-cloud-sql-instances-with-no-old-tls",
+  "query": "{ cloudSqlInstances (where: { AND: [ { publicAccessBlocked: false } { ipAddresses_SOME: { type: \"PRIMARY\" } authorizedNetworks_SOME: { value: \"0.0.0.0/0\" } } { OR: [ {tlsStatus: \"\"} {tlsStatus: \"disabled\"} {tlsMinimumVersion: 0} {tlsMinimumVersion: 1} {tlsMinimumVersion: 1.100000023841858} ] } ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
