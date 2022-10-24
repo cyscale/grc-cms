@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible Azure MySQL Flexible Servers with no/old TLS",
+  "slug": "publicly-accessible-azure-mysql-flexible-servers-with-no-old-tls",
+  "query": "{ mySqlFlexibleServers (where: { AND: [ { publicAccessBlocked: false } { firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } { OR: [ {tlsStatus: \"disabled\"} {tlsMinimumVersion: 0} {tlsMinimumVersion: 1} {tlsMinimumVersion: 1.100000023841858} ] } ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
