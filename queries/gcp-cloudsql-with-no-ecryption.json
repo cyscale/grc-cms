@@ -1,0 +1,5 @@
+{
+  "name": "GCP CloudSQL with no encryption",
+  "slug": "gcp-cloudsql-with-no-ecryption",
+  "query": "{ cloudSqlInstances (where: { encrypted: false }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
