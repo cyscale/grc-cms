@@ -1,0 +1,5 @@
+{
+  "name": "Azure MySQL Servers with no encryption",
+  "slug": "azure-mysql-servers-with-no-encryption",
+  "query": "{ mySqlServers (where: {encrypted: false}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
