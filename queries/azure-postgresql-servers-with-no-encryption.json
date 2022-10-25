@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL Servers with no encryption",
+  "slug": "azure-postgresql-servers-with-no-encryption",
+  "query": "{ postgreSqlServers (where: {encrypted: false}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
