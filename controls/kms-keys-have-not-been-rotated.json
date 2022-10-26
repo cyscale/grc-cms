@@ -1,0 +1,32 @@
+{
+  "name": "Ensure that Encryption key is rotated",
+  "description": "Encryption key that haven’t been rotated in more than 90 days",
+  "slug": "kms-keys-have-not-been-rotated",
+  "body": "C﻿yscale looks for encryption keys that haven’t been rotated in more than 90 days.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProvider": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-havent-been-rotated"
+    },
+    {
+      "cloudProvider": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-havent-been-rotated"
+    }
+  ],
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:"
+}
