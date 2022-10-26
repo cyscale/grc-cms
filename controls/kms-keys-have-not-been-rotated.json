@@ -26,6 +26,28 @@
         "KMSKey"
       ],
       "query": "kms-keys-havent-been-rotated"
+    },
+    {
+      "cloudProvider": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-havent-been-rotated"
+    },
+    {
+      "cloudProvider": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-havent-been-rotated"
     }
   ],
   "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:"
