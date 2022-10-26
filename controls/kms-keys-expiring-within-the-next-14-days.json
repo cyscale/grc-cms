@@ -4,7 +4,7 @@
   "slug": "kms-keys-expiring-within-the-next-14-days",
   "body": "C﻿yscale looks for encryption keys expiring within the next 14 days",
   "severity": 3,
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:",
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n*﻿ [Managing AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html)\n\n",
   "rules": [
     {
       "cloudProvider": [
