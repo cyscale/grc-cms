@@ -7,40 +7,10 @@
   "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n*﻿ [Managing AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html)\n\n",
   "rules": [
     {
-      "cloudProvider": [
-        "aws"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "KMSKey"
-      ],
-      "query": "kms-keys-expiring"
-    },
-    {
-      "cloudProvider": [
-        "azure"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "KMSKey"
-      ],
-      "query": "kms-keys-expiring"
-    },
-    {
-      "cloudProvider": [
-        "alibaba"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "KMSKey"
-      ],
-      "query": "kms-keys-expiring"
-    },
-    {
-      "cloudProvider": [
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "alibaba",
         "gcp"
       ],
       "comparator": "eq",
