@@ -16,6 +16,39 @@
       "cloudProvider": [
         "aws"
       ]
+    },
+    {
+      "cloudProvider": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-scheduled-for-deletion"
+    },
+    {
+      "cloudProvider": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-scheduled-for-deletion"
+    },
+    {
+      "cloudProvider": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-scheduled-for-deletion"
     }
   ]
 }
