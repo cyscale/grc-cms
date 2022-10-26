@@ -4,7 +4,7 @@
   "slug": "kms-keys-scheduled-for-deletion",
   "body": "C﻿yscale looks for encryption keys scheduled for deletion.",
   "severity": 3,
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n*﻿ [Deleting AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html)",
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n*﻿ [Deleting AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html)\n\n#### Azure\n*﻿ [Enable soft delete]\n(﻿https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-change)\n\n#### A﻿libaba\n*﻿ [Remove key material]\n(﻿https://www.alibabacloud.com/help/en/key-management-service/latest/remove-key-material)\n\n#### GCP\n*﻿ [Delete key]\n(﻿https://cloud.google.com/kms/docs/destroy-restore)\n",
   "rules": [
     {
       "comparator": "eq",
