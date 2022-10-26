@@ -7,7 +7,7 @@
   "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n* [RDS: Modifying an Amazon RDS DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html)\n\n#### Azure\n* [Lock your resources to protect your infrastructure](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json)\n\n#### GCP\n* [Cloud SQL](https://cloud.google.com/sql/docs/mysql/deletion-protection)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/modify-delection-protection)\n",
   "rules": [
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -22,7 +22,7 @@
       "query": "databases-without-delete-protection-azure"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",
@@ -39,12 +39,12 @@
         "DBInstance"
       ],
       "query": "databases-without-delete-protection-aws-and-alibaba",
-      "cloudProvider": [
+      "cloudProviders": [
         "aws"
       ]
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",

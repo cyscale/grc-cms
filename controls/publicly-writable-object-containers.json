@@ -6,7 +6,7 @@
   "remediationDescription": "#### AWS\n* https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html\n\n#### GCP\n* https://cloud.google.com/storage/docs/access-control#public_access_prevention\n\n#### Alibaba Cloud\n* https://www.alibabacloud.com/help/en/object-storage-service/latest/access-and-control-overview\n",
   "rules": [
     {
-      "cloudProvider": "aws",
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -15,7 +15,7 @@
       "query": "publicly-writable-aws-buckets"
     },
     {
-      "cloudProvider": "gcp",
+      "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -24,7 +24,7 @@
       "query": "publicly-writable-gcp-buckets"
     },
     {
-      "cloudProvider": "alibaba",
+      "cloudProviders": ["alibaba"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [

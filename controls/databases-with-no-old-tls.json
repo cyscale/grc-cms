@@ -7,7 +7,7 @@
   "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n* [Using SSL/TLS to encrypt a connection to a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html)\n\n#### Azure\n* [Configuring TLS settings in Azure Database for MySQL using Azure portal](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-tls-configurations)\n* [Connect to Azure Database for MySQL - Flexible Server with encrypted connections](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-tls-configurations)\n* [Configure TLS connectivity in Azure Database for PostgreSQL - Single Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/concepts-ssl-connection-security)\n* [Encrypted connectivity using Transport Layer Security in Azure Database for PostgreSQL - Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-connect-tls-ssl)\n\n#### GCP\n* [Configure SSL/TLS certificates](https://cloud.google.com/sql/docs/mysql/configure-ssl-instance)\n\n#### Alibaba\n* [Configure SSL encryption for an ApsaraDB RDS for MySQL instance\n](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/configure-ssl-encryption-on-an-apsaradb-rds-for-mysql-instance)\n* [Configure SSL encryption for an ApsaraDB RDS for PostgreSQL instance\n](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/configure-ssl-encryption-for-an-apsaradb-rds-for-postgresql-instance)\n* [Configure SSL encryption on an ApsaraDB RDS for SQL Server instance\n](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/configure-ssl-encryption-on-an-apsaradb-rds-for-sql-server-instance)",
   "rules": [
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",
@@ -18,7 +18,7 @@
       "query": "publicly-accessible-alibaba-apsaradb-instances-with-no-old-tls"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "aws"
       ],
       "comparator": "eq",
@@ -30,7 +30,7 @@
       "query": "publicly-accessible-rds-with-no-old-tls"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",
@@ -41,7 +41,7 @@
       "query": "publicly-accessible-gcp-cloud-sql-instances-with-no-old-tls"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -52,7 +52,7 @@
       "query": "publicly-accessible-azure-mysql-single-servers-with-no-old-tls"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -63,7 +63,7 @@
       "query": "publicly-accessible-azure-mysql-flexible-servers-with-no-old-tls"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -74,7 +74,7 @@
       "query": "publicly-accessible-azure-postgres-single-servers"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",

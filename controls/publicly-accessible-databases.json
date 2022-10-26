@@ -6,7 +6,7 @@
   "severity": 3,
   "rules": [
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "aws"
       ],
       "comparator": "eq",
@@ -17,7 +17,7 @@
       "query": "publicly-accessible-aws-rds-instance"
     },
     {
-      "cloudProvider": "gcp",
+      "cloudProviders": "gcp",
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -26,7 +26,7 @@
       "query": "publicly-accessible-gcp-cloud-sql-instances"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -37,7 +37,7 @@
       "query": "publicly-accessible-azure-mysql-single-servers"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -48,7 +48,7 @@
       "query": "publicly-accessible-azure-mysql-flex-servers"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -59,7 +59,7 @@
       "query": "publicly-accessible-azure-postgres-single-servers"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -70,7 +70,7 @@
       "query": "publicly-accessible-azure-postgres-flex-servers"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",
@@ -81,7 +81,7 @@
       "query": "publicly-accessible-alibaba-apsaradb-instances"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",

@@ -13,12 +13,12 @@
         "KMSKey"
       ],
       "query": "kms-keys-scheduled-for-deletion",
-      "cloudProvider": [
+      "cloudProviders": [
         "aws"
       ]
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -29,7 +29,7 @@
       "query": "kms-keys-scheduled-for-deletion"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",
@@ -40,7 +40,7 @@
       "query": "kms-keys-scheduled-for-deletion"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",
