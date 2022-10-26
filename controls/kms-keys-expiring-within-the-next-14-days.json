@@ -1,0 +1,54 @@
+{
+  "name": "Ensure that Encryption key will not expire within the next 14 days",
+  "description": "Encryption key expiring within the next 14 days",
+  "slug": "kms-keys-expiring-within-the-next-14-days",
+  "body": "C﻿yscale looks for encryption keys expiring within the next 14 days",
+  "severity": 3,
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:",
+  "rules": [
+    {
+      "cloudProvider": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-expiring"
+    },
+    {
+      "cloudProvider": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-expiring"
+    },
+    {
+      "cloudProvider": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-expiring"
+    },
+    {
+      "cloudProvider": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "kms-keys-expiring"
+    }
+  ]
+}
