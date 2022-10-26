@@ -6,7 +6,12 @@
   "severity": 3,
   "rules": [
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure",
+        "alibaba",
+        "aws",
+        "gcp"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -14,5 +19,6 @@
       ],
       "query": "sg-public-ssh"
     }
-  ]
+  ],
+  "description": "Block SSH Access from the internet"
 }
