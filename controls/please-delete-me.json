@@ -1,0 +1,25 @@
+{
+  "name": "test-control",
+  "description": "Please delete me",
+  "slug": "please-delete-me",
+  "body": "I﻿f I'm not clear by now, please delete me!",
+  "severity": 1,
+  "remediationDescription": "I﻿f you see this, disable the control ",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "alibaba",
+        "gcp",
+        "okta"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AutoProvisioningSetting"
+      ],
+      "query": "aws-rds-with-no-encryption"
+    }
+  ]
+}
