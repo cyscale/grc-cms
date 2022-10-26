@@ -42,8 +42,8 @@ jobs:
         with:
           azcliversion: 2.37.0
           inlineScript: |
-            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc --source ./queries --overwrite
-            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc --source ./controls --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/queries --source ./queries --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/controls --source ./controls --overwrite
       - name: Update
         shell: bash
         env:
@@ -84,8 +84,8 @@ jobs:
         with:
           azcliversion: 2.37.0
           inlineScript: |
-            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc --source ./queries --overwrite
-            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc --source ./controls --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/queries --source ./queries --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/controls --source ./controls --overwrite
       - name: Update
         shell: bash
         env:
