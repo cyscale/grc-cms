@@ -48,8 +48,8 @@ collections:
         widget: 'list'
         summary: '{{fields.query.slug}}'
         fields:
-          - label: 'Cloud Provider'
-            name: 'cloudProvider'
+          - label: 'Cloud Providers'
+            name: 'cloudProviders'
             widget: 'select'
             multiple: true
             options:

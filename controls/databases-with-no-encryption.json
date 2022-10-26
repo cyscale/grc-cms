@@ -7,7 +7,7 @@
   "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n* [Encrypting Amazon RDS resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html)\n\n#### Azure\n* [Data encryption for Azure Database for MySQL by using the Azure portal](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-data-encryption-portal?source=recommendations)\n* [Data encryption for Azure Database for MySQL - Flexible Server by using the Azure portal Preview](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-data-encryption-portal)\n* [Data encryption for Azure Database for PostgreSQL Single server by using the Azure portal](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-data-encryption-portal)\n* [Security in Azure Database for PostgreSQL - Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-security)\n\n#### GCP\n* [Cloud SQL](https://cloud.google.com/sql/faq#encryption)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/configure-disk-encryption-for-an-apsaradb-rds-for-mysql-instance)",
   "rules": [
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -18,7 +18,7 @@
       "query": "azure-mysql-servers-with-no-encryption"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -29,7 +29,7 @@
       "query": "azure-mysql-flexible-servers-with-no-encryption"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -40,7 +40,7 @@
       "query": "azure-postgresql-servers-with-no-encryption"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -51,7 +51,7 @@
       "query": "azure-postgresql-flexible-servers-with-no-encryption"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "aws"
       ],
       "comparator": "eq",
@@ -62,7 +62,7 @@
       "query": "aws-rds-with-no-encryption"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",
@@ -73,7 +73,7 @@
       "query": "apsaradb-rds-with-no-encryption"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",

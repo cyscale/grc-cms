@@ -6,7 +6,7 @@
   "severity": 3,
   "rules": [
     {
-      "cloudProvider": "aws",
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -15,7 +15,7 @@
       "query": "publicly-readable-aws-buckets"
     },
     {
-      "cloudProvider": "azure",
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -24,7 +24,7 @@
       "query": "publicly-readable-azure-blob-containers"
     },
     {
-      "cloudProvider": "alibaba",
+      "cloudProviders": ["alibaba"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -33,7 +33,7 @@
       "query": "publicly-readable-alibaba-buckets"
     },
     {
-      "cloudProvider": "gcp",
+      "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [

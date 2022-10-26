@@ -6,7 +6,7 @@
   "severity": 3,
   "rules": [
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "aws"
       ],
       "comparator": "eq",
@@ -17,7 +17,7 @@
       "query": "kms-keys-havent-been-rotated"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "azure"
       ],
       "comparator": "eq",
@@ -28,7 +28,7 @@
       "query": "kms-keys-havent-been-rotated"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",
@@ -39,7 +39,7 @@
       "query": "kms-keys-havent-been-rotated"
     },
     {
-      "cloudProvider": [
+      "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",
