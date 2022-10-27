@@ -145,6 +145,9 @@ collections:
             search_fields: ['slug', 'name']
             value_field: '{{slug}}'
             display_fields: ['{{slug}}: {{name}}']
+          - label: 'Return path'
+            name: 'returnPath'
+            widget: 'string'
   - name: policies
     label: Policies & Standards
     label_singular: Policy
