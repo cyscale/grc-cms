@@ -149,6 +149,7 @@ collections:
             name: 'returnPath'
             widget: 'string'
             hint: 'List of object keys separated by dots. e.g. `hasIAMRoles.hasIAMPolicy.hasIAMPolicyStatement`'
+            required: false
   - name: policies
     label: Policies & Standards
     label_singular: Policy
