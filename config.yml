@@ -19,12 +19,14 @@ collections:
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'slug', label: 'Slug', widget: 'string' }
-      - { name: 'query', label: 'Query', widget: 'string' }
+      - { name: 'query', label: 'Query', widget: 'query', hint: 'You should copy=paste the final query from the Sandbox then click Publish' }
   - name: controls
     label: Controls
     label_singular: Control
     folder: controls
     create: true
+    editor:
+      preview: false
     extension: json
     slug: '{{fields.slug}}'
     fields:
@@ -154,6 +156,8 @@ collections:
     label_singular: Policy
     folder: policies
     create: true
+    editor:
+      preview: false
     extension: json
     slug: '{{fields.slug}}'
     fields:
