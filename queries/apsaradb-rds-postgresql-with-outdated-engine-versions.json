@@ -1,0 +1,5 @@
+{
+  "name": "ApsaraDB RDS PostgreSQL with outdated engine versions",
+  "slug": "apsaradb-rds-postgresql-with-outdated-engine-versions",
+  "query": "{ dbInstances (where: { cloudProvider: \"alibaba\" engine: \"postgresql\" OR: [ {engineVersion_STARTS_WITH: \"9\"}, {engineVersion_STARTS_WITH: \"8\"}, {engineVersion_STARTS_WITH: \"7\"}, {engineVersion_STARTS_WITH: \"6\"} ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
