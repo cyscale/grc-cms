@@ -29,12 +29,6 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
-      - name: Login
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZ_DEV_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZ_TENANT_ID }}
-          subscription-id: ${{ secrets.AZ_SUB_ID }}
       - name: Copy
         env:
           AZ_ST_CONN_STRING: ${{ secrets.DEV_AZ_ST_CONN_STRING }}
@@ -71,12 +65,6 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
-      - name: Login
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZ_PROD_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZ_TENANT_ID }}
-          subscription-id: ${{ secrets.AZ_SUB_ID }}
       - name: Copy
         env:
           AZ_ST_CONN_STRING: ${{ secrets.PROD_AZ_ST_CONN_STRING }}
