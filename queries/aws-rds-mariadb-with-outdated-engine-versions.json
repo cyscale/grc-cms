@@ -1,0 +1,5 @@
+{
+  "name": "AWS RDS MariaDB with outdated engine versions",
+  "slug": "aws-rds-mariadb-with-outdated-engine-versions",
+  "query": "{ dbInstances (where: { cloudProvider: \"aws\" engine: \"mariadb\" OR: [ {engineVersion_STARTS_WITH: \"10.2\"}, {engineVersion_STARTS_WITH: \"10.1\"}, {engineVersion_STARTS_WITH: \"10.0\"}, {engineVersion_STARTS_WITH: \"5.5\"}, {engineVersion_STARTS_WITH: \"5.3\"}, {engineVersion_STARTS_WITH: \"5.2\"}, {engineVersion_STARTS_WITH: \"5.1\"}, ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
