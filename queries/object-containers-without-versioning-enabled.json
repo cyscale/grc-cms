@@ -1,0 +1,5 @@
+{
+  "name": "Object containers without versioning enabled",
+  "slug": "object-containers-without-versioning-enabled",
+  "query": "{ objectContainers (where: {versioningEnabled: false}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } } "
+}
