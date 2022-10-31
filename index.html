@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyscale GRC CMS</title>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyscale GRC CMS</title>
-</head>
+  <body>
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 
-<body>
-  <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+      const QueryWidget = createClass({
+        render: function () {
+          var value = this.props.value;
+          return h('textarea', {
+            rows: 24,
+            type: 'text',
+            id: this.props.forID,
+            value: this.props.value,
+            onChange: this.handleChange,
+            className: this.props.classNameWrapper,
+          });
+        },
+      });
 
-  <script>
-    const QueryWidget = createClass({
-      render: function () {
-        var value = this.props.value;
-        return h('textarea', {
-          rows: 24,
-          type: 'text',
-          id: this.props.forID,
-          value: this.props.value,
-          onChange: this.handleChange,
-          className: this.props.classNameWrapper
-        });
-      },
-    });
+      const QueriesPreview = createClass({
+        render: function () {
+          const loadSandbox = () => {
+            const query = this.props.entry.getIn(['data', 'query']);
+            new window.frames[0].window.EmbeddedSandbox({
+              includeCookies: false,
+              target: '#embedded-sandbox',
+              initialEndpoint: 'https://graphql.dev.cyscale.com/graphql',
+              initialState: {
+                document: query, // This is the value of the Query Field... but it's partly working
+              },
+            });
+          };
 
-    const QueriesPreview = createClass({
-      render: function () {
-        const loadSandbox = () => {
-          const query = this.props.entry.getIn(['data', 'query'])
-          new window.frames[0].window.EmbeddedSandbox({
-            includeCookies: false,
-            target: '#embedded-sandbox',
-            initialEndpoint: 'https://graphql.dev.cyscale.com/graphql',
-            initialState: {
-              document: query // This is the value of the Query Field... but it's partly working
-            }
-          })
-        }
+          const entry = this.props.entry;
+          const sandboxScript =
+            window.frames[0].document.createElement('script');
+          sandboxScript.addEventListener('load', loadSandbox); // Will initiate the sandbox when the script is fully loaded in the Iframe
+          sandboxScript.setAttribute(
+            'src',
+            'https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js'
+          );
+          window.frames[0].document.head.appendChild(sandboxScript); // Append the script and load it
 
-        const entry = this.props.entry
-        const sandboxScript = window.frames[0].document.createElement('script')
-        sandboxScript.addEventListener('load', loadSandbox) // Will initiate the sandbox when the script is fully loaded in the Iframe
-        sandboxScript.setAttribute('src', 'https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js')
-        window.frames[0].document.head.appendChild(sandboxScript) // Append the script and load it
+          const height = window.frames[0].innerHeight - 20 + 'px';
+          return h('div', { id: 'embedded-sandbox', style: { height } });
+        },
+      });
 
-
-
-        const height = window.frames[0].innerHeight - 20 + 'px'
-        return h('div', { id: 'embedded-sandbox', style: { height } })
-      }
-    })
-
-
-
-    CMS.registerWidget('query', QueryWidget)
-    CMS.registerPreviewTemplate("queries", QueriesPreview)
-  </script>
-</body>
-
+      CMS.registerWidget('query', QueryWidget);
+      CMS.registerPreviewTemplate('queries', QueriesPreview);
+    </script>
+  </body>
 </html>
