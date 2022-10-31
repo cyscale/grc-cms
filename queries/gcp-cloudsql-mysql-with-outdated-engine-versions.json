@@ -1,0 +1,5 @@
+{
+  "name": "GCP CloudSQL MySQL with outdated engine versions",
+  "slug": "gcp-cloudsql-mysql-with-outdated-engine-versions",
+  "query": "{ cloudSqlInstances (where: { engine: \"mysql\" engineVersion_NOT_IN: [\"8.0\", \"5.7\"] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
