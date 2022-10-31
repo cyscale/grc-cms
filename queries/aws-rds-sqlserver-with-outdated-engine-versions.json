@@ -1,0 +1,5 @@
+{
+  "name": "AWS RDS SqlServer with outdated engine versions",
+  "slug": "aws-rds-sqlserver-with-outdated-engine-versions",
+  "query": "{ dbInstances (where: { cloudProvider: \"aws\" engine: \"sqlserver-ex\" OR: [ {engineVersion_STARTS_WITH: \"11\"}, {engineVersion_STARTS_WITH: \"10\"}, {engineVersion_STARTS_WITH: \"9\"}, {engineVersion_STARTS_WITH: \"8\"}, {engineVersion_STARTS_WITH: \"7\"}, {engineVersion_STARTS_WITH: \"6\"}, ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+}
