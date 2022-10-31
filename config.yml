@@ -145,6 +145,10 @@ collections:
             search_fields: ['slug', 'name']
             value_field: '{{slug}}'
             display_fields: ['{{slug}}: {{name}}']
+          - label: 'Return path'
+            name: 'returnPath'
+            widget: 'string'
+            hint: 'List of object keys separated by dots. e.g. `hasIAMRoles.hasIAMPolicy.hasIAMPolicyStatement`'
   - name: policies
     label: Policies & Standards
     label_singular: Policy
