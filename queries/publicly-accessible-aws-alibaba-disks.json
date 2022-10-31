@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible Disks for AWS/Alibaba",
+  "slug": "publicly-accessible-aws-alibaba-disks",
+  "query": "{   securityGroups(     where: {       vms_SOME: { publicIpAddress_NOT: null }       rules_SOME: {         direction: \"Inbound\"         action: \"Allow\"         AND: [           {             OR: [               { sources_INCLUDES: \"cidr:0.0.0.0/0\" }               { sources_INCLUDES: \"cidr:::/0\" }             ]           }           {             OR: [               { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 }               { sourceFromPort_LTE: 3389, sourceToPort_GTE: 3389 }             ]           }         ]       }     }   ) {     vms {       diskAttachments {         disk {           identifier           accountID           cloudAccountID           cloudAccountName           cloudProvider           idFromProvider           internalAssetType           internalName           internalRegion           assetCategory         }       }     }   } }"
+}
