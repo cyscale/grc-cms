@@ -16,7 +16,7 @@
         "MySQLServer"
       ],
       "query": "azure-mysql-servers-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -28,7 +28,7 @@
         "MySQLFlexibleServer"
       ],
       "query": "azure-mysql-flexible-servers-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -40,7 +40,7 @@
         "PostgreSQLServer"
       ],
       "query": "azure-postgresql-servers-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -52,7 +52,7 @@
         "PostgreSQLFlexibleServer"
       ],
       "query": "azure-postgresql-flexible-servers-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -64,7 +64,7 @@
         "DBInstance"
       ],
       "query": "apsaradb-rds-mysql-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -76,7 +76,7 @@
         "DBInstance"
       ],
       "query": "apsaradb-rds-postgresql-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -88,7 +88,7 @@
         "DBInstance"
       ],
       "query": "apsaradb-rds-sqlserver-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -100,7 +100,7 @@
         "DBInstance"
       ],
       "query": "aws-rds-mysql-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -112,7 +112,7 @@
         "DBInstance"
       ],
       "query": "aws-rds-postgresql-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -124,7 +124,7 @@
         "DBInstance"
       ],
       "query": "aws-rds-sqlserver-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -136,7 +136,7 @@
         "DBInstance"
       ],
       "query": "aws-rds-mariadb-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -148,7 +148,7 @@
         "CloudSQLInstance"
       ],
       "query": "gcp-cloudsql-mysql-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -160,7 +160,7 @@
         "CloudSQLInstance"
       ],
       "query": "gcp-cloudsql-postgresql-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     },
     {
       "cloudProviders": [
@@ -172,7 +172,7 @@
         "CloudSQLInstance"
       ],
       "query": "gcp-cloudsql-sqlservers-with-outdated-engine-versions",
-      "returnPath": " "
+      "returnPath": "."
     }
   ]
 }
