@@ -1,0 +1,5 @@
+{
+  "name": "GCP CloudSQL SqlServer with outdated engine versions",
+  "slug": "gcp-cloudsql-sqlservers-with-outdated-engine-versions",
+  "query": "{   cloudSqlInstances (where: {     engine: \"sqlserver\"     OR: [       {engineVersion_STARTS_WITH: \"2012\"},       {engineVersion_STARTS_WITH: \"2008\"},       {engineVersion_STARTS_WITH: \"2005\"},       {engineVersion_STARTS_WITH: \"2000\"}     ]   }) {     identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory   } }"
+}
