@@ -116,6 +116,7 @@ collections:
                 'NetworkACL',
                 'NetworkInterface',
                 'NetworkWatcher',
+                'ObjectContainer',
                 'PasswordPolicy',
                 'Policy',
                 'PostgreSQLServer',
