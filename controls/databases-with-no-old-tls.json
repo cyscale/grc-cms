@@ -71,7 +71,7 @@
       "subjects": [
         "PostgreSQLServer"
       ],
-      "query": "publicly-accessible-azure-postgres-single-servers"
+      "query": "publicly-accessible-azure-postgresql-single-servers-with-no-old-tls"
     },
     {
       "cloudProviders": [
