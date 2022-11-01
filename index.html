@@ -10,7 +10,6 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script src="static/embeddable-sandbox.js"></script>
 
   <script>
     const QueryWidget = createClass({
@@ -33,7 +32,8 @@
     const QueriesPreview = createClass({
       loadSandbox: function () {
         if (!this.ES) {
-          this.ES = new window.frames[0].window.EmbeddedSandbox({
+          const x = document.querySelector("iframe").contentWindow;
+          this.ES = new x.window.EmbeddedSandbox({
             includeCookies: false,
             target: '#embedded-sandbox',
             initialEndpoint: 'https://graphql.dev.cyscale.com/graphql',
@@ -42,13 +42,16 @@
 
       },
       componentWillMount: function () {
-        const sandboxScript = window.frames[0].document.createElement('script')
+        const x = document.querySelector("iframe").contentWindow;
+        const sandboxScript = x.document.createElement('script')
         sandboxScript.addEventListener('load', this.loadSandbox) // Will initiate the sandbox when the script is fully loaded in the Iframe
         sandboxScript.setAttribute('src', '/static/embeddable-sandbox.js') //We should update the script or down
-        window.frames[0].document.head.appendChild(sandboxScript) // Append the script and load it
+        x.document.head.appendChild(sandboxScript) // Append the script and load it
       },
       render: function () {
-        const height = window.frames[0].innerHeight - 20 + 'px'
+        const x = document.querySelector("iframe").contentWindow;
+        const height = x.window.innerHeight - 20 + 'px'
+        console.log(height)
         return h('div', { id: 'embedded-sandbox', style: { height } })
       }
     })
