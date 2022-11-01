@@ -1,5 +1,5 @@
 {
   "name": "Databases without delete protection Azure",
   "slug": "databases-without-delete-protection-azure",
-  "query": "{ databases (where: {cloudProvider: \"azure\" deletionPrevention: \"disabled\"}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory deletionPrevention } }"
+  "query": "{ databases(where: { deletionPrevention: \"disabled\" }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory deletionPrevention } } "
 }
