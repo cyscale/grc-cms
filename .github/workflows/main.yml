@@ -38,6 +38,14 @@ jobs:
           inlineScript: |
             az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/queries --source ./queries --overwrite
             az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/controls --source ./controls --overwrite
+      - name: Download Scripts
+        shell: bash
+        env:
+          APOLLO_SCRIPT_URL: "https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js"
+          APOLLO_SCRIPT_OUTPUT: "static/embeddable-sandbox.js"
+        run: |
+          mkdir static
+          curl --silent --show-error --fail -X GET $APOLLO_SCRIPT_URL -o $APOLLO_SCRIPT_OUTPUT
       - name: Update
         shell: bash
         env:
@@ -81,6 +89,14 @@ jobs:
           INTERNAL_API_KEY: ${{ secrets.PROD_INTERNAL_API_KEY }}
         run: |
           curl --silent --show-error --fail -X POST $BAPI_GRC_UPDATE_ENDPOINT -H "Content-Type:application/json" -H "x-api-key:$(echo "$INTERNAL_API_KEY" | base64 -d)" -d '{"accounts":"all"}'
+      - name: Download Scripts
+        shell: bash
+        env:
+          APOLLO_SCRIPT_URL: "https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js"
+          APOLLO_SCRIPT_OUTPUT: "static/embeddable-sandbox.js"
+        run: |
+          mkdir static
+          curl --silent --show-error --fail -X GET $APOLLO_SCRIPT_URL -o $APOLLO_SCRIPT_OUTPUT
       - name: 'Tag Release'
         uses: go-semantic-release/action@v1
         with:

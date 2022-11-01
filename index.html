@@ -13,6 +13,9 @@
 
   <script>
     const QueryWidget = createClass({
+      handleChange: function (e) {
+        this.props.onChange(e.target.value);
+      },
       render: function () {
         var value = this.props.value;
         return h('textarea', {
@@ -27,27 +30,27 @@
     });
 
     const QueriesPreview = createClass({
-      render: function () {
-        const loadSandbox = () => {
-          const query = this.props.entry.getIn(['data', 'query'])
-          new window.frames[0].window.EmbeddedSandbox({
+      loadSandbox: function () {
+        if (!this.ES) {
+          // const query = this.props.entry.getIn(['data', 'query'])
+          this.ES = new window.frames[0].window.EmbeddedSandbox({
             includeCookies: false,
             target: '#embedded-sandbox',
             initialEndpoint: 'https://graphql.dev.cyscale.com/graphql',
-            initialState: {
-              document: query // This is the value of the Query Field... but it's partly working
-            }
+            // initialState: {
+            //   document: query // This is the value of the Query Field... but it's partly working
+            // }
           })
         }
 
-        const entry = this.props.entry
+      },
+      componentWillMount: function () {
         const sandboxScript = window.frames[0].document.createElement('script')
-        sandboxScript.addEventListener('load', loadSandbox) // Will initiate the sandbox when the script is fully loaded in the Iframe
-        sandboxScript.setAttribute('src', 'https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js')
+        sandboxScript.addEventListener('load', this.loadSandbox) // Will initiate the sandbox when the script is fully loaded in the Iframe
+        sandboxScript.setAttribute('src', '/static/embeddable-sandbox.js') //We should update the script or down
         window.frames[0].document.head.appendChild(sandboxScript) // Append the script and load it
-
-
-
+      },
+      render: function () {
         const height = window.frames[0].innerHeight - 20 + 'px'
         return h('div', { id: 'embedded-sandbox', style: { height } })
       }

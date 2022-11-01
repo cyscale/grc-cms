@@ -19,7 +19,7 @@ collections:
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'slug', label: 'Slug', widget: 'string' }
-      - { name: 'query', label: 'Query', widget: 'query', hint: 'You should copy=paste the final query from the Sandbox then click Publish' }
+      - { name: 'query', label: 'Query', widget: 'query', hint: 'You should copy-paste the final query from the Sandbox then click Publish' }
   - name: controls
     label: Controls
     label_singular: Control
