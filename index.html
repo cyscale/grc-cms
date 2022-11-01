@@ -32,14 +32,10 @@
     const QueriesPreview = createClass({
       loadSandbox: function () {
         if (!this.ES) {
-          // const query = this.props.entry.getIn(['data', 'query'])
           this.ES = new window.frames[0].window.EmbeddedSandbox({
             includeCookies: false,
             target: '#embedded-sandbox',
             initialEndpoint: 'https://graphql.dev.cyscale.com/graphql',
-            // initialState: {
-            //   document: query // This is the value of the Query Field... but it's partly working
-            // }
           })
         }
 

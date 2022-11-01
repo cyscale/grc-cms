@@ -2,7 +2,7 @@ backend:
   name: github
   branch: main
   repo: cyscale/grc-cms
-  site_domain: preeminent-sundae-0df3be.netlify.app
+  site_domain: cyscale-grc-cms.netlify.app
 
 media_folder: media
 
