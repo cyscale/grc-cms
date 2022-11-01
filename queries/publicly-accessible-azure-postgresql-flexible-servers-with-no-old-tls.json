@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure PostgreSQL Flexible Servers with no/old TLS",
   "slug": "publicly-accessible-azure-postgresql-flexible-servers-with-no-old-tls",
-  "query": "{ postgreSqlFlexibleServers (where: { AND: [ { publicAccessBlocked: false } { firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } { OR: [ {tlsStatus: \"disabled\"} {tlsMinimumVersion: 0} {tlsMinimumVersion: 1} {tlsMinimumVersion: 1.100000023841858} ] } ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ postgreSqlFlexibleServers( where: { AND: [ { publicAccessBlocked: false } { firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } { OR: [ { tlsStatus: \"disabled\" } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } } "
 }
