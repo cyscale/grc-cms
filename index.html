@@ -45,7 +45,7 @@
         const x = document.querySelector("iframe").contentWindow;
         const sandboxScript = x.document.createElement('script')
         sandboxScript.addEventListener('load', this.loadSandbox) // Will initiate the sandbox when the script is fully loaded in the Iframe
-        sandboxScript.setAttribute('src', '/static/embeddable-sandbox.js') //We should update the script or down
+        sandboxScript.setAttribute('src', 'https://embeddable-sandbox.cdn.apollographql.com/_latest/embeddable-sandbox.umd.production.min.js') //We should update the script or down
         x.document.head.appendChild(sandboxScript) // Append the script and load it
       },
       render: function () {
