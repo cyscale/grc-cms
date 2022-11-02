@@ -1,0 +1,5 @@
+{
+  "name": "AWS KMSKeys Exposed Through Vulnerable VMs",
+  "slug": "aws-keys-exposed-through-vms",
+  "query": "vms( where: { securityGroups_SOME: { rules_SOME: { direction: \"Inbound\" action: \"Allow\" AND: [ { OR: [ { sources_INCLUDES: \"cidr:0.0.0.0/0\" } { sources_INCLUDES: \"cidr:::/0\" } ] } { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 } ] } } iamRoles_SOME: { policies_SOME: { hasIAMPolicyStatement_SOME: { effect: \"Allow\" } } } } ) { iamRoles { policies { hasIAMPolicyStatement { permissions { isOwnedByIAMAssetType { includesKMSKey { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } } } } } }"
+}
