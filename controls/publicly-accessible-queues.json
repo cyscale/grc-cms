@@ -1,0 +1,32 @@
+{
+    "name": "Ensure that there are no publicly-accessible queues",
+    "description": "Queues accessible from any IP",
+    "slug": "publicly-accessible-queues",
+    "body": "Cyscale looks for managed queues that allow unrestricted traffic from the internet (i.e. from `0.0.0.0/0`). This exposes the queues to brute-force attacks and data leaks. To minimize attack surface on a queue service, only trusted/known and required IP(s) should be whitelisted to connect to it.",
+    "severity": 3,
+    "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n ## AWS - SQS Queue\n\n * [Amazon SQS Security Best Practices](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security-best-practices.html)\n\n Unless you explicitly require anyone on the internet to be able to read or write to your Amazon SQS queue, you should make sure that your queue isn't publicly accessible (accessible by everyone in the world or by any authenticated AWS user).\n\n * Avoid creating policies with `Principal` set to `\"\"`. \n * Avoid using a wildcard (`*`). Instead, name a specific user or users. \n\n ## GCP - Pub/Sub \n\n * [Pub/Sub Access Control with IAM](https://cloud.google.com/pubsub/docs/access-control)\n",
+    "rules": [
+        {
+            "cloudProviders": [
+                "aws"
+            ],
+            "comparator": "eq",
+            "expectedResult": "[]",
+            "subjects": [
+                "SQSQueue"
+            ],
+            "query": "qsQueues(where: { policyDocument: { statements_SOME: { OR: [ { principals_INCLUDES: \"\" }, { principals_INCLUDES: \"*\" }, { principals_INCLUDES: \"*.*\" }, ] } } }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash }"
+        },
+        {
+            "cloudProviders": [
+                "gcp"
+            ],
+            "comparator": "eq",
+            "expectedResult": "[]",
+            "subjects": [
+                "PubSubSubscription"
+            ],
+            "query": "NOT_DONE:CANNOT_CHECK"
+        }
+    ]
+}
