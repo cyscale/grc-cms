@@ -1,0 +1,58 @@
+{
+  "slug": "keys-exposed-through-vulnerable-vms",
+  "name": "Ensure KMSKeys are not exposed through publicly accessible VMs",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "aws-keys-exposed-through-vms",
+      "returnPath": "iamRoles.policies.hasIAMPolicyStatement.permissions.isOwnedByIAMAssetType.includesKMSKey"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "gcp-keys-exposed-through-vms",
+      "returnPath": "vmServiceAccountAccesses.iamServiceAccounts.serviceAccountRoles.hasIAMPermissions.isOwnedByIAMAssetType.includesKMSKey"
+    },
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "alibaba-keys-exposed-through-vms",
+      "returnPath": "iamRoles.policies.hasIAMPolicyStatement.permissions.isOwnedByIAMAssetType.includesKMSKey"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "azure-keys-exposed-through-vms",
+      "returnPath": "vmRoles.hasIAMPermissions.isOwnedByIAMAssetType.includesKMSKey"
+    }
+  ],
+  "description": "KMSKeys that are exposed by publicly accessible VMs.",
+  "remediationDescription": "Depending on the provider you must disable public access from the internet to the VMs.",
+  "body": "This control looks for KMSKeys that are accessible by IAM policies or roles which are attached to VMs that allow public access from the internet."
+}
