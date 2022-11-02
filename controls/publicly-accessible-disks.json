@@ -30,6 +30,18 @@
       ],
       "query": "publicly-accessible-azure-disks",
       "returnPath": "diskAttachments.disk"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Disk"
+      ],
+      "query": "publicly-accessible-gcp-disks",
+      "returnPath": "diskAttachments.disk"
     }
   ]
 }
