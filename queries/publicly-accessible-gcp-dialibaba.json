@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Disks for GCP",
-  "slug": "publicly-accessible-gcp-diAlibaba",
+  "slug": "publicly-accessible-gcp-disks",
   "query": "{\n  vms(\n    where: {\n      networkInterfaces_SOME: { hasNetworkInterfaceAccessConfig_NOT: null }\n      firewalls_SOME: {\n        rules_SOME: {\n          direction: \"Inbound\"\n          sourceFromPort_LTE: 22\n          sourceToPort_GTE: 22\n          OR: [\n            { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n            { sources_INCLUDES: \"cidr:::/0\" }\n          ]\n        }\n      }\n    }\n  ) {\n    diskAttachments {\n      disk {\n        identifier\n        accountID\n        cloudAccountID\n        cloudAccountName\n        cloudProvider\n        idFromProvider\n        internalAssetType\n        internalName\n        internalRegion\n        assetCategory\n        contentHash\n      }\n    }\n  }\n}\n"
 }
