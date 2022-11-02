@@ -92,6 +92,17 @@
         "SQLServer"
       ],
       "query": "publicly-accessible-azure-sql-servers"
+    },
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBCluster"
+      ],
+      "query": "publicly-accessible-aws-rds-clusters"
     }
   ],
   "description": "Publicly Accessible Databases"
