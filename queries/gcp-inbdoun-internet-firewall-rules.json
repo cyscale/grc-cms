@@ -1,0 +1,5 @@
+{
+  "query": "{\n  firewalls(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        sourceFromPort_LTE: 22\n        sourceToPort_GTE: 22\n        OR: [\n          { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n          { sources_INCLUDES: \"cidr:::/0\" }\n        ]\n      }\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
+  "name": "Check for Firewall Rules that allow inbound access from the Internet",
+  "slug": "gcp-inbdoun-internet-firewall-rules"
+}
