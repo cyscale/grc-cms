@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible PubSub Subscriptions",
+  "slug": "publicly-accessible-pubsub-subscriptions",
+  "query": "{ pubSubSubscriptions( where: { iamPolicy: { hasPubSubSubscriptionIAMPolicyBindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+}
