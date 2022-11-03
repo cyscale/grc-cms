@@ -1,0 +1,5 @@
+{
+  "name": "AWS Keys With Permissive Access Policy",
+  "slug": "aws-keys-with-permissive-access-policy",
+  "query": "{kmsKeys( where: { OR: [ { AND: {policyDocument_MATCHES: \".*arn:aws:iam::[0-9*]+:root.*\", managementType: \"CustomerManaged\"} } { keyPolicy: { statements_SOME: { effect: \"Allow\" conditions: [] principals_INCLUDES: \"AWS|*\" } } } ] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash }}"
+}
