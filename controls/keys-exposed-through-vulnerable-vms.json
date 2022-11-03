@@ -1,5 +1,5 @@
 {
-  "slug": "keys-exposed-through-vulnerable-vms",
+  "slug": "kms-keys-exposed-through-vulnerable-vms",
   "name": "Ensure KMSKeys are not exposed through publicly accessible VMs",
   "severity": 3,
   "rules": [
