@@ -25,7 +25,7 @@
         "KMSKey"
       ],
       "query": "gcp-keys-exposed-through-vms",
-      "returnPath": "vmServiceAccountAccesses.iamServiceAccounts.serviceAccountRoles.hasIAMPermissions.isOwnedByIAMAssetType.includesKMSKey"
+      "returnPath": "hasVMServiceAccountAccess.iamServiceAccounts.serviceAccountRoles.hasIAMPermissions.isOwnedByIAMAssetType.includesKMSKey"
     },
     {
       "cloudProviders": [
