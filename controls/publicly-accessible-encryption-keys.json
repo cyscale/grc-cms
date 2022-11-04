@@ -27,6 +27,6 @@
       "query": "gcp-keys-with-permissive-access-policy"
     }
   ],
-  "body": "Cyscale looks for encryption keys that allow unrestricted traffic from the internet. Using publicly accessible keys, anyone can perform decryption operations which may reveal sensitive data.",
+  "body": "Cyscale looks for encryption keys that allow unrestricted access from the internet. Using publicly accessible keys, anyone can perform decryption operations which may reveal sensitive data.",
   "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### A﻿WS\n* [Key Management Service](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-services.html)\n\n#### GCP\n* [Key Management](https://cloud.google.com/kms/docs/reference/permissions-and-roles)"
 }
