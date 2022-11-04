@@ -1,0 +1,32 @@
+{
+  "description": "Keys With Permissive Access Policy",
+  "slug": "kms-keys-with-permissive-access-policy",
+  "name": "Ensure encryption keys don't have permissive access policices",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "aws-keys-with-permissive-access-policy"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "gcp-keys-with-permissive-access-policy"
+    }
+  ],
+  "body": "Cyscale looks for encryption keys that contain policy permissions that are too broad or unrestricted and allow a wide range of users to access the keys.",
+  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### A﻿WS\n* [Key Management Service](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-services.html)\n\n#### GCP\n* [Key Management](https://cloud.google.com/kms/docs/reference/permissions-and-roles)"
+}
