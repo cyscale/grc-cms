@@ -1,5 +1,5 @@
 {
   "name": "Publicly accessible SQS queues",
   "slug": "publicly-accessible-sqs-queues",
-  "query": "{ sqsQueues(where: { policyDocument: { statements_SOME: { AND: [ { effect: \\\"Allow\\\" }, { OR: [ { principals_INCLUDES: \\\"\\\" }, { principals_INCLUDES: \\\"*\\\" }, { principals_INCLUDES: \\\"*.*\\\" }, ] } ] } } }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } }"
+  "query": "{ sqsQueues(where: { policyDocument: { statements_SOME: { AND: [ { effect: \"Allow\" }, { OR: [ { principals_INCLUDES: \"\" }, { principals_INCLUDES: \"*\" }, { principals_INCLUDES: \"*.*\" }, ] } ] } } }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } }"
 }
