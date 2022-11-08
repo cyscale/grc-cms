@@ -24,7 +24,7 @@
       "subjects": [
         "KMSKey"
       ],
-      "query": "gcp-keys-with-permissive-access-policy"
+      "query": "publicly-accessible-gcp-keys"
     }
   ],
   "body": "Cyscale looks for encryption keys that allow unrestricted access from the internet. Using publicly accessible keys, anyone can perform decryption operations which may reveal sensitive data.",
