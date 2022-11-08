@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible GCP Keys",
+  "slug": "publicly-accessible-gcp-keys",
+  "query": "{kmsKeys( where: { iamPolicy: { bindings_SOME: { OR: [{ members_INCLUDES: \"allAuthenticatedUsers\"}, { members_INCLUDES: \"allUsers\" }] } } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash }}"
+}
