@@ -93,6 +93,7 @@ collections:
                 'FirewallRule',
                 'FlowLog',
                 'Function',
+                'FunctionApp',
                 'HTTPListener',
                 'IAMAccountSummary',
                 'IAMCustomRole',
