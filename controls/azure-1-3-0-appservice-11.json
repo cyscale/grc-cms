@@ -1,0 +1,32 @@
+{
+  "name": "Ensure Azure Key Vaults are used to store secrets",
+  "slug": "azure-1-3-0-appservice-11",
+  "body": "Encryption keys, certificate, thumbprints, and Managed Identity Credentials can be coded into the APP service, this renders them visible as part of the configuration, to maintain security of these keys it is better to store in an Azure Keyvault and reference them from the Keyvault.\n\n**Rationale**\n\nApp secrets control access to the application and thus need to be secured externally to the app configuration, storing the secrets externally and referencing them in the configuration also enables key rotation without having to redeploy the app service.\n\n**Impact**\n\nImpact is primarily during the initial setup of the application or redeploying an old app to include this functionality. This will require configuration effort to setup the keyvault and then to configure the app service to use the keyvault.",
+  "severity": 2,
+  "remediationDescription": "Remediation has 2 steps\n\n1. Setup the keyvault\n2. Setup the app service to use the keyvault\n\n**Set up the keyvault**\n\n**Using Azure CLI**\n\n>`az keyvault create --name \"myKV\" --resource-group \"myResourceGroup\" --location myLocation`\n\n**Using Azure Powershell**\n\n>`New-AzKeyvault -name MyKV -ResourceGroupName myResourceGroup -Location myLocation`\n\nSet up the App Service to use the keyvaultSample JSON Template for App Service Configuration\n\n>`{//...\"resources\": [{\"type\": \"Microsoft.Storage/storageAccounts\",\"name\": \"[variables('storageAccountName')]\",//...},{\"type\": \"Microsoft.Insights/components\",\"name\": \"[variables('appInsightsName')]\",//...},{\"type\": \"Microsoft.Web/sites\",\"name\": \"[variables('functionAppName')]\",\"identity\": {\"type\": \"SystemAssigned\"},//...\"resources\": [{\"type\": \"config\",\"name\": \"appsettings\",//...\"dependsOn\": [\"[resourceId('Microsoft.Web/sites', variables('functionAppName'))]\",\"[resourceId('Microsoft.KeyVault/vaults/', variables('keyVaultName'))]\",\"[resourceId('Microsoft.KeyVault/vaults/secrets', variables('keyVaultName'), variables('storageConnectionStringName'))]\",\"[resourceId('Microsoft.KeyVault/vaults/secrets', variables('keyVaultName'), variables('appInsightsKeyName'))]\"],\"properties\": {\"AzureWebJobsStorage\": \"[concat('@Microsoft.KeyVault(SecretUri=', reference(variables('storageConnectionStringResourceId')).secretUriWithVersion, ')')]\",\"WEBSITE_CONTENTAZUREFILECONNECTIONSTRING\": \"[concat('@Microsoft.KeyVault(SecretUri=', reference(variables('storageConnectionStringResourceId')).secretUriWithVersion, ')')]\",\"APPINSIGHTS_INSTRUMENTATIONKEY\": \"[concat('@Microsoft.KeyVault(SecretUri=', reference(variables('appInsightsKeyResourceId')).secretUriWithVersion, ')')]\",\"WEBSITE_ENABLE_SYNC_UPDATE_SITE\": \"true\"//...}},{\"type\": \"sourcecontrols\",\"name\": \"web\",//...\"dependsOn\": [\"[resourceId('Microsoft.Web/sites', variables('functionAppName'))]\",\"[resourceId('Microsoft.Web/sites/config', variables('functionAppName'), 'appsettings')]\"],}]},{\"type\": \"Microsoft.KeyVault/vaults\",\"name\": \"[variables('keyVaultName')]\",//...\"dependsOn\": [\"[resourceId('Microsoft.Web/sites', variables('functionAppName'))]\"],\"properties\": {//...\"accessPolicies\": [{\"tenantId\": \"[reference(concat('Microsoft.Web/sites/',  variables('functionAppName'), '/providers/Microsoft.ManagedIdentity/Identities/default'), '2015-08-31-PREVIEW').tenantId]\",\"objectId\": \"[reference(concat('Microsoft.Web/sites/',  variables('functionAppName'), '/providers/Microsoft.ManagedIdentity/Identities/default'), '2015-08-31-PREVIEW').principalId]\",\"permissions\": {\"secrets\": [ \"get\" ]}}]},\"resources\": [{\"type\": \"secrets\",\"name\": \"[variables('storageConnectionStringName')]\",//...\"dependsOn\": [\"[resourceId('Microsoft.KeyVault/vaults/', variables('keyVaultName'))]\",\"[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]\"],\"properties\": {\"value\": \"[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountResourceId'),'2015-05-01-preview').key1)]\"}},{\"type\": \"secrets\",\"name\": \"[variables('appInsightsKeyName')]\",//...\"dependsOn\": [\"[resourceId('Microsoft.KeyVault/vaults/', variables('keyVaultName'))]\",\"[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]\"],\"properties\": {\"value\": \"[reference(resourceId('microsoft.insights/components/', variables('appInsightsName')), '2015-05-01').InstrumentationKey]\"}}]}]}`\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/app-service/app-service-key-vault-references](https://docs.microsoft.com/en-us/azure/app-service/app-service-key-vault-references)\n2. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-identity-management#im-2-manage-application-identities-securely-and-automatically](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-identity-management#im-2-manage-application-identities-securely-and-automatically)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "sites-with-secrets-and-without-keyvault-references"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "functionapps-with-secrets-and-without-keyvault-references"
+    }
+  ],
+  "description": "Cyscale looks for secrets that are not stored using KeyVault references and are being used by App services or Function apps."
+}
