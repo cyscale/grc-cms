@@ -1,0 +1,54 @@
+{
+  "name": "Ensure object containers are not accessible from VMS with open management ports",
+  "description": "Object containers accessible from VMS with open management ports",
+  "body": "Cyscale looks for object containers that are accessible from virtual machines with open management ports.",
+  "slug": "object-containers-accessible-from-vms-with-open-management-ports",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "aws-buckets-accessible-from-vms-with-open-management-ports"
+    },
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "alibaba-buckets-accessible-from-vms-with-open-management-port"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "gcp-buckets-accessible-from-vms-with-open-management-port"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "BlobContainer"
+      ],
+      "query": "azure-blob-accessible-from-vms-with-open-management-port"
+    }
+  ],
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n"
+}
