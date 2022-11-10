@@ -1,0 +1,5 @@
+{
+  "name": "GCP Buckets accessible from VMs with open management port",
+  "slug": "gcp-buckets-accessible-from-vms-with-open-management-port",
+  "query": "{\n  accessibleBucketsFromGCPVMs {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+}
