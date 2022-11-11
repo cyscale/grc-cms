@@ -50,5 +50,5 @@
       "query": "azure-blob-accessible-from-vms-with-open-management-port"
     }
   ],
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n"
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* [Delete a service-linked role](https://www.alibabacloud.com/help/en/resource-access-management/latest/service-linked-roles)\n\n#### A﻿WS\n* [Deleting roles or instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html)\n\n#﻿### Azure\n*﻿ [Remove system-assigned managed identity from a VM](﻿https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm#remove-system-assigned-managed-identity-from-a-vm)\n\n#﻿### GCP\n*﻿ [Service accounts](﻿https://cloud.google.com/compute/docs/access/service-accounts)"
 }
