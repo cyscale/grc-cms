@@ -114,6 +114,7 @@ collections:
                 'LogBucket',
                 'LogProfile',
                 'ManagedZone',
+                'MariaDBServer',
                 'MySQLServer',
                 'MySQLFlexibleServer',
                 'NetworkACL',
