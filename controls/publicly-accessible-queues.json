@@ -35,7 +35,7 @@
     }
   ],
   "name": "Ensure queues are not publicly accessible",
-  "description": "Publicly Accessible Queues",
+  "description": "Queues",
   "slug": "publicly-accessible-queues",
   "body": "C﻿yscale looks for managed queues that allow unrestricted access from the internet. Using publicly accessible queues allows anyone to send, intercept and delete messages leading to a potential data leakage to unwanted third parties.",
   "severity": 3,
