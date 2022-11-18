@@ -173,6 +173,17 @@
       ],
       "query": "gcp-cloudsql-sqlservers-with-outdated-engine-versions",
       "returnPath": ""
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MariaDBServer"
+      ],
+      "query": "azure-mariadb-servers-with-outdated-engine"
     }
   ]
 }
