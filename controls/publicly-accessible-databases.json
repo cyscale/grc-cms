@@ -116,5 +116,5 @@
       "query": "publicly-accessible-azure-mariadb-servers"
     }
   ],
-  "description": "Publicly Accessible Databases"
+  "description": "Databases"
 }
