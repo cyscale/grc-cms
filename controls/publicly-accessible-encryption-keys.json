@@ -1,6 +1,6 @@
 {
   "name": "Ensure encryption keys are not publicly accessible",
-  "description": "Publicly Accessible Encryption Keys",
+  "description": "Encryption Keys",
   "slug": "publicly-accessible-encryption-keys",
   "severity": 3,
   "rules": [
