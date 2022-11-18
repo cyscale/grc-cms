@@ -81,9 +81,3 @@ jobs:
           INTERNAL_API_KEY: ${{ secrets.PROD_INTERNAL_API_KEY }}
         run: |
           curl --silent --show-error --fail -X POST $BAPI_GRC_UPDATE_ENDPOINT -H "Content-Type:application/json" -H "x-api-key:$(echo "$INTERNAL_API_KEY" | base64 -d)" -d '{"accounts":"all"}'
-      - name: 'Tag Release'
-        uses: go-semantic-release/action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-initial-development-versions: true
-          force-bump-patch-version: true
