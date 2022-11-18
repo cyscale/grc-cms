@@ -83,6 +83,17 @@
         "PostgreSQLFlexibleServer"
       ],
       "query": "publicly-accessible-azure-postgresql-flexible-servers-with-no-old-tls"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MariaDBServer"
+      ],
+      "query": "publicly-accessible-azure-mariadb-servers-with-no-old-tls"
     }
   ]
 }
