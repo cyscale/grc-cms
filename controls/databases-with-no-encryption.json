@@ -82,6 +82,17 @@
         "CloudSQLInstance"
       ],
       "query": "gcp-cloudsql-with-no-ecryption"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MariaDBServer"
+      ],
+      "query": "azure-mariadb-servers-with-no-encryption"
     }
   ]
 }
