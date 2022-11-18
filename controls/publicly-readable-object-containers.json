@@ -6,7 +6,9 @@
   "severity": 3,
   "rules": [
     {
-      "cloudProviders": ["aws"],
+      "cloudProviders": [
+        "aws"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -15,7 +17,9 @@
       "query": "publicly-readable-aws-buckets"
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -24,7 +28,9 @@
       "query": "publicly-readable-azure-blob-containers"
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "alibaba"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -33,7 +39,9 @@
       "query": "publicly-readable-alibaba-buckets"
     },
     {
-      "cloudProviders": ["gcp"],
+      "cloudProviders": [
+        "gcp"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
@@ -42,5 +50,5 @@
       "query": "publicly-readable-gcp-buckets"
     }
   ],
-  "description": "Publicly Readable Object Containers"
+  "description": "Readable Object Containers"
 }
