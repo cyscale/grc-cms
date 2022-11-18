@@ -103,6 +103,17 @@
         "DBCluster"
       ],
       "query": "publicly-accessible-aws-rds-clusters"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MariaDBServer"
+      ],
+      "query": "publicly-accessible-azure-mariadb-servers"
     }
   ],
   "description": "Publicly Accessible Databases"
