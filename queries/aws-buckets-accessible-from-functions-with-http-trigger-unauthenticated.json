@@ -1,0 +1,5 @@
+{
+  "name": "AWS Buckets accessible from functions with http trigger unauthenticated",
+  "slug": "aws-buckets-accessible-from-functions-with-http-trigger-unauthenticated",
+  "query": "{\n  accessibleBucketsFromAWSFunctions {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+}
