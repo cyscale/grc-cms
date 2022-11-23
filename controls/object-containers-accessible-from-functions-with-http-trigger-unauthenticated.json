@@ -38,6 +38,17 @@
         "Bucket"
       ],
       "query": "gcp-buckets-accessible-from-functions-with-http-trigger-unauthenticated"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "BlobContainer"
+      ],
+      "query": "azure-object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
     }
   ]
 }
