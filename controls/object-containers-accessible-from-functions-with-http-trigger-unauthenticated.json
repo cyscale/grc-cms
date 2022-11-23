@@ -49,6 +49,17 @@
         "BlobContainer"
       ],
       "query": "azure-object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
+    },
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "alibaba-buckets-accessible-via-custom-policy-from-functions-with-http-trigger-unauthenticated"
     }
   ]
 }
