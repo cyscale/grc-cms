@@ -26,7 +26,7 @@
       "subjects": [
         "Bucket"
       ],
-      "query": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated"
+      "query": "alibaba-buckets-accessible-via-system-policy-from-functions-with-http-trigger-unauthenticated"
     },
     {
       "cloudProviders": [
