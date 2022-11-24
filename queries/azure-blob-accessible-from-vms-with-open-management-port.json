@@ -1,5 +1,0 @@
-{
-  "name": "Azure Blob accessible from VMS with open management port",
-  "slug": "azure-blob-accessible-from-vms-with-open-management-port",
-  "query": "{\n  accessibleBlobContainersFromAzureVMs {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
-}
