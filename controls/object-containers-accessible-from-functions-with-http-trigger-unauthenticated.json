@@ -4,7 +4,7 @@
   "slug": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated",
   "body": "Cyscale looks for object containers that are accessible from functions with http trigger unauthenticated.",
   "severity": 3,
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* [Delete a service-linked role](https://www.alibabacloud.com/help/en/resource-access-management/latest/service-linked-roles)\n\n#### A﻿WS\n* [Deleting roles or instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html)\n\n#﻿### Azure\n*﻿ [How to use managed identities for App Service and Azure Functions](https://learn.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=portal)\n\n#﻿### GCP\n*﻿ [Service accounts](﻿https://cloud.google.com/compute/docs/access/service-accounts)",
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* [Delete a service-linked role](https://www.alibabacloud.com/help/en/resource-access-management/latest/service-linked-roles)\n\n#### A﻿WS\n* [Deleting roles or instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html)\n\n#### Azure\n* [How to use managed identities for App Service and Azure Functions](https://learn.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=portal)\n\n#### GCP\n* [Service accounts](﻿https://cloud.google.com/compute/docs/access/service-accounts)",
   "rules": [
     {
       "cloudProviders": [
