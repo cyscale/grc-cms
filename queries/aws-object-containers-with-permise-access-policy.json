@@ -1,5 +1,5 @@
 {
   "name": "AWS object containers with permissive access policy",
   "slug": "aws-object-containers-with-permise-access-policy",
-  "query": "{\n  buckets(\n    where: {\n      OR: [\n        { AND: { policyDocument_MATCHES: \".*arn:aws:iam::[0-9]+:root.*\" } }\n        {\n          bucketPolicy: {\n            statements_SOME: { effect: \"Allow\", principals_INCLUDES: \"AWS|*\" }\n          }\n        }\n        { hasBucketACLGrant_SOME: { granteeID_MATCHES: \"^[a-zA-Z0-9]*$\" } }\n      ]\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+  "query": "{\n  buckets(\n    where: {\n      OR: [\n        { policyDocument_MATCHES: \".*arn:aws:iam::[0-9]+:root.*\" }\n        {\n          bucketPolicy: {\n            statements_SOME: { effect: \"Allow\", principals_INCLUDES: \"AWS|*\" }\n          }\n        }\n        { hasBucketACLGrant_SOME: { granteeID_MATCHES: \"^[a-zA-Z0-9]*$\" } }\n      ]\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
 }
