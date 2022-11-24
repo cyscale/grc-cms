@@ -1,5 +1,5 @@
 {
-  "name": "Ensure object containers (buckets) are not public",
+  "name": "Ensure object containers (buckets) are not publicly accessible",
   "description": "Object containers with public access",
   "slug": "object-containers-with-public-access",
   "body": "Object containers (buckets) should almost never be publicly accessible (excepting when using them to host public static websites). Although there is nothing inherently insecure about object containers, access control misconfigurations and a lack of understanding about how object containers security works can turn buckets into a vector for attack and data exfiltration. To avoid this, Cyscale looks for publicly accessible object containers.",
