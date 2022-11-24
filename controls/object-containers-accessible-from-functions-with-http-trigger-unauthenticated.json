@@ -41,17 +41,6 @@
     },
     {
       "cloudProviders": [
-        "azure"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "BlobContainer"
-      ],
-      "query": "azure-object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
-    },
-    {
-      "cloudProviders": [
         "alibaba"
       ],
       "comparator": "eq",
@@ -60,6 +49,17 @@
         "Bucket"
       ],
       "query": "alibaba-buckets-accessible-via-custom-policy-from-functions-with-http-trigger-unauthenticated"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "BlobContainer"
+      ],
+      "query": "azure-blob-containers-accessible-from-functions-with-http-trigger-unauthenticated"
     }
   ]
 }
