@@ -7,17 +7,6 @@
   "rules": [
     {
       "cloudProviders": [
-        "aws"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "DBInstance"
-      ],
-      "query": "publicly-accessible-aws-rds-instances"
-    },
-    {
-      "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",
@@ -114,6 +103,17 @@
         "MariaDBServer"
       ],
       "query": "publicly-accessible-azure-mariadb-servers"
+    },
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "publicly-accessible-aws-rds-instance"
     }
   ],
   "description": "Databases"
