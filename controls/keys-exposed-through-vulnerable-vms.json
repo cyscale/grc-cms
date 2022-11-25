@@ -37,7 +37,7 @@
         "KMSKey"
       ],
       "query": "alibaba-keys-exposed-through-vms",
-      "returnPath": "iamRoles.policies.hasIAMPolicyStatement.permissions.isOwnedByIAMAssetType.includesKMSKey"
+      "returnPath": ""
     },
     {
       "cloudProviders": [
