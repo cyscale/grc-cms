@@ -1,5 +1,0 @@
-{
-  "name": "Publicly Accessible RDS Instances",
-  "slug": "publicly-accessible-aws-rds-instances",
-  "query": "{\n  dbInstances(\n    where: {\n      publicAccessBlocked: false\n      dbCluster: null\n      securityGroups_SOME: {\n        rules_SOME: {\n          direction: \"Inbound\"\n          OR: [\n            { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n            { sources_INCLUDES: \"cidr:::/0\" }\n          ]\n        }\n      }\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}\n"
-}
