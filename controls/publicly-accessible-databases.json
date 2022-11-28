@@ -113,7 +113,7 @@
       "subjects": [
         "DBInstance"
       ],
-      "query": "publicly-accessible-aws-rds-instance"
+      "query": "publicly-accessible-aws-rds-instances"
     }
   ],
   "description": "Databases"
