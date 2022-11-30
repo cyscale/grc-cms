@@ -1,0 +1,41 @@
+name: Deploy to prod
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy GRC to prod
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v32
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+      - name: Copy
+        env:
+          AZ_ST_CONN_STRING: ${{ secrets.PROD_AZ_ST_CONN_STRING }}
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.37.0
+          inlineScript: |
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/queries --source ./queries --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/controls --source ./controls --overwrite
+      - name: Update
+        shell: bash
+        env:
+          BAPI_GRC_UPDATE_ENDPOINT: ${{ secrets.PROD_BAPI_GRC_UPDATE_ENDPOINT }}
+          INTERNAL_API_KEY: ${{ secrets.PROD_INTERNAL_API_KEY }}
+        run: |
+          curl --silent --show-error --fail -X POST $BAPI_GRC_UPDATE_ENDPOINT -H "Content-Type:application/json" -H "x-api-key:$(echo "$INTERNAL_API_KEY" | base64 -d)" -d '{"accounts":"all"}'
