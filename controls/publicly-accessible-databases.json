@@ -78,7 +78,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "SQLServer"
+        "SQLDatabase"
       ],
       "query": "publicly-accessible-azure-sql-servers"
     },
