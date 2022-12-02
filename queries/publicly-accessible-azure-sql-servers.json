@@ -1,5 +1,5 @@
 {
-  "name": "Publicly Accessible Azure SQL Servers",
+  "name": "Publicly Accessible Azure SQL Databases",
   "slug": "publicly-accessible-azure-sql-servers",
-  "query": "{ sqlServers (where: {hasSQLServerFirewallRule_SOME: { startIpAddress: \"0.0.0.0\" endIpAddress: \"255.255.255.255\" }}){ identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{\n  sqlDatabases(\n    where: {\n      sqlServer: {\n        hasSQLServerFirewallRule_SOME: {\n          startIpAddress: \"0.0.0.0\"\n          endIpAddress: \"255.255.255.255\"\n        }\n      }\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}\n"
 }
