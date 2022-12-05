@@ -1,5 +1,5 @@
 {
   "name": "Publicly Readable Azure Blob Containers",
   "slug": "publicly-readable-azure-blob-containers",
-  "query": "{ blobContainers( where: { cloudProvider: \"azure\" publicAccessBlocked: false publicAccess_IN: [\"Blob\", \"Container\"] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+  "query": "{\n  blobContainers(\n    where: {\n      publicAccessBlocked: false\n      publicAccess_IN: [\"Blob\", \"Container\"]\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
 }
