@@ -94,6 +94,17 @@
         "MariaDBServer"
       ],
       "query": "publicly-accessible-azure-mariadb-servers-with-no-old-tls"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SQLDatabase"
+      ],
+      "query": "publicly-accessible-azure-sql-databases-with-no-old-tls"
     }
   ]
 }
