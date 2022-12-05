@@ -116,5 +116,5 @@
       "query": "publicly-accessible-aws-rds-instances"
     }
   ],
-  "description": "Databases"
+  "description": "Databases with public IP addresses"
 }
