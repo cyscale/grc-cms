@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Prep
+        run: |
+          echo modified_since=$(date -u "+%Y-%m-%dT%H:%MZ" --date='-2 min') >> $GITHUB_ENV
       - name: Copy
         env:
           AZ_ST_CONN_STRING: ${{ secrets.PROD_AZ_ST_CONN_STRING }}
@@ -31,9 +34,8 @@ jobs:
         with:
           azcliversion: 2.37.0
           inlineScript: |
-            modified_since=$(date -u "+%Y-%m-%dT%H:%MZ" --date='-2 min')
-            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'queries/*' --if-unmodified-since $modified_since
-            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'controls/*' --if-unmodified-since $modified_since
+            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'queries/*' --if-unmodified-since "${{ env.modified_since }}"
+            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'controls/*' --if-unmodified-since "${{ env.modified_since }}"
       - name: Update
         shell: bash
         env:
