@@ -1,5 +1,5 @@
 {
   "name": "Azure PostgreSQL Flexible Servers with outdated engine versions",
   "slug": "azure-postgresql-flexible-servers-with-outdated-engine-versions",
-  "query": "{ postgreSqlFlexibleServers (where: {engineVersion_NOT_IN: [\"10\", \"11\", \"12\", \"13\", \"14\", \"15\"]}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{\n  postgreSqlFlexibleServers(\n    where: { engineVersion_NOT_IN: [\"11\", \"12\", \"13\", \"14\", \"15\"] }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}\n"
 }
