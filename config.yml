@@ -144,6 +144,7 @@ collections:
                 'User',
                 'VM',
                 'VPC',
+                'CosmosDBAccount',
               ]
           - label: 'Query'
             name: 'query'
