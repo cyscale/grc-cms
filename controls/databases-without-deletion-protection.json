@@ -17,7 +17,10 @@
         "MySQLFlexibleServer",
         "PostgreSQLServer",
         "PostgreSQLFlexibleServer",
-        "SQLServer"
+        "SQLServer",
+        "CosmosDBAccount",
+        "MariaDBServer",
+        "SQLDatabase"
       ],
       "query": "databases-without-delete-protection-azure"
     },
