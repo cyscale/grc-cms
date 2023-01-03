@@ -48,7 +48,18 @@
       "subjects": [
         "Bucket"
       ],
-      "query": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated"
+      "query": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated-and-system-policy"
+    },
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated-and-custom-policy"
     }
   ]
 }
