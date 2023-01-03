@@ -1,5 +1,5 @@
 {
-  "query": "{\naccessibleBucketsFromAlibabaFunctionsWithCustomPolicy {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}",
+  "query": "{\n  accessibleBucketsFromAlibabaFunctionsWithCustomPolicy {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}",
   "slug": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated-and-custom-policy",
   "name": "Alibaba Buckets accessible from functions with http trigger unauthenticated and custom policy"
 }
