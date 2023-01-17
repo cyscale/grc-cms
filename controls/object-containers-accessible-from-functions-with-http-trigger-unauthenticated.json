@@ -1,10 +1,10 @@
 {
   "name": "Ensure object containers are not accessible from functions with http trigger unauthenticated",
-  "description": "Object containers accessible from functions with http trigger unauthenticated",
+  "description": "Object containers accessible from functions with unauthenticated HTTP triggers",
   "slug": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated",
-  "body": "Cyscale looks for object containers that are accessible from functions with http trigger unauthenticated.",
+  "body": "Cyscale looks for object containers that are accessible from functions with HTTP triggers that allow unauthenticated traffic. Most FaaS services have mechanisms to enforce authentication at the service level",
   "severity": 1,
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* You can modify settings of the HTTP trigger based on your business requirements, including the Authentication and Request Method parameters. For more information, see [Update the configurations of a trigger](https://www.alibabacloud.com/help/en/function-compute/latest/manage-triggers)\n\n#### A﻿WS\n* You can control access to your Lambda function URLs using the AuthType parameter combined with resource-based policies attached to your specific function. For more information, see [Security and auth model for Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html)\n\n#### Azure\n* [Securing Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts)\n\n#### GCP\n* [Authenticating for invocation](https://cloud.google.com/functions/docs/securing/authenticating)",
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* You can modify settings of the HTTP trigger based on your business requirements, including the Authentication and Request Method parameters. For more information, see [Update the configurations of a trigger](https://www.alibabacloud.com/help/en/function-compute/latest/manage-triggers)\n\n#### A﻿WS\n* You can control access to your Lambda function URLs using the AuthType parameter combined with resource-based policies attached to your specific function. For more information, see [Security and auth model for Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html)\n\n#### Azure\n* [Securing Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts)\n\n#### Google Cloud\n* [Authenticating for invocation](https://cloud.google.com/functions/docs/securing/authenticating)",
   "rules": [
     {
       "cloudProviders": [
