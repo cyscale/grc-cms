@@ -1,0 +1,21 @@
+{
+  "slug": "cis-alibaba-1-0-0-logging-1",
+  "name": "Ensure that ActionTrail is configured to export copies of all Log entries",
+  "description": "ActionTrail is not configured to export copies of all Log entiries.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "neq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Trail"
+      ],
+      "query": "alibaba-trails-exporting-all-copies"
+    }
+  ],
+  "body": "This control looks for ActionTrails that export all log entries to a bucket.",
+  "remediationDescription": "Y﻿ou must make sure that there is an ActionTrail that exports all log entries to a bucket."
+}
