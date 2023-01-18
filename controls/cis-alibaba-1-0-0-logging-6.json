@@ -1,0 +1,21 @@
+{
+  "slug": "cis-alibaba-1-0-0-logging-6",
+  "name": "Ensure Anti-DDoS access and security log service is enabled",
+  "description": "Anti-DDoS access and security log service is disabled.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "query": "alibaba-iam-account-summaries-with-anti-ddos-log-enabled",
+      "subjects": [
+        "IAMAccountSummary"
+      ]
+    }
+  ],
+  "body": "T﻿his control checks that Anti-DDoS access and security log service is enabled.",
+  "remediationDescription": "E﻿nable Anti-DDoS access and security log service."
+}
