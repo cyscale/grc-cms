@@ -1,0 +1,5 @@
+{
+  "query": "{\n  iamAccountSummaries(\n    where: { hasIAMAccountSummaryItem_SOME: { key: \"MCAS\", value: 1 } }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
+  "slug": "azure-iam-account-summaries-with-mcas-enabled",
+  "name": "Azure IAM Account summaries with MCAS enabled"
+}
