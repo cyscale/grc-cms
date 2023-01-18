@@ -1,0 +1,5 @@
+{
+  "query": "{\n  iamAccountSummaries(\n    where: {\n      hasIAMAccountSummaryItem_SOME: { key: \"antiDDoSHasLogStore\", value: 1 }\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
+  "slug": "alibaba-iam-account-summaries-with-anti-ddos-log-enabled",
+  "name": "Alibaba IAM account summaries with Anti-DDos log service enabled"
+}
