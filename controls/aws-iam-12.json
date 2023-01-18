@@ -1,0 +1,21 @@
+{
+  "description": "Root users that have access keys.",
+  "name": "Ensure no \"root\" user account access key exists",
+  "slug": "aws-iam-12",
+  "body": "The \"root\" account is the most privileged user in an AWS account. AWS Access Keys provide programmatic access to a given AWS account. It is recommended that all access keys associated with the \"root\" account be removed.\r\n\r\n**Rationale**\r\n\r\nRemoving access keys associated with the root account limits vectors by which the account can be compromised. Additionally, removing the root access keys encourages the creation and use of role based accounts that are least privileged.",
+  "severity": 3,
+  "remediationDescription": "Perform the following to delete or disable active root access keys being used\r\n\r\n**Via the AWS Console**\r\n\r\n1. Sign in to the AWS Management Console as Root and open the IAM console at https://console.aws.amazon.com/iam/.\r\n2. Click on \\<*Root_Account_Name*\\> at the top right and select `Security Credentials` from the drop down list\r\n3. On the pop out screen Click on `Continue to Security Credentials`\r\n4. Click on `Access Keys` (Access Key ID and Secret Access Key)\r\n5. Under the Status column if there are any Keys which are Active\r\n- Click on `Make Inactive` - (Temporarily disable Key - may be needed again)\r\n- Click `Delete` - (Deleted keys cannot be recovered)\r\n\r\n**References**\r\n\r\n1. http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html\r\n2. http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html\r\n3. http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html\r\n4. CCE-78910-7\r\n5. CIS CSC v6.0 #5.1",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RootUser"
+      ],
+      "query": "aws-root-users-with-access-key"
+    }
+  ]
+}
