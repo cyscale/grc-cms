@@ -13,9 +13,10 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "RootUser"
+        "CloudAccount"
       ],
-      "query": "aws-root-users-with-access-key"
+      "query": "aws-root-users-with-access-key",
+      "returnPath": "connector"
     }
   ]
 }
