@@ -12,8 +12,9 @@
       "expectedResult": "[]",
       "query": "alibaba-iam-account-summaries-with-anti-ddos-log-enabled",
       "subjects": [
-        "IAMAccountSummary"
-      ]
+        "CloudAccount"
+      ],
+      "returnPath": "connector"
     }
   ],
   "body": "T﻿his control checks that Anti-DDoS access and security log service is enabled.",
