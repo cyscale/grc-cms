@@ -1,5 +1,5 @@
 {
   "slug": "aws-root-users-with-access-key",
   "name": "AWS Root users with access key",
-  "query": "{\n  rootUsers(\n    where: {\n      hasIAMUserCredentials: {\n        OR: [{ accessKey1Active: true }, { accessKey2Active: true }]\n      }\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+  "query": "{\n  rootUsers(\n    where: {\n      hasIAMUserCredentials: {\n        OR: [{ accessKey1Active: true }, { accessKey2Active: true }]\n      }\n    }\n  ) {\n    connector {\n      identifier\n      accountID\n      cloudAccountID\n      cloudAccountName\n      cloudProvider\n      idFromProvider\n      internalAssetType\n      internalName\n      internalRegion\n      assetCategory\n      contentHash\n    }\n  }\n}\n"
 }
