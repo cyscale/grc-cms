@@ -4,7 +4,7 @@
   "slug": "databases-without-deletion-protection",
   "body": "Cyscale looks for managed databases that can be accidentally deleted and lead to potential data loss. Deletion protection prevents any existing database instance from being removed by users.",
   "severity": 2,
-  "remediationDescription": "Depending on the provider and the service you use, check out the following resources``'\n\n#### A﻿WS\n* [RDS: Modifying an Amazon RDS DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html)\n\n#### Azure\n* [Lock your resources to protect your infrastructure](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources)\n\n#### GCP\n* [Cloud SQL](https://cloud.google.com/sql/docs/mysql/deletion-protection)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/modify-delection-protection)\n",
+  "remediationDescription": "Depending on the provider and the service you use, check out the following resources``'\n\n#### A﻿WS\n* [RDS: Modifying an Amazon RDS DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html)\n\n#### Azure\n* [Lock your resources to protect your infrastructure](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/docs/mysql/deletion-protection)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/modify-delection-protection)\n",
   "rules": [
     {
       "cloudProviders": [

@@ -58,7 +58,7 @@ collections:
               - { label: 'AWS', value: 'aws' }
               - { label: 'Azure', value: 'azure' }
               - { label: 'Alibaba', value: 'alibaba' }
-              - { label: 'GCP', value: 'gcp' }
+              - { label: 'Google Cloud', value: 'gcp' }
               - { label: 'Okta', value: 'okta' }
           - label: 'Comparator'
             name: 'comparator'

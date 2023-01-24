@@ -39,5 +39,5 @@
   "slug": "publicly-accessible-queues",
   "body": "C﻿yscale looks for managed queues that allow unrestricted access from the internet. Using publicly accessible queues allows anyone to send, intercept and delete messages leading to a potential data leakage to unwanted third parties.",
   "severity": 3,
-  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n\n* [SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security-best-practices.html)\n\n#### GCP\n\n* [Pub/Sub](https://cloud.google.com/pubsub/docs/access-control)"
+  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n\n* [SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security-best-practices.html)\n\n#### Google Cloud\n\n* [Pub/Sub](https://cloud.google.com/pubsub/docs/access-control)"
 }
