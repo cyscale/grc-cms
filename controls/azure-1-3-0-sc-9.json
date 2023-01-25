@@ -10,11 +10,11 @@
       "cloudProviders": [
         "azure"
       ],
-      "comparator": "neq",
+      "comparator": "eq",
       "expectedResult": "[]",
       "query": "azure-iam-account-summaries-with-wdapt-enabled",
       "subjects": [
-        "IAMAccountSummary"
+        "CloudAccount"
       ]
     }
   ]
