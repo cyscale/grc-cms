@@ -10,7 +10,7 @@
       "cloudProviders": [
         "aws"
       ],
-      "comparator": "neq",
+      "comparator": "eq",
       "expectedResult": "[]",
       "query": "aws-iampolicies-with-support-role",
       "subjects": [
