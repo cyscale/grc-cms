@@ -8,10 +8,10 @@
       "cloudProviders": [
         "alibaba"
       ],
-      "comparator": "neq",
+      "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Trail"
+        "CloudAccount"
       ],
       "query": "alibaba-trails-exporting-all-copies"
     }
