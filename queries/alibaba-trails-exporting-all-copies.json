@@ -1,5 +1,5 @@
 {
-  "query": "{\n  trails(where: { trailRegion: \"All\", bucket_NOT: null }) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
+  "query": "{\n  AlibabaLogging1 {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
   "slug": "alibaba-trails-exporting-all-copies",
   "name": "Alibaba ActionTrails that export copies of all log entries"
 }
