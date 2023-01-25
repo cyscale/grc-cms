@@ -10,11 +10,11 @@
       "cloudProviders": [
         "aws"
       ],
-      "comparator": "neq",
+      "comparator": "eq",
       "expectedResult": "[]",
       "query": "aws-multi-region-trails-with-logging-enabled",
       "subjects": [
-        "Trail"
+        "CloudAccount"
       ]
     }
   ]
