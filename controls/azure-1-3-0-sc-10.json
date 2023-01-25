@@ -11,10 +11,10 @@
         "azure"
       ],
       "comparator": "eq",
-      "expectedResult": "true",
+      "expectedResult": "[]",
       "query": "azure-iam-account-summaries-with-mcas-enabled",
       "subjects": [
-        "IAMAccountSummary"
+        "CloudAccount"
       ]
     }
   ]
