@@ -10,11 +10,11 @@
       "cloudProviders": [
         "azure"
       ],
-      "comparator": "neq",
+      "comparator": "eq",
       "expectedResult": "[]",
       "query": "azure-iam-custom-roles-with-locks-permission",
       "subjects": [
-        "IAMCustomRole"
+        "CloudAccount"
       ]
     }
   ]
