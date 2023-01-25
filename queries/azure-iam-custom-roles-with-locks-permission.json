@@ -1,5 +1,5 @@
 {
-  "query": "{\n  iamCustomRoles(\n    where: {\n      isOwnedByIAMUser_NONE: null\n      permissions_INCLUDES: \"Microsoft.Authorization/locks\"\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
+  "query": "{\n  AzureIAM23 {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n",
   "slug": "azure-iam-custom-roles-with-locks-permission",
   "name": "Azure IAM Custom roles with lock permission"
 }
