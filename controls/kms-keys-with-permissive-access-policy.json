@@ -1,7 +1,7 @@
 {
   "description": "Keys With Permissive Access Policy",
   "slug": "kms-keys-with-permissive-access-policy",
-  "name": "Ensure encryption keys don't have permissive access policices",
+  "name": "Ensure encryption keys don't have permissive access policies",
   "severity": 3,
   "rules": [
     {
