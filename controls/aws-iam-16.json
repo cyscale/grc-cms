@@ -16,7 +16,7 @@
       "subjects": [
         "CloudAccount"
       ],
-      "returnPath": "connector"
+      "returnPath": ""
     }
   ]
 }
