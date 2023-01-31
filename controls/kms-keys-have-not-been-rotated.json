@@ -1,6 +1,6 @@
 {
-  "name": "Ensure that Encryption key is rotated",
-  "description": "Encryption key that haven’t been rotated in more than 90 days",
+  "name": "Ensure encryption keys are rotated",
+  "description": "Encryption keys that haven’t been rotated in more than 90 days",
   "slug": "kms-keys-have-not-been-rotated",
   "body": "C﻿yscale looks for encryption keys that haven’t been rotated in more than 90 days.",
   "severity": 3,
@@ -50,5 +50,5 @@
       "query": "kms-keys-havent-been-rotated"
     }
   ],
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n*﻿ [Rotating AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)\n\n#### Azure\n*﻿ [Configure key rotation]\n(﻿https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation)\n\n#### A﻿libaba\n*﻿ [Configure key rotation]\n(﻿https://www.alibabacloud.com/help/en/key-management-service/latest/automatic-key-rotation)\n\n#### Google Cloud\n*﻿ [Configure key rotation]\n(https://cloud.google.com/kms/docs/rotating-keys)"
+  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n- [Rotating AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)\n\n#### Azure\n- [Configure key rotation]\n(﻿https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation)\n\n#### A﻿libaba\n-﻿ [Configure key rotation]\n(﻿https://www.alibabacloud.com/help/en/key-management-service/latest/automatic-key-rotation)\n\n#### Google Cloud\n-﻿ [Configure key rotation]\n(https://cloud.google.com/kms/docs/rotating-keys)"
 }
