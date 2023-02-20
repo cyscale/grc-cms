@@ -21,7 +21,7 @@
     {
       "query": "gcp-inbdoun-internet-firewall-rules",
       "subjects": [
-        "FirewallRule"
+        "Firewall"
       ],
       "expectedResult": "[]",
       "comparator": "eq",

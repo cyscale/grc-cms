@@ -91,7 +91,7 @@ collections:
                 'DBInstance',
                 'Disk',
                 'Domain',
-                'FirewallRule',
+                'Firewall',
                 'FlowLog',
                 'Function',
                 'FunctionApp',
