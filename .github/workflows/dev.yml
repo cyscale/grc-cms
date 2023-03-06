@@ -38,10 +38,14 @@ jobs:
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v32
+      - name: Login
+        uses: azure/login@v1
+        with:
+          subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
+          tenant-id: ${{ vars.AZ_TENANT_ID }}
+          client-id: ${{ vars.AZ_CLIENT_ID }}
       - name: Deploy
-        env:
-          AZ_ST_CONN_STRING: ${{ secrets.DEV_AZ_ST_CONN_STRING }}
-        uses: azure/CLI@v1
+        uses: azure/cli@v1
         with:
           azcliversion: 2.37.0
           inlineScript: |
@@ -50,7 +54,7 @@ jobs:
                 continue
               fi
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$(cat $file | jq -r '.slug') --connection-string $(echo \"$AZ_ST_CONN_STRING\" | base64 -d)
+              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$(cat $file | jq -r '.slug') --auth-mode login
             done
 
             for file in ${{ steps.changed-files.outputs.deleted_files }}; do
@@ -58,5 +62,5 @@ jobs:
                 continue
               fi
 
-              az storage blob delete -c grc --name $file --connection-string $(echo \"$AZ_ST_CONN_STRING\" | base64 -d)
+              az storage blob delete -c grc --name $file --auth-mode login
             done
