@@ -1,0 +1,5 @@
+{
+  "name": "SageMaker Notebooks with root access enabled",
+  "slug": "sage-maker-notebook-with-root-access-enabled",
+  "query": "{\n  sageMakerNoteBooks(\n    where: {\n     NOT: { rootAccess: \"Disabled\" } \n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+}
