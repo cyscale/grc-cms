@@ -1,5 +1,5 @@
 {
   "name": "Retrieve AWS Launch Templates without IMDSv2 required",
   "slug": "aws-launch-templates-no-imdsv2",
-  "query": "{\n  launchTemplateVersions(\n    where: {\n      metadataOptionHTTPTokens_NOT: \"required\"\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+  "query": "{\n  launchTemplateVersions(\n    where: { NOT: { metadataOptionHTTPTokens: \"required\" } }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
 }
