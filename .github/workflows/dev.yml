@@ -50,17 +50,47 @@ jobs:
           azcliversion: 2.37.0
           inlineScript: |
             for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-              if ! [[ "$file" =~ ^controls*|^queries* ]]; then
+              if ! [[ "$file" =~ ^controls*|^queries*|^policies* ]]; then
                 continue
               fi
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$(cat $file | jq -r '.slug') --auth-mode login
+              case $(dirname $file) in
+                controls)
+                  type=control;;
+                queries)
+                  type=query;;
+                policies)
+                  type=policy;;
+              esac
+
+              slug=$(cat $file | jq -r '.slug')
+              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
+
+              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --auth-mode login
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --auth-mode login
             done
 
             for file in ${{ steps.changed-files.outputs.deleted_files }}; do
-              if ! [[ "$file" =~ ^controls*|^queries* ]]; then
+              if ! [[ "$file" =~ ^controls*|^queries*|^policies* ]]; then
                 continue
               fi
 
+              case $(dirname $file) in
+                controls)
+                  type=control;;
+                queries)
+                  type=query;;
+                policies)
+                  type=policy;;
+              esac
+
+              az storage blob download -f entity.json -c grc -n $file --auth-mode login
+
+              slug=$(cat entity.json | jq -r '.slug')
+              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
+
               az storage blob delete -c grc --name $file --auth-mode login
-            done
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --auth-mode login
+            done   
+
+            rm -f entity.json
