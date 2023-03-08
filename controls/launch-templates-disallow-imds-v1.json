@@ -1,6 +1,6 @@
 {
-  "name": "Launch Templates should disallow IMDSv1",
-  "description": "Instance Metadata Service v2 provides a more secure mechanism for access to temporary, frequently rotated credentials",
+  "name": "Launch Templates Should Only Allow IMDSv2",
+  "description": "Launch Templates allowing IMDSv1",
   "slug": "launch-templates-disallow-imds-v1",
   "body": "With IMDSv2, every request is now protected by session authentication. A session begins and ends a series of requests that software running on an EC2 instance uses to access the locally-stored EC2 instance metadata and credentials. The software starts a session with a simple HTTP PUT request to IMDSv2.\n\nY﻿ou can read more about it at in this AWS Blog post: [Add defense in depth against open firewalls, reverse proxies, and SSRF vulnerabilities with enhancements to the EC2 Instance Metadata Service](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/#:~:text=The%20existing%20instance%20metadata%20service,try%20to%20access%20the%20IMDS.)",
   "severity": 2,
