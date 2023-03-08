@@ -1,0 +1,21 @@
+{
+  "name": "Ensure SageMaker Notebooks do not allow root access",
+  "description": "Sage Maker Notebooks that allow root access",
+  "slug": "sage-maker-notebooks-root-access",
+  "body": "Because users with root access have administrator privileges, users can access and edit all files on a notebook instance with root access enabled.\nI﻿n order to prevent data breaches, data tampering privilege escalation and other possible threat, it is advised that you disable root access to the notebooks",
+  "severity": 3,
+  "remediationDescription": "1﻿. Go to the SageMaker dashboard\n2﻿. Select the instance and Stop it\n3﻿. Once the status of the notebook is Stopper, select the Edit option\n4﻿. In the Permissions and encryption settings choose `Disable - Don't give users root access to the notebook`\n5﻿. Click `Update notebook instance`\n6﻿. Start the notebook",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SageMakerNoteBook"
+      ],
+      "query": "sage-maker-notebook-with-root-access-enabled"
+    }
+  ]
+}
