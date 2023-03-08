@@ -1,6 +1,6 @@
 {
   "name": "Launch Templates With Disk Configuration Should Encrypt the Disks",
-  "description": "VM Templates that provide storage configurations should have encryption enabled for the disks",
+  "description": "Launch templates providing storage configurations should have encryption enabled for the disks",
   "slug": "vm-templates-with-disk-configuration-are-encrypted",
   "severity": 2,
   "rules": [
@@ -16,6 +16,6 @@
       "query": "aws-launch-tempalte-has-encrypted-ebs"
     }
   ],
-  "body": "W﻿hen VM Templates specify storage configurations, they should ensure that VMs created by using those templates have the disks encrypted",
-  "remediationDescription": "-﻿ Navigate to the Launch Template using the provided external link\n-﻿ Select the actions menu and select `Modify template (Create new version)`\n-﻿ Scroll down to `Storage (Volumes)`\n-﻿ For each `EBS Volume` set `Encrypted` to `Encrypted`\n"
+  "body": "VM templates that specify storage configuration should enforce encrypted disks.",
+  "remediationDescription": "1﻿. Open the Launch Template in the AWS Console using the dedicated button\n2. Select the actions menu and select `Modify template (Create new version)`\n3﻿. Scroll down to `Storage (Volumes)`\n4.﻿ For each `EBS Volume` set `Encrypted` to `Encrypted`\n5﻿. Use the new launch template version instead of the old one \n5﻿. Delete the old template version\n"
 }
