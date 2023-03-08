@@ -17,5 +17,5 @@
     }
   ],
   "body": "VM templates that specify storage configuration should enforce encrypted disks.",
-  "remediationDescription": "1﻿. Open the Launch Template in the AWS Console using the dedicated button\n2. Select the actions menu and select `Modify template (Create new version)`\n3﻿. Scroll down to `Storage (Volumes)`\n4.﻿ For each `EBS Volume` set `Encrypted` to `Encrypted`\n5﻿. Use the new launch template version instead of the old one \n5﻿. Delete the old template version\n"
+  "remediationDescription": "1﻿. Open the Launch Template in the AWS Console using the dedicated button\n2. From the actions menu select `Modify template (Create new version)`\n3﻿. Scroll down to `Storage (Volumes)`\n4.﻿ For each `EBS Volume` set `Encrypted` to `Encrypted`\n5﻿. Use the new launch template version instead of the old one \n6. Delete the old template version\n"
 }
