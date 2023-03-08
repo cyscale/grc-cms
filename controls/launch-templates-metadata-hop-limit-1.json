@@ -1,0 +1,21 @@
+{
+  "name": "EC2 Instances should not allow Metadata response hop limit higher than 1",
+  "description": "EC2 Instances that allow metadata hop count higher than 1",
+  "slug": "launch-templates-metadata-hop-limit",
+  "body": "EC2 Instances should not allow a metadata hop count higher than 1 when source/destination check is disabled, to block potential containers running on the VM access to the metadata and minimise permissions available to the containers",
+  "severity": 2,
+  "remediationDescription": "C﻿LI:\n`﻿``sh\naws ec2 modify-instance-metadata-options --instance-id $instanceID --http-put-response-hop-limit 1 --http-endpoint enabled\n`﻿``",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "aws-vm-src-dest-check-disabled-hc-gt-1"
+    }
+  ]
+}
