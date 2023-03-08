@@ -1,0 +1,21 @@
+{
+  "name": "Ensure SageMaker Notebooks are encrypted",
+  "description": "Sage Maker Notebooks that are not encrypted using a KMS Key",
+  "slug": "sage-maker-notebooks-encrypted",
+  "body": "I﻿n order to prevent data breaches, it is advised to encrypt SageMaker Notebook instances using a KMS Key",
+  "severity": 2,
+  "remediationDescription": "1﻿. Go to the SageMaker dashboard\n2﻿. Create a new instance\n3﻿. In the `Permissions and encryption` section, select Customer managed key from the Encryption key drop down and enter the desire KMS Key ARN\n4﻿. Complete the rest of the configurations\n5﻿. Copy the data from the existing notebook instance to the new one\n6﻿. Once the data is copied, you can remove the old notebook instance",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SageMakerNoteBook"
+      ],
+      "query": "unencrypted-sage-maker-notebooks"
+    }
+  ]
+}
