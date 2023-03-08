@@ -148,6 +148,10 @@ collections:
                 'VM',
                 'VPC',
                 'CosmosDBAccount',
+                'LaunchTemplate',
+                'LaunchTemplateVersion',
+                'KeyPair',
+                'SageMakerNoteBook',
               ]
           - label: 'Query'
             name: 'query'
