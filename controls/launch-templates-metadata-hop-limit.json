@@ -1,0 +1,21 @@
+{
+  "name": "Launch Templates should not allow Metadata response hop limit higher than 1",
+  "description": "Launch Templates that allow metadata hop count higher than 1",
+  "slug": "launch-templates-metadata-hop-limit",
+  "body": "L﻿aunch Templates should not allow a metadata hop count higher than 1, to block potential containers running on the VM access to the metadata and minimiza permissions available to the containers",
+  "severity": 2,
+  "remediationDescription": "-﻿ Navigate to the Launch Template using the provided external link\n-﻿ Select the actions menu and select `Modify template (Create new version)`\n-﻿ Scroll down to and expand `Advanced details`\n-﻿ Scroll down to `Metadata response hop limit` and set it to 1\n-﻿ Click `Create template version`",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "LaunchTemplateVersion"
+      ],
+      "query": "aws-launch-templates-hop-count-gt-1"
+    }
+  ]
+}
