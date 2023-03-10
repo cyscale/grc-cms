@@ -2,7 +2,7 @@
   "name": "Launch Templates Should Not Allow Metadata Response Hop Limit Higher Than 1",
   "description": "Launch Templates allowing metadata hop count higher than 1",
   "slug": "launch-templates-metadata-hop-limit",
-  "body": "Launch templates should not allow a metadata hop count greater than 1 when source/destination check is disabled. This ensures that containers or other VMs cannot access the metadata service of the instance.",
+  "body": "Launch templates should not allow a metadata hop count greater than 1 when source/destination check is disabled. \n\nThis ensures that containers or other VMs cannot access the metadata service of the instance.",
   "severity": 2,
   "remediationDescription": "1. Open the Launch Template in the AWS Console using the dedicated button\n2. From the actions menu select `Modify template (Create new version)`\n3. Scroll down to and expand `Advanced details`\n4. Scroll down to `Metadata response hop limit` and set it to `1`\n5. Click `Create template version`\n6. Use the new launch template version instead of the old one\n7. Delete the old template version",
   "rules": [
