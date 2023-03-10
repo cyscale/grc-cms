@@ -2,7 +2,7 @@
   "name": "SageMaker Notebooks Should Disallow IMDSv1",
   "description": "SageMaker Notebooks allowing IMDSv1",
   "slug": "sage-maker-notebooks-disallow-imds-v1",
-  "body": "With IMDSv2, every request is now protected by session authentication. A session begins and ends a series of requests that software running on an EC2 instance uses to access the locally-stored EC2 instance metadata and credentials. The software starts a session with a simple HTTP PUT request to IMDSv2.\n\nY﻿ou can read more about it at in this AWS Blog post: [Add defense in depth against open firewalls, reverse proxies, and SSRF vulnerabilities with enhancements to the EC2 Instance Metadata Service](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/#:~:text=The%20existing%20instance%20metadata%20service,try%20to%20access%20the%20IMDS.)",
+  "body": "With IMDSv2, every request is now protected by session authentication. A session begins and ends a series of requests that software running on an EC2 instance uses to access the locally-stored EC2 instance metadata and credentials. The software starts a session with a simple HTTP PUT request to IMDSv2.\n\nYou can read more about it at in this AWS Blog post: [Add defense in depth against open firewalls, reverse proxies, and SSRF vulnerabilities with enhancements to the EC2 Instance Metadata Service](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/#:~:text=The%20existing%20instance%20metadata%20service,try%20to%20access%20the%20IMDS.)",
   "severity": 2,
   "rules": [
     {
@@ -17,5 +17,5 @@
       "query": "aws-sage-maker-notebook-no-imdsv2"
     }
   ],
-  "remediationDescription": "P﻿lease refer to AWS documentation: [Amazon SageMaker Notebook Instances now support configuring and restricting IMDS versions](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-notebook-instances-now-support-configuring-and-restricting-imds-versions/)"
+  "remediationDescription": "Please refer to AWS documentation: [Amazon SageMaker Notebook Instances now support configuring and restricting IMDS versions](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-notebook-instances-now-support-configuring-and-restricting-imds-versions/)"
 }

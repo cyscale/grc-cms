@@ -17,5 +17,5 @@
     }
   ],
   "body": "This control looks for ActionTrails that export all log entries to a bucket.",
-  "remediationDescription": "Y﻿ou must make sure that there is an ActionTrail that exports all log entries to a bucket."
+  "remediationDescription": "You must make sure that there is an ActionTrail that exports all log entries to a bucket."
 }

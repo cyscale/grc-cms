@@ -17,6 +17,6 @@
       "returnPath": "connector"
     }
   ],
-  "body": "T﻿his control checks that Anti-DDoS access and security log service is enabled.",
-  "remediationDescription": "E﻿nable Anti-DDoS access and security log service."
+  "body": "This control checks that Anti-DDoS access and security log service is enabled.",
+  "remediationDescription": "Enable Anti-DDoS access and security log service."
 }

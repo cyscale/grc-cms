@@ -4,7 +4,7 @@
   "slug": "object-containers-without-versioning-enabled",
   "body": "Cyscale looks for object containers that do not have versioning enabled. Versioning is a means of keeping multiple variants of an object. With versioning you can recover more easily from both unintended user actions and application failures. ",
   "severity": 2,
-  "remediationDescription": "D﻿epending on the provider and service that you use, check out the following resources:\n\n#### A﻿WS\n* [Enabling versioning on buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html)\n\n#### Azure\n* [Enable and manage blob versioning](https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-enable?tabs=portal)\n\n#### Google Cloud\n* [Use Object Versioning](https://cloud.google.com/storage/docs/using-object-versioning#set)\n\n#### Alibaba\n* [Enable Versioning to Protect Valuable Data in Alibaba Cloud OSS](https://www.alibabacloud.com/blog/enable-versioning-to-protect-valuable-data-in-alibaba-cloud-oss_597400)\n",
+  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n* [Enabling versioning on buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html)\n\n#### Azure\n* [Enable and manage blob versioning](https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-enable?tabs=portal)\n\n#### Google Cloud\n* [Use Object Versioning](https://cloud.google.com/storage/docs/using-object-versioning#set)\n\n#### Alibaba\n* [Enable Versioning to Protect Valuable Data in Alibaba Cloud OSS](https://www.alibabacloud.com/blog/enable-versioning-to-protect-valuable-data-in-alibaba-cloud-oss_597400)\n",
   "rules": [
     {
       "cloudProviders": [

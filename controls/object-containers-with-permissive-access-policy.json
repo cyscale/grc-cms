@@ -4,7 +4,7 @@
   "slug": "object-containers-with-permissive-access-policy",
   "body": "Cyscale looks for object containers that contain policy permissions that are too broad or unrestricted and allow a wide range of users to access the object containers.",
   "severity": 3,
-  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### A﻿WS\n* [Policies and Permissions in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html)\n\n#### Google Cloud\n* [IAM roles for Cloud Storage](https://cloud.google.com/storage/docs/access-control/iam-permissions)",
+  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n* [Policies and Permissions in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html)\n\n#### Google Cloud\n* [IAM roles for Cloud Storage](https://cloud.google.com/storage/docs/access-control/iam-permissions)",
   "rules": [
     {
       "cloudProviders": [
