@@ -4,7 +4,7 @@
   "slug": "sage-maker-notebooks-root-access",
   "body": "Because users with root access have administrator privileges, users can access and edit all files on a notebook instance with root access enabled.\n\nIn order to prevent data breaches, data tampering, privilege escalation, and other possible threats, disabling root access to the notebook is recommended.",
   "severity": 3,
-  "remediationDescription": "1. Open the Notebook in the AWS Console using the dedicated button\n2. Press the `Stop` button\n3. Once the status of the notebook is `Stopped`, press the `Edit` button\n4. In the `Permissions and encryption settings` choose `Disable - Don't give users root access to the notebook`\n5. Click `Update notebook instance`\n6. Start the notebook",
+  "remediationDescription": "1. Open the Notebook in the AWS Console using the dedicated button\n\n2. Press the `Stop` button\n\n3. Once the status of the notebook is `Stopped`, press the `Edit` button\n\n4. In the `Permissions and encryption settings` choose `Disable - Don't give users root access to the notebook`\n\n5. Click `Update notebook instance`\n\n6. Start the notebook",
   "rules": [
     {
       "cloudProviders": [
