@@ -1,5 +1,5 @@
 {
-  "name": "Launch Templates With Disk Configuration Should Encrypt the Disks",
+  "name": "Launch Templates with Disk Configuration Should Encrypt the Disks",
   "description": "Launch templates providing storage configurations should have encryption enabled for the disks",
   "slug": "vm-templates-with-disk-configuration-are-encrypted",
   "severity": 2,
