@@ -27,6 +27,7 @@ jobs:
           inlineScript: |
             az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/queries --source ./queries --overwrite
             az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/controls --source ./controls --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/policies --source ./policies --overwrite
       - name: Delete old entries (unmodified within the last 2 minutes)
         env:
           AZ_ST_CONN_STRING: ${{ secrets.PROD_AZ_ST_CONN_STRING }}
@@ -36,6 +37,7 @@ jobs:
           inlineScript: |
             az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'queries/*' --if-unmodified-since "${{ env.modified_since }}"
             az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'controls/*' --if-unmodified-since "${{ env.modified_since }}"
+            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'policies/*' --if-unmodified-since "${{ env.modified_since }}"
       - name: Update
         shell: bash
         env:
