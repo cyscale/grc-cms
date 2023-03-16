@@ -1,0 +1,1 @@
+{"name":"Rotation for customer created CMKs is enabled","slug":"aws-logging-8-rotation-for-customer-created-cmks-is-enabled","query":"kmsKeys(where:{automaticRotationEnabled:false, managementType:\"CustomerManaged\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

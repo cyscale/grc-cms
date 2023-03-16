@@ -1,0 +1,1 @@
+{"name":"Ensure Cluster Check is triggered at least once per week for Kubernetes Clusters","slug":"cis-alibaba-1-0-0-kubernetes-4","body":"","description":"","severity":2,"remediationDescription":"","rules":null}

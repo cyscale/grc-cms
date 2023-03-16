@@ -1,0 +1,1 @@
+{"name":"Log metric filter and alerts exist for VPC network route changes","slug":"gcp-logging-8-log-metric-filter-and-alerts-exist-for-vpc-network-route-changes","query":"GCPLogging8{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

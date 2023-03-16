@@ -1,0 +1,1 @@
+{"name":"'Secure transfer required' is set to 'Enabled'","slug":"azure-1-3-0-storage-1-secure-transfer-required-is-set-to-enabled","query":"{storageAccounts(where:{supportsHttpsTrafficOnly_NOT:true}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

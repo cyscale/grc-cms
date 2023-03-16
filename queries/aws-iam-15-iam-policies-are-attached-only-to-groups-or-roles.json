@@ -1,0 +1,1 @@
+{"name":"IAM policies are attached only to groups or roles","slug":"aws-iam-15-iam-policies-are-attached-only-to-groups-or-roles","query":"iamUsers(where: { cloudProvider: \"aws\", hasIAMPolicy_NOT: null }) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

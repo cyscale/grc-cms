@@ -1,0 +1,1 @@
+{"name":"Sinks are configured for all Log entries","slug":"gcp-logging-2-sinks-are-configured-for-all-log-entries","query":"GCPLogging2{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

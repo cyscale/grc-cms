@@ -1,0 +1,1 @@
+{"name":"Ensure that Logstore data retention period is set to 365 days or greater","slug":"cis-alibaba-1-0-0-logging-23","body":"","description":"","severity":2,"remediationDescription":"","rules":null}

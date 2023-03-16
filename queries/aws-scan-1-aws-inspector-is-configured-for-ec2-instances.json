@@ -1,0 +1,1 @@
+{"name":"AWS Inspector is configured for EC2 Instances","slug":"aws-scan-1-aws-inspector-is-configured-for-ec2-instances","query":"{vms(where:{inspectorEnabled:false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

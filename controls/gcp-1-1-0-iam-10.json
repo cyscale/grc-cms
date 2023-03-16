@@ -1,0 +1,1 @@
+{"name":"Ensure KMS encryption keys are rotated within a period of 90 days","slug":"gcp-1-1-0-iam-10","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["KMSKey"],"query":"gcp-1-1-0-iam-10-kms-encryption-keys-are-rotated-within-a-period-of-90-days","returnPath":""}]}

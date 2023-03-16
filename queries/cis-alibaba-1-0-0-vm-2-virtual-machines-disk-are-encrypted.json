@@ -1,0 +1,1 @@
+{"name":"'Virtual Machine's disk' are encrypted","slug":"cis-alibaba-1-0-0-vm-2-virtual-machines-disk-are-encrypted","query":"vms(where:{diskAttachments_SOME:{disk: {encrypted:false}}}) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

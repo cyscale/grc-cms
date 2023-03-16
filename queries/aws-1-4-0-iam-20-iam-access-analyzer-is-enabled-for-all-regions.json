@@ -1,0 +1,1 @@
+{"name":"IAM Access analyzer is enabled for all regions","slug":"aws-1-4-0-iam-20-iam-access-analyzer-is-enabled-for-all-regions","query":"AWS140IAM20{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

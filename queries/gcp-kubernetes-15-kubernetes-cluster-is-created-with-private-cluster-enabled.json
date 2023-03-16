@@ -1,0 +1,1 @@
+{"name":"Kubernetes Cluster is created with Private cluster enabled","slug":"gcp-kubernetes-15-kubernetes-cluster-is-created-with-private-cluster-enabled","query":"clusters(where:{hasClusterPrivateClusterConfig:null}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

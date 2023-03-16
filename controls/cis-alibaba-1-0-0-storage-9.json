@@ -1,0 +1,1 @@
+{"name":"Ensure server-side encryption is set to 'Encrypt with BYOK'","slug":"cis-alibaba-1-0-0-storage-9","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":[],"query":"cis-alibaba-1-0-0-storage-9-server-side-encryption-is-set-to-encrypt-with-byok","returnPath":""}]}

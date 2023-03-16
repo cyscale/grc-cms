@@ -1,0 +1,1 @@
+{"name":"Kubernetes Clusters are configured with Labels","slug":"gcp-kubernetes-5-kubernetes-clusters-are-configured-with-labels","query":"clusters(where:{tags:null}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

@@ -1,0 +1,1 @@
+{"name":"Ensure that logging is enabled for OSS buckets","slug":"cis-alibaba-1-0-0-storage-3","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["Bucket"],"query":"cis-alibaba-1-0-0-storage-3-logging-is-enabled-for-oss-buckets","returnPath":""}]}

@@ -1,0 +1,1 @@
+{"name":"Ensure that Cloud SQL database instances do not have public IPs","slug":"gcp-1-1-0-sql-6","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["CloudSQLInstance"],"query":"gcp-1-1-0-sql-6-cloud-sql-database-instances-do-not-have-public-ips","returnPath":""}]}

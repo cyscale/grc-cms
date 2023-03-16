@@ -1,0 +1,1 @@
+{"name":"Users not logged on for 90 days or longer are disabled for console logon","slug":"cis-alibaba-1-0-0-iam-5-users-not-logged-on-for-90-days-or-longer-are-disabled-for-console-logon","query":"AlibabaIAM5 {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

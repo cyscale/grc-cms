@@ -1,0 +1,1 @@
+{"name":"'OS and Data' disks are encrypted with CMK","slug":"azure-1-3-0-vm-2-os-and-data-disks-are-encrypted-with-cmk","query":"{vms(where:{diskAttachments_SOME:{disk:{,encryptionKey:null}}}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

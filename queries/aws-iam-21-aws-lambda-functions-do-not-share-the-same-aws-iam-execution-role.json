@@ -1,0 +1,1 @@
+{"name":"AWS Lambda functions do not share the same AWS IAM execution role","slug":"aws-iam-21-aws-lambda-functions-do-not-share-the-same-aws-iam-execution-role","query":"{AWSIAM21{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

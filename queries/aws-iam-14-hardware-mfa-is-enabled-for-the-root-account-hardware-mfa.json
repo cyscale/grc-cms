@@ -1,0 +1,1 @@
+{"name":"Hardware MFA is enabled for the \"root\" account (Hardware MFA)","slug":"aws-iam-14-hardware-mfa-is-enabled-for-the-root-account-hardware-mfa","query":"AWSIAM14{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

@@ -1,0 +1,1 @@
+{"name":"MFA is enabled for the \"root\" account","slug":"aws-iam-13-mfa-is-enabled-for-the-root-account","query":"AWSIAM13{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

@@ -1,0 +1,1 @@
+{"name":"AMIs Are Private","slug":"aws-ec2-1-amis-are-private","query":"{images(where:{isPublic:true}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

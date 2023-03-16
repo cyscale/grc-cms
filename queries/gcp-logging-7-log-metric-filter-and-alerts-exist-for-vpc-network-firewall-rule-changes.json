@@ -1,0 +1,1 @@
+{"name":"Log metric filter and alerts exist for VPC Network Firewall rule changes","slug":"gcp-logging-7-log-metric-filter-and-alerts-exist-for-vpc-network-firewall-rule-changes","query":"GCPLogging7{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

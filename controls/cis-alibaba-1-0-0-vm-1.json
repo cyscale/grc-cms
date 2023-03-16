@@ -1,0 +1,1 @@
+{"name":"Ensure that 'Unattached disks' are encrypted","slug":"cis-alibaba-1-0-0-vm-1","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["Disk"],"query":"cis-alibaba-1-0-0-vm-1-unattached-disks-are-encrypted","returnPath":""}]}

@@ -1,0 +1,1 @@
+{"name":"Kinesis Data Streams use encryption at rest","slug":"aws-integration-2-kinesis-data-streams-use-encryption-at-rest","query":"{kinesisDataStreams(where:{encryptionType:\"NONE\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

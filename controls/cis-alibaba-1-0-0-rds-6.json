@@ -1,0 +1,1 @@
+{"name":"Ensure RDS instance TDE protector is encrypted with BYOK (Use your own key)","slug":"cis-alibaba-1-0-0-rds-6","body":"","description":"","severity":2,"remediationDescription":"","rules":null}

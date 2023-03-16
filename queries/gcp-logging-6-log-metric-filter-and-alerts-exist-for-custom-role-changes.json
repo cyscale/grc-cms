@@ -1,0 +1,1 @@
+{"name":"Log metric filter and alerts exist for Custom Role changes","slug":"gcp-logging-6-log-metric-filter-and-alerts-exist-for-custom-role-changes","query":"GCPLogging6{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
