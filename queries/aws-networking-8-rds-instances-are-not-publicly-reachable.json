@@ -1,0 +1,1 @@
+{"name":"RDS instances are not publicly reachable","slug":"aws-networking-8-rds-instances-are-not-publicly-reachable","query":"{dbInstances(where:{publicAccessBlocked:false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

@@ -1,0 +1,1 @@
+{"name":"Network Load Balancer uses TLS Listener","slug":"aws-loadbalancing-3-network-load-balancer-uses-tls-listener","query":"{loadBalancers(where:{type:\"network\",listensOnHTTPListener_NONE:{hasCertificate:true}}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

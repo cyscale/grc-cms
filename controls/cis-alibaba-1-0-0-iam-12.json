@@ -1,0 +1,1 @@
+{"name":"Ensure RAM password policy prevents password reuse","slug":"cis-alibaba-1-0-0-iam-12","body":"","description":"","severity":1,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPasswordPolicy"],"query":"cis-alibaba-1-0-0-iam-12-ram-password-policy-prevents-password-reuse","returnPath":""}]}

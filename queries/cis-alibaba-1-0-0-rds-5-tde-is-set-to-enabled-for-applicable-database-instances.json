@@ -1,0 +1,1 @@
+{"name":"'TDE' is set to 'Enabled' for applicable database instances","slug":"cis-alibaba-1-0-0-rds-5-tde-is-set-to-enabled-for-applicable-database-instances","query":"dbInstances(where: { tdeStatus_NOT: \"Enabled\" }) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

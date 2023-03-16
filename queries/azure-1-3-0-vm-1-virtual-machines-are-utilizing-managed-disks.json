@@ -1,0 +1,1 @@
+{"name":"Virtual Machines are utilizing Managed Disks","slug":"azure-1-3-0-vm-1-virtual-machines-are-utilizing-managed-disks","query":"{vms(where:{diskAttachments_SOME:{vhdURI_NOT:\"\"}}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

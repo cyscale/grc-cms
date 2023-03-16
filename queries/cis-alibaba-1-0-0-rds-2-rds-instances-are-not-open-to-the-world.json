@@ -1,0 +1,1 @@
+{"name":"RDS instances are not open to the world","slug":"cis-alibaba-1-0-0-rds-2-rds-instances-are-not-open-to-the-world","query":"dbInstances(where: { netInfo_SOME: { ipAddress: \"0.0.0.0\" } }) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

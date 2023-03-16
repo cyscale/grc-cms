@@ -1,0 +1,1 @@
+{"name":"There is only one active access key available for any single IAM user","slug":"aws-1-3-0-iam-13-there-is-only-one-active-access-key-available-for-any-single-iam-user","query":"AWS130IAM13 {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

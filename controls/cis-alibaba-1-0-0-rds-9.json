@@ -1,0 +1,1 @@
+{"name":"Ensure server parameter 'log_duration is set to 'ON' for PostgreSQL Database Server","slug":"cis-alibaba-1-0-0-rds-9","body":"","description":"","severity":2,"remediationDescription":"","rules":null}

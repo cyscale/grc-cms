@@ -1,0 +1,1 @@
+{"name":"CloudTrail log file validation is enabled","slug":"aws-logging-2-cloudtrail-log-file-validation-is-enabled","query":"trails(where:{logFileValidationEnabled:false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

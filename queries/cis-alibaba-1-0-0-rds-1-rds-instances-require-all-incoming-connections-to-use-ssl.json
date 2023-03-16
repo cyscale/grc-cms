@@ -1,0 +1,1 @@
+{"name":"RDS instances require all incoming connections to use SSL","slug":"cis-alibaba-1-0-0-rds-1-rds-instances-require-all-incoming-connections-to-use-ssl","query":"AlibabaRDS2{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

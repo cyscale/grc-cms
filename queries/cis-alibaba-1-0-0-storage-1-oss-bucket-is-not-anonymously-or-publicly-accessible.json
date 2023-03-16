@@ -1,0 +1,1 @@
+{"name":"OSS bucket is not anonymously or publicly accessible","slug":"cis-alibaba-1-0-0-storage-1-oss-bucket-is-not-anonymously-or-publicly-accessible","query":"buckets(where:{ acl_NOT: \"private\" }){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

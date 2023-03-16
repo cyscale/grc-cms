@@ -1,0 +1,1 @@
+{"name":"Ensure Compute instances are launched with Shielded VM enabled","slug":"gcp-1-1-0-vm-8","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["VM"],"query":"gcp-1-1-0-vm-8-compute-instances-are-launched-with-shielded-vm-enabled","returnPath":""}]}

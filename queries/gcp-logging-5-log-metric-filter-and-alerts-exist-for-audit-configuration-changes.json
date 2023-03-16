@@ -1,0 +1,1 @@
+{"name":"Log metric filter and alerts exist for Audit Configuration Changes","slug":"gcp-logging-5-log-metric-filter-and-alerts-exist-for-audit-configuration-changes","query":"GCPLogging5{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

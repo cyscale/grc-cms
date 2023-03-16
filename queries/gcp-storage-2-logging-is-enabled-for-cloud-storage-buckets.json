@@ -1,0 +1,1 @@
+{"name":"Logging is enabled for Cloud Storage buckets","slug":"gcp-storage-2-logging-is-enabled-for-cloud-storage-buckets","query":"buckets(where:{loggingLogBucket_NOT:\"\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

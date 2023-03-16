@@ -1,0 +1,1 @@
+{"name":"Ensure that 'Virtual Machine's disk' are encrypted","slug":"cis-alibaba-1-0-0-vm-2","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["VM"],"query":"cis-alibaba-1-0-0-vm-2-virtual-machines-disk-are-encrypted","returnPath":""}]}

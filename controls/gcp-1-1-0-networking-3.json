@@ -1,0 +1,1 @@
+{"name":"Ensure that DNSSEC is enabled for Cloud DNS","slug":"gcp-1-1-0-networking-3","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["ManagedZone"],"query":"gcp-1-1-0-networking-3-dnssec-is-enabled-for-cloud-dns","returnPath":""}]}

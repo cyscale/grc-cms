@@ -1,0 +1,1 @@
+{"name":"MFA Delete is enabled on S3 buckets","slug":"aws-1-4-0-storage-1-3-mfa-delete-is-enabled-on-s3-buckets","query":"{buckets(where:{bucketVersioningMFADelete:false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

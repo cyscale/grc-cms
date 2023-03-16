@@ -1,0 +1,1 @@
+{"name":"Azure Active Directory Admin is configured","slug":"azure-1-3-0-database-4-azure-active-directory-admin-is-configured","query":"{sqlServers(where:{hasSQLServerAzureADAdministrator:null}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

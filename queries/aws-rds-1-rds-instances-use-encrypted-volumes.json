@@ -1,0 +1,1 @@
+{"name":"RDS instances use encrypted volumes","slug":"aws-rds-1-rds-instances-use-encrypted-volumes","query":"{dbInstances(where:{encrypted:false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

@@ -1,0 +1,1 @@
+{"name":"Ensure RAM policies are attached only to groups or roles","slug":"cis-alibaba-1-0-0-iam-16","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMUser"],"query":"cis-alibaba-1-0-0-iam-16-ram-policies-are-attached-only-to-groups-or-roles","returnPath":""}]}

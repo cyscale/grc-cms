@@ -1,0 +1,1 @@
+{"name":"All users have MFA configured","slug":"okta-mfa-all-users-have-mfa-configured","query":"users(where:{ AND: [{ OR: [{ factors: null }, { factors: [] }] }, {applications_NOT: null}] }) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}

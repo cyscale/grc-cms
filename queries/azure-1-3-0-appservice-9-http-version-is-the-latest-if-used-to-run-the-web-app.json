@@ -1,0 +1,1 @@
+{"name":"'HTTP Version' is the latest, if used to run the web app","slug":"azure-1-3-0-appservice-9-http-version-is-the-latest-if-used-to-run-the-web-app","query":"{sites(where:{hasSiteConfig_SOME:{http20Enabled_NOT:true}}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

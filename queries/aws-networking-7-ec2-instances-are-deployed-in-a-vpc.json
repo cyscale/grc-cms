@@ -1,0 +1,1 @@
+{"name":"EC2 Instances are deployed in a VPC","slug":"aws-networking-7-ec2-instances-are-deployed-in-a-vpc","query":"{vms(where:{OR:[{vpcID:null},{vpcID:\"\"}]}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}

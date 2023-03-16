@@ -1,0 +1,1 @@
+{"name":"'Data encryption' is set to 'On' on a SQL Database","slug":"azure-1-3-0-database-1-2-data-encryption-is-set-to-on-on-a-sql-database","query":"{sqlDatabases(where: {encrypted: false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
