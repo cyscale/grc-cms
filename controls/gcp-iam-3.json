@@ -13,7 +13,6 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "IAMUser",
         "IAMServiceAccount"
       ],
       "query": "gcp-iam-3-serviceaccount-has-no-admin-privileges",
