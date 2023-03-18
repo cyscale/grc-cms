@@ -1,0 +1,21 @@
+{
+  "name": "Ensure SageMaker Notebooks Are Encrypted With CMK",
+  "description": "SageMaker Notebooks Without CMK Encryption",
+  "slug": "sagemaker-notebooks-without-cmk",
+  "body": "Ensure storage volumes attached to your Amazon SageMaker notebook instances are encrypted with KMS Customer Master Keys (CMKs) instead of AWS managed-keys in order to have a more granular control over the data-at-rest encryption/decryption process and meet compliance requirements.",
+  "severity": 1,
+  "remediationDescription": "A﻿WS does not provide a way to change the encryption key for an existing notebook. In order to create a new instance encrypted with CMK, follow these steps:\n\n1. Go to the SageMaker dashboard\n2. Create a new instance\n3. In the `Permissions and encryption` section, select Customer managed key from the Encryption key drop down and enter the desired KMS Key ARN\n4. Complete the rest of the configuration\n5. Copy the data from the existing notebook instance to the new one\n6. Once the data is copied, you can remove the old notebook instance\n",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SageMakerNoteBook"
+      ],
+      "query": "sagemaker-notebooks-without-cmk"
+    }
+  ]
+}
