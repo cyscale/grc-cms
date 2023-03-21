@@ -1,28 +1,13 @@
 name: Deploy to prod
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 permissions:
   id-token: write
   contents: write
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    name: Semantic Release
-    environment: development
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: 'Semantic Release'
-        uses: go-semantic-release/action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-initial-development-versions: true
-          force-bump-patch-version: true
   deploy:
     runs-on: ubuntu-latest
     name: Deploy GRC to prod
@@ -30,59 +15,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v32
-        with:
-          files: |
-            queries/**
-            controls/**
-            policies/**
-      - name: Login
-        uses: azure/login@v1
-        with:
-          subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
-          tenant-id: ${{ vars.AZ_TENANT_ID }}
-          client-id: ${{ vars.AZ_CLIENT_ID }}
-      - name: Deploy
-        uses: azure/cli@v1
+      - name: Prep
+        run: |
+          echo modified_since=$(date -u "+%Y-%m-%dT%H:%MZ" --date='-2 min') >> $GITHUB_ENV
+      - name: Copy
+        env:
+          AZ_ST_CONN_STRING: ${{ secrets.PROD_AZ_ST_CONN_STRING }}
+        uses: azure/CLI@v1
         with:
           azcliversion: 2.37.0
           inlineScript: |
-            for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-              case $(dirname $file) in
-                controls)
-                  type=control;;
-                queries)
-                  type=query;;
-                policies)
-                  type=policy;;
-              esac
-
-              slug=$(cat $file | jq -r '.slug')
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --auth-mode login
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --auth-mode login
-            done
-
-            for file in ${{ steps.changed-files.outputs.deleted_files }}; do
-              case $(dirname $file) in
-                controls)
-                  type=control;;
-                queries)
-                  type=query;;
-                policies)
-                  type=policy;;
-              esac
-
-              az storage blob download -f entity.json -c grc -n $file --auth-mode login
-
-              slug=$(cat entity.json | jq -r '.slug')
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
-
-              az storage blob delete -c grc --name $file --auth-mode login
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --auth-mode login
-            done
-
-            rm -f entity.json
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/queries --source ./queries --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/controls --source ./controls --overwrite
+            az storage blob upload-batch --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --destination grc/policies --source ./policies --overwrite
+      - name: Delete old entries (unmodified within the last 2 minutes)
+        env:
+          AZ_ST_CONN_STRING: ${{ secrets.PROD_AZ_ST_CONN_STRING }}
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.37.0
+          inlineScript: |
+            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'queries/*' --if-unmodified-since "${{ env.modified_since }}"
+            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'controls/*' --if-unmodified-since "${{ env.modified_since }}"
+            az storage blob delete-batch -s grc --connection-string $(echo "$AZ_ST_CONN_STRING" | base64 -d) --pattern 'policies/*' --if-unmodified-since "${{ env.modified_since }}"
+      - name: Update
+        shell: bash
+        env:
+          BAPI_GRC_UPDATE_ENDPOINT: ${{ secrets.PROD_BAPI_GRC_UPDATE_ENDPOINT }}
+          INTERNAL_API_KEY: ${{ secrets.PROD_INTERNAL_API_KEY }}
+        run: |
+          curl --silent --show-error --fail -X POST $BAPI_GRC_UPDATE_ENDPOINT -H "Content-Type:application/json" -H "x-api-key:$(echo "$INTERNAL_API_KEY" | base64 -d)" -d '{"accounts":"all"}'
