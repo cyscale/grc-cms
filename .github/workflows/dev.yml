@@ -49,8 +49,8 @@ jobs:
               slug=$(cat $file | jq -r '.slug')
               message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name stcsdevplatform --auth-mode login
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --account-name stcsdevplatform --auth-mode login
+              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
             done
 
             for file in ${{ steps.changed-files.outputs.deleted_files }}; do
@@ -63,13 +63,13 @@ jobs:
                   type=policy;;
               esac
 
-              az storage blob download -f entity.json -c grc -n $file --account-name stcsdevplatform --auth-mode login
+              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
 
               slug=$(cat entity.json | jq -r '.slug')
               message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
 
-              az storage blob delete -c grc --name $file --account-name stcsdevplatform --auth-mode login
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --account-name stcsdevplatform --auth-mode login
+              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
             done
 
             rm -f entity.json
