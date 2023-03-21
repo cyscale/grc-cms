@@ -63,7 +63,7 @@ jobs:
               message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
 
               az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
             done
 
             for file in ${{ steps.changed-files.outputs.deleted_files }}; do
@@ -82,7 +82,7 @@ jobs:
               message=$(jq --null-input --arg blob $file --arg slug $slug --arg type $type --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": $type, "operation": $operation}')
 
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n')" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
             done
 
             rm -f entity.json
