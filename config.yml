@@ -1,6 +1,6 @@
 backend:
   name: github
-  branch: main
+  branch: dev
   repo: cyscale/grc-cms
   site_domain: cyscale-grc-cms.netlify.app
 
