@@ -1,0 +1,5 @@
+{
+  "query": "{\n  disks(where: {name_STARTS_WITH: \"pvc\"}) {\n    identifier\n    idFromProvider\n    internalName\n  }\n}\n",
+  "slug": "sap-test-k8s-volumes",
+  "name": "Get disks used for K8s volumes"
+}
