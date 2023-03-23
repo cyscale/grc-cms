@@ -10,7 +10,11 @@
       "name": "First SAP procedure",
       "slug": "sap-procedure-1",
       "body": "T﻿his is the first procedure indeed",
-      "controls": []
+      "controls": [
+        {
+          "control": "k8s-volumes"
+        }
+      ]
     }
   ]
 }
