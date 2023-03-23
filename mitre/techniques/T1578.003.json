@@ -1,7 +1,7 @@
 {
 	"mid": "T1578.003",
 	"name": "Modify Cloud Compute Infrastructure",
-	"subTechniqueName": "Delete Cloud Instance",
+	"subTechniqueName": "Modify Cloud Compute Infrastructure: Delete Cloud Instance",
 	"tactics": [
 		"TA0005"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1578/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1578/003",
-	"created": "2023-03-23T09:06:59.556883+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }
