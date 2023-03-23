@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "SAP Test Standard",
+  "isStandard": true,
+  "slug": "sap-test",
+  "version": "0.0.1",
+  "body": "H﻿ello\n\n<Procedure slug=\"breach-discovery\"/>\n\nBye",
+  "procedures": [
+    {
+      "name": "First SAP procedure",
+      "slug": "sap-procedure-1",
+      "body": "T﻿his is the first procedure indeed",
+      "controls": []
+    }
+  ]
+}
