@@ -1,0 +1,13 @@
+{
+	"mid": "T1204",
+	"name": "User Execution",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0002"
+	],
+	"version": "v1.5",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1204",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1204",
+	"created": "2023-03-23T09:06:59.556883+02:00"
+}

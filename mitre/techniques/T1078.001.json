@@ -1,0 +1,16 @@
+{
+	"mid": "T1078.001",
+	"name": "Valid Accounts",
+	"subTechniqueName": "Default Accounts",
+	"tactics": [
+		"TA0005",
+		"TA0003",
+		"TA0004",
+		"TA0001"
+	],
+	"version": "v1.2",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1078/001",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1078/001",
+	"created": "2023-03-23T09:06:59.5573831+02:00"
+}

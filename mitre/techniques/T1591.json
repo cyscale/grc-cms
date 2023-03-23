@@ -1,0 +1,13 @@
+{
+	"mid": "T1591",
+	"name": "Gather Victim Org Information",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0043"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1591",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1591",
+	"created": "2023-03-23T09:06:59.5573831+02:00"
+}
