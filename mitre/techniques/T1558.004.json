@@ -1,7 +1,7 @@
 {
 	"mid": "T1558.004",
 	"name": "Steal or Forge Kerberos Tickets",
-	"subTechniqueName": "AS-REP Roasting",
+	"subTechniqueName": "Steal or Forge Kerberos Tickets: AS-REP Roasting",
 	"tactics": [
 		"TA0006"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1558/004",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1558/004",
-	"created": "2023-03-23T09:06:59.556883+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }

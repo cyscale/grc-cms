@@ -1,7 +1,7 @@
 {
 	"mid": "T1574.001",
 	"name": "Hijack Execution Flow",
-	"subTechniqueName": "DLL Search Order Hijacking",
+	"subTechniqueName": "Hijack Execution Flow: DLL Search Order Hijacking",
 	"tactics": [
 		"TA0003",
 		"TA0004",
@@ -11,5 +11,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1574/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1574/001",
-	"created": "2023-03-23T09:06:59.556883+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }
