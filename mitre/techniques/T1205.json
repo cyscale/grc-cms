@@ -1,0 +1,15 @@
+{
+	"mid": "T1205",
+	"name": "Traffic Signaling",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0005",
+		"TA0003",
+		"TA0011"
+	],
+	"version": "v2.4",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1205",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1205",
+	"created": "2023-03-23T09:06:59.556883+02:00"
+}

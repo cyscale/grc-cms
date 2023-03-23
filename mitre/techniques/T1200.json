@@ -1,0 +1,13 @@
+{
+	"mid": "T1200",
+	"name": "Hardware Additions",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0001"
+	],
+	"version": "v1.6",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1200",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1200",
+	"created": "2023-03-23T09:06:59.5573831+02:00"
+}

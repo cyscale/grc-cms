@@ -1,0 +1,13 @@
+{
+	"mid": "T1584.006",
+	"name": "Compromise Infrastructure",
+	"subTechniqueName": "Web Services",
+	"tactics": [
+		"TA0042"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1584/006",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1584/006",
+	"created": "2023-03-23T09:06:59.5578828+02:00"
+}

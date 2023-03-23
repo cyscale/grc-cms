@@ -1,0 +1,14 @@
+{
+	"mid": "T1134.001",
+	"name": "Access Token Manipulation",
+	"subTechniqueName": "Token Impersonation/Theft",
+	"tactics": [
+		"TA0005",
+		"TA0004"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1134/001",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1134/001",
+	"created": "2023-03-23T09:06:59.5578828+02:00"
+}

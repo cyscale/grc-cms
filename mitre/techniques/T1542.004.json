@@ -1,0 +1,14 @@
+{
+	"mid": "T1542.004",
+	"name": "Pre-OS Boot",
+	"subTechniqueName": "ROMMONkit",
+	"tactics": [
+		"TA0005",
+		"TA0003"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1542/004",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1542/004",
+	"created": "2023-03-23T09:06:59.5578828+02:00"
+}

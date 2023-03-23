@@ -1,0 +1,13 @@
+{
+	"mid": "T1203",
+	"name": "Exploitation for Client Execution",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0002"
+	],
+	"version": "v1.4",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1203",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1203",
+	"created": "2023-03-23T09:06:59.5573831+02:00"
+}

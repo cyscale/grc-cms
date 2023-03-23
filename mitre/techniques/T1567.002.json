@@ -1,0 +1,13 @@
+{
+	"mid": "T1567.002",
+	"name": "Exfiltration Over Web Service",
+	"subTechniqueName": "Exfiltration to Cloud Storage",
+	"tactics": [
+		"TA0010"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1567/002",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1567/002",
+	"created": "2023-03-23T09:06:59.5578828+02:00"
+}

@@ -1,0 +1,13 @@
+{
+	"mid": "T1611",
+	"name": "Escape to Host",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0004"
+	],
+	"version": "v1.3",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1611",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1611",
+	"created": "2023-03-23T09:06:59.556883+02:00"
+}

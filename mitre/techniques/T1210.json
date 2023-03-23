@@ -1,0 +1,13 @@
+{
+	"mid": "T1210",
+	"name": "Exploitation of Remote Services",
+	"subTechniqueName": "",
+	"tactics": [
+		"TA0008"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1210",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1210",
+	"created": "2023-03-23T09:06:59.556883+02:00"
+}
