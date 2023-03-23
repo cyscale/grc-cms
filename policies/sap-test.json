@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "sap-test",
   "version": "0.0.1",
-  "body": "H﻿ello\n\n<Procedure slug=\"breach-discovery\"/>\n\nBye",
+  "body": "H﻿ello\n\n<Procedure slug=\"sap-procedure-1\"/>\n\nBye",
   "procedures": [
     {
       "name": "First SAP procedure",
