@@ -13,6 +13,9 @@
       "controls": [
         {
           "control": "k8s-volumes"
+        },
+        {
+          "control": "azure-1-3-0-sc-6"
         }
       ]
     }
