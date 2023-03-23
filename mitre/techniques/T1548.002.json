@@ -1,0 +1,14 @@
+{
+	"mid": "T1548.002",
+	"name": "Abuse Elevation Control Mechanism",
+	"subTechniqueName": "Bypass User Account Control",
+	"tactics": [
+		"TA0004",
+		"TA0005"
+	],
+	"version": "v2.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1548/002",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1548/002",
+	"created": "2023-03-23T09:06:59.5573831+02:00"
+}

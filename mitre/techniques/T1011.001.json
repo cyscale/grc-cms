@@ -1,0 +1,13 @@
+{
+	"mid": "T1011.001",
+	"name": "Exfiltration Over Other Network Medium",
+	"subTechniqueName": "Exfiltration Over Bluetooth",
+	"tactics": [
+		"TA0010"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1011/001",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1011/001",
+	"created": "2023-03-23T09:06:59.556883+02:00"
+}

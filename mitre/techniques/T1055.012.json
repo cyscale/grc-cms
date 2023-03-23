@@ -1,0 +1,14 @@
+{
+	"mid": "T1055.012",
+	"name": "Process Injection",
+	"subTechniqueName": "Process Hollowing",
+	"tactics": [
+		"TA0005",
+		"TA0004"
+	],
+	"version": "v1.2",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1055/012",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1055/012",
+	"created": "2023-03-23T09:06:59.556883+02:00"
+}

@@ -1,0 +1,14 @@
+{
+	"mid": "T1055.011",
+	"name": "Process Injection",
+	"subTechniqueName": "Extra Window Memory Injection",
+	"tactics": [
+		"TA0005",
+		"TA0004"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1055/011",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1055/011",
+	"created": "2023-03-23T09:06:59.5573831+02:00"
+}

@@ -1,0 +1,9 @@
+{
+	"mid": "TA0001",
+	"name": "Initial Access",
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/tactics/TA0001",
+	"permalink": "https://attack.mitre.org/versions/v12/tactics/TA0001",
+	"created": "2023-03-23T09:06:59.5528838+02:00"
+}

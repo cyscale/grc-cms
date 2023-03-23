@@ -1,0 +1,15 @@
+{
+  "mid": "T1150",
+  "controls": [
+    "aws-iam-1",
+    "azure-storage-2"
+  ],
+  "propagators": [
+    "IAMRole",
+    "Disk"
+  ],
+  "assets": [
+    "IAMUser",
+    "Disk"
+  ]
+}
