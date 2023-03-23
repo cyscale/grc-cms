@@ -1,0 +1,15 @@
+{
+  "mid": "T1001",
+  "controls": [
+    "aws-1-3-0-iam-1",
+    "aws-1-3-0-iam-16"
+  ],
+  "propagators": [
+    "AutoProvisioningSetting",
+    "CloudAccount"
+  ],
+  "assets": [
+    "BlobContainer",
+    "CloudSQLInstance"
+  ]
+}
