@@ -1,7 +1,7 @@
 {
 	"mid": "T1595.003",
 	"name": "Active Scanning",
-	"subTechniqueName": "Wordlist Scanning",
+	"subTechniqueName": "Active Scanning: Wordlist Scanning",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1595/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1595/003",
-	"created": "2023-03-23T09:06:59.5573831+02:00"
+	"created": "2023-03-23T17:00:17.6340642+02:00"
 }
