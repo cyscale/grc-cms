@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "name": "Auras Policy Test 2",
+  "slug": "auras-policy",
+  "version": "0.0.1",
+  "body": "H﻿ello\n\nB﻿ye",
+  "procedures": [
+    {
+      "name": "Breach Discovery",
+      "slug": "breach-discovery",
+      "body": "W﻿ow",
+      "controls": [
+        {
+          "control": "publicly-readable-object-containers"
+        }
+      ]
+    }
+  ],
+  "isStandard": true
+}
