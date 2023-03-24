@@ -1,0 +1,12 @@
+{
+  "mid": "T1001.003: Data Obfuscation: Protocol Impersonation",
+  "controls": [
+    "aws-1-3-0-iam-1"
+  ],
+  "propagators": [
+    "AutoProvisioningSetting"
+  ],
+  "assets": [
+    "BigQueryTable"
+  ]
+}
