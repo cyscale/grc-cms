@@ -1,7 +1,7 @@
 {
 	"mid": "T1070.004",
-	"name": "Indicator Removal",
-	"subTechniqueName": "Indicator Removal: File Deletion",
+	"name": "Indicator Removal: File Deletion",
+	"parentTechniqueName": "Indicator Removal",
 	"tactics": [
 		"TA0005"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1070/004",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1070/004",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-24T08:44:26.8593465+02:00"
 }

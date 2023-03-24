@@ -1,7 +1,7 @@
 {
 	"mid": "T1574.005",
-	"name": "Hijack Execution Flow",
-	"subTechniqueName": "Hijack Execution Flow: Executable Installer File Permissions Weakness",
+	"name": "Hijack Execution Flow: Executable Installer File Permissions Weakness",
+	"parentTechniqueName": "Hijack Execution Flow",
 	"tactics": [
 		"TA0003",
 		"TA0004",
@@ -11,5 +11,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1574/005",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1574/005",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-24T08:44:26.8598467+02:00"
 }

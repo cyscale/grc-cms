@@ -1,7 +1,7 @@
 {
 	"mid": "T1590.004",
-	"name": "Gather Victim Network Information",
-	"subTechniqueName": "Gather Victim Network Information: Network Topology",
+	"name": "Gather Victim Network Information: Network Topology",
+	"parentTechniqueName": "Gather Victim Network Information",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1590/004",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1590/004",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-24T08:44:26.8603467+02:00"
 }

@@ -1,7 +1,7 @@
 {
 	"mid": "T1055.008",
-	"name": "Process Injection",
-	"subTechniqueName": "Process Injection: Ptrace System Calls",
+	"name": "Process Injection: Ptrace System Calls",
+	"parentTechniqueName": "Process Injection",
 	"tactics": [
 		"TA0005",
 		"TA0004"
@@ -10,5 +10,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1055/008",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1055/008",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-24T08:44:26.8598467+02:00"
 }

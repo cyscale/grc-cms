@@ -1,7 +1,7 @@
 {
 	"mid": "T1548",
 	"name": "Abuse Elevation Control Mechanism",
-	"subTechniqueName": "",
+	"parentTechniqueName": "",
 	"tactics": [
 		"TA0004",
 		"TA0005"
@@ -10,5 +10,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1548",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1548",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-24T08:44:26.8603467+02:00"
 }
