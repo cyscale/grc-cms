@@ -1,7 +1,7 @@
 {
 	"mid": "T1555.004",
-	"name": "Credentials from Password Stores",
-	"subTechniqueName": "Credentials from Password Stores: Windows Credential Manager",
+	"name": "Credentials from Password Stores: Windows Credential Manager",
+	"parentTechniqueName": "Credentials from Password Stores",
 	"tactics": [
 		"TA0006"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1555/004",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1555/004",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-24T08:44:26.8598467+02:00"
 }

@@ -1,7 +1,7 @@
 {
 	"mid": "T1589.003",
-	"name": "Gather Victim Identity Information",
-	"subTechniqueName": "Gather Victim Identity Information: Employee Names",
+	"name": "Gather Victim Identity Information: Employee Names",
+	"parentTechniqueName": "Gather Victim Identity Information",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1589/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1589/003",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-24T08:44:26.8603467+02:00"
 }
