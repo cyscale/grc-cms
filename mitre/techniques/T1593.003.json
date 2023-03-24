@@ -1,7 +1,7 @@
 {
 	"mid": "T1593.003",
-	"name": "Search Open Websites/Domains",
-	"subTechniqueName": "Search Open Websites/Domains: Code Repositories",
+	"name": "Search Open Websites/Domains: Code Repositories",
+	"parentTechniqueName": "Search Open Websites/Domains",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1593/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1593/003",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-24T08:44:26.8598467+02:00"
 }

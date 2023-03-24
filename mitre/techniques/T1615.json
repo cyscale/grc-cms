@@ -1,7 +1,7 @@
 {
 	"mid": "T1615",
 	"name": "Group Policy Discovery",
-	"subTechniqueName": "",
+	"parentTechniqueName": "",
 	"tactics": [
 		"TA0007"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1615",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1615",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-24T08:44:26.8603467+02:00"
 }

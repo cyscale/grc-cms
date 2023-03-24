@@ -1,7 +1,7 @@
 {
 	"mid": "T1016.001",
-	"name": "System Network Configuration Discovery",
-	"subTechniqueName": "System Network Configuration Discovery: Internet Connection Discovery",
+	"name": "System Network Configuration Discovery: Internet Connection Discovery",
+	"parentTechniqueName": "System Network Configuration Discovery",
 	"tactics": [
 		"TA0007"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1016/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1016/001",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-24T08:44:26.8603467+02:00"
 }

@@ -1,7 +1,7 @@
 {
 	"mid": "T1595.001",
-	"name": "Active Scanning",
-	"subTechniqueName": "Active Scanning: Scanning IP Blocks",
+	"name": "Active Scanning: Scanning IP Blocks",
+	"parentTechniqueName": "Active Scanning",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1595/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1595/001",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-24T08:44:26.8598467+02:00"
 }

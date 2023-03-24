@@ -1,7 +1,7 @@
 {
 	"mid": "T1589.002",
-	"name": "Gather Victim Identity Information",
-	"subTechniqueName": "Gather Victim Identity Information: Email Addresses",
+	"name": "Gather Victim Identity Information: Email Addresses",
+	"parentTechniqueName": "Gather Victim Identity Information",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1589/002",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1589/002",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-24T08:44:26.8598467+02:00"
 }
