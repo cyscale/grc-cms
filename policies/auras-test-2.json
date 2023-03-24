@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "auras-test-2",
   "version": "0.0.1",
-  "body": "T﻿his is a test by Auras Popescu.",
+  "body": "T﻿his is a test by Auras Popescu.\n\n<﻿Procedure slug=\"breach-discovery2\"/>\n",
   "procedures": [
     {
       "name": "Breach",
