@@ -7,7 +7,8 @@
   ],
   "propagators": [
     "AutoProvisioningSetting",
-    "CloudAccount"
+    "CloudAccount",
+    "BlobContainer"
   ],
   "assets": [
     "BigQueryTable",
