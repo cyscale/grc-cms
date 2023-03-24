@@ -1,5 +1,5 @@
 {
   "name": "ApsaraDB RDS with no encryption",
   "slug": "apsaradb-rds-with-no-encryption",
-  "query": "{\n  dbInstances(where: { cloudProvider: \"alibaba\", encrypted: false }) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+  "query": "{ dbInstances (where: { cloudProvider: \"alibaba\", encrypted: false }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
 }
