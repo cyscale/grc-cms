@@ -4,11 +4,11 @@
   "isStandard": true,
   "slug": "auras-test-2",
   "version": "0.0.1",
-  "body": "T﻿his is a test by Auras Popescu.\n\n<﻿Procedure slug=\"breach-discovery2\"/>\n",
+  "body": "H﻿ello\n\n<Procedure slug=\"breach-discovery-1\"/>\n\nBye",
   "procedures": [
     {
       "name": "Breach",
-      "slug": "breach-discovery2",
+      "slug": "breach-discovery-1",
       "body": "B﻿reach discovery blabla",
       "controls": [
         {
