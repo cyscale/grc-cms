@@ -1,14 +1,1 @@
-{
-	"mid": "T1547",
-	"name": "Boot or Logon Autostart Execution",
-	"parentTechniqueName": "",
-	"tactics": [
-		"TA0003",
-		"TA0004"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1547",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1547",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1547","name":"Boot or Logon Autostart Execution","parentTechniqueName":"","tactics":["TA0003","TA0004"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1547","permalink":"https://attack.mitre.org/versions/v12/techniques/T1547","created":"2023-03-27T08:47:28.9259278+03:00"}

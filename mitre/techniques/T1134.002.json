@@ -1,14 +1,1 @@
-{
-	"mid": "T1134.002",
-	"name": "Access Token Manipulation: Create Process with Token",
-	"parentTechniqueName": "Access Token Manipulation",
-	"tactics": [
-		"TA0005",
-		"TA0004"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1134/002",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1134/002",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1134.002","name":"Access Token Manipulation: Create Process with Token","parentTechniqueName":"Access Token Manipulation","tactics":["TA0005","TA0004"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1134/002","permalink":"https://attack.mitre.org/versions/v12/techniques/T1134/002","created":"2023-03-27T08:47:28.925428+03:00"}

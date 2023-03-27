@@ -1,13 +1,1 @@
-{
-	"mid": "T1213.003",
-	"name": "Data from Information Repositories: Code Repositories",
-	"parentTechniqueName": "Data from Information Repositories",
-	"tactics": [
-		"TA0009"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1213/003",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1213/003",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1213.003","name":"Data from Information Repositories: Code Repositories","parentTechniqueName":"Data from Information Repositories","tactics":["TA0009"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1213/003","permalink":"https://attack.mitre.org/versions/v12/techniques/T1213/003","created":"2023-03-27T08:47:28.925428+03:00"}

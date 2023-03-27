@@ -1,14 +1,1 @@
-{
-	"mid": "T1542.003",
-	"name": "Pre-OS Boot: Bootkit",
-	"parentTechniqueName": "Pre-OS Boot",
-	"tactics": [
-		"TA0003",
-		"TA0005"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1542/003",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1542/003",
-	"created": "2023-03-24T08:44:26.8593465+02:00"
-}
+{"mid":"T1542.003","name":"Pre-OS Boot: Bootkit","parentTechniqueName":"Pre-OS Boot","tactics":["TA0003","TA0005"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1542/003","permalink":"https://attack.mitre.org/versions/v12/techniques/T1542/003","created":"2023-03-27T08:47:28.9259278+03:00"}

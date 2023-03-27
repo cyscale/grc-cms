@@ -1,13 +1,1 @@
-{
-	"mid": "T1591.001",
-	"name": "Gather Victim Org Information: Determine Physical Locations",
-	"parentTechniqueName": "Gather Victim Org Information",
-	"tactics": [
-		"TA0043"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1591/001",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1591/001",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
-}
+{"mid":"T1591.001","name":"Gather Victim Org Information: Determine Physical Locations","parentTechniqueName":"Gather Victim Org Information","tactics":["TA0043"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1591/001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1591/001","created":"2023-03-27T08:47:28.925428+03:00"}
