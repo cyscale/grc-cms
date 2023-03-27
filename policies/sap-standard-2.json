@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "name": "SAP Standard 2",
+  "isStandard": true,
+  "slug": "sap-standard-2",
+  "version": "0.0.1",
+  "body": "H﻿ello\n\n<Procedure slug=\"sap-standard-1-iam\"/>\n\nB﻿ye\n",
+  "procedures": [
+    {
+      "name": "IAM",
+      "slug": "sap-standard-1-iam",
+      "body": "T﻿hat's how you should oversee identity and access management.",
+      "controls": [
+        {
+          "control": "k8s-volumes"
+        },
+        {
+          "control": "aws-1-3-0-iam-11"
+        }
+      ]
+    }
+  ]
+}
