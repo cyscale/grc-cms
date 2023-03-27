@@ -1,13 +1,1 @@
-{
-	"mid": "T1563.002",
-	"name": "Remote Service Session Hijacking: RDP Hijacking",
-	"parentTechniqueName": "Remote Service Session Hijacking",
-	"tactics": [
-		"TA0008"
-	],
-	"version": "v1.0",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1563/002",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1563/002",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1563.002","name":"Remote Service Session Hijacking: RDP Hijacking","parentTechniqueName":"Remote Service Session Hijacking","tactics":["TA0008"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1563/002","permalink":"https://attack.mitre.org/versions/v12/techniques/T1563/002","created":"2023-03-27T08:47:28.925428+03:00"}

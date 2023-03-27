@@ -1,14 +1,1 @@
-{
-	"mid": "T1056.001",
-	"name": "Input Capture: Keylogging",
-	"parentTechniqueName": "Input Capture",
-	"tactics": [
-		"TA0009",
-		"TA0006"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1056/001",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1056/001",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1056.001","name":"Input Capture: Keylogging","parentTechniqueName":"Input Capture","tactics":["TA0009","TA0006"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1056/001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1056/001","created":"2023-03-27T08:47:28.925428+03:00"}

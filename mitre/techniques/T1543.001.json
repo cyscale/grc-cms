@@ -1,14 +1,1 @@
-{
-	"mid": "T1543.001",
-	"name": "Create or Modify System Process: Launch Agent",
-	"parentTechniqueName": "Create or Modify System Process",
-	"tactics": [
-		"TA0003",
-		"TA0004"
-	],
-	"version": "v1.4",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1543/001",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1543/001",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
-}
+{"mid":"T1543.001","name":"Create or Modify System Process: Launch Agent","parentTechniqueName":"Create or Modify System Process","tactics":["TA0003","TA0004"],"version":"v1.4","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1543/001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1543/001","created":"2023-03-27T08:47:28.925428+03:00"}
