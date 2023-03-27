@@ -1,14 +1,1 @@
-{
-	"mid": "T1557",
-	"name": "Adversary-in-the-Middle",
-	"parentTechniqueName": "",
-	"tactics": [
-		"TA0006",
-		"TA0009"
-	],
-	"version": "v2.2",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1557",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1557",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
-}
+{"mid":"T1557","name":"Adversary-in-the-Middle","parentTechniqueName":"","tactics":["TA0006","TA0009"],"version":"v2.2","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1557","permalink":"https://attack.mitre.org/versions/v12/techniques/T1557","created":"2023-03-27T08:47:28.925428+03:00"}

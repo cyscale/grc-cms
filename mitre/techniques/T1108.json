@@ -1,14 +1,1 @@
-{
-	"mid": "T1108",
-	"name": "Redundant Access",
-	"parentTechniqueName": "",
-	"tactics": [
-		"TA0005",
-		"TA0003"
-	],
-	"version": "v3.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1108",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1108",
-	"created": "2023-03-24T08:44:26.8593465+02:00"
-}
+{"mid":"T1108","name":"Redundant Access","parentTechniqueName":"","tactics":["TA0005","TA0003"],"version":"v3.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1108","permalink":"https://attack.mitre.org/versions/v12/techniques/T1108","created":"2023-03-27T08:47:28.925428+03:00"}

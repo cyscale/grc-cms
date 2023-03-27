@@ -1,13 +1,1 @@
-{
-	"mid": "T1587.002",
-	"name": "Develop Capabilities: Code Signing Certificates",
-	"parentTechniqueName": "Develop Capabilities",
-	"tactics": [
-		"TA0042"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1587/002",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1587/002",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
-}
+{"mid":"T1587.002","name":"Develop Capabilities: Code Signing Certificates","parentTechniqueName":"Develop Capabilities","tactics":["TA0042"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1587/002","permalink":"https://attack.mitre.org/versions/v12/techniques/T1587/002","created":"2023-03-27T08:47:28.925428+03:00"}

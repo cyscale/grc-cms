@@ -1,13 +1,1 @@
-{
-	"mid": "T1567.002",
-	"name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
-	"parentTechniqueName": "Exfiltration Over Web Service",
-	"tactics": [
-		"TA0010"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1567/002",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1567/002",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1567.002","name":"Exfiltration Over Web Service: Exfiltration to Cloud Storage","parentTechniqueName":"Exfiltration Over Web Service","tactics":["TA0010"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1567/002","permalink":"https://attack.mitre.org/versions/v12/techniques/T1567/002","created":"2023-03-27T08:47:28.9259278+03:00"}

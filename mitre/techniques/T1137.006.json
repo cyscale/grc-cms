@@ -1,13 +1,1 @@
-{
-	"mid": "T1137.006",
-	"name": "Office Application Startup: Add-ins",
-	"parentTechniqueName": "Office Application Startup",
-	"tactics": [
-		"TA0003"
-	],
-	"version": "v1.1",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/techniques/T1137/006",
-	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1137/006",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
-}
+{"mid":"T1137.006","name":"Office Application Startup: Add-ins","parentTechniqueName":"Office Application Startup","tactics":["TA0003"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1137/006","permalink":"https://attack.mitre.org/versions/v12/techniques/T1137/006","created":"2023-03-27T08:47:28.925428+03:00"}
