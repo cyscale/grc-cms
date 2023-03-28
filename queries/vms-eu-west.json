@@ -1,0 +1,5 @@
+{
+  "name": "Read VMs from EU West",
+  "slug": "vms-eu-west",
+  "query": "{\n  vms(\n    where: {\n      internalRegion_IN: [\n        \"eu-west-1\"\n        \"eu-west-2\"\n        \"westeurope\"\n        \"europe-west1\"\n        \"europe-west2\"\n        \"europe-west3\"\n        \"europe-west4\"\n        \"europe-west6\"\n        \"europe-west8\"\n        \"europe-west9\"\n        \"europe-west12\"\n      ]\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+}
