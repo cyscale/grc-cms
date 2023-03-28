@@ -13,7 +13,7 @@
         "azure",
         "gcp"
       ],
-      "comparator": "neq",
+      "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
         "VM"
