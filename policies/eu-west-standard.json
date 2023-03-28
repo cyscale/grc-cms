@@ -4,7 +4,7 @@
   "name": "EU West",
   "slug": "eu-west-standard",
   "version": "1",
-  "body": "M﻿ake sure to run everything in EU West.\n\n<Procedure slug=\"eu-west-standard-compute\"/>",
+  "body": "M﻿ake sure to run everything in EU West.\n\n<Procedure slug=\"eu-west-standard-compute\"/>\n\nP﻿lease",
   "procedures": [
     {
       "name": "Compute",
