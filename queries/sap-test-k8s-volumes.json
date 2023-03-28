@@ -1,5 +1,0 @@
-{
-  "query": "{\n  disks(where: {name_STARTS_WITH: \"pvc\"}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}\n",
-  "slug": "sap-test-k8s-volumes",
-  "name": "Get disks used for K8s volumes"
-}
