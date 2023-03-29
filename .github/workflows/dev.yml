@@ -32,7 +32,7 @@ jobs:
         uses: tj-actions/changed-files@v32
         with:
           files: |
-            mitre/mappings
+            mitre/**
       - name: Login
         uses: azure/login@v1
         with:
