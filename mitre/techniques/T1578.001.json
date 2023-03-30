@@ -1,0 +1,1 @@
+{"mid":"T1578.001","name":"Modify Cloud Compute Infrastructure: Create Snapshot","parentTechniqueName":"Modify Cloud Compute Infrastructure","tactics":["TA0005"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1578/001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1578/001","created":"2023-03-27T08:47:28.9259278+03:00"}

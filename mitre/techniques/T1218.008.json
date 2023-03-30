@@ -1,0 +1,1 @@
+{"mid":"T1218.008","name":"System Binary Proxy Execution: Odbcconf","parentTechniqueName":"System Binary Proxy Execution","tactics":["TA0005"],"version":"v2.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1218/008","permalink":"https://attack.mitre.org/versions/v12/techniques/T1218/008","created":"2023-03-27T08:47:28.925428+03:00"}

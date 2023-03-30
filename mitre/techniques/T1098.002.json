@@ -1,0 +1,1 @@
+{"mid":"T1098.002","name":"Account Manipulation: Additional Email Delegate Permissions","parentTechniqueName":"Account Manipulation","tactics":["TA0003"],"version":"v2.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1098/002","permalink":"https://attack.mitre.org/versions/v12/techniques/T1098/002","created":"2023-03-27T08:47:28.9259278+03:00"}
