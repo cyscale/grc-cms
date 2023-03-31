@@ -30,18 +30,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - name: Get GRC changed files
         id: grc-changed-files
         uses: tj-actions/changed-files@v32
         with:
+          since_last_remote_commit: 'true'
           files: |
             queries/**
             controls/**
             policies/**
-      - name: Get Mitre changed files
+      - name: Get MITRE changed files
         id: mitre-changed-files
         uses: tj-actions/changed-files@v32
         with:
+          since_last_remote_commit: 'true'
           files: |
             mitre/**
       - name: Login
