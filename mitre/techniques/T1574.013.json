@@ -1,7 +1,7 @@
 {
 	"mid": "T1574.013",
-	"name": "Hijack Execution Flow: KernelCallbackTable",
-	"parentTechniqueName": "Hijack Execution Flow",
+	"name": "Hijack Execution Flow",
+	"subTechniqueName": "Hijack Execution Flow: KernelCallbackTable",
 	"tactics": [
 		"TA0003",
 		"TA0004",
@@ -11,5 +11,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1574/013",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1574/013",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }

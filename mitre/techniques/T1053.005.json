@@ -1,7 +1,7 @@
 {
 	"mid": "T1053.005",
-	"name": "Scheduled Task/Job: Scheduled Task",
-	"parentTechniqueName": "Scheduled Task/Job",
+	"name": "Scheduled Task/Job",
+	"subTechniqueName": "Scheduled Task/Job: Scheduled Task",
 	"tactics": [
 		"TA0002",
 		"TA0003",
@@ -11,5 +11,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1053/005",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1053/005",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }

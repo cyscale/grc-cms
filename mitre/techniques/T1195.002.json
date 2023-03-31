@@ -1,7 +1,7 @@
 {
 	"mid": "T1195.002",
-	"name": "Supply Chain Compromise: Compromise Software Supply Chain",
-	"parentTechniqueName": "Supply Chain Compromise",
+	"name": "Supply Chain Compromise",
+	"subTechniqueName": "Supply Chain Compromise: Compromise Software Supply Chain",
 	"tactics": [
 		"TA0001"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1195/002",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1195/002",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }

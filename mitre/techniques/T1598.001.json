@@ -1,7 +1,7 @@
 {
 	"mid": "T1598.001",
-	"name": "Phishing for Information: Spearphishing Service",
-	"parentTechniqueName": "Phishing for Information",
+	"name": "Phishing for Information",
+	"subTechniqueName": "Phishing for Information: Spearphishing Service",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1598/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1598/001",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }

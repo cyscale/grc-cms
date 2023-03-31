@@ -1,7 +1,7 @@
 {
 	"mid": "T1583.007",
-	"name": "Acquire Infrastructure: Serverless",
-	"parentTechniqueName": "Acquire Infrastructure",
+	"name": "Acquire Infrastructure",
+	"subTechniqueName": "Acquire Infrastructure: Serverless",
 	"tactics": [
 		"TA0042"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1583/007",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1583/007",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
+	"created": "2023-03-23T17:00:17.6340642+02:00"
 }

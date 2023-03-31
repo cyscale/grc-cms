@@ -1,7 +1,7 @@
 {
 	"mid": "T1056.002",
-	"name": "Input Capture: GUI Input Capture",
-	"parentTechniqueName": "Input Capture",
+	"name": "Input Capture",
+	"subTechniqueName": "Input Capture: GUI Input Capture",
 	"tactics": [
 		"TA0009",
 		"TA0006"
@@ -10,5 +10,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1056/002",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1056/002",
-	"created": "2023-03-24T08:44:26.8598467+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }

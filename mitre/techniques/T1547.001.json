@@ -1,7 +1,7 @@
 {
 	"mid": "T1547.001",
-	"name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
-	"parentTechniqueName": "Boot or Logon Autostart Execution",
+	"name": "Boot or Logon Autostart Execution",
+	"subTechniqueName": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
 	"tactics": [
 		"TA0003",
 		"TA0004"
@@ -10,5 +10,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1547/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1547/001",
-	"created": "2023-03-24T08:44:26.8603467+02:00"
+	"created": "2023-03-23T17:00:17.6335645+02:00"
 }
