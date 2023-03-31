@@ -1,0 +1,1 @@
+{"mid":"T1056.004","name":"Input Capture: Credential API Hooking","parentTechniqueName":"Input Capture","tactics":["TA0009","TA0006"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1056/004","permalink":"https://attack.mitre.org/versions/v12/techniques/T1056/004","created":"2023-03-27T08:47:28.9259278+03:00"}

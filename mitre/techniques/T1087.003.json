@@ -1,0 +1,1 @@
+{"mid":"T1087.003","name":"Account Discovery: Email Account","parentTechniqueName":"Account Discovery","tactics":["TA0007"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1087/003","permalink":"https://attack.mitre.org/versions/v12/techniques/T1087/003","created":"2023-03-27T08:47:28.9259278+03:00"}

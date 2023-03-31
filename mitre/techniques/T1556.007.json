@@ -1,0 +1,1 @@
+{"mid":"T1556.007","name":"Modify Authentication Process: Hybrid Identity","parentTechniqueName":"Modify Authentication Process","tactics":["TA0006","TA0005","TA0003"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1556/007","permalink":"https://attack.mitre.org/versions/v12/techniques/T1556/007","created":"2023-03-27T08:47:28.9259278+03:00"}

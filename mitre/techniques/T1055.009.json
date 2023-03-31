@@ -1,0 +1,1 @@
+{"mid":"T1055.009","name":"Process Injection: Proc Memory","parentTechniqueName":"Process Injection","tactics":["TA0005","TA0004"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1055/009","permalink":"https://attack.mitre.org/versions/v12/techniques/T1055/009","created":"2023-03-27T08:47:28.9259278+03:00"}

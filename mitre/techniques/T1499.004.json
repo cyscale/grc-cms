@@ -1,0 +1,1 @@
+{"mid":"T1499.004","name":"Endpoint Denial of Service: Application or System Exploitation","parentTechniqueName":"Endpoint Denial of Service","tactics":["TA0040"],"version":"v1.2","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1499/004","permalink":"https://attack.mitre.org/versions/v12/techniques/T1499/004","created":"2023-03-27T08:47:28.9259278+03:00"}
