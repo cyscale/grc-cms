@@ -1,1 +1,13 @@
-{"mid":"T1190","name":"Exploit Public-Facing Application","parentTechniqueName":"","tactics":["TA0001"],"version":"v2.3","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1190","permalink":"https://attack.mitre.org/versions/v12/techniques/T1190","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1190",
+	"name": "Exploit Public-Facing Application",
+	"parentTechniqueName": "",
+	"tactics": [
+		"TA0001"
+	],
+	"version": "v2.3",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1190",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1190",
+	"created": "2023-03-24T08:44:26.8603467+02:00"
+}

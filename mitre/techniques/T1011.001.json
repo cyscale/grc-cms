@@ -1,1 +1,13 @@
-{"mid":"T1011.001","name":"Exfiltration Over Other Network Medium: Exfiltration Over Bluetooth","parentTechniqueName":"Exfiltration Over Other Network Medium","tactics":["TA0010"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1011/001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1011/001","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1011.001",
+	"name": "Exfiltration Over Other Network Medium: Exfiltration Over Bluetooth",
+	"parentTechniqueName": "Exfiltration Over Other Network Medium",
+	"tactics": [
+		"TA0010"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1011/001",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1011/001",
+	"created": "2023-03-24T08:44:26.8598467+02:00"
+}

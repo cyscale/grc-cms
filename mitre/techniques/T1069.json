@@ -1,1 +1,13 @@
-{"mid":"T1069","name":"Permission Groups Discovery","parentTechniqueName":"","tactics":["TA0007"],"version":"v2.4","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1069","permalink":"https://attack.mitre.org/versions/v12/techniques/T1069","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1069",
+	"name": "Permission Groups Discovery",
+	"parentTechniqueName": "",
+	"tactics": [
+		"TA0007"
+	],
+	"version": "v2.4",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1069",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1069",
+	"created": "2023-03-24T08:44:26.8603467+02:00"
+}

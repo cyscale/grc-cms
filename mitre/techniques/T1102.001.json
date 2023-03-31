@@ -1,1 +1,13 @@
-{"mid":"T1102.001","name":"Web Service: Dead Drop Resolver","parentTechniqueName":"Web Service","tactics":["TA0011"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1102/001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1102/001","created":"2023-03-27T08:47:28.925428+03:00"}
+{
+	"mid": "T1102.001",
+	"name": "Web Service: Dead Drop Resolver",
+	"parentTechniqueName": "Web Service",
+	"tactics": [
+		"TA0011"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1102/001",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1102/001",
+	"created": "2023-03-24T08:44:26.8603467+02:00"
+}

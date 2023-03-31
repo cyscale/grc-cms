@@ -1,1 +1,13 @@
-{"mid":"T1135","name":"Network Share Discovery","parentTechniqueName":"","tactics":["TA0007"],"version":"v3.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1135","permalink":"https://attack.mitre.org/versions/v12/techniques/T1135","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1135",
+	"name": "Network Share Discovery",
+	"parentTechniqueName": "",
+	"tactics": [
+		"TA0007"
+	],
+	"version": "v3.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1135",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1135",
+	"created": "2023-03-24T08:44:26.8598467+02:00"
+}

@@ -1,1 +1,14 @@
-{"mid":"T1055.011","name":"Process Injection: Extra Window Memory Injection","parentTechniqueName":"Process Injection","tactics":["TA0005","TA0004"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1055/011","permalink":"https://attack.mitre.org/versions/v12/techniques/T1055/011","created":"2023-03-27T08:47:28.925428+03:00"}
+{
+	"mid": "T1055.011",
+	"name": "Process Injection: Extra Window Memory Injection",
+	"parentTechniqueName": "Process Injection",
+	"tactics": [
+		"TA0005",
+		"TA0004"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1055/011",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1055/011",
+	"created": "2023-03-24T08:44:26.8593465+02:00"
+}

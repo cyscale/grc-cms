@@ -1,1 +1,14 @@
-{"mid":"T1542.005","name":"Pre-OS Boot: TFTP Boot","parentTechniqueName":"Pre-OS Boot","tactics":["TA0005","TA0003"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1542/005","permalink":"https://attack.mitre.org/versions/v12/techniques/T1542/005","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1542.005",
+	"name": "Pre-OS Boot: TFTP Boot",
+	"parentTechniqueName": "Pre-OS Boot",
+	"tactics": [
+		"TA0005",
+		"TA0003"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1542/005",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1542/005",
+	"created": "2023-03-24T08:44:26.8603467+02:00"
+}

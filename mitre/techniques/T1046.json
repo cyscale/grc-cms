@@ -1,1 +1,13 @@
-{"mid":"T1046","name":"Network Service Discovery","parentTechniqueName":"","tactics":["TA0007"],"version":"v3.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1046","permalink":"https://attack.mitre.org/versions/v12/techniques/T1046","created":"2023-03-27T08:47:28.925428+03:00"}
+{
+	"mid": "T1046",
+	"name": "Network Service Discovery",
+	"parentTechniqueName": "",
+	"tactics": [
+		"TA0007"
+	],
+	"version": "v3.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1046",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1046",
+	"created": "2023-03-24T08:44:26.8598467+02:00"
+}

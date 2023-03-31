@@ -1,1 +1,9 @@
-{"mid":"TA0002","name":"Execution","version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/tactics/TA0002","permalink":"https://attack.mitre.org/versions/v12/tactics/TA0002","created":"2023-03-27T08:47:28.9184315+03:00"}
+{
+	"mid": "TA0002",
+	"name": "Execution",
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/tactics/TA0002",
+	"permalink": "https://attack.mitre.org/versions/v12/tactics/TA0002",
+	"created": "2023-03-24T08:44:26.8568468+02:00"
+}

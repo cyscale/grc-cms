@@ -1,1 +1,13 @@
-{"mid":"T1555.002","name":"Credentials from Password Stores: Securityd Memory","parentTechniqueName":"Credentials from Password Stores","tactics":["TA0006"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1555/002","permalink":"https://attack.mitre.org/versions/v12/techniques/T1555/002","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1555.002",
+	"name": "Credentials from Password Stores: Securityd Memory",
+	"parentTechniqueName": "Credentials from Password Stores",
+	"tactics": [
+		"TA0006"
+	],
+	"version": "v1.1",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1555/002",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1555/002",
+	"created": "2023-03-24T08:44:26.8598467+02:00"
+}

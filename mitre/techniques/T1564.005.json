@@ -1,1 +1,13 @@
-{"mid":"T1564.005","name":"Hide Artifacts: Hidden File System","parentTechniqueName":"Hide Artifacts","tactics":["TA0005"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1564/005","permalink":"https://attack.mitre.org/versions/v12/techniques/T1564/005","created":"2023-03-27T08:47:28.9259278+03:00"}
+{
+	"mid": "T1564.005",
+	"name": "Hide Artifacts: Hidden File System",
+	"parentTechniqueName": "Hide Artifacts",
+	"tactics": [
+		"TA0005"
+	],
+	"version": "v1.0",
+	"matrixVersion": "v12",
+	"link": "https://attack.mitre.org/techniques/T1564/005",
+	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1564/005",
+	"created": "2023-03-24T08:44:26.8598467+02:00"
+}
