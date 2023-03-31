@@ -1,7 +1,7 @@
 {
 	"mid": "T1205.002",
 	"name": "Traffic Signaling",
-	"subTechniqueName": "Traffic Signaling: Socket Filters",
+	"subTechniqueName": "Socket Filters",
 	"tactics": [
 		"TA0005",
 		"TA0003",
@@ -11,5 +11,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1205/002",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1205/002",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-23T09:06:59.5578828+02:00"
 }

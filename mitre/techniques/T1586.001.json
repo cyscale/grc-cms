@@ -1,7 +1,7 @@
 {
 	"mid": "T1586.001",
 	"name": "Compromise Accounts",
-	"subTechniqueName": "Compromise Accounts: Social Media Accounts",
+	"subTechniqueName": "Social Media Accounts",
 	"tactics": [
 		"TA0042"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1586/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1586/001",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-23T09:06:59.5578828+02:00"
 }

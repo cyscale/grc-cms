@@ -1,7 +1,7 @@
 {
 	"mid": "T1090.001",
 	"name": "Proxy",
-	"subTechniqueName": "Proxy: Internal Proxy",
+	"subTechniqueName": "Internal Proxy",
 	"tactics": [
 		"TA0011"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1090/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1090/001",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-23T09:06:59.5578828+02:00"
 }

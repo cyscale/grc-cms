@@ -1,7 +1,7 @@
 {
 	"mid": "T1070.002",
 	"name": "Indicator Removal",
-	"subTechniqueName": "Indicator Removal: Clear Linux or Mac System Logs",
+	"subTechniqueName": "Clear Linux or Mac System Logs",
 	"tactics": [
 		"TA0005"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1070/002",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1070/002",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-23T09:06:59.5573831+02:00"
 }

@@ -1,7 +1,7 @@
 {
 	"mid": "T1195.003",
 	"name": "Supply Chain Compromise",
-	"subTechniqueName": "Supply Chain Compromise: Compromise Hardware Supply Chain",
+	"subTechniqueName": "Compromise Hardware Supply Chain",
 	"tactics": [
 		"TA0001"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1195/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1195/003",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-23T09:06:59.556883+02:00"
 }

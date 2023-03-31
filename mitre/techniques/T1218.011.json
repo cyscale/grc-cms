@@ -1,7 +1,7 @@
 {
 	"mid": "T1218.011",
 	"name": "System Binary Proxy Execution",
-	"subTechniqueName": "System Binary Proxy Execution: Rundll32",
+	"subTechniqueName": "Rundll32",
 	"tactics": [
 		"TA0005"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1218/011",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1218/011",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-23T09:06:59.5573831+02:00"
 }

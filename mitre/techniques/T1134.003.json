@@ -1,7 +1,7 @@
 {
 	"mid": "T1134.003",
 	"name": "Access Token Manipulation",
-	"subTechniqueName": "Access Token Manipulation: Make and Impersonate Token",
+	"subTechniqueName": "Make and Impersonate Token",
 	"tactics": [
 		"TA0005",
 		"TA0004"
@@ -10,5 +10,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1134/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1134/003",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-23T09:06:59.556883+02:00"
 }

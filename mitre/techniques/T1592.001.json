@@ -1,7 +1,7 @@
 {
 	"mid": "T1592.001",
 	"name": "Gather Victim Host Information",
-	"subTechniqueName": "Gather Victim Host Information: Hardware",
+	"subTechniqueName": "Hardware",
 	"tactics": [
 		"TA0043"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1592/001",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1592/001",
-	"created": "2023-03-23T17:00:17.6340642+02:00"
+	"created": "2023-03-23T09:06:59.5573831+02:00"
 }

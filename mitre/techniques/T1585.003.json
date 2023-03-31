@@ -1,7 +1,7 @@
 {
 	"mid": "T1585.003",
 	"name": "Establish Accounts",
-	"subTechniqueName": "Establish Accounts: Cloud Accounts",
+	"subTechniqueName": "Cloud Accounts",
 	"tactics": [
 		"TA0042"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1585/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1585/003",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-23T09:06:59.5578828+02:00"
 }

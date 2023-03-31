@@ -1,7 +1,7 @@
 {
 	"mid": "T1562.003",
 	"name": "Impair Defenses",
-	"subTechniqueName": "Impair Defenses: Impair Command History Logging",
+	"subTechniqueName": "Impair Command History Logging",
 	"tactics": [
 		"TA0005"
 	],
@@ -9,5 +9,5 @@
 	"matrixVersion": "v12",
 	"link": "https://attack.mitre.org/techniques/T1562/003",
 	"permalink": "https://attack.mitre.org/versions/v12/techniques/T1562/003",
-	"created": "2023-03-23T17:00:17.6335645+02:00"
+	"created": "2023-03-23T09:06:59.5573831+02:00"
 }
