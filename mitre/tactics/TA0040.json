@@ -1,9 +1,0 @@
-{
-	"mid": "TA0040",
-	"name": "Impact",
-	"version": "v1.0",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/tactics/TA0040",
-	"permalink": "https://attack.mitre.org/versions/v12/tactics/TA0040",
-	"created": "2023-03-23T09:06:59.5483837+02:00"
-}

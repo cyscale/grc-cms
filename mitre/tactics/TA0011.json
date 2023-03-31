@@ -1,9 +1,0 @@
-{
-	"mid": "TA0011",
-	"name": "Command and Control",
-	"version": "v1.0",
-	"matrixVersion": "v12",
-	"link": "https://attack.mitre.org/tactics/TA0011",
-	"permalink": "https://attack.mitre.org/versions/v12/tactics/TA0011",
-	"created": "2023-03-23T09:06:59.5438837+02:00"
-}
