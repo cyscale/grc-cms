@@ -1,0 +1,16 @@
+{
+  "display_name": "T1001",
+  "mid": "T1001.001",
+  "controls": [
+    "object-containers-with-public-access",
+    "aws-1-3-0-iam-20"
+  ],
+  "propagators": [
+    "AutoProvisioningSetting",
+    "BigQueryTable"
+  ],
+  "assets": [
+    "AutoProvisioningSetting",
+    "BigQueryTable"
+  ]
+}
