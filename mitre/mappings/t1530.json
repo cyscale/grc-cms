@@ -11,7 +11,8 @@
   "controls": [
     "object-containers-with-public-access",
     "aws-1-3-0-iam-20",
-    "azure-1-3-0-storage-5"
+    "azure-1-3-0-storage-5",
+    "cis-alibaba-1-0-0-storage-1"
   ],
   "mid": "T1530"
 }
