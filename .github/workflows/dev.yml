@@ -110,7 +110,7 @@ jobs:
               az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
 
               mid=$(cat entity.json | jq -r '.mid')
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type $type --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": $type, "operation": $operation}')
+              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type $type --arg operation "deleted" '{"blob": $blob, "mid": $mid, "type": $type, "operation": $operation}')
 
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
               az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
