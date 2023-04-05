@@ -44,6 +44,7 @@ collections:
       - {
           name: 'description',
           label: 'Issue Description',
+          hint: 'Displayed on Data Security Dashboard',
           widget: 'string',
           required: false,
         }
