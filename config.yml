@@ -3,6 +3,13 @@ backend:
   branch: dev
   repo: cyscale/grc-cms
   site_domain: cyscale-grc-cms.netlify.app
+  commit_messages:
+    create: 'feat: add {{collection}} "{{slug}}"'
+    update: 'fix: update {{collection}} "{{slug}}"'
+    delete: 'fix: delete {{collection}} "{{slug}}"'
+    uploadMedia: 'chore: upload media "{{path}}"'
+    deleteMedia: 'chore: delete media "{{path}}"'
+    openAuthoring: '{{message}}'
 
 media_folder: media
 
