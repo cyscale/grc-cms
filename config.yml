@@ -41,7 +41,12 @@ collections:
     slug: '{{fields.slug}}'
     fields:
       - { name: 'name', label: 'Title', widget: 'string' }
-      - { name: 'description', label: 'Issue Description', widget: 'string' }
+      - {
+          name: 'description',
+          label: 'Issue Description',
+          widget: 'string',
+          required: false,
+        }
       - { name: 'slug', label: 'Slug', widget: 'string' }
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Severity'
@@ -58,7 +63,7 @@ collections:
       - label: 'Rules'
         name: 'rules'
         widget: 'list'
-        summary: '{{fields.query}}'
+        summary: '{{query.value}}'
         fields:
           - label: 'Cloud Providers'
             name: 'cloudProviders'
