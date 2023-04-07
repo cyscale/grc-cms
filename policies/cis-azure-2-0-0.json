@@ -1,0 +1,62 @@
+{
+  "enabled": false,
+  "name": "CIS Microsoft Azure Foundations Benchmark",
+  "isStandard": true,
+  "slug": "cis-azure-2-0-0",
+  "version": "2.0.0",
+  "body": "#﻿# Statement\n\nCIS Microsoft Azure Foundations Benchmark provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The\nscope of this benchmark is to establish the foundation level of security for anyone\nadopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. The benchmark should be\nunderstood as a starting point. Site-specific tailoring will almost certainly be required.\nThe CIS Azure Foundations Benchmark provides recommendations for the following\nAzure Services:\n• App Service\n• Application Gateway\n• Azure Active Directory\n• Azure Advisor\n• Azure Cosmos DB\n• Azure Disk Storage\n• Azure Files\n• Azure Monitor\n• Azure Policy\n• Azure Private Link\n• Azure Resource Manager\n• Azure Service Health\n• Azure SQL\n• Azure SQL Database\n• Key Vault\n• Microsoft Azure portal\n• Microsoft Defender for Cloud\n• Static Web Apps\n• Storage Accounts\n• Virtual Machines\n• Virtual Network\n\n#﻿## Intended Audience\n\nThis document is intended for system and application administrators, security\nspecialists, auditors, help desk, and platform deployment personnel who plan to\ndevelop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\n#﻿# Recommendations\n\n<Procedure slug=\"cis-azure-2-0-0-iam\"/>\n<Procedure slug=\"cis-azure-2-0-0-defender\"/>\n<Procedure slug=\"cis-azure-2-0-0-storage\"/>\n<Procedure slug=\"cis-azure-2-0-0-db\"/>\n<Procedure slug=\"cis-azure-2-0-0-logging\"/>\n<Procedure slug=\"cis-azure-2-0-0-networking\"/>\n<Procedure slug=\"cis-azure-2-0-0-vm\"/>\n<Procedure slug=\"cis-azure-2-0-0-kv\"/>\n<Procedure slug=\"cis-azure-2-0-0-appservice\"/>\n<Procedure slug=\"cis-azure-2-0-0-misc\"/>",
+  "procedures": [
+    {
+      "name": "1. Identity and Access Management",
+      "slug": "cis-azure-2-0-0-iam",
+      "controls": [],
+      "body": "This section covers security recommendations to set identity and access management policies on an Azure Subscription."
+    },
+    {
+      "name": "2. Microsoft Defender",
+      "slug": "cis-azure-2-0-0-defender",
+      "body": "This section covers recommendations to consider for tenant-wide security policies and plans related to Microsoft Defender."
+    },
+    {
+      "name": "3. Storage Accounts",
+      "slug": "cis-azure-2-0-0-storage",
+      "body": "This section covers security recommendations to follow to set storage account policies on an Azure Subscription."
+    },
+    {
+      "name": "4. Database Services",
+      "slug": "cis-azure-2-0-0-db",
+      "body": "This section covers security recommendations to follow to set general database services policies on an Azure Subscription."
+    },
+    {
+      "name": "5. Logging and Monitoring",
+      "slug": "cis-azure-2-0-0-logging",
+      "body": "This section covers security recommendations to follow to set logging and monitoring policies on an Azure Subscription."
+    },
+    {
+      "name": "6. Networking",
+      "slug": "cis-azure-2-0-0-networking",
+      "body": "This section covers security recommendations to follow in order to set networking policies on an Azure subscription."
+    },
+    {
+      "name": "7. Virtual Machines",
+      "slug": "cis-azure-2-0-0-vm",
+      "controls": [],
+      "body": "This section covers security recommendations to follow for the configuration of Virtual Machines on an Azure subscription."
+    },
+    {
+      "name": "8. Key Vault",
+      "slug": "cis-azure-2-0-0-kv",
+      "body": "This section covers security recommendations to follow for the configuration and use of Azure Key Vault."
+    },
+    {
+      "name": "9. AppService",
+      "slug": "cis-azure-2-0-0-appservice",
+      "body": "This section covers security recommendations for Azure AppService."
+    },
+    {
+      "name": "10. Miscellaneous",
+      "slug": "cis-azure-2-0-0-misc",
+      "body": "This section covers security recommendations for miscellaneous."
+    }
+  ]
+}
