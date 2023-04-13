@@ -1,0 +1,14 @@
+{
+  "display_name": "Test",
+  "mid": "T1001.001",
+  "controls": [
+    "vm-disallow-imds-v1",
+    "ec2-instances-metadata-hop-limit"
+  ],
+  "propagators": [
+    "VM"
+  ],
+  "assets": [
+    "VM"
+  ]
+}
