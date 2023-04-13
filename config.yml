@@ -262,6 +262,7 @@ collections:
         widget: 'list'
         allow_add: true
         label_singular: 'Control'
+        hint: 'Comma-separated control slugs'
       - label: 'Propagators'
         name: 'propagators'
         widget: 'select'
