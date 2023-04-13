@@ -259,12 +259,9 @@ collections:
         display_fields: ['{{mid}}: {{name}}']
       - label: 'Controls'
         name: 'controls'
-        widget: 'relation'
-        collection: 'controls'
-        multiple: true
-        search_fields: ['slug', 'name']
-        value_field: '{{slug}}'
-        display_fields: ['{{slug}}: {{name}}']
+        widget: 'list'
+        allow_add: true
+        label_singular: 'Control'
       - label: 'Propagators'
         name: 'propagators'
         widget: 'select'
