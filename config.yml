@@ -237,8 +237,8 @@ collections:
       - { name: 'permalink', label: 'Permalink', widget: 'string' }
 
   - name: mappings
-    label: Mitre Attack Mappings
-    label_singular: Mitre Attack Mapping
+    label: MITRE ATT&CK Mappings
+    label_singular: MITRE ATT&CK Mapping
     folder: mitre/mappings
     create: true
     extension: json
