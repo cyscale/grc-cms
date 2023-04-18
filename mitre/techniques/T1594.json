@@ -1,1 +1,1 @@
-{"mid":"T1594","name":"Search Victim-Owned Websites","parentTechniqueName":"","tactics":["TA0043"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1594","permalink":"https://attack.mitre.org/versions/v12/techniques/T1594","created":"2023-03-27T08:47:28.925428+03:00"}
+{"mid":"T1594","name":"Search Victim-Owned Websites","parentTechniqueName":"","tactics":["TA0043"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1594","permalink":"https://attack.mitre.org/versions/v12/techniques/T1594"}

@@ -1,1 +1,1 @@
-{"mid":"T1072","name":"Software Deployment Tools","parentTechniqueName":"","tactics":["TA0002","TA0008"],"version":"v2.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1072","permalink":"https://attack.mitre.org/versions/v12/techniques/T1072","created":"2023-03-27T08:47:28.925428+03:00"}
+{"mid":"T1072","name":"Software Deployment Tools","parentTechniqueName":"","tactics":["TA0002","TA0008"],"version":"v2.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1072","permalink":"https://attack.mitre.org/versions/v12/techniques/T1072"}
