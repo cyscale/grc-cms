@@ -1,1 +1,1 @@
-{"mid":"T1216","name":"System Script Proxy Execution","parentTechniqueName":"","tactics":["TA0005"],"version":"v2.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1216","permalink":"https://attack.mitre.org/versions/v12/techniques/T1216","created":"2023-03-27T08:47:28.925428+03:00"}
+{"mid":"T1216","name":"System Script Proxy Execution","parentTechniqueName":"","tactics":["TA0005"],"version":"v2.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1216","permalink":"https://attack.mitre.org/versions/v12/techniques/T1216"}

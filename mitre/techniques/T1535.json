@@ -1,1 +1,1 @@
-{"mid":"T1535","name":"Unused/Unsupported Cloud Regions","parentTechniqueName":"","tactics":["TA0005"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1535","permalink":"https://attack.mitre.org/versions/v12/techniques/T1535","created":"2023-03-27T08:47:28.925428+03:00"}
+{"mid":"T1535","name":"Unused/Unsupported Cloud Regions","parentTechniqueName":"","tactics":["TA0005"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1535","permalink":"https://attack.mitre.org/versions/v12/techniques/T1535"}

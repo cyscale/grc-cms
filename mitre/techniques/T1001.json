@@ -1,1 +1,1 @@
-{"mid":"T1001","name":"Data Obfuscation","parentTechniqueName":"","tactics":["TA0011"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1001","created":"2023-03-27T08:47:28.925428+03:00"}
+{"mid":"T1001","name":"Data Obfuscation","parentTechniqueName":"","tactics":["TA0011"],"version":"v1.1","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1001","permalink":"https://attack.mitre.org/versions/v12/techniques/T1001"}

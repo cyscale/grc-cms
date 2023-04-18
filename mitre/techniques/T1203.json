@@ -1,1 +1,1 @@
-{"mid":"T1203","name":"Exploitation for Client Execution","parentTechniqueName":"","tactics":["TA0002"],"version":"v1.4","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1203","permalink":"https://attack.mitre.org/versions/v12/techniques/T1203","created":"2023-03-27T08:47:28.925428+03:00"}
+{"mid":"T1203","name":"Exploitation for Client Execution","parentTechniqueName":"","tactics":["TA0002"],"version":"v1.4","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1203","permalink":"https://attack.mitre.org/versions/v12/techniques/T1203"}

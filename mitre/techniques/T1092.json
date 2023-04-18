@@ -1,1 +1,1 @@
-{"mid":"T1092","name":"Communication Through Removable Media","parentTechniqueName":"","tactics":["TA0011"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1092","permalink":"https://attack.mitre.org/versions/v12/techniques/T1092","created":"2023-03-27T08:47:28.9259278+03:00"}
+{"mid":"T1092","name":"Communication Through Removable Media","parentTechniqueName":"","tactics":["TA0011"],"version":"v1.0","matrixVersion":"v12","link":"https://attack.mitre.org/techniques/T1092","permalink":"https://attack.mitre.org/versions/v12/techniques/T1092"}
