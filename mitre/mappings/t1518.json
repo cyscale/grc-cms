@@ -1,0 +1,13 @@
+{
+  "mid": "T1518",
+  "display_name": "Test Software Discovery",
+  "controls": [
+    "networking-ssh-from-internet"
+  ],
+  "assets": [
+    "Bucket"
+  ],
+  "propagators": [
+    "AutoProvisioningSetting"
+  ]
+}
