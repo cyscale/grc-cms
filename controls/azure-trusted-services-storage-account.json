@@ -15,7 +15,7 @@
       "subjects": [
         "StorageAccount"
       ],
-      "query": "azure-1-3-0-storage-7-trusted-microsoft-services-is-enabled-for-storage-account-access"
+      "query": "azure-allow-azure-services-to-access-storage-account"
     }
   ]
 }
