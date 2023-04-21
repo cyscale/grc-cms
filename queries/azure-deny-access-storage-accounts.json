@@ -1,0 +1,5 @@
+{
+  "name": "Default network access rule for Storage Accounts is set to deny",
+  "query": "{storageAccounts(where:{networkRuleSetDefaultAction_MATCHES:\"(?i)^((?!deny).)*$\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}",
+  "slug": "azure-deny-access-storage-accounts"
+}
