@@ -1,0 +1,10 @@
+{
+  "display_name": "Data Destruction - T1485 ",
+  "mid": "T1485",
+  "controls": [
+    "publicly-writable-object-containers"
+  ],
+  "assets": [
+    "Bucket"
+  ]
+}
