@@ -1,0 +1,23 @@
+{
+  "display_name": "Data from Cloud Storage - T1530",
+  "mid": "T1530",
+  "controls": [
+    "object-containers-with-public-access",
+    "aws-1-3-0-iam-20",
+    "aws-logging-3",
+    "azure-1-3-0-logging-1-3",
+    "azure-1-3-0-storage-5",
+    "cis-alibaba-1-0-0-logging-2",
+    "cis-alibaba-1-0-0-storage-1",
+    "cis-alibaba-1-0-0-storage-2",
+    "cis-alibaba-1-0-0-storage-7",
+    "gcp-storage-1",
+    "gcp-storage-3",
+    "publicly-readable-object-containers"
+  ],
+  "assets": [
+    "Bucket",
+    "BlobContainer",
+    "LogProfile"
+  ]
+}
