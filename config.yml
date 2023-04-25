@@ -332,6 +332,7 @@ collections:
             'KeyPair',
             'SageMakerNoteBook',
           ]
+        required: false
       - label: 'Assets'
         name: 'assets'
         widget: 'select'
