@@ -5,6 +5,7 @@
     "aws-iam-13"
   ],
   "assets": [
-    "CloudAccount"
+    "CloudAccount",
+    "User"
   ]
 }
