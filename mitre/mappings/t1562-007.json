@@ -1,0 +1,10 @@
+{
+  "display_name": "Disable or Modify Cloud Firewall - T1562.007",
+  "mid": "T1562.007",
+  "controls": [
+    "aws-monitoring-10"
+  ],
+  "assets": [
+    "CloudAccount"
+  ]
+}
