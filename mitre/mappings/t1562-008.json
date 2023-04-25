@@ -1,0 +1,10 @@
+{
+  "display_name": "Disable Cloud Logs - T1562.008",
+  "mid": "T1562.008",
+  "controls": [
+    "aws-monitoring-10"
+  ],
+  "assets": [
+    "CloudAccount"
+  ]
+}
