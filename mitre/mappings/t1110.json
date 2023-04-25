@@ -2,7 +2,8 @@
   "display_name": "Brute Force - T1110",
   "mid": "T1110",
   "controls": [
-    "aws-iam-13"
+    "aws-iam-13",
+    "okta-mfa"
   ],
   "assets": [
     "CloudAccount",
