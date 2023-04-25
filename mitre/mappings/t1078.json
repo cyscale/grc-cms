@@ -1,0 +1,12 @@
+{
+  "display_name": "Valid Accounts - T1078",
+  "mid": "T1078",
+  "controls": [
+    "aws-iam-13",
+    "okta-mfa"
+  ],
+  "assets": [
+    "CloudAccount",
+    "User"
+  ]
+}
