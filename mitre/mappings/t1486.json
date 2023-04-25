@@ -1,0 +1,10 @@
+{
+  "display_name": "Data Encrypted for Impact - T1486",
+  "mid": "T1486",
+  "controls": [
+    "publicly-writable-object-containers"
+  ],
+  "assets": [
+    "Bucket"
+  ]
+}
