@@ -266,6 +266,7 @@ collections:
       - label: 'Propagators'
         name: 'propagators'
         widget: 'select'
+        required: false,
         multiple: true
         options:
           [
