@@ -1,0 +1,10 @@
+{
+  "display_name": "Impair Command History Logging - T1562.003",
+  "mid": "T1562.003",
+  "controls": [
+    "aws-monitoring-10"
+  ],
+  "assets": [
+    "CloudAccount"
+  ]
+}
