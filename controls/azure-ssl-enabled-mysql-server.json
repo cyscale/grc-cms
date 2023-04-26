@@ -1,0 +1,20 @@
+{
+  "name": "Ensure 'Enforce SSL connection' is set to 'ENABLED' for MySQL Database Server",
+  "slug": "azure-ssl-enabled-mysql-server",
+  "body": "Enable SSL connection on Standard MySQL Database servers.\n\n**Rationale**\n\nSSL connectivity helps to provide a new layer of security, by connecting the database server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between database server and client applications helps protect against \"man-in-the-middle\" attacks by encrypting the data stream between the server and application.",
+  "severity": 3,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `Azure Database for MySQL server`\n2. For each `Azure Database for MySQL single server`, under `Settings`, select `Connection security`\n3. Under the  `SSL settings` header, click on `ENABLED` for `Enforce SSL connection`\n\n**Using Azure Command Line**\n\nUse the below command to set MYSQL Databases to Enforce SSL connection.\n\n```bash\naz mysql server update --resource-group <resourceGroupName> --name <serverName> --ssl-enforcement Enabled\n```\n\nReferences:\n\n1. [https://docs.microsoft.com/en-us/azure/mysql/concepts-ssl-connection-security](https://docs.microsoft.com/en-us/azure/mysql/concepts-ssl-connection-security)\n2. [https://docs.microsoft.com/en-us/azure/mysql/howto-configure-ssl](https://docs.microsoft.com/en-us/azure/mysql/howto-configure-ssl)\n3. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-3-encrypt-sensitive-data-in-transit](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-3-encrypt-sensitive-data-in-transit)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MySQLServer"
+      ],
+      "query": "azure-1-3-0-database-3-2-enforce-ssl-connection-is-set-to-enabled-for-mysql-database-server"
+    }
+  ]
+}
