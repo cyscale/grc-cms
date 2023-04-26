@@ -1,0 +1,11 @@
+{
+  "display_name": "External Remote Services - T1133",
+  "mid": "T1133",
+  "controls": [
+    "networking-management-ports-from-internet"
+  ],
+  "assets": [
+    "SecurityGroup",
+    "Firewall"
+  ]
+}
