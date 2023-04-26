@@ -1,0 +1,20 @@
+{
+  "name": "Ensure 'Enforce SSL connection' is set to 'ENABLED' for PostgreSQL Database Server",
+  "slug": "azure-ssl-enabled-postgresql-server",
+  "body": "Enable SSL connection on PostgreSQL Database Servers.\n\n**Rationale**\n\nSSL connectivity helps to provide a new layer of security by connecting the database server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between database servers and client applications helps protect against \"man-in-the-middle\" attacks by encrypting the data stream between the server and application.",
+  "severity": 3,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `Azure Database for PostgreSQL servers`\n2. For each `Azure Database for PostgreSQL single server`, under `Settings`, select `Connection security`\n3. Under the  `SSL settings` header, click on `ENABLED` for `Enforce SSL connection`\n\n**Using Azure Command Line Interface**\n\nUse the below command to Enforce ssl connection for PostgreSQL Database Server.\n\n```bash\naz postgres server update --resource-group <resourceGroupName> --name <serverName> --ssl-enforcement Enabled\n```\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security](https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-4-encrypt-sensitive-information-in-transit](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-4-encrypt-sensitive-information-in-transit)\n3. [https://learn.microsoft.com/en-us/powershell/module/az.postgresql/get-azpostgresqlserver?view=azps-9.2.0#example-2-get-postgresql-server-by-resource-group-and-server-name](https://learn.microsoft.com/en-us/powershell/module/az.postgresql/get-azpostgresqlserver?view=azps-9.2.0#example-2-get-postgresql-server-by-resource-group-and-server-name)\n4. [https://learn.microsoft.com/en-us/powershell/module/az.postgresql/update-azpostgresqlserver?view=azps-9.2.0#example-1-update-postgresql-server-by-resource-group-and-server-name](https://learn.microsoft.com/en-us/powershell/module/az.postgresql/update-azpostgresqlserver?view=azps-9.2.0#example-1-update-postgresql-server-by-resource-group-and-server-name)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "query": "azure-1-3-0-database-3-1-enforce-ssl-connection-is-set-to-enabled-for-postgresql-database-server",
+      "subjects": [
+        "PostgreSQLServer"
+      ]
+    }
+  ]
+}
