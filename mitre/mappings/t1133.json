@@ -1,13 +1,13 @@
 {
   "mid": "T1133",
   "assets": [
-    "SecurityGroup"
+    "SecurityGroup",
+    "Firewall"
   ],
-  "propagators": [
-    "VM"
-  ],
-  "display_name": "Remote Services",
+  "propagators": null,
+  "display_name": "External Remote Services - T1133",
   "controls": [
-    "networking-ssh-from-internet"
+    "networking-ssh-from-internet",
+    "networking-management-ports-from-internet"
   ]
 }
