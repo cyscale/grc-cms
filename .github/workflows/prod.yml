@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Get GRC changed queries
         id: grc-changed-queries
         uses: tj-actions/changed-files@v32
