@@ -1,0 +1,20 @@
+{
+  "name": "Ensure Diagnostic Setting captures appropriate categories",
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `Monitor`\n2. Select `Activity log`\n3. Select `Export Activity Logs`\n4. Select the subscription your want from the drop-down menu\n5. Select `+ Add diagnostic setting`\n6. Enter a name for the new Diagnostic Setting\n7. Under `Logs`, check the following categories: `Administrative`, `Security`, `Alert`, and `Policy`\n8. Under `Destination details`, check the preferred destination(s) for logs and fill in all details\n9. Select `Save`\n\n**Using Azure CLI**\n\n```bash\naz monitor diagnostic-settings subscription create --subscription <subscriptionID> --name <diagnosticSettingsName> --location <location> <[--event-hub <eventHubID> --event-hub-auth-rule <eventHubAuthRuleID>] [--storage-account <storageAccountID>] [--workspace <logAnalyticsWorkspaceID>] --logs \"[{category:Security,enabled:true},{category:Administrative,enabled:true},{category:Alert,enabled:true},{category:Policy,enabled:true}]\"\n```\n\n**Using Azure PowerShell**\n\n```powershell\n$logCategories = @();\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Administrative -Enabled $true\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Security -Enabled $true\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Alert -Enabled $true\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Policy -Enabled $true\nNew-AzSubscriptionDiagnosticSetting -SubscriptionId <subscriptionID> -Name <diagnosticSettingsName> <[-EventHubAuthorizationRule <eventHubAuthRuleID> -EventHubName <eventHubName>] [-StorageAccountId <storageAccountID>] [-WorkSpaceId <logAnalyticsWorkspaceID>] [-MarketplacePartner ID <fullARMMarketplaceResource ID>]> -Log $logCategories\n```\n\n**Default Value**\n\nWhen the diagnostic setting is created using Azure Portal, by default no categories are selected.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings)\n2. [https://docs.microsoft.com/en-us/azure/azure-monitor/samples/resource-manager-diagnostic-settings](https://docs.microsoft.com/en-us/azure/azure-monitor/samples/resource-manager-diagnostic-settings)\n3. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-3-enable-logging-for-security-investigation](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-3-enable-logging-for-security-investigation)\n4. [https://learn.microsoft.com/en-us/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest](https://learn.microsoft.com/en-us/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest)\n5. [https://learn.microsoft.com/en-us/powershell/module/az.monitor/new-azsubscriptiondiagnosticsetting?view=azps-9.2.0]",
+  "body": "Prerequisite: A Diagnostic Setting must exist. If a Diagnostic Setting does not exist, the navigation and options within this recommendation will not be available. \n\nThe diagnostic setting should be configured to log the appropriate activities from the control/management plane.\n\n**Rationale**\n\nA diagnostic setting controls how the diagnostic log is exported. Capturing the diagnostic setting categories for appropriate control/management plane activities allows proper alerting.",
+  "slug": "azure-diagnostic-settings-categories",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "query": "azure-1-3-0-logging-1-2-diagnostic-setting-captures-appropriate-categories",
+      "subjects": [
+        "SubscriptionDiagnosticSetting"
+      ]
+    }
+  ]
+}
