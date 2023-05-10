@@ -211,12 +211,8 @@ collections:
             fields:
               - label: 'Control'
                 name: 'control'
-                widget: 'relation'
-                collection: 'controls'
-                search_fields: ['slug', 'name']
-                value_field: '{{slug}}'
-                display_fields: ['{{slug}}: {{name}}']
-
+                widget: 'string'
+                hint: 'The control slug'
   - name: techniques
     label: Techniques
     label_singular: Technique
