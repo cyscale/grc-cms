@@ -1,5 +1,5 @@
 {
-  "name": "Ensure that Network Watcher is 'Enabled'",
+  "name": "Ensure Network Watcher is 'Enabled'",
   "body": "Enable Network Watcher for Azure subscriptions.\n\n**Rationale**\n\nNetwork diagnostic and visualization tools available with Network Watcher help users understand, diagnose, and gain insights to the network in Azure.\n\n**Impact**\n\nT﻿here are additional costs per transaction to run and store network data. For high-volume networks these charges will add up quickly.",
   "slug": "azure-network-watcher-enabled",
   "severity": 1,
