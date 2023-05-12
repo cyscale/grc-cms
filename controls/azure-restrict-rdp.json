@@ -1,5 +1,5 @@
 {
-  "name": "Ensure that RDP access from the Internet is evaluated and restricted",
+  "name": "Ensure RDP access from the Internet is evaluated and restricted",
   "slug": "azure-restrict-rdp",
   "severity": 3,
   "body": "Network security groups should be periodically evaluated for port misconfigurations. Where certain ports and protocols may be exposed to the Internet, they should be evaluated for necessity and restricted wherever they are not explicitly required.\n\n**Rationale**\n\nThe potential security problem with using RDP over the Internet is that attackers can use various brute force techniques to gain access to Azure Virtual Machines. Once the attackers gain access, they can use a virtual machine as a launch point for compromising other machines on an Azure Virtual Network or even attack networked devices outside of Azure.",
