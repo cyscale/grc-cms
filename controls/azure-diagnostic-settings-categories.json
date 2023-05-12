@@ -13,7 +13,7 @@
       "expectedResult": "[]",
       "query": "azure-1-3-0-logging-1-2-diagnostic-setting-captures-appropriate-categories",
       "subjects": [
-        "SubscriptionDiagnosticSetting"
+        "SubscriptionDiagnosticSettings"
       ]
     }
   ]
