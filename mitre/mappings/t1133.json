@@ -1,10 +1,17 @@
 {
   "mid": "T1133",
   "assets": [
+    "VM",
+    "Function",
+    "Disk",
+    "Bucket"
+  ],
+  "propagators": [
+    "VM",
+    "Function",
     "SecurityGroup",
     "Firewall"
   ],
-  "propagators": null,
   "display_name": "External Remote Services - T1133",
   "controls": [
     "networking-ssh-from-internet",
