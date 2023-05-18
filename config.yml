@@ -112,6 +112,7 @@ collections:
                 'DBInstance',
                 'Disk',
                 'Domain',
+                'ECSTaskDefinition',
                 'Firewall',
                 'FlowLog',
                 'Function',
