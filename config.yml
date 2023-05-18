@@ -61,6 +61,11 @@ collections:
         label: 'Remediation'
         widget: 'markdown'
         modes: ['raw']
+      - label: 'Alert for secondary only'
+        name: 'alertForSecondaryOnly'
+        widget: 'boolean'
+        default: false
+        hint: 'Create alerts for this control only if there are other impacted assets besides the primary one'
       - label: 'Rules'
         name: 'rules'
         widget: 'list'
