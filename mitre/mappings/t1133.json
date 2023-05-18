@@ -11,7 +11,8 @@
     "Function",
     "SecurityGroup",
     "Firewall",
-    "NetworkInterface"
+    "NetworkInterface",
+    "Subnetwork"
   ],
   "display_name": "External Remote Services - T1133",
   "controls": [
