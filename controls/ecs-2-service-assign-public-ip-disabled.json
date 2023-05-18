@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure ECS services don't have public IP addresses assigned to them automatically",
+  "slug": "ecs-2-service-assign-public-ip-disabled",
+  "body": "This control checks whether Amazon ECS services are configured to automatically assign public IP addresses.\nA public IP address is an IP address that is reachable from the internet. If you launch your Amazon ECS instances with a public IP address, then your Amazon ECS instances are reachable from the internet. Amazon ECS services should not be publicly accessible, as this may allow unintended access to your container application servers.\n",
+  "remediationDescription": "To disable automatic public IP assignment, see [To configure VPC and security group settings for your service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-configure-network.html) in the Amazon Elastic Container Service Developer Guide.\n\nThis control fails if AssignPublicIP is ENABLED. This control passes if AssignPublicIP is DISABLED.",
+  "severity": 2,
+  "rules": [
+    {
+      "query": "aws-ecs-2-service-assign-public-ip-disabled",
+      "subjects": [
+        "ECSTaskDefinition"
+      ],
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]"
+    }
+  ]
+}
