@@ -113,6 +113,7 @@ collections:
                 'Disk',
                 'Domain',
                 'ECSTaskDefinition',
+                'ECSService',
                 'Firewall',
                 'FlowLog',
                 'Function',
