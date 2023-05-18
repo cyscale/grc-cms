@@ -1,0 +1,5 @@
+{
+  "name": "ECS task definitions should not share the host's process namespace",
+  "slug": "aws-ecs-3-task-definition-pidmode-host",
+  "query": "{\n  ecsTaskDefinitions(where: {pidMode: 'host'}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+}
