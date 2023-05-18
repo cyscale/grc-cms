@@ -30,5 +30,6 @@
       ]
     }
   ],
-  "description": "Block SSH Access from the internet"
+  "description": "Block SSH Access from the internet",
+  "alertForSecondaryOnly": true
 }
