@@ -9,7 +9,7 @@
     {
       "query": "aws-ecs-2-service-assign-public-ip-disabled",
       "subjects": [
-        "ECSTaskDefinition"
+        "ECSService"
       ],
       "cloudProviders": [
         "aws"
