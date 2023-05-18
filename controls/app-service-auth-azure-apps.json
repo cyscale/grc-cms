@@ -1,0 +1,21 @@
+{
+  "slug": "app-service-auth-azure-apps",
+  "name": "Ensure App Service Authentication is set up for apps in Azure App Service",
+  "description": "App Services without authentication",
+  "body": "Azure App Service Authentication is a feature that can prevent anonymous HTTP requests from reaching the web application, or authenticate those that have tokens before they reach the app. If an anonymous request is received from a browser, App Service will redirect to a logon page. To handle the logon process, a choice from a set of identity providers can be made, or a custom authentication mechanism can be implemented.\n\n**Rationale**\n\nBy Enabling App Service Authentication, every incoming HTTP request passes through it before being handled by the application code. It also handles authentication of users with the specified provider (Azure Active Directory, Facebook, Google, Microsoft Account, and Twitter), validation, storing and refreshing of tokens, managing the authenticated sessions and injecting identity information into request headers.\n\n**Impact**\n\nThis is only required for App Services which require authentication. Enabling on a website like a marketing or support website will prevent unauthenticated access which would be undesirable. \n\nAdding Authentication requirement will increase cost of App Service and require additional security components to facilitate the authentication.",
+  "severity": 2,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `App Services`\n2. For each `App Service`, under `Settings`, select on `Authentication`\n3. If no identity providers are set up, click `Add identity provider`\n4. Choose other parameters as per your requirements and click on `Add`\n\n**Using Azure Command Line Interface**\n\nTo set App Service Authentication for an existing app, run the following command:\n\n```bash\naz webapp auth update --resource-group <resourceGroupName> --name <appName> --enabled true\n```\n\n**Note**\n\nIn order to access the `App Service Authentication` settings for Web apps using the Microsoft API, it requires `Website Contributor` permissions at subscription level. A custom role can be created in place of `Website contributor` to provide more specific permissions and maintain the principle of least privileged access.\n\n**Default Value**\n\nBy default, App Service Authentication is disabled when a new app is created using the command-line tool or the Azure Portal console.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-overview](https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-overview)\n2. [https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#website-contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#website-contributor)\n3. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-privileged-access#pa-5-automate-entitlement-management](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-privileged-access#pa-5-automate-entitlement-management)\n4. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-governance-strategy#gs-6-define-identity-and-privileged-access-strategy](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-governance-strategy#gs-6-define-identity-and-privileged-access-strategy)\n\n**Additional Information**\n\nYou're not required to use App Service for authentication and authorization. Many web frameworks are bundled with security features, and you can use them if you like. If you need more flexibility than App Service provides, you can also write your own utilities. Secure authentication and authorization require deep understanding of security, including federation, encryption, JSON web tokens (JWT) management, grant types, and so on.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-1-3-0-appservice-1-app-service-authentication-is-set-on-azure-app-service"
+    }
+  ]
+}
