@@ -1,5 +1,5 @@
 {
   "slug": "aws-ecs-2-service-assign-public-ip-disabled",
   "name": "ECS services should not have public IP addresses assigned to them automatically",
-  "query": "{\n  ecsServices(where: {hasECSServiceNetworkConfiguration_ALL: { assignPublicIP: true}}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+  "query": "{\n  ecsServices(where: {hasECSServiceNetworkConfigurations_ALL: { assignPublicIP: true}}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
 }
