@@ -161,6 +161,7 @@ collections:
                 'SecurityGroup',
                 'Site',
                 'StorageAccount',
+                'Subnetwork',
                 'SubscriptionDiagnosticSettings',
                 'TargetHTTPSProxy',
                 'TargetSSLProxy',
