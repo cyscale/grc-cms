@@ -1,1 +1,5 @@
-{"name":"The expiration date is set on all keys","slug":"azure-1-3-0-security-1-the-expiration-date-is-set-on-all-keys","query":"{kmsKeys(where:{expires:\"\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{
+  "name": "The expiration date is set on all keys",
+  "slug": "azure-1-3-0-security-1-the-expiration-date-is-set-on-all-keys",
+  "query": "{kmsKeys(where:{expires:null}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"
+}
