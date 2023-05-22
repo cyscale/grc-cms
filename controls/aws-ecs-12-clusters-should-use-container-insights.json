@@ -13,7 +13,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "ECSService"
+        "ECSCluster"
       ],
       "query": "aws-ecs-12"
     }
