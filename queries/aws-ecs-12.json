@@ -1,5 +1,5 @@
 {
   "name": "ECS clusters should use Container Insights",
   "slug": "aws-ecs-12",
-  "query": "{\n  ecsClusters(where: {hasECSSettings_SOME: {\n      key: \"containerInsights\",\n      value: \"enabled\"  \n    }}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+  "query": "{\n  ecsClusters(where: {hasECSSettings_NONE: {\n      key: \"containerInsights\",\n      value: \"enabled\"  \n    }}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
 }
