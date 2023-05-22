@@ -112,6 +112,7 @@ collections:
                 'DBInstance',
                 'Disk',
                 'Domain',
+                'ECSTaskContainerSpec',
                 'ECSTaskDefinition',
                 'ECSService',
                 'Firewall',
