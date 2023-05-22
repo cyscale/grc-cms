@@ -112,6 +112,7 @@ collections:
                 'DBInstance',
                 'Disk',
                 'Domain',
+                'ECSCluster',
                 'ECSTaskContainerSpec',
                 'ECSTaskDefinition',
                 'ECSService',
