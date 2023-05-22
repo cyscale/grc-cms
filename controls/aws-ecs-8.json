@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Make sure secrets should are not passed as container environment variables",
+  "slug": "aws-ecs-8",
+  "body": "Amazon Elastic Container Service (ECS) [task definitions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) are JSON files that describe how a Docker container should be launched within an ECS cluster.\n\nThis control verifies whether the environment parameter of container in an Amazon ECS task definition includes certain key-value pairs (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, or `ECS_ENGINE_AUTH_DATA`). It's important to note that this control does not consider environmental variables passed from other sources like Amazon S3. Additionally, this control only evaluates the **latest active revision** of the Amazon ECS task definition.",
+  "severity": 3,
+  "remediationDescription": "In AWS, you can safely pass secrets to a task definition in by using AWS Secrets Manager or AWS Systems Manager Parameter Store. These services provide secure storage and management of sensitive information, including API keys, passwords, and database credentials. Here's how you can pass secrets to a task definition:\n\n1. **Store the Secrets**: Use AWS Secrets Manager or AWS Systems Manager Parameter Store to securely store your secrets. These services encrypt the secrets at rest and provide access controls to restrict who can retrieve the secrets.\n2. **Grant Access**: Configure the necessary permissions to allow your ECS task or service to access the stored secrets. This typically involves creating an IAM role with appropriate permissions to access the secret values from Secrets Manager or Parameter Store.\n3. **Update Task Definition**: Modify your task definition to include references to the secrets stored in Secrets Manager or Parameter Store. Instead of hard-coding the secret values directly in the task definition, you use placeholders or environment variables to reference the secrets' ARNs or names.\n4. **Configure Task Execution Role**: Ensure that your ECS task execution role (the role assumed by the ECS agent on the EC2 instances) has the necessary permissions to retrieve the secret values from Secrets Manager or Parameter Store.\n5. **Deploy and Run Tasks**: Launch your tasks or services using the updated task definition. During runtime, the ECS agent will automatically retrieve the secret values from Secrets Manager or Parameter Store and inject them as environment variables or files into the running container.\n\nThe following is a snippet of a task definition showing the format when referencing the full text of a Secrets Manager secret.\n\n```bash\n{\n  \"containerDefinitions\": [{\n    \"secrets\": [{\n      \"name\": \"environment_variable_name\",\n      \"valueFrom\": \"arn:aws:secretsmanager:region:aws_account_id:secret:secret_name-AbCdEf\"\n    }]\n  }]\n}\n```\n\nFor more details refer to [AWS documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html#secrets-create-taskdefinition)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ECSTaskDefinition"
+      ],
+      "query": "ecs-task-definition-no-env-secrets"
+    }
+  ]
+}
