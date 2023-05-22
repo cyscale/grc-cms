@@ -1,5 +1,5 @@
 {
   "name": "ECS containers should run as non-privileged",
   "slug": "aws-ecs-4",
-  "query": "{\n  ecsTaskContainerSpecs(where: {\n    privileged: true\n  }) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+  "query": "{\n  ecsTaskDefinitions(where: {AND: [\n      {\n        isLatestRevision: true\n      },\n      {\n        containerSpecs_SOME: {\n          privileged: true\n        }\n      }\n    ]}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
 }
