@@ -1,5 +1,5 @@
 {
   "name": "Check if Amazon ECS task definitions should have secure networking modes and user definitions",
   "slug": "ecs-task-definitions-secure-privileges",
-  "query": "{\n  ecsTaskDefinitions(\n    where: { networkMode: \"host\", containerSpec: { privileged: true } }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+  "query": "{\n  ecsTaskDefinitions(\n    where: { \n      networkMode: \"host\", \n      OR:[\n        {containerSpecs_SOME: { privileged: true }},\n        {containerSpecs_SOME: { user_CONTAINS: \"root\" }}\n     ] }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
 }
