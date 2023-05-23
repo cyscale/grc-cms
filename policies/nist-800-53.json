@@ -9,7 +9,7 @@
     {
       "name": "Access Control",
       "slug": "nist-800-53-access-control",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "networking-ssh-from-internet"
@@ -174,14 +174,14 @@
           "control": "aws-ecs-4-containers-run-as-non-privileged"
         },
         {
-          "control": "aws-ecs-3-readonly-root-filesystems"
+          "control": "aws-ecs-5-readonly-root-filesystems"
         }
       ]
     },
     {
       "name": "Audit and Accountability",
       "slug": "nist-800-53-audit",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "aws-logging-1"
@@ -293,13 +293,13 @@
     {
       "name": "Awareness and Training",
       "slug": "nist-800-53-training",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
       "name": "Configuration Management",
       "slug": "nist-800-53-cm",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "aws-iam-15"
@@ -384,7 +384,7 @@
     {
       "name": "Contingency Planning",
       "slug": "nist-800-53-continuity-plan",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "azure-1-3-0-database-1-3"
@@ -403,7 +403,7 @@
     {
       "name": "Assessment, Authorization and Monitoring",
       "slug": "nist-800-53-assessment-authorization",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "azure-2-2-1"
@@ -428,7 +428,7 @@
     {
       "name": "Identification and Authentication",
       "slug": "nist-800-53-iam",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "aws-iam-2"
@@ -486,7 +486,7 @@
     {
       "name": "Incident Response",
       "slug": "nist-800-53-incident-response",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "azure-1-3-0-networking-3"
@@ -502,25 +502,25 @@
     {
       "name": "Maintenance",
       "slug": "nist-800-53-maintenance",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
       "name": "Media Protection",
       "slug": "nist-800-53-media-protection",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
       "name": "Personnel Security",
       "slug": "nist-800-53-personnel-security",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
       "name": "Physical and Environmental Protection",
       "slug": "nist-800-53-physical",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
@@ -542,7 +542,7 @@
     {
       "name": "System and Services Acquisition",
       "slug": "nist-800-53-system-acquisition",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "aws-monitoring-1"
@@ -691,7 +691,7 @@
     {
       "name": "System and Communications Protection",
       "slug": "nist-800-53-comms-protection",
-      "body": " ﻿",
+      "body": "",
       "controls": [
         {
           "control": "networking-ssh-from-internet"
@@ -839,19 +839,19 @@
     {
       "name": "Program Management",
       "slug": "nist-800-53-program-management",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
       "name": "PII Processing and Transparency",
       "slug": "nist-800-53-pii-processing",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     },
     {
       "name": "Supply Chain Risk Management",
       "slug": "nist-800-53-suppliers",
-      "body": " ﻿",
+      "body": "",
       "controls": null
     }
   ]
