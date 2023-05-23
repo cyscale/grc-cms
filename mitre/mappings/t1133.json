@@ -10,7 +10,9 @@
     "VM",
     "Function",
     "NetworkInterface",
-    "Subnetwork"
+    "Subnetwork",
+    "SecurityGroup",
+    "Firewall"
   ],
   "display_name": "External Remote Services - T1133",
   "controls": [
