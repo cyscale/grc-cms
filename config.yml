@@ -214,7 +214,13 @@ collections:
         fields:
           - { name: 'name', label: 'Name', widget: 'string' }
           - { name: 'slug', label: 'Slug', widget: 'string' }
-          - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
+          - {
+              name: 'body',
+              label: 'Body',
+              widget: 'markdown',
+              modes: ['raw'],
+              required: false,
+            }
           - label: 'Controls'
             name: 'controls'
             widget: 'list'
