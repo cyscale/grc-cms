@@ -1,1 +1,1 @@
-{"name":"DNSSEC is enabled for Cloud DNS","slug":"gcp-1-1-0-networking-3-dnssec-is-enabled-for-cloud-dns","query":"managedZones(where:{dnsSecConfigState_NOT:\"on\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"DNSSEC is enabled for Cloud DNS","slug":"gcp-1-1-0-networking-3-dnssec-is-enabled-for-cloud-dns","query":"managedZones(where:{dnsSecConfigState_NOT:\"on\"}){...AssetFragment}"}

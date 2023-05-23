@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure PostgreSQL Flexible Servers",
   "slug": "publicly-accessible-azure-postgres-flex-servers",
-  "query": "{ postgreSqlFlexibleServers( where: { publicAccessBlocked: false firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } } "
+  "query": "{ postgreSqlFlexibleServers( where: { publicAccessBlocked: false firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } ) {...AssetFragment} } "
 }

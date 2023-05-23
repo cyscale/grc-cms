@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure PostgreSQL Single Servers with no/old TLS",
   "slug": "publicly-accessible-azure-postgresql-single-servers-with-no-old-tls",
-  "query": "{ postgreSqlServers( where: { AND: [ { publicAccessBlocked: false } { firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } { OR: [ { tlsStatus: \"disabled\" } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ postgreSqlServers( where: { AND: [ { publicAccessBlocked: false } { firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } { OR: [ { tlsStatus: \"disabled\" } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) {...AssetFragment} }"
 }

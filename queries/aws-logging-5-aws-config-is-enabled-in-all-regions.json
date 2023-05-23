@@ -1,1 +1,1 @@
-{"name":"AWS Config is enabled in all regions","slug":"aws-logging-5-aws-config-is-enabled-in-all-regions","query":"AWSLogging5{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"AWS Config is enabled in all regions","slug":"aws-logging-5-aws-config-is-enabled-in-all-regions","query":"AWSLogging5{...AssetFragment}"}

@@ -1,5 +1,5 @@
 {
   "name": "AWS RDS MySQL with outdated engine versions",
   "slug": "aws-rds-mysql-with-outdated-engine-versions",
-  "query": "{ dbInstances (where: { cloudProvider: \"aws\" engine: \"mysql\" OR: [ {engineVersion_STARTS_WITH: \"5.1\"}, {engineVersion_STARTS_WITH: \"5.5\"}, {engineVersion_STARTS_WITH: \"5.6\"} ] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ dbInstances (where: { cloudProvider: \"aws\" engine: \"mysql\" OR: [ {engineVersion_STARTS_WITH: \"5.1\"}, {engineVersion_STARTS_WITH: \"5.5\"}, {engineVersion_STARTS_WITH: \"5.6\"} ] }) {...AssetFragment} }"
 }

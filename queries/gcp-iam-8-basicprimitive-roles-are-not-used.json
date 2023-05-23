@@ -1,1 +1,1 @@
-{"name":"Basic/primitive roles are not used","slug":"gcp-iam-8-basicprimitive-roles-are-not-used","query":"{iamRoles(where:{name_IN:[\"roles/viewer\",\"roles/editor\",\"roles/owner\"]}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"Basic/primitive roles are not used","slug":"gcp-iam-8-basicprimitive-roles-are-not-used","query":"{iamRoles(where:{name_IN:[\"roles/viewer\",\"roles/editor\",\"roles/owner\"]}){...AssetFragment}}"}

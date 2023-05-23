@@ -1,5 +1,5 @@
 {
   "name": "Alibaba KMSKeys Exposed Through Vulnerable VMs",
   "slug": "alibaba-keys-exposed-through-vms",
-  "query": "{\n  alibabaKMSKeysExposedThroughVMs {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+  "query": "{\n  alibabaKMSKeysExposedThroughVMs {...AssetFragment}\n}"
 }

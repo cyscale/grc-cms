@@ -1,5 +1,5 @@
 {
-  "query": "{\n  accessibleBucketsFromAlibabaFunctionsWithSystemPolicy {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}",
+  "query": "{\n  accessibleBucketsFromAlibabaFunctionsWithSystemPolicy {...AssetFragment}\n}",
   "slug": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated-and-system-policy",
   "name": "Alibaba Buckets accessible from functions with http trigger unauthenticated and system policy"
 }

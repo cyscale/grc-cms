@@ -1,5 +1,5 @@
 {
   "name": "Azure KMSKeys Exposed Through Vulnerable VMs",
   "slug": "azure-keys-exposed-through-vms",
-  "query": "{ vms( where: { networkInterfaces_SOME: { securityGroups_SOME: { rules_SOME: { direction: \"Inbound\" action: \"Allow\" AND: [ { OR: [ { sources_INCLUDES: \"cidr:0.0.0.0/0\" } { sources_INCLUDES: \"cidr:::/0\" } { sources_INCLUDES: \"tag:Internet\" } { sources: [] } ] } { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 } ] } } } } ) { vmRoles { hasIAMPermissions { isOwnedByIAMAssetType { includesKMSKey { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } } } } }"
+  "query": "{ vms( where: { networkInterfaces_SOME: { securityGroups_SOME: { rules_SOME: { direction: \"Inbound\" action: \"Allow\" AND: [ { OR: [ { sources_INCLUDES: \"cidr:0.0.0.0/0\" } { sources_INCLUDES: \"cidr:::/0\" } { sources_INCLUDES: \"tag:Internet\" } { sources: [] } ] } { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 } ] } } } } ) { vmRoles { hasIAMPermissions { isOwnedByIAMAssetType { includesKMSKey {...AssetFragment} } } } } }"
 }

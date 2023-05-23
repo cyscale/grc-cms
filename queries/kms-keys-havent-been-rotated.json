@@ -1,5 +1,5 @@
 {
   "name": "Encryption Keys haven’t been rotated in more than 90 days",
   "slug": "kms-keys-havent-been-rotated",
-  "query": "{\n  EncryptionKeysRotation(days: 90) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+  "query": "{\n  EncryptionKeysRotation(days: 90) {...AssetFragment}\n}"
 }

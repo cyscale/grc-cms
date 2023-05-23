@@ -1,5 +1,5 @@
 {
-  "query": "{\n  AzureSC9 {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n",
+  "query": "{\n  AzureSC9 {...AssetFragment}\n}\n",
   "slug": "azure-iam-account-summaries-with-wdapt-enabled",
   "name": "Azure IAM Account summaries with WDAPT enabled"
 }

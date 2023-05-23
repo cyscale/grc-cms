@@ -1,1 +1,1 @@
-{"name":"'Unattached disks' are encrypted","slug":"cis-alibaba-1-0-0-vm-1-unattached-disks-are-encrypted","query":"disks(where: { status_NOT: \"In_use\", encrypted: false }) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"'Unattached disks' are encrypted","slug":"cis-alibaba-1-0-0-vm-1-unattached-disks-are-encrypted","query":"disks(where: { status_NOT: \"In_use\", encrypted: false }) {...AssetFragment}"}

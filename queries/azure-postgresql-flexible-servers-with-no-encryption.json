@@ -1,5 +1,5 @@
 {
   "name": "Azure PostgreSQL Flexible Servers with no encryption",
   "slug": "azure-postgresql-flexible-servers-with-no-encryption",
-  "query": "{ postgreSqlFlexibleServers (where: {encrypted: false}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ postgreSqlFlexibleServers (where: {encrypted: false}) {...AssetFragment} }"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Azure MariaDB Servers with no encryption",
   "slug": "azure-mariadb-servers-with-no-encryption",
-  "query": "{\n  mariaDbServers(where: { encrypted: false }) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+  "query": "{\n  mariaDbServers(where: { encrypted: false }) {...AssetFragment}\n}"
 }

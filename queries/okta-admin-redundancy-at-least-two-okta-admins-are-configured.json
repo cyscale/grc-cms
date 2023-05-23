@@ -1,1 +1,1 @@
-{"name":"At least two Okta admins are configured","slug":"okta-admin-redundancy-at-least-two-okta-admins-are-configured","query":"Okta1{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"At least two Okta admins are configured","slug":"okta-admin-redundancy-at-least-two-okta-admins-are-configured","query":"Okta1{...AssetFragment}"}

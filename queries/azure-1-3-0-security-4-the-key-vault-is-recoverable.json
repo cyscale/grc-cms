@@ -1,5 +1,5 @@
 {
   "name": "The key vault is recoverable",
   "slug": "azure-1-3-0-security-4-the-key-vault-is-recoverable",
-  "query": "{\n  kmsVaults(\n    where: \n    { \n      OR: [ \n        {enableSoftDelete_NOT: true } \n        {enablePurgeProtection_NOT: true } \n      ]  }\n    ) {\n    internalName\n    enableSoftDelete\n    enablePurgeProtection\n  }\n}"
+  "query": "{\n  kmsVaults(\n    where: \n    { \n      OR: [ \n        {enableSoftDelete_NOT: true } \n        {enablePurgeProtection_NOT: true } \n      ]  }\n    ) {...AssetFragment}\n}"
 }

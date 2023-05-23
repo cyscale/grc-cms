@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud Keys With Permissive Access Policy",
   "slug": "gcp-keys-with-permissive-access-policy",
-  "query": "{ kmsKeys( where: { OR: [ { policyDocument_MATCHES: \".*domain:.*\" } { iamPolicy: { bindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+  "query": "{ kmsKeys( where: { OR: [ { policyDocument_MATCHES: \".*domain:.*\" } { iamPolicy: { bindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ] } ) {...AssetFragment} } "
 }

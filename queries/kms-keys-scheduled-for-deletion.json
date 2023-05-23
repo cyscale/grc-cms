@@ -1,5 +1,5 @@
 {
   "name": "Encryption Keys scheduled for deletion",
-  "query": "{ kmsKeys(where: {scheduleForDeletion: true, dataStores_SOME: { identifier_NOT: null }}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } }",
+  "query": "{ kmsKeys(where: {scheduleForDeletion: true, dataStores_SOME: { identifier_NOT: null }}) {...AssetFragment} }",
   "slug": "kms-keys-scheduled-for-deletion"
 }

@@ -1,1 +1,1 @@
-{"name":"Log metric filter and alerts exist for VPC network changes","slug":"gcp-logging-9-log-metric-filter-and-alerts-exist-for-vpc-network-changes","query":"GCPLogging9{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"Log metric filter and alerts exist for VPC network changes","slug":"gcp-logging-9-log-metric-filter-and-alerts-exist-for-vpc-network-changes","query":"GCPLogging9{...AssetFragment}"}

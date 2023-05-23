@@ -1,5 +1,5 @@
 {
   "slug": "aws-ecs-5-task-definition-readonly-root",
-  "query": "{\n  ecsTaskDefinitions(where: {isLatestRevision: true, containerSpecs_SOME: { readOnlyRootFS: false }}) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}",
+  "query": "{\n  ecsTaskDefinitions(where: {isLatestRevision: true, containerSpecs_SOME: { readOnlyRootFS: false }}) {...AssetFragment}\n}",
   "name": "ECS containers should be limited to read-only access to root filesystems"
 }
