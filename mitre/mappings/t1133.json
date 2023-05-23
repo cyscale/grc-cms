@@ -9,8 +9,6 @@
   "propagators": [
     "VM",
     "Function",
-    "SecurityGroup",
-    "Firewall",
     "NetworkInterface",
     "Subnetwork"
   ],
