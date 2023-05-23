@@ -1,5 +1,5 @@
 {
-  "query": "{\n  AzureIAM23 {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n",
+  "query": "{\n  AzureIAM23 {...AssetFragment}\n}\n",
   "slug": "azure-iam-custom-roles-with-locks-permission",
   "name": "Azure IAM Custom roles with lock permission"
 }

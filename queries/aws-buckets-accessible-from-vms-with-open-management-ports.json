@@ -1,5 +1,5 @@
 {
   "name": "AWS Buckets accessible from VMs with open management ports",
   "slug": "aws-buckets-accessible-from-vms-with-open-management-ports",
-  "query": "{\n  accessibleBucketsFromAWSVMs {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n  }\n}"
+  "query": "{\n  accessibleBucketsFromAWSVMs {...AssetFragment}\n}"
 }

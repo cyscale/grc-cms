@@ -1,5 +1,5 @@
 {
   "name": "Security Groups attached to Assets should not have management ports open to the internet",
   "slug": "attached-security-groups-with-open-management-ports",
-  "query": "{AttachedSecurityGroupsWithOpenManagementPorts(managementPorts: [22,3389]){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"
+  "query": "{AttachedSecurityGroupsWithOpenManagementPorts(managementPorts: [22,3389]){...AssetFragment}}"
 }

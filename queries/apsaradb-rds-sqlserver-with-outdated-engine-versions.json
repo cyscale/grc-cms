@@ -1,5 +1,5 @@
 {
   "name": "ApsaraDB RDS SQLServer with oudated engine versions",
   "slug": "apsaradb-rds-sqlserver-with-outdated-engine-versions",
-  "query": "{ dbInstances (where: { cloudProvider: \"alibaba\" engine: \"sqlserver\" engineVersion_NOT_IN: [\"2019\", \"2017\", \"2016\", \"2014\"] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ dbInstances (where: { cloudProvider: \"alibaba\" engine: \"sqlserver\" engineVersion_NOT_IN: [\"2019\", \"2017\", \"2016\", \"2014\"] }) {...AssetFragment} }"
 }

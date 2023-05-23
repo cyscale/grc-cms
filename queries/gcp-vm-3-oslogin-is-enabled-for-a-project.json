@@ -1,1 +1,1 @@
-{"name":"Oslogin is enabled for a Project","slug":"gcp-vm-3-oslogin-is-enabled-for-a-project","query":"projects(where:{hasCommonInstanceMetadataItem_SOME:{key:\"os-login\",value:\"false\"}}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"Oslogin is enabled for a Project","slug":"gcp-vm-3-oslogin-is-enabled-for-a-project","query":"projects(where:{hasCommonInstanceMetadataItem_SOME:{key:\"os-login\",value:\"false\"}}){...AssetFragment}"}

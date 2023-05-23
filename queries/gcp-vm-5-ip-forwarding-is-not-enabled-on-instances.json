@@ -1,1 +1,1 @@
-{"name":"IP forwarding is not enabled on Instances","slug":"gcp-vm-5-ip-forwarding-is-not-enabled-on-instances","query":"vms(where:{canIPForward:true}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"IP forwarding is not enabled on Instances","slug":"gcp-vm-5-ip-forwarding-is-not-enabled-on-instances","query":"vms(where:{canIPForward:true}){...AssetFragment}"}

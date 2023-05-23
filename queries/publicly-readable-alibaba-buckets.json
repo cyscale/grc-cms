@@ -1,5 +1,5 @@
 {
   "name": "Publicly Readable Alibaba Buckets",
   "slug": "publicly-readable-alibaba-buckets",
-  "query": "{ buckets( where: { cloudProvider: \"alibaba\" publicAccessBlocked: false OR: [ { acl_IN: [\"public-read\"] } { bucketPolicy: { statements_SOME: { effect: \"Allow\" OR: [ { actions_INCLUDES: \"oss:GetObject\" } { actions_INCLUDES: \"oss:ListObjects\" } { actions_INCLUDES: \"oss:GetObjectVersion\" } { actions_INCLUDES: \"oss:*\" } { actions_INCLUDES: \"*\" } ] principals_INCLUDES: \"*\" } } } ] } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+  "query": "{ buckets( where: { cloudProvider: \"alibaba\" publicAccessBlocked: false OR: [ { acl_IN: [\"public-read\"] } { bucketPolicy: { statements_SOME: { effect: \"Allow\" OR: [ { actions_INCLUDES: \"oss:GetObject\" } { actions_INCLUDES: \"oss:ListObjects\" } { actions_INCLUDES: \"oss:GetObjectVersion\" } { actions_INCLUDES: \"oss:*\" } { actions_INCLUDES: \"*\" } ] principals_INCLUDES: \"*\" } } } ] } ) {...AssetFragment} } "
 }

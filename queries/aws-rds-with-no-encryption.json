@@ -1,5 +1,5 @@
 {
   "name": "AWS RDS with no encryption",
   "slug": "aws-rds-with-no-encryption",
-  "query": "{ dbInstances (where: { cloudProvider: \"aws\" encrypted: false }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ dbInstances (where: { cloudProvider: \"aws\" encrypted: false }) {...AssetFragment} }"
 }

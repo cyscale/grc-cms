@@ -1,1 +1,1 @@
-{"name":"Eliminate use of the \"root\" user for administrative and daily tasks","slug":"aws-1-3-0-iam-7-eliminate-use-of-the-root-user-for-administrative-and-daily-tasks","query":"AWSIAM1"}
+{"name":"Eliminate use of the \"root\" user for administrative and daily tasks","slug":"aws-1-3-0-iam-7-eliminate-use-of-the-root-user-for-administrative-and-daily-tasks","query":"AWSIAM1 {...AssetFragment}"}

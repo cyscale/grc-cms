@@ -1,1 +1,1 @@
-{"name":"The key vault is recoverable","slug":"azure-1-3-0-security-4-the-key-vault-is-recoverable","query":"{kmsVaults(where:{enableSoftDelete_NOT:true,enablePurgeProtection_NOT:true}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"The key vault is recoverable","slug":"azure-1-3-0-security-4-the-key-vault-is-recoverable","query":"{kmsVaults(where:{enableSoftDelete_NOT:true,enablePurgeProtection_NOT:true}){...AssetFragment}}"}

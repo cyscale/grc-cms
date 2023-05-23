@@ -1,5 +1,5 @@
 {
   "name": "Azure MySQL Servers with outdated engine versions",
   "slug": "azure-mysql-servers-with-outdated-engine-versions",
-  "query": "{ mySqlServers (where: {engineVersion_NOT_IN: [\"8.0\", \"5.7\"]}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ mySqlServers (where: {engineVersion_NOT_IN: [\"8.0\", \"5.7\"]}) {...AssetFragment} }"
 }

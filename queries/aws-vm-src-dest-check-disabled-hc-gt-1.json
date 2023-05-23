@@ -1,5 +1,5 @@
 {
   "name": "AWS VM Source Destination Check Disabled and Hop Count Greater Than 1",
   "slug": "aws-vm-src-dest-check-disabled-hc-gt-1",
-  "query": "{\n  vms (\n    where: {\n      networkInterfaces_SOME: {\n        sourceDestCheck: false\n      }\n      metadataOptionHTTPPutResponseHopLimit_GT: 1\n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+  "query": "{\n  vms (\n    where: {\n      networkInterfaces_SOME: {\n        sourceDestCheck: false\n      }\n      metadataOptionHTTPPutResponseHopLimit_GT: 1\n    }\n  ) {...AssetFragment}\n}"
 }

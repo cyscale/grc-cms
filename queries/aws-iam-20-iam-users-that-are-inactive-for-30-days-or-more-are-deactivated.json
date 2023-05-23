@@ -1,1 +1,1 @@
-{"name":"IAM Users that are inactive for 30 days or more are deactivated","slug":"aws-iam-20-iam-users-that-are-inactive-for-30-days-or-more-are-deactivated","query":"{AWSIAM20{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"IAM Users that are inactive for 30 days or more are deactivated","slug":"aws-iam-20-iam-users-that-are-inactive-for-30-days-or-more-are-deactivated","query":"{AWSIAM20{...AssetFragment}}"}

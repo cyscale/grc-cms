@@ -1,1 +1,1 @@
-{"name":"All the expired SSL/TLS certificates stored in AWS IAM are removed","slug":"aws-1-3-0-iam-19-all-the-expired-ssltls-certificates-stored-in-aws-iam-are-removed","query":"AWS130IAM19 {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"All the expired SSL/TLS certificates stored in AWS IAM are removed","slug":"aws-1-3-0-iam-19-all-the-expired-ssltls-certificates-stored-in-aws-iam-are-removed","query":"AWS130IAM19 {...AssetFragment}"}

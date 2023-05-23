@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible AWS Keys",
   "slug": "publicly-accessible-aws-keys",
-  "query": "{ kmsKeys( where: { keyPolicy: { statements_SOME: { effect: \"Allow\" conditions: [] principals_INCLUDES: \"AWS|*\" } } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } "
+  "query": "{ kmsKeys( where: { keyPolicy: { statements_SOME: { effect: \"Allow\" conditions: [] principals_INCLUDES: \"AWS|*\" } } } ) {...AssetFragment} } "
 }

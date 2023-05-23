@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure MySQL Single Servers",
   "slug": "publicly-accessible-azure-mysql-single-servers",
-  "query": "{ mySqlServers( where: { publicAccessBlocked: false firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } ) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } } "
+  "query": "{ mySqlServers( where: { publicAccessBlocked: false firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } ) {...AssetFragment} } "
 }

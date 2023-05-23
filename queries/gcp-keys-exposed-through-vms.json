@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud KMSKeys Exposed Through Vulnerable VMs",
   "slug": "gcp-keys-exposed-through-vms",
-  "query": "vms( where: { firewalls_SOME: { rules_SOME: { direction: \"Inbound\" action: \"Allow\" AND: [ { OR: [ { sources_INCLUDES: \"cidr:0.0.0.0/0\" } { sources_INCLUDES: \"cidr:::/0\" } ] } { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 } ] } } } ) { hasVMServiceAccountAccess { iamServiceAccounts { serviceAccountRoles { hasIAMPermissions { isOwnedByIAMAssetType { includesKMSKey { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory contentHash } } } } } } }"
+  "query": "vms( where: { firewalls_SOME: { rules_SOME: { direction: \"Inbound\" action: \"Allow\" AND: [ { OR: [ { sources_INCLUDES: \"cidr:0.0.0.0/0\" } { sources_INCLUDES: \"cidr:::/0\" } ] } { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 } ] } } } ) { hasVMServiceAccountAccess { iamServiceAccounts { serviceAccountRoles { hasIAMPermissions { isOwnedByIAMAssetType { includesKMSKey {...AssetFragment} } } } } } }"
 }

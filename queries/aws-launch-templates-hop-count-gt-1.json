@@ -1,5 +1,5 @@
 {
   "name": "AWS Launch Templates with Hop Count Greater than 1",
   "slug": "aws-launch-templates-hop-count-gt-1",
-  "query": "{\n  launchTemplateVersions(\n    where: { metadataOptionHTTPPutResponseHopLimit_GT: 1 }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+  "query": "{\n  launchTemplateVersions(\n    where: { metadataOptionHTTPPutResponseHopLimit_GT: 1 }\n  ) {...AssetFragment}\n}\n"
 }
