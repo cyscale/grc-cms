@@ -682,6 +682,9 @@
         },
         {
           "control": "aws-ecs-12-clusters-should-use-container-insights"
+        },
+        {
+          "control": "aws-ecs-10-latest-platformversion"
         }
       ]
     },
