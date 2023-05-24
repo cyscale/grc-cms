@@ -1,1 +1,1 @@
-{"name":"Legacy networks do not exist for a project","slug":"gcp-networking-2-legacy-networks-do-not-exist-for-a-project","query":"vpcs(where:{IPv4Range_NOT:\"\" gatewayIPv4_NOT:\"\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"Legacy networks do not exist for a project","slug":"gcp-networking-2-legacy-networks-do-not-exist-for-a-project","query":"vpcs(where:{IPv4Range_NOT:\"\" gatewayIPv4_NOT:\"\"}){...AssetFragment}"}

@@ -1,1 +1,1 @@
-{"name":"Network Watcher is 'Enabled'","slug":"azure-1-3-0-networking-5-network-watcher-is-enabled","query":"{networkWatchers(where:{provisioningState_MATCHES:\"(?i)^((?!succeeded).)*$\"},){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"Network Watcher is 'Enabled'","slug":"azure-1-3-0-networking-5-network-watcher-is-enabled","query":"{networkWatchers(where:{provisioningState_MATCHES:\"(?i)^((?!succeeded).)*$\"},){...AssetFragment}}"}

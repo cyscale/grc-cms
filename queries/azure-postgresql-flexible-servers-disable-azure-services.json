@@ -1,5 +1,5 @@
 {
-  "query": "{\n  postgreSqlFlexibleServers (where: {\n      firewallRules_SOME: {\n        OR: [\n          { name_MATCHES: \"(?i)allowallwindowsazureips\" }\n          { name_MATCHES: \"(?i)allowallazureips\" }\n          { AND: [{ startIPAddress: \"0.0.0.0\" }, { endIPAddress: \"0.0.0.0\" }] }\n        ]\n      }\n    }) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n\n",
+  "query": "{\n  postgreSqlFlexibleServers (where: {\n      firewallRules_SOME: {\n        OR: [\n          { name_MATCHES: \"(?i)allowallwindowsazureips\" }\n          { name_MATCHES: \"(?i)allowallazureips\" }\n          { AND: [{ startIPAddress: \"0.0.0.0\" }, { endIPAddress: \"0.0.0.0\" }] }\n        ]\n      }\n    }) {...AssetFragment}\n}\n\n",
   "slug": "azure-postgresql-flexible-servers-disable-azure-services",
   "name": "Ensure 'Allow access to Azure services' for PostgreSQL Database Flexible Server is disabled"
 }

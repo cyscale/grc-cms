@@ -1,5 +1,5 @@
 {
   "name": "Azure Blob Containers accessible from functions with http trigger unauthenticated",
   "slug": "azure-blob-containers-accessible-from-functions-with-http-trigger-unauthenticated",
-  "query": "{\n  accessibleBlobContainersFromAzureFunctions {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}"
+  "query": "{\n  accessibleBlobContainersFromAzureFunctions {...AssetFragment}\n}"
 }

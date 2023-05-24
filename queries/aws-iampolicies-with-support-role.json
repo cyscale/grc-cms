@@ -1,5 +1,5 @@
 {
   "slug": "aws-iampolicies-with-support-role",
   "name": "AWS IAMPolicies with support role",
-  "query": "{\n  AWSIAM16 {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+  "query": "{\n  AWSIAM16 {...AssetFragment}\n}\n"
 }

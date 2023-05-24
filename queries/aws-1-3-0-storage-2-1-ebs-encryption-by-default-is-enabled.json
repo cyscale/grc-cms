@@ -1,1 +1,1 @@
-{"name":"EBS encryption by default is enabled","slug":"aws-1-3-0-storage-2-1-ebs-encryption-by-default-is-enabled","query":"{ebsSettings(where: { encryptedByDefault: false }) {identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"EBS encryption by default is enabled","slug":"aws-1-3-0-storage-2-1-ebs-encryption-by-default-is-enabled","query":"{ebsSettings(where: { encryptedByDefault: false }) {...AssetFragment}}"}

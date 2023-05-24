@@ -1,1 +1,1 @@
-{"name":"Managed IAM Policies are used instead of Inline Policies","slug":"aws-iam-18-managed-iam-policies-are-used-instead-of-inline-policies","query":"{AWSIAM8{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"Managed IAM Policies are used instead of Inline Policies","slug":"aws-iam-18-managed-iam-policies-are-used-instead-of-inline-policies","query":"{AWSIAM8{...AssetFragment}}"}

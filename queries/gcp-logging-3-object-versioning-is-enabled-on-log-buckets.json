@@ -1,1 +1,1 @@
-{"name":"Object versioning is enabled on log-buckets","slug":"gcp-logging-3-object-versioning-is-enabled-on-log-buckets","query":"GCPLogging3{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"Object versioning is enabled on log-buckets","slug":"gcp-logging-3-object-versioning-is-enabled-on-log-buckets","query":"GCPLogging3{...AssetFragment}"}

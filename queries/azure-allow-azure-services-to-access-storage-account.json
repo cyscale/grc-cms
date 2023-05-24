@@ -1,5 +1,5 @@
 {
   "name": "Ensure 'Allow Azure services on the trusted services list to access this storage account' is Enabled for Storage Account Access",
   "slug": "azure-allow-azure-services-to-access-storage-account",
-  "query": "{\n  storageAccounts(\n    where: \n    {\n  OR: [\n    { AND: [{ networkRuleSetDefaultAction_CONTAINS: \"Allow\" }] }\n    { AND: [{ networkRuleSetDefaultAction_CONTAINS: \"Deny\" }, {  networkRuleSetBypass_NOT_CONTAINS: \"AzureServices\" }] }\n  ]\n} \n  ) \n  {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n"
+  "query": "{\n  storageAccounts(\n    where: \n    {\n  OR: [\n    { AND: [{ networkRuleSetDefaultAction_CONTAINS: \"Allow\" }] }\n    { AND: [{ networkRuleSetDefaultAction_CONTAINS: \"Deny\" }, {  networkRuleSetBypass_NOT_CONTAINS: \"AzureServices\" }] }\n  ]\n} \n  ) \n  {...AssetFragment}\n}\n"
 }

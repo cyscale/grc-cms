@@ -1,5 +1,5 @@
 {
   "name": "Retrieve SageMaker notebooks without IMDSv2 required",
   "slug": "aws-sage-maker-notebook-no-imdsv2",
-  "query": "{\n  sageMakerNoteBooks(\n    where: {\n     NOT: { minimumInstanceMetadataServiceVersion: \"2\" } \n    }\n  ) {\n    identifier\n    accountID\n    cloudAccountID\n    cloudAccountName\n    cloudProvider\n    idFromProvider\n    internalAssetType\n    internalName\n    internalRegion\n    assetCategory\n    contentHash\n  }\n}\n\n"
+  "query": "{\n  sageMakerNoteBooks(\n    where: {\n     NOT: { minimumInstanceMetadataServiceVersion: \"2\" } \n    }\n  ) {...AssetFragment}\n}\n\n"
 }

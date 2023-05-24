@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud Cloud SQL PostgreSQL with outdated engine versions",
   "slug": "gcp-cloudsql-postgresql-with-outdated-engine-versions",
-  "query": "{ cloudSqlInstances (where: { OR: [ {engine: \"postgres\"}, {engine: \"postgresql\"} ] engineVersion_NOT_IN: [\"10\", \"11\", \"12\", \"13\", \"14\", \"15\"] }) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ cloudSqlInstances (where: { OR: [ {engine: \"postgres\"}, {engine: \"postgresql\"} ] engineVersion_NOT_IN: [\"10\", \"11\", \"12\", \"13\", \"14\", \"15\"] }) {...AssetFragment} }"
 }

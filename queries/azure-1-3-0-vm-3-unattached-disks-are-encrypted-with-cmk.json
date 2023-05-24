@@ -1,1 +1,1 @@
-{"name":"'Unattached disks' are encrypted with CMK","slug":"azure-1-3-0-vm-3-unattached-disks-are-encrypted-with-cmk","query":"{disks(where:{diskState_MATCHES:\"(?i)unattached\",encryptionKey:null}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"'Unattached disks' are encrypted with CMK","slug":"azure-1-3-0-vm-3-unattached-disks-are-encrypted-with-cmk","query":"{disks(where:{diskState_MATCHES:\"(?i)unattached\",encryptionKey:null}){...AssetFragment}}"}

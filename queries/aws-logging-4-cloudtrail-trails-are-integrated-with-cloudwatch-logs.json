@@ -1,1 +1,1 @@
-{"name":"CloudTrail trails are integrated with CloudWatch Logs","slug":"aws-logging-4-cloudtrail-trails-are-integrated-with-cloudwatch-logs","query":"AWSLogging4{identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"CloudTrail trails are integrated with CloudWatch Logs","slug":"aws-logging-4-cloudtrail-trails-are-integrated-with-cloudwatch-logs","query":"AWSLogging4{...AssetFragment}"}

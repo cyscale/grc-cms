@@ -1,5 +1,5 @@
 {
   "name": "Databases without delete protection aws and alibaba",
   "slug": "databases-without-delete-protection-aws-and-alibaba",
-  "query": "{ dbInstances(where: { AND: [ {deletionPrevention: \"disabled\" } {OR: [{ dbCluster: null }{ dbCluster: { deletionProtection: false }}]}]}) { identifier accountID cloudAccountID cloudAccountName cloudProvider idFromProvider internalAssetType internalName internalRegion assetCategory } }"
+  "query": "{ dbInstances(where: { AND: [ {deletionPrevention: \"disabled\" } {OR: [{ dbCluster: null }{ dbCluster: { deletionProtection: false }}]}]}) {...AssetFragment} }"
 }

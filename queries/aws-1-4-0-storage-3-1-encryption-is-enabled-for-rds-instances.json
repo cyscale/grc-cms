@@ -1,1 +1,1 @@
-{"name":"Encryption is enabled for RDS Instances","slug":"aws-1-4-0-storage-3-1-encryption-is-enabled-for-rds-instances","query":"{dbInstances(where:{encrypted:false}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}}"}
+{"name":"Encryption is enabled for RDS Instances","slug":"aws-1-4-0-storage-3-1-encryption-is-enabled-for-rds-instances","query":"{dbInstances(where:{encrypted:false}){...AssetFragment}}"}

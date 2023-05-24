@@ -1,1 +1,1 @@
-{"name":"CloudTrail logs are encrypted at rest","slug":"aws-logging-7-cloudtrail-logs-are-encrypted-at-rest","query":"trails(where:{kmsKeyID:\"\"}){identifier,accountID,cloudAccountID,cloudAccountName,cloudProvider,idFromProvider,internalAssetType,internalName,internalRegion,assetCategory,contentHash}"}
+{"name":"CloudTrail logs are encrypted at rest","slug":"aws-logging-7-cloudtrail-logs-are-encrypted-at-rest","query":"trails(where:{kmsKeyID:\"\"}){...AssetFragment}"}
