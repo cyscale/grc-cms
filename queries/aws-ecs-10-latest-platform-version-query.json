@@ -1,5 +1,5 @@
 {
-  "slug": "aws-ecs-10-fargate-service-no-latest-platform-version",
+  "slug": "aws-ecs-10-latest-platform-version-query",
   "name": "ECS Services should use the latest platform version",
   "query": "{\n  ecsServices(where: {NOT: { platformVersion_IN: [\"LATEST\", \"\"] }}) {...AssetFragment}\n}"
 }

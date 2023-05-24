@@ -1,19 +1,15 @@
 {
   "alertForSecondaryOnly": false,
   "name": "Ensure ECS services don't have public IP addresses assigned to them automatically",
-  "slug": "ecs-2-service-assign-public-ip-disabled",
+  "slug": "aws-ecs-2-service-assign-public-ip-disabled",
   "body": "This control checks whether Amazon ECS services are configured to automatically assign public IP addresses.\nA public IP address is an IP address that is reachable from the internet. If you launch your Amazon ECS instances with a public IP address, then your Amazon ECS instances are reachable from the internet. Amazon ECS services should not be publicly accessible, as this may allow unintended access to your container application servers.\n",
   "remediationDescription": "To disable automatic public IP assignment, see [To configure VPC and security group settings for your service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-configure-network.html) in the Amazon Elastic Container Service Developer Guide.\n\nThis control fails if AssignPublicIP is ENABLED. This control passes if AssignPublicIP is DISABLED.\n\nFor tasks that are hosted on Amazon EC2 instances, the awsvpc network mode doesn't provide task ENIs with public IP addresses. To access the internet, tasks that are hosted on Amazon EC2 instances can be launched in a private subnet that's configured to use a [NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html).\n\nTo configure VPC and security group settings for your service\n1. If you host tasks on EC2 instances, for Cluster VPC, choose the VPC that your instances are in.\n\n2. For Subnets, choose the available subnets for your service task placement.\n\n3. For Security groups, choose a security group was created for your service's tasks. This security group allows HTTP traffic access from the internet (0.0.0.0/0). To edit the name or the rules of this security group or to choose an existing security group, choose Edit and then modify your security group settings.\n\n4. For Auto-assign Public IP, choose whether to have your tasks receive a public IP address. For tasks on Fargate, for the task to pull the container image, it must either use a public subnet and be assigned a public IP address or a private subnet that has a route to the internet or a NAT gateway that can route requests to the internet.\n",
   "severity": 3,
   "rules": [
     {
-      "query": "aws-ecs-2-service-assign-public-ip-disabled",
-      "subjects": [
-        "ECSService"
-      ],
-      "cloudProviders": [
-        "aws"
-      ],
+      "query": "aws-ecs-2-service-assign-public-ip-disabled-query",
+      "subjects": ["ECSService"],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]"
     }

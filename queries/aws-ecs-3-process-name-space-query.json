@@ -1,5 +1,5 @@
 {
   "name": "ECS task definitions should not share the host's process namespace",
-  "slug": "aws-ecs-3-task-definition-pidmode-host",
+  "slug": "aws-ecs-3-process-name-space-query",
   "query": "{\n  ecsTaskDefinitions(where:  {pidMode_MATCHES: \"host\", task_NOT: null}) {...AssetFragment}\n}"
 }

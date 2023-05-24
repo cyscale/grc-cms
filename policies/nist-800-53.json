@@ -165,16 +165,16 @@
           "control": "okta-weak-password-policies"
         },
         {
-          "control": "aws-ecs-1"
+          "control": "aws-ecs-1-privileged-network-mode"
         },
         {
-          "control": "ecs-2-service-assign-public-ip-disabled"
+          "control": "aws-ecs-2-service-assign-public-ip-disabled"
         },
         {
-          "control": "aws-ecs-4-containers-run-as-non-privileged"
+          "control": "aws-ecs-4-containers-non-privileged"
         },
         {
-          "control": "aws-ecs-5-readonly-root-filesystems"
+          "control": "aws-ecs-5-readonly-root-file-systems"
         }
       ]
     },
@@ -286,7 +286,7 @@
           "control": "azure-1-3-0-networking-5"
         },
         {
-          "control": "aws-ecs-12-clusters-should-use-container-insights"
+          "control": "aws-ecs-12-clusters-should-use-insights"
         }
       ]
     },
@@ -374,10 +374,10 @@
           "control": "azure-1-3-0-networking-4"
         },
         {
-          "control": "aws-ecs-3"
+          "control": "aws-ecs-3-process-name-space"
         },
         {
-          "control": "aws-ecs-8"
+          "control": "aws-ecs-8-secrets-in-vars"
         }
       ]
     },
@@ -415,13 +415,13 @@
           "control": "azure-1-3-0-sc-14"
         },
         {
-          "control": "aws-ecs-3"
+          "control": "aws-ecs-3-process-name-space"
         },
         {
-          "control": "aws-ecs-8"
+          "control": "aws-ecs-8-secrets-in-vars"
         },
         {
-          "control": "aws-ecs-12-clusters-should-use-container-insights"
+          "control": "aws-ecs-12-clusters-should-use-insights"
         }
       ]
     },
@@ -526,13 +526,13 @@
     {
       "name": "Planning",
       "slug": "nist-800-53-planning",
-      "body": " ﻿ ",
+      "body": "",
       "controls": null
     },
     {
       "name": "Risk Assessment",
       "slug": "nist-800-53-risk",
-      "body": " ﻿ ",
+      "body": "",
       "controls": [
         {
           "control": "aws-logging-5"
@@ -552,7 +552,7 @@
     {
       "name": "System and Information Integrity",
       "slug": "nist-800-53-integrity",
-      "body": " ﻿ ",
+      "body": "",
       "controls": [
         {
           "control": "networking-ssh-from-internet"
@@ -681,10 +681,10 @@
           "control": "azure-1-3-0-storage-1"
         },
         {
-          "control": "aws-ecs-12-clusters-should-use-container-insights"
+          "control": "aws-ecs-12-clusters-should-use-insights"
         },
         {
-          "control": "aws-ecs-10-latest-platformversion"
+          "control": "aws-ecs-10-latest-platform-version"
         }
       ]
     },
@@ -832,7 +832,7 @@
           "control": "azure-1-3-0-storage-1"
         },
         {
-          "control": "ecs-2-service-assign-public-ip-disabled"
+          "control": "aws-ecs-2-service-assign-public-ip-disabled"
         }
       ]
     },
