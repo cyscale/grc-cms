@@ -171,7 +171,7 @@
           "control": "aws-ecs-2-service-assign-public-ip-disabled"
         },
         {
-          "control": "aws-ecs-4-containers-non-privileged"
+          "control": "aws-ecs-4-containers-not-privileged"
         },
         {
           "control": "aws-ecs-5-readonly-root-file-systems"
