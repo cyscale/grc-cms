@@ -1,21 +1,17 @@
 {
   "alertForSecondaryOnly": false,
   "name": "ECS containers should be limited to read-only access to root filesystems",
-  "slug": "aws-ecs-5-readonly-root-filesystems",
+  "slug": "aws-ecs-5-readonly-root-file-systems",
   "severity": 3,
   "remediationDescription": "Limiting container definitions to read-only access to root filesystems (classic Amazon ECS console)\n1. Open the Amazon ECS classic console at https://console.aws.amazon.com/ecs/. Use the classic Amazon ECS console.\n\n2. In the left navigation pane, choose Task Definitions.\n\n3. For each task definition that has container definitions that need to be updated, do the following:\n* Select the container definition that needs to be updated.\n* Choose Edit Container. For Storage and Logging, select Read only root file system.\n* Choose Update at the bottom of the Edit Container tab.\n* Choose Create.",
   "body": "Amazon ECS containers should be limited to read-only access to mounted root filesystems.\n This control only evaluates the in-use (RUNNING Task) revision of an Amazon ECS task definition.",
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "ECSTaskDefinition"
-      ],
-      "query": "aws-ecs-5-task-definition-readonly-root"
+      "subjects": ["ECSTaskDefinition"],
+      "query": "aws-ecs-5-readonly-root-file-systems-query"
     }
   ]
 }
