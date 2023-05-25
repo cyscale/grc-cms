@@ -1,4 +1,4 @@
-name: Update QA Queries
+name: Update Dev Controls
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Update QA Queries
-    environment: qa
+    name: Update Dev Controls
+    environment: development
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,9 +28,9 @@ jobs:
         with:
           azcliversion: 2.37.0
           inlineScript: |
-            for file in ./queries/*.json; do
+            for file in ./controls/*.json; do
               slug=$(cat $file | jq -r '.slug')
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "query" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "query", "operation": $operation}')
+              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "control" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "control", "operation": $operation}')
 
               az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
             done
