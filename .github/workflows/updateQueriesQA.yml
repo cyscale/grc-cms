@@ -1,4 +1,4 @@
-name: Update Queries
+name: Update QA Queries
 
 on:
   workflow_dispatch:

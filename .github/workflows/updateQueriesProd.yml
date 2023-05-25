@@ -1,4 +1,4 @@
-name: Update Queries
+name: Update Prod Queries
 
 on:
   workflow_dispatch:
