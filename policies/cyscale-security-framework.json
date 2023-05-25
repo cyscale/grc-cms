@@ -1,1 +1,1231 @@
-{"name":"Cyscale Security Framework","slug":"cyscale-security-framework","body":"## Statement\n\nThe Cyscale Security Framework encompasses every piece of security-related knowledge we have gathered. It provides the complete cloud security posture for your assets across all supported services and providers.\n\n\u003cProcedure slug=\"cyscale-security-framework-iam\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-logging\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-networking\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-compute\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-storage\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-database\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-serverless\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-app-integration\"/\u003e\n\u003cProcedure slug=\"cyscale-security-framework-security\"/\u003e\n","version":"1.0.0","isStandard":true,"enabled":true,"procedures":[{"name":"1. Identity and Access Management","slug":"cyscale-security-framework-iam","body":"This procedure shows the security posture of your IAM assets such as users, service accounts, and policies across all your accounts","controls":[{"control":"gcp-iam-1"},{"control":"gcp-iam-2"},{"control":"gcp-iam-3"},{"control":"gcp-iam-5"},{"control":"gcp-iam-7"},{"control":"aws-iam-2"},{"control":"aws-1-4-0-iam-12"},{"control":"aws-iam-4"},{"control":"aws-iam-5"},{"control":"aws-iam-6"},{"control":"aws-iam-7"},{"control":"aws-iam-8"},{"control":"aws-iam-9"},{"control":"aws-iam-10"},{"control":"aws-iam-11"},{"control":"aws-iam-12"},{"control":"aws-iam-13"},{"control":"aws-iam-14"},{"control":"aws-iam-15"},{"control":"aws-iam-16"},{"control":"aws-iam-17"},{"control":"aws-1-3-0-iam-7"},{"control":"aws-1-3-0-iam-11"},{"control":"aws-1-3-0-iam-13"},{"control":"aws-1-3-0-iam-15"},{"control":"aws-1-3-0-iam-16"},{"control":"aws-1-3-0-iam-18"},{"control":"aws-1-3-0-iam-19"},{"control":"aws-1-3-0-iam-20"},{"control":"aws-1-4-0-iam-20"},{"control":"aws-1-3-0-iam-22"},{"control":"gcp-1-1-0-iam-2"},{"control":"gcp-1-1-0-iam-3"},{"control":"gcp-1-1-0-iam-6"},{"control":"gcp-1-1-0-iam-8"},{"control":"gcp-1-1-0-iam-9"},{"control":"gcp-1-1-0-iam-10"},{"control":"gcp-1-1-0-iam-12"},{"control":"gcp-1-1-0-iam-13"},{"control":"gcp-1-1-0-iam-14"},{"control":"gcp-1-1-0-iam-15"},{"control":"azure-1-3-0-iam-1"},{"control":"azure-1-3-0-iam-2"},{"control":"azure-1-3-0-iam-4"},{"control":"azure-1-3-0-iam-5"},{"control":"azure-1-3-0-iam-6"},{"control":"azure-1-3-0-iam-7"},{"control":"azure-1-3-0-iam-8"},{"control":"azure-1-3-0-iam-9"},{"control":"azure-1-3-0-iam-10"},{"control":"azure-1-3-0-iam-11"},{"control":"azure-1-3-0-iam-12"},{"control":"azure-1-3-0-iam-13"},{"control":"azure-1-3-0-iam-14"},{"control":"azure-1-3-0-iam-15"},{"control":"azure-1-3-0-iam-16"},{"control":"azure-1-3-0-iam-17"},{"control":"azure-1-3-0-iam-18"},{"control":"azure-1-3-0-iam-19"},{"control":"azure-1-3-0-iam-20"},{"control":"azure-1-3-0-iam-21"},{"control":"azure-1-3-0-iam-23"},{"control":"cis-alibaba-1-0-0-iam-1"},{"control":"cis-alibaba-1-0-0-iam-2"},{"control":"cis-alibaba-1-0-0-iam-3"},{"control":"cis-alibaba-1-0-0-iam-4"},{"control":"cis-alibaba-1-0-0-iam-5"},{"control":"cis-alibaba-1-0-0-iam-6"},{"control":"cis-alibaba-1-0-0-iam-7"},{"control":"cis-alibaba-1-0-0-iam-8"},{"control":"cis-alibaba-1-0-0-iam-9"},{"control":"cis-alibaba-1-0-0-iam-10"},{"control":"cis-alibaba-1-0-0-iam-11"},{"control":"cis-alibaba-1-0-0-iam-12"},{"control":"cis-alibaba-1-0-0-iam-13"},{"control":"cis-alibaba-1-0-0-iam-14"},{"control":"cis-alibaba-1-0-0-iam-15"},{"control":"cis-alibaba-1-0-0-iam-16"},{"control":"aws-iam-18"},{"control":"aws-iam-19"},{"control":"aws-iam-20"},{"control":"aws-iam-21"},{"control":"gcp-iam-8"},{"control":"aws-1-3-0-iam-1"},{"control":"aws-1-3-0-iam-2"},{"control":"aws-1-3-0-iam-3"},{"control":"okta-admin-redundancy"},{"control":"okta-app-group-assignments"},{"control":"okta-mfa"},{"control":"okta-strong-factors"},{"control":"okta-weak-password-policies"}]},{"name":"2. Logging and Monitoring","slug":"cyscale-security-framework-logging","body":"This procedure shows the security posture of your assets with regards to logging and monitoring best practices.","controls":[{"control":"gcp-logging-1"},{"control":"gcp-logging-2"},{"control":"gcp-logging-3"},{"control":"gcp-logging-4"},{"control":"gcp-logging-5"},{"control":"gcp-logging-6"},{"control":"gcp-logging-7"},{"control":"gcp-logging-8"},{"control":"gcp-logging-9"},{"control":"gcp-logging-10"},{"control":"gcp-logging-11"},{"control":"aws-logging-1"},{"control":"aws-logging-2"},{"control":"aws-logging-3"},{"control":"aws-logging-4"},{"control":"aws-logging-5"},{"control":"aws-logging-6"},{"control":"aws-logging-7"},{"control":"aws-logging-8"},{"control":"aws-logging-9"},{"control":"aws-monitoring-1"},{"control":"aws-monitoring-2"},{"control":"aws-monitoring-3"},{"control":"aws-monitoring-4"},{"control":"aws-monitoring-5"},{"control":"aws-monitoring-6"},{"control":"aws-monitoring-7"},{"control":"aws-monitoring-8"},{"control":"aws-monitoring-9"},{"control":"aws-monitoring-10"},{"control":"aws-monitoring-11"},{"control":"aws-monitoring-12"},{"control":"aws-monitoring-13"},{"control":"aws-monitoring-14"},{"control":"aws-1-3-0-logging-10"},{"control":"aws-1-3-0-logging-11"},{"control":"aws-1-3-0-monitoring-15"},{"control":"gcp-1-1-0-logging-3"},{"control":"azure-1-3-0-logging-1-1"},{"control":"azure-1-3-0-logging-1-2"},{"control":"azure-1-3-0-logging-1-3"},{"control":"azure-1-3-0-logging-1-4"},{"control":"azure-1-3-0-logging-1-5"},{"control":"azure-1-3-0-logging-2-1"},{"control":"azure-1-3-0-logging-2-2"},{"control":"azure-1-3-0-logging-2-3"},{"control":"azure-1-3-0-logging-2-4"},{"control":"azure-1-3-0-logging-2-5"},{"control":"azure-1-3-0-logging-2-6"},{"control":"azure-1-3-0-logging-2-7"},{"control":"azure-1-3-0-logging-2-8"},{"control":"azure-1-3-0-logging-2-9"},{"control":"azure-1-3-0-logging-3"},{"control":"cis-alibaba-1-0-0-logging-1"},{"control":"cis-alibaba-1-0-0-logging-2"},{"control":"cis-alibaba-1-0-0-logging-3"},{"control":"cis-alibaba-1-0-0-logging-4"},{"control":"cis-alibaba-1-0-0-logging-5"},{"control":"cis-alibaba-1-0-0-logging-6"},{"control":"cis-alibaba-1-0-0-logging-7"},{"control":"cis-alibaba-1-0-0-logging-8"},{"control":"cis-alibaba-1-0-0-logging-9"},{"control":"cis-alibaba-1-0-0-logging-10"},{"control":"cis-alibaba-1-0-0-logging-11"},{"control":"cis-alibaba-1-0-0-logging-12"},{"control":"cis-alibaba-1-0-0-logging-13"},{"control":"cis-alibaba-1-0-0-logging-14"},{"control":"cis-alibaba-1-0-0-logging-15"},{"control":"cis-alibaba-1-0-0-logging-16"},{"control":"cis-alibaba-1-0-0-logging-17"},{"control":"cis-alibaba-1-0-0-logging-18"},{"control":"cis-alibaba-1-0-0-logging-19"},{"control":"cis-alibaba-1-0-0-logging-20"},{"control":"cis-alibaba-1-0-0-logging-21"},{"control":"cis-alibaba-1-0-0-logging-22"},{"control":"cis-alibaba-1-0-0-logging-23"},{"control":"aws-loadbalancing-1"}]},{"name":"3. Networking","slug":"cyscale-security-framework-networking","body":"This procedure shows the security posture of your assets with regards to networking. It covers services such as VPC and Load Balancing","controls":[{"control":"networking-ssh-from-internet"},{"control":"gcp-networking-1"},{"control":"gcp-networking-2"},{"control":"gcp-networking-4"},{"control":"gcp-networking-5"},{"control":"gcp-networking-6"},{"control":"aws-networking-2"},{"control":"aws-networking-3"},{"control":"aws-1-3-0-networking-1"},{"control":"aws-1-3-0-networking-2"},{"control":"gcp-1-1-0-networking-3"},{"control":"gcp-1-1-0-networking-4"},{"control":"gcp-1-1-0-networking-5"},{"control":"gcp-1-1-0-networking-9"},{"control":"azure-1-3-0-networking-1"},{"control":"azure-1-3-0-networking-3"},{"control":"azure-1-3-0-networking-4"},{"control":"azure-1-3-0-networking-5"},{"control":"azure-1-3-0-networking-6"},{"control":"cis-alibaba-1-0-0-networking-1"},{"control":"cis-alibaba-1-0-0-networking-3"},{"control":"cis-alibaba-1-0-0-networking-4"},{"control":"cis-alibaba-1-0-0-networking-5"},{"control":"aws-loadbalancing-2"},{"control":"aws-loadbalancing-3"},{"control":"aws-networking-4"},{"control":"aws-networking-5"},{"control":"aws-networking-6"},{"control":"aws-networking-7"},{"control":"aws-networking-8"},{"control":"aws-networking-9"},{"control":"aws-networking-10"},{"control":"gcp-networking-7"},{"control":"gcp-networking-8"},{"control":"gcp-networking-9"},{"control":"gcp-networking-10"},{"control":"gcp-networking-11"},{"control":"gcp-networking-12"},{"control":"gcp-networking-13"}]},{"name":"4. Compute","slug":"cyscale-security-framework-compute","body":"This procedure shows the security posture of your compute assets such as virtual machine and Kubernetes clusters.","controls":[{"control":"gcp-vm-1"},{"control":"gcp-vm-2"},{"control":"gcp-vm-3"},{"control":"gcp-vm-4"},{"control":"gcp-vm-5"},{"control":"gcp-vm-6"},{"control":"gcp-kubernetes-1"},{"control":"gcp-kubernetes-2"},{"control":"gcp-kubernetes-3"},{"control":"gcp-kubernetes-4"},{"control":"gcp-kubernetes-5"},{"control":"gcp-kubernetes-6"},{"control":"gcp-kubernetes-7"},{"control":"gcp-kubernetes-8"},{"control":"gcp-kubernetes-9"},{"control":"gcp-kubernetes-10"},{"control":"gcp-kubernetes-11"},{"control":"gcp-kubernetes-12"},{"control":"gcp-kubernetes-13"},{"control":"gcp-kubernetes-14"},{"control":"gcp-kubernetes-15"},{"control":"gcp-kubernetes-16"},{"control":"gcp-kubernetes-17"},{"control":"gcp-kubernetes-18"},{"control":"gcp-1-1-0-vm-1"},{"control":"gcp-1-1-0-vm-8"},{"control":"gcp-1-1-0-vm-9"},{"control":"gcp-1-1-0-vm-10"},{"control":"azure-1-3-0-vm-1"},{"control":"azure-1-3-0-vm-2"},{"control":"azure-1-3-0-vm-3"},{"control":"azure-1-3-0-vm-4"},{"control":"azure-1-3-0-vm-5"},{"control":"azure-1-3-0-vm-6"},{"control":"azure-1-3-0-vm-7"},{"control":"cis-alibaba-1-0-0-vm-1"},{"control":"cis-alibaba-1-0-0-vm-2"},{"control":"cis-alibaba-1-0-0-vm-3"},{"control":"cis-alibaba-1-0-0-vm-4"},{"control":"cis-alibaba-1-0-0-vm-5"},{"control":"cis-alibaba-1-0-0-vm-6"},{"control":"cis-alibaba-1-0-0-kubernetes-1"},{"control":"cis-alibaba-1-0-0-kubernetes-2"},{"control":"cis-alibaba-1-0-0-kubernetes-3"},{"control":"cis-alibaba-1-0-0-kubernetes-4"},{"control":"cis-alibaba-1-0-0-kubernetes-5"},{"control":"cis-alibaba-1-0-0-kubernetes-6"},{"control":"cis-alibaba-1-0-0-kubernetes-7"},{"control":"cis-alibaba-1-0-0-kubernetes-8"},{"control":"cis-alibaba-1-0-0-kubernetes-9"},{"control":"aws-ec2-1"},{"control":"aws-ec2-2"},{"control":"gcp-kubernetes-19"}]},{"name":"5. Storage","slug":"cyscale-security-framework-storage","body":"This procedure shows the security posture of your storage assets such as object storage buckets.","controls":[{"control":"gcp-storage-1"},{"control":"gcp-storage-2"},{"control":"aws-1-3-0-storage-1-1"},{"control":"aws-1-4-0-storage-1-2"},{"control":"aws-1-4-0-storage-1-3"},{"control":"aws-1-3-0-storage-2-1"},{"control":"gcp-1-1-0-storage-2"},{"control":"azure-1-3-0-storage-1"},{"control":"azure-1-3-0-storage-2"},{"control":"azure-1-3-0-storage-3"},{"control":"azure-1-3-0-storage-4"},{"control":"azure-1-3-0-storage-5"},{"control":"azure-1-3-0-storage-6"},{"control":"azure-1-3-0-storage-7"},{"control":"azure-1-3-0-storage-8"},{"control":"azure-1-3-0-storage-9"},{"control":"azure-1-3-0-storage-10"},{"control":"azure-1-3-0-storage-11"},{"control":"cis-alibaba-1-0-0-storage-1"},{"control":"cis-alibaba-1-0-0-storage-2"},{"control":"cis-alibaba-1-0-0-storage-3"},{"control":"cis-alibaba-1-0-0-storage-4"},{"control":"cis-alibaba-1-0-0-storage-5"},{"control":"cis-alibaba-1-0-0-storage-6"},{"control":"cis-alibaba-1-0-0-storage-7"},{"control":"cis-alibaba-1-0-0-storage-8"},{"control":"cis-alibaba-1-0-0-storage-9"},{"control":"object-containers-without-versioning-enabled"},{"control":"aws-storage-3"},{"control":"aws-storage-4"},{"control":"gcp-storage-3"}]},{"name":"6. Database","slug":"cyscale-security-framework-database","body":"This procedure shows the security posture of your managed databases.","controls":[{"control":"gcp-sql-1"},{"control":"gcp-sql-2"},{"control":"gcp-sql-3"},{"control":"gcp-sql-4"},{"control":"gcp-1-1-0-sql-1-2"},{"control":"gcp-1-1-0-sql-2-1"},{"control":"gcp-1-1-0-sql-2-2"},{"control":"gcp-1-1-0-sql-2-3"},{"control":"gcp-1-1-0-sql-2-4"},{"control":"gcp-1-1-0-sql-2-5"},{"control":"gcp-1-1-0-sql-2-6"},{"control":"gcp-1-1-0-sql-2-7"},{"control":"gcp-1-1-0-sql-3-1"},{"control":"gcp-1-1-0-sql-3-2"},{"control":"gcp-1-1-0-sql-6"},{"control":"gcp-1-1-0-sql-7"},{"control":"gcp-1-1-0-bigquery-1"},{"control":"azure-1-3-0-database-1-1"},{"control":"azure-1-3-0-database-1-2"},{"control":"azure-1-3-0-database-1-3"},{"control":"azure-1-3-0-database-2-1"},{"control":"azure-1-3-0-database-2-2"},{"control":"azure-1-3-0-database-2-3"},{"control":"azure-1-3-0-database-2-4"},{"control":"azure-1-3-0-database-2-5"},{"control":"azure-1-3-0-database-3-1"},{"control":"azure-1-3-0-database-3-2"},{"control":"azure-1-3-0-database-3-3"},{"control":"azure-1-3-0-database-3-4"},{"control":"azure-1-3-0-database-3-5"},{"control":"azure-1-3-0-database-3-6"},{"control":"azure-1-3-0-database-3-7"},{"control":"azure-1-3-0-database-3-8"},{"control":"azure-1-3-0-database-4"},{"control":"azure-1-3-0-database-5"},{"control":"cis-alibaba-1-0-0-rds-1"},{"control":"cis-alibaba-1-0-0-rds-2"},{"control":"cis-alibaba-1-0-0-rds-3"},{"control":"cis-alibaba-1-0-0-rds-4"},{"control":"cis-alibaba-1-0-0-rds-5"},{"control":"cis-alibaba-1-0-0-rds-6"},{"control":"cis-alibaba-1-0-0-rds-7"},{"control":"cis-alibaba-1-0-0-rds-8"},{"control":"cis-alibaba-1-0-0-rds-9"},{"control":"aws-rds-1"}]},{"name":"7. Serverless","slug":"cyscale-security-framework-serverless","body":"This procedure shows the security posture of your serverless assets such as functions as a service (FaaS).","controls":[{"control":"azure-1-3-0-appservice-1"},{"control":"azure-1-3-0-appservice-2"},{"control":"azure-1-3-0-appservice-3"},{"control":"azure-1-3-0-appservice-4"},{"control":"azure-1-3-0-appservice-5"},{"control":"azure-1-3-0-appservice-6"},{"control":"azure-1-3-0-appservice-7"},{"control":"azure-1-3-0-appservice-8"},{"control":"azure-1-3-0-appservice-9"},{"control":"azure-1-3-0-appservice-10"},{"control":"azure-1-3-0-appservice-11"}]},{"name":"8. Application Integration","slug":"cyscale-security-framework-app-integration","body":"This procedure shows the security posture of your assets generally used for integration such as queues and message brokers.","controls":[{"control":"aws-integration-1"},{"control":"aws-integration-2"}]},{"name":"9. Security","slug":"cyscale-security-framework-security","body":"This procedure shows how well you use the security-related services and configurations offered by the providers.","controls":[{"control":"azure-1-3-0-sc-1"},{"control":"azure-1-3-0-sc-2"},{"control":"azure-1-3-0-sc-3"},{"control":"azure-1-3-0-sc-4"},{"control":"azure-1-3-0-sc-5"},{"control":"azure-1-3-0-sc-6"},{"control":"azure-1-3-0-sc-7"},{"control":"azure-1-3-0-sc-8"},{"control":"azure-1-3-0-sc-9"},{"control":"azure-1-3-0-sc-10"},{"control":"azure-2-2-1"},{"control":"azure-1-3-0-sc-13"},{"control":"azure-1-3-0-sc-14"},{"control":"azure-1-3-0-sc-15"},{"control":"azure-1-3-0-security-1"},{"control":"azure-1-3-0-security-2"},{"control":"azure-1-3-0-security-3"},{"control":"azure-1-3-0-security-4"},{"control":"azure-1-3-0-security-5"},{"control":"cis-alibaba-1-0-0-sc-1"},{"control":"cis-alibaba-1-0-0-sc-2"},{"control":"cis-alibaba-1-0-0-sc-3"},{"control":"cis-alibaba-1-0-0-sc-4"},{"control":"cis-alibaba-1-0-0-sc-5"},{"control":"cis-alibaba-1-0-0-sc-6"},{"control":"cis-alibaba-1-0-0-sc-7"},{"control":"cis-alibaba-1-0-0-sc-8"},{"control":"cis-alibaba-1-0-0-sc-9"},{"control":"aws-scan-1"}]}]}
+{
+  "name": "Cyscale Security Framework",
+  "slug": "cyscale-security-framework",
+  "body": "## Statement\n\nThe Cyscale Security Framework encompasses every piece of security-related knowledge we have gathered. It provides the complete cloud security posture for your assets across all supported services and providers.\n\n<Procedure slug=\"cyscale-security-framework-iam\"/>\n<Procedure slug=\"cyscale-security-framework-logging\"/>\n<Procedure slug=\"cyscale-security-framework-networking\"/>\n<Procedure slug=\"cyscale-security-framework-compute\"/>\n<Procedure slug=\"cyscale-security-framework-storage\"/>\n<Procedure slug=\"cyscale-security-framework-database\"/>\n<Procedure slug=\"cyscale-security-framework-serverless\"/>\n<Procedure slug=\"cyscale-security-framework-app-integration\"/>\n<Procedure slug=\"cyscale-security-framework-security\"/>\n",
+  "version": "1.0.0",
+  "isStandard": true,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "1. Identity and Access Management",
+      "slug": "cyscale-security-framework-iam",
+      "body": "This procedure shows the security posture of your IAM assets such as users, service accounts, and policies across all your accounts",
+      "controls": [
+        {
+          "control": "gcp-iam-1"
+        },
+        {
+          "control": "gcp-iam-2"
+        },
+        {
+          "control": "gcp-iam-3"
+        },
+        {
+          "control": "gcp-iam-5"
+        },
+        {
+          "control": "gcp-iam-7"
+        },
+        {
+          "control": "aws-iam-2"
+        },
+        {
+          "control": "aws-1-4-0-iam-12"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-10"
+        },
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "aws-iam-12"
+        },
+        {
+          "control": "aws-iam-13"
+        },
+        {
+          "control": "aws-iam-14"
+        },
+        {
+          "control": "aws-iam-15"
+        },
+        {
+          "control": "aws-iam-16"
+        },
+        {
+          "control": "aws-iam-17"
+        },
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "aws-1-3-0-iam-11"
+        },
+        {
+          "control": "aws-1-3-0-iam-13"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-3-0-iam-18"
+        },
+        {
+          "control": "aws-1-3-0-iam-19"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "aws-1-4-0-iam-20"
+        },
+        {
+          "control": "aws-1-3-0-iam-22"
+        },
+        {
+          "control": "gcp-1-1-0-iam-2"
+        },
+        {
+          "control": "gcp-1-1-0-iam-3"
+        },
+        {
+          "control": "gcp-1-1-0-iam-6"
+        },
+        {
+          "control": "gcp-1-1-0-iam-8"
+        },
+        {
+          "control": "gcp-1-1-0-iam-9"
+        },
+        {
+          "control": "gcp-1-1-0-iam-10"
+        },
+        {
+          "control": "gcp-1-1-0-iam-12"
+        },
+        {
+          "control": "gcp-1-1-0-iam-13"
+        },
+        {
+          "control": "gcp-1-1-0-iam-14"
+        },
+        {
+          "control": "gcp-1-1-0-iam-15"
+        },
+        {
+          "control": "azure-1-3-0-iam-1"
+        },
+        {
+          "control": "azure-1-3-0-iam-2"
+        },
+        {
+          "control": "azure-1-3-0-iam-4"
+        },
+        {
+          "control": "azure-1-3-0-iam-5"
+        },
+        {
+          "control": "azure-1-3-0-iam-6"
+        },
+        {
+          "control": "azure-1-3-0-iam-7"
+        },
+        {
+          "control": "azure-1-3-0-iam-8"
+        },
+        {
+          "control": "azure-1-3-0-iam-9"
+        },
+        {
+          "control": "azure-1-3-0-iam-10"
+        },
+        {
+          "control": "azure-1-3-0-iam-11"
+        },
+        {
+          "control": "azure-1-3-0-iam-12"
+        },
+        {
+          "control": "azure-1-3-0-iam-13"
+        },
+        {
+          "control": "azure-1-3-0-iam-14"
+        },
+        {
+          "control": "azure-1-3-0-iam-15"
+        },
+        {
+          "control": "azure-1-3-0-iam-16"
+        },
+        {
+          "control": "azure-1-3-0-iam-17"
+        },
+        {
+          "control": "azure-1-3-0-iam-18"
+        },
+        {
+          "control": "azure-1-3-0-iam-19"
+        },
+        {
+          "control": "azure-1-3-0-iam-20"
+        },
+        {
+          "control": "azure-1-3-0-iam-21"
+        },
+        {
+          "control": "azure-1-3-0-iam-23"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-9"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-10"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-11"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-12"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-13"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-14"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-15"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-16"
+        },
+        {
+          "control": "aws-iam-18"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "aws-iam-20"
+        },
+        {
+          "control": "aws-iam-21"
+        },
+        {
+          "control": "gcp-iam-8"
+        },
+        {
+          "control": "aws-1-3-0-iam-1"
+        },
+        {
+          "control": "aws-1-3-0-iam-2"
+        },
+        {
+          "control": "aws-1-3-0-iam-3"
+        },
+        {
+          "control": "okta-admin-redundancy"
+        },
+        {
+          "control": "okta-app-group-assignments"
+        },
+        {
+          "control": "okta-mfa"
+        },
+        {
+          "control": "okta-strong-factors"
+        },
+        {
+          "control": "okta-weak-password-policies"
+        },
+        {
+          "control": "aws-ecs-4-containers-not-privileged"
+        },
+        {
+          "control": "aws-ecs-8-secrets-in-vars"
+        }
+      ]
+    },
+    {
+      "name": "2. Logging and Monitoring",
+      "slug": "cyscale-security-framework-logging",
+      "body": "This procedure shows the security posture of your assets with regards to logging and monitoring best practices.",
+      "controls": [
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "gcp-logging-7"
+        },
+        {
+          "control": "gcp-logging-8"
+        },
+        {
+          "control": "gcp-logging-9"
+        },
+        {
+          "control": "gcp-logging-10"
+        },
+        {
+          "control": "gcp-logging-11"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "aws-logging-8"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "aws-monitoring-2"
+        },
+        {
+          "control": "aws-monitoring-3"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-monitoring-6"
+        },
+        {
+          "control": "aws-monitoring-7"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-monitoring-9"
+        },
+        {
+          "control": "aws-monitoring-10"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "aws-monitoring-12"
+        },
+        {
+          "control": "aws-monitoring-13"
+        },
+        {
+          "control": "aws-monitoring-14"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        },
+        {
+          "control": "aws-1-3-0-monitoring-15"
+        },
+        {
+          "control": "gcp-1-1-0-logging-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-6"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-7"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-8"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-9"
+        },
+        {
+          "control": "azure-1-3-0-logging-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-9"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-10"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-11"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-12"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-13"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-14"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-15"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-16"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-17"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-18"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-19"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-20"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-21"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-22"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-23"
+        },
+        {
+          "control": "aws-loadbalancing-1"
+        },
+        {
+          "control": "aws-ecs-12-clusters-should-use-insights"
+        }
+      ]
+    },
+    {
+      "name": "3. Networking",
+      "slug": "cyscale-security-framework-networking",
+      "body": "This procedure shows the security posture of your assets with regards to networking. It covers services such as VPC and Load Balancing",
+      "controls": [
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "gcp-networking-1"
+        },
+        {
+          "control": "gcp-networking-2"
+        },
+        {
+          "control": "gcp-networking-4"
+        },
+        {
+          "control": "gcp-networking-5"
+        },
+        {
+          "control": "gcp-networking-6"
+        },
+        {
+          "control": "aws-networking-2"
+        },
+        {
+          "control": "aws-networking-3"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
+        },
+        {
+          "control": "aws-1-3-0-networking-2"
+        },
+        {
+          "control": "gcp-1-1-0-networking-3"
+        },
+        {
+          "control": "gcp-1-1-0-networking-4"
+        },
+        {
+          "control": "gcp-1-1-0-networking-5"
+        },
+        {
+          "control": "gcp-1-1-0-networking-9"
+        },
+        {
+          "control": "azure-1-3-0-networking-1"
+        },
+        {
+          "control": "azure-1-3-0-networking-3"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "azure-1-3-0-networking-5"
+        },
+        {
+          "control": "azure-1-3-0-networking-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-networking-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-networking-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-networking-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-networking-5"
+        },
+        {
+          "control": "aws-loadbalancing-2"
+        },
+        {
+          "control": "aws-loadbalancing-3"
+        },
+        {
+          "control": "aws-networking-4"
+        },
+        {
+          "control": "aws-networking-5"
+        },
+        {
+          "control": "aws-networking-6"
+        },
+        {
+          "control": "aws-networking-7"
+        },
+        {
+          "control": "aws-networking-8"
+        },
+        {
+          "control": "aws-networking-9"
+        },
+        {
+          "control": "aws-networking-10"
+        },
+        {
+          "control": "gcp-networking-7"
+        },
+        {
+          "control": "gcp-networking-8"
+        },
+        {
+          "control": "gcp-networking-9"
+        },
+        {
+          "control": "gcp-networking-10"
+        },
+        {
+          "control": "gcp-networking-11"
+        },
+        {
+          "control": "gcp-networking-12"
+        },
+        {
+          "control": "gcp-networking-13"
+        },
+        {
+          "control": "aws-ecs-1-privileged-network-mode"
+        },
+        {
+          "control": "aws-ecs-2-service-assign-public-ip-disabled"
+        }
+      ]
+    },
+    {
+      "name": "4. Compute",
+      "slug": "cyscale-security-framework-compute",
+      "body": "This procedure shows the security posture of your compute assets such as virtual machine and Kubernetes clusters.",
+      "controls": [
+        {
+          "control": "gcp-vm-1"
+        },
+        {
+          "control": "gcp-vm-2"
+        },
+        {
+          "control": "gcp-vm-3"
+        },
+        {
+          "control": "gcp-vm-4"
+        },
+        {
+          "control": "gcp-vm-5"
+        },
+        {
+          "control": "gcp-vm-6"
+        },
+        {
+          "control": "gcp-kubernetes-1"
+        },
+        {
+          "control": "gcp-kubernetes-2"
+        },
+        {
+          "control": "gcp-kubernetes-3"
+        },
+        {
+          "control": "gcp-kubernetes-4"
+        },
+        {
+          "control": "gcp-kubernetes-5"
+        },
+        {
+          "control": "gcp-kubernetes-6"
+        },
+        {
+          "control": "gcp-kubernetes-7"
+        },
+        {
+          "control": "gcp-kubernetes-8"
+        },
+        {
+          "control": "gcp-kubernetes-9"
+        },
+        {
+          "control": "gcp-kubernetes-10"
+        },
+        {
+          "control": "gcp-kubernetes-11"
+        },
+        {
+          "control": "gcp-kubernetes-12"
+        },
+        {
+          "control": "gcp-kubernetes-13"
+        },
+        {
+          "control": "gcp-kubernetes-14"
+        },
+        {
+          "control": "gcp-kubernetes-15"
+        },
+        {
+          "control": "gcp-kubernetes-16"
+        },
+        {
+          "control": "gcp-kubernetes-17"
+        },
+        {
+          "control": "gcp-kubernetes-18"
+        },
+        {
+          "control": "gcp-1-1-0-vm-1"
+        },
+        {
+          "control": "gcp-1-1-0-vm-8"
+        },
+        {
+          "control": "gcp-1-1-0-vm-9"
+        },
+        {
+          "control": "gcp-1-1-0-vm-10"
+        },
+        {
+          "control": "azure-1-3-0-vm-1"
+        },
+        {
+          "control": "azure-1-3-0-vm-2"
+        },
+        {
+          "control": "azure-1-3-0-vm-3"
+        },
+        {
+          "control": "azure-1-3-0-vm-4"
+        },
+        {
+          "control": "azure-1-3-0-vm-5"
+        },
+        {
+          "control": "azure-1-3-0-vm-6"
+        },
+        {
+          "control": "azure-1-3-0-vm-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-kubernetes-9"
+        },
+        {
+          "control": "aws-ec2-1"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "gcp-kubernetes-19"
+        },
+        {
+          "control": "aws-ecs-3-process-name-space"
+        }
+      ]
+    },
+    {
+      "name": "5. Storage",
+      "slug": "cyscale-security-framework-storage",
+      "body": "This procedure shows the security posture of your storage assets such as object storage buckets.",
+      "controls": [
+        {
+          "control": "gcp-storage-1"
+        },
+        {
+          "control": "gcp-storage-2"
+        },
+        {
+          "control": "aws-1-3-0-storage-1-1"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-2"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-3"
+        },
+        {
+          "control": "aws-1-3-0-storage-2-1"
+        },
+        {
+          "control": "gcp-1-1-0-storage-2"
+        },
+        {
+          "control": "azure-1-3-0-storage-1"
+        },
+        {
+          "control": "azure-1-3-0-storage-2"
+        },
+        {
+          "control": "azure-1-3-0-storage-3"
+        },
+        {
+          "control": "azure-1-3-0-storage-4"
+        },
+        {
+          "control": "azure-1-3-0-storage-5"
+        },
+        {
+          "control": "azure-1-3-0-storage-6"
+        },
+        {
+          "control": "azure-1-3-0-storage-7"
+        },
+        {
+          "control": "azure-1-3-0-storage-8"
+        },
+        {
+          "control": "azure-1-3-0-storage-9"
+        },
+        {
+          "control": "azure-1-3-0-storage-10"
+        },
+        {
+          "control": "azure-1-3-0-storage-11"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-9"
+        },
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "aws-storage-3"
+        },
+        {
+          "control": "aws-storage-4"
+        },
+        {
+          "control": "gcp-storage-3"
+        },
+        {
+          "control": "aws-ecs-5-readonly-root-file-systems"
+        }
+      ]
+    },
+    {
+      "name": "6. Database",
+      "slug": "cyscale-security-framework-database",
+      "body": "This procedure shows the security posture of your managed databases.",
+      "controls": [
+        {
+          "control": "gcp-sql-1"
+        },
+        {
+          "control": "gcp-sql-2"
+        },
+        {
+          "control": "gcp-sql-3"
+        },
+        {
+          "control": "gcp-sql-4"
+        },
+        {
+          "control": "gcp-1-1-0-sql-1-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-1"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-3"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-4"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-5"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-6"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-7"
+        },
+        {
+          "control": "gcp-1-1-0-sql-3-1"
+        },
+        {
+          "control": "gcp-1-1-0-sql-3-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-6"
+        },
+        {
+          "control": "gcp-1-1-0-sql-7"
+        },
+        {
+          "control": "gcp-1-1-0-bigquery-1"
+        },
+        {
+          "control": "azure-1-3-0-database-1-1"
+        },
+        {
+          "control": "azure-1-3-0-database-1-2"
+        },
+        {
+          "control": "azure-1-3-0-database-1-3"
+        },
+        {
+          "control": "azure-1-3-0-database-2-1"
+        },
+        {
+          "control": "azure-1-3-0-database-2-2"
+        },
+        {
+          "control": "azure-1-3-0-database-2-3"
+        },
+        {
+          "control": "azure-1-3-0-database-2-4"
+        },
+        {
+          "control": "azure-1-3-0-database-2-5"
+        },
+        {
+          "control": "azure-1-3-0-database-3-1"
+        },
+        {
+          "control": "azure-1-3-0-database-3-2"
+        },
+        {
+          "control": "azure-1-3-0-database-3-3"
+        },
+        {
+          "control": "azure-1-3-0-database-3-4"
+        },
+        {
+          "control": "azure-1-3-0-database-3-5"
+        },
+        {
+          "control": "azure-1-3-0-database-3-6"
+        },
+        {
+          "control": "azure-1-3-0-database-3-7"
+        },
+        {
+          "control": "azure-1-3-0-database-3-8"
+        },
+        {
+          "control": "azure-1-3-0-database-4"
+        },
+        {
+          "control": "azure-1-3-0-database-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-9"
+        },
+        {
+          "control": "aws-rds-1"
+        }
+      ]
+    },
+    {
+      "name": "7. Serverless",
+      "slug": "cyscale-security-framework-serverless",
+      "body": "This procedure shows the security posture of your serverless assets such as functions as a service (FaaS).",
+      "controls": [
+        {
+          "control": "azure-1-3-0-appservice-1"
+        },
+        {
+          "control": "azure-1-3-0-appservice-2"
+        },
+        {
+          "control": "azure-1-3-0-appservice-3"
+        },
+        {
+          "control": "azure-1-3-0-appservice-4"
+        },
+        {
+          "control": "azure-1-3-0-appservice-5"
+        },
+        {
+          "control": "azure-1-3-0-appservice-6"
+        },
+        {
+          "control": "azure-1-3-0-appservice-7"
+        },
+        {
+          "control": "azure-1-3-0-appservice-8"
+        },
+        {
+          "control": "azure-1-3-0-appservice-9"
+        },
+        {
+          "control": "azure-1-3-0-appservice-10"
+        },
+        {
+          "control": "azure-1-3-0-appservice-11"
+        }
+      ]
+    },
+    {
+      "name": "8. Application Integration",
+      "slug": "cyscale-security-framework-app-integration",
+      "body": "This procedure shows the security posture of your assets generally used for integration such as queues and message brokers.",
+      "controls": [
+        {
+          "control": "aws-integration-1"
+        },
+        {
+          "control": "aws-integration-2"
+        },
+        {
+          "control": "aws-ecs-10-latest-platform-version"
+        }
+      ]
+    },
+    {
+      "name": "9. Security",
+      "slug": "cyscale-security-framework-security",
+      "body": "This procedure shows how well you use the security-related services and configurations offered by the providers.",
+      "controls": [
+        {
+          "control": "azure-1-3-0-sc-1"
+        },
+        {
+          "control": "azure-1-3-0-sc-2"
+        },
+        {
+          "control": "azure-1-3-0-sc-3"
+        },
+        {
+          "control": "azure-1-3-0-sc-4"
+        },
+        {
+          "control": "azure-1-3-0-sc-5"
+        },
+        {
+          "control": "azure-1-3-0-sc-6"
+        },
+        {
+          "control": "azure-1-3-0-sc-7"
+        },
+        {
+          "control": "azure-1-3-0-sc-8"
+        },
+        {
+          "control": "azure-1-3-0-sc-9"
+        },
+        {
+          "control": "azure-1-3-0-sc-10"
+        },
+        {
+          "control": "azure-2-2-1"
+        },
+        {
+          "control": "azure-1-3-0-sc-13"
+        },
+        {
+          "control": "azure-1-3-0-sc-14"
+        },
+        {
+          "control": "azure-1-3-0-sc-15"
+        },
+        {
+          "control": "azure-1-3-0-security-1"
+        },
+        {
+          "control": "azure-1-3-0-security-2"
+        },
+        {
+          "control": "azure-1-3-0-security-3"
+        },
+        {
+          "control": "azure-1-3-0-security-4"
+        },
+        {
+          "control": "azure-1-3-0-security-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-sc-9"
+        },
+        {
+          "control": "aws-scan-1"
+        }
+      ]
+    }
+  ]
+}
