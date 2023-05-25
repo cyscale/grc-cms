@@ -1,4 +1,7 @@
-name: Update Queries
+name: Update Dev Queries
+
+on:
+  workflow_dispatch:
 
 permissions:
   id-token: write
