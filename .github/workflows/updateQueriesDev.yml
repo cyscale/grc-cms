@@ -1,5 +1,8 @@
 name: Update Queries
 
+on:
+  workflow_dispatch:
+
 permissions:
   id-token: write
   contents: write
