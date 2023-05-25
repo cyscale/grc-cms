@@ -32,7 +32,6 @@ jobs:
               slug=$(cat $file | jq -r '.slug')
               message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "query" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "query", "operation": $operation}')
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
               az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
             done
 
