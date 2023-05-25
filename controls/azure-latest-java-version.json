@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure that 'Java version' is the latest, if used to run the web app",
+  "slug": "azure-latest-java-version",
+  "body": "Periodically, newer versions are released for Java either due to security flaws or to include additional functionality. Using the latest Java version for web apps to take advantage of security fixes, if any, and/or new functionalities of the newer version.\n\n**Rationale**\n\nNewer versions may contain security enhancements and additional functionality. Using the latest version is recommended in order to take advantage of enhancements and new capabilities. With each software installation, organizations need to determine if a given update meets their requirements. They must also verify the compatibility and support provided for any additional software against the update revision that is selected.\n\n**Impact**\n\nIf your app is written using version-dependent features or libraries, they may not be available on the latest version. If you wish to upgrade, research the impact thoroughly. Upgrading may have unforeseen consequences that could result in downtime.",
+  "severity": 2,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `App Services`\n2. For each app, under `Settings`, select `Configuration`\n3. Go to `General settings`\n4. Under the `Stack settings`, for Java, select for `Java version` and `Java minor version` the latest stable and supported release, and for `Java web server version` select the `auto-update` option.\n\n**NOTE** \n\nNo action is required if no Java Stack is selected, as Java is not used by your web application.\n\n**Using Azure Command Line Interface**\n\nTo see the list of supported runtimes:\n\n```bash\naz webapp list-runtimes | grep java\n```\n\nTo set the latest Java version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <resourceGroup> --name <applicationName> --java-version <javaVersion> --java-container '<javaContainer>' --java-container-version '<javaContainerVersoin>'  [--windows-fx-version <javaRuntimeVersion>] [--linux-fx-version <javaRuntimeVersion>]\n```\n\nIf creating a new web application to use a currently supported version of Java, run the following commands:\n1. Create an app service plan\n\n```bash\naz appservice plan create --resource-group <resourceGroup> --name <planName> --location <location> [--is-linux --number-of-workers <int> --sku <pricingTier>] [--hyper-v --sku <pricingTier>]\n```\n\n2. Get the app service plan ID\n\n```bash\naz appservice plan list --query \"[].{Name:name, ID:id, SKU:sku,Location:location}\"\n```\n\n3. Create a new Java web application using the retrieved app service ID\n\n```bash\naz webapp create --resource-group <resourceGroup> --plan <applicationServicePlanID> --name <applicationName> [--linux-fx-version <javaRuntimeVersion>] [--windows-fx-version <javaRuntimeVersion>]\n```\n\n**Default value**\n\nThe default setting is whichever setting was chosen in the creation of the web application.\n\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/app-service/web-sites-configure#general-settings](https://docs.microsoft.com/en-us/azure/app-service/web-sites-configure#general-settings)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-posture-vulnerability-management#pv-3-establish-secure-configurations-for-compute-resources](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-posture-vulnerability-management#pv-3-establish-secure-configurations-for-compute-resources)\n3. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-posture-vulnerability-management#pv-3-establish-secure-configurations-for-compute-resources](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-posture-vulnerability-management#pv-3-establish-secure-configurations-for-compute-resources)\n4. [https://www.oracle.com/java/technologies/downloads/#java11](https://www.oracle.com/java/technologies/downloads/#java11)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-1-3-0-appservice-8-java-version-is-the-latest-if-used-to-run-the-web-app"
+    }
+  ]
+}
