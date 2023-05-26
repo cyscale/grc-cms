@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "slug": "azure-latest-tls-version",
+  "name": "Ensure web app is using the latest version of TLS encryption",
+  "body": "The TLS(Transport Layer Security) protocol secures transmission of data over the internet using standard encryption technology. Encryption should be set with the latest version of TLS. App service allows TLS 1.2 by default, which is the recommended TLS level by industry standards, such as PCI DSS.\n\n**Rationale**\n\nApp service currently allows the web app to set TLS versions 1.0, 1.1 and 1.2. It is highly recommended to use the latest TLS 1.2 version for web app secure connections.",
+  "severity": 2,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `App Services`\n2. For each app, under `Settings`, select `Configuration`\n3. Go to `General settings`\n4. Under `Platform settings`, set `Minimum Inboud TLS Version` to the latest version\n\n**Using Azure Command Line Interface**\n\nTo set the TLS Version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <resourceGroup> --name <applicationName> --min-tls-version 1.2\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzWebApp -ResourceGroupName <resourceGroup> -Name <applicationName> -MinTlsVersion 1.2\n```\n\n**Default Value**\n\nBy default, TLS Version feature will be set to 1.2 when a new app is created using the command-line tool or the Azure Portal console.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-versions)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-3-encrypt-sensitive-data-in-transit](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-3-encrypt-sensitive-data-in-transit)\n3. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-8-detect-and-disable-insecure-services-and--protocols](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-8-detect-and-disable-insecure-services-and--protocols)\n4. [https://docs.microsoft.com/en-us/powershell/module/az.websites/set-azwebapp?view=azps-8.1.0](https://docs.microsoft.com/en-us/powershell/module/az.websites/set-azwebapp?view=azps-8.1.0)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-1-3-0-appservice-3-web-app-is-using-the-latest-version-of-tls-encryption"
+    }
+  ]
+}
