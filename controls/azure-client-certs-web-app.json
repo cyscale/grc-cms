@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure the web app has 'Client Certificates (Incoming client certificates)' set to 'On'",
+  "slug": "azure-client-certs-web-app",
+  "body": "Client certificates allow for the app to request a certificate for incoming requests. Only clients that have a valid certificate will be able to reach the app.\n\n**Rationale**\n\nThe TLS mutual authentication technique in enterprise environments ensures the authenticity of clients to the server. If incoming client certificates are enabled, then only an authenticated client who has valid certificates can access the app.\n\n**Impact**\n\nUtilizing and maintaining client certificates will require additional work to obtain and managed replacement and key rotation.",
+  "severity": 2,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `App Services`\n2. For each app, under `Settings`, select `Configuration`\n3. Go to `General settings`\n4. Under `Incoming client certificates`, set `Client certificate mode` to `Require`\n\n**Using Azure Command Line Interface**\n\nTo set `Incoming client certificates` value for an existing app, run the following command:\n\n```bash\naz webapp update --resource-group <resourceGroup> --name <applicationName> --set clientCertEnabled=true\n```\n\n**Default Value**\n\nBy default, incoming client certificates will be disabled when a new app is created using the command-line tool or Azure Portal console.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-identity-management#im-4-authenticate-server-and-services](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-identity-management#im-4-authenticate-server-and-services)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-1-3-0-appservice-4-the-web-app-has-client-certificates-incoming-client-certificates-set-to-on"
+    }
+  ]
+}
