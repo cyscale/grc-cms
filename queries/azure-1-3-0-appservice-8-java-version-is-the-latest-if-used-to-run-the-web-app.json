@@ -1,1 +1,5 @@
-{"name":"'Java version' is the latest, if used to run the web app","slug":"azure-1-3-0-appservice-8-java-version-is-the-latest-if-used-to-run-the-web-app","query":"{sites(where:{hasSiteConfig_SOME:{AND:[{javaVersion_NOT:\"\"},{javaVersion_NOT:\"11\"}]}}){...AssetFragment}}"}
+{
+  "name": "'Java version' is the latest, if used to run the web app",
+  "slug": "azure-1-3-0-appservice-8-java-version-is-the-latest-if-used-to-run-the-web-app",
+  "query": "{sites(where:{hasSiteConfig_SOME:{AND:[{javaVersion_NOT:\"\"},{javaVersion:\"8\"}]}}){...AssetFragment}}"
+}
