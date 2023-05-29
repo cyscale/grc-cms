@@ -195,7 +195,7 @@
           "control": "azure-1-3-0-iam-21"
         },
         {
-          "control": "azure-1-3-0-iam-23"
+          "control": "azure-admin-resource-locks"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-1"
@@ -415,7 +415,7 @@
           "control": "azure-1-3-0-logging-1-1"
         },
         {
-          "control": "azure-1-3-0-logging-1-2"
+          "control": "azure-diagnostic-settings-categories"
         },
         {
           "control": "azure-1-3-0-logging-1-3"
@@ -424,19 +424,19 @@
           "control": "azure-1-3-0-logging-1-4"
         },
         {
-          "control": "azure-1-3-0-logging-1-5"
+          "control": "azure-key-vault-logging-enabled"
         },
         {
-          "control": "azure-1-3-0-logging-2-1"
+          "control": "azure-alert-create-policy"
         },
         {
-          "control": "azure-1-3-0-logging-2-2"
+          "control": "azure-alert-delete-policy-assign"
         },
         {
-          "control": "azure-1-3-0-logging-2-3"
+          "control": "azure-alert-create-update-nsg"
         },
         {
-          "control": "azure-1-3-0-logging-2-4"
+          "control": "azure-alert-delete-nsg"
         },
         {
           "control": "azure-1-3-0-logging-2-5"
@@ -445,10 +445,10 @@
           "control": "azure-1-3-0-logging-2-6"
         },
         {
-          "control": "azure-1-3-0-logging-2-7"
+          "control": "azure-alert-create-update-sec-solution"
         },
         {
-          "control": "azure-1-3-0-logging-2-8"
+          "control": "azure-alert-delete-sec-solution"
         },
         {
           "control": "azure-alert-create-update-sql-firewall"
@@ -584,19 +584,19 @@
           "control": "gcp-1-1-0-networking-9"
         },
         {
-          "control": "azure-1-3-0-networking-1"
+          "control": "azure-restrict-rdp"
         },
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
           "control": "azure-1-3-0-networking-4"
         },
         {
-          "control": "azure-1-3-0-networking-5"
+          "control": "azure-network-watcher-enabled"
         },
         {
-          "control": "azure-1-3-0-networking-6"
+          "control": "azure-restrict-udp"
         },
         {
           "control": "cis-alibaba-1-0-0-networking-1"
@@ -756,13 +756,13 @@
           "control": "gcp-1-1-0-vm-10"
         },
         {
-          "control": "azure-1-3-0-vm-1"
+          "control": "azure-vm-disks-managed"
         },
         {
-          "control": "azure-1-3-0-vm-2"
+          "control": "azure-vm-disks-cmk"
         },
         {
-          "control": "azure-1-3-0-vm-3"
+          "control": "azure-unattached-disks-enc-cmk"
         },
         {
           "control": "azure-1-3-0-vm-4"
@@ -862,13 +862,13 @@
           "control": "gcp-1-1-0-storage-2"
         },
         {
-          "control": "azure-1-3-0-storage-1"
+          "control": "azure-https-transfer-enabled"
         },
         {
           "control": "azure-1-3-0-storage-2"
         },
         {
-          "control": "azure-1-3-0-storage-3"
+          "control": "azure-log-queue-read-write-delete"
         },
         {
           "control": "azure-1-3-0-storage-4"
@@ -877,19 +877,19 @@
           "control": "azure-1-3-0-storage-5"
         },
         {
-          "control": "azure-1-3-0-storage-6"
+          "control": "azure-deny-access-storage-account"
         },
         {
-          "control": "azure-1-3-0-storage-7"
+          "control": "azure-trusted-services-storage-account"
         },
         {
-          "control": "azure-1-3-0-storage-8"
+          "control": "azure-soft-delete-containers-blobs"
         },
         {
-          "control": "azure-1-3-0-storage-9"
+          "control": "azure-storage-encryption-cmk"
         },
         {
-          "control": "azure-1-3-0-storage-10"
+          "control": "azure-log-blob-read-write-delete"
         },
         {
           "control": "azure-1-3-0-storage-11"
@@ -995,13 +995,13 @@
           "control": "gcp-1-1-0-bigquery-1"
         },
         {
-          "control": "azure-1-3-0-database-1-1"
+          "control": "azure-auditing-on"
         },
         {
-          "control": "azure-1-3-0-database-1-2"
+          "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "azure-1-3-0-database-1-3"
+          "control": "azure-auditing-retention-greater-90"
         },
         {
           "control": "azure-1-3-0-database-2-1"
@@ -1019,34 +1019,34 @@
           "control": "azure-1-3-0-database-2-5"
         },
         {
-          "control": "azure-1-3-0-database-3-1"
+          "control": "azure-ssl-enabled-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-2"
+          "control": "azure-ssl-enabled-mysql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-3"
+          "control": "azure-log-checkpoints-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-4"
+          "control": "azure-log-connections-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-5"
+          "control": "azure-log-disconnections-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-6"
+          "control": "azure-connection-throttling-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-7"
+          "control": "azure-log-retention-days-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-3-8"
+          "control": "azure-allow-azure-services-postgresql-server"
         },
         {
-          "control": "azure-1-3-0-database-4"
+          "control": "azure-ad-admin-sql-servers"
         },
         {
-          "control": "azure-1-3-0-database-5"
+          "control": "azure-sql-server-tde-cmk-encryption"
         },
         {
           "control": "cis-alibaba-1-0-0-rds-1"
@@ -1086,37 +1086,37 @@
       "body": "This procedure shows the security posture of your serverless assets such as functions as a service (FaaS).",
       "controls": [
         {
-          "control": "azure-1-3-0-appservice-1"
+          "control": "app-service-auth-azure-apps"
         },
         {
-          "control": "azure-1-3-0-appservice-2"
+          "control": "azure-redirect-http-to-https"
         },
         {
-          "control": "azure-1-3-0-appservice-3"
+          "control": "azure-latest-tls-version"
         },
         {
-          "control": "azure-1-3-0-appservice-4"
+          "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-1-3-0-appservice-5"
+          "control": "azure-register-aad-app-service"
         },
         {
-          "control": "azure-1-3-0-appservice-6"
+          "control": "azure-latest-php-version"
         },
         {
-          "control": "azure-1-3-0-appservice-7"
+          "control": "azure-latest-python-version"
         },
         {
-          "control": "azure-1-3-0-appservice-8"
+          "control": "azure-latest-java-version"
         },
         {
-          "control": "azure-1-3-0-appservice-9"
+          "control": "azure-http-latest-version-web-app"
         },
         {
-          "control": "azure-1-3-0-appservice-10"
+          "control": "azure-ftp-deployments-disabled"
         },
         {
-          "control": "azure-1-3-0-appservice-11"
+          "control": "azure-key-vaults-store-secrets"
         }
       ]
     },
@@ -1142,61 +1142,61 @@
       "body": "This procedure shows how well you use the security-related services and configurations offered by the providers.",
       "controls": [
         {
-          "control": "azure-1-3-0-sc-1"
+          "control": "azure-defender-for-servers"
         },
         {
-          "control": "azure-1-3-0-sc-2"
+          "control": "azure-defender-for-app-services"
         },
         {
-          "control": "azure-1-3-0-sc-3"
+          "control": "azure-defender-for-sql-servers"
         },
         {
-          "control": "azure-1-3-0-sc-4"
+          "control": "azure-defender-for-sql-servers-on-machines"
         },
         {
-          "control": "azure-1-3-0-sc-5"
+          "control": "azure-defender-for-storage"
         },
         {
           "control": "azure-1-3-0-sc-6"
         },
         {
-          "control": "azure-1-3-0-sc-7"
+          "control": "azure-defender-for-containers"
         },
         {
-          "control": "azure-1-3-0-sc-8"
+          "control": "azure-defender-for-key-vault"
         },
         {
-          "control": "azure-1-3-0-sc-9"
+          "control": "azure-defender-endpoint-selected"
         },
         {
-          "control": "azure-1-3-0-sc-10"
+          "control": "azure-defender-cloud-apps-selected"
         },
         {
-          "control": "azure-2-2-1"
+          "control": "azure-auto-provisioning-log-analystics"
         },
         {
-          "control": "azure-1-3-0-sc-13"
+          "control": "azure-additional-email-address"
         },
         {
-          "control": "azure-1-3-0-sc-14"
+          "control": "azure-notify-alerts-high-severity"
         },
         {
-          "control": "azure-1-3-0-sc-15"
+          "control": "azure-security-alert-emails-owners"
         },
         {
-          "control": "azure-1-3-0-security-1"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
-          "control": "azure-1-3-0-security-2"
+          "control": "azure-expiration-secrets-key-vault"
         },
         {
           "control": "azure-1-3-0-security-3"
         },
         {
-          "control": "azure-1-3-0-security-4"
+          "control": "azure-key-vault-recoverable"
         },
         {
-          "control": "azure-1-3-0-security-5"
+          "control": "azure-rbac-kubernetes"
         },
         {
           "control": "cis-alibaba-1-0-0-sc-1"

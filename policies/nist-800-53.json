@@ -135,19 +135,19 @@
           "control": "gcp-1-1-0-bigquery-1"
         },
         {
-          "control": "azure-1-3-0-database-4"
+          "control": "azure-ad-admin-sql-servers"
         },
         {
-          "control": "azure-1-3-0-database-1-2"
+          "control": "azure-encryption-on-sql-database"
         },
         {
           "control": "azure-1-3-0-iam-21"
         },
         {
-          "control": "azure-1-3-0-networking-1"
+          "control": "azure-restrict-rdp"
         },
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
           "control": "okta-admin-redundancy"
@@ -268,22 +268,22 @@
           "control": "aws-monitoring-14"
         },
         {
-          "control": "azure-1-3-0-database-1-1"
+          "control": "azure-auditing-on"
         },
         {
-          "control": "azure-1-3-0-database-1-3"
+          "control": "azure-auditing-retention-greater-90"
         },
         {
-          "control": "azure-1-3-0-logging-1-5"
+          "control": "azure-key-vault-logging-enabled"
         },
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
           "control": "azure-1-3-0-networking-4"
         },
         {
-          "control": "azure-1-3-0-networking-5"
+          "control": "azure-network-watcher-enabled"
         },
         {
           "control": "aws-ecs-12-clusters-should-use-insights"
@@ -365,10 +365,10 @@
           "control": "gcp-1-1-0-vm-8"
         },
         {
-          "control": "azure-1-3-0-database-1-1"
+          "control": "azure-auditing-on"
         },
         {
-          "control": "azure-1-3-0-database-1-3"
+          "control": "azure-auditing-retention-greater-90"
         },
         {
           "control": "azure-1-3-0-networking-4"
@@ -387,16 +387,16 @@
       "body": "",
       "controls": [
         {
-          "control": "azure-1-3-0-database-1-3"
+          "control": "azure-auditing-retention-greater-90"
         },
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
-          "control": "azure-1-3-0-sc-13"
+          "control": "azure-additional-email-address"
         },
         {
-          "control": "azure-1-3-0-sc-14"
+          "control": "azure-notify-alerts-high-severity"
         }
       ]
     },
@@ -406,13 +406,13 @@
       "body": "",
       "controls": [
         {
-          "control": "azure-2-2-1"
+          "control": "azure-auto-provisioning-log-analystics"
         },
         {
-          "control": "azure-1-3-0-sc-13"
+          "control": "azure-additional-email-address"
         },
         {
-          "control": "azure-1-3-0-sc-14"
+          "control": "azure-notify-alerts-high-severity"
         },
         {
           "control": "aws-ecs-3-process-name-space"
@@ -489,13 +489,13 @@
       "body": "",
       "controls": [
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
-          "control": "azure-1-3-0-sc-13"
+          "control": "azure-additional-email-address"
         },
         {
-          "control": "azure-1-3-0-sc-14"
+          "control": "azure-notify-alerts-high-severity"
         }
       ]
     },
@@ -639,46 +639,46 @@
           "control": "gcp-1-1-0-bigquery-1"
         },
         {
-          "control": "azure-1-3-0-database-1-1"
+          "control": "azure-auditing-on"
         },
         {
-          "control": "azure-1-3-0-database-1-3"
+          "control": "azure-auditing-retention-greater-90"
         },
         {
-          "control": "azure-1-3-0-database-1-2"
+          "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "azure-1-3-0-logging-1-5"
+          "control": "azure-key-vault-logging-enabled"
         },
         {
-          "control": "azure-1-3-0-networking-1"
+          "control": "azure-restrict-rdp"
         },
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
           "control": "azure-1-3-0-networking-4"
         },
         {
-          "control": "azure-1-3-0-networking-5"
+          "control": "azure-network-watcher-enabled"
         },
         {
-          "control": "azure-1-3-0-sc-13"
+          "control": "azure-additional-email-address"
         },
         {
-          "control": "azure-1-3-0-sc-14"
+          "control": "azure-notify-alerts-high-severity"
         },
         {
-          "control": "azure-1-3-0-security-1"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
-          "control": "azure-1-3-0-security-2"
+          "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "azure-1-3-0-security-4"
+          "control": "azure-key-vault-recoverable"
         },
         {
-          "control": "azure-1-3-0-storage-1"
+          "control": "azure-https-transfer-enabled"
         },
         {
           "control": "aws-ecs-12-clusters-should-use-insights"
@@ -805,31 +805,31 @@
           "control": "gcp-1-1-0-vm-10"
         },
         {
-          "control": "azure-1-3-0-database-1-2"
+          "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "azure-1-3-0-logging-1-5"
+          "control": "azure-key-vault-logging-enabled"
         },
         {
-          "control": "azure-1-3-0-networking-1"
+          "control": "azure-restrict-rdp"
         },
         {
-          "control": "azure-1-3-0-networking-3"
+          "control": "azure-sql-db-disallow-any-ip"
         },
         {
-          "control": "azure-1-3-0-networking-5"
+          "control": "azure-network-watcher-enabled"
         },
         {
-          "control": "azure-1-3-0-security-1"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
-          "control": "azure-1-3-0-security-2"
+          "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "azure-1-3-0-security-4"
+          "control": "azure-key-vault-recoverable"
         },
         {
-          "control": "azure-1-3-0-storage-1"
+          "control": "azure-https-transfer-enabled"
         },
         {
           "control": "aws-ecs-2-service-assign-public-ip-disabled"
