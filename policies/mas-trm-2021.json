@@ -1,1 +1,1166 @@
-{"name":"MAS Technology Risk Management Guidelines","slug":"mas-trm-2021","body":"## Statement\n\nThe revised MAS Technology Risk Management Guidelines outline technology risk management principles and best practices for the financial sector. \u003cVar keyName=\"companyName\"/\u003e uses the guidelines to support its activities for oversight and management of technology risk.\n\n\u003cVar keyName=\"companyName\"/\u003e has a defence-in-depth approach to strengthening cyber resilience, continuously improving its IT processes and controls in order to ensure confidentiality, integrity and availability of data and systems.\n\n## Recommendations\n\n#### 7. IT Service Management\n#### 7.3 Technology Refresh Management\n\u003cProcedure slug=\"mas-trm-731\"/\u003e\n\n#### 8. IT Resilience\n#### 8.1 System Availability\n\u003cProcedure slug=\"mas-trm-811\"/\u003e\n\n#### 8.4 System Backup and Recovery\n\u003cProcedure slug=\"mas-trm-841\"/\u003e\n\n#### 9. Access Control\n#### 9.1 User Access Management\n\u003cProcedure slug=\"mas-trm-911\"/\u003e\n\u003cProcedure slug=\"mas-trm-913\"/\u003e\n\u003cProcedure slug=\"mas-trm-914\"/\u003e\n\u003cProcedure slug=\"mas-trm-915\"/\u003e\n\u003cProcedure slug=\"mas-trm-916\"/\u003e\n\n#### 9.2 Privileged Access Management\n\u003cProcedure slug=\"mas-trm-921\"/\u003e\n\u003cProcedure slug=\"mas-trm-922\"/\u003e\n\n#### 10. Cryptography\n#### 10.1 Cryptographic Algorithm and Protocol\n\u003cProcedure slug=\"mas-trm-1012\"/\u003e\n\n#### 10.2 Cryptographic Key Management\n\u003cProcedure slug=\"mas-trm-1022\"/\u003e\n\u003cProcedure slug=\"mas-trm-1023\"/\u003e\n\u003cProcedure slug=\"mas-trm-1028\"/\u003e\n\n#### 11. Data and Infrastructure Security\n#### 11.1 Data Security\n\u003cProcedure slug=\"mas-trm-1111\"/\u003e\n\n#### 11.2 Network Security\n\u003cProcedure slug=\"mas-trm-1121\"/\u003e\n\u003cProcedure slug=\"mas-trm-1122\"/\u003e\n\n#### 11.3 System Security\n\u003cProcedure slug=\"mas-trm-1131\"/\u003e\n\u003cProcedure slug=\"mas-trm-1135\"/\u003e\n\n#### 11.4 Virtualisation Security\n\u003cProcedure slug=\"mas-trm-1141\"/\u003e\n\u003cProcedure slug=\"mas-trm-1143\"/\u003e\n\n#### 12 Cyber Security Operations\n#### 12.2 Cyber Event Monitoring and Detection\n\u003cProcedure slug=\"mas-trm-1221\"/\u003e\n\u003cProcedure slug=\"mas-trm-1222\"/\u003e\n\u003cProcedure slug=\"mas-trm-1224\"/\u003e\n\n#### 13 Cyber Security Assessment\n#### 13.1 Vulnerability Assessment\n\u003cProcedure slug=\"mas-trm-1311\"/\u003e\n","version":"2021","isStandard":true,"enabled":true,"procedures":[{"name":"7.3.1 Outdated and unsupported hardware or software","slug":"mas-trm-731","body":"Avoid using outdated and unsupported hardware or software.","controls":[{"control":"databases-with-outdated-engine-versions"},{"control":"gcp-kubernetes-8"},{"control":"azure-1-3-0-appservice-8"},{"control":"azure-1-3-0-appservice-6"},{"control":"azure-1-3-0-appservice-7"}]},{"name":"8.1.1 System availability","slug":"mas-trm-811","body":"Maintain system availability according to business needs.","controls":[{"control":"databases-without-deletion-protection"},{"control":"gcp-kubernetes-7"},{"control":"gcp-kubernetes-13"}]},{"name":"8.4.1 System and data backup strategy","slug":"mas-trm-841","body":"Perform regular backups so that systems and data can be recovered if needed.","controls":[{"control":"object-containers-without-versioning-enabled"},{"control":"gcp-1-1-0-sql-7"},{"control":"gcp-logging-3"},{"control":"azure-1-3-0-storage-8"},{"control":"azure-1-3-0-security-4"}]},{"name":"9.1.1 Principles of 'never alone', 'segregation of duties' and 'least privilege'. Roles and responsibilities","slug":"mas-trm-911","body":"Access rights and system privileges should be granted according to roles and responsibilities.","controls":[{"control":"aws-1-3-0-iam-11"},{"control":"aws-1-3-0-iam-7"},{"control":"aws-iam-12"},{"control":"aws-1-3-0-iam-16"},{"control":"aws-1-3-0-iam-15"},{"control":"aws-iam-19"},{"control":"aws-iam-15"},{"control":"aws-iam-17"},{"control":"aws-iam-18"},{"control":"aws-iam-16"},{"control":"aws-1-4-0-iam-20"},{"control":"aws-iam-21"},{"control":"cis-alibaba-1-0-0-iam-16"},{"control":"cis-alibaba-1-0-0-iam-15"},{"control":"okta-app-group-assignments"},{"control":"okta-admin-redundancy"},{"control":"gcp-iam-7"},{"control":"gcp-iam-8"},{"control":"gcp-1-1-0-iam-8"},{"control":"azure-1-3-0-iam-21"},{"control":"azure-1-3-0-security-5"},{"control":"azure-1-3-0-iam-23"}]},{"name":"9.1.3 Ensure proper accountability for user access through logging","slug":"mas-trm-913","body":"Records of user access and user management activities should be uniquely identified and logged.","controls":[{"control":"aws-logging-1"},{"control":"aws-logging-4"},{"control":"aws-monitoring-4"},{"control":"aws-monitoring-3"},{"control":"gcp-logging-6"},{"control":"gcp-iam-1"}]},{"name":"9.1.4 Password policy","slug":"mas-trm-914","body":"Enforce strong password controls for users' access to IT systems.","controls":[{"control":"aws-iam-11"},{"control":"aws-iam-10"},{"control":"aws-iam-9"},{"control":"aws-iam-6"},{"control":"aws-iam-8"},{"control":"aws-iam-7"},{"control":"aws-iam-5"},{"control":"aws-1-4-0-iam-12"},{"control":"aws-iam-4"},{"control":"cis-alibaba-1-0-0-iam-6"},{"control":"cis-alibaba-1-0-0-iam-12"},{"control":"cis-alibaba-1-0-0-iam-11"},{"control":"cis-alibaba-1-0-0-iam-8"},{"control":"cis-alibaba-1-0-0-iam-10"},{"control":"cis-alibaba-1-0-0-iam-9"},{"control":"cis-alibaba-1-0-0-iam-7"},{"control":"cis-alibaba-1-0-0-iam-14"},{"control":"cis-alibaba-1-0-0-iam-13"},{"control":"okta-weak-password-policies"}]},{"name":"9.1.5 Multi-factor authentication","slug":"mas-trm-915","body":"MFA should be implemented for users with access to sensitive system functions.","controls":[{"control":"aws-iam-13"},{"control":"aws-iam-14"},{"control":"aws-iam-2"},{"control":"cis-alibaba-1-0-0-iam-4"},{"control":"okta-mfa"},{"control":"okta-strong-factors"}]},{"name":"9.1.6 User access review","slug":"mas-trm-916","body":"Identity dormant and redundant user accounts, as well as inappropriate access rights.","controls":[{"control":"aws-iam-20"},{"control":"aws-1-3-0-iam-13"},{"control":"gcp-vm-3"},{"control":"cis-alibaba-1-0-0-iam-5"}]},{"name":"9.2.1 Privileged system access","slug":"mas-trm-921","body":"Access to privileged accounts should be granted with care and activities of these accounts should be monitored.","controls":[{"control":"aws-1-3-0-iam-7"},{"control":"aws-iam-17"},{"control":"aws-1-3-0-iam-16"},{"control":"aws-1-4-0-iam-20"},{"control":"cis-alibaba-1-0-0-iam-15"},{"control":"azure-1-3-0-iam-21"},{"control":"aws-logging-1"},{"control":"aws-logging-4"},{"control":"aws-monitoring-3"}]},{"name":"9.2.2 Service accounts","slug":"mas-trm-922","body":"Manage and monitor the use of system and service accounts.","controls":[{"control":"gcp-iam-2"},{"control":"gcp-iam-3"},{"control":"gcp-iam-5"}]},{"name":"10.1.2 Use appropriate cryptographic algorithms","slug":"mas-trm-1012","body":"Cryptographic algorithms from well-established international standards should be used.","controls":[{"control":"aws-networking-6"},{"control":"gcp-1-1-0-networking-9"},{"control":"gcp-1-1-0-networking-4"},{"control":"gcp-1-1-0-networking-5"},{"control":"azure-1-3-0-appservice-3"}]},{"name":"10.2.2 Protect cryptographic keys","slug":"mas-trm-1022","body":"Cryptographic keys should be securely generated and protected from unauthorised disclosure.","controls":[{"control":"kms-keys-with-permissive-access-policy"},{"control":"publicly-accessible-encryption-keys"},{"control":"kms-keys-exposed-through-vulnerable-vms"},{"control":"aws-logging-8"},{"control":"gcp-iam-2"},{"control":"gcp-1-1-0-iam-9"},{"control":"azure-1-3-0-appservice-11"},{"control":"azure-1-3-0-database-5"},{"control":"azure-1-3-0-security-4"}]},{"name":"10.2.3 Appropriate key lifespan","slug":"mas-trm-1023","body":"Determine the appropriate lifespan of each key. The key should be replaced before it expires at the end of its lifespan.","controls":[{"control":"kms-keys-have-not-been-rotated"},{"control":"kms-keys-scheduled-for-deletion"},{"control":"kms-keys-expiring-within-the-next-14-days"},{"control":"aws-monitoring-7"},{"control":"gcp-1-1-0-iam-10"},{"control":"gcp-iam-5"},{"control":"azure-1-3-0-appservice-11"},{"control":"azure-1-3-0-storage-2"},{"control":"azure-1-3-0-security-1"},{"control":"azure-1-3-0-security-2"}]},{"name":"10.2.8 Revoked/expired keys","slug":"mas-trm-1028","body":"Ensure revoked or expired keys are not recoverable.","controls":[{"control":"aws-1-3-0-iam-19"}]},{"name":"11.1.1 Protect confidential data","slug":"mas-trm-1111","body":"Detect and prevent unauthorised access, modification, copying or transmission of confidential data, considering data in motion, at rest and in use.","controls":[{"control":"object-containers-with-public-access"},{"control":"object-containers-accessible-from-vms-with-open-management-ports"},{"control":"object-containers-accessible-from-functions-with-http-trigger-unauthenticated"},{"control":"object-containers-with-permissive-access-policy"},{"control":"publicly-readable-object-containers"},{"control":"publicly-writable-object-containers"},{"control":"publicly-accessible-queues"},{"control":"databases-without-deletion-protection"},{"control":"aws-1-3-0-storage-1-1"},{"control":"aws-1-3-0-storage-2-1"},{"control":"aws-rds-1"},{"control":"aws-integration-1"},{"control":"aws-integration-2"},{"control":"aws-storage-3"},{"control":"aws-monitoring-8"},{"control":"aws-1-3-0-iam-20"},{"control":"aws-logging-3"},{"control":"object-containers-without-versioning-enabled"},{"control":"aws-1-4-0-storage-1-3"},{"control":"aws-storage-4"},{"control":"aws-ec2-2"},{"control":"aws-1-4-0-storage-3-1"},{"control":"databases-with-no-encryption"},{"control":"gcp-sql-1"},{"control":"gcp-vm-6"},{"control":"gcp-iam-7"},{"control":"gcp-1-1-0-sql-1-2"},{"control":"gcp-1-1-0-bigquery-1"},{"control":"gcp-1-1-0-storage-2"},{"control":"gcp-1-1-0-sql-3-2"},{"control":"gcp-1-1-0-sql-3-1"},{"control":"gcp-storage-3"},{"control":"gcp-storage-1"},{"control":"gcp-vm-5"},{"control":"azure-1-3-0-database-3-1"},{"control":"azure-1-3-0-database-3-2"},{"control":"azure-1-3-0-appservice-1"},{"control":"azure-1-3-0-appservice-4"},{"control":"azure-1-3-0-appservice-10"},{"control":"azure-1-3-0-vm-1"},{"control":"azure-1-3-0-vm-2"},{"control":"azure-1-3-0-vm-3"},{"control":"azure-1-3-0-storage-1"},{"control":"azure-1-3-0-storage-9"},{"control":"azure-1-3-0-database-1-2"},{"control":"azure-1-3-0-database-4"},{"control":"azure-1-3-0-logging-1-4"},{"control":"azure-1-3-0-appservice-2"},{"control":"azure-1-3-0-logging-1-3"},{"control":"cis-alibaba-1-0-0-storage-8"},{"control":"cis-alibaba-1-0-0-storage-9"},{"control":"cis-alibaba-1-0-0-rds-1"},{"control":"cis-alibaba-1-0-0-rds-5"},{"control":"cis-alibaba-1-0-0-vm-1"},{"control":"cis-alibaba-1-0-0-vm-2"},{"control":"cis-alibaba-1-0-0-storage-1"},{"control":"cis-alibaba-1-0-0-logging-2"}]},{"name":"11.2.1 Network security devices","slug":"mas-trm-1121","body":"Install network security devices such as firewalls.","controls":[{"control":"databases-with-no-old-tls"},{"control":"networking-ssh-from-internet"},{"control":"publicly-accessible-databases"},{"control":"publicly-accessible-disks"},{"control":"aws-1-3-0-iam-19"},{"control":"aws-1-4-0-storage-1-2"},{"control":"aws-1-3-0-networking-1"},{"control":"aws-1-3-0-networking-2"},{"control":"aws-loadbalancing-2"},{"control":"aws-loadbalancing-3"},{"control":"aws-networking-6"},{"control":"aws-networking-5"},{"control":"aws-networking-2"},{"control":"aws-networking-3"},{"control":"aws-networking-9"},{"control":"aws-networking-10"},{"control":"gcp-networking-4"},{"control":"gcp-1-1-0-networking-9"},{"control":"gcp-1-1-0-vm-9"},{"control":"gcp-storage-1"},{"control":"gcp-sql-1"},{"control":"gcp-sql-2"},{"control":"gcp-sql-4"},{"control":"gcp-1-1-0-sql-6"},{"control":"gcp-networking-7"},{"control":"gcp-vm-4"},{"control":"gcp-kubernetes-15"},{"control":"gcp-kubernetes-4"},{"control":"gcp-kubernetes-11"},{"control":"gcp-networking-9"},{"control":"gcp-networking-10"},{"control":"gcp-networking-8"},{"control":"gcp-networking-11"},{"control":"gcp-networking-13"},{"control":"gcp-networking-12"},{"control":"cis-alibaba-1-0-0-storage-1"},{"control":"cis-alibaba-1-0-0-rds-2"},{"control":"cis-alibaba-1-0-0-rds-1"},{"control":"sqlserver-enabled-allow-all-azure-services-access"},{"control":"azure-1-3-0-storage-1"},{"control":"azure-1-3-0-storage-5"},{"control":"azure-1-3-0-storage-6"},{"control":"azure-1-3-0-database-3-8"},{"control":"azure-1-3-0-networking-3"},{"control":"azure-1-3-0-appservice-2"},{"control":"azure-1-3-0-appservice-3"},{"control":"azure-1-3-0-appservice-4"},{"control":"azure-1-3-0-networking-1"},{"control":"azure-1-3-0-networking-6"}]},{"name":"11.2.2 Security mechanisms to protect information assets","slug":"mas-trm-1122","body":"Deploy effective security mechanisms to protect information assets. Segment the network.","controls":[{"control":"aws-networking-7"},{"control":"aws-networking-8"},{"control":"aws-logging-9"},{"control":"gcp-networking-6"},{"control":"gcp-networking-5"},{"control":"gcp-networking-2"},{"control":"gcp-1-1-0-networking-3"},{"control":"gcp-kubernetes-16"},{"control":"gcp-vm-5"},{"control":"gcp-networking-1"}]},{"name":"11.3.1 Security standards for hardware and software","slug":"mas-trm-1131","body":"Use hardware and software configurations that will minimise the exposure to cyber threats.","controls":[{"control":"gcp-kubernetes-9"},{"control":"gcp-kubernetes-15"},{"control":"gcp-kubernetes-18"},{"control":"gcp-kubernetes-19"},{"control":"gcp-kubernetes-6"},{"control":"gcp-kubernetes-3"},{"control":"gcp-kubernetes-4"},{"control":"gcp-kubernetes-11"},{"control":"gcp-kubernetes-16"},{"control":"gcp-kubernetes-17"},{"control":"azure-1-3-0-appservice-5"}]},{"name":"11.3.5 Monitor systems for early detection of suspicious or malicious activities","slug":"mas-trm-1135","body":"Monitor systems', including endpoint systems' processes for anomalies and suspicious activities.","controls":[{"control":"azure-1-3-0-sc-9"}]},{"name":"11.4.1 Ensure security standards for virtualisation","slug":"mas-trm-1141","body":"Ensure security standards are established for all the components of a virtualisation solution.","controls":[{"control":"gcp-1-1-0-vm-8"},{"control":"azure-2-2-1"}]},{"name":"11.4.3 Protect virtual images and snapshots","slug":"mas-trm-1143","body":"Protect virtual images and snapshots against unauthorized access or modifications.","controls":[{"control":"aws-ec2-1"}]},{"name":"12.2.1 Monitoring, detection and response","slug":"mas-trm-1221","body":"Monitor and analyze cyber events and ensure prompt detection and response to cyber incidents.","controls":[{"control":"azure-1-3-0-sc-13"},{"control":"azure-1-3-0-sc-15"},{"control":"azure-1-3-0-sc-14"},{"control":"azure-1-3-0-networking-5"}]},{"name":"12.2.2 Collect, process, review and retain system logs","slug":"mas-trm-1222","body":"Collect, process, review and retain system logs and protect them against unauthorized access.","controls":[{"control":"aws-logging-5"},{"control":"aws-loadbalancing-1"},{"control":"aws-logging-1"},{"control":"aws-logging-2"},{"control":"aws-logging-7"},{"control":"aws-logging-4"},{"control":"aws-logging-6"},{"control":"aws-logging-9"},{"control":"aws-1-3-0-logging-10"},{"control":"aws-1-3-0-logging-11"},{"control":"aws-monitoring-9"},{"control":"aws-monitoring-6"},{"control":"aws-monitoring-5"},{"control":"aws-monitoring-4"},{"control":"aws-monitoring-2"},{"control":"aws-monitoring-8"},{"control":"aws-monitoring-14"},{"control":"aws-monitoring-11"},{"control":"aws-monitoring-12"},{"control":"aws-monitoring-7"},{"control":"aws-monitoring-13"},{"control":"aws-monitoring-10"},{"control":"aws-monitoring-1"},{"control":"aws-monitoring-3"},{"control":"aws-1-3-0-monitoring-15"},{"control":"gcp-kubernetes-1"},{"control":"gcp-kubernetes-2"},{"control":"gcp-networking-6"},{"control":"gcp-logging-5"},{"control":"gcp-logging-10"},{"control":"gcp-logging-6"},{"control":"gcp-logging-4"},{"control":"gcp-logging-11"},{"control":"gcp-logging-7"},{"control":"gcp-logging-9"},{"control":"gcp-logging-8"},{"control":"gcp-storage-3"},{"control":"gcp-logging-1"},{"control":"gcp-storage-2"},{"control":"gcp-logging-3"},{"control":"gcp-1-1-0-logging-3"},{"control":"gcp-logging-2"},{"control":"gcp-1-1-0-sql-2-1"},{"control":"gcp-1-1-0-sql-2-2"},{"control":"gcp-1-1-0-sql-2-3"},{"control":"gcp-1-1-0-sql-2-4"},{"control":"gcp-1-1-0-sql-2-7"},{"control":"gcp-1-1-0-sql-2-6"},{"control":"cis-alibaba-1-0-0-logging-6"},{"control":"cis-alibaba-1-0-0-logging-7"},{"control":"cis-alibaba-1-0-0-logging-1"},{"control":"cis-alibaba-1-0-0-storage-3"},{"control":"azure-1-3-0-logging-1-2"},{"control":"azure-1-3-0-storage-10"},{"control":"azure-1-3-0-storage-3"},{"control":"azure-1-3-0-database-3-6"},{"control":"azure-1-3-0-database-3-3"},{"control":"azure-1-3-0-database-3-4"},{"control":"azure-1-3-0-database-3-5"},{"control":"azure-1-3-0-database-3-7"},{"control":"azure-1-3-0-database-1-3"},{"control":"azure-1-3-0-database-1-1"},{"control":"azure-1-3-0-logging-2-1"},{"control":"azure-1-3-0-logging-2-3"},{"control":"azure-1-3-0-logging-2-5"},{"control":"azure-1-3-0-logging-2-7"},{"control":"azure-1-3-0-logging-2-9"},{"control":"azure-1-3-0-logging-2-4"},{"control":"azure-1-3-0-logging-2-2"},{"control":"azure-1-3-0-logging-2-8"},{"control":"azure-1-3-0-logging-2-6"},{"control":"azure-1-3-0-networking-4"},{"control":"azure-1-3-0-logging-1-5"}]},{"name":"12.2.4 Behavioural analytics","slug":"mas-trm-1224","body":"Use behavioural analytics to enhance the effectiveness of security monitoring.","controls":[{"control":"azure-1-3-0-sc-2"},{"control":"azure-1-3-0-sc-3"},{"control":"azure-1-3-0-sc-7"},{"control":"azure-1-3-0-sc-8"},{"control":"azure-1-3-0-sc-6"},{"control":"azure-1-3-0-sc-4"},{"control":"azure-1-3-0-sc-1"},{"control":"azure-1-3-0-sc-5"},{"control":"azure-1-3-0-sc-10"}]},{"name":"13.1.1 Vulnerability assessment","slug":"mas-trm-1311","body":"Conduct regular vulnerability assessment to identify security vulnerabilities and ensure risk is appropriately addressed.","controls":[{"control":"aws-logging-5"},{"control":"aws-scan-1"}]}]}
+{
+  "name": "MAS Technology Risk Management Guidelines",
+  "slug": "mas-trm-2021",
+  "body": "## Statement\n\nThe revised MAS Technology Risk Management Guidelines outline technology risk management principles and best practices for the financial sector. <Var keyName=\"companyName\"/> uses the guidelines to support its activities for oversight and management of technology risk.\n\n<Var keyName=\"companyName\"/> has a defence-in-depth approach to strengthening cyber resilience, continuously improving its IT processes and controls in order to ensure confidentiality, integrity and availability of data and systems.\n\n## Recommendations\n\n#### 7. IT Service Management\n#### 7.3 Technology Refresh Management\n<Procedure slug=\"mas-trm-731\"/>\n\n#### 8. IT Resilience\n#### 8.1 System Availability\n<Procedure slug=\"mas-trm-811\"/>\n\n#### 8.4 System Backup and Recovery\n<Procedure slug=\"mas-trm-841\"/>\n\n#### 9. Access Control\n#### 9.1 User Access Management\n<Procedure slug=\"mas-trm-911\"/>\n<Procedure slug=\"mas-trm-913\"/>\n<Procedure slug=\"mas-trm-914\"/>\n<Procedure slug=\"mas-trm-915\"/>\n<Procedure slug=\"mas-trm-916\"/>\n\n#### 9.2 Privileged Access Management\n<Procedure slug=\"mas-trm-921\"/>\n<Procedure slug=\"mas-trm-922\"/>\n\n#### 10. Cryptography\n#### 10.1 Cryptographic Algorithm and Protocol\n<Procedure slug=\"mas-trm-1012\"/>\n\n#### 10.2 Cryptographic Key Management\n<Procedure slug=\"mas-trm-1022\"/>\n<Procedure slug=\"mas-trm-1023\"/>\n<Procedure slug=\"mas-trm-1028\"/>\n\n#### 11. Data and Infrastructure Security\n#### 11.1 Data Security\n<Procedure slug=\"mas-trm-1111\"/>\n\n#### 11.2 Network Security\n<Procedure slug=\"mas-trm-1121\"/>\n<Procedure slug=\"mas-trm-1122\"/>\n\n#### 11.3 System Security\n<Procedure slug=\"mas-trm-1131\"/>\n<Procedure slug=\"mas-trm-1135\"/>\n\n#### 11.4 Virtualisation Security\n<Procedure slug=\"mas-trm-1141\"/>\n<Procedure slug=\"mas-trm-1143\"/>\n\n#### 12 Cyber Security Operations\n#### 12.2 Cyber Event Monitoring and Detection\n<Procedure slug=\"mas-trm-1221\"/>\n<Procedure slug=\"mas-trm-1222\"/>\n<Procedure slug=\"mas-trm-1224\"/>\n\n#### 13 Cyber Security Assessment\n#### 13.1 Vulnerability Assessment\n<Procedure slug=\"mas-trm-1311\"/>\n",
+  "version": "2021",
+  "isStandard": true,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "7.3.1 Outdated and unsupported hardware or software",
+      "slug": "mas-trm-731",
+      "body": "Avoid using outdated and unsupported hardware or software.",
+      "controls": [
+        {
+          "control": "databases-with-outdated-engine-versions"
+        },
+        {
+          "control": "gcp-kubernetes-8"
+        },
+        {
+          "control": "azure-1-3-0-appservice-8"
+        },
+        {
+          "control": "azure-1-3-0-appservice-6"
+        },
+        {
+          "control": "azure-1-3-0-appservice-7"
+        }
+      ]
+    },
+    {
+      "name": "8.1.1 System availability",
+      "slug": "mas-trm-811",
+      "body": "Maintain system availability according to business needs.",
+      "controls": [
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "gcp-kubernetes-7"
+        },
+        {
+          "control": "gcp-kubernetes-13"
+        }
+      ]
+    },
+    {
+      "name": "8.4.1 System and data backup strategy",
+      "slug": "mas-trm-841",
+      "body": "Perform regular backups so that systems and data can be recovered if needed.",
+      "controls": [
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "gcp-1-1-0-sql-7"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "azure-1-3-0-storage-8"
+        },
+        {
+          "control": "azure-1-3-0-security-4"
+        }
+      ]
+    },
+    {
+      "name": "9.1.1 Principles of 'never alone', 'segregation of duties' and 'least privilege'. Roles and responsibilities",
+      "slug": "mas-trm-911",
+      "body": "Access rights and system privileges should be granted according to roles and responsibilities.",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-11"
+        },
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "aws-iam-12"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "aws-iam-15"
+        },
+        {
+          "control": "aws-iam-17"
+        },
+        {
+          "control": "aws-iam-18"
+        },
+        {
+          "control": "aws-iam-16"
+        },
+        {
+          "control": "aws-1-4-0-iam-20"
+        },
+        {
+          "control": "aws-iam-21"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-16"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-15"
+        },
+        {
+          "control": "okta-app-group-assignments"
+        },
+        {
+          "control": "okta-admin-redundancy"
+        },
+        {
+          "control": "gcp-iam-7"
+        },
+        {
+          "control": "gcp-iam-8"
+        },
+        {
+          "control": "gcp-1-1-0-iam-8"
+        },
+        {
+          "control": "azure-1-3-0-iam-21"
+        },
+        {
+          "control": "azure-1-3-0-security-5"
+        },
+        {
+          "control": "azure-1-3-0-iam-23"
+        }
+      ]
+    },
+    {
+      "name": "9.1.3 Ensure proper accountability for user access through logging",
+      "slug": "mas-trm-913",
+      "body": "Records of user access and user management activities should be uniquely identified and logged.",
+      "controls": [
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-3"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "gcp-iam-1"
+        }
+      ]
+    },
+    {
+      "name": "9.1.4 Password policy",
+      "slug": "mas-trm-914",
+      "body": "Enforce strong password controls for users' access to IT systems.",
+      "controls": [
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "aws-iam-10"
+        },
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "aws-1-4-0-iam-12"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-12"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-11"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-10"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-9"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-14"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-13"
+        },
+        {
+          "control": "okta-weak-password-policies"
+        }
+      ]
+    },
+    {
+      "name": "9.1.5 Multi-factor authentication",
+      "slug": "mas-trm-915",
+      "body": "MFA should be implemented for users with access to sensitive system functions.",
+      "controls": [
+        {
+          "control": "aws-iam-13"
+        },
+        {
+          "control": "aws-iam-14"
+        },
+        {
+          "control": "aws-iam-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-4"
+        },
+        {
+          "control": "okta-mfa"
+        },
+        {
+          "control": "okta-strong-factors"
+        }
+      ]
+    },
+    {
+      "name": "9.1.6 User access review",
+      "slug": "mas-trm-916",
+      "body": "Identity dormant and redundant user accounts, as well as inappropriate access rights.",
+      "controls": [
+        {
+          "control": "aws-iam-20"
+        },
+        {
+          "control": "aws-1-3-0-iam-13"
+        },
+        {
+          "control": "gcp-vm-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-5"
+        }
+      ]
+    },
+    {
+      "name": "9.2.1 Privileged system access",
+      "slug": "mas-trm-921",
+      "body": "Access to privileged accounts should be granted with care and activities of these accounts should be monitored.",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "aws-iam-17"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-4-0-iam-20"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-15"
+        },
+        {
+          "control": "azure-1-3-0-iam-21"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-monitoring-3"
+        }
+      ]
+    },
+    {
+      "name": "9.2.2 Service accounts",
+      "slug": "mas-trm-922",
+      "body": "Manage and monitor the use of system and service accounts.",
+      "controls": [
+        {
+          "control": "gcp-iam-2"
+        },
+        {
+          "control": "gcp-iam-3"
+        },
+        {
+          "control": "gcp-iam-5"
+        }
+      ]
+    },
+    {
+      "name": "10.1.2 Use appropriate cryptographic algorithms",
+      "slug": "mas-trm-1012",
+      "body": "Cryptographic algorithms from well-established international standards should be used.",
+      "controls": [
+        {
+          "control": "aws-networking-6"
+        },
+        {
+          "control": "gcp-1-1-0-networking-9"
+        },
+        {
+          "control": "gcp-1-1-0-networking-4"
+        },
+        {
+          "control": "gcp-1-1-0-networking-5"
+        },
+        {
+          "control": "azure-1-3-0-appservice-3"
+        }
+      ]
+    },
+    {
+      "name": "10.2.2 Protect cryptographic keys",
+      "slug": "mas-trm-1022",
+      "body": "Cryptographic keys should be securely generated and protected from unauthorised disclosure.",
+      "controls": [
+        {
+          "control": "kms-keys-with-permissive-access-policy"
+        },
+        {
+          "control": "publicly-accessible-encryption-keys"
+        },
+        {
+          "control": "kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "aws-logging-8"
+        },
+        {
+          "control": "gcp-iam-2"
+        },
+        {
+          "control": "gcp-1-1-0-iam-9"
+        },
+        {
+          "control": "azure-1-3-0-appservice-11"
+        },
+        {
+          "control": "azure-1-3-0-database-5"
+        },
+        {
+          "control": "azure-1-3-0-security-4"
+        }
+      ]
+    },
+    {
+      "name": "10.2.3 Appropriate key lifespan",
+      "slug": "mas-trm-1023",
+      "body": "Determine the appropriate lifespan of each key. The key should be replaced before it expires at the end of its lifespan.",
+      "controls": [
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "kms-keys-expiring-within-the-next-14-days"
+        },
+        {
+          "control": "aws-monitoring-7"
+        },
+        {
+          "control": "gcp-1-1-0-iam-10"
+        },
+        {
+          "control": "gcp-iam-5"
+        },
+        {
+          "control": "azure-1-3-0-appservice-11"
+        },
+        {
+          "control": "azure-1-3-0-storage-2"
+        },
+        {
+          "control": "azure-1-3-0-security-1"
+        },
+        {
+          "control": "azure-1-3-0-security-2"
+        }
+      ]
+    },
+    {
+      "name": "10.2.8 Revoked/expired keys",
+      "slug": "mas-trm-1028",
+      "body": "Ensure revoked or expired keys are not recoverable.",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-19"
+        }
+      ]
+    },
+    {
+      "name": "11.1.1 Protect confidential data",
+      "slug": "mas-trm-1111",
+      "body": "Detect and prevent unauthorised access, modification, copying or transmission of confidential data, considering data in motion, at rest and in use.",
+      "controls": [
+        {
+          "control": "object-containers-with-public-access"
+        },
+        {
+          "control": "object-containers-accessible-from-vms-with-open-management-ports"
+        },
+        {
+          "control": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
+        },
+        {
+          "control": "object-containers-with-permissive-access-policy"
+        },
+        {
+          "control": "publicly-readable-object-containers"
+        },
+        {
+          "control": "publicly-writable-object-containers"
+        },
+        {
+          "control": "publicly-accessible-queues"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "aws-1-3-0-storage-1-1"
+        },
+        {
+          "control": "aws-1-3-0-storage-2-1"
+        },
+        {
+          "control": "aws-rds-1"
+        },
+        {
+          "control": "aws-integration-1"
+        },
+        {
+          "control": "aws-integration-2"
+        },
+        {
+          "control": "aws-storage-3"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-3"
+        },
+        {
+          "control": "aws-storage-4"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "aws-1-4-0-storage-3-1"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "gcp-sql-1"
+        },
+        {
+          "control": "gcp-vm-6"
+        },
+        {
+          "control": "gcp-iam-7"
+        },
+        {
+          "control": "gcp-1-1-0-sql-1-2"
+        },
+        {
+          "control": "gcp-1-1-0-bigquery-1"
+        },
+        {
+          "control": "gcp-1-1-0-storage-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-3-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-3-1"
+        },
+        {
+          "control": "gcp-storage-3"
+        },
+        {
+          "control": "gcp-storage-1"
+        },
+        {
+          "control": "gcp-vm-5"
+        },
+        {
+          "control": "azure-1-3-0-database-3-1"
+        },
+        {
+          "control": "azure-1-3-0-database-3-2"
+        },
+        {
+          "control": "azure-1-3-0-appservice-1"
+        },
+        {
+          "control": "azure-1-3-0-appservice-4"
+        },
+        {
+          "control": "azure-1-3-0-appservice-10"
+        },
+        {
+          "control": "azure-1-3-0-vm-1"
+        },
+        {
+          "control": "azure-1-3-0-vm-2"
+        },
+        {
+          "control": "azure-1-3-0-vm-3"
+        },
+        {
+          "control": "azure-1-3-0-storage-1"
+        },
+        {
+          "control": "azure-1-3-0-storage-9"
+        },
+        {
+          "control": "azure-1-3-0-database-1-2"
+        },
+        {
+          "control": "azure-1-3-0-database-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-4"
+        },
+        {
+          "control": "azure-1-3-0-appservice-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-9"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-5"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-2"
+        }
+      ]
+    },
+    {
+      "name": "11.2.1 Network security devices",
+      "slug": "mas-trm-1121",
+      "body": "Install network security devices such as firewalls.",
+      "controls": [
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "publicly-accessible-disks"
+        },
+        {
+          "control": "aws-1-3-0-iam-19"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-2"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
+        },
+        {
+          "control": "aws-1-3-0-networking-2"
+        },
+        {
+          "control": "aws-loadbalancing-2"
+        },
+        {
+          "control": "aws-loadbalancing-3"
+        },
+        {
+          "control": "aws-networking-6"
+        },
+        {
+          "control": "aws-networking-5"
+        },
+        {
+          "control": "aws-networking-2"
+        },
+        {
+          "control": "aws-networking-3"
+        },
+        {
+          "control": "aws-networking-9"
+        },
+        {
+          "control": "aws-networking-10"
+        },
+        {
+          "control": "gcp-networking-4"
+        },
+        {
+          "control": "gcp-1-1-0-networking-9"
+        },
+        {
+          "control": "gcp-1-1-0-vm-9"
+        },
+        {
+          "control": "gcp-storage-1"
+        },
+        {
+          "control": "gcp-sql-1"
+        },
+        {
+          "control": "gcp-sql-2"
+        },
+        {
+          "control": "gcp-sql-4"
+        },
+        {
+          "control": "gcp-1-1-0-sql-6"
+        },
+        {
+          "control": "gcp-networking-7"
+        },
+        {
+          "control": "gcp-vm-4"
+        },
+        {
+          "control": "gcp-kubernetes-15"
+        },
+        {
+          "control": "gcp-kubernetes-4"
+        },
+        {
+          "control": "gcp-kubernetes-11"
+        },
+        {
+          "control": "gcp-networking-9"
+        },
+        {
+          "control": "gcp-networking-10"
+        },
+        {
+          "control": "gcp-networking-8"
+        },
+        {
+          "control": "gcp-networking-11"
+        },
+        {
+          "control": "gcp-networking-13"
+        },
+        {
+          "control": "gcp-networking-12"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-2"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-1"
+        },
+        {
+          "control": "sqlserver-enabled-allow-all-azure-services-access"
+        },
+        {
+          "control": "azure-1-3-0-storage-1"
+        },
+        {
+          "control": "azure-1-3-0-storage-5"
+        },
+        {
+          "control": "azure-1-3-0-storage-6"
+        },
+        {
+          "control": "azure-1-3-0-database-3-8"
+        },
+        {
+          "control": "azure-1-3-0-networking-3"
+        },
+        {
+          "control": "azure-1-3-0-appservice-2"
+        },
+        {
+          "control": "azure-1-3-0-appservice-3"
+        },
+        {
+          "control": "azure-1-3-0-appservice-4"
+        },
+        {
+          "control": "azure-1-3-0-networking-1"
+        },
+        {
+          "control": "azure-1-3-0-networking-6"
+        }
+      ]
+    },
+    {
+      "name": "11.2.2 Security mechanisms to protect information assets",
+      "slug": "mas-trm-1122",
+      "body": "Deploy effective security mechanisms to protect information assets. Segment the network.",
+      "controls": [
+        {
+          "control": "aws-networking-7"
+        },
+        {
+          "control": "aws-networking-8"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "gcp-networking-6"
+        },
+        {
+          "control": "gcp-networking-5"
+        },
+        {
+          "control": "gcp-networking-2"
+        },
+        {
+          "control": "gcp-1-1-0-networking-3"
+        },
+        {
+          "control": "gcp-kubernetes-16"
+        },
+        {
+          "control": "gcp-vm-5"
+        },
+        {
+          "control": "gcp-networking-1"
+        }
+      ]
+    },
+    {
+      "name": "11.3.1 Security standards for hardware and software",
+      "slug": "mas-trm-1131",
+      "body": "Use hardware and software configurations that will minimise the exposure to cyber threats.",
+      "controls": [
+        {
+          "control": "gcp-kubernetes-9"
+        },
+        {
+          "control": "gcp-kubernetes-15"
+        },
+        {
+          "control": "gcp-kubernetes-18"
+        },
+        {
+          "control": "gcp-kubernetes-19"
+        },
+        {
+          "control": "gcp-kubernetes-6"
+        },
+        {
+          "control": "gcp-kubernetes-3"
+        },
+        {
+          "control": "gcp-kubernetes-4"
+        },
+        {
+          "control": "gcp-kubernetes-11"
+        },
+        {
+          "control": "gcp-kubernetes-16"
+        },
+        {
+          "control": "gcp-kubernetes-17"
+        },
+        {
+          "control": "azure-1-3-0-appservice-5"
+        }
+      ]
+    },
+    {
+      "name": "11.3.5 Monitor systems for early detection of suspicious or malicious activities",
+      "slug": "mas-trm-1135",
+      "body": "Monitor systems', including endpoint systems' processes for anomalies and suspicious activities.",
+      "controls": [
+        {
+          "control": "azure-1-3-0-sc-9"
+        }
+      ]
+    },
+    {
+      "name": "11.4.1 Ensure security standards for virtualisation",
+      "slug": "mas-trm-1141",
+      "body": "Ensure security standards are established for all the components of a virtualisation solution.",
+      "controls": [
+        {
+          "control": "gcp-1-1-0-vm-8"
+        },
+        {
+          "control": "azure-2-2-1"
+        }
+      ]
+    },
+    {
+      "name": "11.4.3 Protect virtual images and snapshots",
+      "slug": "mas-trm-1143",
+      "body": "Protect virtual images and snapshots against unauthorized access or modifications.",
+      "controls": [
+        {
+          "control": "aws-ec2-1"
+        }
+      ]
+    },
+    {
+      "name": "12.2.1 Monitoring, detection and response",
+      "slug": "mas-trm-1221",
+      "body": "Monitor and analyze cyber events and ensure prompt detection and response to cyber incidents.",
+      "controls": [
+        {
+          "control": "azure-1-3-0-sc-13"
+        },
+        {
+          "control": "azure-1-3-0-sc-15"
+        },
+        {
+          "control": "azure-1-3-0-sc-14"
+        },
+        {
+          "control": "azure-1-3-0-networking-5"
+        }
+      ]
+    },
+    {
+      "name": "12.2.2 Collect, process, review and retain system logs",
+      "slug": "mas-trm-1222",
+      "body": "Collect, process, review and retain system logs and protect them against unauthorized access.",
+      "controls": [
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-loadbalancing-1"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        },
+        {
+          "control": "aws-monitoring-9"
+        },
+        {
+          "control": "aws-monitoring-6"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-2"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-monitoring-14"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "aws-monitoring-12"
+        },
+        {
+          "control": "aws-monitoring-7"
+        },
+        {
+          "control": "aws-monitoring-13"
+        },
+        {
+          "control": "aws-monitoring-10"
+        },
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "aws-monitoring-3"
+        },
+        {
+          "control": "aws-1-3-0-monitoring-15"
+        },
+        {
+          "control": "gcp-kubernetes-1"
+        },
+        {
+          "control": "gcp-kubernetes-2"
+        },
+        {
+          "control": "gcp-networking-6"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-10"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-11"
+        },
+        {
+          "control": "gcp-logging-7"
+        },
+        {
+          "control": "gcp-logging-9"
+        },
+        {
+          "control": "gcp-logging-8"
+        },
+        {
+          "control": "gcp-storage-3"
+        },
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-storage-2"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "gcp-1-1-0-logging-3"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-1"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-2"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-3"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-4"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-7"
+        },
+        {
+          "control": "gcp-1-1-0-sql-2-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-2"
+        },
+        {
+          "control": "azure-1-3-0-storage-10"
+        },
+        {
+          "control": "azure-1-3-0-storage-3"
+        },
+        {
+          "control": "azure-1-3-0-database-3-6"
+        },
+        {
+          "control": "azure-1-3-0-database-3-3"
+        },
+        {
+          "control": "azure-1-3-0-database-3-4"
+        },
+        {
+          "control": "azure-1-3-0-database-3-5"
+        },
+        {
+          "control": "azure-1-3-0-database-3-7"
+        },
+        {
+          "control": "azure-1-3-0-database-1-3"
+        },
+        {
+          "control": "azure-1-3-0-database-1-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-7"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-8"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-6"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-5"
+        }
+      ]
+    },
+    {
+      "name": "12.2.4 Behavioural analytics",
+      "slug": "mas-trm-1224",
+      "body": "Use behavioural analytics to enhance the effectiveness of security monitoring.",
+      "controls": [
+        {
+          "control": "azure-1-3-0-sc-2"
+        },
+        {
+          "control": "azure-1-3-0-sc-3"
+        },
+        {
+          "control": "azure-1-3-0-sc-7"
+        },
+        {
+          "control": "azure-1-3-0-sc-8"
+        },
+        {
+          "control": "azure-1-3-0-sc-6"
+        },
+        {
+          "control": "azure-1-3-0-sc-4"
+        },
+        {
+          "control": "azure-1-3-0-sc-1"
+        },
+        {
+          "control": "azure-1-3-0-sc-5"
+        },
+        {
+          "control": "azure-1-3-0-sc-10"
+        }
+      ]
+    },
+    {
+      "name": "13.1.1 Vulnerability assessment",
+      "slug": "mas-trm-1311",
+      "body": "Conduct regular vulnerability assessment to identify security vulnerabilities and ensure risk is appropriately addressed.",
+      "controls": [
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-scan-1"
+        }
+      ]
+    }
+  ]
+}
