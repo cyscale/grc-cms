@@ -1,1 +1,400 @@
-{"name":"CIS Microsoft Azure Foundations Benchmark","slug":"cis-azure-1-3-0","body":"## Statement\n\nThis document, CIS Microsoft Azure Foundations Security Benchmark, provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The scope of this benchmark is to establish the foundation level of security for anyone adopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. You should take the benchmark as a starting point and do the required site-specific tailoring wherever needed and when it is prudent to do so.\n\n### Intended Audience\n\nThis document is intended for system and application administrators, security specialists, auditors, help desk, and platform deployment personnel who plan to develop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\nThe Audit and Remediation sections within this Benchmark have been refined to include the Azure console steps and Azure CLI 2.0 commands where applicable.\n\n### Assessment Status\n\nAn assessment status is included for every recommendation. The assessment status indicates whether the given recommendation can be automated or requires manual steps to implement. Both statuses are equally important and are determined and supported as defined below:\n\n- **Automated**\n\n    Represents recommendations for which assessment of a technical control can be fully automated and validated to a pass/fail state. Recommendations will include the necessary information to implement automation.\n\n- **Manual**\n\n    Represents recommendations for which assessment of a technical control cannot be fully automated and requires all or some manual steps to validate that the configured state is set as expected. The expected state can vary depending on the environment.\n\n## Recommendations\n\n\u003cProcedure slug=\"cis-azure-1-3-0-iam\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-sc\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-storage\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-db\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-logging\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-vm\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-other\"/\u003e\n\u003cProcedure slug=\"cis-azure-1-3-0-appservice\"/\u003e","version":"1.3.0","isStandard":true,"enabled":true,"procedures":[{"name":"1. Identity and Access Management","slug":"cis-azure-1-3-0-iam","body":"","controls":[{"control":"azure-1-3-0-iam-1"},{"control":"azure-1-3-0-iam-2"},{"control":"azure-1-3-0-iam-4"},{"control":"azure-1-3-0-iam-5"},{"control":"azure-1-3-0-iam-6"},{"control":"azure-1-3-0-iam-7"},{"control":"azure-1-3-0-iam-8"},{"control":"azure-1-3-0-iam-9"},{"control":"azure-1-3-0-iam-10"},{"control":"azure-1-3-0-iam-11"},{"control":"azure-1-3-0-iam-12"},{"control":"azure-1-3-0-iam-13"},{"control":"azure-1-3-0-iam-14"},{"control":"azure-1-3-0-iam-15"},{"control":"azure-1-3-0-iam-16"},{"control":"azure-1-3-0-iam-17"},{"control":"azure-1-3-0-iam-18"},{"control":"azure-1-3-0-iam-19"},{"control":"azure-1-3-0-iam-20"},{"control":"azure-1-3-0-iam-21"},{"control":"azure-1-3-0-iam-23"}]},{"name":"2. Security Center","slug":"cis-azure-1-3-0-sc","body":"","controls":[{"control":"azure-1-3-0-sc-1"},{"control":"azure-1-3-0-sc-2"},{"control":"azure-1-3-0-sc-3"},{"control":"azure-1-3-0-sc-4"},{"control":"azure-1-3-0-sc-5"},{"control":"azure-1-3-0-sc-6"},{"control":"azure-1-3-0-sc-7"},{"control":"azure-1-3-0-sc-8"},{"control":"azure-1-3-0-sc-9"},{"control":"azure-1-3-0-sc-10"},{"control":"azure-2-2-1"},{"control":"azure-1-3-0-sc-13"},{"control":"azure-1-3-0-sc-14"},{"control":"azure-1-3-0-sc-15"}]},{"name":"3. Storage Accounts","slug":"cis-azure-1-3-0-storage","body":"","controls":[{"control":"azure-1-3-0-storage-1"},{"control":"azure-1-3-0-storage-2"},{"control":"azure-1-3-0-storage-3"},{"control":"azure-1-3-0-storage-4"},{"control":"azure-1-3-0-storage-5"},{"control":"azure-1-3-0-storage-6"},{"control":"azure-1-3-0-storage-7"},{"control":"azure-1-3-0-storage-8"},{"control":"azure-1-3-0-storage-9"},{"control":"azure-1-3-0-storage-10"},{"control":"azure-1-3-0-storage-11"}]},{"name":"4. Database Services","slug":"cis-azure-1-3-0-db","body":"","controls":[{"control":"azure-1-3-0-database-1-1"},{"control":"azure-1-3-0-database-1-2"},{"control":"azure-1-3-0-database-1-3"},{"control":"azure-1-3-0-database-2-1"},{"control":"azure-1-3-0-database-2-2"},{"control":"azure-1-3-0-database-2-3"},{"control":"azure-1-3-0-database-2-4"},{"control":"azure-1-3-0-database-2-5"},{"control":"azure-1-3-0-database-3-1"},{"control":"azure-1-3-0-database-3-2"},{"control":"azure-1-3-0-database-3-3"},{"control":"azure-1-3-0-database-3-4"},{"control":"azure-1-3-0-database-3-5"},{"control":"azure-1-3-0-database-3-6"},{"control":"azure-1-3-0-database-3-7"},{"control":"azure-1-3-0-database-3-8"},{"control":"azure-1-3-0-database-4"},{"control":"azure-1-3-0-database-5"}]},{"name":"5. Logging and Monitoring","slug":"cis-azure-1-3-0-logging","body":"","controls":[{"control":"azure-1-3-0-logging-1-1"},{"control":"azure-1-3-0-logging-1-2"},{"control":"azure-1-3-0-logging-1-3"},{"control":"azure-1-3-0-logging-1-4"},{"control":"azure-1-3-0-logging-1-5"},{"control":"azure-1-3-0-logging-2-1"},{"control":"azure-1-3-0-logging-2-2"},{"control":"azure-1-3-0-logging-2-3"},{"control":"azure-1-3-0-logging-2-4"},{"control":"azure-1-3-0-logging-2-5"},{"control":"azure-1-3-0-logging-2-6"},{"control":"azure-1-3-0-logging-2-7"},{"control":"azure-1-3-0-logging-2-8"},{"control":"azure-1-3-0-logging-2-9"},{"control":"azure-1-3-0-logging-3"}]},{"name":"6. Networing","slug":"cis-azure-1-3-0-networking","body":"","controls":[{"control":"networking-ssh-from-internet"},{"control":"azure-1-3-0-networking-1"},{"control":"azure-1-3-0-networking-3"},{"control":"azure-1-3-0-networking-4"},{"control":"azure-1-3-0-networking-5"},{"control":"azure-1-3-0-networking-6"}]},{"name":"7. Virtual Machines","slug":"cis-azure-1-3-0-vm","body":"","controls":[{"control":"azure-1-3-0-vm-1"},{"control":"azure-1-3-0-vm-2"},{"control":"azure-1-3-0-vm-3"},{"control":"azure-1-3-0-vm-4"},{"control":"azure-1-3-0-vm-5"},{"control":"azure-1-3-0-vm-6"},{"control":"azure-1-3-0-vm-7"}]},{"name":"8. Other Security Considerations","slug":"cis-azure-1-3-0-other","body":"","controls":[{"control":"azure-1-3-0-security-1"},{"control":"azure-1-3-0-security-2"},{"control":"azure-1-3-0-security-3"},{"control":"azure-1-3-0-security-4"},{"control":"azure-1-3-0-security-5"}]},{"name":"9. AppService","slug":"cis-azure-1-3-0-appservice","body":"","controls":[{"control":"azure-1-3-0-appservice-1"},{"control":"azure-1-3-0-appservice-2"},{"control":"azure-1-3-0-appservice-3"},{"control":"azure-1-3-0-appservice-4"},{"control":"azure-1-3-0-appservice-5"},{"control":"azure-1-3-0-appservice-6"},{"control":"azure-1-3-0-appservice-7"},{"control":"azure-1-3-0-appservice-8"},{"control":"azure-1-3-0-appservice-9"},{"control":"azure-1-3-0-appservice-10"},{"control":"azure-1-3-0-appservice-11"}]}]}
+{
+  "name": "CIS Microsoft Azure Foundations Benchmark",
+  "slug": "cis-azure-1-3-0",
+  "body": "## Statement\n\nThis document, CIS Microsoft Azure Foundations Security Benchmark, provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The scope of this benchmark is to establish the foundation level of security for anyone adopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. You should take the benchmark as a starting point and do the required site-specific tailoring wherever needed and when it is prudent to do so.\n\n### Intended Audience\n\nThis document is intended for system and application administrators, security specialists, auditors, help desk, and platform deployment personnel who plan to develop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\nThe Audit and Remediation sections within this Benchmark have been refined to include the Azure console steps and Azure CLI 2.0 commands where applicable.\n\n### Assessment Status\n\nAn assessment status is included for every recommendation. The assessment status indicates whether the given recommendation can be automated or requires manual steps to implement. Both statuses are equally important and are determined and supported as defined below:\n\n- **Automated**\n\n    Represents recommendations for which assessment of a technical control can be fully automated and validated to a pass/fail state. Recommendations will include the necessary information to implement automation.\n\n- **Manual**\n\n    Represents recommendations for which assessment of a technical control cannot be fully automated and requires all or some manual steps to validate that the configured state is set as expected. The expected state can vary depending on the environment.\n\n## Recommendations\n\n<Procedure slug=\"cis-azure-1-3-0-iam\"/>\n<Procedure slug=\"cis-azure-1-3-0-sc\"/>\n<Procedure slug=\"cis-azure-1-3-0-storage\"/>\n<Procedure slug=\"cis-azure-1-3-0-db\"/>\n<Procedure slug=\"cis-azure-1-3-0-logging\"/>\n<Procedure slug=\"cis-azure-1-3-0-vm\"/>\n<Procedure slug=\"cis-azure-1-3-0-other\"/>\n<Procedure slug=\"cis-azure-1-3-0-appservice\"/>",
+  "version": "1.3.0",
+  "isStandard": true,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "1. Identity and Access Management",
+      "slug": "cis-azure-1-3-0-iam",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-iam-1"
+        },
+        {
+          "control": "azure-1-3-0-iam-2"
+        },
+        {
+          "control": "azure-1-3-0-iam-4"
+        },
+        {
+          "control": "azure-1-3-0-iam-5"
+        },
+        {
+          "control": "azure-1-3-0-iam-6"
+        },
+        {
+          "control": "azure-1-3-0-iam-7"
+        },
+        {
+          "control": "azure-1-3-0-iam-8"
+        },
+        {
+          "control": "azure-1-3-0-iam-9"
+        },
+        {
+          "control": "azure-1-3-0-iam-10"
+        },
+        {
+          "control": "azure-1-3-0-iam-11"
+        },
+        {
+          "control": "azure-1-3-0-iam-12"
+        },
+        {
+          "control": "azure-1-3-0-iam-13"
+        },
+        {
+          "control": "azure-1-3-0-iam-14"
+        },
+        {
+          "control": "azure-1-3-0-iam-15"
+        },
+        {
+          "control": "azure-1-3-0-iam-16"
+        },
+        {
+          "control": "azure-1-3-0-iam-17"
+        },
+        {
+          "control": "azure-1-3-0-iam-18"
+        },
+        {
+          "control": "azure-1-3-0-iam-19"
+        },
+        {
+          "control": "azure-1-3-0-iam-20"
+        },
+        {
+          "control": "azure-1-3-0-iam-21"
+        },
+        {
+          "control": "azure-1-3-0-iam-23"
+        }
+      ]
+    },
+    {
+      "name": "2. Security Center",
+      "slug": "cis-azure-1-3-0-sc",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-sc-1"
+        },
+        {
+          "control": "azure-1-3-0-sc-2"
+        },
+        {
+          "control": "azure-1-3-0-sc-3"
+        },
+        {
+          "control": "azure-1-3-0-sc-4"
+        },
+        {
+          "control": "azure-1-3-0-sc-5"
+        },
+        {
+          "control": "azure-1-3-0-sc-6"
+        },
+        {
+          "control": "azure-1-3-0-sc-7"
+        },
+        {
+          "control": "azure-1-3-0-sc-8"
+        },
+        {
+          "control": "azure-1-3-0-sc-9"
+        },
+        {
+          "control": "azure-1-3-0-sc-10"
+        },
+        {
+          "control": "azure-2-2-1"
+        },
+        {
+          "control": "azure-1-3-0-sc-13"
+        },
+        {
+          "control": "azure-1-3-0-sc-14"
+        },
+        {
+          "control": "azure-1-3-0-sc-15"
+        }
+      ]
+    },
+    {
+      "name": "3. Storage Accounts",
+      "slug": "cis-azure-1-3-0-storage",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-storage-1"
+        },
+        {
+          "control": "azure-1-3-0-storage-2"
+        },
+        {
+          "control": "azure-1-3-0-storage-3"
+        },
+        {
+          "control": "azure-1-3-0-storage-4"
+        },
+        {
+          "control": "azure-1-3-0-storage-5"
+        },
+        {
+          "control": "azure-1-3-0-storage-6"
+        },
+        {
+          "control": "azure-1-3-0-storage-7"
+        },
+        {
+          "control": "azure-1-3-0-storage-8"
+        },
+        {
+          "control": "azure-1-3-0-storage-9"
+        },
+        {
+          "control": "azure-1-3-0-storage-10"
+        },
+        {
+          "control": "azure-1-3-0-storage-11"
+        }
+      ]
+    },
+    {
+      "name": "4. Database Services",
+      "slug": "cis-azure-1-3-0-db",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-database-1-1"
+        },
+        {
+          "control": "azure-1-3-0-database-1-2"
+        },
+        {
+          "control": "azure-1-3-0-database-1-3"
+        },
+        {
+          "control": "azure-1-3-0-database-2-1"
+        },
+        {
+          "control": "azure-1-3-0-database-2-2"
+        },
+        {
+          "control": "azure-1-3-0-database-2-3"
+        },
+        {
+          "control": "azure-1-3-0-database-2-4"
+        },
+        {
+          "control": "azure-1-3-0-database-2-5"
+        },
+        {
+          "control": "azure-1-3-0-database-3-1"
+        },
+        {
+          "control": "azure-1-3-0-database-3-2"
+        },
+        {
+          "control": "azure-1-3-0-database-3-3"
+        },
+        {
+          "control": "azure-1-3-0-database-3-4"
+        },
+        {
+          "control": "azure-1-3-0-database-3-5"
+        },
+        {
+          "control": "azure-1-3-0-database-3-6"
+        },
+        {
+          "control": "azure-1-3-0-database-3-7"
+        },
+        {
+          "control": "azure-1-3-0-database-3-8"
+        },
+        {
+          "control": "azure-1-3-0-database-4"
+        },
+        {
+          "control": "azure-1-3-0-database-5"
+        }
+      ]
+    },
+    {
+      "name": "5. Logging and Monitoring",
+      "slug": "cis-azure-1-3-0-logging",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-logging-1-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-4"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-6"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-7"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-8"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-1-3-0-logging-3"
+        }
+      ]
+    },
+    {
+      "name": "6. Networing",
+      "slug": "cis-azure-1-3-0-networking",
+      "body": "",
+      "controls": [
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "azure-1-3-0-networking-1"
+        },
+        {
+          "control": "azure-1-3-0-networking-3"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "azure-1-3-0-networking-5"
+        },
+        {
+          "control": "azure-1-3-0-networking-6"
+        }
+      ]
+    },
+    {
+      "name": "7. Virtual Machines",
+      "slug": "cis-azure-1-3-0-vm",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-vm-1"
+        },
+        {
+          "control": "azure-1-3-0-vm-2"
+        },
+        {
+          "control": "azure-1-3-0-vm-3"
+        },
+        {
+          "control": "azure-1-3-0-vm-4"
+        },
+        {
+          "control": "azure-1-3-0-vm-5"
+        },
+        {
+          "control": "azure-1-3-0-vm-6"
+        },
+        {
+          "control": "azure-1-3-0-vm-7"
+        }
+      ]
+    },
+    {
+      "name": "8. Other Security Considerations",
+      "slug": "cis-azure-1-3-0-other",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-security-1"
+        },
+        {
+          "control": "azure-1-3-0-security-2"
+        },
+        {
+          "control": "azure-1-3-0-security-3"
+        },
+        {
+          "control": "azure-1-3-0-security-4"
+        },
+        {
+          "control": "azure-1-3-0-security-5"
+        }
+      ]
+    },
+    {
+      "name": "9. AppService",
+      "slug": "cis-azure-1-3-0-appservice",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-1-3-0-appservice-1"
+        },
+        {
+          "control": "azure-1-3-0-appservice-2"
+        },
+        {
+          "control": "azure-1-3-0-appservice-3"
+        },
+        {
+          "control": "azure-1-3-0-appservice-4"
+        },
+        {
+          "control": "azure-1-3-0-appservice-5"
+        },
+        {
+          "control": "azure-1-3-0-appservice-6"
+        },
+        {
+          "control": "azure-1-3-0-appservice-7"
+        },
+        {
+          "control": "azure-1-3-0-appservice-8"
+        },
+        {
+          "control": "azure-1-3-0-appservice-9"
+        },
+        {
+          "control": "azure-1-3-0-appservice-10"
+        },
+        {
+          "control": "azure-1-3-0-appservice-11"
+        }
+      ]
+    }
+  ]
+}
