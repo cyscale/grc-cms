@@ -141,7 +141,7 @@
           "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "azure-1-3-0-iam-21"
+          "control": "azure-no-custom-admin-role"
         },
         {
           "control": "azure-restrict-rdp"
@@ -479,7 +479,7 @@
           "control": "gcp-1-1-0-iam-3"
         },
         {
-          "control": "azure-1-3-0-iam-21"
+          "control": "azure-no-custom-admin-role"
         }
       ]
     },
