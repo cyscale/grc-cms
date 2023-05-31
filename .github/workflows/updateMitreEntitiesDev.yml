@@ -29,7 +29,7 @@ jobs:
           azcliversion: 2.37.0
           inlineScript: |
             # Handle MITRE tactics
-            for file in for file in ./mitre/tactics/*.json; do
+            for file in ./mitre/tactics/*.json; do
               mid=$(cat $file | jq -r '.mid')
               message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "tactic" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "tactic", "operation": $operation}')
 
@@ -39,7 +39,7 @@ jobs:
 
 
             # Handle MITRE techniques
-            for file in for file in ./mitre/techniques/*.json; do
+            for file in ./mitre/techniques/*.json; do
               mid=$(cat $file | jq -r '.mid')
               message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "technique" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "technique", "operation": $operation}')
 
@@ -48,7 +48,7 @@ jobs:
             done
 
             # Handle MITRE mappings
-            for file in for file in ./mitre/mappings/*.json; do
+            for file in ./mitre/mappings/*.json; do
               mid=$(cat $file | jq -r '.mid')
               message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "mapping" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "mapping", "operation": $operation}')
 
