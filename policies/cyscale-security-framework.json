@@ -192,7 +192,7 @@
           "control": "azure-1-3-0-iam-20"
         },
         {
-          "control": "azure-1-3-0-iam-21"
+          "control": "azure-no-custom-admin-role"
         },
         {
           "control": "azure-admin-resource-locks"
