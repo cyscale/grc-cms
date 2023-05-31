@@ -12,6 +12,9 @@
       "controls": [
         {
           "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "azure-no-custom-admin-role"
         }
       ],
       "body": "This section covers security recommendations to set identity and access management policies on an Azure Subscription."
@@ -41,6 +44,12 @@
         },
         {
           "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-auto-provisioning-log-analystics"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
         },
         {
           "control": "azure-additional-email-address"
