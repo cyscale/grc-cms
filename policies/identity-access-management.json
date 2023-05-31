@@ -1,1 +1,267 @@
-{"name":"Identity and Access Management","slug":"identity-access-management","body":"## Policy Statement\n\nThis policy is to provide a framework for how user accounts and privileges are created, managed, and deleted.\n\nAccess control helps \u003cVar keyName=\"companyName\"/\u003e to implement security best practices concerning logical security, account management, and remote access.\n\nIt includes details on how new users are authorized and granted appropriate privileges, as well as how these are reviewed and revoked when necessary. It also includes appropriate controls to prevent users from obtaining unauthorized privileges or access.\n\n#### Purpose\n\nThis policy is intended to:\n\n- Protect the confidentiality and the integrity of data for which \u003cVar keyName=\"companyName\"/\u003e is responsible. A limited number of exceptions may occur due to specific business needs. Any exception should be carefully risk assessed, approved, and signed off by the Security Director.\n\n- Mitigate against loss of confidentiality, integrity, or availability due to:\n  - Misuse of privileges\n  - Introduction of viruses and malware to the network.\n\n#### Scope\n\nThis policy applies to:\n\n- All employees and suppliers who have access to \u003cVar keyName=\"companyName\"/\u003e information and information systems.\n- Information systems and services in program, project, and operational business areas.\n- \u003cVar keyName=\"companyName\"/\u003e boundary domain\n- Systems outside of the \u003cVar keyName=\"companyName\"/\u003e boundary that fall under \u003cVar keyName=\"companyName\"/\u003e's responsibility as employees gain access to these systems.\n\nSome access roles require implementing stronger controls than those intended for standard users.\n\n## Objectives\n\n- Access to all computing resources, including servers, end-user computing devices, network equipment, services, and applications, must be protected by strong authentication, authorization, and auditing.\n- Interactive user access must be associated with an account or login unique to each user.\n- All credentials, including user passwords, service accounts, and access keys must meet the length, complexity, age, and rotation requirements defined in \u003cVar keyName=\"companyName\"/\u003e security standards.\n- Use a strong password and multi-factor authentication (MFA) whenever possible to authenticate to all computing resources (including both devices and applications).\n- MFA is required to access any critical system or resource, including but not limited to resources in \u003cVar keyName=\"companyName\"/\u003e production environments.\n- Unused accounts, passwords, access keys must be removed within 30 days. See [Systems Audit Policy](/policies/systems-audit/show) for more info.\n- A unique access key or service account must be used for different applications or user access.\n- Authenticated sessions must time out after a defined period of inactivity.\n\n## Procedures\n\n\u003cProcedure slug=\"iam-identity\"/\u003e\n\u003cProcedure slug=\"iam-sso\"/\u003e\n\u003cProcedure slug=\"iam-mfa\"/\u003e\n\u003cProcedure slug=\"iam-access\"/\u003e\n\u003cProcedure slug=\"iam-termination\"/\u003e\n\u003cProcedure slug=\"iam-least-privilege\"/\u003e\n\u003cProcedure slug=\"iam-endpoints-access\"/\u003e\n\u003cProcedure slug=\"iam-session-lock\"/\u003e\n\u003cProcedure slug=\"iam-vpn\"/\u003e\n\u003cProcedure slug=\"iam-wifi\"/\u003e","version":"1","isStandard":false,"enabled":true,"procedures":[{"name":"User Identity","slug":"iam-identity","body":"Each organization selects a standard on how to define and manage user identities\n\n1. \u003cVar keyName=\"companyName\"/\u003e selected `firstname.lastname@companyDomain.tld` as User Identity\n1. \u003cVar keyName=\"companyName\"/\u003e can create aliases for the user identity only with prior approval and justification for a business need. Example: simplifying an email address for the ease of communication (`firstname@companyDomain.tld`)\n1. Access to \u003cVar keyName=\"companyName\"/\u003e systems is done through the use of at least the user identity and password\n1. Users must set strong passwords based on the \u003cVar keyName=\"companyName\"/\u003e [Password Policy](/policies/password-management/show)\n1. Passwords are not displayed anywhere, transmitted unencrypted, or stored in plain text\n1. \u003cVar keyName=\"companyName\"/\u003e selected to group users by departments (Sales, Marketing, Business, Security and Development). Each user identity is added to one or more groups in the IdP solution, depending on their roles","controls":[{"control":"aws-iam-9"},{"control":"aws-iam-6"},{"control":"aws-iam-8"},{"control":"aws-iam-7"},{"control":"aws-iam-5"},{"control":"okta-weak-password-policies"}]},{"name":"Single Sign-On (SSO)","slug":"iam-sso","body":"- It is the responsibility of the Security Team to manage access to applications and systems\n- \u003cVar keyName=\"companyName\"/\u003e is using an IdP to manage access to systems and applications\n- Authentication is preferred using SSO instead of local auth.","controls":null},{"name":"Multi-factor Authentication (MFA)","slug":"iam-mfa","body":"The purpose of Multi‐Factor Authentication (MFA) is to enable a means of strong authentication for those users with access to sensitive information and information systems resources or that have a privileged level of system support access while ensuring ease of use and adoption for the user(s). This will reduce the likelihood of unauthorized access, provide demonstrated compliance to federal and industry mandates, as well as enable the solicitation, assessment, and selection of MFA solutions that will implement the requirements of this policy.\n\nUsers will use the MFA self-enrollment process to register their authentication device(s) and install an MFA application (such as Google Authenticator, Microsoft Authenticator, or similar). The process guide for registration is located in the IdP documentation page.\n\n#### MFA methods\n\n- Hardware MFA token, for the Executives and IT Operations on Production Environments\n- One-Time Password (time-based) using Google Authenticator, Microsoft Authenticator, or similar\n- IdP mobile app for authentication","controls":[{"control":"aws-iam-2"},{"control":"aws-iam-13"},{"control":"aws-iam-14"},{"control":"gcp-monitoring-2"},{"control":"okta-mfa"},{"control":"okta-strong-factors"}]},{"name":"Access Provisioning","slug":"iam-access","body":"The \u003cVar keyName=\"companyName\"/\u003e Security team adheres to a formal access control procedure that addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance.\n\nAs \"*Complexity is the enemy of security*\", authorization must be configured using attribute-based access control (ABAC) or role-based access control (RBAC) mechanisms.\n\n1. Access to \u003cVar keyName=\"companyName\"/\u003e systems is made as part of the user onboarding process, initiated by HR:\n     - A new ticket is created in the onboarding project\n     - The HR Team must attach the **New Joiner Request Form** which states the role and additional systems the new joiner must have access granted for\n     - The Security Team picks up the ticket and starts evaluating the access request\n1. The Security Team must:\n   - Configure IT and Cloud Services to enforce strong passwords based on the \u003cVar keyName=\"companyName\"/\u003e [Password Policy](/policies/password-management/show)\n   - Establish conditions for group membership\n   - Review accounts periodically or at least annually\n   - Provide clear classification for data and systems\n   - Not grant access to any Production environments by default\n1. Once approved, the accounts are created with temporary passwords and are forced to change their password at first login.\n1. For Local accounts on laptops/workstations, \u003cVar keyName=\"companyName\"/\u003e uses Azure AD and users must be added to designated groups.\n1. Online accounts are provisioned in the IdP\n1. Accounts are created by default for the following services:\n    - Productivity solution account for productivity and access to email, office suite, collaboration, etc.\n    - Developers receive VPN Access for access to the internal \u003cVar keyName=\"companyName\"/\u003e infrastructure\n      - CI/CD\n      - VCS\n    - Ticket management\n    - Company Wiki\n    - HR solution for paperwork, payroll, expense reporting, etc.\n    - Time management solution for timesheets and logging work\n\n    Additional access can be requested in another ticket and must include a justification.\n1. Access control for Mobile Devices is defined in the [Mobile Device Management Policy](/policies/mdm-device-management/show)\n1. Guest access to \u003cVar keyName=\"companyName\"/\u003e IT and Cloud Systems is permitted only if it is approved by the Security Team\n\n\u003e For each New Joiner, there is a master checklist in the ticketing solution that must be filled out by the Security Team after access has been granted.","controls":[{"control":"networking-ssh-from-internet"},{"control":"aws-iam-4"},{"control":"aws-iam-12"},{"control":"aws-logging-3"},{"control":"aws-logging-6"},{"control":"aws-monitoring-11"},{"control":"aws-1-3-0-iam-7"},{"control":"aws-1-3-0-iam-11"},{"control":"aws-1-3-0-iam-13"},{"control":"aws-1-3-0-iam-15"},{"control":"aws-1-3-0-iam-16"},{"control":"aws-1-3-0-iam-20"},{"control":"aws-1-3-0-networking-1"},{"control":"aws-1-3-0-networking-2"},{"control":"azure-rbac-kubernetes"},{"control":"azure-admin-resource-locks"},{"control":"azure-1-3-0-iam-21"},{"control":"gcp-networking-4"},{"control":"gcp-networking-5"},{"control":"gcp-vm-1"},{"control":"gcp-storage-1"},{"control":"gcp-kubernetes-16"},{"control":"gcp-kubernetes-17"},{"control":"gcp-kubernetes-18"},{"control":"gcp-1-1-0-vm-1"},{"control":"gcp-1-1-0-vm-8"},{"control":"gcp-1-1-0-vm-9"},{"control":"gcp-1-1-0-storage-2"},{"control":"okta-app-group-assignments"}]},{"name":"Access Termination","slug":"iam-termination","body":"Access termination is received as a ticket assigned to the Security Team. Access termination can result from:\n\n- Access is no longer required for the user to perform a specific function on a protected system\n- Access has not been used for more than 90 days, in which case \u003cVar keyName=\"companyName\"/\u003e Security Team assumes it is not required anymore (has no function)\n- An access review based on the [Systems Audit Policy](/policies/systems-audit/show) may terminate access rights\n- Employee/Contractor leaving or terminating the relationship with \u003cVar keyName=\"companyName\"/\u003e\n\nTasks for Security Team:\n\n- Password must be changed to strong random ones following the [Password Policy](/policies/password-management/show)\n- For security and auditing reasons, accounts are disabled and deleted only after 1 year after the person left \u003cVar keyName=\"companyName\"/\u003e.\n- For each Leaver, there is a master checklist in the ticketing solution that must be filled out by the Security Team after access to all systems has been revoked.","controls":null},{"name":"Least Privilege","slug":"iam-least-privilege","body":"Privileged User/Accounts is a User/Account that by function, and/or by seniority, has been allocated powers within the computer system, which are significantly greater than those available to the majority of users. Such entities are either root accounts on Linux systems, administrator accounts on Windows, or highly privileged users in the Cloud Service Providers.\n\nIn defining access control for groups and individuals, \u003cVar keyName=\"companyName\"/\u003e adopts the concept of least privilege, allowing only authorized access for users (and processes acting on behalf of users) which is necessary to accomplish assigned tasks following organizational missions and business functions. In case Privileged Access is needed, accessing the system is done using the user identity of the employee/contractor, then switching to the privileged user.","controls":[{"control":"networking-ssh-from-internet"},{"control":"aws-networking-3"},{"control":"aws-1-3-0-iam-7"},{"control":"aws-1-3-0-iam-15"},{"control":"aws-1-3-0-iam-16"},{"control":"aws-1-3-0-iam-18"},{"control":"aws-1-3-0-iam-22"},{"control":"gcp.iam.2"},{"control":"gcp.iam.3"},{"control":"gcp.iam.4"},{"control":"gcp.iam.5"},{"control":"gcp.logging.1"},{"control":"gcp.vm.1"},{"control":"gcp.kubernetes.17"},{"control":"gcp.kubernetes.18"},{"control":"gcp-networking-4"},{"control":"gcp-1-1-0-iam-6"},{"control":"gcp-1-1-0-vm-1"}]},{"name":"Endpoints Access","slug":"iam-endpoints-access","body":"\u003cVar keyName=\"companyName\"/\u003e is using Device Management tools (Microsoft Intune, Jamf Pro, VMWare AirWatch, or similar) for company-owned devices. Guidelines are encouraged (and sometimes enforced) to ensure that these devices have been kept up to date and that they have the proper access configured:\n\n1. Endpoints must have antivirus/endpoint security agents installed and configured to avoid malware infiltration\n1. Firewall is a requirement which is pushed and audited by the device management tool\n1. Hard drives and other removable media will be encrypted - see [Data Protection Policy](/policies/data-protection/show)\n1. Engaging in any illegal activity is strictly prohibited (hacking, crypto mining, racism, discriminations, harassments, etc.)\n1. Periodic assessments, as defined in the [Systems Audit Policy](/policies/systems-audit/show), are performed and may result in access being suspended or terminated in case of non-compliance with \u003cVar keyName=\"companyName\"/\u003e's [Mobile Device Management Policy](/policies/mdm-device-management/show)","controls":null},{"name":"Session Lock","slug":"iam-session-lock","body":"Access to \u003cVar keyName=\"companyName\"/\u003e information systems should be locked after periods of inactivity or upon receiving a request from a user. The session lock must be retained until the user re-establishes access using established identification and authentication procedures.","controls":[{"control":"aws-1-4-0-iam-12"},{"control":"aws-iam-4"},{"control":"aws-iam-11"},{"control":"gcp-iam-5"},{"control":"gcp-1-1-0-iam-10"}]},{"name":"VPN Access for Remote Working","slug":"iam-vpn","body":"- \u003cVar keyName=\"companyName\"/\u003e follows the principle of Zero Trust Software-Defined Perimeter (SDP) and has implemented an SDP solution that helps with micro-segmentation of the access to network and cloud resources\n- Developers receive VPN Access for access to the internal \u003cVar keyName=\"companyName\"/\u003e infrastructure\n- VPN access to Production environments is restricted and can be proxied only using a *Bastion Service*","controls":null},{"name":"WiFi Wireless Access","slug":"iam-wifi","body":"\u003cVar keyName=\"companyName\"/\u003e manages and grants access to wireless networks based on:\n\n- Access to Wireless Networks is managed and pushed automatically on devices using MDM - See [Mobile Device Management Policy](/policies/mdm-device-management/show)\n- Wireless connection is encrypted using WPA2 encryption or higher;\n- Connection to insecure networks (unsecured wireless hotspots) is not allowed for company-owned devices unless the device does not proxy the traffic using a VPN connection\n- Wireless guest access is separated from the \u003cVar keyName=\"companyName\"/\u003e main network","controls":null}]}
+{
+  "name": "Identity and Access Management",
+  "slug": "identity-access-management",
+  "body": "## Policy Statement\n\nThis policy is to provide a framework for how user accounts and privileges are created, managed, and deleted.\n\nAccess control helps <Var keyName=\"companyName\"/> to implement security best practices concerning logical security, account management, and remote access.\n\nIt includes details on how new users are authorized and granted appropriate privileges, as well as how these are reviewed and revoked when necessary. It also includes appropriate controls to prevent users from obtaining unauthorized privileges or access.\n\n#### Purpose\n\nThis policy is intended to:\n\n- Protect the confidentiality and the integrity of data for which <Var keyName=\"companyName\"/> is responsible. A limited number of exceptions may occur due to specific business needs. Any exception should be carefully risk assessed, approved, and signed off by the Security Director.\n\n- Mitigate against loss of confidentiality, integrity, or availability due to:\n  - Misuse of privileges\n  - Introduction of viruses and malware to the network.\n\n#### Scope\n\nThis policy applies to:\n\n- All employees and suppliers who have access to <Var keyName=\"companyName\"/> information and information systems.\n- Information systems and services in program, project, and operational business areas.\n- <Var keyName=\"companyName\"/> boundary domain\n- Systems outside of the <Var keyName=\"companyName\"/> boundary that fall under <Var keyName=\"companyName\"/>'s responsibility as employees gain access to these systems.\n\nSome access roles require implementing stronger controls than those intended for standard users.\n\n## Objectives\n\n- Access to all computing resources, including servers, end-user computing devices, network equipment, services, and applications, must be protected by strong authentication, authorization, and auditing.\n- Interactive user access must be associated with an account or login unique to each user.\n- All credentials, including user passwords, service accounts, and access keys must meet the length, complexity, age, and rotation requirements defined in <Var keyName=\"companyName\"/> security standards.\n- Use a strong password and multi-factor authentication (MFA) whenever possible to authenticate to all computing resources (including both devices and applications).\n- MFA is required to access any critical system or resource, including but not limited to resources in <Var keyName=\"companyName\"/> production environments.\n- Unused accounts, passwords, access keys must be removed within 30 days. See [Systems Audit Policy](/policies/systems-audit/show) for more info.\n- A unique access key or service account must be used for different applications or user access.\n- Authenticated sessions must time out after a defined period of inactivity.\n\n## Procedures\n\n<Procedure slug=\"iam-identity\"/>\n<Procedure slug=\"iam-sso\"/>\n<Procedure slug=\"iam-mfa\"/>\n<Procedure slug=\"iam-access\"/>\n<Procedure slug=\"iam-termination\"/>\n<Procedure slug=\"iam-least-privilege\"/>\n<Procedure slug=\"iam-endpoints-access\"/>\n<Procedure slug=\"iam-session-lock\"/>\n<Procedure slug=\"iam-vpn\"/>\n<Procedure slug=\"iam-wifi\"/>",
+  "version": "1",
+  "isStandard": false,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "User Identity",
+      "slug": "iam-identity",
+      "body": "Each organization selects a standard on how to define and manage user identities\n\n1. <Var keyName=\"companyName\"/> selected `firstname.lastname@companyDomain.tld` as User Identity\n1. <Var keyName=\"companyName\"/> can create aliases for the user identity only with prior approval and justification for a business need. Example: simplifying an email address for the ease of communication (`firstname@companyDomain.tld`)\n1. Access to <Var keyName=\"companyName\"/> systems is done through the use of at least the user identity and password\n1. Users must set strong passwords based on the <Var keyName=\"companyName\"/> [Password Policy](/policies/password-management/show)\n1. Passwords are not displayed anywhere, transmitted unencrypted, or stored in plain text\n1. <Var keyName=\"companyName\"/> selected to group users by departments (Sales, Marketing, Business, Security and Development). Each user identity is added to one or more groups in the IdP solution, depending on their roles",
+      "controls": [
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "okta-weak-password-policies"
+        }
+      ]
+    },
+    {
+      "name": "Single Sign-On (SSO)",
+      "slug": "iam-sso",
+      "body": "- It is the responsibility of the Security Team to manage access to applications and systems\n- <Var keyName=\"companyName\"/> is using an IdP to manage access to systems and applications\n- Authentication is preferred using SSO instead of local auth.",
+      "controls": null
+    },
+    {
+      "name": "Multi-factor Authentication (MFA)",
+      "slug": "iam-mfa",
+      "body": "The purpose of Multi‐Factor Authentication (MFA) is to enable a means of strong authentication for those users with access to sensitive information and information systems resources or that have a privileged level of system support access while ensuring ease of use and adoption for the user(s). This will reduce the likelihood of unauthorized access, provide demonstrated compliance to federal and industry mandates, as well as enable the solicitation, assessment, and selection of MFA solutions that will implement the requirements of this policy.\n\nUsers will use the MFA self-enrollment process to register their authentication device(s) and install an MFA application (such as Google Authenticator, Microsoft Authenticator, or similar). The process guide for registration is located in the IdP documentation page.\n\n#### MFA methods\n\n- Hardware MFA token, for the Executives and IT Operations on Production Environments\n- One-Time Password (time-based) using Google Authenticator, Microsoft Authenticator, or similar\n- IdP mobile app for authentication",
+      "controls": [
+        {
+          "control": "aws-iam-2"
+        },
+        {
+          "control": "aws-iam-13"
+        },
+        {
+          "control": "aws-iam-14"
+        },
+        {
+          "control": "gcp-monitoring-2"
+        },
+        {
+          "control": "okta-mfa"
+        },
+        {
+          "control": "okta-strong-factors"
+        }
+      ]
+    },
+    {
+      "name": "Access Provisioning",
+      "slug": "iam-access",
+      "body": "The <Var keyName=\"companyName\"/> Security team adheres to a formal access control procedure that addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance.\n\nAs \"*Complexity is the enemy of security*\", authorization must be configured using attribute-based access control (ABAC) or role-based access control (RBAC) mechanisms.\n\n1. Access to <Var keyName=\"companyName\"/> systems is made as part of the user onboarding process, initiated by HR:\n     - A new ticket is created in the onboarding project\n     - The HR Team must attach the **New Joiner Request Form** which states the role and additional systems the new joiner must have access granted for\n     - The Security Team picks up the ticket and starts evaluating the access request\n1. The Security Team must:\n   - Configure IT and Cloud Services to enforce strong passwords based on the <Var keyName=\"companyName\"/> [Password Policy](/policies/password-management/show)\n   - Establish conditions for group membership\n   - Review accounts periodically or at least annually\n   - Provide clear classification for data and systems\n   - Not grant access to any Production environments by default\n1. Once approved, the accounts are created with temporary passwords and are forced to change their password at first login.\n1. For Local accounts on laptops/workstations, <Var keyName=\"companyName\"/> uses Azure AD and users must be added to designated groups.\n1. Online accounts are provisioned in the IdP\n1. Accounts are created by default for the following services:\n    - Productivity solution account for productivity and access to email, office suite, collaboration, etc.\n    - Developers receive VPN Access for access to the internal <Var keyName=\"companyName\"/> infrastructure\n      - CI/CD\n      - VCS\n    - Ticket management\n    - Company Wiki\n    - HR solution for paperwork, payroll, expense reporting, etc.\n    - Time management solution for timesheets and logging work\n\n    Additional access can be requested in another ticket and must include a justification.\n1. Access control for Mobile Devices is defined in the [Mobile Device Management Policy](/policies/mdm-device-management/show)\n1. Guest access to <Var keyName=\"companyName\"/> IT and Cloud Systems is permitted only if it is approved by the Security Team\n\n> For each New Joiner, there is a master checklist in the ticketing solution that must be filled out by the Security Team after access has been granted.",
+      "controls": [
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "aws-iam-12"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "aws-1-3-0-iam-11"
+        },
+        {
+          "control": "aws-1-3-0-iam-13"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
+        },
+        {
+          "control": "aws-1-3-0-networking-2"
+        },
+        {
+          "control": "azure-rbac-kubernetes"
+        },
+        {
+          "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "azure-no-custom-admin-role"
+        },
+        {
+          "control": "gcp-networking-4"
+        },
+        {
+          "control": "gcp-networking-5"
+        },
+        {
+          "control": "gcp-vm-1"
+        },
+        {
+          "control": "gcp-storage-1"
+        },
+        {
+          "control": "gcp-kubernetes-16"
+        },
+        {
+          "control": "gcp-kubernetes-17"
+        },
+        {
+          "control": "gcp-kubernetes-18"
+        },
+        {
+          "control": "gcp-1-1-0-vm-1"
+        },
+        {
+          "control": "gcp-1-1-0-vm-8"
+        },
+        {
+          "control": "gcp-1-1-0-vm-9"
+        },
+        {
+          "control": "gcp-1-1-0-storage-2"
+        },
+        {
+          "control": "okta-app-group-assignments"
+        }
+      ]
+    },
+    {
+      "name": "Access Termination",
+      "slug": "iam-termination",
+      "body": "Access termination is received as a ticket assigned to the Security Team. Access termination can result from:\n\n- Access is no longer required for the user to perform a specific function on a protected system\n- Access has not been used for more than 90 days, in which case <Var keyName=\"companyName\"/> Security Team assumes it is not required anymore (has no function)\n- An access review based on the [Systems Audit Policy](/policies/systems-audit/show) may terminate access rights\n- Employee/Contractor leaving or terminating the relationship with <Var keyName=\"companyName\"/>\n\nTasks for Security Team:\n\n- Password must be changed to strong random ones following the [Password Policy](/policies/password-management/show)\n- For security and auditing reasons, accounts are disabled and deleted only after 1 year after the person left <Var keyName=\"companyName\"/>.\n- For each Leaver, there is a master checklist in the ticketing solution that must be filled out by the Security Team after access to all systems has been revoked.",
+      "controls": null
+    },
+    {
+      "name": "Least Privilege",
+      "slug": "iam-least-privilege",
+      "body": "Privileged User/Accounts is a User/Account that by function, and/or by seniority, has been allocated powers within the computer system, which are significantly greater than those available to the majority of users. Such entities are either root accounts on Linux systems, administrator accounts on Windows, or highly privileged users in the Cloud Service Providers.\n\nIn defining access control for groups and individuals, <Var keyName=\"companyName\"/> adopts the concept of least privilege, allowing only authorized access for users (and processes acting on behalf of users) which is necessary to accomplish assigned tasks following organizational missions and business functions. In case Privileged Access is needed, accessing the system is done using the user identity of the employee/contractor, then switching to the privileged user.",
+      "controls": [
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "aws-networking-3"
+        },
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-3-0-iam-18"
+        },
+        {
+          "control": "aws-1-3-0-iam-22"
+        },
+        {
+          "control": "gcp.iam.2"
+        },
+        {
+          "control": "gcp.iam.3"
+        },
+        {
+          "control": "gcp.iam.4"
+        },
+        {
+          "control": "gcp.iam.5"
+        },
+        {
+          "control": "gcp.logging.1"
+        },
+        {
+          "control": "gcp.vm.1"
+        },
+        {
+          "control": "gcp.kubernetes.17"
+        },
+        {
+          "control": "gcp.kubernetes.18"
+        },
+        {
+          "control": "gcp-networking-4"
+        },
+        {
+          "control": "gcp-1-1-0-iam-6"
+        },
+        {
+          "control": "gcp-1-1-0-vm-1"
+        }
+      ]
+    },
+    {
+      "name": "Endpoints Access",
+      "slug": "iam-endpoints-access",
+      "body": "<Var keyName=\"companyName\"/> is using Device Management tools (Microsoft Intune, Jamf Pro, VMWare AirWatch, or similar) for company-owned devices. Guidelines are encouraged (and sometimes enforced) to ensure that these devices have been kept up to date and that they have the proper access configured:\n\n1. Endpoints must have antivirus/endpoint security agents installed and configured to avoid malware infiltration\n1. Firewall is a requirement which is pushed and audited by the device management tool\n1. Hard drives and other removable media will be encrypted - see [Data Protection Policy](/policies/data-protection/show)\n1. Engaging in any illegal activity is strictly prohibited (hacking, crypto mining, racism, discriminations, harassments, etc.)\n1. Periodic assessments, as defined in the [Systems Audit Policy](/policies/systems-audit/show), are performed and may result in access being suspended or terminated in case of non-compliance with <Var keyName=\"companyName\"/>'s [Mobile Device Management Policy](/policies/mdm-device-management/show)",
+      "controls": null
+    },
+    {
+      "name": "Session Lock",
+      "slug": "iam-session-lock",
+      "body": "Access to <Var keyName=\"companyName\"/> information systems should be locked after periods of inactivity or upon receiving a request from a user. The session lock must be retained until the user re-establishes access using established identification and authentication procedures.",
+      "controls": [
+        {
+          "control": "aws-1-4-0-iam-12"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "gcp-iam-5"
+        },
+        {
+          "control": "gcp-1-1-0-iam-10"
+        }
+      ]
+    },
+    {
+      "name": "VPN Access for Remote Working",
+      "slug": "iam-vpn",
+      "body": "- <Var keyName=\"companyName\"/> follows the principle of Zero Trust Software-Defined Perimeter (SDP) and has implemented an SDP solution that helps with micro-segmentation of the access to network and cloud resources\n- Developers receive VPN Access for access to the internal <Var keyName=\"companyName\"/> infrastructure\n- VPN access to Production environments is restricted and can be proxied only using a *Bastion Service*",
+      "controls": null
+    },
+    {
+      "name": "WiFi Wireless Access",
+      "slug": "iam-wifi",
+      "body": "<Var keyName=\"companyName\"/> manages and grants access to wireless networks based on:\n\n- Access to Wireless Networks is managed and pushed automatically on devices using MDM - See [Mobile Device Management Policy](/policies/mdm-device-management/show)\n- Wireless connection is encrypted using WPA2 encryption or higher;\n- Connection to insecure networks (unsecured wireless hotspots) is not allowed for company-owned devices unless the device does not proxy the traffic using a VPN connection\n- Wireless guest access is separated from the <Var keyName=\"companyName\"/> main network",
+      "controls": null
+    }
+  ]
+}
