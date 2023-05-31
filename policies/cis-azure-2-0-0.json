@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "CIS Microsoft Azure Foundations Benchmark",
   "isStandard": true,
   "slug": "cis-azure-2-0-0",
