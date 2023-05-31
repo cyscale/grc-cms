@@ -9,49 +9,263 @@
     {
       "name": "1. Identity and Access Management",
       "slug": "cis-azure-2-0-0-iam",
-      "controls": [],
+      "controls": [
+        {
+          "control": "azure-admin-resource-locks"
+        }
+      ],
       "body": "This section covers security recommendations to set identity and access management policies on an Azure Subscription."
     },
     {
       "name": "2. Microsoft Defender",
       "slug": "cis-azure-2-0-0-defender",
-      "body": "This section covers recommendations to consider for tenant-wide security policies and plans related to Microsoft Defender."
+      "body": "This section covers recommendations to consider for tenant-wide security policies and plans related to Microsoft Defender.",
+      "controls": [
+        {
+          "control": "azure-defender-for-servers"
+        },
+        {
+          "control": "azure-defender-for-app-services"
+        },
+        {
+          "control": "azure-defender-for-sql-servers"
+        },
+        {
+          "control": "azure-defender-for-sql-servers-on-machines"
+        },
+        {
+          "control": "azure-defender-for-storage"
+        },
+        {
+          "control": "azure-defender-for-containers"
+        },
+        {
+          "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "azure-notify-alerts-high-severity"
+        },
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "azure-defender-endpoint-selected"
+        }
+      ]
     },
     {
       "name": "3. Storage Accounts",
       "slug": "cis-azure-2-0-0-storage",
-      "body": "This section covers security recommendations to follow to set storage account policies on an Azure Subscription."
+      "body": "This section covers security recommendations to follow to set storage account policies on an Azure Subscription.",
+      "controls": [
+        {
+          "control": "azure-https-transfer-enabled"
+        },
+        {
+          "control": "azure-storage-keys-regenerated"
+        },
+        {
+          "control": "azure-log-queue-read-write-delete"
+        },
+        {
+          "control": "azure-private-access-containers"
+        },
+        {
+          "control": "azure-trusted-services-storage-account"
+        },
+        {
+          "control": "azure-deny-access-storage-account"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "azure-storage-encryption-cmk"
+        },
+        {
+          "control": "azure-log-blob-read-write-delete"
+        }
+      ]
     },
     {
       "name": "4. Database Services",
       "slug": "cis-azure-2-0-0-db",
-      "body": "This section covers security recommendations to follow to set general database services policies on an Azure Subscription."
+      "body": "This section covers security recommendations to follow to set general database services policies on an Azure Subscription.",
+      "controls": [
+        {
+          "control": "azure-auditing-on"
+        },
+        {
+          "control": "azure-sql-db-disallow-any-ip"
+        },
+        {
+          "control": "azure-sql-server-tde-cmk-encryption"
+        },
+        {
+          "control": "azure-ad-admin-sql-servers"
+        },
+        {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "azure-auditing-retention-greater-90"
+        },
+        {
+          "control": "azure-ssl-enabled-postgresql-server"
+        },
+        {
+          "control": "azure-log-checkpoints-postgresql-server"
+        },
+        {
+          "control": "azure-log-connections-postgresql-server"
+        },
+        {
+          "control": "azure-log-disconnections-postgresql-server"
+        },
+        {
+          "control": "azure-connection-throttling-postgresql-server"
+        },
+        {
+          "control": "azure-log-retention-days-postgresql-server"
+        },
+        {
+          "control": "azure-allow-azure-services-postgresql-server"
+        },
+        {
+          "control": "azure-ssl-enabled-mysql-server"
+        }
+      ]
     },
     {
       "name": "5. Logging and Monitoring",
       "slug": "cis-azure-2-0-0-logging",
-      "body": "This section covers security recommendations to follow to set logging and monitoring policies on an Azure Subscription."
+      "body": "This section covers security recommendations to follow to set logging and monitoring policies on an Azure Subscription.",
+      "controls": [
+        {
+          "control": "azure-diagnostic-settings-categories"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-alert-create-policy"
+        },
+        {
+          "control": "azure-alert-delete-policy-assign"
+        },
+        {
+          "control": "azure-alert-create-update-nsg"
+        },
+        {
+          "control": "azure-alert-delete-nsg"
+        },
+        {
+          "control": "azure-alert-create-update-sec-solution"
+        },
+        {
+          "control": "azure-alert-delete-sec-solution"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        }
+      ]
     },
     {
       "name": "6. Networking",
       "slug": "cis-azure-2-0-0-networking",
-      "body": "This section covers security recommendations to follow in order to set networking policies on an Azure subscription."
+      "body": "This section covers security recommendations to follow in order to set networking policies on an Azure subscription.",
+      "controls": [
+        {
+          "control": "azure-restrict-rdp"
+        },
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "azure-restrict-udp"
+        },
+        {
+          "control": "azure-network-watcher-enabled"
+        }
+      ]
     },
     {
       "name": "7. Virtual Machines",
       "slug": "cis-azure-2-0-0-vm",
-      "controls": [],
+      "controls": [
+        {
+          "control": "azure-vm-disks-managed"
+        },
+        {
+          "control": "azure-vm-disks-cmk"
+        },
+        {
+          "control": "azure-unattached-disks-enc-cmk"
+        }
+      ],
       "body": "This section covers security recommendations to follow for the configuration of Virtual Machines on an Azure subscription."
     },
     {
       "name": "8. Key Vault",
       "slug": "cis-azure-2-0-0-kv",
-      "body": "This section covers security recommendations to follow for the configuration and use of Azure Key Vault."
+      "body": "This section covers security recommendations to follow for the configuration and use of Azure Key Vault.",
+      "controls": [
+        {
+          "control": "azure-expiration-keys-key-vault"
+        },
+        {
+          "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "azure-key-vault-recoverable"
+        }
+      ]
     },
     {
       "name": "9. AppService",
       "slug": "cis-azure-2-0-0-appservice",
-      "body": "This section covers security recommendations for Azure AppService."
+      "body": "This section covers security recommendations for Azure AppService.",
+      "controls": [
+        {
+          "control": "app-service-auth-azure-apps"
+        },
+        {
+          "control": "azure-redirect-http-to-https"
+        },
+        {
+          "control": "azure-latest-tls-version"
+        },
+        {
+          "control": "azure-client-certs-web-app"
+        },
+        {
+          "control": "azure-register-aad-app-service"
+        },
+        {
+          "control": "azure-latest-php-version"
+        },
+        {
+          "control": "azure-latest-python-version"
+        },
+        {
+          "control": "azure-latest-java-version"
+        },
+        {
+          "control": "azure-http-latest-version-web-app"
+        },
+        {
+          "control": "azure-ftp-deployments-disabled"
+        },
+        {
+          "control": "azure-key-vaults-store-secrets"
+        }
+      ]
     },
     {
       "name": "10. Miscellaneous",
