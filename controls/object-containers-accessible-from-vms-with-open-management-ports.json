@@ -1,6 +1,6 @@
 {
-  "name": "Ensure object containers are not accessible from VMS with open management ports",
-  "description": "Object containers accessible from VMS with open management ports",
+  "name": "Ensure object containers are not accessible from VMs with open management ports",
+  "description": "Object containers accessible from VMs with open management ports",
   "body": "Cyscale looks for object containers that are accessible from virtual machines with open management ports.",
   "slug": "object-containers-accessible-from-vms-with-open-management-ports",
   "severity": 3,
