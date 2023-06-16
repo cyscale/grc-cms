@@ -1,0 +1,44 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Administrators has Multifactor Authentication enabled",
+  "slug": "admins-with-enabled-mfa",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "alibaba-aws-admins-without-mfa"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "new"
+    },
+    {
+      "cloudProviders": [
+        "okta"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "okta-admins-without-mfa"
+    }
+  ],
+  "body": "Ensure Administrators has Multifactor Authentication enabled",
+  "remediationDescription": "M﻿FA set up for Admin"
+}
