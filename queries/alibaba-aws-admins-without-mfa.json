@@ -1,0 +1,5 @@
+{
+  "slug": "alibaba-aws-admins-without-mfa",
+  "name": "Alibaba & Azure Admins Without MFA",
+  "query": "{\n  iamUsers(where: {\n    cloudProvider_IN: [\"alibaba\", \"aws\"],\n    OR: [\n      {\n        hasIAMPolicy_SOME: {\n          OR: [{\n            internalName_CONTAINS: \"Administrator\"  \n          }, {\n            internalName_CONTAINS: \"FullAccess\"  \n          }]\n        }\n      },\n      {\n        hasIAMGroup_SOME: {\n          has_SOME: {\n            OR: [{\n              internalName_CONTAINS: \"Administrator\"  \n            }, {\n              internalName_CONTAINS: \"FullAccess\"  \n            }]\n          }\n        }\n      }\n    ],\n    mfaSerialNumbers: []\n  }) {\n    ...AssetFragment\n  }\n}"
+}
