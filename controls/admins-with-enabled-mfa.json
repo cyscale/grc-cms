@@ -25,7 +25,7 @@
       "subjects": [
         "IAMUser"
       ],
-      "query": "new"
+      "query": "azure-admins-without-mfa"
     },
     {
       "cloudProviders": [
