@@ -1,5 +1,0 @@
-{
-  "name": "Azure Admins Without MFA",
-  "slug": "azure-admins-without-mfa",
-  "query": "{\n  iamUsers(where: {\n    cloudProvider: \"azure\",\n    isAdmin: true,\n    mfaActive: true\n  }) {\n    ...AssetFragment\n  }\n}"
-}
