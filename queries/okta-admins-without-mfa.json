@@ -1,0 +1,5 @@
+{
+  "name": "Okta Admins Without MFA",
+  "slug": "okta-admins-without-mfa",
+  "query": "{\n  users(where: {\n    applications_SOME: {\n      hasPolicy_SOME: {\n        mfaEnabled: false\n      }\n    },\n    OR: [\n      {roles_INCLUDES: \"Super Administrator\"},\n      {roles_INCLUDES: \"API Access Management Administrator\"},\n      {roles_INCLUDES: \"Application Administrator\"},\n      {roles_INCLUDES: \"Group Membership Administrator\"},\n      {roles_INCLUDES: \"Help Desk Administrator\"},\n      {roles_INCLUDES: \"Mobile Administrator\"},\n      {roles_INCLUDES: \"Organizational Administrator\"},\n      {roles_INCLUDES: \"Read-only Administrator\"},\n      {roles_INCLUDES: \"Report Administrator\"},\n      {roles_INCLUDES: \"Group Administrator\"},\n    ]\n  }) {\n    ...AssetFragment\n  }\n}\n"
+}
