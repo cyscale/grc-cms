@@ -39,6 +39,6 @@
       "query": "okta-admins-without-mfa"
     }
   ],
-  "body": "Ensure Administrators has Multifactor Authentication enabled",
+  "body": "This control helps you find Admins with no MFA.",
   "remediationDescription": "M﻿FA set up for Admin"
 }
