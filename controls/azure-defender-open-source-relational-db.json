@@ -1,6 +1,6 @@
 {
   "alertForSecondaryOnly": false,
-  "name": "Ensure That Microsoft Defender for Open-Source Relational Databases Is Set To 'On'",
+  "name": "Ensure Microsoft Defender for Open-Source Relational Databases is set to 'On'",
   "slug": "azure-defender-open-source-relational-db",
   "severity": 1,
   "rules": [
