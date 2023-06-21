@@ -1,1 +1,23 @@
-{"name":"Ensure that Compute instances do not have public IP addresses","slug":"gcp-1-1-0-vm-9","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["NetworkInterface"],"query":"gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses","returnPath":""}]}
+{
+  "name": "Ensure that Compute instances do not have public IP addresses",
+  "slug": "gcp-1-1-0-vm-9",
+  "body": " ﻿",
+  "description": "",
+  "severity": 2,
+  "remediationDescription": " ﻿",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses",
+      "returnPath": ""
+    }
+  ],
+  "alertForSecondaryOnly": false
+}
