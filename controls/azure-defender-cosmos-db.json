@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Microsoft Defender for Azure Cosmos DB is set to 'On'",
+  "slug": "azure-defender-cosmos-db",
+  "severity": 1,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `Microsoft Defender for Cloud`\n2. Under `Management`, select `Environment Settings`\n3. Click on the subscription name\n4. Under `Settings`, select `Defender plans`\n5. For `Azure Cosmos DB`, select `On` for `Status`\n6. Select Save\n\n**Using Azure Command Line Interface**\n\n```bash\naz security pricing create -n 'CosmosDbs' --tier 'Standard'\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzSecurityPricing -Name 'CosmosDbs' -PricingTier 'Standard'\n```\n\n**Default Value**\n\nBy default, the Microsoft Defender plan is off.\n\n**References**\n\n1. [https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/)\n2. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-enhanced-security](https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-enhanced-security)\n3. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview)\n4. [https://docs.microsoft.com/en-us/security/benchmark/azure/baselines/cosmos-db-security-baseline](https://docs.microsoft.com/en-us/security/benchmark/azure/baselines/cosmos-db-security-baseline)\n5. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/quickstart-enable-database-protections](https://docs.microsoft.com/en-us/azure/defender-for-cloud/quickstart-enable-database-protections)\n6. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities)",
+  "body": "Microsoft Defender for Azure Cosmos DB scans all incoming network requests for threats to your Azure Cosmos DB resources.\n\n**Rationale**\n\nIn scanning Azure Cosmos DB requests within a subscription, requests are compared to a heuristic list of potential security threats. These threats could be a result of a security breach within your services, thus scanning for them could prevent a potential security threat from being introduced.\n\n**Impact**\n\nEnabling Microsoft Defender for Azure Cosmos DB requires enabling Microsoft Defender for your subscription. Both will incur additional charges.\n",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Pricing"
+      ],
+      "query": "azure-microsoft-defender-on-cosmos-db"
+    }
+  ]
+}
