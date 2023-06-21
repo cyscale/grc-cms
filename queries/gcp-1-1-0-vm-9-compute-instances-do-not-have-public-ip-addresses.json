@@ -1,1 +1,5 @@
-{"name":"Compute instances do not have public IP addresses","slug":"gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses","query":"networkInterfaces(where:{hasNetworkInterfaceAccessConfig_NOT:null}){...AssetFragment}"}
+{
+  "name": "Compute instances do not have public IP addresses",
+  "slug": "gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses",
+  "query": "vms(where:{networkInterfaces_SOME: {hasNetworkInterfaceAccessConfig_NOT: null}}){...AssetFragment}"
+}
