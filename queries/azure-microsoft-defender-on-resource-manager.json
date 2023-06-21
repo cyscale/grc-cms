@@ -1,0 +1,5 @@
+{
+  "query": "{\n  pricings(\n    where: {\n      name_MATCHES: \"(?i)arm\"\n      pricingTier_MATCHES: \"(?i)^((?!Standard).)*$\"\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "slug": "azure-microsoft-defender-on-resource-manager",
+  "name": "Microsoft Defender is set to 'On' for Resource Manager"
+}
