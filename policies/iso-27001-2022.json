@@ -1124,6 +1124,9 @@
           "control": "azure-defender-for-sql-servers-on-machines"
         },
         {
+          "control": "azure-defender-open-source-relational-db"
+        },
+        {
           "control": "azure-defender-for-storage"
         },
         {
@@ -1133,7 +1136,16 @@
           "control": "azure-defender-for-containers"
         },
         {
+          "control": "azure-defender-cosmos-db"
+        },
+        {
           "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-defender-for-dns"
+        },
+        {
+          "control": "azure-defender-for-resource-manager"
         },
         {
           "control": "azure-defender-endpoint-selected"
@@ -1421,6 +1433,9 @@
           "control": "azure-defender-for-sql-servers-on-machines"
         },
         {
+          "control": "azure-defender-open-source-relational-db"
+        },
+        {
           "control": "azure-defender-for-storage"
         },
         {
@@ -1430,7 +1445,16 @@
           "control": "azure-defender-for-containers"
         },
         {
+          "control": "azure-defender-cosmos-db"
+        },
+        {
           "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-defender-for-dns"
+        },
+        {
+          "control": "azure-defender-for-resource-manager"
         },
         {
           "control": "azure-defender-endpoint-selected"
