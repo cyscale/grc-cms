@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Microsoft Defender for Resource Manager is set to 'On'",
+  "slug": "azure-defender-for-resource-manager",
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `Microsoft Defender for Cloud`\n2. Under `Management`, select `Environment Settings`\n3. Click on the subscription name\n4. Under `Settings`, select `Defender plans`\n5. For `Resource Manager`, select `On` for `Status`\n6. Select Save\n\n**Using Azure Command Line Interface**\n\n```bash\naz security pricing create -n 'Arm' --tier 'Standard'\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzSecurityPricing -Name 'Arm' -PricingTier 'Standard'\n```\n\n**Default Value**\n\nBy default, Microsoft Defender for Resource Manager is not enabled.\n\n**References**\n\n1. [https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/)\n2. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-resource-manager-introduction](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-resource-manager-introduction)\n3. [https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/)\n4. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview)\n5. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities)\n",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Pricing"
+      ],
+      "query": "azure-microsoft-defender-on-resource-manager"
+    }
+  ],
+  "body": "Microsoft Defender for Resource Manager scans incoming administrative requests to change your infrastructure from both CLI and the Azure portal.\n\n**Rationale**\n\nScanning resource requests lets you be alerted every time there is suspicious activity in order to prevent a security threat from being introduced.\n\n**Impact**\n\nEnabling Microsoft Defender for Resource Manager requires enabling Microsoft Defender for your subscription. Both will incur additional charges."
+}
