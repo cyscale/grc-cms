@@ -43,7 +43,7 @@
           "control": "azure-defender-for-storage"
         },
         {
-          "control": "azure-defender-for-containers"
+          "control": "microsoft-defender-for-containers"
         },
         {
           "control": "azure-defender-cosmos-db"
