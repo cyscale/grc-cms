@@ -16,7 +16,7 @@
         "VM"
       ],
       "query": "gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses",
-      "returnPath": ""
+      "returnPath": "networkInterface.vm"
     }
   ],
   "alertForSecondaryOnly": false
