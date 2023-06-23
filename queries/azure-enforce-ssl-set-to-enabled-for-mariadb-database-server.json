@@ -1,0 +1,5 @@
+{
+  "name": "'Enforce SSL connection' is set to 'ENABLED' for MariaDB Database Server",
+  "query": "{\n  mariaDbServers(\n    where: {\n      OR: [\n        { sslEnforcement_MATCHES: \"Disabled\" }\n        { sslEnforcement: null }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "slug": "azure-enforce-ssl-set-to-enabled-for-mariadb-database-server"
+}
