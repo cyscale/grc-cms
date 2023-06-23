@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure 'Enforce SSL connection' is set to 'ENABLED' for MariaDB Database Server",
+  "slug": "azure-ssl-enabled-mariadb-server",
+  "body": "Enable SSL connection on MariaDB Database Servers.\n\n**Rationale**\n\nSSL connectivity helps to provide a new layer of security by connecting the database server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between database servers and client applications helps protect against \"man-in-the-middle\" attacks by encrypting the data stream between the server and application.",
+  "severity": 3,
+  "remediationDescription": "**From Azure Console**\n\n1. Go to `Azure Database for MariaDB servers`\n2. For each `Azure Database for MariaDB server`, under `Settings`, select `Connection security`\n3. Under the  `SSL settings` header, click on `ENABLED` for `Enforce SSL connection`\n\n**Using Azure Command Line Interface**\n\nUse the below command to Enforce ssl connection for MariaDB Database Server.\n\n```bash\naz mariadb server update --resource-group <resourceGroupName> --name <serverName> --ssl-enforcement Enabled\n```\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security](https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-4-encrypt-sensitive-information-in-transit](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-4-encrypt-sensitive-information-in-transit)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MariaDBServer"
+      ],
+      "query": "azure-enforce-ssl-set-to-enabled-for-mariadb-database-server"
+    }
+  ]
+}
