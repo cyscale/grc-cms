@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "name": "Ensure VMs are not publicly accessible",
-  "description": "VMs",
+  "description": "Virtual Machines",
   "slug": "publicly-accessible-vms",
   "body": "Cyscale looks for virtual machines reachable from the internet on administration ports (22, 3389). To reduce the risk of data breaches, configure the security groups/firewalls to allow access only from specific sources or re-consider whether you really need SSH/RDP access.",
   "severity": 2,
