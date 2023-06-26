@@ -1,0 +1,5 @@
+{
+  "name": "Publicly AccessibleVMs for Google Cloud",
+  "slug": "publicly-accessible-gcp-vms",
+  "query": "{\n  vms(\n    where: {\n      networkInterfaces_SOME: { accessConfigs_SOME: { NOT: { natIP: \"\" } } }\n      firewalls_SOME: {\n        rules_SOME: {\n          direction: \"Inbound\"\n          AND: [\n            {\n              OR: [\n                { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n                { sources_INCLUDES: \"cidr:::/0\" }\n              ]\n            }\n            {\n              OR: [\n                { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 }\n                { sourceFromPort_LTE: 3389, sourceToPort_GTE: 3389 }\n              ]\n            }\n          ]\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
