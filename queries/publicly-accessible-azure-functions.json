@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible Functions for Azure",
+  "slug": "publicly-accessible-azure-functions",
+  "query": "{\n  functions(where: {\n    bindings_SOME: {\n      direction: \"in\",\n      type: \"httpTrigger\"\n    }\n  }) {\n    ...AssetFragment\n  }\n}"
+}
