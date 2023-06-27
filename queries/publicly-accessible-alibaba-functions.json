@@ -1,0 +1,5 @@
+{
+  "name": "Publicly Accessible Functions for Alibaba",
+  "slug": "publicly-accessible-alibaba-functions",
+  "query": "{\n  functions(where: {\n    triggers_SOME: {\n      triggerType: \"http\"\n    }\n  }) {\n    ...AssetFragment\n  }\n}"
+}
