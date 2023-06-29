@@ -1,10 +1,10 @@
 {
   "name": "Ensure that Compute instances do not have public IP addresses",
   "slug": "gcp-1-1-0-vm-9",
-  "body": " ﻿",
+  "body": "",
   "description": "",
   "severity": 2,
-  "remediationDescription": " ﻿",
+  "remediationDescription": "",
   "rules": [
     {
       "cloudProviders": [
