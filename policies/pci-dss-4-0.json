@@ -1,0 +1,71 @@
+{
+  "enabled": false,
+  "name": "PCI-DSS - PCI Security Standards Council - Payment Card Industry Data Security Standard",
+  "isStandard": true,
+  "slug": "pci-dss-4-0",
+  "version": "4.0",
+  "procedures": [
+    {
+      "name": "1. Install and Maintain Network Security Controls",
+      "slug": "pci-dss-4-0-nsc",
+      "body": "Network security controls (NSCs), such as firewalls and other network security technologies, are network policy enforcement points that\ntypically control network traffic between two or more logical or physical network segments (or subnets) based on pre-defined policies or rules.\n\nNSCs examine all network traffic entering (ingress) and leaving (egress) a segment and decide, based on the policies defined, whether the network traffic is allowed to pass or whether it should be rejected. Typically, NSCs are placed between environments with different security needs or levels of trust, however in some environments NSCs control the traffic to individual devices irrespective of trust boundaries. Policy enforcement generally occurs at layer 3 of the OSI model, but data present in higher layers is also frequently used to determine policy decisions.",
+      "controls": []
+    },
+    {
+      "name": "2. Apply Secure Configurations to All System Components",
+      "slug": "pci-dss-4-0-secure-configurations",
+      "body": "Malicious individuals, both external and internal to an entity, often use default passwords and other vendor default settings to compromise\nsystems. These passwords and settings are well known and are easily determined via public information.\n\nApplying secure configurations to system components reduces the means available to an attacker to compromise the system. Changing default\npasswords, removing unnecessary software, functions, and accounts, and disabling or removing unnecessary services all help to reduce the\npotential attack surface"
+    },
+    {
+      "name": "3. Protect Stored Account Data",
+      "slug": "pci-dss-4-0-protect-data",
+      "body": "Protection methods such as encryption, truncation, masking, and hashing are critical components of account data protection. If an intruder circumvents other security controls and gains access to encrypted account data, the data is unreadable without the proper cryptographic keys and is unusable to that intruder. Other effective methods of protecting stored data should also be considered as potential risk-mitigation opportunities. For example, methods for minimizing risk include not storing account data unless necessary, truncating cardholder data if full PAN is not needed, and not sending unprotected PANs using end-user messaging technologies such as e-mail and instant messaging.\n\nIf account data is present in non-persistent memory (for example, RAM, volatile memory), encryption of account data is not required. However,\nproper controls must be in place to ensure that memory maintains a non-persistent state. Data should be removed from volatile memory once\nthe business purpose (for example, the associated transaction) is complete. In the case that data storage becomes persistent, all applicable PCI\nDSS Requirements will apply including encryption of stored data."
+    },
+    {
+      "name": "4. Protect Cardholder Data with Strong Cryptography During Transmission Over Open, Public Networks",
+      "slug": "pci-dss-4-0-cryptography",
+      "body": "The use of strong cryptography provides greater assurance in preserving data confidentiality, integrity, and non-repudiation.\n\nTo protect against compromise, PAN (Primary Account Number) must be encrypted during transmission over networks that are easily accessed by malicious individuals, including untrusted and public networks. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targeted by malicious individuals aiming to exploit these vulnerabilities to gain privileged access to cardholder data environments (CDE). Any transmissions of cardholder data over an entity’s internal network(s) will naturally bring that network into scope for PCI DSS since that network stores, processes, or transmits cardholder data. Any such networks must be evaluated and assessed against applicable PCI DSS requirements."
+    },
+    {
+      "name": "5. Protect All Systems and Networks from Malicious Software",
+      "slug": "pci-dss-4-0-malicious-software",
+      "body": "Malicious software (malware) is software or firmware designed to infiltrate or damage a computer system without the owner's knowledge or consent, with the intent of compromising the confidentiality, integrity, or availability of the owner’s data, applications, or operating system.\n\nExamples include viruses, worms, Trojans, spyware, ransomware, keyloggers, and rootkits, malicious code, scripts, and links.\n\nMalware can enter the network during many business-approved activities, including employee e-mail (for example, via phishing) and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities.\n\nUsing anti-malware solutions that address all types of malware helps to protect systems from current and evolving malware threats."
+    },
+    {
+      "name": "6. Develop and Maintain Secure Systems and Software",
+      "slug": "pci-dss-4-0-maintain-secure-systems",
+      "body": "Actors with bad intentions can use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by vendor provided security patches, which must be installed by the entities that manage the systems. All system components must have all appropriate software patches to protect against the exploitation and compromise of account data by malicious individuals and malicious software. "
+    },
+    {
+      "name": "7. Restrict Access to System Components and Cardholder Data by Business Need to Know",
+      "slug": "pci-dss-4-0-restrict-by-business-need-to-know",
+      "body": "Unauthorized individuals may gain access to critical data or systems due to ineffective access control rules and definitions. To ensure critical data can only be accessed by authorized personnel, systems and processes must be in place to limit access based on need to know and according to job responsibilities."
+    },
+    {
+      "name": "8. Identify Users and Authenticate Access to System Components",
+      "body": "Two fundamental principles of identifying and authenticating users are to 1) establish the identity of an individual or process on a computer system, and 2) prove or verify the user associated with the identity is who the user claims to be.  ",
+      "slug": "pci-dss-4-0-authentication"
+    },
+    {
+      "name": "9. Restrict Physical Access to Cardholder Data",
+      "slug": "pci-dss-4-0-restrict-physical-access",
+      "body": "Any physical access to cardholder data or systems that store, process, or transmit cardholder data provides the opportunity for individuals to access and/or remove systems or hardcopies containing cardholder data; therefore, physical access should be appropriately restricted."
+    },
+    {
+      "name": "10. Log and Monitor All Access to System Components and Cardholder Data",
+      "slug": "pci-dss-4-0-log-and-monitor",
+      "body": "Logging mechanisms and the ability to track user activities are critical in preventing, detecting, or minimizing the impact of a data compromise.\nThe presence of logs on all system components and in the cardholder data environment (CDE) allows thorough tracking, alerting, and analysis when something does go wrong. Determining the cause of a compromise is \ndifficult, if not impossible, without system activity logs.\n ﻿ \nThis requirement applies to user activities, including those by employees, contractors, consultants, and internal and external vendors, and other\nthird parties (for example, those providing support or maintenance services).\n\nThese requirements do not apply to user activity of consumers (cardholders)"
+    },
+    {
+      "name": "11. Test Security of Systems and Networks Regularly",
+      "slug": "pci-dss-4-0-test",
+      "body": "Vulnerabilities are being discovered continually by malicious individuals and researchers, and being introduced by new software. System components, processes, and bespoke and custom software should be tested frequently to ensure security controls continue to reflect a changing environment."
+    },
+    {
+      "name": "12. Support Information Security with Organizational Policies and Programs",
+      "slug": "pci-dss-4-0-support-information-security",
+      "body": "The organization’s overall information security policy sets the tone for the whole entity and informs personnel what is expected of them. All personnel should be aware of the sensitivity of cardholder data and their responsibilities for protecting it."
+    }
+  ],
+  "body": "#﻿Statement\n\nThe Payment Card Industry Data Security Standard (PCI DSS) was developed to encourage and enhance payment card account data security and facilitate the broad adoption of consistent data security measures globally. PCI DSS provides a baseline of technical and operational requirements designed to protect account data. While specifically designed to focus on environments with payment card account data, PCI DSS can also be used to protect against threats and secure other elements in the payment ecosystem. \n\n#﻿Requirements\n\n<Procedure slug=\"pci-dss-4-0-nsc\"/>\n<Procedure slug=\"pci-dss-4-0-secure-configurations\"/>\n<Procedure slug=\"pci-dss-4-0-protect-data\"/>\n<Procedure slug=\"pci-dss-4-0-cryptography\"/>\n<Procedure slug=\"pci-dss-4-0-malicious-software\"/>\n<Procedure slug=\"pci-dss-4-0-maintain-secure-systems\"/>\n<Procedure slug=\"pci-dss-4-0-restrict-by-business-need-to-know\"/>\n<Procedure slug=\"pci-dss-4-0-authentication\"/>\n<Procedure slug=\"pci-dss-4-0-restrict-physical-access\"/>\n<Procedure slug=\"pci-dss-4-0-log-and-monitor\"/>\n<Procedure slug=\"pci-dss-4-0-test\"/>\n<Procedure slug=\"pci-dss-4-0-support-information-security\"/>\n"
+}
