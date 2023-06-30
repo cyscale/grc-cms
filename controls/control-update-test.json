@@ -1,0 +1,8 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Control update test",
+  "slug": "control-update-test",
+  "severity": 1,
+  "body": "T﻿est",
+  "remediationDescription": "T﻿est"
+}
