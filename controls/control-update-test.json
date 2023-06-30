@@ -20,19 +20,6 @@
         "ConfigurationRecorder"
       ],
       "query": "alibaba-trails-exporting-all-copies"
-    },
-    {
-      "cloudProviders": [
-        "azure"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "AutoProvisioningSetting",
-        "BigQueryTable"
-      ],
-      "query": "aws-logging-2-cloudtrail-log-file-validation-is-enabled",
-      "returnPath": "return.path"
     }
   ]
 }
