@@ -4,5 +4,32 @@
   "slug": "control-update-test",
   "severity": 1,
   "body": "T﻿est",
-  "remediationDescription": "T﻿est"
+  "remediationDescription": "T﻿est",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure",
+        "aws",
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AutoProvisioningSetting"
+      ],
+      "query": "alibaba-trails-exporting-all-copies"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AutoProvisioningSetting"
+      ],
+      "query": "aws-logging-2-cloudtrail-log-file-validation-is-enabled",
+      "returnPath": "return.path"
+    }
+  ]
 }
