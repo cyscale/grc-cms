@@ -26,7 +26,8 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "AutoProvisioningSetting"
+        "AutoProvisioningSetting",
+        "BigQueryTable"
       ],
       "query": "aws-logging-2-cloudtrail-log-file-validation-is-enabled",
       "returnPath": "return.path"
