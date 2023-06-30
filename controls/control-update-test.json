@@ -10,12 +10,14 @@
       "cloudProviders": [
         "azure",
         "aws",
-        "gcp"
+        "gcp",
+        "alibaba"
       ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "AutoProvisioningSetting"
+        "AutoProvisioningSetting",
+        "ConfigurationRecorder"
       ],
       "query": "alibaba-trails-exporting-all-copies"
     },
