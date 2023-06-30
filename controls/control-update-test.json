@@ -30,7 +30,7 @@
       "subjects": [
         "AutoProvisioningSetting"
       ],
-      "query": "alibaba-trails-exporting-all-copies"
+      "query": "aws-logging-4-cloudtrail-trails-are-integrated-with-cloudwatch-logs"
     }
   ]
 }
