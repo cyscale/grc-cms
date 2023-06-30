@@ -20,6 +20,17 @@
         "ConfigurationRecorder"
       ],
       "query": "alibaba-trails-exporting-all-copies"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AutoProvisioningSetting"
+      ],
+      "query": "alibaba-trails-exporting-all-copies"
     }
   ]
 }
