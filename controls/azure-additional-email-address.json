@@ -11,7 +11,8 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "SecurityContact"
+        "SecurityContact",
+        "AutoProvisioningSetting"
       ],
       "query": "azure-1-3-0-sc-13-additional-email-addresses-is-configured-with-a-security-contact-email",
       "returnPath": ""
