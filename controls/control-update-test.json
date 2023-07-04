@@ -25,7 +25,7 @@
       "cloudProviders": [
         "azure"
       ],
-      "comparator": "eq",
+      "comparator": "neq",
       "expectedResult": "[]",
       "subjects": [
         "AutoProvisioningSetting"
