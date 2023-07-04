@@ -98,6 +98,12 @@
         },
         {
           "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "gcp-1-1-0-iam-10"
+        },
+        {
+          "control": "gcp-1-1-0-iam-9"
         }
       ]
     },
@@ -172,23 +178,193 @@
         },
         {
           "control": "aws-iam-15"
+        },
+        {
+          "control": "aws-iam-17"
+        },
+        {
+          "control": "gcp-1-1-0-iam-6"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "gcp-vm-1"
+        },
+        {
+          "control": "gcp-1-1-0-iam-8"
         }
       ]
     },
     {
       "name": "8. Identify Users and Authenticate Access to System Components",
       "body": "Two fundamental principles of identifying and authenticating users are to 1) establish the identity of an individual or process on a computer system, and 2) prove or verify the user associated with the identity is who the user claims to be.  ",
-      "slug": "pci-dss-4-0-authentication"
+      "slug": "pci-dss-4-0-authentication",
+      "controls": [
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-iam-13"
+        },
+        {
+          "control": "aws-1-4-0-iam-12"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "aws-iam-14"
+        },
+        {
+          "control": "aws-iam-2"
+        },
+        {
+          "control": "aws-iam-12"
+        },
+        {
+          "control": "azure-ad-admin-sql-servers"
+        },
+        {
+          "control": "aws-1-3-0-iam-13"
+        },
+        {
+          "control": "okta-strong-factors"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "okta-mfa"
+        }
+      ]
     },
     {
       "name": "9. Restrict Physical Access to Cardholder Data",
       "slug": "pci-dss-4-0-restrict-physical-access",
-      "body": "Any physical access to cardholder data or systems that store, process, or transmit cardholder data provides the opportunity for individuals to access and/or remove systems or hardcopies containing cardholder data; therefore, physical access should be appropriately restricted."
+      "body": "Any physical access to cardholder data or systems that store, process, or transmit cardholder data provides the opportunity for individuals to access and/or remove systems or hardcopies containing cardholder data; therefore, physical access should be appropriately restricted.",
+      "controls": []
     },
     {
       "name": "10. Log and Monitor All Access to System Components and Cardholder Data",
       "slug": "pci-dss-4-0-log-and-monitor",
-      "body": "Logging mechanisms and the ability to track user activities are critical in preventing, detecting, or minimizing the impact of a data compromise.\nThe presence of logs on all system components and in the cardholder data environment (CDE) allows thorough tracking, alerting, and analysis when something does go wrong. Determining the cause of a compromise is \ndifficult, if not impossible, without system activity logs.\n\nThis requirement applies to user activities, including those by employees, contractors, consultants, and internal and external vendors, and other\nthird parties (for example, those providing support or maintenance services).\n\nThese requirements do not apply to user activity of consumers (cardholders)"
+      "body": "Logging mechanisms and the ability to track user activities are critical in preventing, detecting, or minimizing the impact of a data compromise.\nThe presence of logs on all system components and in the cardholder data environment (CDE) allows thorough tracking, alerting, and analysis when something does go wrong. Determining the cause of a compromise is \ndifficult, if not impossible, without system activity logs.\n\nThis requirement applies to user activities, including those by employees, contractors, consultants, and internal and external vendors, and other\nthird parties (for example, those providing support or maintenance services).\n\nThese requirements do not apply to user activity of consumers (cardholders)",
+      "controls": [
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "azure-network-watcher-enabled"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "gcp-kubernetes-1"
+        },
+        {
+          "control": "gcp-kubernetes-2"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "aws-monitoring-9"
+        },
+        {
+          "control": "aws-monitoring-6"
+        },
+        {
+          "control": "aws-1-3-0-monitoring-15"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-2"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-monitoring-14"
+        },
+        {
+          "control": "aws-monitoring-12"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "aws-monitoring-7"
+        },
+        {
+          "control": "aws-monitoring-13"
+        },
+        {
+          "control": "aws-monitoring-10"
+        },
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "aws-monitoring-3"
+        },
+        {
+          "control": "azure-auditing-retention-greater-90"
+        },
+        {
+          "control": "azure-auditing-on"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "gcp-storage-2"
+        },
+        {
+          "control": "gcp-1-1-0-logging-3"
+        },
+        {
+          "control": "aws-logging-3"
+        }
+      ]
     },
     {
       "name": "11. Test Security of Systems and Networks Regularly",
@@ -198,7 +374,15 @@
     {
       "name": "12. Support Information Security with Organizational Policies and Programs",
       "slug": "pci-dss-4-0-support-information-security",
-      "body": "The organization’s overall information security policy sets the tone for the whole entity and informs personnel what is expected of them. All personnel should be aware of the sensitivity of cardholder data and their responsibilities for protecting it."
+      "body": "The organization’s overall information security policy sets the tone for the whole entity and informs personnel what is expected of them. All personnel should be aware of the sensitivity of cardholder data and their responsibilities for protecting it.",
+      "controls": [
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "azure-notify-alerts-high-severity"
+        }
+      ]
     }
   ],
   "body": "#Statement\n\nThe Payment Card Industry Data Security Standard (PCI DSS) was developed to encourage and enhance payment card account data security and facilitate the broad adoption of consistent data security measures globally. PCI DSS provides a baseline of technical and operational requirements designed to protect account data. While specifically designed to focus on environments with payment card account data, PCI DSS can also be used to protect against threats and secure other elements in the payment ecosystem. \n\n#Requirements\n\n<Procedure slug=\"pci-dss-4-0-nsc\"/>\n<Procedure slug=\"pci-dss-4-0-secure-configurations\"/>\n<Procedure slug=\"pci-dss-4-0-protect-data\"/>\n<Procedure slug=\"pci-dss-4-0-cryptography\"/>\n<Procedure slug=\"pci-dss-4-0-malicious-software\"/>\n<Procedure slug=\"pci-dss-4-0-maintain-secure-systems\"/>\n<Procedure slug=\"pci-dss-4-0-restrict-by-business-need-to-know\"/>\n<Procedure slug=\"pci-dss-4-0-authentication\"/>\n<Procedure slug=\"pci-dss-4-0-restrict-physical-access\"/>\n<Procedure slug=\"pci-dss-4-0-log-and-monitor\"/>\n<Procedure slug=\"pci-dss-4-0-test\"/>\n<Procedure slug=\"pci-dss-4-0-support-information-security\"/>\n"
