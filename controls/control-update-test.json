@@ -10,8 +10,7 @@
       "cloudProviders": [
         "azure",
         "aws",
-        "gcp",
-        "alibaba"
+        "gcp"
       ],
       "comparator": "eq",
       "expectedResult": "[]",
