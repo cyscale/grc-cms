@@ -15,10 +15,10 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "AutoProvisioningSetting",
-        "ConfigurationRecorder"
+        "AutoProvisioningSetting"
       ],
-      "query": "alibaba-trails-exporting-all-copies"
+      "query": "alibaba-trails-exporting-all-copies",
+      "returnPath": ""
     },
     {
       "cloudProviders": [
