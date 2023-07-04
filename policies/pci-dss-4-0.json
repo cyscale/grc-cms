@@ -51,6 +51,21 @@
         },
         {
           "control": "aws-networking-3"
+        },
+        {
+          "control": "azure-restrict-udp"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "azure-deny-access-storage-account"
+        },
+        {
+          "control": "publicly-accessible-disks"
         }
       ]
     },
@@ -104,6 +119,39 @@
         },
         {
           "control": "gcp-1-1-0-iam-9"
+        },
+        {
+          "control": "azure-sql-server-tde-cmk-encryption"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "azure-storage-encryption-cmk"
+        },
+        {
+          "control": "kms-keys-expiring-within-the-next-14-days"
+        },
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "azure-vm-disks-cmk"
+        },
+        {
+          "control": "azure-unattached-disks-enc-cmk"
+        },
+        {
+          "control": "azure-storage-keys-regenerated"
+        },
+        {
+          "control": "azure-expiration-secrets-key-vault"
         }
       ]
     },
@@ -126,13 +174,36 @@
         },
         {
           "control": "aws-1-3-0-iam-19"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "azure-client-certs-web-app"
+        },
+        {
+          "control": "azure-latest-tls-version"
+        },
+        {
+          "control": "azure-redirect-http-to-https"
         }
       ]
     },
     {
       "name": "5. Protect All Systems and Networks from Malicious Software",
       "slug": "pci-dss-4-0-malicious-software",
-      "body": "Malicious software (malware) is software or firmware designed to infiltrate or damage a computer system without the owner's knowledge or consent, with the intent of compromising the confidentiality, integrity, or availability of the owner’s data, applications, or operating system.\n\nExamples include viruses, worms, Trojans, spyware, ransomware, keyloggers, and rootkits, malicious code, scripts, and links.\n\nMalware can enter the network during many business-approved activities, including employee e-mail (for example, via phishing) and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities.\n\nUsing anti-malware solutions that address all types of malware helps to protect systems from current and evolving malware threats."
+      "body": "Malicious software (malware) is software or firmware designed to infiltrate or damage a computer system without the owner's knowledge or consent, with the intent of compromising the confidentiality, integrity, or availability of the owner’s data, applications, or operating system.\n\nExamples include viruses, worms, Trojans, spyware, ransomware, keyloggers, and rootkits, malicious code, scripts, and links.\n\nMalware can enter the network during many business-approved activities, including employee e-mail (for example, via phishing) and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities.\n\nUsing anti-malware solutions that address all types of malware helps to protect systems from current and evolving malware threats.",
+      "controls": [
+        {
+          "control": "azure-defender-endpoint-selected"
+        },
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        }
+      ]
     },
     {
       "name": "6. Develop and Maintain Secure Systems and Software",
@@ -193,6 +264,15 @@
         },
         {
           "control": "gcp-1-1-0-iam-8"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
+        },
+        {
+          "control": "azure-admin-resource-lock"
         }
       ]
     },
@@ -254,6 +334,9 @@
         },
         {
           "control": "okta-mfa"
+        },
+        {
+          "control": "azure-register-aad-app-service"
         }
       ]
     },
@@ -363,6 +446,108 @@
         },
         {
           "control": "aws-logging-3"
+        },
+        {
+          "control": "azure-alert-delete-public-ip-addr"
+        },
+        {
+          "control": "azure-log-blob-read-write-delete"
+        },
+        {
+          "control": "azure-log-queue-read-write-delete"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-6"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-alert-create-policy"
+        },
+        {
+          "control": "azure-alert-create-update-nsg"
+        },
+        {
+          "control": "azure-alert-create-update-public-ip-addr"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-create-update-sec-solution"
+        },
+        {
+          "control": "azure-alert-delete-nsg"
+        },
+        {
+          "control": "azure-alert-delete-policy-assign"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sec-solution"
+        },
+        {
+          "control": "azure-diagnostic-settings-categories"
+        },
+        {
+          "control": "azure-defender-for-app-services"
+        },
+        {
+          "control": "azure-defender-cosmos-db"
+        },
+        {
+          "control": "azure-defender-for-sql-servers"
+        },
+        {
+          "control": "microsoft-defender-for-containers"
+        },
+        {
+          "control": "azure-defender-for-dns"
+        },
+        {
+          "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-defender-open-source-relational-db"
+        },
+        {
+          "control": "azure-defender-for-resource-manager"
+        },
+        {
+          "control": "azure-defender-for-sql-servers-on-machines"
+        },
+        {
+          "control": "azure-defender-for-servers"
+        },
+        {
+          "control": "azure-defender-for-storage"
+        },
+        {
+          "control": "azure-connection-throttling-postgresql-server"
+        },
+        {
+          "control": "azure-log-checkpoints-postgresql-server"
+        },
+        {
+          "control": "azure-log-connections-postgresql-server"
+        },
+        {
+          "control": "azure-log-retention-days-postgresql-server"
+        },
+        {
+          "control": "azure-log-disconnections-postgresql-server"
+        },
+        {
+          "control": "azure-auto-provisioning-log-analystics"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-4"
         }
       ]
     },
