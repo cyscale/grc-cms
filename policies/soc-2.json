@@ -63,9 +63,6 @@
           "control": "aws-iam-16"
         },
         {
-          "control": "aws-iam-17"
-        },
-        {
           "control": "aws-logging-5"
         },
         {
