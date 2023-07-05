@@ -9,8 +9,7 @@
     {
       "cloudProviders": [
         "azure",
-        "aws",
-        "gcp"
+        "aws"
       ],
       "comparator": "eq",
       "expectedResult": "[]",
