@@ -1,1 +1,0 @@
-{"name":"IAM policies that allow full \"*:*\" administrative privileges are not created","slug":"aws-iam-17-iam-policies-that-allow-full--administrative-privileges-are-not-created","query":"iamPolicies(where:{hasIAMPolicyStatement_SOME: {effect:\"Allow\",actions_INCLUDES: \"*\", resources_INCLUDES: \"*\"}}){...AssetFragment}"}
