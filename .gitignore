@@ -105,3 +105,6 @@ dist
 
 # Static
 static/
+
+# Mac stuff
+.DS_Store
