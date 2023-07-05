@@ -72,9 +72,6 @@
           "control": "aws-iam-16"
         },
         {
-          "control": "aws-iam-17"
-        },
-        {
           "control": "aws-1-3-0-iam-7"
         },
         {
