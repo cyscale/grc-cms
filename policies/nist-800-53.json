@@ -30,9 +30,6 @@
           "control": "aws-iam-16"
         },
         {
-          "control": "aws-iam-17"
-        },
-        {
           "control": "aws-logging-3"
         },
         {
@@ -303,9 +300,6 @@
       "controls": [
         {
           "control": "aws-iam-15"
-        },
-        {
-          "control": "aws-iam-17"
         },
         {
           "control": "aws-logging-5"
