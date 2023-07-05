@@ -502,9 +502,6 @@
       "body": "Consistent with the Privacy Rule standard limiting uses and disclosures of PHI to the **minimum necessary**, the Security Rule requires a covered entity to implement policies and procedures for authorizing access to e-PHI only when such access is appropriate based on the user or recipient's role (role-based access).",
       "controls": [
         {
-          "control": "aws-iam-17"
-        },
-        {
           "control": "aws-1-3-0-iam-7"
         },
         {
