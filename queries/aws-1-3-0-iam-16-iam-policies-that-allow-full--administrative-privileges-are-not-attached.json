@@ -1,5 +1,0 @@
-{
-  "name": "IAM policies that allow full \"*:*\" administrative privileges are not attached",
-  "slug": "aws-1-3-0-iam-16-iam-policies-that-allow-full--administrative-privileges-are-not-attached",
-  "query": "{iamRoles(where:{iamPolicies_SOME: {iamPolicyStatements_SOME: {effect:\"Allow\",actions_INCLUDES: \"*\", resources_INCLUDES: \"*\"}}}){identifier}}"
-}
