@@ -1,1 +1,44 @@
-{"name":"Ensure IAM policies that allow full \"*:*\" administrative privileges are not attached","slug":"aws-1-3-0-iam-16","body":"IAM policies are the means by which privileges are granted to users, groups, or roles. It is recommended and considered a standard security practice to grant least privilege that is, granting only the permissions required to perform a task. Determine what users need to do what and then accordingly create policies for them instead of allowing full administrative privileges.\n\nIt's more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later.\n\nProviding full administrative privileges instead of restricting to the minimum set of permissions that the user is required to do exposes the resources to potentially unwanted actions.\n\nIAM policies that have a statement with `\"Effect\"`: `\"Allow\"` with `\"Action\"`: `\"*\"` over `\"Resource\"`: `\"*\"` should be removed.","description":"","severity":3,"remediationDescription":"**From Console**\n\nPerform the following action to detach the policy that has full administrative privileges:\n\n1. Sign into the AWS console and open the [IAM Dashboard](https://console.aws.amazon.com/iam/home#/home).\n2. In the left navigation pane, click **Policies** and then search for the policy name having administrative privileges.\n3. Select the policy that needs to be detached. Go to **Policy usage** tab.\n4. Select all `Users`, `Groups`, `Roles` that have this policy attached.\n5. Click **Detach**. It will ask for re-confirmation.\n6. Click **Detach** again.\n\nRepeat the above steps for all the policies having administrative privileges.\n\n**From Command Line**\n\nPerform the following action to detach the policy that has full administrative privileges:\n\n1.  Lists all IAM users, groups, and roles that the specified managed policy is attached to.\n\n```bash\naws iam list-entities-for-policy --policy-arn \u003cpolicy_arn\u003e\n```\n2. Detach the policy from all IAM Users:\n\n```bash\naws iam detach-user-policy --user-name \u003ciam_user\u003e --policy-arn \u003cpolicy_arn\u003e\n```\n3. Detach the policy from all IAM Groups:\n\n```bash\naws iam detach-group-policy --group-name \u003ciam_group\u003e --policy-arn \u003cpolicy_arn\u003e\n```\n4. Detach the policy from all IAM Roles:\n\n```bash\naws iam detach-role-policy --role-name \u003ciam_role\u003e --policy-arn \u003cpolicy_arn\u003e\n```","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPolicy"],"query":"aws-1-3-0-iam-16-iam-policies-that-allow-full--administrative-privileges-are-not-attached","returnPath":""}]}
+{
+  "name": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not attached",
+  "slug": "aws-1-3-0-iam-16",
+  "body": "IAM policies are the means by which privileges are granted to users, groups, or roles. It is recommended and considered a standard security practice to grant least privilege that is, granting only the permissions required to perform a task. Determine what users need to do what and then accordingly create policies for them instead of allowing full administrative privileges.\n\nIt's more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later.\n\nProviding full administrative privileges instead of restricting to the minimum set of permissions that the user is required to do exposes the resources to potentially unwanted actions.\n\nIAM policies that have a statement with `\"Effect\"`: `\"Allow\"` with `\"Action\"`: `\"*\"` over `\"Resource\"`: `\"*\"` should be removed.",
+  "description": "",
+  "severity": 3,
+  "remediationDescription": "**From Console**\n\nPerform the following action to detach the policy that has full administrative privileges:\n\n1. Sign into the AWS console and open the [IAM Dashboard](https://console.aws.amazon.com/iam/home#/home).\n2. In the left navigation pane, click **Policies** and then search for the policy name having administrative privileges.\n3. Select the policy that needs to be detached. Go to **Policy usage** tab.\n4. Select all `Users`, `Groups`, `Roles` that have this policy attached.\n5. Click **Detach**. It will ask for re-confirmation.\n6. Click **Detach** again.\n\nRepeat the above steps for all the policies having administrative privileges.\n\n**From Command Line**\n\nPerform the following action to detach the policy that has full administrative privileges:\n\n1.  Lists all IAM users, groups, and roles that the specified managed policy is attached to.\n\n```bash\naws iam list-entities-for-policy --policy-arn <policy_arn>\n```\n2. Detach the policy from all IAM Users:\n\n```bash\naws iam detach-user-policy --user-name <iam_user> --policy-arn <policy_arn>\n```\n3. Detach the policy from all IAM Groups:\n\n```bash\naws iam detach-group-policy --group-name <iam_group> --policy-arn <policy_arn>\n```\n4. Detach the policy from all IAM Roles:\n\n```bash\naws iam detach-role-policy --role-name <iam_role> --policy-arn <policy_arn>\n```",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMRole"
+      ],
+      "query": "aws-1-3-0-iam-16-iam-policies-that-allow-full-administrative-privileges-are-not-attached-to-iam-roles"
+    },
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "aws-1-3-0-iam-16-iam-policies-that-allow-full-administrative-privileges-are-not-attached-to-iam-users"
+    },
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMGroup"
+      ],
+      "query": "aws-1-3-0-iam-16-iam-policies-that-allow-full-administrative-privileges-are-not-attached-to-iam-groups"
+    }
+  ],
+  "alertForSecondaryOnly": false
+}
