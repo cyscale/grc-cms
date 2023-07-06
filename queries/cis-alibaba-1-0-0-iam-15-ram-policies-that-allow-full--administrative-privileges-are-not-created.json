@@ -1,1 +1,5 @@
-{"name":"RAM policies that allow full '*:*'' administrative privileges are not created","slug":"cis-alibaba-1-0-0-iam-15-ram-policies-that-allow-full--administrative-privileges-are-not-created","query":"iamPolicies(where: { policyType: \"Custom\", hasIAMPolicyStatement_SOME: { effect: \"Allow\", actions_INCLUDES: \"*\" } }) {...AssetFragment}"}
+{
+  "name": "RAM policies that allow full '*:*'' administrative privileges are not created",
+  "slug": "cis-alibaba-1-0-0-iam-15-ram-policies-that-allow-full--administrative-privileges-are-not-created",
+  "query": "iamPolicies(where: { policyType: \"Custom\", iamPolicyStatements_SOME: { effect: \"Allow\", actions_INCLUDES: \"*\" } }) {...AssetFragment}\n"
+}
