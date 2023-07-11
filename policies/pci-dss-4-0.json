@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "PCI-DSS - PCI Security Standards Council - Payment Card Industry Data Security Standard",
   "isStandard": true,
   "slug": "pci-dss-4-0",
@@ -91,6 +91,12 @@
         },
         {
           "control": "aws-networking-3"
+        },
+        {
+          "control": "azure-key-vaults-store-secrets"
+        },
+        {
+          "control": "aws-ecs-8-secrets-in-vars"
         }
       ]
     },
@@ -186,6 +192,9 @@
         },
         {
           "control": "azure-redirect-http-to-https"
+        },
+        {
+          "control": "aws-networking-6"
         }
       ]
     },
@@ -202,6 +211,9 @@
         },
         {
           "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "gcp-1-1-0-vm-8"
         }
       ]
     },
@@ -236,6 +248,9 @@
         },
         {
           "control": "azure-latest-tls-version"
+        },
+        {
+          "control": "aws-networking-6"
         }
       ]
     },
@@ -263,16 +278,7 @@
           "control": "gcp-1-1-0-iam-8"
         },
         {
-          "control": "publicly-accessible-functions"
-        },
-        {
-          "control": "azure-1-3-0-logging-1-3"
-        },
-        {
           "control": "azure-admin-resource-lock"
-        },
-        {
-          "control": "aws-1-3-0-iam-16"
         },
         {
           "control": "aws-1-3-0-iam-18"
@@ -343,6 +349,12 @@
         },
         {
           "control": "azure-register-aad-app-service"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
         }
       ]
     },
@@ -560,7 +572,18 @@
     {
       "name": "11. Test Security of Systems and Networks Regularly",
       "slug": "pci-dss-4-0-test",
-      "body": "Vulnerabilities are being discovered continually by malicious individuals and researchers, and being introduced by new software. System components, processes, and bespoke and custom software should be tested frequently to ensure security controls continue to reflect a changing environment."
+      "body": "Vulnerabilities are being discovered continually by malicious individuals and researchers, and being introduced by new software. System components, processes, and bespoke and custom software should be tested frequently to ensure security controls continue to reflect a changing environment.",
+      "controls": [
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "azure-defender-endpoint-selected"
+        },
+        {
+          "control": "aws-logging-5"
+        }
+      ]
     },
     {
       "name": "12. Support Information Security with Organizational Policies and Programs",
