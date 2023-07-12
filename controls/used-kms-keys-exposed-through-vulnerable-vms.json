@@ -1,0 +1,35 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure used KMSKeys are not exposed through publicly accessible VMs",
+  "description": "KMSKeys that are exposed by publicly accessible VMs and are used for Datastores.",
+  "slug": "used-kms-keys-exposed-through-vulnerable-vms",
+  "body": "This control looks for KMSKeys that are actively used and are accessible by IAM policies or roles which are attached to VMs that allow public access from the internet.",
+  "severity": 3,
+  "remediationDescription": "Depending on the provider you must disable public access from the internet to the VMs.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "used-aws-keys-exposed-through-vms",
+      "returnPath": "iamRoles.iamPolicies.iamPolicyStatements.permissions.isOwnedByIAMAssetType.includesKMSKey"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "used-azure-keys-exposed-through-vms",
+      "returnPath": "vmRoles.hasIAMPermissions.isOwnedByIAMAssetType.includesKMSKey"
+    }
+  ]
+}
