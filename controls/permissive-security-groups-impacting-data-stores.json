@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": true,
+  "name": "Permissive Security Groups Impacting Data Stores",
+  "slug": "permissive-security-groups-impacting-data-stores",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SecurityGroup"
+      ],
+      "query": "sg-public"
+    }
+  ],
+  "description": "Internet-connected Security Groups provide access path towards improperly secured Data Stores",
+  "body": "In cloud environments like AWS or GCP, a security issue emerges when permissive Security Groups, allowing traffic from 0.0.0.0/0, are connected to computing resources with access to sensitive data stores. This opens up a pathway for the exposed computing resources to reach improperly secured data stores, potentially leading to unauthorized access and data exfiltration.\n\n\n\n\n",
+  "remediationDescription": "In AWS:\n\n- For S3 buckets or DynamoDB, remove the permission from the IAM Role attached to the compute resource, which grants access to the data stores.\n- For SQL DB instances, ensure that the DB is not part of the same security group as the compute resources, separating their network access.\n\nIn GCP:\n\n- For BigQuery and Buckets, modify the data store's access policy to remove the compute resource's access, revoking any permissions granted.\n\nIn Azure:\n\n- Remove the managed identity assigned to the compute resource, which grants access to the data store. This ensures that the compute resource no longer has the ability to connect to the data store.\n"
+}
