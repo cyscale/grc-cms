@@ -1,0 +1,5 @@
+{
+  "query": "{\n  securityGroups(where: {\n    rules_SOME: {\n      direction: \"Inbound\",\n      action: \"Allow\",\n      OR: [\n        {sources_INCLUDES: \"cidr:0.0.0.0/0\"},\n        {sources_INCLUDES: \"cidr:::/0\"},\n        {sources_INCLUDES: \"tag:Internet\"},\n        {sources: []}\n      ]\n    }\n  }) {\n    ...AssetFragment\n  }\n}",
+  "name": "Security Groups allowing public connections",
+  "slug": "sg-public"
+}
