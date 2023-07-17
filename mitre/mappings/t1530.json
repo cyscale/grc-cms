@@ -13,11 +13,28 @@
     "cis-alibaba-1-0-0-storage-7",
     "gcp-storage-1",
     "gcp-storage-3",
-    "publicly-readable-object-containers"
+    "publicly-readable-object-containers",
+    "permissive-security-groups-impacting-data-stores"
   ],
   "assets": [
     "Bucket",
     "BlobContainer",
-    "LogProfile"
+    "LogProfile",
+    "DBInstance",
+    "CosmosDBAccount",
+    "BigQueryTable",
+    "SQLDatabase",
+    "MySQLServer",
+    "MySQLFlexibleServer",
+    "PostgreSQLServer",
+    "PostgreSQLFlexibleServer",
+    "MariaDBServer"
+  ],
+  "propagators": [
+    "VM",
+    "IAMPolicy",
+    "IAMRole",
+    "IAMServiceAccount",
+    "Project"
   ]
 }
