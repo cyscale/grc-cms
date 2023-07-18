@@ -172,6 +172,36 @@
         },
         {
           "control": "aws-ecs-5-readonly-root-file-systems"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "aws-iam-20"
+        },
+        {
+          "control": "aws-iam-18"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-16"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-15"
+        },
+        {
+          "control": "gcp-iam-8"
+        },
+        {
+          "control": "gcp-iam-7"
+        },
+        {
+          "control": "gcp-1-1-0-iam-8"
+        },
+        {
+          "control": "gcp-iam-3"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-5"
         }
       ]
     },
@@ -474,6 +504,39 @@
         },
         {
           "control": "azure-no-custom-admin-role"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-13"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-12"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-11"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-10"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-14"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "gcp-iam-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-iam-4"
+        },
+        {
+          "control": "gcp-iam-2"
         }
       ]
     },
@@ -827,6 +890,9 @@
         },
         {
           "control": "aws-ecs-2-service-assign-public-ip-disabled"
+        },
+        {
+          "control": "gcp-iam-5"
         }
       ]
     },
