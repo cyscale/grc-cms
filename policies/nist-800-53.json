@@ -202,6 +202,21 @@
         },
         {
           "control": "cis-alibaba-1-0-0-iam-5"
+        },
+        {
+          "control": "vm-disallow-imds-v1"
+        },
+        {
+          "control": "azure-rbac-kubernetes"
+        },
+        {
+          "control": "gcp-kubernetes-10"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "gcp-kubernetes-15"
         }
       ]
     },
@@ -566,7 +581,14 @@
       "name": "Media Protection",
       "slug": "nist-800-53-media-protection",
       "body": "",
-      "controls": null
+      "controls": [
+        {
+          "control": "ec2-instances-metadata-hop-limit"
+        },
+        {
+          "control": "aws-ec2-1"
+        }
+      ]
     },
     {
       "name": "Personnel Security",
@@ -593,6 +615,9 @@
       "controls": [
         {
           "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-scan-1"
         }
       ]
     },
@@ -742,6 +767,12 @@
         },
         {
           "control": "aws-ecs-10-latest-platform-version"
+        },
+        {
+          "control": "gcp-kubernetes-7"
+        },
+        {
+          "control": "gcp-kubernetes-8"
         }
       ]
     },
@@ -893,6 +924,12 @@
         },
         {
           "control": "gcp-iam-5"
+        },
+        {
+          "control": "azure-key-vaults-store-secrets"
+        },
+        {
+          "control": "aws-networking-7"
         }
       ]
     },
