@@ -217,6 +217,24 @@
         },
         {
           "control": "gcp-kubernetes-15"
+        },
+        {
+          "control": "gcp-kubernetes-16"
+        },
+        {
+          "control": "gcp-kubernetes-18"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "gcp-kubernetes-17"
+        },
+        {
+          "control": "aws-iam-21"
+        },
+        {
+          "control": "gcp-1-1-0-vm-9"
         }
       ]
     },
@@ -417,6 +435,21 @@
         },
         {
           "control": "aws-ecs-8-secrets-in-vars"
+        },
+        {
+          "control": "azure-http-latest-version-web-app"
+        },
+        {
+          "control": "azure-latest-java-version"
+        },
+        {
+          "control": "azure-latest-php-version"
+        },
+        {
+          "control": "azure-latest-python-version"
+        },
+        {
+          "control": "gcp-vm-5"
         }
       ]
     },
@@ -930,6 +963,24 @@
         },
         {
           "control": "aws-networking-7"
+        },
+        {
+          "control": "sage-maker-notebooks-encrypted"
+        },
+        {
+          "control": "gcp-kubernetes-9"
+        },
+        {
+          "control": "azure-vm-disks-managed"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "azure-vm-disks-cmk"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-vm-2"
         }
       ]
     },
