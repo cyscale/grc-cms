@@ -1,0 +1,5 @@
+{
+  "name": "Alibaba Used KMSKeys Exposed Through Vulnerable VMs",
+  "slug": "alibaba-used-keys-exposed-through-vms",
+  "query": "{\n  alibabaUsedKMSKeysExposedThroughVMs {...AssetFragment}\n}"
+}
