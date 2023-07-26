@@ -30,6 +30,28 @@
       ],
       "query": "used-azure-keys-exposed-through-vms",
       "returnPath": "vmRoles.hasIAMPermissions.isOwnedByIAMAssetType.includesKMSKey"
+    },
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "alibaba-used-keys-exposed-through-vms"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSKey"
+      ],
+      "query": "gcp-used-keys-exposed-through-vms"
     }
   ]
 }
