@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud Used KMSKeys Exposed Through Vulnerable VMs",
+  "slug": "gcp-used-keys-exposed-through-vms",
+  "query": "{\n  gcpUsedKMSKeysExposedThroughVMs {...AssetFragment}\n}"
+}
