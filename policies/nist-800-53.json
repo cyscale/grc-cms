@@ -295,6 +295,42 @@
         },
         {
           "control": "gcp-1-1-0-iam-9"
+        },
+        {
+          "control": "azure-restrict-udp"
+        },
+        {
+          "control": "gcp-networking-8"
+        },
+        {
+          "control": "gcp-networking-9"
+        },
+        {
+          "control": "gcp-networking-10"
+        },
+        {
+          "control": "gcp-networking-11"
+        },
+        {
+          "control": "gcp-networking-12"
+        },
+        {
+          "control": "gcp-networking-13"
+        },
+        {
+          "control": "aws-networking-9"
+        },
+        {
+          "control": "aws-networking-10"
+        },
+        {
+          "control": "aws-networking-3"
+        },
+        {
+          "control": "permissive-security-groups-impacting-data-stores"
+        },
+        {
+          "control": "networking-management-ports-from-internet"
         }
       ]
     },
@@ -416,6 +452,9 @@
         },
         {
           "control": "cis-alibaba-1-0-0-storage-3"
+        },
+        {
+          "control": "gcp-networking-6"
         }
       ]
     },
@@ -522,6 +561,15 @@
         },
         {
           "control": "azure-security-alert-emails-owners"
+        },
+        {
+          "control": "gcp-networking-2"
+        },
+        {
+          "control": "gcp-networking-7"
+        },
+        {
+          "control": "gcp-networking-1"
         }
       ]
     },
@@ -566,6 +614,9 @@
         },
         {
           "control": "aws-ecs-12-clusters-should-use-insights"
+        },
+        {
+          "control": "gcp-networking-6"
         }
       ]
     },
@@ -695,6 +746,12 @@
         },
         {
           "control": "aws-ec2-1"
+        },
+        {
+          "control": "launch-templates-metadata-hop-limit"
+        },
+        {
+          "control": "launch-templates-disallow-imds-v1"
         }
       ]
     },
@@ -1143,6 +1200,15 @@
         },
         {
           "control": "used-kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "vm-templates-with-disk-configuration-are-encrypted"
+        },
+        {
+          "control": "azure-restrict-udp"
+        },
+        {
+          "control": "gcp-networking-7"
         }
       ]
     },
