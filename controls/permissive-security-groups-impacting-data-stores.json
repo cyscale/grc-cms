@@ -1,6 +1,6 @@
 {
   "alertForSecondaryOnly": true,
-  "name": "Permissive Security Groups Impacting Data Stores",
+  "name": "Ensure that permissive Security Groups don't impact Data Stores",
   "slug": "permissive-security-groups-impacting-data-stores",
   "severity": 2,
   "rules": [
