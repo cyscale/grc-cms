@@ -1,7 +1,7 @@
 {
   "name": "NIST 800-53 - NIST Special Publication 800-53",
   "slug": "nist-800-53",
-  "body": "## Statement\n\nThe National Institute of Standards and Technology (NIST) is responsible for developing information security standards and guidelines, including minimum requirements for federal information systems.\n \n<Var keyName=\"companyName\"/> implements the guidance and controls which are part of the 5th revision of the standard, the one that removes the word \"*federal*\" to indicate that these regulations may be applied to all organizations, not just federal organizations. This version consists of 20 control families, an increase from 18 in the previous version and more than 1,000 related controls.\n\n#### Purpose\n\nThe SP 800-53 standard has been developed to further its statutory responsibilities under the Federal Information Security Modernization Act (FISMA) and  Federal Information Processing Standard (FIPS) 200. It provides a catalog of security and privacy controls for all U.S. federal information systems except those related to national security.\n\n### Compliance best practices\n\n- **Analyze** - The first step in NIST compliance is understanding. Companies need to understand the threats facing their data and information systems as well as where they are currently at risk. Using solutions that can automate the monitoring of NIST 800 series compliance is a must for serious enterprises, as companies need to analyze and protect protected/regulated data such as PII, PHI/ePHI, and PCI.\n\n- **Educate** - Employees' education is at the core of the NIST compliance framework. There are software solutions that can help you to train your employees in real-time on the latest security requirements and best practices.\n\n- **Assess** - Measure security policies and processes, to know how to improve them. Deploy tools that provide a mechanism to measure and assess your company's security processes. Then, you will be able to continuously iterate and improve your security standards against the continuously evolving threats out there.\n\n### Best Practices\n\nNIST 800-53 controls define best practices for implementing and maturing your information security systems to ensure the availability and security of sensitive data, but there are some other recommendations you can also implement to protect and secure your information security systems. One way to do this is by taking a structured approach to risk management:\n\n1. Categorize your information system based on responsibilities, the environment, and roles;\n1. Determine which security controls you need based on your security categorization from FIPS 200;\n1. Implement the security controls;\n1. Document how your security controls are implemented throughout your systems;\n1. Assess if the controls are functioning properly;\n1. Identify gaps or areas of weakness;\n1. Monitor your controls as your environment changes and evolves;\n1. Test your controls often for effectiveness and make adjustments as needed.\n\n<Procedure slug=\"nist-800-53-access-control\"/>\n<Procedure slug=\"nist-800-53-audit\"/>\n<Procedure slug=\"nist-800-53-training\"/>\n<Procedure slug=\"nist-800-53-cm\"/>\n<Procedure slug=\"nist-800-53-continuity-plan\"/>\n<Procedure slug=\"nist-800-53-assessment-authorization\"/>\n<Procedure slug=\"nist-800-53-iam\"/>\n<Procedure slug=\"nist-800-53-incident-response\"/>\n<Procedure slug=\"nist-800-53-maintenance\"/>\n<Procedure slug=\"nist-800-53-media-protection\"/>\n<Procedure slug=\"nist-800-53-personnel-security\"/>\n<Procedure slug=\"nist-800-53-physical\"/>\n<Procedure slug=\"nist-800-53-planning\"/>\n<Procedure slug=\"nist-800-53-risk\"/>\n<Procedure slug=\"nist-800-53-system-acquisition\"/>\n<Procedure slug=\"nist-800-53-integrity\"/>\n<Procedure slug=\"nist-800-53-comms-protection\"/>\n<Procedure slug=\"nist-800-53-program-management\"/>\n<Procedure slug=\"nist-800-53-pii-processing\"/>\n<Procedure slug=\"nist-800-53-suppliers\"/>\n",
+  "body": "## Statement\n\nThe National Institute of Standards and Technology (NIST) is responsible for developing information security standards and guidelines, including minimum requirements for federal information systems.\n \nNIST 800-53 implements the guidance and controls which are part of the 5th revision of the standard, the one that removes the word \"*federal*\" to indicate that these regulations may be applied to all organizations, not just federal organizations. This version consists of 20 control families, an increase from 18 in the previous version and more than 1,000 related controls.\n\n#### Purpose\n\nThe SP 800-53 standard has been developed to further its statutory responsibilities under the Federal Information Security Modernization Act (FISMA) and  Federal Information Processing Standard (FIPS) 200. It provides a catalog of security and privacy controls for all U.S. federal information systems except those related to national security.\n\n### Compliance best practices\n\n- **Analyze** - The first step in NIST compliance is understanding. Companies need to understand the threats facing their data and information systems as well as where they are currently at risk. Using solutions that can automate the monitoring of NIST 800 series compliance is a must for serious enterprises, as companies need to analyze and protect protected/regulated data such as PII, PHI/ePHI, and PCI.\n\n- **Educate** - Employees' education is at the core of the NIST compliance framework. There are software solutions that can help you to train your employees in real-time on the latest security requirements and best practices.\n\n- **Assess** - Measure security policies and processes, to know how to improve them. Deploy tools that provide a mechanism to measure and assess your company's security processes. Then, you will be able to continuously iterate and improve your security standards against the continuously evolving threats out there.\n\n### Best Practices\n\nNIST 800-53 controls define best practices for implementing and maturing your information security systems to ensure the availability and security of sensitive data, but there are some other recommendations you can also implement to protect and secure your information security systems. One way to do this is by taking a structured approach to risk management:\n\n1. Categorize your information system based on responsibilities, the environment, and roles;\n1. Determine which security controls you need based on your security categorization from FIPS 200;\n1. Implement the security controls;\n1. Document how your security controls are implemented throughout your systems;\n1. Assess if the controls are functioning properly;\n1. Identify gaps or areas of weakness;\n1. Monitor your controls as your environment changes and evolves;\n1. Test your controls often for effectiveness and make adjustments as needed.\n\n<Procedure slug=\"nist-800-53-access-control\"/>\n<Procedure slug=\"nist-800-53-audit\"/>\n<Procedure slug=\"nist-800-53-training\"/>\n<Procedure slug=\"nist-800-53-cm\"/>\n<Procedure slug=\"nist-800-53-continuity-plan\"/>\n<Procedure slug=\"nist-800-53-assessment-authorization\"/>\n<Procedure slug=\"nist-800-53-iam\"/>\n<Procedure slug=\"nist-800-53-incident-response\"/>\n<Procedure slug=\"nist-800-53-maintenance\"/>\n<Procedure slug=\"nist-800-53-media-protection\"/>\n<Procedure slug=\"nist-800-53-personnel-security\"/>\n<Procedure slug=\"nist-800-53-physical\"/>\n<Procedure slug=\"nist-800-53-planning\"/>\n<Procedure slug=\"nist-800-53-risk\"/>\n<Procedure slug=\"nist-800-53-system-acquisition\"/>\n<Procedure slug=\"nist-800-53-integrity\"/>\n<Procedure slug=\"nist-800-53-comms-protection\"/>\n<Procedure slug=\"nist-800-53-program-management\"/>\n<Procedure slug=\"nist-800-53-pii-processing\"/>\n<Procedure slug=\"nist-800-53-suppliers\"/>\n",
   "version": "1",
   "isStandard": true,
   "enabled": true,
@@ -331,6 +331,9 @@
         },
         {
           "control": "networking-management-ports-from-internet"
+        },
+        {
+          "control": "azure-admin-resource-locks"
         }
       ]
     },
@@ -455,6 +458,75 @@
         },
         {
           "control": "gcp-networking-6"
+        },
+        {
+          "control": "aws-monitoring-6"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-10"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-7"
+        },
+        {
+          "control": "gcp-logging-9"
+        },
+        {
+          "control": "gcp-logging-8"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-1"
+        },
+        {
+          "control": "azure-alert-create-policy"
+        },
+        {
+          "control": "azure-alert-create-update-nsg"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-5"
+        },
+        {
+          "control": "azure-alert-create-update-public-ip-addr"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-create-update-sec-solution"
+        },
+        {
+          "control": "azure-alert-delete-nsg"
+        },
+        {
+          "control": "azure-alert-delete-policy-assign"
+        },
+        {
+          "control": "azure-alert-delete-public-ip-addr"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sec-solution"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-6"
+        },
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-2"
         }
       ]
     },
@@ -617,6 +689,9 @@
         },
         {
           "control": "gcp-networking-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-6"
         }
       ]
     },
@@ -816,6 +891,15 @@
         },
         {
           "control": "azure-defender-for-storage"
+        },
+        {
+          "control": "azure-1-3-0-sc-6"
+        },
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "azure-defender-endpoint-selected"
         }
       ]
     },
@@ -1209,6 +1293,12 @@
         },
         {
           "control": "gcp-networking-7"
+        },
+        {
+          "control": "aws-1-3-0-storage-2-1"
+        },
+        {
+          "control": "azure-admin-resource-locks"
         }
       ]
     },
