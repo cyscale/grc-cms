@@ -334,6 +334,30 @@
         },
         {
           "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "publicly-accessible-queues"
+        },
+        {
+          "control": "sage-maker-notebooks-disallow-imds-v1"
+        },
+        {
+          "control": "sage-maker-notebooks-root-access"
+        },
+        {
+          "control": "aws-networking-8"
+        },
+        {
+          "control": "aws-networking-5"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "gcp-1-1-0-bigquery-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-1"
         }
       ]
     },
@@ -642,6 +666,9 @@
         },
         {
           "control": "gcp-networking-1"
+        },
+        {
+          "control": "databases-with-outdated-engine-versions"
         }
       ]
     },
@@ -1067,6 +1094,9 @@
         },
         {
           "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "databases-without-deletion-protection"
         }
       ]
     },
@@ -1299,6 +1329,24 @@
         },
         {
           "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "aws-integration-1"
+        },
+        {
+          "control": "aws-rds-1"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-rds-5"
+        },
+        {
+          "control": "aws-1-4-0-storage-3-1"
         }
       ]
     },
