@@ -1,6 +1,6 @@
 {
   "enabled": false,
-  "name": "CIS Google Cloud Foundation",
+  "name": "CIS Google Cloud Foundation Benchmark",
   "isStandard": true,
   "slug": "cis-gcp-2-0-0",
   "version": "2.0.0",
