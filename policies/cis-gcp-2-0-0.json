@@ -1,0 +1,38 @@
+{
+  "enabled": false,
+  "name": "CIS Google Cloud Foundation",
+  "isStandard": true,
+  "slug": "cis-gcp-2-0-0",
+  "version": "2.0.0",
+  "body": "## Statement\n\nThis security configuration benchmark covers foundational elements of Google Cloud. The recommendations detailed here are important security considerations when designing your infrastructure on Google Cloud. Most of the recommendations provided with this release of the benchmark cover security considerations only at individual Project level and not at the organization level. \n\n### Intended Audience\n\nThis document is intended for system and application administrators, security specialists, auditors, help desk, platform deployment, and/or DevOps personnel who plan to develop, deploy, assess, or secure solutions on Google Cloud.\n\n## Recommendations\n\n<Procedure slug=\"cis-gcp-2-0-0-iam\"/>\n<Procedure slug=\"cis-gcp-2-0-0-logging\"/>\n<Procedure slug=\"cis-gcp-2-0-0-networking\"/>\n<Procedure slug=\"cis-gcp-2-0-0-vm\"/>\n<Procedure slug=\"cis-gcp-2-0-0-storage\"/>\n<Procedure slug=\"cis-gcp-2-0-0-db\"/>\n<Procedure slug=\"cis-gcp-2-0-0-bigquery\"/>",
+  "procedures": [
+    {
+      "name": "1. Identity and Access Management",
+      "slug": "cis-gcp-2-0-0-iam"
+    },
+    {
+      "name": "2. Logging and Monitoring",
+      "slug": "cis-gcp-2-0-0-logging"
+    },
+    {
+      "name": "3. Networking",
+      "slug": "cis-gcp-2-0-0-networking"
+    },
+    {
+      "name": "4. Virtual Machines",
+      "slug": "cis-gcp-2-0-0-vm"
+    },
+    {
+      "name": "5. Storage",
+      "slug": "cis-gcp-2-0-0-storage"
+    },
+    {
+      "name": "6. Cloud SQL Database Services",
+      "slug": "cis-gcp-2-0-0-db"
+    },
+    {
+      "name": "7. BigQuery",
+      "slug": "cis-gcp-2-0-0-bigquery"
+    }
+  ]
+}
