@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Functions for Google Cloud",
   "slug": "publicly-accessible-gcp-functions",
-  "query": "{\n  functions(\n    where: {\n      NOT: {\n        httpsTriggerURL: null\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+  "query": "{\n  functions(\n    where: {\n      NOT: {\n        httpsRequired: true\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
 }
