@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible PubSub Topics",
   "slug": "publicly-accessible-pubsub-topics",
-  "query": "{ pubSubTopics( where: { iamPolicy: { hasPubSubTopicIAMPolicyBindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ) {...AssetFragment} } "
+  "query": "{ pubSubTopics( where: { iamPolicy: { bindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ) {...AssetFragment} } "
 }

@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud object containers with permissive access policy",
   "slug": "gcp-object-containers-with-permissive-access-policy",
-  "query": "{\n  buckets(\n    where: {\n      OR: [\n        { iamPolicyDocument_MATCHES: \".*domain:.*\" }\n        {\n          hasIAMPolicy_SOME: {\n            hasBucketIAMPolicyBinding_SOME: {\n              OR: [\n                { members_INCLUDES: \"allAuthenticatedUsers\" }\n                { members_INCLUDES: \"allUsers\" }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  ) {...AssetFragment}\n}"
+  "query": "{\n  buckets(\n    where: {\n      OR: [\n        { iamPolicyDocument_MATCHES: \".*domain:.*\" }\n        {\n          hasIAMPolicy_SOME: {\n            bindings_SOME: {\n              OR: [\n                { members_INCLUDES: \"allAuthenticatedUsers\" }\n                { members_INCLUDES: \"allUsers\" }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  ) {...AssetFragment}\n}"
 }
