@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible PubSub Subscriptions",
   "slug": "publicly-accessible-pubsub-subscriptions",
-  "query": "{ pubSubSubscriptions( where: { iamPolicy: { hasPubSubSubscriptionIAMPolicyBindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ) {...AssetFragment} } "
+  "query": "{ pubSubSubscriptions( where: { iamPolicy: { bindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" } { members_INCLUDES: \"allUsers\" } ] } } } ) {...AssetFragment} } "
 }
