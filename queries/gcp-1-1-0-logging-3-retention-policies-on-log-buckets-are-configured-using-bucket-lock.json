@@ -1,1 +1,5 @@
-{"name":"Retention policies on log buckets are configured using Bucket Lock","slug":"gcp-1-1-0-logging-3-retention-policies-on-log-buckets-are-configured-using-bucket-lock","query":"logBuckets(where:{locked:false,retentionDays_LTE:0}){...AssetFragment}"}
+{
+  "name": "Retention policies on log buckets are configured using Bucket Lock",
+  "slug": "gcp-1-1-0-logging-3-retention-policies-on-log-buckets-are-configured-using-bucket-lock",
+  "query": "logBuckets(where:{locked:false}){...AssetFragment}"
+}
