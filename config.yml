@@ -304,6 +304,7 @@ collections:
             'IAMGroup',
             'IAMPasswordPolicy',
             'IAMPolicy',
+            'IAMPolicyStatement',
             'IAMRole',
             'IAMServerCertificate',
             'IAMServiceAccount',
