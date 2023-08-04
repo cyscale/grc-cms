@@ -1,0 +1,14 @@
+{
+  "display_name": "Access to Datastores [Test]",
+  "controls": [
+    "aws-iam-2"
+  ],
+  "assets": [
+    "Bucket"
+  ],
+  "propagators": [
+    "IAMGroup",
+    "IAMPolicy"
+  ],
+  "mid": "T1006"
+}
