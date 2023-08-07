@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "severity": 2,
+  "name": "Ensure Compute instances are launched with Shielded VM enabled",
+  "slug": "gcp-shielded-vm-enabled",
+  "body": "To defend against advanced threats and ensure that the boot loader and firmware on your VMs are signed and untampered, it is recommended that Compute instances are launched with Shielded VM enabled.\n\n**Rationale**\n\nShielded VMs are virtual machines (VMs) on Google Cloud Platform hardened by a set of security controls that help defend against rootkits and bootkits. \n\nShielded VM offers verifiable integrity of your Compute Engine VM instances, so you can be confident your instances haven't been compromised by boot- or kernel-level malware or rootkits. Shielded VM's verifiable integrity is achieved through the use of Secure Boot, virtual trusted platform module (vTPM)-enabled Measured Boot, and integrity monitoring.\n\nShielded VM instances run firmware which is signed and verified using Google's Certificate Authority, ensuring that the instance's firmware is unmodified and establishing the root of trust for Secure Boot. \n\nIntegrity monitoring helps you understand and make decisions about the state of your VM instances and the Shielded VM vTPM enables Measured Boot by performing the measurements needed to create a known good boot baseline, called the integrity policy baseline. The integrity policy baseline is used for comparison with measurements from subsequent VM boots to determine if anything has changed.\n\nSecure Boot helps ensure that the system only runs authentic software by verifying the digital signature of all boot components, and halting the boot process if signature verification fails.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "gcp-1-1-0-vm-8-compute-instances-are-launched-with-shielded-vm-enabled"
+    }
+  ],
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to the `VM instances` page by visiting: https://console.cloud.google.com/compute/instances\n2. Click on each VM instance name to go to its details page\n3. Click `STOP` and then click `EDIT`\n4. Under the section `Shielded VM`, select `Turn on vTPM` and `Turn on Integrity Monitoring`\n5. Optionally, if you do not use any custom or unsigned drivers on the instance, also select `Turn on Secure Boot`\n6. Click `Save` and then click `START`\n\n**Using Google Cloud CLI**\n\n1. Stop the instance:\n\n```bash\ngcloud compute instances stop <instanceName>\n```\n\n2. Update the instance:\n\n```bash\ngcloud compute instances update <instanceName> --shielded-vtpm --shieldedvm-integrity-monitoring\n```\n\n3. Optionally, if you do not use any custom or unsigned drivers on the instance, also turn on secure boot.\n\n```bash\ngcloud compute instances update <instanceName> --shielded-vm-secure-boot\n```\n\n4. Restart the instance:\n\n```bash\ngcloud compute instances start <instanceName>\n```\n\n**Prevention**\n\nYou can ensure that all new VMs will be created with Shielded VM enabled by setting up an Organization Policy to for Shielded VM at https://console.cloud.google.com/iamadmin/orgpolicies/compute-requireShieldedVm. Learn more at: https://cloud.google.com/security/shielded-cloud/shielded-vm#organization-policyconstraint.\n\n**Default Value**\n\nBy default, Compute Instances do not have Shielded VM enabled.\n\n**References**\n\n1. [https://cloud.google.com/compute/docs/instances/modifying-shielded-vm](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm)\n2. [https://cloud.google.com/shielded-vm](https://cloud.google.com/shielded-vm)\n3. [https://cloud.google.com/security/shielded-cloud/shielded-vm#organization-policy-constraint](https://cloud.google.com/security/shielded-cloud/shielded-vm#organization-policy-constraint)\n\n**Additional information**\n\nIf you do use custom or unsigned drivers on the instance, enabling Secure Boot will cause the machine to no longer boot. Turn on Secure Boot only on instances that have been verified to not have any custom drivers installed."
+}
