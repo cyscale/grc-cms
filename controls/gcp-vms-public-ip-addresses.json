@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Compute instances do not have public IP addresses",
+  "slug": "gcp-vms-public-ip-addresses",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "returnPath": "networkInterface.vm",
+      "query": "gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses"
+    }
+  ],
+  "body": "Compute instances should not be configured to have external IP addresses.\n\n**Rationale**\n\nTo reduce your attack surface, Compute instances should not have public IP addresses. Instead, instances should be configured behind load balancers, to minimize the instance's exposure to the internet.\n\n**Impact**\n\nRemoving the external IP address from your Compute instance may cause some applications to stop working.",
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to the `VM instances` page by visiting: https://console.cloud.google.com/compute/instances\n2. Click on each VM instance name to go to its details page\n3. Click `STOP` and then click `EDIT`\n4. For each Network interface, ensure that External IP is set to None.\n5. Click `Save` and then click `START`\n\n**Using Google Cloud CLI**\n\n1. Describe the instance properties:\n\n```bash\ngcloud compute instances describe <instanceName> --zone=<zone>\n```\n\n2. Identify the access config name that contains the external IP address. This access config appears in the following format:\n\n```json\nnetworkInterfaces:\n- accessConfigs:\n- kind: compute#accessConfig\n name: External NAT\n natIP: 130.211.181.55\n type: ONE_TO_ONE_NAT\n```\n\n3. Delete the access config.\n\n```bash\ngcloud compute instances delete-access-config <instanceName> --zone=<zone> --access-config-name <accessConfigName>\n```\n\nIn the above example, the accessConfigName is External NAT. The name of your access config might be different.\n\n**Prevention**\n\nYou can configure the Define allowed external IPs for VM instances Organization Policy to prevent VMs from being configured with public IP addresses. Learn more at: https://console.cloud.google.com/orgpolicies/compute-vmExternalIpAccess\n\n**Default Value**\n\nBy default, Compute instances have a public IP address.\n\n**References**\n\n1. [https://cloud.google.com/load-balancing/docs/backend-service#backends_and_external_ip_addresses](https://cloud.google.com/load-balancing/docs/backend-service#backends_and_external_ip_addresses)\n2. [https://cloud.google.com/compute/docs/instances/connecting-advanced#sshbetweeninstances](https://cloud.google.com/compute/docs/instances/connecting-advanced#sshbetweeninstances)\n3. [https://cloud.google.com/compute/docs/instances/connecting-to-instance](https://cloud.google.com/compute/docs/instances/connecting-to-instance)\n4. [https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address#unassign_ip](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address#unassign_ip)\n5. [https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints](https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints)\n\n**Additional information**\n\nYou can connect to Linux VMs that do not have public IP addresses by using IdentityAware Proxy for TCP forwarding. Learn more at https://cloud.google.com/compute/docs/instances/connectingadvanced#sshbetweeninstances.\nFor Windows VMs, see https://cloud.google.com/compute/docs/instances/connectingto-instance."
+}
