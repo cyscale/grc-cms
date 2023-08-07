@@ -4,7 +4,11 @@
     "aws-iam-2"
   ],
   "assets": [
-    "Bucket"
+    "Bucket",
+    "Disk",
+    "SQLDatabase",
+    "BlobContainer",
+    "StorageAccount"
   ],
   "propagators": [
     "IAMGroup",
