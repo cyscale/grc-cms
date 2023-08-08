@@ -6,9 +6,7 @@
   "assets": [
     "Bucket",
     "Disk",
-    "SQLDatabase",
-    "BlobContainer",
-    "StorageAccount",
+    "SQSQueue",
     "DBInstance"
   ],
   "propagators": [
