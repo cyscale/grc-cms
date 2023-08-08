@@ -1,7 +1,7 @@
 {
-  "display_name": "Access to Datastores [Test]",
+  "display_name": "Access to Datastores",
   "controls": [
-    "aws-iam-2"
+    "datastores-accessible-by-users-without-mfa"
   ],
   "assets": [
     "Bucket",
