@@ -1,5 +1,5 @@
 {
-  "alertForSecondaryOnly": true,
+  "alertForSecondaryOnly": false,
   "name": "Ensure Datastores are not accessible by users without MFA",
   "description": "Datastores that are accessible by users without MFA",
   "slug": "datastores-accessible-by-users-without-mfa",
