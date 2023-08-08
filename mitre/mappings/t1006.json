@@ -8,7 +8,8 @@
     "Disk",
     "SQLDatabase",
     "BlobContainer",
-    "StorageAccount"
+    "StorageAccount",
+    "DBInstance"
   ],
   "propagators": [
     "IAMGroup",
