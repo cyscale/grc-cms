@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": true,
+  "name": "Ensure Datastores are not accessible by users without MFA",
+  "description": "Datastores that are accessible by users without MFA",
+  "slug": "datastores-accessible-by-users-without-mfa",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "aws-iam-2-multi-factor-authentication-mfa-is-enabled-for-all-iam-users-that-have-a-console-password"
+    }
+  ],
+  "body": "T﻿ODO",
+  "remediationDescription": "T﻿ODO"
+}
