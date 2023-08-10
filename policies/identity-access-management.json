@@ -140,16 +140,16 @@
           "control": "gcp-kubernetes-18"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "gcp-1-1-0-vm-9"
         },
         {
-          "control": "gcp-1-1-0-storage-2"
+          "control": "gcp-buckets-uniform-level-access"
         },
         {
           "control": "okta-app-group-assignments"
@@ -216,10 +216,10 @@
           "control": "gcp-networking-4"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         }
       ]
     },
@@ -247,7 +247,7 @@
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         }
       ]
     },

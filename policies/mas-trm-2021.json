@@ -123,7 +123,7 @@
           "control": "gcp-iam-8"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
           "control": "azure-no-custom-admin-role"
@@ -328,10 +328,10 @@
           "control": "gcp-1-1-0-networking-9"
         },
         {
-          "control": "gcp-1-1-0-networking-4"
+          "control": "gcp-rsasha1-ksk-cloud-dns"
         },
         {
-          "control": "gcp-1-1-0-networking-5"
+          "control": "gcp-rsasha1-zsk-cloud-dns"
         },
         {
           "control": "azure-latest-tls-version"
@@ -359,7 +359,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-1-1-0-iam-9"
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
           "control": "azure-key-vaults-store-secrets"
@@ -390,7 +390,7 @@
           "control": "aws-monitoring-7"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-5"
@@ -503,19 +503,19 @@
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-sql-1-2"
+          "control": "gcp-local-infile-db-flag-mysql"
         },
         {
           "control": "gcp-1-1-0-bigquery-1"
         },
         {
-          "control": "gcp-1-1-0-storage-2"
+          "control": "gcp-buckets-uniform-level-access"
         },
         {
-          "control": "gcp-1-1-0-sql-3-2"
+          "control": "gcp-contained-db-authentication-db-flag-sqlserver"
         },
         {
-          "control": "gcp-1-1-0-sql-3-1"
+          "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
         },
         {
           "control": "gcp-storage-3"
@@ -775,7 +775,7 @@
           "control": "gcp-networking-2"
         },
         {
-          "control": "gcp-1-1-0-networking-3"
+          "control": "gcp-dnssec-enabled-cloud-dns"
         },
         {
           "control": "gcp-kubernetes-16"
@@ -844,7 +844,7 @@
       "body": "Ensure security standards are established for all the components of a virtualisation solution.",
       "controls": [
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "azure-auto-provisioning-log-analystics"
@@ -1015,16 +1015,16 @@
           "control": "gcp-1-1-0-sql-2-1"
         },
         {
-          "control": "gcp-1-1-0-sql-2-2"
+          "control": "gcp-log-connections-db-flag-postgresql"
         },
         {
-          "control": "gcp-1-1-0-sql-2-3"
+          "control": "gcp-log-disconnections-db-flag-postgresql"
         },
         {
           "control": "gcp-1-1-0-sql-2-4"
         },
         {
-          "control": "gcp-1-1-0-sql-2-7"
+          "control": "gcp-log-min-duration-statement-db-flag-postgresql"
         },
         {
           "control": "gcp-1-1-0-sql-2-6"

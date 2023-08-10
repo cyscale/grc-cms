@@ -94,7 +94,7 @@
           "control": "gcp-kubernetes-17"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         }
       ]
     },
@@ -206,7 +206,7 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "okta-app-group-assignments"
@@ -312,16 +312,16 @@
           "control": "gcp-1-1-0-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-9"
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-1-1-0-iam-12"
