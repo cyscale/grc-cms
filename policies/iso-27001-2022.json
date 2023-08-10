@@ -86,22 +86,22 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -207,22 +207,22 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -310,13 +310,13 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "gcp-1-1-0-vm-9"
         },
         {
-          "control": "gcp-1-1-0-sql-1-2"
+          "control": "gcp-local-infile-db-flag-mysql"
         },
         {
           "control": "gcp-sql-1"
@@ -399,13 +399,13 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "gcp-1-1-0-vm-9"
         },
         {
-          "control": "gcp-1-1-0-sql-1-2"
+          "control": "gcp-local-infile-db-flag-mysql"
         },
         {
           "control": "gcp-sql-1"
@@ -520,25 +520,25 @@
           "control": "aws-storage-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-9"
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-storage-2"
+          "control": "gcp-buckets-uniform-level-access"
         },
         {
-          "control": "gcp-1-1-0-sql-3-1"
+          "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
         },
         {
-          "control": "gcp-1-1-0-sql-3-2"
+          "control": "gcp-contained-db-authentication-db-flag-sqlserver"
         },
         {
           "control": "gcp-sql-2"
@@ -632,22 +632,22 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -790,22 +790,22 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -949,13 +949,13 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "gcp-1-1-0-vm-9"
         },
         {
-          "control": "gcp-1-1-0-sql-1-2"
+          "control": "gcp-local-infile-db-flag-mysql"
         },
         {
           "control": "gcp-sql-1"
@@ -1301,16 +1301,16 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-7"
@@ -1352,7 +1352,7 @@
           "control": "gcp-networking-6"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -1370,10 +1370,10 @@
           "control": "gcp-1-1-0-sql-2-1"
         },
         {
-          "control": "gcp-1-1-0-sql-2-2"
+          "control": "gcp-log-connections-db-flag-postgresql"
         },
         {
-          "control": "gcp-1-1-0-sql-2-3"
+          "control": "gcp-log-disconnections-db-flag-postgresql"
         },
         {
           "control": "gcp-1-1-0-sql-2-4"
@@ -1382,7 +1382,7 @@
           "control": "gcp-1-1-0-sql-2-6"
         },
         {
-          "control": "gcp-1-1-0-sql-2-7"
+          "control": "gcp-log-min-duration-statement-db-flag-postgresql"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-6"
@@ -1614,7 +1614,7 @@
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -1681,7 +1681,7 @@
           "control": "gcp-vm-3"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "gcp-1-1-0-vm-9"
@@ -1899,10 +1899,10 @@
           "control": "gcp-iam-5"
         },
         {
-          "control": "gcp-1-1-0-iam-9"
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-1-1-0-networking-9"
@@ -1914,7 +1914,7 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         },
         {
           "control": "gcp-sql-1"

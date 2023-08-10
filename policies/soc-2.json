@@ -156,16 +156,16 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-1-1-0-iam-9"
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-iam-7"
@@ -192,13 +192,13 @@
           "control": "gcp-storage-1"
         },
         {
-          "control": "gcp-1-1-0-storage-2"
+          "control": "gcp-buckets-uniform-level-access"
         },
         {
-          "control": "gcp-1-1-0-sql-3-1"
+          "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
         },
         {
-          "control": "gcp-1-1-0-sql-3-2"
+          "control": "gcp-contained-db-authentication-db-flag-sqlserver"
         },
         {
           "control": "gcp-sql-1"
@@ -254,7 +254,7 @@
           "control": "gcp-iam-3"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -370,7 +370,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
           "control": "gcp-vm-2"
@@ -491,13 +491,13 @@
           "control": "gcp-1-1-0-networking-9"
         },
         {
-          "control": "gcp-1-1-0-sql-2-2"
+          "control": "gcp-log-connections-db-flag-postgresql"
         },
         {
-          "control": "gcp-1-1-0-sql-2-3"
+          "control": "gcp-log-disconnections-db-flag-postgresql"
         },
         {
-          "control": "gcp-1-1-0-sql-2-7"
+          "control": "gcp-log-min-duration-statement-db-flag-postgresql"
         },
         {
           "control": "aws-ecs-12-clusters-should-use-insights"

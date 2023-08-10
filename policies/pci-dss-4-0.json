@@ -84,7 +84,7 @@
           "control": "gcp-storage-1"
         },
         {
-          "control": "gcp-1-1-0-vm-1"
+          "control": "gcp-instances-no-default-service-account"
         },
         {
           "control": "gcp-vm-1"
@@ -121,10 +121,10 @@
           "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "gcp-1-1-0-iam-10"
+          "control": "gcp-kms-keys-rotated-90-days"
         },
         {
-          "control": "gcp-1-1-0-iam-9"
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
           "control": "azure-sql-server-tde-cmk-encryption"
@@ -213,7 +213,7 @@
           "control": "compute-with-exploitable-vulnerabilities"
         },
         {
-          "control": "gcp-1-1-0-vm-8"
+          "control": "gcp-shielded-vm-enabled"
         }
       ]
     },
@@ -266,7 +266,7 @@
           "control": "aws-iam-15"
         },
         {
-          "control": "gcp-1-1-0-iam-6"
+          "control": "gcp-project-lvl-service-account-roles"
         },
         {
           "control": "aws-1-3-0-iam-20"
@@ -275,7 +275,7 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-1-1-0-iam-8"
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
           "control": "azure-admin-resource-lock"
