@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "slug": "gcp-db-require-incoming-conn-ssl",
+  "name": "Ensure the Cloud SQL database instances require all incoming connections to use SSL",
+  "body": "It is recommended to enforce all incoming connections to SQL database instance to use SSL.\n\n**Rationale**\n\nSQL database connections, if successfully trapped (MITM - Man In The Middle), can reveal sensitive data like credentials, database queries, query outputs etc. For security, it is recommended to always use SSL encryption when connecting to your instance. This recommendation is applicable for PostgreSQL, MySQL generation 1, MySQL generation 2, and SQL Server 2017 instances.\n\n*﻿*Impact**\n\nAfter enforcing SSL connection, existing client will not be able to communicate with SQL server unless configured with appropriate client-certificates to communicate to SQL database instance.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "query": "gcp-sql-1-cloud-sql-database-instances-require-all-incoming-connections-to-use-ssl"
+    }
+  ],
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to https://console.cloud.google.com/sql/instances\n2. Click on an instance name to see its configuration overview\n3. In the left-side panel, select `Connections`, then select the `Security` tab\n4. In the SSL connections section, click `Allow only SSL connections`\n5. Under `Configure SSL server certificates` click `Create new certificate`\n6. Under `Configure SSL client certificates` click `Create a client certificate`\n7. Follow the instructions shown to learn how to connect to your instance\n\n**From Google Cloud CLI**\n\nTo enforce SSL encryption for an instance run the command:\n\n```bash\ngcloud sql instances patch <instanceName> --require-ssl\n```\n\n**Note**\n\n`RESTART` is required for type MySQL Generation 1 Instances (`backendType: FIRST_GEN`) to get this configuration in effect.\n\n**Default Value**\n\nBy default parameter settings: `ipConfiguration: requireSsl` is not set which is equivalent to `requireSsl:false`.\n\n**References**\n\n1. [https://cloud.google.com/sql/docs/postgres/configure-ssl-instance/](https://cloud.google.com/sql/docs/postgres/configure-ssl-instance/)\n\n\n**Additional Information**\n\nBy default Settings: ipConfiguration has no authorizedNetworks set/configured. In\nthat case even if by default requireSsl is not set, which is equivalent to\nrequireSsl:false there is no risk as instance cannot be accessed outside of the\nnetwork unless authorizedNetworks are configured. However, If default for requireSsl\nis not updated to true any authorizedNetworks created later on will not enforce SSL\nonly connection."
+}
