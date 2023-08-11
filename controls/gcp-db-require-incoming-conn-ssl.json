@@ -2,7 +2,7 @@
   "alertForSecondaryOnly": false,
   "slug": "gcp-db-require-incoming-conn-ssl",
   "name": "Ensure the Cloud SQL database instances require all incoming connections to use SSL",
-  "body": "It is recommended to enforce all incoming connections to SQL database instance to use SSL.\n\n**Rationale**\n\nSQL database connections, if successfully trapped (MITM - Man In The Middle), can reveal sensitive data like credentials, database queries, query outputs etc. For security, it is recommended to always use SSL encryption when connecting to your instance. This recommendation is applicable for PostgreSQL, MySQL generation 1, MySQL generation 2, and SQL Server 2017 instances.\n\n*﻿*Impact**\n\nAfter enforcing SSL connection, existing client will not be able to communicate with SQL server unless configured with appropriate client-certificates to communicate to SQL database instance.",
+  "body": "It is recommended to enforce all incoming connections to SQL database instance to use SSL.\n\n**Rationale**\n\nSQL database connections, if successfully trapped (MITM - Man In The Middle), can reveal sensitive data like credentials, database queries, query outputs etc. For security, it is recommended to always use SSL encryption when connecting to your instance. This recommendation is applicable for PostgreSQL, MySQL generation 1, MySQL generation 2, and SQL Server 2017 instances.\n\n**Impact**\n\nAfter enforcing SSL connection, existing client will not be able to communicate with SQL server unless configured with appropriate client-certificates to communicate to SQL database instance.",
   "severity": 2,
   "rules": [
     {
