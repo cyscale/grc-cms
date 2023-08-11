@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "slug": "gcp-db-automated-backups",
+  "name": "Ensure Cloud SQL database instances are configured with automated backups",
+  "severity": 2,
+  "rules": [
+    {
+      "query": "gcp-1-1-0-sql-7-cloud-sql-database-instances-are-configured-with-automated-backups",
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]"
+    }
+  ],
+  "body": "It is recommended to have all SQL database instances set to enable automated backups.\n\n**Rationale**\n\nBackups provide a way to restore a Cloud SQL instance to recover lost data or recover from a problem with that instance. Automated backups need to be set for any instance that contains data that should be protected from loss or damage. This recommendation is applicable for SQL Server, PostgreSql, MySql generation 1 and MySql generation 2 instances.\n\n**Impact**\n\nAutomated Backups will increase required size of storage and costs associated with it.",
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to the `Cloud SQL Instances` page in the Google Cloud Console by visiting https://console.cloud.google.com/sql/instances.\n2. Select the instance where the backups need to be configured.\n3. Click `Edit`.\n4. In the `Backups` section, select `Edit` under `Settings`\n5. Check `Automate daily backups` and fill in the required settings.\n6. Click `SAVE`.\n\n**From Google Cloud CLI**\n\n1. List all Cloud SQL database instances using the following command:\n\n```bash\ngcloud sql instances list\n```\n\n2. Enable `Automated backups` for every Cloud SQL database instance using the below command:\n\n```bash\ngcloud sql instances patch <instanceName> --backup-start-time <HH:MM>\n```\n\n**Note**\n\nThe `backup-start-time` parameter is specified in 24-hour time, in the UTC±00 time zone, and specifies the start of a 4-hour backup window. Backups can start any time during the backup window.\n\n**Default Value**\n\nBy default, automated backups are not configured for Cloud SQL instances. Data backup is not possible on any Cloud SQL instance unless Automated Backup is configured.\n\n**References**\n\n1. [https://cloud.google.com/sql/docs/mysql/backup-recovery/backups](https://cloud.google.com/sql/docs/mysql/backup-recovery/backups)\n2. [https://cloud.google.com/sql/docs/postgres/backup-recovery/backing-up](https://cloud.google.com/sql/docs/postgres/backup-recovery/backing-up)\n"
+}
