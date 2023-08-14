@@ -1,21 +1,21 @@
 {
-  "alertForSecondaryOnly": false,
-  "name": "Ensure Cloud SQL database instances do not have public IPs",
-  "slug": "gcp-sql-db-no-public-ips",
-  "severity": 2,
+  "name": "Ensure BigQuery datasets are not anonymously or publicly accessible",
+  "severity": 3,
   "rules": [
     {
+      "query": "gcp-1-1-0-bigquery-1-bigquery-datasets-are-not-anonymously-or-publicly-accessible",
+      "subjects": [
+        "BigQueryTable"
+      ],
       "cloudProviders": [
         "gcp"
       ],
       "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "CloudSQLInstance"
-      ],
-      "query": "gcp-1-1-0-sql-6-cloud-sql-database-instances-do-not-have-public-ips"
+      "expectedResult": "[]"
     }
   ],
-  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to the `Cloud SQL Instances` page in the Google Cloud Console by visiting https://console.cloud.google.com/sql/instances\n2. Select the instance name to open its `Overview` page\n3. Navigate to `Connections`, and then to `NETWORKING`\n4. Deselect the `Public IP` checkbox\n4. Click `Save`\n\n**From Google Cloud CLI**\n\n1. For every instance, remove its public IP and assign a private IP instead:\n\n```bash\ngcloud sql instances patch <instanceName> --network=<VPCNetworkName> --noassign-ip\n```\n\n2. Confirm the changes using the following command:\n\n```bash\ngcloud sql instances describe <instanceName>\n```\n\n**Prevention**\n\nTo prevent new SQL instances from getting configured with public IP addresses, set up a `Restrict Public IP access on Cloud SQL instances` Organization policy at: https://console.cloud.google.com/iam-admin/orgpolicies/sql-restrictPublicIp.\n\n**Default Value**\n\nBy default, Cloud Sql instances have a public IP.\n\n**References**\n\n1. [https://cloud.google.com/sql/docs/mysql/configure-private-ip](https://cloud.google.com/sql/docs/mysql/configure-private-ip)\n2. [https://cloud.google.com/sql/docs/mysql/private-ip](https://cloud.google.com/sql/docs/mysql/private-ip)\n3. [https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints](https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints)\n4. [https://console.cloud.google.com/iam-admin/orgpolicies/sql-restrictPublicIp](https://console.cloud.google.com/iam-admin/orgpolicies/sql-restrictPublicIp)\n\n**Addititonal information**\n\nReplicas inherit their private IP status from their primary instance. You cannot configure a private IP directly on a replica.",
-  "body": "It is recommended to configure Second Generation Sql instance to use private IPs instead of public IPs.\n\n**Rationale**\n\nTo lower the organization's attack surface, Cloud SQL databases should not have public IPs. Private IPs provide improved network security and lower latency for your application.\n\n**Impact**\n\nRemoving the public IP address on SQL instances may break some applications that relied on it for database connectivity."
+  "slug": "gcp-bigquery-publicly-accessible",
+  "body": "It is recommended that the IAM policy on BigQuery datasets does not allow anonymous and/or public access.\n\n**Rationale**\n\nGranting permissions to `allUsers` or `allAuthenticatedUsers` allows anyone to access the dataset. Such access might not be desirable if sensitive data is being stored in the dataset. Therefore, ensure that anonymous and/or public access to a dataset is not allowed.\n\n**Impact**\n\nThe dataset is not publicly accessible. Explicit modification of IAM privileges would be necessary to make them publicly accessible.\n\n",
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to BigQuery by visiting: https://console.cloud.google.com/bigquery\n2. Select the dataset from `Explorer`\n3. Click `SHARING` near the right side of the window and select `Permissions`\n4. Review each attached role\n5. Click the delete icon for each member `allUsers` or `allAuthenticatedUsers`. On the popup, click `Remove`\n\n**From Google Cloud CLI**\n\nList the name of all datasets.\n\n```bash\nbq ls\n```\n\nRetrieve the data set details:\n\n```bash\nbq show --format=prettyjson <projectID>:<datasetName> <pathToFile>\n```\n\nIn the access section of the JSON file, update the dataset information to remove all roles containing allUsers or allAuthenticatedUsers. Update the dataset:\n\n```bash\nbq update --source <pathToFile> <projectID>:<datasetName>\n```\n\n**Prevention**\n\nYou can prevent Bigquery dataset from becoming publicly accessible by setting up the `Domain restricted sharing` organization policy at: https://console.cloud.google.com/iam-admin/orgpolicies/iamallowedPolicyMemberDomains.\n\n**Default Value**\n\nBy default, BigQuery datasets are not publicly accessible.\n\n**References**\n\n1. [https://cloud.google.com/bigquery/docs/dataset-access-controls](https://cloud.google.com/bigquery/docs/dataset-access-controls)",
+  "alertForSecondaryOnly": false
 }
