@@ -1,5 +1,5 @@
 {
   "name": "Publicly Readable Google Cloud Buckets",
   "slug": "publicly-readable-gcp-buckets",
-  "query": "{ buckets( where: { cloudProvider: \"gcp\" publicAccessBlocked: false hasIAMPolicy_SOME: { bindings_SOME: { OR: [ { members_INCLUDES: \"allUsers\" } { members_INCLUDES: \"allAuthenticatedUsers\" } ] role: { OR: [ { includedPermissions_INCLUDES: \"storage.objects.get\" } { includedPermissions_INCLUDES: \"storage.objects.list\" } { includedPermissions_INCLUDES: \"storage.objects.*\" } ] } } } } ) {...AssetFragment} } "
+  "query": "{ buckets( where: { cloudProvider: \"gcp\" publicAccessBlocked: false iamBindings_SOME: { OR: [ { members_INCLUDES: \"allUsers\" } { members_INCLUDES: \"allAuthenticatedUsers\" } ] role: { OR: [ { includedPermissions_INCLUDES: \"storage.objects.get\" } { includedPermissions_INCLUDES: \"storage.objects.list\" } { includedPermissions_INCLUDES: \"storage.objects.*\" } ] } } } ) {...AssetFragment} } "
 }
