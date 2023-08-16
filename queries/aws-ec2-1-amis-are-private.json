@@ -1,1 +1,1 @@
-{"name":"AMIs Are Private","slug":"aws-ec2-1-amis-are-private","query":"{images(where:{isPublic:true}){...AssetFragment}}"}
+{"name":"AMIs Are Private","slug":"aws-ec2-1-amis-are-private","query":"{amis(where:{isPublic:true}){...AssetFragment}}"}
