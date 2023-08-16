@@ -8,31 +8,123 @@
   "procedures": [
     {
       "name": "1. Identity and Access Management",
-      "slug": "cis-gcp-2-0-0-iam"
+      "slug": "cis-gcp-2-0-0-iam",
+      "controls": [
+        {
+          "control": "gcp-separation-of-duties-service-account"
+        },
+        {
+          "control": "gcp-project-lvl-service-account-roles"
+        },
+        {
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
+        },
+        {
+          "control": "gcp-kms-keys-rotated-90-days"
+        },
+        {
+          "control": "gcp-service-account-admin-privileges"
+        }
+      ]
     },
     {
       "name": "2. Logging and Monitoring",
-      "slug": "cis-gcp-2-0-0-logging"
+      "slug": "cis-gcp-2-0-0-logging",
+      "controls": [
+        {
+          "control": "gcp-bucket-lock-log-buckets"
+        }
+      ]
     },
     {
       "name": "3. Networking",
-      "slug": "cis-gcp-2-0-0-networking"
+      "slug": "cis-gcp-2-0-0-networking",
+      "controls": [
+        {
+          "control": "gcp-dnssec-enabled-cloud-dns"
+        },
+        {
+          "control": "gcp-rsasha1-ksk-cloud-dns"
+        },
+        {
+          "control": "gcp-rsasha1-zsk-cloud-dns"
+        },
+        {
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
+        }
+      ]
     },
     {
       "name": "4. Virtual Machines",
-      "slug": "cis-gcp-2-0-0-vm"
+      "slug": "cis-gcp-2-0-0-vm",
+      "controls": [
+        {
+          "control": "gcp-instances-no-default-service-account"
+        },
+        {
+          "control": "gcp-shielded-vm-enabled"
+        },
+        {
+          "control": "gcp-vms-public-ip-addresses"
+        }
+      ]
     },
     {
       "name": "5. Storage",
-      "slug": "cis-gcp-2-0-0-storage"
+      "slug": "cis-gcp-2-0-0-storage",
+      "controls": [
+        {
+          "control": "gcp-buckets-uniform-level-access"
+        },
+        {
+          "control": "gcp-bucket-publicly-accessible"
+        }
+      ]
     },
     {
       "name": "6. Cloud SQL Database Services",
-      "slug": "cis-gcp-2-0-0-db"
+      "slug": "cis-gcp-2-0-0-db",
+      "controls": [
+        {
+          "control": "gcp-local-infile-db-flag-mysql"
+        },
+        {
+          "control": "gcp-log-connections-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-disconnections-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-messages-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-duration-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
+        },
+        {
+          "control": "gcp-contained-db-authentication-db-flag-sqlserver"
+        },
+        {
+          "control": "gcp-db-require-incoming-conn-ssl"
+        },
+        {
+          "control": "gcp-db-automated-backups"
+        },
+        {
+          "control": "gcp-sql-db-no-public-ips"
+        }
+      ]
     },
     {
       "name": "7. BigQuery",
-      "slug": "cis-gcp-2-0-0-bigquery"
+      "slug": "cis-gcp-2-0-0-bigquery",
+      "controls": [
+        {
+          "control": "gcp-bigquery-publicly-accessible"
+        }
+      ]
     }
   ]
 }
