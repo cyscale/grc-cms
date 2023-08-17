@@ -9,8 +9,6 @@
   "propagators": [
     "VM",
     "Function",
-    "NetworkInterface",
-    "Subnetwork",
     "IAMRole",
     "IAMPolicy"
   ],
