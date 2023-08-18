@@ -1,0 +1,5 @@
+{
+  "name": "Ensure That Compute Instances Have Confidential Computing Enabled",
+  "slug": "gcp-query-confidential-computing",
+  "query": "{\n  vms(where: { cloudProvider: \"gcp\", NOT:{enableConfidentialCompute: true} }) {\n    ...AssetFragment\n  }\n}\n"
+}
