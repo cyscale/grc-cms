@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "body": "The value of the `log_statement` flag determined the SQL statements that are logged. Valid values are:\n• `none`\n• `ddl`\n• `mod`\n• `all`\nThe value `ddl` logs all data definition statements. The value `mod` logs all ddl statements, plus data-modifying statements.\n\nThe statements are logged after a basic parsing is done and statement type is determined, thus this does not logs statements with errors. When using extended query\nprotocol, logging occurs after an Execute message is received and values of the Bind parameters are included.\n\nA value of 'ddl' is recommended unless otherwise directed by your organization's logging policy.\n\n**Rationale**\n\nAuditing helps in forensic analysis. If `log_statement` is not set to the correct value, too many statements may be logged leading to issues in finding the relevant information from the logs, or too few statements may be logged with relevant information missing from the logs. Setting `log_statement` to align with your organization's security and logging policies facilitates later auditing and review of database activities. This recommendation is applicable to PostgreSQL database instances.\n\n**Impact**\n\nTurning on logging will increase the required storage over time. Mismanaged logs may cause your storage costs to increase. Setting custom flags via command line on certain instances will cause all omitted flags to be reset to defaults. This may cause you to lose custom flags and could result in unforeseen complications or instance restarts. Because of this, it is recommended you apply these flags changes during a period of low usage.",
+  "name": "Ensure ‘log_statement’ database flag for Cloud SQL PostgreSQL instance is set appropriately",
+  "slug": "gcp-log-statement-db-flag-postgresql",
+  "severity": 1,
+  "remediationDescription": "\n**From Google Cloud Console**\n\n1. Go to the `Cloud SQL Instances` page in the Google Cloud Console by visiting https://console.cloud.google.com/sql/instances\n2. Select the PostgreSQL instance where the database flag needs to be enabled\n3. Click `Edit`\n4. Scroll down to the `Flags` section\n5. To set a flag that has not been set on the instance before, click `Add item`, choose the flag `log_statement` from the drop-down menu, and set its value to an appropriate one\n6. Click Save\n7. Confirm the changes under `Flags` on the `Overview` page\n\n**Using Google Cloud CLI**\n\nConfigure the `log_statement` database flag for every Cloud SQL PostgreSQL database instance using the below command:\n\n```bash\ngcloud sql instances patch <instanceName> --database-flags log_statement=<ddl|mod|all|none>\n```\n\nNote: This command will overwrite all database flags that were previously set. To keep those and add new ones, include the values for all flags to be set on the instance; any flag not specifically included is set to its default value. For flags that do not take a value, specify the flag name followed by an equals sign (\"=\").\n\n**Default Value**\n\nBy default `log_statement` is `NONE`.\n\n**References**\n\n1. [https://cloud.google.com/sql/docs/postgres/flags](https://cloud.google.com/sql/docs/postgres/flags)\n2. [https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-WHAT](https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-WHAT)\n\n**Additional information**\n\nWARNING: This patch modifies database flag values, which may require the instance to be restarted. Check the list of supported flags https://cloud.google.com/sql/docs/postgres/flags - to see if your instance will be restarted when this patch is submitted.\n\nNote: Some database flag settings can affect instance availability or stability, and remove the instance from the Cloud SQL SLA. For information about these flags, see Operational Guidelines.\n\nNote: Configuring the above flag restarts the Cloud SQL instance.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "query": "gcp-query-log-statement-db-flag-postgresql"
+    }
+  ]
+}
