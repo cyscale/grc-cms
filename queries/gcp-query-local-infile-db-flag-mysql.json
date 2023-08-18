@@ -1,0 +1,5 @@
+{
+  "query": "{\ncloudSqlInstances(\n   where: {\n      engine: \"mysql\"\n      cloudProvider: \"gcp\"\n      OR: [\n        { dbFlags_NONE: { name: \"skip_show_database\" } }\n        { dbFlags_SOME: { name: \"skip_show_database\", value: \"off\" } }\n      ]\n    }\n  ) {\n     ...AssetFragment\n  }}",
+  "slug": "gcp-query-local-infile-db-flag-mysql",
+  "name": "Ensure ‘skip_show_database’ database flag for Cloud SQL MySQL instance is set to ‘On’"
+}
