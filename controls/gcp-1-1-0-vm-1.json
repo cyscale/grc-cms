@@ -1,1 +1,0 @@
-{"name":"Ensure that instances are not configured to use the default service account","slug":"gcp-1-1-0-vm-1","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["VM"],"query":"gcp-1-1-0-vm-1-instances-are-not-configured-to-use-the-default-service-account","returnPath":""}]}
