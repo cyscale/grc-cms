@@ -1,0 +1,5 @@
+{
+  "slug": "gcp-query-log-error-verbosity-db-flag-postgresql",
+  "name": "Ensure ‘log_error_verbosity’ database flag for Cloud SQL PostgreSQL instance is set to ‘DEFAULT’ or stricter",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"postgresql\"\n      cloudProvider: \"gcp\"\n      dbFlags_SOME: { name: \"log_error_verbosity\", value: \"verbose\" }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
