@@ -24,6 +24,9 @@
         },
         {
           "control": "gcp-service-account-admin-privileges"
+        },
+        {
+          "control": "gcp-secrets-not-in-env-variables"
         }
       ]
     },
@@ -66,6 +69,9 @@
         },
         {
           "control": "gcp-vms-public-ip-addresses"
+        },
+        {
+          "control": "gcp-confidential-computing"
         }
       ]
     },
@@ -114,6 +120,15 @@
         },
         {
           "control": "gcp-sql-db-no-public-ips"
+        },
+        {
+          "control": "gcp-skip-show-db-flag-mysql"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-statement-db-flag-postgresql"
         }
       ]
     },
