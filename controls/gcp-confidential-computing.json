@@ -1,0 +1,21 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Compute Instances have Confidential Computing Enabled",
+  "slug": "gcp-confidential-computing",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "gcp-query-confidential-computing"
+    }
+  ],
+  "body": "Google Cloud encrypts data at-rest and in-transit, but customer data must be decrypted for processing. Confidential Computing is a breakthrough technology which encrypts data in-use while it is being processed. Confidential Computing environments keep data encrypted in memory and elsewhere outside the central processing unit (CPU). \n\nConfidential VMs leverage the Secure Encrypted Virtualization (SEV) feature of AMD EPYC™ CPUs. Customer data will stay encrypted while it is used, indexed, queried, or trained on. Encryption keys are generated in hardware, per VM, and not exportable. Thanks to built-in hardware optimizations of both performance and security, there is no significant performance penalty to Confidential Computing workloads.\n\n**Rationale**\n\nConfidential Computing enables customers' sensitive code and other data encrypted in memory during processing. Google does not have access to the encryption keys. Confidential VM can help alleviate concerns about risk related to either dependency on Google infrastructure or Google insiders' access to customer data in the clear.\n\n**Impact**\n\n• Confidential Computing for Compute instances does not support live migration. Unlike regular Compute instances, Confidential VMs experience disruptions during maintenance events like a software or hardware update.\n• Additional charges may be incurred when enabling this security feature. See https://cloud.google.com/compute/confidential-vm/pricing for more info.",
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to the `VM instances` page by visiting: https://console.cloud.google.com/compute/instances\n2. Click `CREATE INSTANCE`\n3. Fill out the desired configuration for your instance\n4. Under the `Confidential VM service` section, select `ENABLE` and then again `ENABLE`\n5. Click `Create`.\n\n**Using Google Cloud CLI**\n\nCreate a new instance with Confidential Compute enabled.\n\n```bash\ngcloud compute instances create <instanceName> --zone <zone> --confidential-compute --maintenance-policy=TERMINATE \n```\n\n**Default value**\n\nBy default, Confidential Computing is disabled for Compute instances.\n\n**References**\n\n1. [https://cloud.google.com/compute/confidential-vm/docs/creating-cvm-instance](https://cloud.google.com/compute/confidential-vm/docs/creating-cvm-instance)\n2. [https://cloud.google.com/compute/confidential-vm/docs/about-cvm](https://cloud.google.com/compute/confidential-vm/docs/about-cvm)\n3. [https://cloud.google.com/confidential-computing](https://cloud.google.com/confidential-computing)\n4. [https://cloud.google.com/blog/products/identity-security/introducing-google-cloud-confidential-computing-with-confidential-vms](https://cloud.google.com/blog/products/identity-security/introducing-google-cloud-confidential-computing-with-confidential-vms)"
+}
