@@ -1,0 +1,5 @@
+{
+  "name": "Ensure ‘log_statement’ database flag for Cloud SQL PostgreSQL instance is set appropriately",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"postgresql\"\n      cloudProvider: \"gcp\"\n      dbFlags_NONE: { name: \"log_statement\" }\n    }\n  ) {\n     ...AssetFragment\n  }\n}",
+  "slug": "gcp-query-log-statement-db-flag-postgresql"
+}
