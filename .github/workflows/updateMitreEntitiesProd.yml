@@ -30,28 +30,28 @@ jobs:
           inlineScript: |
             # Handle MITRE tactics
             for file in ./mitre/tactics/*.json; do
-              mid=$(cat $file | jq -r '.mid')
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "tactic" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "tactic", "operation": $operation}')
+              mid=$(cat $file | jq -r '.mid') || continue
+              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "tactic" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "tactic", "operation": $operation}') || continue
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
+              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
 
             # Handle MITRE techniques
             for file in ./mitre/techniques/*.json; do
-              mid=$(cat $file | jq -r '.mid')
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "technique" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "technique", "operation": $operation}')
+              mid=$(cat $file | jq -r '.mid') || continue
+              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "technique" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "technique", "operation": $operation}') || continue
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
+              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             # Handle MITRE mappings
             for file in ./mitre/mappings/*.json; do
-              mid=$(cat $file | jq -r '.mid')
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "mapping" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "mapping", "operation": $operation}')
+              mid=$(cat $file | jq -r '.mid') || continue
+              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "mapping" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "mapping", "operation": $operation}') || continue
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
+              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done

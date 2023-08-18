@@ -29,10 +29,10 @@ jobs:
           azcliversion: 2.37.0
           inlineScript: |
             for file in ./controls/*.json; do
-              slug=$(cat $file | jq -r '.slug')
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "control" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "control", "operation": $operation}')
+              slug=$(cat $file | jq -r '.slug') || continue
+              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "control" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "control", "operation": $operation}') || continue
 
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             rm -f entity.json
