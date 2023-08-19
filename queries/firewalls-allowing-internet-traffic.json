@@ -1,0 +1,5 @@
+{
+  "slug": "firewalls-allowing-internet-traffic",
+  "name": "Firewalls allowing internet traffic",
+  "query": "{\n  firewalls(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        OR: [\n          { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n          { sources_INCLUDES: \"cidr:::/0\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
