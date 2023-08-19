@@ -19,7 +19,6 @@
   "assets": [
     "Bucket",
     "BlobContainer",
-    "LogProfile",
     "DBInstance",
     "CosmosDBAccount",
     "BigQueryTable",
@@ -28,13 +27,15 @@
     "MySQLFlexibleServer",
     "PostgreSQLServer",
     "PostgreSQLFlexibleServer",
-    "MariaDBServer"
+    "MariaDBServer",
+    "CloudSpanner",
+    "CloudSQLInstance",
+    "BigTable"
   ],
   "propagators": [
     "VM",
     "IAMPolicy",
     "IAMRole",
-    "IAMServiceAccount",
-    "Project"
+    "IAMServiceAccount"
   ]
 }
