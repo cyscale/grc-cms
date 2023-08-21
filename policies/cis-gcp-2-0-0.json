@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "CIS Google Cloud Foundation Benchmark",
   "isStandard": true,
   "slug": "cis-gcp-2-0-0",
@@ -35,9 +35,16 @@
       "slug": "cis-gcp-2-0-0-logging",
       "controls": [
         {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
           "control": "gcp-bucket-lock-log-buckets"
         }
-      ]
+      ],
+      "body": "This section covers recommendations addressing Logging and Monitoring on Google\r\nCloud."
     },
     {
       "name": "3. Networking",
