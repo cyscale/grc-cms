@@ -48,6 +48,9 @@
         },
         {
           "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-6"
         }
       ],
       "body": "This section covers recommendations addressing Logging and Monitoring on Google\r\nCloud."
