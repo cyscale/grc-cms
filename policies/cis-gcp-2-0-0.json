@@ -42,6 +42,12 @@
         },
         {
           "control": "gcp-bucket-lock-log-buckets"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-5"
         }
       ],
       "body": "This section covers recommendations addressing Logging and Monitoring on Google\r\nCloud."
