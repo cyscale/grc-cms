@@ -83,7 +83,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"
@@ -204,7 +204,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"
@@ -629,7 +629,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"
@@ -787,7 +787,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"
@@ -1298,7 +1298,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"

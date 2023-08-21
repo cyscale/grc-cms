@@ -198,7 +198,7 @@
           "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-5"

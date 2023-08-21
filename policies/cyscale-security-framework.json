@@ -18,7 +18,7 @@
           "control": "gcp-iam-2"
         },
         {
-          "control": "gcp-iam-3"
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-iam-5"
