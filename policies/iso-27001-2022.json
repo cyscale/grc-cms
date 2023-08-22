@@ -544,7 +544,7 @@
           "control": "gcp-sql-2"
         },
         {
-          "control": "gcp-1-1-0-bigquery-1"
+          "control": "gcp-bigquery-publicly-accessible"
         },
         {
           "control": "gcp-storage-1"

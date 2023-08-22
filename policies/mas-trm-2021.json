@@ -506,7 +506,7 @@
           "control": "gcp-local-infile-db-flag-mysql"
         },
         {
-          "control": "gcp-1-1-0-bigquery-1"
+          "control": "gcp-bigquery-publicly-accessible"
         },
         {
           "control": "gcp-buckets-uniform-level-access"

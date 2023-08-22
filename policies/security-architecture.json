@@ -1,1 +1,81 @@
-{"name":"Security Architecture and Design","slug":"security-architecture","body":"## Policy Statement\n\nThis policy is to present system-level security principles to be considered in the design, development, and operation of an information system, especially in the cloud-first era. This should constantly be in the company's mindset and especially in the management board to ensure maximum security is achieved in business operations, product development, and customer care.\n\nMost of \u003cVar keyName=\"companyName\"/\u003e's Security Architecture and Design model is derived from the [OWASP-maintained Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/model/).\n\n#### Scope\n\nPeople, processes, technology, and devices.\n\n#### Objectives\n\n- Security should be a topic at all forums, e.g. engineering weekly calls and throughout the organization;\n- Ensure systems and business resilience with best practices for all business, operational, and technical departments;\n- Cloud-first, cloud-native, and data-centric culture;\n- Automate security, compliance, development, deployment, and monitoring using repeatable scripts and tools;\n- Enforce and raise awareness for the \"*Never trust, always verify*\" principle.\n\n## Procedures\n\n\u003cProcedure slug=\"secure-dev-env\"/\u003e\n\u003cProcedure slug=\"secure-prod-env\"/\u003e\n\u003cProcedure slug=\"secure-cloud\"/\u003e\n\u003cProcedure slug=\"secure-principles\"/\u003e\n\u003cProcedure slug=\"server-hardening\"/\u003e\n\n","version":"1","isStandard":false,"enabled":true,"procedures":[{"name":"Secure Development Environment","slug":"secure-dev-env","body":"Maintaining a secure development environment is essential for the development of a secure architecture that provides good functionality for the organization whilst minimizing risk.\n\nIt consists of a few major components which are subdivided as per their functional scope:\n\n- Business of security - the way information security is practiced in \u003cVar keyName=\"companyName\"/\u003e;\n- The Cloud;\n- DevXOps - DevOps, DevSecOps, DevCloudOps - technical operations;\n- Developers - developers and development process ([SDLC](/policies/sdlc/show));\n- Technology.","controls":null},{"name":"Secure Production Environment","slug":"secure-prod-env","body":"1. Production Systems are created after the CISO has approved a request, which is then forward to the DevOps and Security Teams\n\n1. If the system will be used to store **Protected** data, the requester must ensure the volume containing this sensitive data is encrypted\n\n1. The requester and Security Team will ensure that the system hardening has been performed as detailed in the [System Hardening Procedure](/policies/security-architecture/show?active=server-hardening)\n\n1. Production environments are activated only after a final inspection and validation that all required procedures were respected","controls":null},{"name":"Secure Cloud Architecture","slug":"secure-cloud","body":"\u003cVar keyName=\"companyName\"/\u003e operates a Cloud-first model, which puts cloud-native, containers, and cloud functions at the base of the software products it develops and commercializes.\n\nA detailed implementation diagram with virtual network components and the software used to glue everything together is maintained in the company's Wiki pages. Autoscaling is enabled across multiple data centers in multiple regions around the world for resilience. The network topology segments network traffic into the following zones:\n\n-  Inspection Zone to ensure all inbound and outbound network traffic is monitored (think WAF);\n-  Private Web Tier for all web servers and content;\n-  Private Application Tier to segregate Web and Application tiers;\n-  Private data zone for transactions, processing, and asset inventory or other persistent data;\n-  Monitoring zone to store all logs and analysis.","controls":[{"control":"networking-ssh-from-internet"},{"control":"aws-monitoring-10"},{"control":"aws-networking-2"},{"control":"aws-networking-3"},{"control":"aws-1-3-0-networking-1"},{"control":"aws-1-3-0-networking-2"},{"control":"gcp-kubernetes-14"},{"control":"gcp-1-1-0-vm-9"},{"control":"gcp-1-1-0-sql-6"},{"control":"gcp-1-1-0-bigquery-1"}]},{"name":"Principles of Engineering Secure Systems","slug":"secure-principles","body":"These principles would be used from the onset of a program (at the beginning of, or during the initiation phase) and then employed throughout the system's life-cycle. These principles are also helpful in affirming and confirming the security posture of already deployed information systems.\n\nThere are several security principles grouped into the following categories:\n\n1. Security Foundation\n1. Risk-Based\n1. Ease of Use\n1. Increase Resilience\n1. Reduce Vulnerabilities\n1. Design with Network in Mind","controls":[{"control":"aws-monitoring-11"},{"control":"aws-monitoring-12"},{"control":"aws-1-3-0-networking-1"},{"control":"aws-1-3-0-networking-2"},{"control":"gcp-logging-7"},{"control":"gcp-logging-8"},{"control":"gcp-logging-9"},{"control":"gcp-networking-1"},{"control":"gcp-networking-2"},{"control":"gcp-networking-5"},{"control":"gcp-networking-6"},{"control":"gcp-kubernetes-4"},{"control":"gcp-kubernetes-11"},{"control":"gcp-dnssec-enabled-cloud-dns"},{"control":"gcp-rsasha1-ksk-cloud-dns"},{"control":"gcp-rsasha1-zsk-cloud-dns"},{"control":"gcp-1-1-0-networking-9"}]},{"name":"Server Hardening","slug":"server-hardening","body":"#### Linux\n\nSecurity configuration is maintained as code and applied automatically. Hardening consists of:\n\n   - Disk encryption;\n   - Installing and configuring pre-approved NTP server;\n   - Up-to-date with security patches;\n   - Stopping and disabling any unnecessary services;\n   - Expiration of SSH connections after 5 minutes of session inactivity;\n   - Installing and configuring endpoint protection;\n   - Configuring monitoring and audit logging as described in the [System Audits, Monitoring and Assessments Policy](/policies/systems-audit/show).\n\n#### Windows\n\nSecurity configuration is maintained in Group Policy and can also be applied automatically. Hardening consists of:\n\n   - Register on \u003cVar keyName=\"companyName\"/\u003e Active Directory and apply AD Group Policy configuration;\n   - Disk encryption;\n   - Installing and configuring pre-approved NTP server;\n   - Up-to-date with security patches;\n   - Stopping and disabling any unnecessary services;\n   - Expiration of remote connections after 5 minutes of session inactivity;\n   - Configuring monitoring and audit logging as described in the [System Audits, Monitoring and Assessments Policy](/policies/systems-audit/show).","controls":[{"control":"aws-iam-12"},{"control":"aws-logging-7"},{"control":"aws-1-3-0-iam-18"},{"control":"gcp-iam-2"},{"control":"gcp-service-account-admin-privileges"},{"control":"gcp-vm-2"},{"control":"gcp-vm-4"},{"control":"gcp-vm-6"},{"control":"gcp-instances-no-default-service-account"},{"control":"gcp-shielded-vm-enabled"},{"control":"gcp-1-1-0-vm-9"}]}]}
+{
+  "name": "Security Architecture and Design",
+  "slug": "security-architecture",
+  "body": "## Policy Statement\n\nThis policy is to present system-level security principles to be considered in the design, development, and operation of an information system, especially in the cloud-first era. This should constantly be in the company's mindset and especially in the management board to ensure maximum security is achieved in business operations, product development, and customer care.\n\nMost of \u003cVar keyName=\"companyName\"/\u003e's Security Architecture and Design model is derived from the [OWASP-maintained Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/model/).\n\n#### Scope\n\nPeople, processes, technology, and devices.\n\n#### Objectives\n\n- Security should be a topic at all forums, e.g. engineering weekly calls and throughout the organization;\n- Ensure systems and business resilience with best practices for all business, operational, and technical departments;\n- Cloud-first, cloud-native, and data-centric culture;\n- Automate security, compliance, development, deployment, and monitoring using repeatable scripts and tools;\n- Enforce and raise awareness for the \"*Never trust, always verify*\" principle.\n\n## Procedures\n\n\u003cProcedure slug=\"secure-dev-env\"/\u003e\n\u003cProcedure slug=\"secure-prod-env\"/\u003e\n\u003cProcedure slug=\"secure-cloud\"/\u003e\n\u003cProcedure slug=\"secure-principles\"/\u003e\n\u003cProcedure slug=\"server-hardening\"/\u003e\n\n",
+  "version": "1",
+  "isStandard": false,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "Secure Development Environment",
+      "slug": "secure-dev-env",
+      "body": "Maintaining a secure development environment is essential for the development of a secure architecture that provides good functionality for the organization whilst minimizing risk.\n\nIt consists of a few major components which are subdivided as per their functional scope:\n\n- Business of security - the way information security is practiced in \u003cVar keyName=\"companyName\"/\u003e;\n- The Cloud;\n- DevXOps - DevOps, DevSecOps, DevCloudOps - technical operations;\n- Developers - developers and development process ([SDLC](/policies/sdlc/show));\n- Technology.",
+      "controls": null
+    },
+    {
+      "name": "Secure Production Environment",
+      "slug": "secure-prod-env",
+      "body": "1. Production Systems are created after the CISO has approved a request, which is then forward to the DevOps and Security Teams\n\n1. If the system will be used to store **Protected** data, the requester must ensure the volume containing this sensitive data is encrypted\n\n1. The requester and Security Team will ensure that the system hardening has been performed as detailed in the [System Hardening Procedure](/policies/security-architecture/show?active=server-hardening)\n\n1. Production environments are activated only after a final inspection and validation that all required procedures were respected",
+      "controls": null
+    },
+    {
+      "name": "Secure Cloud Architecture",
+      "slug": "secure-cloud",
+      "body": "\u003cVar keyName=\"companyName\"/\u003e operates a Cloud-first model, which puts cloud-native, containers, and cloud functions at the base of the software products it develops and commercializes.\n\nA detailed implementation diagram with virtual network components and the software used to glue everything together is maintained in the company's Wiki pages. Autoscaling is enabled across multiple data centers in multiple regions around the world for resilience. The network topology segments network traffic into the following zones:\n\n-  Inspection Zone to ensure all inbound and outbound network traffic is monitored (think WAF);\n-  Private Web Tier for all web servers and content;\n-  Private Application Tier to segregate Web and Application tiers;\n-  Private data zone for transactions, processing, and asset inventory or other persistent data;\n-  Monitoring zone to store all logs and analysis.",
+      "controls": [
+        { "control": "networking-ssh-from-internet" },
+        { "control": "aws-monitoring-10" },
+        { "control": "aws-networking-2" },
+        { "control": "aws-networking-3" },
+        { "control": "aws-1-3-0-networking-1" },
+        { "control": "aws-1-3-0-networking-2" },
+        { "control": "gcp-kubernetes-14" },
+        { "control": "gcp-1-1-0-vm-9" },
+        { "control": "gcp-1-1-0-sql-6" },
+        { "control": "gcp-bigquery-publicly-accessible" }
+      ]
+    },
+    {
+      "name": "Principles of Engineering Secure Systems",
+      "slug": "secure-principles",
+      "body": "These principles would be used from the onset of a program (at the beginning of, or during the initiation phase) and then employed throughout the system's life-cycle. These principles are also helpful in affirming and confirming the security posture of already deployed information systems.\n\nThere are several security principles grouped into the following categories:\n\n1. Security Foundation\n1. Risk-Based\n1. Ease of Use\n1. Increase Resilience\n1. Reduce Vulnerabilities\n1. Design with Network in Mind",
+      "controls": [
+        { "control": "aws-monitoring-11" },
+        { "control": "aws-monitoring-12" },
+        { "control": "aws-1-3-0-networking-1" },
+        { "control": "aws-1-3-0-networking-2" },
+        { "control": "gcp-logging-7" },
+        { "control": "gcp-logging-8" },
+        { "control": "gcp-logging-9" },
+        { "control": "gcp-networking-1" },
+        { "control": "gcp-networking-2" },
+        { "control": "gcp-networking-5" },
+        { "control": "gcp-networking-6" },
+        { "control": "gcp-kubernetes-4" },
+        { "control": "gcp-kubernetes-11" },
+        { "control": "gcp-dnssec-enabled-cloud-dns" },
+        { "control": "gcp-rsasha1-ksk-cloud-dns" },
+        { "control": "gcp-rsasha1-zsk-cloud-dns" },
+        { "control": "gcp-1-1-0-networking-9" }
+      ]
+    },
+    {
+      "name": "Server Hardening",
+      "slug": "server-hardening",
+      "body": "#### Linux\n\nSecurity configuration is maintained as code and applied automatically. Hardening consists of:\n\n   - Disk encryption;\n   - Installing and configuring pre-approved NTP server;\n   - Up-to-date with security patches;\n   - Stopping and disabling any unnecessary services;\n   - Expiration of SSH connections after 5 minutes of session inactivity;\n   - Installing and configuring endpoint protection;\n   - Configuring monitoring and audit logging as described in the [System Audits, Monitoring and Assessments Policy](/policies/systems-audit/show).\n\n#### Windows\n\nSecurity configuration is maintained in Group Policy and can also be applied automatically. Hardening consists of:\n\n   - Register on \u003cVar keyName=\"companyName\"/\u003e Active Directory and apply AD Group Policy configuration;\n   - Disk encryption;\n   - Installing and configuring pre-approved NTP server;\n   - Up-to-date with security patches;\n   - Stopping and disabling any unnecessary services;\n   - Expiration of remote connections after 5 minutes of session inactivity;\n   - Configuring monitoring and audit logging as described in the [System Audits, Monitoring and Assessments Policy](/policies/systems-audit/show).",
+      "controls": [
+        { "control": "aws-iam-12" },
+        { "control": "aws-logging-7" },
+        { "control": "aws-1-3-0-iam-18" },
+        { "control": "gcp-iam-2" },
+        { "control": "gcp-service-account-admin-privileges" },
+        { "control": "gcp-vm-2" },
+        { "control": "gcp-vm-4" },
+        { "control": "gcp-vm-6" },
+        { "control": "gcp-instances-no-default-service-account" },
+        { "control": "gcp-shielded-vm-enabled" },
+        { "control": "gcp-1-1-0-vm-9" }
+      ]
+    }
+  ]
+}
