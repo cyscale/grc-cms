@@ -99,7 +99,7 @@
       "body": "",
       "controls": [
         { "control": "gcp-db-require-incoming-conn-ssl" },
-        { "control": "gcp-sql-2" },
+        { "control": "gcp-sql-no-whitelist-all-ips" },
         { "control": "gcp-sql-3" },
         { "control": "gcp-sql-4" },
         { "control": "gcp-local-infile-db-flag-mysql" },

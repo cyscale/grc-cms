@@ -1,1 +1,0 @@
-{"name":"Cloud SQL database instances are not open to the world","slug":"gcp-sql-2-cloud-sql-database-instances-are-not-open-to-the-world","query":"{ cloudSqlInstances( where: { authorizedNetworks_SOME: { value: \"0.0.0.0/0\" } } ) {...AssetFragment} }"}

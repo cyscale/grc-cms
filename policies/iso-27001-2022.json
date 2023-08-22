@@ -322,7 +322,7 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-sql-2"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-sql-no-public-ips"
@@ -411,7 +411,7 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-sql-2"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-sql-no-public-ips"
@@ -541,7 +541,7 @@
           "control": "gcp-contained-db-authentication-db-flag-sqlserver"
         },
         {
-          "control": "gcp-sql-2"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-bigquery-publicly-accessible"
@@ -961,7 +961,7 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-sql-2"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-sql-no-public-ips"
@@ -1693,7 +1693,7 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-sql-2"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-sql-no-public-ips"

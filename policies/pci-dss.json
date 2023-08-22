@@ -39,7 +39,7 @@
           "control": "gcp-vm-4"
         },
         {
-          "control": "gcp-sql-2"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-kubernetes-4"
