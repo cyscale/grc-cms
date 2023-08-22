@@ -688,6 +688,9 @@
         },
         {
           "control": "azure-notify-alerts-high-severity"
+        },
+        {
+          "control": "gcp-db-automated-backups"
         }
       ]
     },

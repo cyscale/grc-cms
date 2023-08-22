@@ -575,6 +575,9 @@
       "controls": [
         {
           "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-db-automated-backups"
         }
       ]
     }

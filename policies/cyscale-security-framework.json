@@ -986,7 +986,7 @@
           "control": "gcp-1-1-0-sql-6"
         },
         {
-          "control": "gcp-1-1-0-sql-7"
+          "control": "gcp-db-automated-backups"
         },
         {
           "control": "gcp-bigquery-publicly-accessible"

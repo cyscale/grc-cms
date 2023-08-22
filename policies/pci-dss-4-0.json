@@ -158,6 +158,9 @@
         },
         {
           "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "gcp-db-automated-backups"
         }
       ]
     },
