@@ -66,6 +66,9 @@
         },
         {
           "control": "publicly-accessible-disks"
+        },
+        {
+          "control": "gcp-sql-no-public-ips"
         }
       ]
     },

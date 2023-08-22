@@ -672,7 +672,7 @@
           "control": "gcp-sql-4"
         },
         {
-          "control": "gcp-1-1-0-sql-6"
+          "control": "gcp-sql-no-public-ips"
         },
         {
           "control": "gcp-networking-7"
