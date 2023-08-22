@@ -69,6 +69,9 @@
         },
         {
           "control": "gcp-sql-no-public-ips"
+        },
+        {
+          "control": "gcp-vms-public-ip-addresses"
         }
       ]
     },

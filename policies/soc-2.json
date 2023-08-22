@@ -186,7 +186,7 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-1-1-0-vm-9"
+          "control": "gcp-vms-public-ip-addresses"
         },
         {
           "control": "gcp-storage-1"

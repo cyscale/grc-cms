@@ -120,7 +120,7 @@
           "control": "gcp-instances-no-default-service-account"
         },
         {
-          "control": "gcp-1-1-0-vm-9"
+          "control": "gcp-vms-public-ip-addresses"
         },
         {
           "control": "gcp-buckets-uniform-level-access"
@@ -234,7 +234,7 @@
           "control": "aws-iam-21"
         },
         {
-          "control": "gcp-1-1-0-vm-9"
+          "control": "gcp-vms-public-ip-addresses"
         },
         {
           "control": "azure-trusted-services-storage-account"
@@ -1024,7 +1024,7 @@
           "control": "gcp-kubernetes-17"
         },
         {
-          "control": "gcp-1-1-0-vm-9"
+          "control": "gcp-vms-public-ip-addresses"
         },
         {
           "control": "gcp-sql-no-public-ips"
@@ -1214,7 +1214,7 @@
           "control": "gcp-shielded-vm-enabled"
         },
         {
-          "control": "gcp-1-1-0-vm-9"
+          "control": "gcp-vms-public-ip-addresses"
         },
         {
           "control": "gcp-1-1-0-vm-10"

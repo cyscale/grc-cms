@@ -384,7 +384,7 @@
           "control": "gcp-1-1-0-networking-9"
         },
         {
-          "control": "gcp-1-1-0-vm-9"
+          "control": "gcp-vms-public-ip-addresses"
         },
         {
           "control": "gcp-sql-no-public-ips"
