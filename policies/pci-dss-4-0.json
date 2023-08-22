@@ -78,7 +78,7 @@
           "control": "gcp-kubernetes-17"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-storage-1"

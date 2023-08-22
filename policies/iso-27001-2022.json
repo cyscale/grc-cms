@@ -319,7 +319,7 @@
           "control": "gcp-local-infile-db-flag-mysql"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-sql-2"
@@ -408,7 +408,7 @@
           "control": "gcp-local-infile-db-flag-mysql"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-sql-2"
@@ -958,7 +958,7 @@
           "control": "gcp-local-infile-db-flag-mysql"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-sql-2"
@@ -1690,7 +1690,7 @@
           "control": "gcp-storage-1"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-sql-2"
@@ -1917,7 +1917,7 @@
           "control": "gcp-shielded-vm-enabled"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "cis-alibaba-1-0-0-vm-1"

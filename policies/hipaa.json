@@ -357,7 +357,7 @@
           "control": "gcp-networking-4"
         },
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-sql-2"

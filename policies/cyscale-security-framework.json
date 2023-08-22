@@ -941,7 +941,7 @@
       "body": "This procedure shows the security posture of your managed databases.",
       "controls": [
         {
-          "control": "gcp-sql-1"
+          "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
           "control": "gcp-sql-2"

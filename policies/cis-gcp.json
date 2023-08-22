@@ -98,7 +98,7 @@
       "slug": "cis-gcp-db",
       "body": "",
       "controls": [
-        { "control": "gcp-sql-1" },
+        { "control": "gcp-db-require-incoming-conn-ssl" },
         { "control": "gcp-sql-2" },
         { "control": "gcp-sql-3" },
         { "control": "gcp-sql-4" },
