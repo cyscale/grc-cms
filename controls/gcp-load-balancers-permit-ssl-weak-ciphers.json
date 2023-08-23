@@ -13,8 +13,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "TargetHTTPSProxy",
-        "TargetSSLProxy"
+        "LoadBalancer"
       ],
       "query": "gcp-1-1-0-networking-9-no-https-or-ssl-proxy-load-balancers-permit-ssl-policies-with-weak-cipher-suites"
     }
