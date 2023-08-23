@@ -578,7 +578,7 @@
           "control": "gcp-rsasha1-zsk-cloud-dns"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "azure-restrict-rdp"

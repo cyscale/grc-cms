@@ -179,7 +179,7 @@
           "control": "aws-1-4-0-storage-1-2"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "gcp-vm-3"

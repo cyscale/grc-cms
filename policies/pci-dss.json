@@ -147,7 +147,7 @@
           "control": "gcp-kubernetes-3"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "gcp-1-1-0-vm-10"

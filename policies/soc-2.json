@@ -174,7 +174,7 @@
           "control": "gcp-1-1-0-logging-3"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "gcp-vm-2"
@@ -488,7 +488,7 @@
           "control": "gcp-networking-6"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "gcp-log-connections-db-flag-postgresql"

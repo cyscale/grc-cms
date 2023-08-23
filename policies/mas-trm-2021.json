@@ -325,7 +325,7 @@
           "control": "aws-networking-6"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "gcp-rsasha1-ksk-cloud-dns"
@@ -654,7 +654,7 @@
           "control": "gcp-networking-4"
         },
         {
-          "control": "gcp-1-1-0-networking-9"
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
           "control": "gcp-vms-public-ip-addresses"
