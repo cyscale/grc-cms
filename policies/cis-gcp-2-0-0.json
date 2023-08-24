@@ -81,6 +81,9 @@
           "control": "gcp-instances-no-default-service-account"
         },
         {
+          "control": "gcp-vm-5"
+        },
+        {
           "control": "gcp-shielded-vm-enabled"
         },
         {
