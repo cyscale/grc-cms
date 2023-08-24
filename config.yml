@@ -66,6 +66,11 @@ collections:
         widget: 'boolean'
         default: false
         hint: 'Create alerts for this control only if there are other impacted assets besides the primary one'
+      - label: 'Is Insight'
+        name: 'isInsight'
+        widget: 'boolean'
+        default: false
+        hint: 'This control will not be listed on the controls page and will not contribute to security and compliance scores. It will be used mostly for filtering.'
       - label: 'Rules'
         name: 'rules'
         widget: 'list'
