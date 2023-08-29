@@ -17,7 +17,7 @@
       "query": "gcp-api-keys-restricted-hosts-and-apps"
     }
   ],
-  "remediationDescription": "#### From Google Cloud Console:\n##### Leaving Keys in Place:\n\n1. Click on the `Open in Google Cloud`.\n2. In the Key restrictions section, set the application restrictions to any of HTTP referrers, IP addresses, Android apps, iOS apps.\n3. Click Save.\n\n##### Removing Keys:\nAnother option is to remove the keys entirely:\n\n1. Click on the `Open in Google Cloud`.\n2﻿. Click on the delete button at the top of the page.",
+  "remediationDescription": "#### From Google Cloud Console:\n##### Leaving Keys in Place:\n\n1. Click on the `Open in Google Cloud`. \n2. In the Key restrictions section, set the application restrictions to any of HTTP referrers, IP addresses, Android apps, iOS apps.\n3. Click Save.\n\n##### Removing Keys:\nAnother option is to remove the keys entirely:\n\n1. Click on the `Open in Google Cloud`. \n2. Click on the delete button at the top of the page",
   "description": "API Keys without specified hosts or apps",
   "severity": 3
 }
