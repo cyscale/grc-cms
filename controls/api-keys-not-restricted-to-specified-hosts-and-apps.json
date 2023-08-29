@@ -1,0 +1,23 @@
+{
+  "body": "## Description:\nAPI Keys should only be used for services in cases where other authentication methods are unavailable. In this case, unrestricted keys are insecure because they can be viewed publicly, such as from within a browser, or they can be accessed on a device where the key resides. It is recommended to restrict API key usage to trusted hosts, HTTP referrers and apps. It is recommended to use the more secure standard authentication flow instead.\n\n## Rationale:\nSecurity risks involved in using API-Keys appear below:\n• API keys are simple encrypted strings\n• API keys do not identify the user or the application making the API request\n• API keys are typically accessible to clients, making it easy to discover and steal an API key\n\n\nIn light of these potential risks, Google recommends using the standard authentication flow instead of API keys. However, there are limited cases where API keys are more appropriate. For example, if there is a mobile application that needs to use the Google Cloud Translation API, but doesn't otherwise need a backend server, API keys are the simplest way to authenticate to that API.\nIn order to reduce attack vectors, API-Keys can be restricted only to trusted hosts, HTTP referrers and applications.\n\n\n## Impact:\nSetting Application Restrictions may break existing application functioning, if not done carefully.",
+  "name": "Ensure API Keys Are Restricted To Use by Only Specified Hosts and Apps",
+  "slug": "api-keys-not-restricted-to-specified-hosts-and-apps",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "APIKey"
+      ],
+      "query": "gcp-api-keys-restricted-hosts-and-apps"
+    }
+  ],
+  "remediationDescription": "## From Google Cloud Console\n### Leaving Keys in Place\n1. Click on the failing asset.\n2﻿. Click on the `Open in Google Cloud` button in the top right.\n3. In the Key restrictions section, set the application restrictions to any of HTTP referrers, IP addresses, Android apps, iOS apps.\n4. ClickSave.\n\n### Removing Keys\nAnother option is to remove the keys entirely.\n1. Click on the failing asset.\n2﻿. Click on the `Open in Google Cloud` button in the top right.\n3﻿. Click on the delete button at the top of the page.",
+  "description": "API Keys without specified hosts or apps",
+  "severity": 3
+}
