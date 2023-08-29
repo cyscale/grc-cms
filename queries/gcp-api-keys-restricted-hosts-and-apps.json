@@ -1,0 +1,5 @@
+{
+  "query": "{\n  apiKeys(\n    where: {\n      clientRestrictions: []\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "name": "GCP API Keys are restricted based on hosts and apps",
+  "slug": "gcp-api-keys-restricted-hosts-and-apps"
+}
