@@ -1,0 +1,5 @@
+{
+  "name": "API Keys rotation",
+  "slug": "api-keys-rotation",
+  "query": "{\n  APIKeysRotation(days: 90) {...AssetFragment}\n}"
+}
