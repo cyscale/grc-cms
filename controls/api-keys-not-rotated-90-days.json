@@ -1,0 +1,23 @@
+{
+  "body": "### Description:\n\nAPI Keys should only be used for services in cases where other authentication methods are unavailable. If they are in use it is recommended to rotate API keys every 90 days.\n\n### Rationale:\n\nSecurity risks involved in using API-Keys are listed below:\n\n- API keys are simple encrypted strings\n- API keys do not identify the user or the application making the API request\n- API keys are typically accessible to clients, making it easy to discover and steal an API key\n\nBecause of these potential risks, Google recommends using the standard authentication flow instead of API Keys. However, there are limited cases where API keys are more appropriate. For example, if there is a mobile application that needs to use the Google Cloud Translation API, but doesn't otherwise need a backend server, API keys are the simplest way to authenticate to that API.\n\nOnce a key is stolen, it has no expiration, meaning it may be used indefinitely unless the project owner revokes or regenerates the key. Rotating API keys will reduce the window of opportunity for an access key that is associated with a compromised or terminated account to be used.\n\nAPI keys should be rotated to ensure that data cannot be accessed with an old key that might have been lost, cracked, or stolen.\n\n\n### Impact:\n\n`Regenerating Key` may break existing client connectivity as the client will try to connect with older API keys they have stored on devices.",
+  "name": "Ensure API Keys Are Rotated Every 90 Days",
+  "slug": "api-keys-not-rotated-90-days",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "APIKey"
+      ],
+      "query": "api-keys-rotation"
+    }
+  ],
+  "remediationDescription": "#### From Google Cloud Console:\n\n1. Click on the `Open in Google Cloud`. \n2. Once on the page of the API Key, click on `Regenerate Key`",
+  "description": "API keys not rotated for more than 90 days",
+  "severity": 2
+}
