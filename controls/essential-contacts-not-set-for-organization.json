@@ -1,0 +1,23 @@
+{
+  "body": "### Description:\n\nIt is recommended that Essential Contacts is configured to designate email addresses for Google Cloud services to notify of important technical or security information.\n\n### Rationale:\n\nMany Google Cloud services, such as Cloud Billing, send out notifications to share important information with Google Cloud users. By default, these notifications are sent to members with certain Identity and Access Management (IAM) roles. With Essential Contacts, you can customize who receives notifications by providing your own list of contacts.\n\n",
+  "name": "Ensure Essential Contacts is Configured for Organization",
+  "slug": "essential-contacts-not-set-for-organization",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudAccount"
+      ],
+      "query": "essential-contacts-set"
+    }
+  ],
+  "remediationDescription": "T﻿o resolve this issue, you either need to set contacts for each of the following categories:\n- `Legal`\n- `Security` \n- `Suspension`\n- `Technical`\n- `Technical Incidents`\n\nO﻿r have a contact set for the `All` category\n\n\n#﻿## From Google Cloud Console\n\n1. Go to Essential Contacts by visiting https://console.cloud.google.com/iam- admin/essential-contacts\n2. Make sure the organization appears in the resource selector at the top of the page. The resource selector tells you what project, folder, or organization you are currently managing contacts for.\n3. Click `+ Add contact`\n4. In the `Email` and `Confirm Email` fields, enter the email address of the contact.\n5. From the Notification categories drop-down menu, select the notification categories that you want the contact to receive communications for.\n6. Click `Save`\n\n#﻿## From Google Cloud CLI\n\nR﻿un the following command:\n\n`﻿``sh\n gcloud essential-contacts create --email=\"<EMAIL>\" \\ --notification-categories=\"<NOTIFICATION_CATEGORIES>\" \\ --organization=<ORGANIZATION_ID>\n`﻿``\n",
+  "description": "Essential Contacts are not set for the Ogranization",
+  "severity": 1
+}
