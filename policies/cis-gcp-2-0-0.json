@@ -11,22 +11,28 @@
       "slug": "cis-gcp-2-0-0-iam",
       "controls": [
         {
-          "control": "gcp-separation-of-duties-service-account"
+          "control": "gcp-iam-1"
+        },
+        {
+          "control": "gcp-iam-2"
+        },
+        {
+          "control": "gcp-service-account-admin-privileges"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"
+        },
+        {
+          "control": "gcp-iam-5"
+        },
+        {
+          "control": "gcp-separation-of-duties-service-account"
         },
         {
           "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
           "control": "gcp-kms-keys-rotated-90-days"
-        },
-        {
-          "control": "gcp-service-account-admin-privileges"
-        },
-        {
-          "control": "gcp-secrets-not-in-env-variables"
         },
         {
           "control": "api-keys-not-restricted-to-specified-hosts-and-apps"
@@ -39,6 +45,9 @@
         },
         {
           "control": "essential-contacts-not-set-for-organization"
+        },
+        {
+          "control": "gcp-secrets-not-in-env-variables"
         }
       ]
     },
