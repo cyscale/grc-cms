@@ -1,1 +1,24 @@
-{"name":"Ensure the default network does not exist in a project","slug":"gcp-networking-1","body":"To prevent use of `default` network, a project should not have a `default` network. \n\n**Rationale**\n\nThe `default` network has automatically created firewall rules and has pre-fabricated network configuration. Based on your security and networking requirements, you should create your network and delete the `default` network.","description":"","severity":3,"remediationDescription":"For each Google Cloud Platform project,\n\n1. Follow the documentation and create a new network suitable for your requirements.\n2. Follow the documentation and delete the `default` network.\n\n**Default Value**\n\nBy default, for each project, a `default` network is created. \n\n**References**\n\n1. https://cloud.google.com/compute/docs/networking#firewall_rules\n2. https://cloud.google.com/compute/docs/reference/latest/networks/insert\n3. https://cloud.google.com/compute/docs/reference/latest/networks/delete","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["VPC"],"query":"gcp-networking-1-the-default-network-does-not-exist-in-a-project","returnPath":""}]}
+{
+  "body": "To prevent use of `default` network, a project should not have a `default` network.\n\n### Rationale\n\nThe `default` network has a preconfigured network configuration and automatically generates the following insecure firewall rules:\n\n- default-allow-internal: Allows ingress connections for all protocols and ports among instances in the network.\n- default-allow-ssh: Allows ingress connections on TCP port 22(SSH) from any source to any instance in the network.\n- default-allow-rdp: Allows ingress connections on TCP port 3389(RDP) from any source to any instance in the network.\n- default-allow-icmp: Allows ingress ICMP traffic from any source to any instance in the network.\n\nThese automatically created firewall rules do not get audit logged and cannot be configured to enable firewall rule logging.\n\nFurthermore, the default network is an auto mode network, which means that its subnets use the same predefined range of IP addresses, and as a result, it's not possible to use Cloud VPN or VPC Network Peering with the default network. \n\nBased on organization security and networking requirements, the organization should create a new network and delete the `default` network.",
+  "name": "Ensure the default network does not exist in a project",
+  "slug": "gcp-networking-1",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VPC"
+      ],
+      "query": "gcp-networking-1-the-default-network-does-not-exist-in-a-project",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "### From Console\n\n1. Login to the `VPC networks` page by visiting: [https://console.cloud.google.com/networking/networks/list](https://console.cloud.google.com/networking/networks/list)\n2. Click the network named `default`.\n3. On the network detail page, click `EDIT`.\n4. Click `DELETE VPC NETWORK`.\n5. If needed, create a new network to replace the default network.\n\n### From Command Line\n\nFor each Google Cloud Platform project,\n\n1. Delete the default network:\n\n```bash\ngcloud compute networks delete default\n```\n\n2. If needed, create a new network to replace it:\n\n```bash\ngcloud compute networks create NETWORK_NAME\n```\n\n### Prevention\n\nThe user can prevent the default network and its insecure default firewall rules from being created by setting up an Organization Policy to `Skip default network creation` at [https://console.cloud.google.com/iam-admin/orgpolicies/compute-skipDefaultNetworkCreation](https://console.cloud.google.com/iam-admin/orgpolicies/compute-skipDefaultNetworkCreation).\n\n### Default Value\n\nBy default, for each project, a `default` network is created.",
+  "description": "",
+  "severity": 3
+}
