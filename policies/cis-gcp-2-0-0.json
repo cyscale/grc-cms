@@ -81,6 +81,12 @@
       "slug": "cis-gcp-2-0-0-networking",
       "controls": [
         {
+          "control": "gcp-networking-1"
+        },
+        {
+          "control": "gcp-networking-2"
+        },
+        {
           "control": "gcp-dnssec-enabled-cloud-dns"
         },
         {
