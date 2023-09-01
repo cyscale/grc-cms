@@ -111,10 +111,10 @@
           "control": "gcp-1-1-0-iam-12"
         },
         {
-          "control": "gcp-1-1-0-iam-13"
+          "control": "api-keys-not-restricted-to-specified-hosts-and-apps"
         },
         {
-          "control": "gcp-1-1-0-iam-14"
+          "control": "api-keys-not-restricted-to-specified-apis"
         },
         {
           "control": "gcp-instances-no-default-service-account"
