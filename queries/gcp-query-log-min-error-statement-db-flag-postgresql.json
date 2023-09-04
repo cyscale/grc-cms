@@ -1,0 +1,5 @@
+{
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"postgresql\"\n      cloudProvider: \"gcp\"\n      dbFlags_SOME: { name: \"log_min_error_statement\", NOT: {value_IN: [\"error\", \"log\", \"fatal\", \"panic\"]} }\n    }\n  ) {\n     ...AssetFragment\n  }\n}",
+  "slug": "gcp-query-log-min-error-statement-db-flag-postgresql",
+  "name": "Ensure ‘log_min_error_statement’ database flag for Cloud SQL PostgreSQL instance is set to ‘Error’ or stricter"
+}
