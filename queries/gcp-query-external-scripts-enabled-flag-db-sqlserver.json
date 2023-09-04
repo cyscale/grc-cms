@@ -1,5 +1,5 @@
 {
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"sqlserver\"\n      cloudProvider: \"gcp\"\n      dbFlags_SOME: { name: \"external scripts enabled\",value: \"on\" }\n    }\n  ) {\n     ...AssetFragment\n  }\n}\"",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"sqlserver\"\n      cloudProvider: \"gcp\"\n      dbFlags_SOME: { name: \"external scripts enabled\",value: \"on\" }\n    }\n  ) {\n     ...AssetFragment\n  }\n}",
   "slug": "gcp-query-external-scripts-enabled-flag-db-sqlserver",
   "name": "Ensure 'external scripts enabled' database flag for Cloud SQL SQL Server instance is set to 'off'"
 }
