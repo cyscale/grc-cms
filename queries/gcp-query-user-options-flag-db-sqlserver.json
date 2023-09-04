@@ -1,0 +1,5 @@
+{
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"sqlserver\"\n      cloudProvider: \"gcp\"\n      dbFlags_SOME: { name: \"user options\" }\n    }\n  ) {\n     ...AssetFragment\n  }\n}",
+  "slug": "gcp-query-user-options-flag-db-sqlserver",
+  "name": "Ensure 'user options' database flag for Cloud SQL SQL Server instance is not configured"
+}
