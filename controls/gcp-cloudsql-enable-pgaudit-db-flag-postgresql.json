@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "isInsight": false,
-  "name": "Ensure 'cloudsql.enable_pgaudit' database flag for each Cloud Sql Postgresql instance is set to 'on' for centralized logging",
+  "name": "Ensure 'cloudsql.enable_pgaudit' database flag for each Cloud SQL PostgreSQL instance is set to 'on' for centralized logging",
   "slug": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql",
   "rules": [
     {
