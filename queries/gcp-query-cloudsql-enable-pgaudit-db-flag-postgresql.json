@@ -1,0 +1,5 @@
+{
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"postgresql\"\n      cloudProvider: \"gcp\"\n      OR: [{ dbFlags_NONE: { name: \"cloudsql.enable_pgaudit\" }}, {dbFlags_SOME: {name: \"cloudsql.enable_pgaudit\", value: \"off\"}}]\n     \n    }\n  ) {\n     ...AssetFragment\n  }\n}",
+  "slug": "gcp-query-cloudsql-enable-pgaudit-db-flag-postgresql",
+  "name": "Ensure 'cloudsql.enable_pgaudit' database flag for each Cloud Sql Postgresql instance is set to 'on' for centralized logging"
+}
