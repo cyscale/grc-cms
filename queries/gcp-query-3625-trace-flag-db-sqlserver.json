@@ -1,0 +1,5 @@
+{
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"sqlserver\"\n      cloudProvider: \"gcp\"\n      OR: [{ dbFlags_NONE: { name: \"3625\" }}, {dbFlags_SOME: {name: \"3625\", value: \"off\"}}]\n     \n    }\n  ) {\n     ...AssetFragment\n  }\n}\n\"",
+  "name": "Ensure '3625 (trace flag)' database flag for all Cloud SQL Server instances is set to 'on'",
+  "slug": "gcp-query-3625-trace-flag-db-sqlserver"
+}
