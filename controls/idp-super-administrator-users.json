@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": true,
+  "slug": "idp-super-administrator-users",
+  "body": "Get super administrators from added identity provider connectors",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "okta"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "okta-super-administrator-users"
+    }
+  ],
+  "name": "Identity Provider Super Administrators",
+  "remediationDescription": " ﻿"
+}
