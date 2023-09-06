@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": true,
+  "slug": "idp-inactive-users",
+  "name": "Identity Provider Inactive Users",
+  "body": "Check Identity Provider Users with last login older than 30 days",
+  "severity": 2,
+  "remediationDescription": " ﻿",
+  "rules": [
+    {
+      "cloudProviders": [
+        "okta"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "okta-inactive-users"
+    }
+  ]
+}
