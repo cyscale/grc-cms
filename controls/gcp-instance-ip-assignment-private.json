@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "slug": "gcp-instance-ip-assignment-private",
+  "severity": 2,
+  "name": "Ensure Instance IP assignment is set to private",
+  "body": "Instance addresses can be public IP or private IP. Public IP means that the instance is accessible through the public internet. In contrast, instances using only private IP are not accessible through the public internet, but are accessible through a Virtual Private Cloud (VPC).\n\nLimiting network access to your database will limit potential attacks.\n\n**Rationale**\n\nSetting databases access only to private will reduce attack surface.\n\n**Impact**\n\nIf you set a database IP to private, only a host from the same network will have the ability to connect your database.\n\nConfiguring an existing Cloud SQL instance to use private IP causes the instance to restart.",
+  "rules": [
+    {
+      "query": "gcp-query-instance-ip-assignment-private",
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]"
+    }
+  ],
+  "remediationDescription": "**From Google Cloud Console**\n\n1. Go to the `Cloud SQL Instances` page in the Google Cloud Console by visiting https://console.cloud.google.com/sql/instances\n2. Open the `Overview` page of an instance by clicking the instance name\n3. Select `Connections` from the SQL navigation menu and navigate to `NETWORKING`\n4. Check the `Private IP` checkbox. A drop-down list shows the available networks in your project\n5. Select the VPC network you want to use:\n    If you see `Private service connection required`:\n    1. Click `Set up connection`.\n    2. In the `Allocate an IP range` section, choose one of the following options:\n    3. Select one or more existing IP ranges or create a new one from the dropdown. The dropdown includes previously allocated ranges, if there are any, or you can select `Allocate a new IP range` and enter a new range and name.\n    4. Use an automatically allocated IP range in your network.\n    Note: You can specify an address range only for a primary instance, not for a read replica or clone.\n    5. Click `Continue`.\n    6. Click `Create connection`.\n    7. Verify that you see the Private service connection for network VPC_NETWORK_NAME has been successfully created status.\n6. [Optional step for Private Services Access - review reference links to VPC documents for additional detail] If you want to allow other Google Cloud services such as BigQuery to access data in Cloud SQL and make queries against this data over a private IP connection, then select the Private path for Google Cloud services check box.\n7. Click `SAVE`\n\n**Using Google Cloud CLI**\n\n1. List Cloud SQL Instances:\n\n```bash\ngcloud sql instances list --format=\"json\" | jq '.[] | .connectionName,.ipAddresses'\n```\n\nNote the project name of the instance you want to set to a private IP, this will be <projectID>\nNote the instance name of the instance you want to set to a private IP, this will be <instanceID>\n\nExample public instance output:\n\n```json\n\"my-project-123456:us-central1:my-instance\"\n[\n {\n \"ipAddress\": \"0.0.0.0\",\n \"type\": \"PRIMARY\"\n },\n {\n \"ipAddress\": \"0.0.0.0\",\n \"type\": \"OUTGOING\"\n }\n```\n\n2. Run the following command to list the available VPCs:\n\n```bash\ngcloud compute networks list --format=\"json\" | jq '.[].name'\n```\n\nNote the name of the VPC to use for the instance private IP, this will be <VPCNetworkName>\n\n3. Run the following to set instance to a private IP\n\n```bash\ngcloud beta sql instances patch <instanceID> \\ --project=<projectID> \\ --network=projects/<projectID>/global/networks/<VPCNetworkName> \\ --no-assign-ip\n```\n\n**Default Value**\n\nBy default, a public IP is assigned.\n\n**References**\n\n1. [https://cloud.google.com/sql/docs/postgres/configure-private-ip](https://cloud.google.com/sql/docs/postgres/configure-private-ip)\n2. [https://cloud.google.com/vpc/docs/configure-private-services-access#procedure](https://cloud.google.com/vpc/docs/configure-private-services-access#procedure)\n3. [https://cloud.google.com/vpc/docs/configure-private-services-access#creating-connection](https://cloud.google.com/vpc/docs/configure-private-services-access#creating-connection)"
+}
