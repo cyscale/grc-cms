@@ -1,0 +1,5 @@
+{
+  "slug": "okta-inactive-users",
+  "name": "okta-inactive-users",
+  "query": "{\n  OktaInactiveUsers {...AssetFragment}\n}"
+}
