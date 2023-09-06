@@ -1,0 +1,5 @@
+{
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: \"gcp\"\n      authorizedNetworks_SOME: {\n        OR: [{ value: \"0.0.0.0/0\" }, { value: \"::/0\" }]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n",
+  "slug": "gcp-query-sql-db-whitelist-public-IP",
+  "name": "Ensure that Cloud SQL Database Instances do not implicitly whitelist all public IP addresses"
+}
