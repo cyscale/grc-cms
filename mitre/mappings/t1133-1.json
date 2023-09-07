@@ -1,0 +1,13 @@
+{
+  "display_name": "TestFunctionBQTable",
+  "mid": "T1133",
+  "controls": [
+    "gcp-secrets-not-in-env-variables"
+  ],
+  "propagators": [
+    "IAMServiceAccount"
+  ],
+  "assets": [
+    "BigQueryTable"
+  ]
+}
