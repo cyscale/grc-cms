@@ -138,7 +138,13 @@
       "slug": "cis-gcp-2-0-0-db",
       "controls": [
         {
+          "control": "gcp-skip-show-db-flag-mysql"
+        },
+        {
           "control": "gcp-local-infile-db-flag-mysql"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
         },
         {
           "control": "gcp-log-connections-db-flag-postgresql"
@@ -147,13 +153,40 @@
           "control": "gcp-log-disconnections-db-flag-postgresql"
         },
         {
+          "control": "gcp-log-statement-db-flag-postgresql"
+        },
+        {
           "control": "gcp-log-min-messages-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-error-statement-db-flag-postgresql"
         },
         {
           "control": "gcp-log-min-duration-statement-db-flag-postgresql"
         },
         {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-instance-ip-assignment-private"
+        },
+        {
+          "control": "gcp-external-scripts-enabled-flag-db-sqlserver"
+        },
+        {
           "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
+        },
+        {
+          "control": "gcp-user-connections-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-user-options-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-remote-access-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-3625-trace-flag-db-sqlserver"
         },
         {
           "control": "gcp-contained-db-authentication-db-flag-sqlserver"
@@ -162,19 +195,13 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-db-automated-backups"
+          "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
           "control": "gcp-sql-db-no-public-ips"
         },
         {
-          "control": "gcp-skip-show-db-flag-mysql"
-        },
-        {
-          "control": "gcp-log-error-verbosity-db-flag-postgresql"
-        },
-        {
-          "control": "gcp-log-statement-db-flag-postgresql"
+          "control": "gcp-db-automated-backups"
         }
       ]
     },
