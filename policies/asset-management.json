@@ -1,1 +1,120 @@
-{"name":"Asset Management (Inventory)","slug":"asset-management","body":"## Policy Statement\n\nInformation assets shall be handled according to their determined classification, including access controls, labeling, retention policies, and destruction methods, among others.\n\nIn general, controls assigned by Data Asset Owners will deal with the confidentiality category of the data. The categories representing Integrity and Availability will be used to guide \u003cVar keyName=\"companyName\"/\u003e to protect against the loss or corruption of the data.\n\n\u003cVar keyName=\"companyName\"/\u003e uses an asset inventory solution to ensure an updated and accurate software, cloud, physical, and data repositories asset inventory.\n\n\u003e Asset = data/information\n\nInformation assets come in many shapes and forms. Therefore, the following list can only be illustrative. It is generally sensible to group information assets in a logical manner e.g. where they are all related to the same information system or business process.\n\n#### Scope\nAll devices, systems, people, and processes that constitute \u003cVar keyName=\"companyName\"/\u003e information and cloud-based systems.\n\nTip: You can generate an inventory report from the [Inventory page](https://app.cyscale.com/inventory).\n\n## Procedures\n\n\u003cProcedure slug=\"asset-software\"/\u003e\n\u003cProcedure slug=\"asset-cloud\"/\u003e\n\u003cProcedure slug=\"asset-data-repositories\"/\u003e\n\u003cProcedure slug=\"asset-physical\"/\u003e","version":"1","isStandard":false,"enabled":true,"procedures":[{"name":"Software Assets Inventory","slug":"asset-software","body":"All of the major software components that participate in offering \u003cVar keyName=\"companyName\"/\u003e services to the customers must be cataloged. For each of these components, identification is done by specifying:\n\n- Component Name\n- Component Version\n- Component Vendor\n- Component Published\n- Component URL\n- Component Maintainer(s)\n- Component Owner(s) inside \u003cVar keyName=\"companyName\"/\u003e\n- Component Update Frequency","controls":null},{"name":"Cloud Assets Inventory","slug":"asset-cloud","body":"All of the major infrastructure and cloud computing components (details, hostnames, DNS records, IPs, state, etc.) must be cataloged. For each of these cloud assets, identification is done by specifying:\n\n- Asset Cloud Service Provider\n- Asset Name\n- Asset Create Date\n- Asset Change Date\n- Asset Owner(s) inside \u003cVar keyName=\"companyName\"/\u003e","controls":[{"control":"aws-assets-1"},{"control":"aws-assets-2"},{"control":"aws-assets-3"},{"control":"aws-assets-4"}]},{"name":"Data Repositories Inventory","slug":"asset-data-repositories","body":"\u003cVar keyName=\"companyName\"/\u003e uses an automated system to query across IT infrastructure to obtain records (details, IPs) of all data repositories, such as:\n\n- GCP Buckets\n- GCP BigQuery\n- AWS S3\n- AWS RDS, Redshift and DynamoDB\n- AWS EC2 Volumes\n- Microsoft Azure Storage\n- Source code repositories (Gitlab, Github)\n- Data lakes and Data warehouses (Snowflake, Teradata, etc.)","controls":[{"control":"aws-assets-1"},{"control":"aws-assets-2"},{"control":"aws-assets-5"},{"control":"aws-1-3-0-iam-20"},{"control":"aws-logging-3"},{"control":"aws-logging-6"},{"control":"aws-monitoring-8"},{"control":"aws-1-3-0-logging-10"},{"control":"aws-1-3-0-logging-11"},{"control":"aws-1-3-0-storage-1-1"},{"control":"aws-1-4-0-storage-1-2"},{"control":"aws-1-3-0-storage-2-1"},{"control":"gcp-logging-1"},{"control":"gcp-logging-3"},{"control":"gcp-logging-11"},{"control":"gcp-db-require-incoming-conn-ssl"},{"control":"gcp-sql-no-whitelist-all-ips"},{"control":"gcp-sql-3"},{"control":"gcp-sql-4"},{"control":"gcp-storage-1"},{"control":"gcp-storage-2"},{"control":"gcp-vm-6"},{"control":"gcp-1-1-0-logging-3"},{"control":"gcp-buckets-uniform-level-access"}]},{"name":"Physical Assets Inventory","slug":"asset-physical","body":"All of the important hardware/physical assets (e.g. laptops, mobile devices, media for storage, servers, printers, etc.) that the \u003cVar keyName=\"companyName\"/\u003e owns or manages must be cataloged. For each of these devices, identification is done by specifying:\n\n- Hardware Name\n- Hardware Manufacturer\n- Hardware Model/Version\n- Hardware Operating System (name, version, patch/update status - if applicable)\n- Hardware IP(s)\n- Renewal date (change of laptop, printer, etc.)\n- Hardware Owner\n- Devices as part of the [BYOD Policy](/policies/mdm-device-management/show):\n  - Installed applications\n  - Status (in-use, lost, wiped, etc.)\n  - Security Policies status (such as the enforcement of encryption, strong passwords, auto-updates, etc.)","controls":null}]}
+{
+  "name": "Asset Management (Inventory)",
+  "slug": "asset-management",
+  "body": "## Policy Statement\n\nInformation assets shall be handled according to their determined classification, including access controls, labeling, retention policies, and destruction methods, among others.\n\nIn general, controls assigned by Data Asset Owners will deal with the confidentiality category of the data. The categories representing Integrity and Availability will be used to guide <Var keyName=\"companyName\"/> to protect against the loss or corruption of the data.\n\n<Var keyName=\"companyName\"/> uses an asset inventory solution to ensure an updated and accurate software, cloud, physical, and data repositories asset inventory.\n\n> Asset = data/information\n\nInformation assets come in many shapes and forms. Therefore, the following list can only be illustrative. It is generally sensible to group information assets in a logical manner e.g. where they are all related to the same information system or business process.\n\n#### Scope\nAll devices, systems, people, and processes that constitute <Var keyName=\"companyName\"/> information and cloud-based systems.\n\nTip: You can generate an inventory report from the [Inventory page](https://app.cyscale.com/inventory).\n\n## Procedures\n\n<Procedure slug=\"asset-software\"/>\n<Procedure slug=\"asset-cloud\"/>\n<Procedure slug=\"asset-data-repositories\"/>\n<Procedure slug=\"asset-physical\"/>",
+  "version": "1",
+  "isStandard": false,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "Software Assets Inventory",
+      "slug": "asset-software",
+      "body": "All of the major software components that participate in offering <Var keyName=\"companyName\"/> services to the customers must be cataloged. For each of these components, identification is done by specifying:\n\n- Component Name\n- Component Version\n- Component Vendor\n- Component Published\n- Component URL\n- Component Maintainer(s)\n- Component Owner(s) inside <Var keyName=\"companyName\"/>\n- Component Update Frequency",
+      "controls": null
+    },
+    {
+      "name": "Cloud Assets Inventory",
+      "slug": "asset-cloud",
+      "body": "All of the major infrastructure and cloud computing components (details, hostnames, DNS records, IPs, state, etc.) must be cataloged. For each of these cloud assets, identification is done by specifying:\n\n- Asset Cloud Service Provider\n- Asset Name\n- Asset Create Date\n- Asset Change Date\n- Asset Owner(s) inside <Var keyName=\"companyName\"/>",
+      "controls": [
+        {
+          "control": "aws-assets-1"
+        },
+        {
+          "control": "aws-assets-2"
+        },
+        {
+          "control": "aws-assets-3"
+        },
+        {
+          "control": "aws-assets-4"
+        }
+      ]
+    },
+    {
+      "name": "Data Repositories Inventory",
+      "slug": "asset-data-repositories",
+      "body": "<Var keyName=\"companyName\"/> uses an automated system to query across IT infrastructure to obtain records (details, IPs) of all data repositories, such as:\n\n- GCP Buckets\n- GCP BigQuery\n- AWS S3\n- AWS RDS, Redshift and DynamoDB\n- AWS EC2 Volumes\n- Microsoft Azure Storage\n- Source code repositories (Gitlab, Github)\n- Data lakes and Data warehouses (Snowflake, Teradata, etc.)",
+      "controls": [
+        {
+          "control": "aws-assets-1"
+        },
+        {
+          "control": "aws-assets-2"
+        },
+        {
+          "control": "aws-assets-5"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        },
+        {
+          "control": "aws-1-3-0-storage-1-1"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-2"
+        },
+        {
+          "control": "aws-1-3-0-storage-2-1"
+        },
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "gcp-logging-11"
+        },
+        {
+          "control": "gcp-db-require-incoming-conn-ssl"
+        },
+        {
+          "control": "gcp-sql-no-whitelist-all-ips"
+        },
+        {
+          "control": "gcp-sql-3"
+        },
+        {
+          "control": "gcp-sql-4"
+        },
+        {
+          "control": "gcp-bucket-publicly-accessible"
+        },
+        {
+          "control": "gcp-storage-2"
+        },
+        {
+          "control": "gcp-vm-6"
+        },
+        {
+          "control": "gcp-1-1-0-logging-3"
+        },
+        {
+          "control": "gcp-buckets-uniform-level-access"
+        }
+      ]
+    },
+    {
+      "name": "Physical Assets Inventory",
+      "slug": "asset-physical",
+      "body": "All of the important hardware/physical assets (e.g. laptops, mobile devices, media for storage, servers, printers, etc.) that the <Var keyName=\"companyName\"/> owns or manages must be cataloged. For each of these devices, identification is done by specifying:\n\n- Hardware Name\n- Hardware Manufacturer\n- Hardware Model/Version\n- Hardware Operating System (name, version, patch/update status - if applicable)\n- Hardware IP(s)\n- Renewal date (change of laptop, printer, etc.)\n- Hardware Owner\n- Devices as part of the [BYOD Policy](/policies/mdm-device-management/show):\n  - Installed applications\n  - Status (in-use, lost, wiped, etc.)\n  - Security Policies status (such as the enforcement of encryption, strong passwords, auto-updates, etc.)",
+      "controls": null
+    }
+  ]
+}
