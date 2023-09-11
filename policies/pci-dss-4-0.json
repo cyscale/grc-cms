@@ -87,7 +87,7 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-instances-no-default-service-account"
