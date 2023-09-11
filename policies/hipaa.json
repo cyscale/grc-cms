@@ -136,6 +136,12 @@
         },
         {
           "control": "okta-weak-password-policies"
+        },
+        {
+          "control": "gcp-skip-show-db-flag-mysql"
+        },
+        {
+          "control": "gcp-remote-access-flag-db-sqlserver"
         }
       ]
     },
@@ -221,6 +227,21 @@
         },
         {
           "control": "aws-ecs-12-clusters-should-use-insights"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-error-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-3625-trace-flag-db-sqlserver"
         }
       ]
     },
@@ -228,7 +249,7 @@
       "name": "164.312(c) - Integrity",
       "slug": "hipaa-technical-integrity",
       "body": "A covered entity must implement policies and procedures to ensure that e-PHI is not improperly altered or destroyed. Electronic measures must be put in place to confirm that e-PHI has not been improperly altered or destroyed.",
-      "controls": null
+      "controls": []
     },
     {
       "name": "164.312(d) - Person or entity authentication",
@@ -488,7 +509,11 @@
       "name": "Security Management Process",
       "slug": "hipaa-administrative-management",
       "body": "A covered entity must identify and analyze potential risks to e-PHI, and it must implement security measures that reduce risks and vulnerabilities to a reasonable and appropriate level.",
-      "controls": null
+      "controls": [
+        {
+          "control": "gcp-confidential-computing"
+        }
+      ]
     },
     {
       "name": "Security Personnel",
@@ -524,6 +549,12 @@
         },
         {
           "control": "aws-ecs-5-readonly-root-file-systems"
+        },
+        {
+          "control": "gcp-sql-no-whitelist-all-ips"
+        },
+        {
+          "control": "gcp-instance-ip-assignment-private"
         }
       ]
     },
