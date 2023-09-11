@@ -838,7 +838,7 @@
       "body": "This procedure shows the security posture of your storage assets such as object storage buckets.",
       "controls": [
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-storage-2"
