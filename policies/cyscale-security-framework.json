@@ -530,6 +530,21 @@
         },
         {
           "control": "aws-ecs-12-clusters-should-use-insights"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-error-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-3625-trace-flag-db-sqlserver"
         }
       ]
     },
@@ -660,6 +675,12 @@
         },
         {
           "control": "aws-ecs-2-service-assign-public-ip-disabled"
+        },
+        {
+          "control": "gcp-instance-ip-assignment-private"
+        },
+        {
+          "control": "gcp-sql-no-whitelist-all-ips"
         }
       ]
     },
@@ -829,6 +850,9 @@
         },
         {
           "control": "aws-ecs-3-process-name-space"
+        },
+        {
+          "control": "gcp-confidential-computing"
         }
       ]
     },
@@ -1074,6 +1098,21 @@
         },
         {
           "control": "aws-rds-1"
+        },
+        {
+          "control": "gcp-skip-show-db-flag-mysql"
+        },
+        {
+          "control": "gcp-external-scripts-enabled-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-user-connections-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-user-options-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-remote-access-flag-db-sqlserver"
         }
       ]
     },
@@ -1114,6 +1153,9 @@
         },
         {
           "control": "azure-key-vaults-store-secrets"
+        },
+        {
+          "control": "gcp-secrets-not-in-env-variables"
         }
       ]
     },
