@@ -358,6 +358,18 @@
         },
         {
           "control": "cis-alibaba-1-0-0-rds-1"
+        },
+        {
+          "control": "gcp-skip-show-db-flag-mysql"
+        },
+        {
+          "control": "gcp-instance-ip-assignment-private"
+        },
+        {
+          "control": "gcp-remote-access-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-sql-no-whitelist-all-ips"
         }
       ]
     },
@@ -551,6 +563,21 @@
         },
         {
           "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-error-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-3625-trace-flag-db-sqlserver"
         }
       ]
     },
@@ -669,6 +696,9 @@
         },
         {
           "control": "databases-with-outdated-engine-versions"
+        },
+        {
+          "control": "gcp-user-connections-flag-db-sqlserver"
         }
       ]
     },
@@ -1100,6 +1130,9 @@
         },
         {
           "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "gcp-external-scripts-enabled-flag-db-sqlserver"
         }
       ]
     },
@@ -1350,6 +1383,12 @@
         },
         {
           "control": "aws-1-4-0-storage-3-1"
+        },
+        {
+          "control": "gcp-secrets-not-in-env-variables"
+        },
+        {
+          "control": "gcp-confidential-computing"
         }
       ]
     },
