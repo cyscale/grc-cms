@@ -12,7 +12,6 @@
     "cis-alibaba-1-0-0-storage-2",
     "cis-alibaba-1-0-0-storage-7",
     "gcp-bucket-publicly-accessible",
-    "gcp-storage-3",
     "publicly-readable-object-containers",
     "permissive-security-groups-impacting-data-stores"
   ],

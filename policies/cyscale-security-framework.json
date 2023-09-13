@@ -952,9 +952,6 @@
           "control": "aws-storage-4"
         },
         {
-          "control": "gcp-storage-3"
-        },
-        {
           "control": "aws-ecs-5-readonly-root-file-systems"
         }
       ]

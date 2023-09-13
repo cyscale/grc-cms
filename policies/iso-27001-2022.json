@@ -911,9 +911,6 @@
           "control": "aws-networking-10"
         },
         {
-          "control": "gcp-storage-3"
-        },
-        {
           "control": "gcp-networking-7"
         },
         {
@@ -1578,9 +1575,6 @@
         },
         {
           "control": "aws-monitoring-1"
-        },
-        {
-          "control": "gcp-storage-3"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-15"

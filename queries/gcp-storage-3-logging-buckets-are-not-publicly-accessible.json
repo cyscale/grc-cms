@@ -1,1 +1,0 @@
-{"name":"Logging buckets are not publicly accessible","slug":"gcp-storage-3-logging-buckets-are-not-publicly-accessible","query":"{ buckets(where: { iamBindings_SOME: {OR: [{ members_INCLUDES: \"allUsers\" }{ members_INCLUDES: \"allAuthenticatedUsers\" }]}}) {...AssetFragment}}"}

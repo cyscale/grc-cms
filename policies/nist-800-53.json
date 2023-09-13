@@ -252,9 +252,6 @@
           "control": "publicly-accessible-disks"
         },
         {
-          "control": "gcp-storage-3"
-        },
-        {
           "control": "object-containers-with-public-access"
         },
         {

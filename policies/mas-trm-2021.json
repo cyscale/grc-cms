@@ -518,9 +518,6 @@
           "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
         },
         {
-          "control": "gcp-storage-3"
-        },
-        {
           "control": "gcp-bucket-publicly-accessible"
         },
         {
@@ -992,9 +989,6 @@
         },
         {
           "control": "gcp-logging-8"
-        },
-        {
-          "control": "gcp-storage-3"
         },
         {
           "control": "gcp-logging-1"

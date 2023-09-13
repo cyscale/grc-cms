@@ -4,8 +4,7 @@
   "controls": [
     "aws-logging-3",
     "azure-1-3-0-logging-1-3",
-    "cis-alibaba-1-0-0-logging-2",
-    "gcp-storage-3"
+    "cis-alibaba-1-0-0-logging-2"
   ],
   "assets": [
     "Bucket",
