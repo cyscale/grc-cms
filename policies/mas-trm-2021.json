@@ -521,7 +521,7 @@
           "control": "gcp-storage-3"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-vm-5"
@@ -660,7 +660,7 @@
           "control": "gcp-vms-public-ip-addresses"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-db-require-incoming-conn-ssl"

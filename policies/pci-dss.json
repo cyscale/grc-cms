@@ -79,7 +79,7 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-db-require-incoming-conn-ssl"
@@ -169,7 +169,7 @@
       "body": "Unscrupulous individuals use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by the vendor-provided security patches, which must be installed by the entities that manage the systems. All systems must have all appropriate software patches to protect against the exploitation and compromise of cardholder data by malicious individuals and malicious software. Refer to the [SDLC Policy](/policies/sdlc/show) for more info.\n\nOrganizations must limit the potential for exploits by deploying critical patches on time. Patch all systems in the card data environment, including:\n\n- Cloud accounts\n- Operating systems\n- Firewalls, Routers, Switches\n- Application software\n- Databases\n- POS/POI terminals",
       "controls": [
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-kubernetes-6"
@@ -358,7 +358,7 @@
           "control": "aws-1-3-0-iam-20"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-vms-public-ip-addresses"

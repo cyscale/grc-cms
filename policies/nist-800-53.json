@@ -84,7 +84,7 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-storage-2"
@@ -1208,7 +1208,7 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-storage-1"
+          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-storage-2"

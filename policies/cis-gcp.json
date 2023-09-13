@@ -88,7 +88,7 @@
       "slug": "cis-gcp-storage",
       "body": "",
       "controls": [
-        { "control": "gcp-storage-1" },
+        { "control": "gcp-bucket-publicly-accessible" },
         { "control": "gcp-storage-2" },
         { "control": "gcp-buckets-uniform-level-access" }
       ]
