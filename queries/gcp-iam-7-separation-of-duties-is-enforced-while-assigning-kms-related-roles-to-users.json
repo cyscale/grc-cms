@@ -1,1 +1,5 @@
-{"name":"Separation of duties is enforced while assigning KMS related roles to users","slug":"gcp-iam-7-separation-of-duties-is-enforced-while-assigning-kms-related-roles-to-users","query":"iamUsers(where:{hasIAMRole_SOME:{OR:[{name:\"roles/cloudkms.admin\"}{name:\"roles/cloudkms.cryptoKeyEncrypterDecrypter\"}{name:\"roles/cloudkms.cryptoKeyEncrypter\"}{name:\"roles/cloudkms.cryptoKeyDecrypter\"}]}}){...AssetFragment}"}
+{
+  "name": "Separation of duties is enforced while assigning KMS related roles to users",
+  "slug": "gcp-iam-7-separation-of-duties-is-enforced-while-assigning-kms-related-roles-to-users",
+  "query": "{\n  iamUsers(\n    where: {\n      AND: [\n        {\n          hasIAMRole_SOME: {\n            OR: [\n              { name: \"roles/cloudkms.admin\" }\n              { name: \"roles/owner\" }\n              { name: \"roles/editor\" }\n            ]\n          }\n        }\n        {\n          hasIAMRole_SOME: {\n            OR: [\n              { name: \"roles/cloudkms.cryptoKeyEncrypterDecrypter\" }\n              { name: \"roles/cloudkms.cryptoKeyEncrypter\" }\n              { name: \"roles/cloudkms.cryptoKeyDecrypter\" }\n            ]\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+}
