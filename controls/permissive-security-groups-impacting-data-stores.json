@@ -1,8 +1,9 @@
 {
-  "alertForSecondaryOnly": true,
+  "body": "Firewalls/security groups allowing all traffic from the internet increase the **attack surface** of your cloud estate. When these are used to control the traffic to compute resources (most commonly VMs), attackers might be able to take advantage of various vulnerabilities present on these resources to infiltrate into the cloud environment. Then, if the compute resource has permissions to access data stores or other resources, the attacker might **move laterally** through the environment or **access potentially sensitive data**.",
   "name": "Ensure Firewalls do not allow traffic from the internet",
   "slug": "permissive-security-groups-impacting-data-stores",
-  "severity": 2,
+  "isInsight": true,
+  "alertForSecondaryOnly": true,
   "rules": [
     {
       "cloudProviders": [
@@ -29,7 +30,7 @@
       "query": "firewalls-allowing-internet-traffic"
     }
   ],
+  "remediationDescription": "### AWS:\n\n- For S3 buckets or DynamoDB, remove the permission from the IAM Role attached to the compute resource, which grants access to the data stores.\n- For SQL DB instances, ensure that the DB is not part of the same security group as the compute resources, separating their network access.\n\n### GCP:\n\n- For BigQuery and Buckets, modify the data store's access policy to remove the compute resource's access, revoking any permissions granted.\n\n### Azure:\n\n- Remove the managed identity assigned to the compute resource, which grants access to the data store. This ensures that the compute resource no longer has the ability to connect to the data store.",
   "description": "Permissive security groups impacting data stores",
-  "body": "Firewalls/security groups allowing all traffic from the internet increase the **attack surface** of your cloud estate. When these are used to control the traffic to compute resources (most commonly VMs), attackers might be able to take advantage of various vulnerabilities present on these resources to infiltrate into the cloud environment. Then, if the compute resource has permissions to access data stores or other resources, the attacker might **move laterally** through the environment or **access potentially sensitive data**.",
-  "remediationDescription": "### AWS:\n\n- For S3 buckets or DynamoDB, remove the permission from the IAM Role attached to the compute resource, which grants access to the data stores.\n- For SQL DB instances, ensure that the DB is not part of the same security group as the compute resources, separating their network access.\n\n### GCP:\n\n- For BigQuery and Buckets, modify the data store's access policy to remove the compute resource's access, revoking any permissions granted.\n\n### Azure:\n\n- Remove the managed identity assigned to the compute resource, which grants access to the data store. This ensures that the compute resource no longer has the ability to connect to the data store."
+  "severity": 2
 }
