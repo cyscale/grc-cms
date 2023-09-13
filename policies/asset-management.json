@@ -103,7 +103,7 @@
           "control": "gcp-vm-6"
         },
         {
-          "control": "gcp-1-1-0-logging-3"
+          "control": "gcp-bucket-lock-log-buckets"
         },
         {
           "control": "gcp-buckets-uniform-level-access"

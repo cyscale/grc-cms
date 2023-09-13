@@ -46,7 +46,7 @@
         { "control": "gcp-logging-9" },
         { "control": "gcp-logging-10" },
         { "control": "gcp-logging-11" },
-        { "control": "gcp-1-1-0-logging-3" }
+        { "control": "gcp-bucket-lock-log-buckets" }
       ]
     },
     {

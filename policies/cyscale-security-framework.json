@@ -406,7 +406,7 @@
           "control": "aws-1-3-0-monitoring-15"
         },
         {
-          "control": "gcp-1-1-0-logging-3"
+          "control": "gcp-bucket-lock-log-buckets"
         },
         {
           "control": "azure-1-3-0-logging-1-1"

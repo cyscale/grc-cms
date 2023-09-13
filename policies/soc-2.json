@@ -171,7 +171,7 @@
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-1-1-0-logging-3"
+          "control": "gcp-bucket-lock-log-buckets"
         },
         {
           "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
