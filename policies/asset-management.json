@@ -88,9 +88,6 @@
           "control": "gcp-sql-no-whitelist-all-ips"
         },
         {
-          "control": "gcp-sql-3"
-        },
-        {
           "control": "gcp-sql-4"
         },
         {
