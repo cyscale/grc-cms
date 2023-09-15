@@ -1247,9 +1247,6 @@
           "control": "gcp-vms-public-ip-addresses"
         },
         {
-          "control": "gcp-1-1-0-vm-10"
-        },
-        {
           "control": "azure-encryption-on-sql-database"
         },
         {
