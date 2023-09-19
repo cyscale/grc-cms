@@ -1,0 +1,5 @@
+{
+  "name": "CloudRun revisions with high severity vulnerabilities",
+  "slug": "cloud-run-instances-with-high-severity-vulnerabilities",
+  "query": "{ \n  cloudRunRevisions(\n    where: {\n      image: {\n        findings_SOME: {\n          vulnerability: {\n            severity_GTE: 4,\n            exploitAvailable: true\n          }\n        }\n      }\n    }) {\n    ...AssetFragment\n  }\n}"
+}
