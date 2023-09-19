@@ -367,6 +367,12 @@
         },
         {
           "control": "gcp-sql-no-whitelist-all-ips"
+        },
+        {
+          "control": "gcp-vm-2"
+        },
+        {
+          "control": "gcp-vm-3"
         }
       ]
     },
