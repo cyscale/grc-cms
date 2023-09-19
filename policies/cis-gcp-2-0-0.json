@@ -123,6 +123,12 @@
           "control": "gcp-instances-no-default-service-account"
         },
         {
+          "control": "gcp-vm-2"
+        },
+        {
+          "control": "gcp-vm-3"
+        },
+        {
           "control": "gcp-vm-5"
         },
         {
