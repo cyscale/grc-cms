@@ -1,1 +1,5 @@
-{"name":"Basic/primitive roles are not used","slug":"gcp-iam-8-basicprimitive-roles-are-not-used","query":"{iamRoles(where:{name_IN:[\"roles/viewer\",\"roles/editor\",\"roles/owner\"]}){...AssetFragment}}"}
+{
+  "name": "Basic/primitive roles are not used",
+  "slug": "gcp-iam-8-basicprimitive-roles-are-not-used",
+  "query": "{\n  iamUsers(\n    where: {\n      hasIAMRole_SOME: {\n        name_IN: [\"roles/viewer\", \"roles/editor\", \"roles/owner\"]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
