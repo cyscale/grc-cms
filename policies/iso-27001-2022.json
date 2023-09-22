@@ -116,6 +116,9 @@
           "control": "gcp-bucket-publicly-accessible"
         },
         {
+          "control": "gcp-project-asset-inventory"
+        },
+        {
           "control": "cis-alibaba-1-0-0-iam-6"
         },
         {
