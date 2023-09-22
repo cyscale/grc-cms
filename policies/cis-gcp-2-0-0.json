@@ -87,6 +87,9 @@
         },
         {
           "control": "gcp-logging-11"
+        },
+        {
+          "control": "gcp-project-asset-inventory"
         }
       ],
       "body": "This section covers recommendations addressing Logging and Monitoring on Google\r\nCloud."
