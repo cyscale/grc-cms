@@ -1253,6 +1253,9 @@
           "control": "gcp-vms-public-ip-addresses"
         },
         {
+          "control": "gcp-app-engine-enforce-https"
+        },
+        {
           "control": "azure-encryption-on-sql-database"
         },
         {

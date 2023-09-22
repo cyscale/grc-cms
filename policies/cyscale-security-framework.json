@@ -850,6 +850,9 @@
         },
         {
           "control": "gcp-confidential-computing"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
         }
       ]
     },

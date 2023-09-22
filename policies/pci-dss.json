@@ -151,6 +151,9 @@
         },
         {
           "control": "azure-https-transfer-enabled"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
         }
       ]
     },

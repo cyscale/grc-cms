@@ -213,6 +213,9 @@
         },
         {
           "control": "aws-networking-6"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
         }
       ]
     },

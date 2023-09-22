@@ -1778,6 +1778,9 @@
         },
         {
           "control": "aws-ecs-2-service-assign-public-ip-disabled"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
         }
       ]
     },

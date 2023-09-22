@@ -295,6 +295,9 @@
         },
         {
           "control": "gcp-user-options-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
         }
       ]
     },

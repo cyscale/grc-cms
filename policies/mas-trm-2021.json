@@ -745,6 +745,9 @@
         },
         {
           "control": "azure-restrict-udp"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
         }
       ]
     },
