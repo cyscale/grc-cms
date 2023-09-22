@@ -1,0 +1,23 @@
+{
+  "body": "In order to maintain the highest level of security all connections to an application should be secure by default.\n\n#﻿## Rationale\n\nInsecure HTTP connections may be subject to eavesdropping which can expose sensitive data.\n\n#﻿## Impact\n\nAll connections to App Engine will automatically be redirected to the HTTPS endpoint\nensuring that all connections are secured by TLS.",
+  "name": "Ensure App Engine Applications Enforce HTTPS Connections",
+  "slug": "gcp-app-engine-enforce-https",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Application"
+      ],
+      "query": "gcp-app-engine-plain-http"
+    }
+  ],
+  "remediationDescription": "Add a line to the `app.yaml` file controlling the application which enforces secure connections. For example:\n\n`﻿``\nhandlers:\n  - url: /.*\n    **secure: always**\n    redirect_http_response_code: 301\n    script: auto\n`﻿``\n\n### Default Value\n\nBy default, both HTTP and HTTP are supported.\n\n#﻿## References\n\n-﻿ https://cloud.google.com/appengine/docs/standard/reference/app-yaml",
+  "description": "App Engine Services Allowing Plain HTTP",
+  "severity": 2
+}
