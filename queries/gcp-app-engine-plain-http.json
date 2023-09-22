@@ -1,0 +1,5 @@
+{
+  "slug": "gcp-app-engine-plain-http",
+  "name": "App Engine Allowing Plain HTTP",
+  "query": "{\n  appEngineServices(\n    where: {\n      serviceVersions_NONE: {\n        urlHandlers_SOME: {\n          urlRegex_IN: [\"/.*\", \".*\"]\n          securityLevel_IN: [\"SECURE_ALWAYS\"]\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
