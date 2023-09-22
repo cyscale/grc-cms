@@ -138,6 +138,9 @@
           "control": "gcp-vms-public-ip-addresses"
         },
         {
+          "control": "gcp-app-engine-enforce-https"
+        },
+        {
           "control": "gcp-confidential-computing"
         }
       ]
