@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud Projects Without Asset Inventory",
+  "slug": "gcp-projects-without-asset-inventory",
+  "query": "{\n  projects(\n    where: { NOT: { enabledServices_INCLUDES: \"cloudasset.googleapis.com\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
