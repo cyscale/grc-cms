@@ -5,15 +5,11 @@
   "severity": 2,
   "rules": [
     {
-      "cloudProviders": [
-        "gcp"
-      ],
+      "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "VM"
-      ],
-      "returnPath": "networkInterface.vm",
+      "subjects": ["VM"],
+      "returnPath": "",
       "query": "gcp-1-1-0-vm-9-compute-instances-do-not-have-public-ip-addresses"
     }
   ],
