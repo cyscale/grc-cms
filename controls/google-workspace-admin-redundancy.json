@@ -1,0 +1,23 @@
+{
+  "body": "While having too many administrators constitutes a security risk, having only one is also a risk especially when MFA is enforced. You should assign at least two Okta administrators for access redundancy.",
+  "name": "Ensure at least two Google Workspace admins are configured",
+  "slug": "google-workspace-admin-redundancy",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "googleworkspace"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IdentityProvider"
+      ],
+      "query": "at-least-two-admins-gw"
+    }
+  ],
+  "remediationDescription": "Assign another user with the Admin role.",
+  "description": "Google Workspace accounts without admin redundancy",
+  "severity": 2
+}
