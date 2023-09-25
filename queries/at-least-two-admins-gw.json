@@ -1,0 +1,5 @@
+{
+  "name": "At least two admins are configured Google Workspace",
+  "slug": "at-least-two-admins-gw",
+  "query": "GWTwoAdmins{...AssetFragment}"
+}
