@@ -120,6 +120,15 @@
           "control": "gcp-rsasha1-zsk-cloud-dns"
         },
         {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "gcp-networking-4"
+        },
+        {
+          "control": "gcp-networking-6"
+        },
+        {
           "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         }
       ]

@@ -49,7 +49,6 @@
         { "control": "gcp-logging-9" },
         { "control": "gcp-networking-1" },
         { "control": "gcp-networking-2" },
-        { "control": "gcp-networking-5" },
         { "control": "gcp-networking-6" },
         { "control": "gcp-kubernetes-4" },
         { "control": "gcp-kubernetes-11" },

@@ -566,9 +566,6 @@
           "control": "gcp-networking-4"
         },
         {
-          "control": "gcp-networking-5"
-        },
-        {
           "control": "gcp-networking-6"
         },
         {
