@@ -474,6 +474,9 @@
         },
         {
           "control": "gcp-vpc-dns-logging"
+        },
+        {
+          "control": "gcp-load-balancers-logging"
         }
       ]
     },
