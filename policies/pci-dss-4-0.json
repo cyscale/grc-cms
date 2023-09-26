@@ -632,6 +632,9 @@
         },
         {
           "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-vpc-dns-logging"
         }
       ]
     },
