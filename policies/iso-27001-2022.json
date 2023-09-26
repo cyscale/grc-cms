@@ -1614,6 +1614,9 @@
         },
         {
           "control": "gcp-3625-trace-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-vpc-dns-logging"
         }
       ]
     },
