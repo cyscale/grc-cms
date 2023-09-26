@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "name": "Ensure Cloud DNS Logging Is Enabled for All VPC Networks",
+  "slug": "gcp-vpc-dns-logging",
+  "body": "Cloud DNS logging records the queries from the name servers within your VPC to Stackdriver. Logged queries can come from Compute Engine VMs, GKE containers, or other GCP resources provisioned within the VPC.\n\n#﻿## Rationale\n\nSecurity monitoring and forensics cannot depend solely on IP addresses from VPC flow logs, especially when considering the dynamic IP usage of cloud resources, HTTP virtual host routing, and other technology that can obscure the DNS name used by a client from the IP address.\n\nMonitoring of Cloud DNS logs provides visibility to DNS names requested by the clients within the VPC. These logs can be monitored for anomalous domain names and evaluated against threat intelligence\n\nNote: For full capture of DNS, firewall must block egress UDP/53 (DNS) and TCP/443 (DNS over HTTPS) to prevent client from using external DNS name server for resolution.",
+  "severity": 1,
+  "remediationDescription": "### From Command Line\r\n\r\nAdd New DNS Policy With Logging Enabled\r\n\r\nFor each VPC network that needs a DNS policy with logging enabled:\r\n\r\n```bash\r\ngcloud dns policies create enable-dns-logging --enable-logging --description=\"Enable DNS Logging\" --networks=VPC_NETWORK_NAME\r\n```\r\n\r\nThe VPC_NETWORK_NAME can be one or more networks in comma-separated list\r\n\r\nEnable Logging for Existing DNS Policy\r\nFor each VPC network that has an existing DNS policy that needs logging enabled\r\n\r\n```bash\r\ngcloud dns policies update POLICY_NAME --enable-logging --networks=VPC_NETWORK_NAME\r\n```\r\n\r\nThe VPC_NETWORK_NAME can be one or more networks in comma-separated list\r\n\r\n### Default Value\r\n\r\nCloud DNS logging is disabled by default on each network.\r\n",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DNSPolicy"
+      ],
+      "query": "gcp-vpcs-without-dns-logging"
+    }
+  ]
+}
