@@ -141,13 +141,22 @@
           "control": "gcp-instances-no-default-service-account"
         },
         {
+          "control": "gcp-vm-1"
+        },
+        {
           "control": "gcp-vm-2"
         },
         {
           "control": "gcp-vm-3"
         },
         {
+          "control": "gcp-vm-4"
+        },
+        {
           "control": "gcp-vm-5"
+        },
+        {
+          "control": "gcp-vm-6"
         },
         {
           "control": "gcp-shielded-vm-enabled"
