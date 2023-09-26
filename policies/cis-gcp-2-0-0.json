@@ -89,6 +89,9 @@
           "control": "gcp-logging-11"
         },
         {
+          "control": "gcp-vpc-dns-logging"
+        },
+        {
           "control": "gcp-project-asset-inventory"
         }
       ],
