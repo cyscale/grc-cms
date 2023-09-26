@@ -1103,6 +1103,9 @@
         },
         {
           "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "gcp-vpc-dns-logging"
         }
       ]
     },
