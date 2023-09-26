@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud VPCs without DNS logging",
+  "slug": "gcp-vpcs-without-dns-logging",
+  "query": "{\n  vpcs(where: { dnsPolicy_NONE: { NOT: { enableLogging_IN: [\"true\"] } } }) {\n    ...AssetFragment\n  }\n}"
+}
