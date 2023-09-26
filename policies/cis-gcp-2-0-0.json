@@ -93,6 +93,9 @@
         },
         {
           "control": "gcp-project-asset-inventory"
+        },
+        {
+          "control": "gcp-load-balancers-logging"
         }
       ],
       "body": "This section covers recommendations addressing Logging and Monitoring on Google\r\nCloud."
