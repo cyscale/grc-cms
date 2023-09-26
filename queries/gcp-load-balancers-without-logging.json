@@ -1,0 +1,5 @@
+{
+  "query": "{\n  loadBalancers(\n    where: { backendServices_ALL: { NOT: { logConfigEnabled: true } } }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "name": "Google Cloud Load Balancers without logging",
+  "slug": "gcp-load-balancers-without-logging"
+}
