@@ -14,7 +14,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "DNSPolicy"
+        "VPC"
       ],
       "query": "gcp-vpcs-without-dns-logging"
     }
