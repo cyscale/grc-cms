@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "name": "Ensure Multi-Factor Authentication is 'Enabled' for All Non-Service Accounts",
+  "slug": "gcp-mfa",
+  "body": "Setup multi-factor authentication for Google Cloud Platform accounts.\r\n\r\n### Rationale\r\n\r\nMulti-factor authentication requires more than one mechanism to authenticate a user. This secures user logins from attackers exploiting stolen or weak credentials.\r\n\r\n### Notes\r\n\r\nCyscale can help you identify users with access to your cloud environment without MFA/2SV only if you connect your [Google Workspace account](/connectors/add/googleworkspace).",
+  "severity": 2,
+  "remediationDescription": "MFA, or 2-step verification (2SV) as presented by Google, can only be enabled by each user individually. You and your users play important roles in setting up 2-Step Verification (2SV). Your users can choose their 2SV method, or you can enforce a method for certain users or groups in your organization. For example, you can require a small team in Sales to use security keys.\r\n\r\n#### Step 1: Notify users of 2-Step Verification deployment\r\n\r\nBefore deploying 2SV, communicate your company’s plans to your users, including:\r\n\r\n- What 2SV is and why your company is using it.\r\n- Whether 2SV is optional or required.\r\n- If required, give the date by which users must turn on 2SV.\r\n- Which 2SV method is required or recommended.\r\n\r\n#### Step 2: Allow users to turn on 2-Step Verification\r\n\r\n_User accounts created before December 2016 have 2SV on by default._\r\n\r\nLet users turn on 2SV and use any verification method.\r\n\r\n1. In your Admin Console, go to [Security > Authentication > 2-step verification](https://admin.google.com/ac/security/2sv).\r\n2. To apply the setting to everyone, leave the top organizational unit selected. Otherwise, select a child organizational unit or a configuration group.\r\n3. Check the **Allow users to turn on 2-Step Verification** box.\r\n4. Select **Enforcement** > **Off**.\r\n5. Click **Save**. If you configured an organizational unit or group, you might be able to either Inherit or Override a parent organizational unit, or Unset a group.\r\n\r\n#### Step 3: Enforce 2-Step Verification (Optional)\r\n\r\n**Before you begin**: Make sure users are enrolled in 2SV.\r\n\r\n1. In your Admin Console, go to [Security > Authentication > 2-step verification](https://admin.google.com/ac/security/2sv).\r\n2. For **Enforcement**, choose an option:\r\n\r\n- **On** — Starts immediately.\r\n- **Turn on enforcement from date** — Select the start date. Users see reminders to enroll in 2SV when they sign in. When using the On from date option, enforcement will start within 24-48 hours of the chosen date. If you want a precise enforcement start time, use the On option.\r\n\r\n3. (Optional) To give new employees time to enroll before enforcement applies to their accounts, for New user enrollment period, select a timeframe from 1 day to 6 months.\r\n   During this period, users can sign in with just their passwords.\r\n4. (Optional) To let users avoid repeated 2SV checks on trusted devices, under Frequency, check the Allow user to trust the device box.\r\n   The first time a user signs in from a new device, they can check a box to trust their device. Then the user isn't prompted for 2SV on the device unless the user clears their cookies or revokes the device or you reset the user's sign-in cookie.\r\n\r\n### References\r\n\r\n- [Google Workspace Help - Deploy 2-Step Verification](https://apps.google.com/supportwidget/articlehome?hl=en&article_url=https%3A%2F%2Fsupport.google.com%2Fa%2Fanswer%2F9176657%3Fhl%3Den&assistant_id=generic-unu&product_context=9176657&product_name=UnuFlow&trigger_context=a)\r\n",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "gcp-iam-users-no-mfa"
+    }
+  ]
+}
