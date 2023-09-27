@@ -220,6 +220,9 @@
         },
         {
           "control": "gcp-confidential-computing"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
