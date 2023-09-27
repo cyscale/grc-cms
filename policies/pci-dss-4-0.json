@@ -406,6 +406,9 @@
         },
         {
           "control": "object-containers-with-public-access"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
