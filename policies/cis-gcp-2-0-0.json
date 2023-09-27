@@ -14,6 +14,9 @@
           "control": "gcp-iam-1"
         },
         {
+          "control": "gcp-mfa"
+        },
+        {
           "control": "gcp-iam-2"
         },
         {
