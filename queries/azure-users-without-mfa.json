@@ -1,0 +1,5 @@
+{
+  "name": "Azure Users Without MFA",
+  "slug": "azure-users-without-mfa",
+  "query": "{\n  iamUsers(where: { mfaActive: false }) {\n    ...AssetFragment\n  }\n}"
+}
