@@ -171,7 +171,7 @@
     {
       "name": "Data protection by design and by default",
       "slug": "gdpr-data-protection-by-design-default",
-      "body": "The GDPR provides for two crucial concepts for future project planning: ***Data Protection By Design*** and ***Data Protection By Default***. This means you must consider the data protection principles in the design of any new product or activity at an early stage. The GDPR covers this principle in Article 25.\n\n**Data Protection by design** means embedding data privacy features and data privacy enhancing technologies directly into the design of projects at an early stage. This will help to ensure better and more cost-effective protection for individual data privacy.\n\n**Data Protection by default** means that the user service settings (e.g. no automatic opt-ins on customer account pages) must be automatically data protection friendly, and that only data which is necessary for each specific purpose of the processing should be gathered at all.",
+      "body": "The GDPR provides for two crucial concepts for future project planning: ***Data Protection by Design*** and ***Data Protection by Default***. This means you must consider the data protection principles in the design of any new product or activity at an early stage. The GDPR covers this principle in Article 25.\n\n**Data Protection by design** means embedding data privacy features and data privacy enhancing technologies directly into the design of projects at an early stage. This will help to ensure better and more cost-effective protection for individual data privacy.\n\n**Data Protection by default** means that the user service settings (e.g. no automatic opt-ins on customer account pages) must be automatically data protection friendly, and that only data which is necessary for each specific purpose of the processing should be gathered at all.",
       "controls": [
         {
           "control": "aws-1-3-0-iam-7"
@@ -298,6 +298,9 @@
         },
         {
           "control": "gcp-app-engine-enforce-https"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
