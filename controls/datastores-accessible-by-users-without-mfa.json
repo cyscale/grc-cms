@@ -2,8 +2,8 @@
   "body": "Accounts that have permission to access datastores are targeted by attackers. Requiring multi-factor authentication (MFA) on those accounts is an easy way to reduce the risk of data breaches or data tampering.\n\nMulti-factor authentication (MFA) is an important tool in protecting corporate resources. MFA, also called 2-step verification (2SV), requires users to verify their identity through something they know (such as a password) plus something they have (such as a physical key or access code).\n",
   "name": "Ensure Datastores are not accessible by users without MFA",
   "slug": "datastores-accessible-by-users-without-mfa",
-  "isInsight": false,
-  "alertForSecondaryOnly": false,
+  "isInsight": true,
+  "alertForSecondaryOnly": true,
   "rules": [
     {
       "cloudProviders": [
