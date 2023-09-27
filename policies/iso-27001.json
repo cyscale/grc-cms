@@ -839,6 +839,9 @@
         },
         {
           "control": "aws-storage-3"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
