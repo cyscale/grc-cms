@@ -252,6 +252,9 @@
           "control": "gcp-sql-db-no-public-ips"
         },
         {
+          "control": "gcp-sql-no-public-ips"
+        },
+        {
           "control": "gcp-db-automated-backups"
         }
       ]
