@@ -340,6 +340,9 @@
         },
         {
           "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
