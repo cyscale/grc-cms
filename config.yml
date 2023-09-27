@@ -76,7 +76,7 @@ collections:
         widget: 'list'
         summary: '{{query.value}}'
         fields:
-          - label: 'Cloud Providers'
+          - label: 'Providers'
             name: 'cloudProviders'
             widget: 'select'
             multiple: true
@@ -293,6 +293,17 @@ collections:
       - { name: 'slug', label: 'Slug', widget: 'string' }
       - { name: 'version', label: 'Version', widget: 'string' }
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
+      - label: 'Target Providers'
+        name: 'targetCloudProviders'
+        widget: 'select'
+        multiple: true
+        options:
+          - { label: 'AWS', value: 'aws' }
+          - { label: 'Azure', value: 'azure' }
+          - { label: 'Alibaba', value: 'alibaba' }
+          - { label: 'Google Cloud', value: 'gcp' }
+          - { label: 'Okta', value: 'okta' }
+          - { label: 'Google Workspace', value: 'googleworkspace' }
       - label: 'Procedures'
         name: 'procedures'
         widget: 'list'
