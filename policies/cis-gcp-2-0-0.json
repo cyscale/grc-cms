@@ -56,6 +56,12 @@
       "slug": "cis-gcp-2-0-0-logging",
       "controls": [
         {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
           "control": "gcp-bucket-lock-log-buckets"
         },
         {
