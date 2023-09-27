@@ -1,0 +1,5 @@
+{
+  "name": "Google Workspace Admins without MFA",
+  "slug": "googleworkspace-admins-without-mfa",
+  "query": "{\n  users(where: { isAdmin: true, NOT: { isEnrolledIn2Sv: true } }) {\n    ...AssetFragment\n  }\n}"
+}
