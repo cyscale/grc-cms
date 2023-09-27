@@ -37,6 +37,17 @@
         "User"
       ],
       "query": "okta-admins-without-mfa"
+    },
+    {
+      "cloudProviders": [
+        "googleworkspace"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "googleworkspace-admins-without-mfa"
     }
   ],
   "body": "Accounts that are assigned administrative rights are targeted by attackers. Requiring multi-factor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.\n\nMulti-factor authentication (MFA) is an important tool in protecting corporate resources. MFA, also called 2-step verification (2SV), requires users to verify their identity through something they know (such as a password) plus something they have (such as a physical key or access code)",
