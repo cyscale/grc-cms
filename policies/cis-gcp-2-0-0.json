@@ -262,11 +262,7 @@
     {
       "name": "7. BigQuery",
       "slug": "cis-gcp-2-0-0-bigquery",
-      "controls": [
-        {
-          "control": "gcp-bigquery-publicly-accessible"
-        }
-      ]
+      "controls": []
     }
   ]
 }
