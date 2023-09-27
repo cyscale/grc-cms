@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud Admins Without MFA",
+  "slug": "gcp-admins-no-mfa",
+  "query": "{\n  iamUsers(\n    where: {\n      hasIAMRole_SOME: {\n        OR: [\n          { name_IN: [\"roles/owner\", \"roles/editor\"] }\n          { name_CONTAINS: \"admin\" }\n        ]\n      }\n      NOT: { user: { isEnrolledIn2Sv: true } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
