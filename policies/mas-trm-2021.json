@@ -591,6 +591,9 @@
         },
         {
           "control": "cis-alibaba-1-0-0-logging-2"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
