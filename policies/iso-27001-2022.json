@@ -593,6 +593,9 @@
         },
         {
           "control": "gcp-sql-no-whitelist-all-ips"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
