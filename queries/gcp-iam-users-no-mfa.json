@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud IAMUsers Without MFA",
+  "slug": "gcp-iam-users-no-mfa",
+  "query": "{\n  iamUsers(where: { NOT: { user: { isEnrolledIn2Sv: true } } }) {\n    ...AssetFragment\n  }\n}"
+}
