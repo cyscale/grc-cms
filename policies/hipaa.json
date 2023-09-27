@@ -142,6 +142,9 @@
         },
         {
           "control": "gcp-remote-access-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
         }
       ]
     },
