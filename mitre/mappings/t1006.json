@@ -8,11 +8,11 @@
     "Disk",
     "SQSQueue",
     "DBInstance",
-    "DynamodbTable",
     "BigQueryTable",
     "BigTable",
     "CloudSQLInstance",
-    "CloudSpanner"
+    "CloudSpanner",
+    "DynamoDBTable"
   ],
   "propagators": [
     "IAMGroup",
