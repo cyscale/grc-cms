@@ -293,5 +293,8 @@
       "slug": "cis-azure-2-0-0-misc",
       "body": "This section covers security recommendations for miscellaneous."
     }
+  ],
+  "targetCloudProviders": [
+    "azure"
   ]
 }
