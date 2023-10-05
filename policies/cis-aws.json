@@ -211,5 +211,8 @@
         }
       ]
     }
+  ],
+  "targetCloudProviders": [
+    "aws"
   ]
 }
