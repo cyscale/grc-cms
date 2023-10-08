@@ -1,9 +1,9 @@
 {
-  "name": "Ensure object containers are not accessible from VMs with open management ports",
-  "description": "Object containers accessible from VMs with open management ports",
   "body": "Cyscale looks for object containers that are accessible from virtual machines with open management ports.",
+  "name": "Ensure object containers are not accessible from VMs with open management ports",
   "slug": "object-containers-accessible-from-vms-with-open-management-ports",
-  "severity": 3,
+  "isInsight": true,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -50,5 +50,7 @@
       "query": "alibaba-buckets-accessible-from-vms-with-open-management-port"
     }
   ],
-  "remediationDescription": "Depending on the provider you must disable public access from the internet to the VMs."
+  "remediationDescription": "Depending on the provider you must disable public access from the internet to the VMs.",
+  "description": "Object containers accessible from VMs with open management ports",
+  "severity": 2
 }
