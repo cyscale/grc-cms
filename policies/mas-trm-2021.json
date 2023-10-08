@@ -428,9 +428,6 @@
           "control": "object-containers-with-public-access"
         },
         {
-          "control": "object-containers-accessible-from-vms-with-open-management-ports"
-        },
-        {
           "control": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
         },
         {

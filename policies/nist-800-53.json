@@ -261,9 +261,6 @@
           "control": "publicly-writable-object-containers"
         },
         {
-          "control": "object-containers-accessible-from-vms-with-open-management-ports"
-        },
-        {
           "control": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
         },
         {
