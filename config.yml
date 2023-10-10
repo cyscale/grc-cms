@@ -23,7 +23,12 @@ collections:
     slug: '{{fields.slug}}'
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
-      - { name: 'slug', label: 'Slug', widget: 'string' }
+      - { 
+          name: 'slug',
+          label: 'Slug',
+          widget: 'string',
+          pattern: ['[\d\w\-]{3,256}', 'Slug must contain only alphanumeric characters and dash']
+        }
       - {
           name: 'query',
           label: 'Query',
@@ -48,7 +53,10 @@ collections:
           widget: 'string',
           required: false,
         }
-      - { name: 'slug', label: 'Slug', widget: 'string' }
+      - name: 'slug'
+        label: 'Slug'
+        widget: 'string'
+        pattern: ['[\d\w\-]{3,256}', 'Slug must contain only alphanumeric characters and dash']
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Severity'
         name: 'severity'
@@ -290,7 +298,10 @@ collections:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'isStandard', label: 'Standard', widget: 'boolean' }
       - { name: 'enabled', label: 'Enabled', widget: 'boolean', default: true }
-      - { name: 'slug', label: 'Slug', widget: 'string' }
+      - name: 'slug'
+        label: 'Slug'
+        widget: 'string'
+        pattern: ['[\d\w\-]{3,256}', 'Slug must contain only alphanumeric characters and dash']
       - { name: 'version', label: 'Version', widget: 'string' }
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Target Providers'
