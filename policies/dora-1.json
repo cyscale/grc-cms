@@ -4,43 +4,384 @@
   "isStandard": true,
   "slug": "dora-1",
   "version": "1.0",
-  "body": "#﻿Statement\n\nThe Digital Operational Resilience Act (Regulation (EU) 2022/2554) solves an important problem in the EU financial regulation. Before DORA, financial institutions managed the main categories of operational risk mainly with the allocation of capital, but they did not manage all components of operational resilience. After DORA, they must also follow rules for the protection, detection, containment, recovery and repair capabilities against ICT-related incidents. DORA explicitly refers to ICT risk and sets rules on ICT risk-management, incident reporting, operational resilience testing and ICT third-party risk monitoring. This Regulation acknowledges that ICT incidents and a lack of operational resilience have the possibility to jeopardise the soundness of the entire financial system, even if there is \"adequate\" capital for the traditional risk categories.\n\nDORA has nine chapters that include general provisions, ICT risk management, digital operational resilience testing, and others.  \n\nThe chapter that contains technical requirements that apply to cloud environments is the second one, ICT risk management. \n\n#﻿Recommendations\n\n<Procedure slug=\"dora-2-5-governance-and-organisation\"/>\n<Procedure slug=\"dora-2-6-risk-management-framework\"/>\n<Procedure slug=\"dora-2-7-systems-protocols-tools\"/>\n<Procedure slug=\"dora-2-8-identification\"/>\n<Procedure slug=\"dora-2-9-protection-and-prevention\"/>\n<Procedure slug=\"dora-2-11-response-and-recovery\"/>\n<Procedure slug=\"dora-2-12-backup-restoration-and-recovery\"/>\n<Procedure slug=\"dora-2-13-learning-and-evolving\"/>\n<Procedure slug=\"dora-2-14-communication\"/>\n<Procedure slug=\"dora-2-15-harmonisation-of-tools-methods-processed-policies\"/>\n<Procedure slug=\"dora-2-16-simplified-risk-management-framework\"/>\n",
+  "body": "#﻿Statement\n\nThe Digital Operational Resilience Act (Regulation (EU) 2022/2554) solves an important problem in the EU financial regulation. Before DORA, financial institutions managed the main categories of operational risk mainly with the allocation of capital, but they did not manage all components of operational resilience. After DORA, they must also follow rules for the protection, detection, containment, recovery and repair capabilities against ICT-related incidents. DORA explicitly refers to ICT risk and sets rules on ICT risk-management, incident reporting, operational resilience testing and ICT third-party risk monitoring. This Regulation acknowledges that ICT incidents and a lack of operational resilience have the possibility to jeopardise the soundness of the entire financial system, even if there is \"adequate\" capital for the traditional risk categories.\n\nDORA has nine chapters. The chapter that contains technical requirements that apply to cloud environments is the second one, ICT risk management. \n\nT﻿he final text of DORA can be found [here](https://www.digital-operational-resilience-act.com/DORA_Articles.html).\n\n#﻿Recommendations\n\n<Procedure slug=\"dora-2-5-governance-and-organisation\"/>\n<Procedure slug=\"dora-2-6-risk-management-framework\"/>\n<Procedure slug=\"dora-2-7-systems-protocols-tools\"/>\n<Procedure slug=\"dora-2-8-identification\"/>\n<Procedure slug=\"dora-2-9-protection-and-prevention\"/>\n<Procedure slug=\"dora-2-11-response-and-recovery\"/>\n<Procedure slug=\"dora-2-12-backup-restoration-and-recovery\"/>\n<Procedure slug=\"dora-2-13-learning-and-evolving\"/>\n<Procedure slug=\"dora-2-14-communication\"/>\n<Procedure slug=\"dora-2-15-harmonisation-of-tools-methods-processed-policies\"/>\n",
   "procedures": [
     {
       "name": "Article 5, Governance and organisation",
-      "slug": "dora-2-5-governance-and-organisation"
+      "slug": "dora-2-5-governance-and-organisation",
+      "controls": [
+        {
+          "control": "gcp-kubernetes-7"
+        },
+        {
+          "control": "gcp-kubernetes-13"
+        },
+        {
+          "control": "azure-client-certs-web-app"
+        },
+        {
+          "control": "azure-key-vault-recoverable"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "azure-sql-db-disallow-any-ip"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
+        },
+        {
+          "control": "aws-networking-2"
+        },
+        {
+          "control": "aws-1-3-0-networking-2"
+        },
+        {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "azure-https-transfer-enabled"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "aws-networking-3"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "aws-1-3-0-storage-1-1"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "kms-keys-expiring-within-the-next-14-days"
+        },
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "kms-keys-with-permissive-access-policy"
+        }
+      ]
     },
     {
       "name": "Article 6, ICT risk management framework",
-      "slug": "dora-2-6-risk-management-framework"
+      "slug": "dora-2-6-risk-management-framework",
+      "controls": [
+        {
+          "control": "gcp-shielded-vm-enabled"
+        },
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "aws-scan-1"
+        },
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "azure-defender-endpoint-selected"
+        },
+        {
+          "control": "azure-defender-for-app-services"
+        },
+        {
+          "control": "azure-defender-cosmos-db"
+        },
+        {
+          "control": "azure-defender-for-sql-servers"
+        },
+        {
+          "control": "microsoft-defender-for-containers"
+        },
+        {
+          "control": "azure-defender-for-dns"
+        },
+        {
+          "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-defender-open-source-relational-db"
+        },
+        {
+          "control": "azure-defender-for-resource-manager"
+        },
+        {
+          "control": "azure-defender-for-sql-servers-on-machines"
+        },
+        {
+          "control": "azure-defender-for-servers"
+        },
+        {
+          "control": "azure-defender-for-storage"
+        }
+      ]
     },
     {
       "name": "Article 7, ICT systems, protocols and tools",
-      "slug": "dora-2-7-systems-protocols-tools"
+      "slug": "dora-2-7-systems-protocols-tools",
+      "controls": [
+        {
+          "control": "aws-ecs-10-latest-platform-version"
+        },
+        {
+          "control": "databases-with-outdated-engine-versions"
+        },
+        {
+          "control": "azure-http-latest-version-web-app"
+        },
+        {
+          "control": "azure-latest-java-version"
+        },
+        {
+          "control": "azure-latest-php-version"
+        },
+        {
+          "control": "azure-latest-python-version"
+        },
+        {
+          "control": "azure-latest-tls-version"
+        }
+      ]
     },
     {
       "name": "Article 8, Identification",
-      "slug": "dora-2-8-identification"
+      "slug": "dora-2-8-identification",
+      "controls": [
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "aws-scan-1"
+        }
+      ]
     },
     {
       "name": "Article 9, Protection and prevention",
-      "slug": "dora-2-9-protection-and-prevention"
+      "slug": "dora-2-9-protection-and-prevention",
+      "controls": []
     },
     {
       "name": "Article 10, Detection",
-      "slug": "dora-2-10-detection"
+      "slug": "dora-2-10-detection",
+      "controls": [
+        {
+          "control": "gcp-project-asset-inventory"
+        },
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "gcp-logging-7"
+        },
+        {
+          "control": "gcp-logging-8"
+        },
+        {
+          "control": "gcp-logging-9"
+        },
+        {
+          "control": "gcp-logging-10"
+        },
+        {
+          "control": "gcp-logging-11"
+        },
+        {
+          "control": "gcp-bucket-lock-log-buckets"
+        },
+        {
+          "control": "gcp-vpc-dns-logging"
+        },
+        {
+          "control": "gcp-load-balancers-logging"
+        },
+        {
+          "control": "gcp-3625-trace-flag-db-sqlserver"
+        },
+        {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-error-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-statement-db-flag-postgresql"
+        },
+        {
+          "control": "azure-diagnostic-settings-categories"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-alert-create-policy"
+        },
+        {
+          "control": "azure-alert-delete-policy-assign"
+        },
+        {
+          "control": "azure-alert-create-update-nsg"
+        },
+        {
+          "control": "azure-alert-delete-nsg"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-alert-create-update-sec-solution"
+        },
+        {
+          "control": "azure-alert-delete-sec-solution"
+        },
+        {
+          "control": "azure-network-watcher-enabled"
+        },
+        {
+          "control": "azure-log-blob-read-write-delete"
+        },
+        {
+          "control": "azure-log-queue-read-write-delete"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "aws-logging-8"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-6"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-7"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-2"
+        }
+      ]
     },
     {
       "name": "Article 11, Response and recovery",
-      "slug": "dora-2-11-response-and-recovery"
+      "slug": "dora-2-11-response-and-recovery",
+      "controls": [
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
+        },
+        {
+          "control": "aws-iam-16"
+        }
+      ]
     },
     {
       "name": "Article 12, Backup policies and procedures, restoration and recovery procedures and methods",
-      "slug": "dora-2-12-backup-restoration-and-recovery"
+      "slug": "dora-2-12-backup-restoration-and-recovery",
+      "controls": [
+        {
+          "control": "azure-key-vault-recoverable"
+        },
+        {
+          "control": "gcp-db-automated-backups"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "object-containers-without-versioning-enabled"
+        }
+      ]
     },
     {
       "name": "Article 13, Learning and evolving",
-      "slug": "dora-2-13-learning-and-evolving"
+      "slug": "dora-2-13-learning-and-evolving",
+      "controls": [
+        {
+          "control": "azure-network-watcher-enabled"
+        },
+        {
+          "control": "aws-1-4-0-iam-20"
+        }
+      ]
     },
     {
       "name": "Article 14, Communication",
@@ -49,10 +390,6 @@
     {
       "name": "Article 15, Further harmonisation of ICT risk management tools, methods, processes and policies",
       "slug": "dora-2-15-harmonisation-of-tools-methods-processed-policies"
-    },
-    {
-      "name": "Article 16, Simplified ICT risk management framework",
-      "slug": "dora-2-16-simplified-risk-management-framework"
     }
   ],
   "targetCloudProviders": [
