@@ -1,0 +1,64 @@
+{
+  "enabled": false,
+  "name": "DORA - Digital Operational Resilience Act",
+  "isStandard": true,
+  "slug": "dora-1",
+  "version": "1.0",
+  "body": "#﻿Statement\n\nThe Digital Operational Resilience Act (Regulation (EU) 2022/2554) solves an important problem in the EU financial regulation. Before DORA, financial institutions managed the main categories of operational risk mainly with the allocation of capital, but they did not manage all components of operational resilience. After DORA, they must also follow rules for the protection, detection, containment, recovery and repair capabilities against ICT-related incidents. DORA explicitly refers to ICT risk and sets rules on ICT risk-management, incident reporting, operational resilience testing and ICT third-party risk monitoring. This Regulation acknowledges that ICT incidents and a lack of operational resilience have the possibility to jeopardise the soundness of the entire financial system, even if there is \"adequate\" capital for the traditional risk categories.\n\nDORA has nine chapters that include general provisions, ICT risk management, digital operational resilience testing, and others.  \n\nThe chapter that contains technical requirements that apply to cloud environments is the second one, ICT risk management. \n\n#﻿Recommendations\n\n<Procedure slug=\"dora-2-5-governance-and-organisation\"/>\n<Procedure slug=\"dora-2-6-risk-management-framework\"/>\n<Procedure slug=\"dora-2-7-systems-protocols-tools\"/>\n<Procedure slug=\"dora-2-8-identification\"/>\n<Procedure slug=\"dora-2-9-protection-and-prevention\"/>\n<Procedure slug=\"dora-2-11-response-and-recovery\"/>\n<Procedure slug=\"dora-2-12-backup-restoration-and-recovery\"/>\n<Procedure slug=\"dora-2-13-learning-and-evolving\"/>\n<Procedure slug=\"dora-2-14-communication\"/>\n<Procedure slug=\"dora-2-15-harmonisation-of-tools-methods-processed-policies\"/>\n<Procedure slug=\"dora-2-16-simplified-risk-management-framework\"/>\n",
+  "procedures": [
+    {
+      "name": "Article 5, Governance and organisation",
+      "slug": "dora-2-5-governance-and-organisation"
+    },
+    {
+      "name": "Article 6, ICT risk management framework",
+      "slug": "dora-2-6-risk-management-framework"
+    },
+    {
+      "name": "Article 7, ICT systems, protocols and tools",
+      "slug": "dora-2-7-systems-protocols-tools"
+    },
+    {
+      "name": "Article 8, Identification",
+      "slug": "dora-2-8-identification"
+    },
+    {
+      "name": "Article 9, Protection and prevention",
+      "slug": "dora-2-9-protection-and-prevention"
+    },
+    {
+      "name": "Article 10, Detection",
+      "slug": "dora-2-10-detection"
+    },
+    {
+      "name": "Article 11, Response and recovery",
+      "slug": "dora-2-11-response-and-recovery"
+    },
+    {
+      "name": "Article 12, Backup policies and procedures, restoration and recovery procedures and methods",
+      "slug": "dora-2-12-backup-restoration-and-recovery"
+    },
+    {
+      "name": "Article 13, Learning and evolving",
+      "slug": "dora-2-13-learning-and-evolving"
+    },
+    {
+      "name": "Article 14, Communication",
+      "slug": "dora-2-14-communication"
+    },
+    {
+      "name": "Article 15, Further harmonisation of ICT risk management tools, methods, processes and policies",
+      "slug": "dora-2-15-harmonisation-of-tools-methods-processed-policies"
+    },
+    {
+      "name": "Article 16, Simplified ICT risk management framework",
+      "slug": "dora-2-16-simplified-risk-management-framework"
+    }
+  ],
+  "targetCloudProviders": [
+    "aws",
+    "azure",
+    "gcp",
+    "alibaba"
+  ]
+}
