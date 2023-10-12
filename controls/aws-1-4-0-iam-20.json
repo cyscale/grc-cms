@@ -1,1 +1,24 @@
-{"name":"Ensure that IAM Access analyzer is enabled for all regions","slug":"aws-1-4-0-iam-20","body":"Enable IAM Access analyzer for IAM policies about all resources in each region.\n\nIAM Access Analyzer is a technology introduced at AWS reinvent 2019. After the Analyzer is enabled in IAM, scan results are displayed on the console showing the accessible resources. Scans show resources that other accounts and federated users can access, such as KMS keys and IAM roles. So the results allow you to determine if an unintended user is allowed, making it easier for administrators to monitor least privileges access. Access Analyzer analyzes only policies that are applied to resources in the same AWS Region.\n\nAWS IAM Access Analyzer helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, that are shared with an external entity. This lets you identify unintended access to your resources and data. IAM Access Analyzer continuously monitors all policies for S3 bucket, IAM roles, KMS(Key Management Service) keys, AWS Lambda functions, and Amazon SQS(Simple Queue Service) queues.","description":"","severity":2,"remediationDescription":"**From Console**\n\nPerform the following to enable IAM Access analyzer for IAM policies:\n\n1. Sign into the AWS console and open the [IAM Dashboard](https://console.aws.amazon.com/iam/home#/home).\n2. In the left navigation pane, choose **Access analyzer**.\n3. Click **Create analyzer**.\n4. On the `Create analyzer` page, confirm that the region displayed is the region where you want to enable Access Analyzer.\n5. Enter a name for the analyzer or can keep the system generated.\n6. Optional. add any tags that you want to apply to the analyzer.\n7. Choose **Create analyzer**.\n\n**From Command Line**\n\nRun the following command:\n\n```bash\naws accessanalyzer create-analyzer --analyzer-name --type\n```\n\n**Note**: The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["CloudAccount"],"query":"aws-1-4-0-iam-20-iam-access-analyzer-is-enabled-for-all-regions","returnPath":""}]}
+{
+  "body": "Enable IAM Access analyzer for IAM policies about all resources in each region.\n\nIAM Access Analyzer is a technology introduced at AWS re:Invent 2019. After the Analyzer is enabled in IAM, scan results are displayed on the console, showing the accessible resources. Scans show resources that other accounts and federated users can access, such as KMS keys and IAM roles. So the results allow you to determine if an unintended user is allowed, making it easier for administrators to monitor least privileges access. Access Analyzer analyzes only policies that are applied to resources in the same AWS Region.\n\nAWS IAM Access Analyzer helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, that are shared with an external entity. This lets you identify unintended access to your resources and data. IAM Access Analyzer continuously monitors all policies for S3 bucket, IAM roles, KMS(Key Management Service) keys, AWS Lambda functions, and Amazon SQS(Simple Queue Service) queues.",
+  "name": "Ensure that IAM Access analyzer is enabled for all regions",
+  "slug": "aws-1-4-0-iam-20",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudAccount"
+      ],
+      "query": "aws-1-4-0-iam-20-iam-access-analyzer-is-enabled-for-all-regions",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "**From Console**\n\nPerform the following to enable IAM Access analyzer for IAM policies:\n\n1. Sign into the AWS console and open the [IAM Dashboard](https://console.aws.amazon.com/iam/home#/home).\n2. In the left navigation pane, choose **Access analyzer**.\n3. Click **Create analyzer**.\n4. On the `Create analyzer` page, confirm that the region displayed is the region where you want to enable Access Analyzer.\n5. Enter a name for the analyzer or can keep the system generated.\n6. Optional. add any tags that you want to apply to the analyzer.\n7. Choose **Create analyzer**.\n\n**From Command Line**\n\nRun the following command:\n\n```bash\naws accessanalyzer create-analyzer --analyzer-name --type\n```\n\n**Note**: The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.",
+  "description": "",
+  "severity": 2
+}
