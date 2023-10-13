@@ -88,7 +88,8 @@
         {
           "control": "kms-keys-with-permissive-access-policy"
         }
-      ]
+      ],
+      "body": "Financial entities should maintain, in their systems, availability, integrity, confidentiality of data, and authenticity. Other management arrangements such as budgets, roles, responsibilities, and audit plans are overseen in this first article."
     },
     {
       "name": "Article 6, ICT risk management framework",
@@ -142,7 +143,8 @@
         {
           "control": "azure-defender-for-storage"
         }
-      ]
+      ],
+      "body": "In this article, requirements include any strategies, policies, protocols, and tools that can be used to protect and secure computer software, servers, as well as physical components. "
     },
     {
       "name": "Article 7, ICT systems, protocols and tools",
@@ -169,7 +171,8 @@
         {
           "control": "azure-latest-tls-version"
         }
-      ]
+      ],
+      "body": "This article refers to how ICT systems, protocols, and tools should be resilient, reliable, and performant and how they should be updated regularly. \r\n\r\n"
     },
     {
       "name": "Article 8, Identification",
@@ -181,12 +184,14 @@
         {
           "control": "aws-scan-1"
         }
-      ]
+      ],
+      "body": "Article 8 oversees that financial entities classify documentation for business functions, roles, and responsibilities. Moreover, entities must identify all sources of ICT risk, perform risk assessments, identify which assets are critical, and document all processes dependent on third-party service providers."
     },
     {
       "name": "Article 9, Protection and prevention",
       "slug": "dora-2-9-protection-and-prevention",
-      "controls": []
+      "controls": [],
+      "body": "This article reiterates the importance of data availability, authenticity, integrity, and confidentiality. Strong authentication mechanisms, minimization of loss or corruption of data, protection of data from human error, and other important terms are present in this article.\r\nMoreover, the company should monitor and control the security and functioning of tools and systems.\r\n"
     },
     {
       "name": "Article 10, Detection",
@@ -336,7 +341,8 @@
         {
           "control": "cis-alibaba-1-0-0-logging-2"
         }
-      ]
+      ],
+      "body": "The main point of this article is to ensure that logging and monitoring are implemented in order to detect anomalous activities and suspicious behavior.\r\nOther key activities described in this article are identifying single points of failure, selecting criteria and alert thresholds for incident response processes, and data reporting.\r\n"
     },
     {
       "name": "Article 11, Response and recovery",
@@ -351,7 +357,8 @@
         {
           "control": "aws-iam-16"
         }
-      ]
+      ],
+      "body": "The ICT business must implement arrangements, plans, procedures, and mechanisms to ensure the continuity of critical and important functions, quickly, appropriately, and effectively respond to incidents, activate containment processes in case of incidents, estimate damages and losses, and set out communication and crisis management actions to transmit updated and relevant information to internal staff and external stakeholders, as well as competent authorities."
     },
     {
       "name": "Article 12, Backup policies and procedures, restoration and recovery procedures and methods",
@@ -369,7 +376,8 @@
         {
           "control": "object-containers-without-versioning-enabled"
         }
-      ]
+      ],
+      "body": "This article oversees that entities implement a good backup process, which includes deciding on a minimum frequency of performing backups, their protection and where they are stored, and the restoration of a backup. One important thing to note is that backups should be logically and physically separated from the ICT system.\nRedundancy is also regulated. Entities should have a “secondary processing site”, separated geographically, and that ensures the continuity of critical functions, being immediately accessible in the case the primary processing site becomes unavailable."
     },
     {
       "name": "Article 13, Learning and evolving",
@@ -381,15 +389,18 @@
         {
           "control": "aws-1-4-0-iam-20"
         }
-      ]
+      ],
+      "body": "Gathering information about emerging threats and continuously evolving based on findings is one of the main ideas of this article. Providing security awareness programs and digital operational resilience training to employees is mandatory.\r\nMoreover, entities must monitor the effectiveness of digital operational resilience testing of the ICT systems and understand the impact of new technologies introduced.\r\n"
     },
     {
       "name": "Article 14, Communication",
-      "slug": "dora-2-14-communication"
+      "slug": "dora-2-14-communication",
+      "body": "Communication policies and plans should be established, for regular communication between staff and during crisis, as well as with the public and media in case of incidents."
     },
     {
       "name": "Article 15, Further harmonisation of ICT risk management tools, methods, processes and policies",
-      "slug": "dora-2-15-harmonisation-of-tools-methods-processed-policies"
+      "slug": "dora-2-15-harmonisation-of-tools-methods-processed-policies",
+      "body": "This article contains requirements for ESAs (European Supervisory Authorities), who should, in consultation with ENISA, develop common draft regulatory technical standards in relation to Articles 6, 9, 10, and 11."
     }
   ],
   "targetCloudProviders": [
