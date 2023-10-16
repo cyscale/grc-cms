@@ -9,7 +9,80 @@
     {
       "name": "Article 5, Governance and organisation",
       "slug": "dora-2-5-governance-and-organisation",
-      "controls": [],
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-iam-15"
+        },
+        {
+          "control": "gcp-project-lvl-service-account-roles"
+        },
+        {
+          "control": "gcp-separation-of-duties-service-account"
+        },
+        {
+          "control": "gcp-vm-1"
+        },
+        {
+          "control": "gcp-user-options-flag-db-sqlserver"
+        },
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "okta-strong-factors"
+        },
+        {
+          "control": "aws-iam-13"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "okta-mfa"
+        },
+        {
+          "control": "aws-1-4-0-iam-12"
+        },
+        {
+          "control": "aws-iam-14"
+        },
+        {
+          "control": "aws-iam-2"
+        },
+        {
+          "control": "aws-iam-12"
+        },
+        {
+          "control": "azure-ad-admin-sql-servers"
+        }
+      ],
       "body": "Management arrangements such as budgets, roles, responsibilities, and audit plans are overseen in this first article."
     },
     {
