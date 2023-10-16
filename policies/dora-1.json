@@ -9,93 +9,8 @@
     {
       "name": "Article 5, Governance and organisation",
       "slug": "dora-2-5-governance-and-organisation",
-      "controls": [
-        {
-          "control": "gcp-kubernetes-7"
-        },
-        {
-          "control": "gcp-kubernetes-13"
-        },
-        {
-          "control": "azure-client-certs-web-app"
-        },
-        {
-          "control": "azure-key-vault-recoverable"
-        },
-        {
-          "control": "aws-logging-5"
-        },
-        {
-          "control": "gcp-bigquery-publicly-accessible"
-        },
-        {
-          "control": "aws-logging-7"
-        },
-        {
-          "control": "azure-soft-delete-containers-blobs"
-        },
-        {
-          "control": "databases-without-deletion-protection"
-        },
-        {
-          "control": "kms-keys-scheduled-for-deletion"
-        },
-        {
-          "control": "azure-sql-db-disallow-any-ip"
-        },
-        {
-          "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "aws-networking-2"
-        },
-        {
-          "control": "aws-1-3-0-networking-2"
-        },
-        {
-          "control": "azure-encryption-on-sql-database"
-        },
-        {
-          "control": "azure-https-transfer-enabled"
-        },
-        {
-          "control": "aws-1-3-0-iam-20"
-        },
-        {
-          "control": "gcp-logging-3"
-        },
-        {
-          "control": "azure-expiration-secrets-key-vault"
-        },
-        {
-          "control": "aws-networking-3"
-        },
-        {
-          "control": "databases-with-no-encryption"
-        },
-        {
-          "control": "aws-1-3-0-storage-1-1"
-        },
-        {
-          "control": "aws-ec2-2"
-        },
-        {
-          "control": "kms-keys-expiring-within-the-next-14-days"
-        },
-        {
-          "control": "kms-keys-have-not-been-rotated"
-        },
-        {
-          "control": "kms-keys-with-permissive-access-policy"
-        },
-        {
-          "control": "vm-disallow-imds-v1"
-        },
-        {
-          "control": "aws-ec2-1"
-        }
-      ],
-      "body": "Financial entities should maintain, in their systems, availability, integrity, confidentiality of data, and authenticity. Other management arrangements such as budgets, roles, responsibilities, and audit plans are overseen in this first article."
+      "controls": [],
+      "body": "Management arrangements such as budgets, roles, responsibilities, and audit plans are overseen in this first article."
     },
     {
       "name": "Article 6, ICT risk management framework",
@@ -197,6 +112,90 @@
       "name": "Article 9, Protection and prevention",
       "slug": "dora-2-9-protection-and-prevention",
       "controls": [
+        {
+          "control": "gcp-kubernetes-7"
+        },
+        {
+          "control": "gcp-kubernetes-13"
+        },
+        {
+          "control": "azure-client-certs-web-app"
+        },
+        {
+          "control": "azure-key-vault-recoverable"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "gcp-bigquery-publicly-accessible"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "azure-sql-db-disallow-any-ip"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
+        },
+        {
+          "control": "aws-networking-2"
+        },
+        {
+          "control": "aws-1-3-0-networking-2"
+        },
+        {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "azure-https-transfer-enabled"
+        },
+        {
+          "control": "aws-1-3-0-iam-20"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "aws-networking-3"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "aws-1-3-0-storage-1-1"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "kms-keys-expiring-within-the-next-14-days"
+        },
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "kms-keys-with-permissive-access-policy"
+        },
+        {
+          "control": "vm-disallow-imds-v1"
+        },
+        {
+          "control": "aws-ec2-1"
+        },
         {
           "control": "gcp-vm-2"
         },
