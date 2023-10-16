@@ -420,11 +420,6 @@
       "name": "Article 14, Communication",
       "slug": "dora-2-14-communication",
       "body": "Communication policies and plans should be established, for regular communication between staff and during crisis, as well as with the public and media in case of incidents."
-    },
-    {
-      "name": "Article 15, Further harmonisation of ICT risk management tools, methods, processes and policies",
-      "slug": "dora-2-15-harmonisation-of-tools-methods-processed-policies",
-      "body": "This article contains requirements for ESAs (European Supervisory Authorities), who should, in consultation with ENISA, develop common draft regulatory technical standards in relation to Articles 6, 9, 10, and 11."
     }
   ],
   "targetCloudProviders": [
