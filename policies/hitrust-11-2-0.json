@@ -2,7 +2,7 @@
   "enabled": false,
   "procedures": [
     {
-      "name": "01.02.c Privilege Management",
+      "name": "c. Privilege Management",
       "slug": "hitrust-11-2-0-1-b-privilege-management",
       "body": "The allocation and use of privileges to information systems and services shall be restricted and controlled. Special attention shall be given to the allocation of privileged\r access rights, which allow users to override system controls.",
       "controls": [
@@ -15,49 +15,14 @@
       ]
     },
     {
-      "name": "7. Asset Management",
-      "slug": "hitrust-11-2-0-7-asset management",
-      "body": "Ensure that management requires ownership and defined responsibilities for the protection of information assets."
-    },
-    {
-      "name": "8. Physical and Environmental Security",
-      "slug": "hitrust-11-2-0-8-physical-and-environmental-security",
-      "body": "Prevent unauthorized physical access, damage, and interference to the organization’s premises and information."
-    },
-    {
-      "name": "9. Communications and Operations Management",
-      "slug": "hitrust-11-2-0-9-communications-and-operations-man",
-      "body": "Ensure that operating procedures are documented, maintained and made available to all users who need them.\n"
-    },
-    {
-      "body": "Ensure that security is an integral part of information systems.",
-      "slug": "hitrust-11-2-0-10-information-systems-aquisition",
-      "name": "10. Information Systems Acquisition, Development, and Maintenance"
-    },
-    {
-      "name": "11. Information Security Incident Management",
-      "slug": "hitrust-11-2-0-11-information-security-incident-management",
-      "body": "To ensure information security events and weaknesses associated with information systems are handled in a manner allowing timely corrective action to be taken."
-    },
-    {
-      "name": "12. Business Continuity Management",
-      "slug": "hitrust-11-2-0-12-business-continuity-management",
-      "body": "Ensure that strategies and plans are in place to counteract interruptions to business Objective: activities and to protect critical business processes from the effects of major failures of information systems or disasters and to ensure their timely resumption."
-    },
-    {
-      "slug": "hitrust-11-2-0-13-privacy-practices",
-      "name": "13. Privacy Practices",
-      "body": "Policies, procedures, and technologies that directly affect data subjects and/or their PII are open and transparent."
-    },
-    {
       "slug": "hitrust-11-2-0-2-f-password-use",
-      "name": "01.03.f Password Use"
+      "name": "f. Password Use"
     }
   ],
   "name": "HITRUST CSF - Health Information Trust Alliance",
   "slug": "hitrust-11-2-0",
   "version": "11.2.0",
-  "body": "The CSF was designed with security and privacy professionals in mind. By taking an abstraction of what is core to and common across most dominant frameworks, the architecture was deliberately chosen to facilitate straightforward understanding and easy consumption. Each control category in the CSF includes control objectives and control specifications, leveraging the primary categories from the ISO/IEC framework, as well as the inclusion of specific categories for an information security management program and risk management practices which collectively help to ensure organizational, regulatory compliance, and system controls are properly specified and implemented. The core structure is then integrated with various authoritative sources, along with the experience and leading practices of the HITRUST Community, to create specific implementation requirements for each control. All requirements are mapped to the related framework, standard, or regulation, and noted as an authoritative source.\n\n## Controls\n\n### 01: Access Control\n\nControl access to information, information assets, and business processes based on business and security requirements. \n\n#### 01.02 Authorized Access to Information Systems\n\n<Procedure slug=\"hitrust-11-2-0-1-b-privilege-management\"/>\n\n#### 01.03 User Responsibilities\n\n<Procedure slug=\"hitrust-11-2-0-2-f-password-use\"/>\n\n### 02: Human Resources Security\n\nEnsure that employees, contractors, and third-party users are suitable for the roles for which they are being considered, to reduce the risk of fraud, theft, or misuse of facilities.\n\n### 03: Risk Management\n\nDevelop and implement a Risk Management Program that addresses Risk Assessments, Risk Mitigation, and Risk Evaluations.\n\n### 04: Security Policy\n\nProvide management direction in line with business objectives and relevant laws and regulations, demonstrate support for, and commitment to information security through the issue and maintenance of information security policies across the organization.\n\n### 05: Organization of Information Security\n\nMaintain the security of the organization’s information and information assets (data centers or offices that process covered information).\n\n### 06: Compliance\n\nEnsure that the design, operation, use, and management of information systems adheres to applicable laws, statutory, regulatory or contractual obligations, and any security requirements.\n\n### 07: Asset Management\n\nEnsure that management requires ownership and defined responsibilities for the protection of information assets.\n\n",
+  "body": "The CSF was designed with security and privacy professionals in mind. By taking an abstraction of what is core to and common across most dominant frameworks, the architecture was deliberately chosen to facilitate straightforward understanding and easy consumption. Each control category in the CSF includes control objectives and control specifications, leveraging the primary categories from the ISO/IEC framework, as well as the inclusion of specific categories for an information security management program and risk management practices which collectively help to ensure organizational, regulatory compliance, and system controls are properly specified and implemented. The core structure is then integrated with various authoritative sources, along with the experience and leading practices of the HITRUST Community, to create specific implementation requirements for each control. All requirements are mapped to the related framework, standard, or regulation, and noted as an authoritative source.\n\n## Controls\n\n### 01: Access Control\n\nControl access to information, information assets, and business processes based on business and security requirements. \n\n#### 01.02 Authorized Access to Information Systems\n\n<Procedure slug=\"hitrust-11-2-0-1-b-privilege-management\"/>\n\n#### 01.03 User Responsibilities\n\n<Procedure slug=\"hitrust-11-2-0-2-f-password-use\"/>\n\n### 02: Human Resources Security\n\nEnsure that employees, contractors, and third-party users are suitable for the roles for which they are being considered, to reduce the risk of fraud, theft, or misuse of facilities.\n\n### 03: Risk Management\n\nDevelop and implement a Risk Management Program that addresses Risk Assessments, Risk Mitigation, and Risk Evaluations.\n\n### 04: Security Policy\n\nProvide management direction in line with business objectives and relevant laws and regulations, demonstrate support for, and commitment to information security through the issue and maintenance of information security policies across the organization.\n\n### 05: Organization of Information Security\n\nMaintain the security of the organization’s information and information assets (data centers or offices that process covered information).\n\n### 06: Compliance\n\nEnsure that the design, operation, use, and management of information systems adheres to applicable laws, statutory, regulatory or contractual obligations, and any security requirements.\n\n### 07: Asset Management\n\nEnsure that management requires ownership and defined responsibilities for the protection of information assets.\n\n### 08: Physical and Environmental Security\n\nPrevent unauthorized physical access, damage, and interference to the organization’s premises and information.\n\n### 09: Communications and Operations Management\n\nEnsure that operating procedures are documented, maintained and made available to all users who need them.\n\n### 10: Information Systems Acquisition, Development, and Maintenance\n\nEnsure that security is an integral part of information systems.\n\n### 11: Information Security Incident Management\n\nTo ensure information security events and weaknesses associated with information systems are handled in a manner allowing timely corrective action to be taken.\n\n### 13: Privacy Practices\n\nPolicies, procedures, and technologies that directly affect data subjects and/or their PII are open and transparent.",
   "targetCloudProviders": [
     "aws",
     "alibaba",
