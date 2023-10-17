@@ -15,26 +15,6 @@
       ]
     },
     {
-      "name": "2. Human Resources Security",
-      "slug": "hitrust-11-2-0-2-hr-security",
-      "body": "Ensure that employees, contractors, and third-party users are suitable for the roles for which they are being considered, to reduce the risk of fraud, theft, or misuse of facilities."
-    },
-    {
-      "name": "3. Risk Management",
-      "slug": "hitrust-11-2-0-3-risk-management",
-      "body": "Develop and implement a Risk Management Program that addresses Risk Assessments, Risk Mitigation, and Risk Evaluations."
-    },
-    {
-      "name": "4. Security Policy",
-      "slug": "hitrust-11-2-0-4-security-policy",
-      "body": "Provide management direction in line with business objectives and relevant laws and regulations, demonstrate support for, and commitment to information security through the issue and maintenance of information security policies across the organization."
-    },
-    {
-      "name": "5. Organization of Information Security",
-      "slug": "hitrust-11-2-0-5-organization-of-infosec",
-      "body": "Maintain the security of the organization’s information and information assets (data centers or offices that process covered information)."
-    },
-    {
       "name": "6. Compliance",
       "slug": "hitrust-11-2-0-6-compliance",
       "body": "Ensure that the design, operation, use, and management of information systems adheres to applicable laws, statutory, regulatory or contractual obligations, and any security requirements."
@@ -73,12 +53,16 @@
       "slug": "hitrust-11-2-0-13-privacy-practices",
       "name": "13. Privacy Practices",
       "body": "Policies, procedures, and technologies that directly affect data subjects and/or their PII are open and transparent."
+    },
+    {
+      "slug": "hitrust-11-2-0-2-f-password-use",
+      "name": "01.f Password Use"
     }
   ],
   "name": "HITRUST CSF - Health Information Trust Alliance",
   "slug": "hitrust-11-2-0",
   "version": "11.2.0",
-  "body": "The CSF was designed with security and privacy professionals in mind. By taking an abstraction of what is core to and common across most dominant frameworks, the architecture was deliberately chosen to facilitate straightforward understanding and easy consumption. Each control category in the CSF includes control objectives and control specifications, leveraging the primary categories from the ISO/IEC framework, as well as the inclusion of specific categories for an information security management program and risk management practices which collectively help to ensure organizational, regulatory compliance, and system controls are properly specified and implemented. The core structure is then integrated with various authoritative sources, along with the experience and leading practices of the HITRUST Community, to create specific implementation requirements for each control. All requirements are mapped to the related framework, standard, or regulation, and noted as an authoritative source.\n\n## Controls\n\n#### 01: Access Control\n\nControl access to information, information assets, and business processes based on business and security requirements. \n\n#﻿#### 01.02 Authorized Access to Information Systems\n\n<Procedure slug=\"hitrust-11-2-0-1-b-privilege-management\"/>\n",
+  "body": "The CSF was designed with security and privacy professionals in mind. By taking an abstraction of what is core to and common across most dominant frameworks, the architecture was deliberately chosen to facilitate straightforward understanding and easy consumption. Each control category in the CSF includes control objectives and control specifications, leveraging the primary categories from the ISO/IEC framework, as well as the inclusion of specific categories for an information security management program and risk management practices which collectively help to ensure organizational, regulatory compliance, and system controls are properly specified and implemented. The core structure is then integrated with various authoritative sources, along with the experience and leading practices of the HITRUST Community, to create specific implementation requirements for each control. All requirements are mapped to the related framework, standard, or regulation, and noted as an authoritative source.\n\n## Controls\n\n### 01: Access Control\n\nControl access to information, information assets, and business processes based on business and security requirements. \n\n#### 01.02 Authorized Access to Information Systems\n\n<Procedure slug=\"hitrust-11-2-0-1-b-privilege-management\"/>\n\n#### 01.03 User Responsibilities\n\n<Procedure slug=\"hitrust-11-2-0-2-f-password-use\"/>\n\n### 02: Human Resources Security\n\nEnsure that employees, contractors, and third-party users are suitable for the roles for which they are being considered, to reduce the risk of fraud, theft, or misuse of facilities.\n\n### 03: Risk Management\n\nDevelop and implement a Risk Management Program that addresses Risk Assessments, Risk Mitigation, and Risk Evaluations.\n\n### 04: Security Policy\n\nProvide management direction in line with business objectives and relevant laws and regulations, demonstrate support for, and commitment to information security through the issue and maintenance of information security policies across the organization.\n\n### 05: Organization of Information Security\n\nMaintain the security of the organization’s information and information assets (data centers or offices that process covered information).\n\n### 06: Compliance\n\n",
   "targetCloudProviders": [
     "aws",
     "alibaba",
