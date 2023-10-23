@@ -1,1 +1,24 @@
-{"name":"Ensure the storage account containing the container with activity logs is encrypted with BYOK (Use Your Own Key)","slug":"azure-1-3-0-logging-1-4","body":"The storage account with the activity log export container is configured to use BYOK (Use Your Own Key).\n\n**Rationale**\n\nConfiguring the storage account with the activity log export container to use BYOK (Use Your Own Key) provides additional confidentiality controls on log data as a given user must have read permission on the corresponding storage account and must be granted decrypt permission by the CMK.","description":"","severity":2,"remediationDescription":"**From Azure Console**\n\n1. In right column, Click service `Storage Accounts` to access Storage account blade\n2. Click on the storage account name\n3. In Section `SETTINGS` click `Encryption`. It will show `Storage service encryption` configuration pane.\n4. Check `Use your own key` which will expand `Encryption Key` Settings\n5. Use option `Enter key URI` or `Select from Key Vault` to set up encryption with your own key\n\n**Using Azure Command Line Interface 2.0**\n\n```bash\naz storage account update --name \u003cname of the storage account\u003e --resource-group \u003cresource group for a storage account\u003e --encryption-key-source=Microsoft.Keyvault --encryption-key-vault \u003cKey Valut URI\u003e --encryption-key-name \u003cKeyName\u003e --encryption-key-version \u003cKey Version\u003e```\n\n**Default Value**\n\nBy default, for a storage account keySourceis setto Microsoft.Storageallowing encryption with vendor Managed key and not the BYOK (Use Your Own Key).\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-5-encrypt-sensitive-data-at-rest](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-5-encrypt-sensitive-data-at-rest)","rules":[{"cloudProviders":["azure"],"comparator":"eq","expectedResult":"[]","subjects":["LogProfile"],"query":"azure-1-3-0-logging-1-4-the-storage-account-containing-the-container-with-activity-logs-is-encrypted-with-byok-use-your-own-key","returnPath":""}]}
+{
+  "body": "The storage account with the activity log export container is configured to use BYOK (Use Your Own Key).\n\n**Rationale**\n\nConfiguring the storage account with the activity log export container to use BYOK (Use Your Own Key) provides additional confidentiality controls on log data as a given user must have read permission on the corresponding storage account and must be granted decrypt permission by the CMK.",
+  "name": "Ensure the storage account containing the container with activity logs is encrypted with BYOK (Use Your Own Key)",
+  "slug": "azure-1-3-0-logging-1-4",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "LogProfile"
+      ],
+      "query": "azure-1-3-0-logging-1-4-the-storage-account-containing-the-container-with-activity-logs-is-encrypted-with-byok-use-your-own-key",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "**From Azure Console**\n\n1. In the right column, click service `Storage Accounts` to access the Storage account blade\n2. Click on the storage account name\n3. In the section `SETTINGS`, click `Encryption`. It will show the `Storage service encryption` configuration pane\n4. Check `Use your own key`, which will expand the `Encryption Key` settings\n5. Use the option `Enter key URI` or `Select from Key Vault` to set up the encryption with your own key\n\n**Using Azure CLI**\n\n```bash\naz storage account update --name <storageAccountName> --resource-group <resourceGroup> --encryption-key-source=Microsoft.Keyvault --encryption-key-vault <keyVaultURI> --encryption-key-name <keyName> --encryption-key-version <keyVersion>\n```\n\n**Default Value**\n\nBy default, for a storage account keySource is set to Microsoft.Storage, allowing encryption with vendor Managed key and not the BYOK (Use Your Own Key).\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-5-encrypt-sensitive-data-at-rest](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-data-protection#dp-5-encrypt-sensitive-data-at-rest)",
+  "description": "",
+  "severity": 2
+}
