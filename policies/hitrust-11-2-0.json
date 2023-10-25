@@ -521,6 +521,18 @@
         },
         {
           "control": "kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "gcp-rsasha1-ksk-cloud-dns"
+        },
+        {
+          "control": "gcp-rsasha1-zsk-cloud-dns"
+        },
+        {
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
+        },
+        {
+          "control": "aws-networking-6"
         }
       ]
     },
@@ -654,6 +666,126 @@
       ]
     },
     {
+      "name": "n. Security of Network Services",
+      "slug": "hitrust-9-6-n-network-security",
+      "controls": [
+        {
+          "control": "gcp-dnssec-enabled-cloud-dns"
+        },
+        {
+          "control": "aws-loadbalancing-2"
+        },
+        {
+          "control": "aws-loadbalancing-3"
+        },
+        {
+          "control": "gcp-networking-8"
+        },
+        {
+          "control": "gcp-networking-9"
+        },
+        {
+          "control": "gcp-networking-10"
+        },
+        {
+          "control": "gcp-networking-11"
+        },
+        {
+          "control": "gcp-networking-12"
+        },
+        {
+          "control": "gcp-networking-13"
+        },
+        {
+          "control": "gcp-networking-2"
+        },
+        {
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
+        },
+        {
+          "control": "aws-networking-2"
+        },
+        {
+          "control": "aws-networking-7"
+        },
+        {
+          "control": "aws-networking-9"
+        },
+        {
+          "control": "aws-networking-10"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
+        },
+        {
+          "control": "aws-1-3-0-networking-2"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "gcp-networking-1"
+        },
+        {
+          "control": "gcp-networking-4"
+        },
+        {
+          "control": "gcp-networking-7"
+        },
+        {
+          "control": "networking-ssh-from-internet"
+        },
+        {
+          "control": "sqlserver-enabled-allow-all-azure-services-access"
+        },
+        {
+          "control": "azure-allow-azure-services-postgresql-server"
+        },
+        {
+          "control": "gcp-app-engine-enforce-https"
+        },
+        {
+          "control": "gcp-sql-no-whitelist-all-ips"
+        },
+        {
+          "control": "gcp-sql-no-public-ips"
+        },
+        {
+          "control": "gcp-bucket-publicly-accessible"
+        },
+        {
+          "control": "gcp-vms-public-ip-addresses"
+        },
+        {
+          "control": "aws-ecs-2-service-assign-public-ip-disabled"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-2"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "publicly-accessible-disks"
+        },
+        {
+          "control": "azure-deny-access-storage-account"
+        },
+        {
+          "control": "azure-sql-db-disallow-any-ip"
+        },
+        {
+          "control": "aws-ec2-1"
+        },
+        {
+          "control": "azure-restrict-rdp"
+        }
+      ]
+    },
+    {
       "name": "p. Disposal of Media",
       "slug": "hitrust-9-7-p-media-disposal",
       "controls": [
@@ -664,12 +796,344 @@
           "control": "aws-1-4-0-storage-1-3"
         }
       ]
+    },
+    {
+      "slug": "hitrust-9-8-s-information-exchange",
+      "name": "s. Information Exchange Policies and Procedures",
+      "controls": [
+        {
+          "control": "azure-https-transfer-enabled"
+        },
+        {
+          "control": "azure-ssl-enabled-mariadb-server"
+        },
+        {
+          "control": "azure-ssl-enabled-mysql-server"
+        },
+        {
+          "control": "azure-ssl-enabled-postgresql-server"
+        },
+        {
+          "control": "gcp-db-require-incoming-conn-ssl"
+        },
+        {
+          "control": "azure-latest-tls-version"
+        },
+        {
+          "control": "aws-networking-6"
+        },
+        {
+          "control": "aws-loadbalancing-3"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        }
+      ]
+    },
+    {
+      "name": "aa. Audit Logging",
+      "body": "",
+      "controls": [
+        {
+          "control": "cis-alibaba-1-0-0-logging-6"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "azure-log-blob-read-write-delete"
+        },
+        {
+          "control": "azure-log-queue-read-write-delete"
+        },
+        {
+          "control": "azure-1-3-0-storage-11"
+        },
+        {
+          "control": "aws-1-3-0-monitoring-15"
+        },
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "aws-monitoring-2"
+        },
+        {
+          "control": "aws-monitoring-3"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-monitoring-6"
+        },
+        {
+          "control": "aws-monitoring-7"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-monitoring-9"
+        },
+        {
+          "control": "aws-monitoring-10"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "aws-monitoring-12"
+        },
+        {
+          "control": "aws-monitoring-13"
+        },
+        {
+          "control": "aws-monitoring-14"
+        },
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "gcp-logging-7"
+        },
+        {
+          "control": "gcp-logging-8"
+        },
+        {
+          "control": "gcp-logging-9"
+        },
+        {
+          "control": "gcp-logging-10"
+        },
+        {
+          "control": "gcp-logging-11"
+        },
+        {
+          "control": "azure-log-connections-postgresql-server"
+        },
+        {
+          "control": "azure-log-disconnections-postgresql-server"
+        },
+        {
+          "control": "azure-alert-create-update-public-ip-addr"
+        },
+        {
+          "control": "azure-alert-delete-public-ip-addr"
+        },
+        {
+          "control": "azure-alert-create-update-sql-firewall"
+        },
+        {
+          "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-alert-create-update-sec-solution"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-5"
+        },
+        {
+          "control": "azure-1-3-0-logging-2-6"
+        },
+        {
+          "control": "azure-alert-create-policy"
+        },
+        {
+          "control": "azure-alert-delete-policy-assign"
+        },
+        {
+          "control": "azure-alert-create-update-nsg"
+        },
+        {
+          "control": "azure-alert-delete-nsg"
+        },
+        {
+          "control": "azure-alert-delete-sec-solution"
+        },
+        {
+          "control": "gcp-log-connections-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-disconnections-db-flag-postgresql"
+        }
+      ],
+      "slug": "hitrust-9-10-aa-audit-logging"
+    },
+    {
+      "name": "ab. Monitoring System Use",
+      "body": "",
+      "controls": [
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-loadbalancing-1"
+        },
+        {
+          "control": "gcp-vpc-dns-logging"
+        },
+        {
+          "control": "gcp-load-balancers-logging"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "gcp-kubernetes-1"
+        },
+        {
+          "control": "gcp-networking-6"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-7"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
+          "control": "azure-log-checkpoints-postgresql-server"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "azure-1-3-0-logging-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-1"
+        },
+        {
+          "control": "gcp-storage-2"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-3"
+        },
+        {
+          "control": "gcp-log-min-duration-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-statement-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-kubernetes-2"
+        },
+        {
+          "control": "azure-auditing-on"
+        }
+      ],
+      "slug": "hitrust-9-10-ab-monitoring-system-use"
+    },
+    {
+      "name": "ac. Protection of Log Information",
+      "body": "",
+      "controls": [
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "gcp-bucket-lock-log-buckets"
+        },
+        {
+          "control": "azure-log-retention-days-postgresql-server"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-4"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-2"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
+        },
+        {
+          "control": "azure-auditing-retention-greater-90"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-1"
+        }
+      ],
+      "slug": "hitrust-9-10-ac-protection-of-logs"
+    },
+    {
+      "name": "ad. Administrator and Operator Logs",
+      "body": "",
+      "controls": [
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "aws-monitoring-3"
+        }
+      ],
+      "slug": "hitrust-9-10-ad-admin-logs"
+    },
+    {
+      "name": "ae. Fault Logging",
+      "slug": "hitrust-9-10-ae-fault-logging",
+      "body": "",
+      "controls": [
+        {
+          "control": "azure-log-checkpoints-postgresql-server"
+        },
+        {
+          "control": "azure-log-disconnections-postgresql-server"
+        },
+        {
+          "control": "gcp-log-min-messages-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-error-verbosity-db-flag-postgresql"
+        },
+        {
+          "control": "gcp-log-min-error-statement-db-flag-postgresql"
+        }
+      ]
     }
   ],
   "name": "HITRUST CSF - Health Information Trust Alliance",
   "slug": "hitrust-11-2-0",
   "version": "11.2.0",
-  "body": "The CSF was designed with security and privacy professionals in mind. By taking an abstraction of what is core to and common across most dominant frameworks, the architecture was deliberately chosen to facilitate straightforward understanding and easy consumption. Each control category in the CSF includes control objectives and control specifications, leveraging the primary categories from the ISO/IEC framework, as well as the inclusion of specific categories for an information security management program and risk management practices which collectively help to ensure organizational, regulatory compliance, and system controls are properly specified and implemented. The core structure is then integrated with various authoritative sources, along with the experience and leading practices of the HITRUST Community, to create specific implementation requirements for each control. All requirements are mapped to the related framework, standard, or regulation, and noted as an authoritative source.\n\n## Controls\n\n### 01: Access Control\n\nControl access to information, information assets, and business processes based on business and security requirements. \n\n#### 01.02 Authorized Access to Information Systems\n\n<Procedure slug=\"hitrust-1-2-b-user-registration\"/>\n<Procedure slug=\"hitrust-1-2-c-privilege-management\"/>\n<Procedure slug=\"hitrust-1-2-d-user-password-management\"/>\n\n#### 01.04 Network Access Control\n\n<Procedure slug=\"hitrust-1-4-j-user-authentication-for-external-connections\"/>\n<Procedure slug=\"hitrust-1-4-l-remote-diagnostic-and-port-protection\"/>\n<Procedure slug=\"hitrust-1-4-m-segration-in-networks\"/>\n<Procedure slug=\"hitrust-1-4-n-network-connection-control\"/>\n<Procedure slug=\"hitrust-1-4-o-network-routing-control\"/>\n<Procedure slug=\"hitrust-1-4-i-policy-use-of-network-services\"/>\n\n#### 01.06 Application and Information Access Control\n\n<Procedure slug=\"hitrust-1-6-v-information-access-restriction\"/>\n<Procedure slug=\"hitrust-1-6-w-sensitive-system-isolation\"/>\n\n#### 01.07 Mobile Computing and Teleworking\n\n<Procedure slug=\"hitrust-1-7-y-teleworking\"/>\n\n### 02: Human Resources Security\n\nEnsure that employees, contractors, and third-party users are suitable for the roles for which they are being considered, to reduce the risk of fraud, theft, or misuse of facilities.\n\n#### 02.01 Prior to Employment\n\n<Procedure slug=\"hitrust-2-1-a-roles-and-responsibilities\"/>\n\n### 05: Organization of Information Security\n\nMaintain the security of the organization’s information and information assets (data centers or offices that process covered information).\n\n#### 05.01 Internal Organization\n\n<Procedure slug=\"hitrust-5-1-a-management-commitment\"/>\n\n#### 05.02 External Parties\n\n<Procedure slug=\"hitrust-5-2-k-security-third-party\"/>\n\n### 06: Compliance\n\nEnsure that the design, operation, use, and management of information systems adheres to applicable laws, statutory, regulatory or contractual obligations, and any security requirements.\n\n#### 06.01 Compliance with Legal Requirements\n\n<Procedure slug=\"hitrust-6-1-d-data-protection-and-privacy\"/>\n<Procedure slug=\"hitrust-6-1-f-regulation-crypto-controls\"/>\n\n### 07: Asset Management\n\nEnsure that management requires ownership and defined responsibilities for the protection of information assets.\n\n#### 07.01 Responsibility for Assets\n\n<Procedure slug=\"hitrust-7-1-c-acceptable-use-of-assets\"/>\n\n#### 07.02 Information Classification\n\n<Procedure slug=\"hitrust-7-2-e-information-labeling-handling\"/>\n\n### 09: Communications and Operations Management\n\nEnsure that operating procedures are documented, maintained and made available to all users who need them.\n\n#### 09.01 Documented Operating Procedures\n\n<Procedure slug=\"hitrust-9-1-b-change-management\"/>\n<Procedure slug=\"hitrust-9-1-c-segregation-of-duties\"/>\n\n#### 09.04 Protection Against Malicious and Mobile Code\n\n<Procedure slug=\"hitrust-9-4-j-malicious-code\"/>\n\n#### 09.05 Back-Up\n\n<Procedure slug=\"hitrust-9-5-l-backup\"/>\n\n#### 09.07 Media Handling\n\n<Procedure slug=\"hitrust-9-7-p-media-disposal\"/>\n\n### 10: Information Systems Acquisition, Development, and Maintenance\n\nEnsure that security is an integral part of information systems.\n\n### 11: Information Security Incident Management\n\nTo ensure information security events and weaknesses associated with information systems are handled in a manner allowing timely corrective action to be taken.\n\n### 13: Privacy Practices\n\nPolicies, procedures, and technologies that directly affect data subjects and/or their PII are open and transparent.",
+  "body": "The CSF was designed with security and privacy professionals in mind. By taking an abstraction of what is core to and common across most dominant frameworks, the architecture was deliberately chosen to facilitate straightforward understanding and easy consumption. Each control category in the CSF includes control objectives and control specifications, leveraging the primary categories from the ISO/IEC framework, as well as the inclusion of specific categories for an information security management program and risk management practices which collectively help to ensure organizational, regulatory compliance, and system controls are properly specified and implemented. The core structure is then integrated with various authoritative sources, along with the experience and leading practices of the HITRUST Community, to create specific implementation requirements for each control. All requirements are mapped to the related framework, standard, or regulation, and noted as an authoritative source.\n\n## Controls\n\n### 01: Access Control\n\nControl access to information, information assets, and business processes based on business and security requirements. \n\n#### 01.02 Authorized Access to Information Systems\n\n<Procedure slug=\"hitrust-1-2-b-user-registration\"/>\n<Procedure slug=\"hitrust-1-2-c-privilege-management\"/>\n<Procedure slug=\"hitrust-1-2-d-user-password-management\"/>\n\n#### 01.04 Network Access Control\n\n<Procedure slug=\"hitrust-1-4-j-user-authentication-for-external-connections\"/>\n<Procedure slug=\"hitrust-1-4-l-remote-diagnostic-and-port-protection\"/>\n<Procedure slug=\"hitrust-1-4-m-segration-in-networks\"/>\n<Procedure slug=\"hitrust-1-4-n-network-connection-control\"/>\n<Procedure slug=\"hitrust-1-4-o-network-routing-control\"/>\n<Procedure slug=\"hitrust-1-4-i-policy-use-of-network-services\"/>\n\n#### 01.06 Application and Information Access Control\n\n<Procedure slug=\"hitrust-1-6-v-information-access-restriction\"/>\n<Procedure slug=\"hitrust-1-6-w-sensitive-system-isolation\"/>\n\n#### 01.07 Mobile Computing and Teleworking\n\n<Procedure slug=\"hitrust-1-7-y-teleworking\"/>\n\n### 02: Human Resources Security\n\nEnsure that employees, contractors, and third-party users are suitable for the roles for which they are being considered, to reduce the risk of fraud, theft, or misuse of facilities.\n\n#### 02.01 Prior to Employment\n\n<Procedure slug=\"hitrust-2-1-a-roles-and-responsibilities\"/>\n\n### 05: Organization of Information Security\n\nMaintain the security of the organization’s information and information assets (data centers or offices that process covered information).\n\n#### 05.01 Internal Organization\n\n<Procedure slug=\"hitrust-5-1-a-management-commitment\"/>\n\n#### 05.02 External Parties\n\n<Procedure slug=\"hitrust-5-2-k-security-third-party\"/>\n\n### 06: Compliance\n\nEnsure that the design, operation, use, and management of information systems adheres to applicable laws, statutory, regulatory or contractual obligations, and any security requirements.\n\n#### 06.01 Compliance with Legal Requirements\n\n<Procedure slug=\"hitrust-6-1-d-data-protection-and-privacy\"/>\n<Procedure slug=\"hitrust-6-1-f-regulation-crypto-controls\"/>\n\n### 07: Asset Management\n\nEnsure that management requires ownership and defined responsibilities for the protection of information assets.\n\n#### 07.01 Responsibility for Assets\n\n<Procedure slug=\"hitrust-7-1-c-acceptable-use-of-assets\"/>\n\n#### 07.02 Information Classification\n\n<Procedure slug=\"hitrust-7-2-e-information-labeling-handling\"/>\n\n### 09: Communications and Operations Management\n\nEnsure that operating procedures are documented, maintained and made available to all users who need them.\n\n#### 09.01 Documented Operating Procedures\n\n<Procedure slug=\"hitrust-9-1-b-change-management\"/>\n<Procedure slug=\"hitrust-9-1-c-segregation-of-duties\"/>\n\n#### 09.04 Protection Against Malicious and Mobile Code\n\n<Procedure slug=\"hitrust-9-4-j-malicious-code\"/>\n\n#### 09.05 Back-Up\n\n<Procedure slug=\"hitrust-9-5-l-backup\"/>\n\n#### 09.06 Network Security Management\n\n<Procedure slug=\"hitrust-9-6-n-network-security\"/>\n\n#### 09.07 Media Handling\n\n<Procedure slug=\"hitrust-9-7-p-media-disposal\"/>\n\n#### 09.08 Exchange of Information\n\n<Procedure slug=\"hitrust-9-8-s-information-exchange\"/>\n\n#### 09.10 Monitoring\n\n<Procedure slug=\"hitrust-9-10-aa-audit-logging\"/>\n<Procedure slug=\"hitrust-9-10-ab-monitoring-system-use\"/>\n<Procedure slug=\"hitrust-9-10-ac-protection-of-logs\"/>\n<Procedure slug=\"hitrust-9-10-ad-admin-logs\"/>\n<Procedure slug=\"hitrust-9-10-ae-fault-logging\"/>\n\n### 10: Information Systems Acquisition, Development, and Maintenance\n\nEnsure that security is an integral part of information systems.\n\n### 11: Information Security Incident Management\n\nTo ensure information security events and weaknesses associated with information systems are handled in a manner allowing timely corrective action to be taken.\n\n### 13: Privacy Practices\n\nPolicies, procedures, and technologies that directly affect data subjects and/or their PII are open and transparent.",
   "targetCloudProviders": [
     "aws",
     "alibaba",
