@@ -13,8 +13,11 @@
       "expectedResult": "[]",
       "query": "azure-1-3-0-storage-3-storage-logging-is-enabled-for-queue-service-for-read-write-and-delete-requests",
       "subjects": [
-        "StorageAccount"
+        "StorageAccount",
+        "StorageAccountQueue"
       ]
     }
-  ]
+  ],
+  "isInsight": false,
+  "alertForSecondaryOnly": false
 }
