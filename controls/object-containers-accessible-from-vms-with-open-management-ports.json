@@ -1,6 +1,6 @@
 {
-  "body": "Cyscale looks for object containers that are accessible from virtual machines with open management ports.",
-  "name": "Ensure object containers are not accessible from VMs with open management ports",
+  "body": "Cyscale looks for buckets that are accessible from virtual machines with open management ports.",
+  "name": "Ensure buckets are not accessible from VMs with open management ports",
   "slug": "object-containers-accessible-from-vms-with-open-management-ports",
   "isInsight": true,
   "alertForSecondaryOnly": false,
@@ -51,6 +51,6 @@
     }
   ],
   "remediationDescription": "Depending on the provider you must disable public access from the internet to the VMs.",
-  "description": "Object containers accessible from VMs with open management ports",
+  "description": "Buckets accessible from VMs with open management ports",
   "severity": 2
 }

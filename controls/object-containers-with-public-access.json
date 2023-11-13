@@ -1,53 +1,37 @@
 {
-  "name": "Ensure object containers (buckets) are not publicly accessible",
-  "description": "Object containers with public access",
+  "name": "Ensure buckets are not publicly accessible",
+  "description": "Buckets with public access",
   "slug": "object-containers-with-public-access",
-  "body": "Object containers (buckets) should almost never be publicly accessible (excepting when using them to host public static websites). Although there is nothing inherently insecure about object containers, access control misconfigurations and a lack of understanding about how object containers security works can turn buckets into a vector for attack and data exfiltration. To avoid this, Cyscale looks for publicly accessible object containers.",
+  "body": "Buckets should almost never be publicly accessible (excepting when using them to host public static websites). Although there is nothing inherently insecure about buckets, access control misconfigurations and a lack of understanding about how buckets security works can turn buckets into a vector for attack and data exfiltration. To avoid this, Cyscale looks for publicly accessible buckets.",
   "severity": 3,
   "remediationDescription": "#### AWS\n* [Blocking public access to your Amazon S3 storage](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html)\n\n#### Azure\n* [Prevent anonymous public read access to containers and blobs](https://learn.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent)\n\n#### Google Cloud\n* [Public access prevention](https://cloud.google.com/storage/docs/access-control#public_access_prevention)\n\n#### Alibaba Cloud\n* [Overview](https://www.alibabacloud.com/help/en/object-storage-service/latest/access-and-control-overview)",
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Bucket"
-      ],
+      "subjects": ["Bucket"],
       "query": "publicly-aws-buckets"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "BlobContainer"
-      ],
+      "subjects": ["BlobContainer"],
       "query": "publicly-readable-azure-blob-containers"
     },
     {
-      "cloudProviders": [
-        "gcp"
-      ],
+      "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Bucket"
-      ],
+      "subjects": ["Bucket"],
       "query": "publicly-gcp-buckets"
     },
     {
-      "cloudProviders": [
-        "alibaba"
-      ],
+      "cloudProviders": ["alibaba"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Bucket"
-      ],
+      "subjects": ["Bucket"],
       "query": "publicly-alibaba-buckets"
     }
   ]
