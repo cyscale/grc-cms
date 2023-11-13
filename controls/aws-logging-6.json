@@ -1,1 +1,18 @@
-{"name":"Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket","slug":"aws-logging-6","body":"S3 Bucket Access Logging generates a log that contains access records for each request made to your S3 bucket. An access log record contains details about the request, such as the request type, the resources specified in the request worked, and the time and date the request was processed. It is recommended that bucket access logging be enabled on the CloudTrail S3 bucket.\n\n**Rationale**\n\nBy enabling S3 bucket logging on target S3 buckets, it is possible to capture all events which may affect objects within an target buckets. Configuring logs to be placed in a separate bucket allows access to log information which can be useful in security and incident response workflows.","description":"","severity":1,"remediationDescription":"Perform the following to enable S3 bucket logging: \n\n**Via the Management Console**\n\n1. Sign in to the AWS Management Console and open the S3 console at https://console.aws.amazon.com/s3.\n2. Under `All Buckets` click on the target S3 bucket\n3. Click on `Properties` in the top right of the console\n4. Under `Bucket`: \u003c*s3_bucket_for_cloudtrail*\u003e click on `Logging`\n5. Configure bucket logging\n* Click on `Enabled` checkbox\n* Select Target Bucket from list\n* Enter a Target Prefix\n6. Click `Save`\n\n**Default Value: **\n\nLogging is disabled.\n\n**References**\n\n1. CCE-78918-0\n2. CIS CSC v6.0 #14.6\n","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["Bucket"],"query":"aws-logging-6-s3-bucket-access-logging-is-enabled-on-the-cloudtrail-s3-bucket","returnPath":""}]}
+{
+  "name": "Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket",
+  "slug": "aws-logging-6",
+  "body": "S3 Bucket Access Logging generates a log that contains access records for each request made to your S3 bucket. An access log record contains details about the request, such as the request type, the resources specified in the request worked, and the time and date the request was processed. It is recommended that bucket access logging be enabled on the CloudTrail S3 bucket.\n\n**Rationale**\n\nBy enabling S3 bucket logging on target S3 buckets, it is possible to capture all events which may affect objects within an target buckets. Configuring logs to be placed in a separate bucket allows access to log information which can be useful in security and incident response workflows.",
+  "description": "",
+  "severity": 1,
+  "remediationDescription": "Perform the following to enable S3 bucket logging: \n\n**Via the Management Console**\n\n1. Sign in to the AWS Management Console and open the S3 console at https://console.aws.amazon.com/s3.\n2. Under `All Buckets` click on the target S3 bucket\n3. Click on `Properties` in the top right of the console\n4. Under `Bucket`: \u003c*s3_bucket_for_cloudtrail*\u003e click on `Logging`\n5. Configure bucket logging\n* Click on `Enabled` checkbox\n* Select Target Bucket from list\n* Enter a Target Prefix\n6. Click `Save`\n\n**Default Value: **\n\nLogging is disabled.\n\n**References**\n\n1. CCE-78918-0\n2. CIS CSC v6.0 #14.6\n",
+  "rules": [
+    {
+      "cloudProviders": ["aws"],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": ["Bucket"],
+      "query": "aws-logging-6-s3-bucket-access-logging-is-enabled-on-the-cloudtrail-s3-bucket",
+      "returnPath": ""
+    }
+  ]
+}
