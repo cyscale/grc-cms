@@ -20,6 +20,15 @@
       "controls": [
         {
           "control": "k8s-anonymous-auth-argument"
+        },
+        {
+          "control": "k8s-token-auth-file-parameter"
+        },
+        {
+          "control": "k8s-encryption-provider-config-argument"
+        },
+        {
+          "control": "k8s-strong-crypto-ciphers-apiserver"
         }
       ],
       "body": "This section contains recommendations relating to API server configuration flags."
