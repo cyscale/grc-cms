@@ -1,0 +1,5 @@
+{
+  "slug": "query-k8s-anonymous-auth-argument",
+  "name": "Ensure the --anonymous-auth argument is set to false",
+  "query": "{\n  K8sFiles1 {\n    ...AssetFragment\n  }\n}"
+}
