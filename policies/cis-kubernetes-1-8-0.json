@@ -1,0 +1,16 @@
+{
+  "enabled": false,
+  "name": "CIS Kubernetes Benchmark",
+  "isStandard": true,
+  "slug": "cis-kubernetes-1-8-0",
+  "version": "1.8.0",
+  "body": "#﻿# Statement\n\nAll CIS Benchmarks focus on technical configuration settings used to maintain and/or increase the security of the addressed technology, and they should be used in conjunction with other essential cyber hygiene tasks like:\n• Monitoring the base operating system for vulnerabilities and quickly updating with the latest security patches\n• Monitoring applications and libraries for vulnerabilities and quickly updating with the latest security patches\nIn the end, the CIS Benchmarks are designed as a key component of a comprehensive\ncybersecurity program. \n\nThis framework provides prescriptive guidance for establishing a secure configuration posture for Kubernetes v1.27.\n\n#﻿# Special note\n\nThe set of configuration files mentioned anywhere throughout this benchmark document may vary according to the deployment tool and the platform. Any reference to a configuration file should be modified according to the actual configuration\nfiles used on the specific deployment.\n\nFor example, the configuration file for the Kubernetes API server installed by the\nkubeadm tool may be found in /etc/kubernetes/manifests/kube-apiserver.yaml, but\nthe same file may be called /etc/kubernetes/manifests/kube-apiserver.manifest\nwhen installed by kops or kubespray.\n\n## Recommendations\n\n#﻿## Control plane configurations\n\nThis section consists of security recommendations for the direct configuration of\nKubernetes control plane processes. These recommendations may not be directly applicable for cluster operators in environments where these components are managed\nby a 3rd party.\n\n#﻿### Control Plane Node Configuration Files\n",
+  "targetCloudProviders": [
+    "aws",
+    "alibaba",
+    "azure",
+    "gcp",
+    "okta",
+    "googleworkspace"
+  ]
+}
