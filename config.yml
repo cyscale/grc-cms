@@ -95,6 +95,7 @@ collections:
               - { label: 'Google Cloud', value: 'gcp' }
               - { label: 'Okta', value: 'okta' }
               - { label: 'Google Workspace', value: 'googleworkspace' }
+              - { label: 'Kubernetes', value: 'k8s'}
           - label: 'Comparator'
             name: 'comparator'
             widget: 'select'
@@ -272,6 +273,24 @@ collections:
                 VPCLink,
                 VPCRouteTable,
                 VPNGateway,
+                ReplicaSet,
+                Endpoints,
+                Service,
+                Deployment,
+                Pod,
+                StatefulSet,
+                Container,
+                ExternalName,
+                Namespace,
+                Cluster,
+                Kernel,
+                OSImage,
+                Architecture,
+                Node,
+                ServiceAccount,
+                CloudAccount,
+                DaemonSet,
+                ConfigMap,
               ]
           - label: 'Query'
             name: 'query'
@@ -315,6 +334,7 @@ collections:
           - { label: 'Google Cloud', value: 'gcp' }
           - { label: 'Okta', value: 'okta' }
           - { label: 'Google Workspace', value: 'googleworkspace' }
+          - { label: 'Kubernetes', value: 'k8s'}
       - label: 'Procedures'
         name: 'procedures'
         widget: 'list'
@@ -548,6 +568,24 @@ collections:
             VPCLink,
             VPCRouteTable,
             VPNGateway,
+            ReplicaSet,
+            Endpoints,
+            Service,
+            Deployment,
+            Pod,
+            StatefulSet,
+            Container,
+            ExternalName,
+            Namespace,
+            Cluster,
+            Kernel,
+            OSImage,
+            Architecture,
+            Node,
+            ServiceAccount,
+            CloudAccount,
+            DaemonSet,
+            ConfigMap,
           ]
       - label: 'Assets'
         name: 'assets'
@@ -713,4 +751,22 @@ collections:
             VPCLink,
             VPCRouteTable,
             VPNGateway,
+            ReplicaSet,
+            Endpoints,
+            Service,
+            Deployment,
+            Pod,
+            StatefulSet,
+            Container,
+            ExternalName,
+            Namespace,
+            Cluster,
+            Kernel,
+            OSImage,
+            Architecture,
+            Node,
+            ServiceAccount,
+            CloudAccount,
+            DaemonSet,
+            ConfigMap,
           ]
