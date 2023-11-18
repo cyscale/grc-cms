@@ -1,0 +1,5 @@
+{
+  "name": "Ensure that the --token-auth-file parameter is not set",
+  "slug": "query-k8s-token-auth-file",
+  "query": "{\n  K8sFiles2 {\n    ...AssetFragment\n  }\n}"
+}
