@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "CIS Kubernetes Benchmark",
   "isStandard": true,
   "slug": "cis-kubernetes-1-8-0",
@@ -91,6 +91,9 @@
       "controls": [
         {
           "control": "k8s-service-account-default"
+        },
+        {
+          "control": "k8s-bind-impersonate-escalate"
         }
       ]
     },
