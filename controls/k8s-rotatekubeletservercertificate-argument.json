@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "isInsight": false,
-  "name": " Ensure the RotateKubeletServerCertificate argument is set to true",
+  "name": " Ensure the RotateKubeletServerCertificate argument is set to true (Controller Manager)",
   "slug": "k8s-rotatekubeletservercertificate-argument",
   "body": "Enable kubelet server certificate rotation on controller-manager.\n\n**Rationale**\n\n`RotateKubeletServerCertificate` causes the kubelet to both request a serving certificate after bootstrapping its client credentials and rotate the certificate as its existing credentials expire. This automated periodic rotation ensures that the there are no downtimes due to expired certificates and thus addressing availability in the CIA security triad.\n\nNote: This recommendation only applies if you let kubelets get their certificates from the API server. In case your kubelet certificates come from an outside authority/tool (e.g. Vault) then you need to take care of the rotation yourself.",
   "severity": 2,
