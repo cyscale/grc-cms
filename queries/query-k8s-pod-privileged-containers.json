@@ -1,0 +1,5 @@
+{
+  "name": "Minimize the admission of privileged containers (Pod)",
+  "slug": "query-k8s-pod-privileged-containers",
+  "query": "{\n  K8sPod1 {\n    ...AssetFragment\n  }\n}"
+}
