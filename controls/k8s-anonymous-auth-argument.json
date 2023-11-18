@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "isInsight": false,
-  "name": "Ensure the --anonymous-auth argument is set to false",
+  "name": "Ensure the --anonymous-auth argument is set to false (API server)",
   "severity": 2,
   "rules": [
     {
