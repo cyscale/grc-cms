@@ -1,5 +1,5 @@
 {
-  "name": "Ensure that the --token-auth-file parameter is not set",
-  "slug": "query-k8s-token-auth-file",
-  "query": "{\n  K8sFiles2 {\n    ...AssetFragment\n  }\n}"
+  "name": "Ensure that the --encryption-provider-config argument is set as appropriate (API server)",
+  "slug": "query-k8s-api-server-encryption-provider-config",
+  "query": "{\n  K8sApiServer3 {\n    ...AssetFragment\n  }\n}"
 }
