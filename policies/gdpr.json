@@ -358,7 +358,6 @@
     "alibaba",
     "okta",
     "gcp",
-    "googleworkspace",
-    "k8s"
+    "googleworkspace"
   ]
 }
