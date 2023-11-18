@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "name": "Minimize the admission of containers which use HostPorts",
+  "slug": "k8s-pod-admission-host-ports",
+  "body": "\nDo not generally permit containers which require the use of HostPorts.\n\n**Rationale**\n\nHost ports connect containers directly to the host's network. This can bypass controls\nsuch as network policy.\n\nThere should be at least one admission control policy defined which does not permit\ncontainers which require the use of HostPorts.\n\nIf you need to run containers which require HostPorts, this should be defined in a\nseparate policy and you should carefully check to ensure that only limited service\naccounts and users are given permission to use that policy.\n\n**Impact**\n\nPods defined with `hostPort` settings in either the container, initContainer or\nephemeralContainer sections will not be permitted unless they are run under a specific\npolicy.\n\n**Audit**\n\nList the policies in use for each namespace in the cluster, ensure that each policy\ndisallows the admission of containers which have `hostPort` sections.",
+  "severity": 3,
+  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the\nadmission of containers which use `hostPort` sections.\n\n**Default Value**\nBy default, there are no restrictions on the use of HostPorts.\n\n**References**\n1.  [https://kubernetes.io/docs/concepts/security/pod-security-standards/](https://kubernetes.io/docs/concepts/security/pod-security-standards/)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KubernetesPod"
+      ],
+      "query": "query-k8s-pod-host-ports"
+    }
+  ]
+}
