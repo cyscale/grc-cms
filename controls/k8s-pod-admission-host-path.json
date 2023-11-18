@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "name": "Minimize the admission of HostPath volumes",
+  "slug": "k8s-pod-admission-host-path",
+  "body": "\nDo not generally admit containers which make use of `hostPath` volumes.\n\n**Rationale**\n\nA container which mounts a `hostPath` volume as part of its specification will have\naccess to the filesystem of the underlying cluster node. The use of `hostPath` volumes\nmay allow containers access to privileged areas of the node filesystem.\n\nThere should be at least one admission control policy defined which does not permit\ncontainers to mount `hostPath` volumes.\n\nIf you need to run containers which require `hostPath` volumes, this should be defined in\na separate policy and you should carefully check to ensure that only limited service\naccounts and users are given permission to use that policy.\n\n**Impact**\n\nPods defined which make use of `hostPath` volumes will not be permitted unless they are\nrun under a spefific policy.\n\n**Audit**\n\nList the policies in use for each namespace in the cluster, ensure that each policy\ndisallows the admission of containers with `hostPath` volumes.",
+  "severity": 3,
+  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the\nadmission of containers which use `hostPath` volumes..\n\n**Default Value**\n\nBy default, there are no restrictions on the creation of `hostPath` volumes.\n\n**References**\n\n1.  [https://kubernetes.io/docs/concepts/security/pod-security-standards/](https://kubernetes.io/docs/concepts/security/pod-security-standards/)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KubernetesPod"
+      ],
+      "query": "query-k8s-pod-host-path"
+    }
+  ]
+}
