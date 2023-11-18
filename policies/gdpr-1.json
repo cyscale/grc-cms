@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "GDPR - General Data Protection Regulation (EU)",
   "slug": "gdpr",
   "isStandard": true,
@@ -12,7 +12,7 @@
     "googleworkspace",
     "okta"
   ],
-  "body": "## Requirements\n\n### Chapter 2, Principles\n\n#### Article 5: Principles relating to processing of personal data\n\n<Procedure slug=\"gdpr-5-f-integrity-confidentiality\"/>\n\n### Chapter 4, Controller and processor\n\n#### Article 25: Data protection by design and by default\n\n<Procedure slug=\"gdpr-25-necessary-safeguards\"/>\n\n#### Article 32: Security of processing\n\n<Procedure slug=\"gdpr-32-a-pseudonymisation-encryption\"/>\n<Procedure slug=\"gdpr-32-b-confidentiliaty-integrity-availability\"/>\n<Procedure slug=\"gdpr-32-c-restore-data\"/>\n<Procedure slug=\"gdpr-32-d-evaluate-effectiveness\"/>\n\n\n",
+  "body": "## Statement\n\n> **GDPR is a law.** As compared to other Standards that generally offer recommendations, GDPR is a set of controls and **requirements** companies ***MUST*** meet as covered entities.\n\nThe General Data Protection Regulation (GDPR) is the toughest privacy and security law in the world. Though it was drafted and passed by the European Union (EU), it imposes obligations onto organizations anywhere, so long as they target or collect data related to people in the EU. The regulation was put into effect on May 25, 2018. The GDPR will levy harsh fines against those who violate its privacy and security standards, with penalties reaching into the tens of millions of euros.\n\n**Data protection by design and by default** is the main principle that drives GDPR's controls and requirements.\n\n#### Scope\n\n- All EU organisations that collect, store or otherwise process the personal data of individuals residing in the EU, even if they're not EU citizens.\n- Organisations based outside the EU that offer goods or services to EU residents, monitor their behaviour, or process their personal data.\n\n#### Definitions\n\nThe GDPR defines an array of legal terms at length. Below are some of the most important ones that we refer to in this article:\n\n- **Personal data** — Personal data is any information that relates to an individual who can be directly or indirectly identified. Names and email addresses are obviously personal data. Location information, ethnicity, gender, biometric data, religious beliefs, web cookies, and political opinions can also be personal data. Pseudonymous data can also fall under the definition if it's relatively easy to ID someone from it.\n\n- **Data processing** — Any action performed on data, whether automated or manual. The examples cited in the text include collecting, recording, organizing, structuring, storing, using, erasing… so basically anything.\n\n- **Data subject** — The person whose data is processed. These are your customers or site visitors.\n\n- **Data controller** — The person who decides why and how personal data will be processed. If you're an owner or employee in your organization who handles data, this is you.\n\n- **Data processor** — A third party that processes personal data on behalf of a data controller. The GDPR has special rules for these individuals and organizations. They could include cloud servers like Tresorit or email service providers like ProtonMail.\n\n#### Personal Data\n\nPersonal data is any information relating to an identified or identifiable natural person (the *data subject*). The Regulation places much stronger controls on the processing of special categories of personal data (previously referred to as sensitive personal data) than the Irish Data Protection Act. The inclusion of genetic and biometric data is new to this category.\n\n- Personal data\n  - Name\n  - Address\n  - Email address\n  - Photo\n  - IP address\n  - Location data\n  - Online behaviour (cookies)\n  - Profiling and analytics data\n- Special category data\n  - Racial or ethnic origin\n  - Political opinions\n  - Religious and philosophical beliefs\n  - Trade union membership\n  - Genetic data\n  - Biometric data for the purpose of uniquely identifying a natural person\n  - Data concerning health\n  - Sex life and sexual orientation\n\n### Penalties\n\nThe GDPR states explicitly that some violations are more severe than others. Depending on several factors such as the gravity and nature, intention, the number of data subjects affected and data category, penalties are:\n\n- **Up to 10,000,000 EUR** - The less severe infringements could result in a fine of up to €10 million, or 2% of the firm's worldwide annual revenue from the preceding financial year, whichever amount is higher;\n\n- **Up to 20,000,000 EUR** - The more serious infringements go against the very principles of the right to privacy and the right to be forgotten that are at the heart of the GDPR. These types of infringements could result in a fine of up to €20 million, or 4% of the firm's worldwide annual revenue from the preceding financial year, whichever amount is higher.\n\n## Requirements\n\n### Chapter 2, Principles\n\n#### Article 5: Principles relating to processing of personal data\n\n<Procedure slug=\"gdpr-5-f-integrity-confidentiality\"/>\n\n### Chapter 4, Controller and processor\n\n#### Article 25: Data protection by design and by default\n\n<Procedure slug=\"gdpr-25-necessary-safeguards\"/>\n\n#### Article 27: Representatives of controllers or processors not established in the Union\n\n<Procedure slug=\"gdpr-27-representatives\"/>\n\n#﻿### Article 28: Processor\n\n<Procedure slug=\"gdpr-28-iam\"/>\n\n#### Article 32: Security of processing\n\n<Procedure slug=\"gdpr-32-a-pseudonymisation-encryption\"/>\n<Procedure slug=\"gdpr-32-b-confidentiliaty-integrity-availability\"/>\n<Procedure slug=\"gdpr-32-c-restore-data\"/>\n<Procedure slug=\"gdpr-32-d-evaluate-effectiveness\"/>\n\n\n",
   "procedures": [
     {
       "slug": "gdpr-5-f-integrity-confidentiality",
@@ -42,6 +42,60 @@
         },
         {
           "control": "gcp-bigquery-publicly-accessible"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
+        },
+        {
+          "control": "gcp-bucket-publicly-accessible"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "aws-networking-8"
+        },
+        {
+          "control": "publicly-writable-object-containers"
+        },
+        {
+          "control": "object-containers-with-public-access"
+        },
+        {
+          "control": "publicly-readable-object-containers"
+        },
+        {
+          "control": "publicly-accessible-disks"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "publicly-accessible-queues"
+        },
+        {
+          "control": "publicly-accessible-encryption-keys"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-2"
+        },
+        {
+          "control": "used-kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
         }
       ]
     },
@@ -89,6 +143,55 @@
         }
       ],
       "slug": "gdpr-32-a-pseudonymisation-encryption"
+    },
+    {
+      "slug": "gdpr-27-representatives",
+      "controls": [
+        {
+          "control": "essential-contacts-not-set-for-organization"
+        },
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
+        },
+        {
+          "control": "azure-1-3-0-database-2-5"
+        }
+      ],
+      "name": "A representative",
+      "body": "The controller or the processor shall designate in writing a representative."
+    },
+    {
+      "slug": "gdpr-28-iam",
+      "name": "(b) Persons authorised to process the personal data",
+      "controls": [
+        {
+          "control": "azure-rbac-kubernetes"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "gcp-service-account-admin-privileges"
+        },
+        {
+          "control": "gcp-sql-4"
+        },
+        {
+          "control": "aws-1-3-0-iam-7"
+        },
+        {
+          "control": "gcp-separation-of-duties-service-account"
+        },
+        {
+          "control": "gcp-vm-1"
+        }
+      ]
     },
     {
       "name": "(b) Confidentiality, integrity, availability and resilience of processing systems and services",
