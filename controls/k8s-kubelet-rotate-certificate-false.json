@@ -5,5 +5,18 @@
   "name": "Ensure the --rotate-certificates argument is not set to false",
   "slug": "k8s-kubelet-rotate-certificate-false",
   "severity": 3,
-  "remediationDescription": "If you're using a Kubelet config file, edit the file to add the line `rotateCertificates: true` or remove it altogether to use the default value.\n\nIf using command line arguments, edit the kubelet service file\n`/etc/kubernetes/kubelet.conf` on each worker node and remove `--rotatecertificates=false` argument from the `KUBELET_CERTIFICATE_ARGS` variable.\nBased on your system, restart the kubelet service. For example:\n\n```bash\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n```\n\n**Default Value**\n\nBy default, kubelet client certificate rotation is enabled.\n\n**References**\n\n1. [https://github.com/kubernetes/kubernetes/pull/41912](https://github.com/kubernetes/kubernetes/pull/41912)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/](https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/)\n3. [https://kubernetes.io/releases/notes/](https://kubernetes.io/releases/notes/)\n4. [https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/)"
+  "remediationDescription": "If you're using a Kubelet config file, edit the file to add the line `rotateCertificates: true` or remove it altogether to use the default value.\n\nIf using command line arguments, edit the kubelet service file\n`/etc/kubernetes/kubelet.conf` on each worker node and remove `--rotatecertificates=false` argument from the `KUBELET_CERTIFICATE_ARGS` variable.\nBased on your system, restart the kubelet service. For example:\n\n```bash\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n```\n\n**Default Value**\n\nBy default, kubelet client certificate rotation is enabled.\n\n**References**\n\n1. [https://github.com/kubernetes/kubernetes/pull/41912](https://github.com/kubernetes/kubernetes/pull/41912)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/](https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/)\n3. [https://kubernetes.io/releases/notes/](https://kubernetes.io/releases/notes/)\n4. [https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KubernetesNode"
+      ],
+      "query": "query-k8s-kubelet-rotate-certificates"
+    }
+  ]
 }
