@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "isInsight": false,
-  "name": "Ensure the --bind-address argument is set to 127.0.0.1",
+  "name": "Ensure the --bind-address argument is set to 127.0.0.1 (Controller Manager)",
   "slug": "k8s-bind-address-controller-manager-argument",
   "body": "Do not bind the Controller Manager service to non-loopback, insecure addresses.\n\n**Rationale**\n\nThe Controller Manager API service, which runs on port TCP 10252 by default, is used for health and metrics information and is available without authentication or encryption. As such, it should only be bound to a localhost interface, to minimize the cluster's attack surface.",
   "severity": 3,
