@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "isInsight": false,
-  "name": "Ensure the --anonymous-auth argument is set to false",
+  "name": "Ensure the --anonymous-auth argument is set to false (Kubelet)",
   "slug": "k8s-kubelet-anonymous-auth-argument",
   "body": "Disable anonymous requests to the Kubelet server.\n\n**Rationale**\n\nWhen enabled, requests that are not rejected by other configured authentication methods are treated as anonymous requests. These requests are then served by the Kubelet server. You should rely on authentication to authorize access and disallow anonymous requests.\n\n**Impact**\n\nAnonymous requests will be rejected.",
   "severity": 2,
