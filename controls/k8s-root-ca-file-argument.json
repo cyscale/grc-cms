@@ -5,5 +5,18 @@
   "slug": "k8s-root-ca-file-argument",
   "body": "Allow pods to verify the API server's serving certificate before establishing connections.\n\n**Rationale**\n\nProcesses running within pods that need to contact the API server must verify the API server's serving certificate. Failing to do so could be a subject to man-in-the-middle attacks.\n\nProviding the root certificate for the API server's serving certificate to the controller manager with the `--root-ca-file` argument allows the controller manager to inject the trusted bundle into pods so that they can verify TLS connections to the API server.\n\n**Impact**\n\nYou need to setup and maintain the root certificate authority file.",
   "severity": 3,
-  "remediationDescription": "Edit the Controller Manager pod specification file `/etc/kubernetes/manifests/kubecontroller-manager.yaml` on the Control Plane node and set the `--root-ca-file` parameter to the certificate bundle file:\n\n```bash\n--root-ca-file=<pathToFile>\n```\n\n**Default Value**\n\nBy default, --root-ca-file is not set.\n\n**References**\n\n1. [https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)\n2. [https://github.com/kubernetes/kubernetes/issues/11000](https://github.com/kubernetes/kubernetes/issues/11000)"
+  "remediationDescription": "Edit the Controller Manager pod specification file `/etc/kubernetes/manifests/kubecontroller-manager.yaml` on the Control Plane node and set the `--root-ca-file` parameter to the certificate bundle file:\n\n```bash\n--root-ca-file=<pathToFile>\n```\n\n**Default Value**\n\nBy default, --root-ca-file is not set.\n\n**References**\n\n1. [https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)\n2. [https://github.com/kubernetes/kubernetes/issues/11000](https://github.com/kubernetes/kubernetes/issues/11000)",
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KubernetesPod"
+      ],
+      "query": "query-k8s-controller-manager-root-ca-file"
+    }
+  ]
 }
