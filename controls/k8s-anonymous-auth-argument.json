@@ -3,7 +3,19 @@
   "isInsight": false,
   "name": "Ensure the --anonymous-auth argument is set to false",
   "severity": 2,
-  "rules": [],
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KubernetesPod"
+      ],
+      "query": "query-k8s-api-server-anonymous-auth"
+    }
+  ],
   "slug": "k8s-anonymous-auth-argument",
   "body": "Disable anonymous requests to the API server.\n\n**Rationale**\n\nWhen enabled, requests that are not rejected by other configured authentication methods are treated as anonymous requests. These requests are then served by the API server. You should rely on authentication to authorize access and disallow anonymous requests.\n\nIf you are using RBAC authorization, it is generally considered reasonable to allow anonymous access to the API Server for health checks and discovery purposes. However, you should consider whether anonymous discovery is an acceptable risk for your purposes.\n\n**Impact**\n\nAnonymous requests will be rejected.",
   "remediationDescription": "Edit the API server pod specification file `/etc/kubernetes/manifests/kubeapiserver.yaml` on the Control Plane node and set the following parameter:\n\n```bash\n--anonymous-auth=false\n```\n\n**Default Value**\n\nBy default, anonymous access is enabled.\n\n**References**\n\n1. [https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/authentication/](https://kubernetes.io/docs/reference/access-authn-authz/authentication/)"
