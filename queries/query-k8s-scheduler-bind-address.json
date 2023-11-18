@@ -1,0 +1,5 @@
+{
+  "name": "Ensure that the --bind-address argument is set to 127.0.0.1 (Scheduler)",
+  "slug": "query-k8s-scheduler-bind-address",
+  "query": "{\n  K8sScheduler1 {\n    ...AssetFragment\n  }\n}"
+}
