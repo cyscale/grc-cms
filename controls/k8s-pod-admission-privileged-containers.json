@@ -1,0 +1,22 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KubernetesPod"
+      ],
+      "query": "query-k8s-pod-privileged-containers"
+    }
+  ],
+  "name": "Minimize the admission of privileged containers",
+  "slug": "k8s-pod-admission-privileged-containers",
+  "body": "Do not generally permit containers to be run with the securityContext.privileged flag\nset to true.\n\n**Rationale**\nPrivileged containers have access to all Linux Kernel capabilities and devices. A\ncontainer running with full privileges can do almost everything that the host can do. This\nflag exists to allow special use-cases, like manipulating the network stack and\naccessing devices.\n\nThere should be at least one admission control policy defined which does not permit\nprivileged containers.\n\nIf you need to run privileged containers, this should be defined in a separate policy and\nyou should carefully check to ensure that only limited service accounts and users are\ngiven permission to use that policy.\n\n**Impact**\nPods defined with `spec.containers[].securityContext.privileged: true`,\n`spec.initContainers[].securityContext.privileged: true` and\n`spec.ephemeralContainers[].securityContext.privileged: true` will not be permitted.\n\n**Audit**\nRun the following command:\n```bash\nget pods -A -o=jsonpath=$'{range .items[*]}{@.metadata.name}:\n{@..securityContext}\\n{end}'\n```\nIt will produce an inventory of all the privileged use on the cluster, if any (please, refer to\na sample below). Further grepping can be done to automate each specific violation\ndetection.\n```bash\ncalico-kube-controllers-57b57c56f-jtmk4: {}\ncalico-node-c4xv4: {} {\"privileged\":true} {\"privileged\":true} {\"privileged\":true} {\"privileged\":true}\ndashboard-metrics-scraper-7bc864c59-2m2xw: {\"seccompProfile\":{\"type\":\"RuntimeDefault\"}}\n{\"allowPrivilegeEscalation\":false,\"readOnlyRootFilesystem\":true,\"runAsGroup\":2001,\"ru\nnAsUser\":1001}\n```",
+  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the\nadmission of privileged containers.\n\n**Default Value**\nBy default, there are no restrictions on the creation of privileged containers.\n\n**References**\n1.  [https://kubernetes.io/docs/concepts/security/pod-security-standards/](https://kubernetes.io/docs/concepts/security/pod-security-standards/)",
+  "severity": 3
+}
