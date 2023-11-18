@@ -1,0 +1,10 @@
+{
+  "alertForSecondaryOnly": false,
+  "isInsight": false,
+  "name": "Limit use of the Bind, Impersonate and Escalate permissions in the Kubernetes cluster",
+  "slug": "k8s-bind-impersonate-escalate",
+  "body": "\nCluster roles and roles with the impersonate, bind or escalate permissions should not\nbe granted unless strictly required. Each of these permissions allow a particular subject\nto escalate their privileges beyond those explicitly granted by cluster administrators.\n\n**Rationale**\n\nThe impersonate privilege allows a subject to impersonate other users gaining their\nrights to the cluster. The bind privilege allows the subject to add a binding to a cluster\nrole or role which escalates their effective permissions in the cluster. The escalate\nprivilege allows a subject to modify cluster roles to which they are bound, increasing\ntheir rights to that level.\n\nEach of these permissions has the potential to allow for privilege escalation to cluster-\nadmin level.\n\n**Impact**\n\nThere are some cases where these permissions are required for cluster service\noperation, and care should be taken before removing these permissions from system\nservice accounts.\n\n**Audit**\n\nReview the users who have access to cluster roles or roles which provide the\nimpersonate, bind or escalate privileges.",
+  "severity": 2,
+  "remediationDescription": "\nWhere possible, remove the impersonate, bind and escalate rights from subjects.\n\n**Default Value**\n\nIn a default kubeadm cluster, the system:masters group and clusterrole-aggregation-\ncontroller service account have access to the escalate privilege. The system:masters\ngroup also has access to bind and impersonate.\n\n**References**\n\n1. [https://raesene.github.io/blog/2020/12/12/Escalating_Away/](https://raesene.github.io/blog/2020/12/12/Escalating_Away/)\n2. [https://raesene.github.io/blog/2021/01/16/Getting-Into-A-Bind-with-Kubernetes/](https://raesene.github.io/blog/2021/01/16/Getting-Into-A-Bind-with-Kubernetes/)",
+  "rules": []
+}
