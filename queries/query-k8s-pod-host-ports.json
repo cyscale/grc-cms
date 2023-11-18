@@ -1,0 +1,5 @@
+{
+  "name": "Minimize the admission of containers which use HostPorts (Pod)",
+  "slug": "query-k8s-pod-host-ports",
+  "query": "{\n  K8sPod4 {\n    ...AssetFragment\n  }\n}"
+}
