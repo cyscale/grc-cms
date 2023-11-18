@@ -1,7 +1,7 @@
 {
   "alertForSecondaryOnly": false,
   "isInsight": false,
-  "name": "Ensure the --bind-address argument is set to 127.0.0.1 ",
+  "name": "Ensure the --bind-address argument is set to 127.0.0.1 (Scheduler)",
   "slug": "k8s-bind-address-scheduler-argument",
   "remediationDescription": "Edit the Scheduler pod specification file `/etc/kubernetes/manifests/kubecontroller-manager.yaml` on the Control Plane node and add the correct value for the `--bind-address parameter`.\n\n```bash\n--bind-address=127.0.0.1\n```\n\n**Default Value**\n\nBy default, the `--bind-address` parameter is set to `0.0.0.0`.\n\n**References**\n\n1. [https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)\n",
   "severity": 3,
