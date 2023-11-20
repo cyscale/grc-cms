@@ -1,7 +1,7 @@
 {
   "enabled": true,
   "name": "GDPR - General Data Protection Regulation (EU)",
-  "slug": "gdpr",
+  "slug": "gdpr-1",
   "isStandard": true,
   "version": "gdpr-1",
   "targetCloudProviders": [
