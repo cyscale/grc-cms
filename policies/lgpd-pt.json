@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "LGPD - Lei Geral de Proteção de Dados",
   "isStandard": true,
   "slug": "lgpd-pt",
@@ -12,5 +12,5 @@
     "okta",
     "googleworkspace"
   ],
-  "body": "Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.\n\nEsta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:\n\nI - a operação de tratamento seja realizada no território nacional;\nII - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou\nIII - os dados pessoais objeto do tratamento tenham sido coletados no território nacional.\n    1. Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta.\n    2. Excetua-se do disposto no inciso I deste artigo o tratamento de dados previsto no inciso IV do caput do art. 4º desta Lei."
+  "body": "Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.\n\nEsta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:\n\nI - a operação de tratamento seja realizada no território nacional;\n\nII - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou\n\nIII - os dados pessoais objeto do tratamento tenham sido coletados no território nacional.\n\n1. Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta.\n2. Excetua-se do disposto no inciso I deste artigo o tratamento de dados previsto no inciso IV do caput do art. 4º desta Lei."
 }
