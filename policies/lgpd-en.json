@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "lgpd-en",
   "version": "1.0",
-  "body": "This Law provides for the processing of personal data, including in digital media, by a natural person or legal entity governed by public or private law, in order to protect the fundamental rights of liberty and privacy and the free development of personality of the natural person.\n\nThis Law applies to any processing activity carried out by a natural person or legal entity governed by public or private law, regardless of the medium, the country of its headquarters or the country where the data are located, provided that:\n\nI - the processing activity is carried out in the national territory;\n\nII - the processing activity has the purpose of offering or supplying goods or services or the processing of data of individuals located in the national territory; or\n\nIII - the personal data object of the processing have been collected in the national territory.\n1. It is considered to be collected in national territory the data of individuals present in national territory at the moment of colletion.\n2. The provisions of item I of this article are not applicable to the processing of data provided for in item IV of the caput of Article 4 of this Law.",
+  "body": "This Law provides for the processing of personal data, including in digital media, by a natural person or legal entity governed by public or private law, in order to protect the fundamental rights of liberty and privacy and the free development of personality of the natural person.\n\nThis Law applies to any processing activity carried out by a natural person or legal entity governed by public or private law, regardless of the medium, the country of its headquarters or the country where the data are located, provided that:\n\nI - the processing activity is carried out in the national territory;\n\nII - the processing activity has the purpose of offering or supplying goods or services or the processing of data of individuals located in the national territory; or\n\nIII - the personal data object of the processing have been collected in the national territory.\n1. It is considered to be collected in national territory the data of individuals present in national territory at the moment of colletion.\n2. The provisions of item I of this article are not applicable to the processing of data provided for in item IV of the caput of Article 4 of this Law.\n\n## Requirements\n\n### Chapter I, Preliminary Provisions\n\n#### Article 6\n\n<Procedure slug=\"lgpd-1-6-5-data-quality\"/>\n<Procedure slug=\"lgpd-1-6-7-security\"/>\n<Procedure slug=\"lgpd-1-6-8-prevention\"/>\n<Procedure slug=\"lgpd-1-6-10-responsibility-accountability\"/>\n\n### Chapter VI, Personal Data Processing Agents\n\n#### Article 41\n\n<Procedure slug=\"lgpd-6-41-1-dpo\"/>\n\n\n\n",
   "targetCloudProviders": [
     "aws",
     "azure",
@@ -12,5 +12,32 @@
     "alibaba",
     "okta",
     "googleworkspace"
+  ],
+  "procedures": [
+    {
+      "slug": "lgpd-1-6-5-data-quality",
+      "name": "Data quality",
+      "body": "Guarantee to data subejcts accuracy, clarity, relevance and updating of the data, according to the need and for the fulfillment of the purpose of its processing."
+    },
+    {
+      "slug": "lgpd-1-6-7-security",
+      "body": "Use of technical and administrative measures capable of protecting personal data from unauthorized access and accidental or unlawful destruction, loss, alteration, communication or dissemination.",
+      "name": "Security"
+    },
+    {
+      "slug": "lgpd-1-6-8-prevention",
+      "body": "Adoption of measures to prevent the occurrence of damage due to the processing of personal data.",
+      "name": "Prevention"
+    },
+    {
+      "slug": "lgpd-1-6-10-responsibility-accountability",
+      "body": "Demonstration by the agent of the adoption of effective measures capable of proving observance and compliance with personal data protection rules, including the effectiveness of such measures.",
+      "name": "Responsibility and accountability"
+    },
+    {
+      "body": "The controller shall appoint the controller for the processing of personal data.\n\n",
+      "slug": "lgpd-6-41-1-dpo",
+      "name": "DPO or Person in Charge of Personal Data"
+    }
   ]
 }
