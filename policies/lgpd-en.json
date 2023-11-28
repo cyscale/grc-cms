@@ -316,7 +316,39 @@
     },
     {
       "name": "Data Retention and Deletion",
-      "slug": "lgpd-data-retention-and-deletion"
+      "slug": "lgpd-data-retention-and-deletion",
+      "controls": [
+        {
+          "control": "azure-key-vault-recoverable"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "gcp-bucket-lock-log-buckets"
+        },
+        {
+          "control": "azure-log-retention-days-postgresql-server"
+        },
+        {
+          "control": "azure-1-3-0-networking-4"
+        },
+        {
+          "control": "azure-auditing-retention-greater-90"
+        },
+        {
+          "control": "aws-1-4-0-storage-1-3"
+        },
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "gcp-logging-3"
+        }
+      ]
     },
     {
       "name": "International Data Transfer",
