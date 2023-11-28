@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "lgpd-en",
   "version": "1.0",
-  "body": "This Law provides for the processing of personal data, including in digital media, by a natural person or legal entity governed by public or private law, in order to protect the fundamental rights of liberty and privacy and the free development of personality of the natural person.\n\nThis Law applies to any processing activity carried out by a natural person or legal entity governed by public or private law, regardless of the medium, the country of its headquarters or the country where the data are located, provided that:\n\nI - the processing activity is carried out in the national territory;\n\nII - the processing activity has the purpose of offering or supplying goods or services or the processing of data of individuals located in the national territory; or\n\nIII - the personal data object of the processing have been collected in the national territory.\n1. It is considered to be collected in national territory the data of individuals present in national territory at the moment of colletion.\n2. The provisions of item I of this article are not applicable to the processing of data provided for in item IV of the caput of Article 4 of this Law.\n\n## Requirements\n\n### Chapter I, Preliminary Provisions\n\n#### Article 6\n\n<Procedure slug=\"lgpd-1-6-5-data-quality\"/>\n<Procedure slug=\"lgpd-1-6-7-security\"/>\n<Procedure slug=\"lgpd-1-6-8-prevention\"/>\n<Procedure slug=\"lgpd-1-6-10-responsibility-accountability\"/>\n\n### Chapter VI, Personal Data Processing Agents\n\n#### Article 41\n\n<Procedure slug=\"lgpd-6-41-1-dpo\"/>\n\n\n\n",
+  "body": "This Law provides for the processing of personal data, including in digital media, by a natural person or legal entity governed by public or private law, in order to protect the fundamental rights of liberty and privacy and the free development of personality of the natural person.\n\nThis Law applies to any processing activity carried out by a natural person or legal entity governed by public or private law, regardless of the medium, the country of its headquarters or the country where the data are located, provided that:\n\nI - the processing activity is carried out in the national territory;\n\nII - the processing activity has the purpose of offering or supplying goods or services or the processing of data of individuals located in the national territory; or\n\nIII - the personal data object of the processing have been collected in the national territory.\n1. It is considered to be collected in national territory the data of individuals present in national territory at the moment of colletion.\n2. The provisions of item I of this article are not applicable to the processing of data provided for in item IV of the caput of Article 4 of this Law.\n\n## Requirements\n\n<Procedure slug=\"lgpd-data-classification-handling\"/>\n<Procedure slug=\"lgpd-user-access-control\"/>\n<Procedure slug=\"lgpd-data-encryption\"/>\n<Procedure slug=\"lgpd-incident-response-plan\"/>\n<Procedure slug=\"lgpd-data-retention-and-deletion\"/>\n<Procedure slug=\"lgpd-international-data-transfer\"/>\n<Procedure slug=\"lgpd-data-processing-records\"/>\n<Procedure slug=\"lgpd-data-subject-rights\"/>\n<Procedure slug=\"lgpd-training-and-awareness\"/>\n<Procedure slug=\"lgpd-regular-audits\"/>\n<Procedure slug=\"lgpd-third-party-management\"/>\n<Procedure slug=\"lgpd-dpo\"/>\n<Procedure slug=\"lgpd-risk-assessment\"/>\n<Procedure slug=\"lgpd-privacy-by-design\"/>\n<Procedure slug=\"lgpd-data-anonymization\"/>\n<Procedure slug=\"lgpd-breach-notification\"/>\n<Procedure slug=\"lgpd-consent-management\"/>\n<Procedure slug=\"lgpd-compliance-documentation\"/>",
   "targetCloudProviders": [
     "aws",
     "azure",
@@ -15,29 +15,76 @@
   ],
   "procedures": [
     {
-      "slug": "lgpd-1-6-5-data-quality",
-      "name": "Data quality",
-      "body": "Guarantee to data subejcts accuracy, clarity, relevance and updating of the data, according to the need and for the fulfillment of the purpose of its processing."
+      "name": "Data Classification Handling",
+      "slug": "lgpd-data-classification-handling"
     },
     {
-      "slug": "lgpd-1-6-7-security",
-      "body": "Use of technical and administrative measures capable of protecting personal data from unauthorized access and accidental or unlawful destruction, loss, alteration, communication or dissemination.",
-      "name": "Security"
+      "name": "User Access Control",
+      "slug": "lgpd-user-access-control"
     },
     {
-      "slug": "lgpd-1-6-8-prevention",
-      "body": "Adoption of measures to prevent the occurrence of damage due to the processing of personal data.",
-      "name": "Prevention"
+      "name": "Data Encryption",
+      "slug": "lgpd-data-encryption"
     },
     {
-      "slug": "lgpd-1-6-10-responsibility-accountability",
-      "body": "Demonstration by the agent of the adoption of effective measures capable of proving observance and compliance with personal data protection rules, including the effectiveness of such measures.",
-      "name": "Responsibility and accountability"
+      "name": "Incident Response Plan",
+      "slug": "lgpd-incident-response-plan"
     },
     {
-      "body": "The controller shall appoint the controller for the processing of personal data.\n\n",
-      "slug": "lgpd-6-41-1-dpo",
-      "name": "DPO or Person in Charge of Personal Data"
+      "name": "Data Retention and Deletion",
+      "slug": "lgpd-data-retention-and-deletion"
+    },
+    {
+      "name": "International Data Transfer",
+      "slug": "lgpd-international-data-transfer"
+    },
+    {
+      "slug": "lgpd-data-processing-records",
+      "name": "Data Processing Records"
+    },
+    {
+      "name": "Data Subject Rights",
+      "slug": "lgpd-data-subject-rights"
+    },
+    {
+      "name": "Training and Awareness",
+      "slug": "lgpd-training-and-awareness"
+    },
+    {
+      "name": "Regular Audits",
+      "slug": "lgpd-regular-audits"
+    },
+    {
+      "name": "Third-Party Management",
+      "slug": "lgpd-third-party-management"
+    },
+    {
+      "name": "Data Protection Officer (DPO)",
+      "slug": "lgpd-dpo"
+    },
+    {
+      "name": "Risk Assessment",
+      "slug": "lgpd-risk-assessment"
+    },
+    {
+      "name": "Privacy by Design and by Default",
+      "slug": "lgpd-privacy-by-design"
+    },
+    {
+      "name": "Data Anonymization and Pseudonymization",
+      "slug": "lgpd-data-anonymization"
+    },
+    {
+      "name": "Breach Notification Procedures",
+      "slug": "lgpd-breach-notification"
+    },
+    {
+      "name": "Consent Management",
+      "slug": "lgpd-consent-management"
+    },
+    {
+      "slug": "lgpd-compliance-documentation",
+      "name": "Compliance Documentation"
     }
   ]
 }
