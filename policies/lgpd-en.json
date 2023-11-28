@@ -139,11 +139,180 @@
     },
     {
       "name": "Data Encryption",
-      "slug": "lgpd-data-encryption"
+      "slug": "lgpd-data-encryption",
+      "controls": [
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "aws-1-3-0-storage-2-1"
+        },
+        {
+          "control": "aws-integration-1"
+        },
+        {
+          "control": "aws-integration-2"
+        },
+        {
+          "control": "aws-rds-1"
+        },
+        {
+          "control": "azure-sql-server-tde-cmk-encryption"
+        },
+        {
+          "control": "sage-maker-notebooks-encrypted"
+        },
+        {
+          "control": "gcp-vm-6"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "azure-storage-encryption-cmk"
+        },
+        {
+          "control": "azure-vm-disks-cmk"
+        },
+        {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "azure-unattached-disks-enc-cmk"
+        },
+        {
+          "control": "aws-1-4-0-storage-3-1"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-4"
+        },
+        {
+          "control": "vm-templates-with-disk-configuration-are-encrypted"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-9"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-8"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "gcp-confidential-computing"
+        },
+        {
+          "control": "api-keys-not-rotated-90-days"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "api-keys-not-restricted-to-specified-hosts-and-apps"
+        },
+        {
+          "control": "api-keys-not-restricted-to-specified-apis"
+        },
+        {
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
+        },
+        {
+          "control": "gcp-kms-keys-rotated-90-days"
+        },
+        {
+          "control": "kms-keys-expiring-within-the-next-14-days"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "kms-keys-with-permissive-access-policy"
+        },
+        {
+          "control": "gcp-iam-5"
+        },
+        {
+          "control": "gcp-rsasha1-ksk-cloud-dns"
+        },
+        {
+          "control": "gcp-rsasha1-zsk-cloud-dns"
+        }
+      ]
     },
     {
       "name": "Incident Response Plan",
-      "slug": "lgpd-incident-response-plan"
+      "slug": "lgpd-incident-response-plan",
+      "controls": [
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "azure-defender-endpoint-selected"
+        },
+        {
+          "control": "azure-defender-for-app-services"
+        },
+        {
+          "control": "azure-defender-cosmos-db"
+        },
+        {
+          "control": "azure-defender-for-sql-servers"
+        },
+        {
+          "control": "microsoft-defender-for-containers"
+        },
+        {
+          "control": "azure-defender-for-dns"
+        },
+        {
+          "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-defender-open-source-relational-db"
+        },
+        {
+          "control": "azure-defender-for-resource-manager"
+        },
+        {
+          "control": "azure-defender-for-sql-servers-on-machines"
+        },
+        {
+          "control": "azure-defender-for-servers"
+        },
+        {
+          "control": "azure-defender-for-storage"
+        },
+        {
+          "control": "azure-1-3-0-sc-6"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "gcp-shielded-vm-enabled"
+        }
+      ]
     },
     {
       "name": "Data Retention and Deletion",
