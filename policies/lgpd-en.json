@@ -16,11 +16,126 @@
   "procedures": [
     {
       "name": "Data Classification Handling",
-      "slug": "lgpd-data-classification-handling"
+      "slug": "lgpd-data-classification-handling",
+      "controls": [
+        {
+          "control": "aws-1-4-0-storage-1-4"
+        },
+        {
+          "control": "gcp-kubernetes-5"
+        }
+      ]
     },
     {
       "name": "User Access Control",
-      "slug": "lgpd-user-access-control"
+      "slug": "lgpd-user-access-control",
+      "controls": [
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "aws-iam-2"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-10"
+        },
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "aws-iam-15"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "aws-iam-20"
+        },
+        {
+          "control": "aws-1-4-0-iam-12"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-3-0-iam-18"
+        },
+        {
+          "control": "gcp-mfa"
+        },
+        {
+          "control": "gcp-project-lvl-service-account-roles"
+        },
+        {
+          "control": "gcp-service-account-admin-privileges"
+        },
+        {
+          "control": "gcp-separation-of-duties-service-account"
+        },
+        {
+          "control": "datastores-accessible-by-users-without-mfa"
+        },
+        {
+          "control": "okta-strong-factors"
+        },
+        {
+          "control": "gcp-iam-8"
+        },
+        {
+          "control": " okta-app-group-assignments"
+        },
+        {
+          "control": "okta-mfa"
+        },
+        {
+          "control": "gcp-sql-4"
+        },
+        {
+          "control": "gcp-iam-7"
+        },
+        {
+          "control": "gcp-iam-2"
+        },
+        {
+          "control": "okta-weak-password-policies"
+        },
+        {
+          "control": "aws-1-3-0-iam-1"
+        },
+        {
+          "control": "gcp-iam-5"
+        },
+        {
+          "control": "aws-1-3-0-iam-11"
+        },
+        {
+          "control": "api-keys-not-rotated-90-days"
+        },
+        {
+          "control": "api-keys-not-restricted-to-specified-hosts-and-apps"
+        },
+        {
+          "control": "api-keys-not-restricted-to-specified-apis"
+        }
+      ]
     },
     {
       "name": "Data Encryption",
