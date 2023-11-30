@@ -553,7 +553,24 @@
     },
     {
       "name": "Regular Audits",
-      "slug": "lgpd-regular-audits"
+      "slug": "lgpd-regular-audits",
+      "controls": [
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "azure-auditing-on"
+        },
+        {
+          "control": "azure-auditing-retention-greater-90"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-cloudsql-enable-pgaudit-db-flag-postgresql"
+        }
+      ]
     },
     {
       "name": "Third-Party Management",
