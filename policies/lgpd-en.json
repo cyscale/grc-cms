@@ -578,23 +578,120 @@
     },
     {
       "name": "Data Protection Officer (DPO)",
-      "slug": "lgpd-dpo"
+      "slug": "lgpd-dpo",
+      "controls": [
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "essential-contacts-not-set-for-organization"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
+        }
+      ]
     },
     {
       "name": "Risk Assessment",
-      "slug": "lgpd-risk-assessment"
+      "slug": "lgpd-risk-assessment",
+      "controls": [
+        {
+          "control": "azure-1-3-0-database-2-2"
+        },
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        }
+      ]
     },
     {
       "name": "Privacy by Design and by Default",
-      "slug": "lgpd-privacy-by-design"
+      "slug": "lgpd-privacy-by-design",
+      "controls": [
+        {
+          "control": "gcp-bigquery-publicly-accessible"
+        },
+        {
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
+        },
+        {
+          "control": "gcp-bucket-publicly-accessible"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "aws-networking-8"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "object-containers-with-public-access"
+        },
+        {
+          "control": "publicly-writable-object-containers"
+        },
+        {
+          "control": "publicly-readable-object-containers"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "publicly-accessible-disks"
+        },
+        {
+          "control": "publicly-accessible-encryption-keys"
+        },
+        {
+          "control": "publicly-accessible-queues"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-storage-1"
+        },
+        {
+          "control": "cis-alibaba-1-0-0-logging-2"
+        },
+        {
+          "control": "aws-logging-3"
+        },
+        {
+          "control": "azure-1-3-0-logging-1-3"
+        },
+        {
+          "control": "used-kms-keys-exposed-through-vulnerable-vms"
+        }
+      ]
     },
     {
       "name": "Data Anonymization and Pseudonymization",
-      "slug": "lgpd-data-anonymization"
+      "slug": "lgpd-data-anonymization",
+      "controls": [
+        {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "azure-storage-encryption-cmk"
+        }
+      ]
     },
     {
       "name": "Breach Notification Procedures",
-      "slug": "lgpd-breach-notification"
+      "slug": "lgpd-breach-notification",
+      "controls": [
+        {
+          "control": "azure-notify-alerts-high-severity"
+        }
+      ]
     },
     {
       "name": "Consent Management",
