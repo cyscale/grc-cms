@@ -202,19 +202,10 @@
           "control": "gcp-confidential-computing"
         },
         {
-          "control": "api-keys-not-rotated-90-days"
-        },
-        {
           "control": "aws-iam-4"
         },
         {
           "control": "kms-keys-exposed-through-vulnerable-vms"
-        },
-        {
-          "control": "api-keys-not-restricted-to-specified-hosts-and-apps"
-        },
-        {
-          "control": "api-keys-not-restricted-to-specified-apis"
         },
         {
           "control": "gcp-kms-cryptokeys-publicly-accessible"
