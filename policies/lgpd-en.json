@@ -202,9 +202,6 @@
           "control": "gcp-confidential-computing"
         },
         {
-          "control": "aws-iam-4"
-        },
-        {
           "control": "kms-keys-exposed-through-vulnerable-vms"
         },
         {
