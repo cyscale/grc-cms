@@ -411,6 +411,9 @@ collections:
         options:
           [
             AccessAnalyzer,
+            AKSCluster,
+            AKSNodePool,
+            AKSAddon,
             ActivityLogAlert,
             Alert,
             AMI,
@@ -594,6 +597,9 @@ collections:
         options:
           [
             AccessAnalyzer,
+            AKSCluster,
+            AKSNodePool,
+            AKSAddon,
             ActivityLogAlert,
             Alert,
             AMI,
