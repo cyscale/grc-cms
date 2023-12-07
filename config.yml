@@ -116,6 +116,9 @@ collections:
             options:
               [
                 AccessAnalyzer,
+                AKSCluster,
+                AKSNodePool,
+                AKSAddon,
                 ActivityLogAlert,
                 Alert,
                 AMI,
