@@ -1,5 +1,5 @@
 {
   "name": "Enable role-based access control (RBAC) within Azure Kubernetes Services",
   "slug": "azure-1-3-0-security-5-enable-role-based-access-control-rbac-within-azure-kubernetes-services",
-  "query": "{aksclusters(where:{enableRBAC_NOT:true}){...AssetFragment}}"
+  "query": "{aksClusters(where:{enableRBAC_NOT:true}){...AssetFragment}}"
 }
