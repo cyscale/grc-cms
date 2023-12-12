@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Google Cloud Cloud SQL Instances",
   "slug": "publicly-accessible-gcp-cloud-sql-instances",
-  "query": "{ cloudSqlInstances( where: { ipAddresses_SOME: { type: \"PRIMARY\" } authorizedNetworks_SOME: { value: \"0.0.0.0/0\" } } ) {...AssetFragment} } "
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      ipAddresses_SOME: { type: \"PRIMARY\" }\n      networkSettings_SOME: {\n        authorizedNetworks_SOME: { cidrValue: \"0.0.0.0/0\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n} "
 }
