@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Google Cloud Cloud SQL Instances with no/old TLS",
   "slug": "publicly-accessible-gcp-cloud-sql-instances-with-no-old-tls",
-  "query": "{ cloudSqlInstances( where: { AND: [ { publicAccessBlocked: false } { ipAddresses_SOME: { type: \"PRIMARY\" } authorizedNetworks_SOME: { value: \"0.0.0.0/0\" } } { OR: [ { tlsStatus: \"\" } { tlsStatus: \"disabled\" } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) {...AssetFragment} } "
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      AND: [\n        { publicAccessBlocked: false }\n        {\n          ipAddresses_SOME: { type: \"PRIMARY\" }\n          networkSettings_SOME: {\n            authorizedNetworks_SOME: { cidrValue: \"0.0.0.0/0\" }\n          }\n        }\n        {\n          OR: [\n            { tlsStatus: \"\" }\n            { tlsStatus: \"disabled\" }\n            { tlsMinimumVersion_LT: 1.2 }\n          ]\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n} "
 }
