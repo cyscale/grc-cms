@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud Cloud SQL",
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: \"gcp\"\n      authorizedNetworks_SOME: {\n        OR: [{ value: \"0.0.0.0/0\" }, { value: \"::/0\" }]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: \"gcp\"\n      networkSettings_SOME: {\n        authorizedNetworks_SOME: {\n        OR: [{ cidrValue: \"0.0.0.0/0\" }, { cidrValue: \"::/0\" }]\n      }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
   "slug": "gcp-sql-allowing-all-ips"
 }
