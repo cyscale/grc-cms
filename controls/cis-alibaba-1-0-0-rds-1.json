@@ -1,5 +1,5 @@
 {
-  "body": "It is recommended to enforce all incoming connections to SQL database instance to use SSL.\n\nSQL database connections if successfully trapped (MITM); can reveal sensitive data like credentials, database queries, query outputs etc. For security, it is recommended to always use SSL encryption when connecting to your instance. This recommendation is applicable for PostgreSQL and MySQL Instances.\n\n#﻿## Default Value\n\nEncryption is off by default.\n\n#﻿## Additional Information\n\nYou can choose to encrypt the private or public endpoint, but note that you can encrypt\nonly one endpoint.\n",
+  "body": "It is recommended to enforce all incoming connections to SQL database instance to use SSL.\n\nSQL database connections if successfully trapped (MITM); can reveal sensitive data like credentials, database queries, query outputs etc. For security, it is recommended to always use SSL encryption when connecting to your instance. This recommendation is applicable for PostgreSQL and MySQL Instances.\n\n### Default Value\n\nEncryption is off by default.\n\n### Additional Information\n\nYou can choose to encrypt the private or public endpoint, but note that you can encrypt\nonly one endpoint.\n",
   "name": "Ensure RDS instances require all incoming connections to use SSL",
   "slug": "cis-alibaba-1-0-0-rds-1",
   "isInsight": false,
