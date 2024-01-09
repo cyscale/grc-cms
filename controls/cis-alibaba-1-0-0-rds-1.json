@@ -1,1 +1,24 @@
-{"name":"Ensure that RDS instances require all incoming connections to use SSL","slug":"cis-alibaba-1-0-0-rds-1","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["DBInstance"],"query":"cis-alibaba-1-0-0-rds-1-rds-instances-require-all-incoming-connections-to-use-ssl","returnPath":""}]}
+{
+  "body": "It is recommended to enforce all incoming connections to SQL database instance to use SSL.\n\nSQL database connections if successfully trapped (MITM); can reveal sensitive data like credentials, database queries, query outputs etc. For security, it is recommended to always use SSL encryption when connecting to your instance. This recommendation is applicable for PostgreSQL and MySQL Instances.\n\n#﻿## Default Value\n\nEncryption is off by default.\n\n#﻿## Additional Information\n\nYou can choose to encrypt the private or public endpoint, but note that you can encrypt\nonly one endpoint.\n",
+  "name": "Ensure RDS instances require all incoming connections to use SSL",
+  "slug": "cis-alibaba-1-0-0-rds-1",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "cis-alibaba-1-0-0-rds-1-rds-instances-require-all-incoming-connections-to-use-ssl",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "#﻿## Console\n\n1﻿. Open the ApsaraDB RDS instance using the \"Open in Alibaba\" menu option\n1. In the left-side navigation pane, click `Data Security`.\n1. Click the `SSL Encryption` tab.\n1. Click the switch next to `Disabled` in the `SSL Encryption` parameter.\n1. In the Configure SSL dialog box, select the endpoint for which you want to enable SSL encryption and then click `OK`.\n1. Click `Download CA Certificate` to download an SSL certificate.\n\nThe downloaded SSL certificate is a package including the following files:\n\n- **p7b file**: is used to import the CA certificate on Windows OS\n- **PEM file**: is used to import the CA certificate on other systems or for other applications\n- **JKS file**: is a Java truststore certificate file used for importing CA certificate chains in Java programs\n\nThe password is apsaradb.\n\n",
+  "description": "RDS not enforcing SSL",
+  "severity": 2
+}
