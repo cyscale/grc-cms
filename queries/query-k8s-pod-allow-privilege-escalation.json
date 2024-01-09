@@ -1,5 +1,5 @@
 {
   "name": "Minimize the admission of containers with allowPrivilegeEscalation (Pod)",
   "slug": "query-k8s-pod-allow-privilege-escalation",
-  "query": "{\n  K8sPod2 {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  pods(where:{containers_SOME:{securityContext:{allowPrivilegeEscalation: true }}}){\n    ...AssetFragment\n  }\n}"
 }
