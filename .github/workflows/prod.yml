@@ -34,37 +34,37 @@ jobs:
           fetch-depth: 0
       - name: Get GRC changed queries
         id: grc-changed-queries
-        uses: tj-actions/changed-files@v32
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             queries/**
       - name: Get GRC changed controls
         id: grc-changed-controls
-        uses: tj-actions/changed-files@v32
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             controls/**
       - name: Get GRC changed policies
         id: grc-changed-policies
-        uses: tj-actions/changed-files@v32
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             policies/**
       - name: Get MITRE changed tactics
         id: mitre-changed-tactics
-        uses: tj-actions/changed-files@v32
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             mitre/tactics/**
       - name: Get MITRE changed techniques
         id: mitre-changed-techniques
-        uses: tj-actions/changed-files@v32
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             mitre/techniques/**
       - name: Get MITRE changed mappings
         id: mitre-changed-mappings
-        uses: tj-actions/changed-files@v32
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             mitre/mappings/**
