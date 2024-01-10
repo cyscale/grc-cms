@@ -1,1 +1,24 @@
-{"name":"Ensure that 'Virtual Machine's disk' are encrypted","slug":"cis-alibaba-1-0-0-vm-2","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["VM"],"query":"cis-alibaba-1-0-0-vm-2-virtual-machines-disk-are-encrypted","returnPath":""}]}
+{
+  "body": "### Description\n\n\r\n\r\nEnsure that disks are encrypted when they are created with the creation of VM instance.\n\n\r\n\r\n\r\n\r\n### Rationale\n\n\r\n\r\nECS cloud disk encryption protects your data at rest. The cloud disk data encryption feature automatically encrypts data when it is transferred from ECS instances to disks, and decrypts data when it is read from disks.\n\n### References\n\n\r\n\r\n1. [https://www.alibabacloud.com/help/doc-detail/59643.htm](https://www.alibabacloud.com/help/doc-detail/59643.htm)\n\n### Additional Information\n\n\r\n\r\nYou cannot directly convert unencrypted disks to encrypted disks. You can encrypt system disks only when you are copying the custom images. You can encrypt the data disk by manually creating an encrypted data disk and then copy the data from the unencrypted disk to the new encrypted disk.\r\n",
+  "name": "Ensure that 'Virtual Machine's disk' are encrypted",
+  "slug": "cis-alibaba-1-0-0-vm-2",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "cis-alibaba-1-0-0-vm-2-virtual-machines-disk-are-encrypted",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "**Via the management console**\n\n\r\n\r\nEncrypt a system disk when copying an image in the ECS console by following the below steps:\n\n\r\n\r\n1. Login to the [`ECS Console`](https://ecs.console.aliyun.com/)\r\n2. Under `Instances & Images`, select `Instances`\r\n3. Click `Create Instance`\r\n4. Under `Instances & images`, under `Image`, select `Custom Images`\r\n5. Select the target image and click copy `Image` in the Actions column\r\n6. In the `Copy Image` dialog box, check the `Encrypt` box and then select a key from the \r\ndrop-down list\r\n7. Click `OK`\n\n\r\n\r\nYou can encrypt a data disk when creating an instance by following the below steps:\n\n\r\n\r\n1. Login to the [`ECS Console`](https://ecs.console.aliyun.com/)\r\n2. Under `Instances & Images`, select `Instances`\r\n3. Click `Create Instance`\r\n4. Under `Storage`, `System Disk` specify the disk category and its capacity and performance\r\n5. Select `Encryption` and then choose a key from the drop-down list",
+  "description": "",
+  "severity": 2
+}
