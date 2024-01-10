@@ -1,1 +1,24 @@
-{"name":"Ensure server-side encryption is set to 'Encrypt with Service Key'","slug":"cis-alibaba-1-0-0-storage-8","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["Bucket"],"query":"cis-alibaba-1-0-0-storage-8-server-side-encryption-is-set-to-encrypt-with-service-key","returnPath":""}]}
+{
+  "body": "### Description\n\n\r\n\r\nEnable server-side encryption (Encrypt with Service Key) for objects.\n\n\r\n\r\n\r\n\r\n### Rationale\n\n\r\n\r\nServer-side encryption protects your data at rest.\n\n\r\n\r\n\r\n### Impact\n\n\r\n\r\nService key incurs an additional cost from accessing the KMS service.\n\n\r\n\r\n\r\n### Default Value\n\n\r\n\r\nBy default, objects are not encrypted.\n\n\r\n\r\n### References\n\n\r\n\r\n1. [https://www.alibabacloud.com/help/doc-detail/108880.htm](https://www.alibabacloud.com/help/doc-detail/108880.htm)",
+  "name": "Ensure server-side encryption is set to 'Encrypt with Service Key'",
+  "slug": "cis-alibaba-1-0-0-storage-8",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "cis-alibaba-1-0-0-storage-8-server-side-encryption-is-set-to-encrypt-with-service-key",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "Perform the following to configure the OSS bucket to use SSE-KMS:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`OSS Console`](https://oss.console.aliyun.com/overview)\r\n2. Under `Buckets`, select the target bucket\r\n3. Click `Basic Setting` in the top middle of the console\r\n4. Under the Server-Side Encryption section, click on `Configure`\r\n5. Click `KMS` and select the KMS service key (alias/acs/oss)",
+  "description": "",
+  "severity": 2
+}
