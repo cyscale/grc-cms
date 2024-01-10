@@ -1,1 +1,24 @@
-{"name":"Ensure RAM password policy requires at least one number","slug":"cis-alibaba-1-0-0-iam-10","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPasswordPolicy"],"query":"cis-alibaba-1-0-0-iam-10-ram-password-policy-requires-at-least-one-number","returnPath":""}]}
+{
+  "body": "RAM password policies can be used to ensure password complexity. It is recommended that the password policy requires at least one number.\n\n### Rationale\n\nEnhancing complexity of a password policy increases account resiliency against brute force logon attempts.\n\n### Default Value\n\nThe default password policy does not enforce any element in a password.",
+  "name": "Ensure RAM password policy requires at least one number",
+  "slug": "cis-alibaba-1-0-0-iam-10",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMPasswordPolicy"
+      ],
+      "query": "cis-alibaba-1-0-0-iam-10-ram-password-policy-requires-at-least-one-number",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "### Console\n\n1. Open the security settings using the \\\"Open in Alibaba\\\" menu option\n1. In the **Password Strength Settings** section, click **Edit**.\n1. In the Required Elements in Password section, enable **Numbers** and click **OK**\n\n### CLI\n\n```sh\naliyun ram SetPasswordPolicy --RequireNumbers true\n```",
+  "description": "RAM password policies not requiring numbers",
+  "severity": 2
+}
