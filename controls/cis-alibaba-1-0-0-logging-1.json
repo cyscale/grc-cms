@@ -1,8 +1,9 @@
 {
-  "slug": "cis-alibaba-1-0-0-logging-1",
+  "body": "### Description\n\n\r\n\r\nActionTrail is a web service that records API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the Alibaba Cloud service. ActionTrail provides a history of API calls for an account, including API calls made via the Management Console, SDKs, command line tools.\n\n\r\n\r\n\r\n### Rationale\n\n\r\n\r\nThe API call history produced by ActionTrail enables security analysis, resource change tracking, and compliance auditing. Moreover, ensuring that a multi-regions trail exists will ensure that any unexpected activities occurring in otherwise unused regions are detected. \r\nGlobal Service Logging should be enabled by default to capture recording of events generated on Alibaba Cloud global services for a multi-regions trail, therefore, ensuring the recording of management operations that are performed on all resources in an Alibaba Cloud account.\n\n\r\n\r\n\r\n### Impact\n\n\r\n\r\nOSS lifecycle features can be used to manage the accumulation and management of logs \r\nover time. See the following resource for more information on these features: [http://help.aliyun.com/document_detail/31863.html](http://help.aliyun.com/document_detail/31863.html)\n\n\r\n\r\n### Default Value\n\n\r\n\r\nBy default, there are no trails configured. Once the trail is enabled, it applies to all regions by default.\n\n\r\n\r\n### References\n\n\r\n\r\n1. [https://www.alibabacloud.com/help/doc-detail/28829.htm](https://www.alibabacloud.com/help/doc-detail/28829.htm)",
   "name": "Ensure that ActionTrail is configured to export copies of all Log entries",
-  "description": "ActionTrail is not configured to export copies of all Log entiries.",
-  "severity": 2,
+  "slug": "cis-alibaba-1-0-0-logging-1",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -16,6 +17,7 @@
       "query": "alibaba-trails-exporting-all-copies"
     }
   ],
-  "body": "This control looks for ActionTrails that export all log entries to a bucket.",
-  "remediationDescription": "You must make sure that there is an ActionTrail that exports all log entries to a bucket."
+  "remediationDescription": "Perform the following to enable global (Multi-region) ActionTrail logging:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`ActionTrail Console`](https://actiontrail.console.aliyun.com/)\r\n2. Click on `Trails` on the left navigation pane\r\n3. Click `Add new trail`\n\n\r\n\r\na. Enter a trail name in the `Trail name box`\n\n\r\n\r\nb. Set `Yes` to `Apply Trail to All Regions`\n\n\r\n\r\nc. Specify an OSS bucket name in the OSS bucket box\n\n\r\n\r\nd. Specify an SLS project name in the SLS project box\n\n\r\n\r\ne. Click `Create`\n\n\r\n\r\n\r\n\r\n**Via CLI**\n\n\r\n\r\n```bash\r\naliyuncli actiontrail CreateTrail --Name <trailName> --OssBucketName <OSSBucketForActionTrail> --RoleName aliyunactiontraildefaultrole\r\n--SlsProjectArn <SLSProjectArnForActionTrail> --SlsWriteRoleArn <SLSRoleArnForActionTrail> --EventRW <APITypeForActionTrail>\r\n```\n\n\r\n\r\n```bash\r\naliyuncli actiontrail UpdateTrail --Name <trailName> --OssBucketName <OSSBucketForActionTrail> --RoleName aliyunactiontraildefaultrole\r\n--SlsProjectArn <SLSProjectArnForActionTrail> --SlsWriteRoleArn <SLSRoleArnForActionTrail> --EventRW <APITypeForActionTrail>\r\n```",
+  "description": "ActionTrail is not configured to export copies of all Log entiries.",
+  "severity": 2
 }
