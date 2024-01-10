@@ -1,0 +1,5 @@
+{
+  "name": "Ensure that no container is defined as privileged",
+  "slug": "query-k8s-rule-privileged-container",
+  "query": "query {\n  containers (where: {securityContext: {\n    OR: [\n      {\n        capabilitiesAdd_INCLUDES: \"SYS_ADMIN\"\n      },\n      {\n        privileged: true\n      }\n    ]\n    \n    \n  }}) {\n    ...AssetFragment\n  }\n}"
+}
