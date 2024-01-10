@@ -1,1 +1,24 @@
-{"name":"Ensure RAM policies are attached only to groups or roles","slug":"cis-alibaba-1-0-0-iam-16","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMUser"],"query":"cis-alibaba-1-0-0-iam-16-ram-policies-are-attached-only-to-groups-or-roles","returnPath":""}]}
+{
+  "body": "### Description\n\n\r\n\r\nBy default, RAM users, groups, and roles have no access to Alibaba Cloud resources. RAM policies are the means by which privileges are granted to users, groups, or roles. It is recommended that RAM policies be applied directly to groups and roles but not users.\n\n\r\n\r\n\r\n### Rationale\n\n\r\n\r\nAssigning privileges at the group or role level reduces the complexity of access management as the number of users grows. Reducing access management complexity may in turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.\n\n\r\n\r\n### Impact\n\n\r\n\r\nThere may be cases that a user needs to have permissions that cannot be covered by the groups it joins or roles it can assume. It may still be needed to attach specific policies to RAM users for certain operation that cannot be grouped with other permission under role or group.\n\n\r\n\r\n\r\n### References\n\n\r\n\r\n1. [https://www.alibabacloud.com/help/doc-detail/116809.htm](https://www.alibabacloud.com/help/doc-detail/116809.htm)\r\n2. [https://www.alibabacloud.com/help/doc-detail/116815.htm](https://www.alibabacloud.com/help/doc-detail/116815.htm)\r\n3. [https://www.alibabacloud.com/help/doc-detail/116147.htm](https://www.alibabacloud.com/help/doc-detail/116147.htm)\r\n4. [https://www.alibabacloud.com/help/doc-detail/116820.htm](https://www.alibabacloud.com/help/doc-detail/116820.htm)",
+  "name": "Ensure RAM policies are attached only to groups or roles",
+  "slug": "cis-alibaba-1-0-0-iam-16",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "cis-alibaba-1-0-0-iam-16-ram-policies-are-attached-only-to-groups-or-roles",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "Perform the following to create a RAM user group and assign a policy to it:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`RAM Console`](https://ram.console.aliyun.com/overview)\r\n2. Under `Identities`, select `Users`\r\n3. Click `Create Group`, and enter the group name, display name, and description\r\n4. Click `OK`\r\n5. In the `Group Name/Display Name` column, find the target RAM user group and click `Add Permissions`.\r\n6. In the `Select Policy` section, select the target policy or policies and click `OK`\r\n\r\n\n**Via CLI**\n\n\r\n\r\n1. Run the following command to create a RAM user group:\r\n\r\n```bash\r\naliyun ram CreateGroup –GroupName <RAMUserGroup>\r\n```\n\n\r\n\r\n2. Run the following command to attach a policy to the group:\n\n\r\n\r\n```bash\r\naliyun ram AttachPolicyToGroup --GroupName <RAMUserGroup> --PolicyName <policyName> --PolicyType <System|Custom>\r\n```\n\n\r\n\r\nPerform the following to add a user to a given group:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`RAM Console`](https://ram.console.aliyun.com/overview)\r\n2. Under `Identities`, select `Users`\r\n3. In the `Group Name/Display Name` column, find the target RAM user group and click `Add Group Members`.\r\n4. In the User section, select the target RAM user and click `OK`.\n\n\r\n\r\n\r\n**Via CLI**\n\n\r\n\r\nRun the following command to add a RAM user to a user group:\n\n\r\n\r\n```bash\r\naliyun ram AddUserToGroup --GroupName <RAMUserGroup> --UserName <RAMUser>\r\n```\n\n\r\n\r\nPerform the following to remove a direct association between a user and policy:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`RAM Console`](https://ram.console.aliyun.com/overview)\r\n2. Under `Permissions`, select `Grants`\r\n3. In the `Principal` column, find the target RAM user and click `Revoke Permission`.\r\n4. Click `OK`.\n\n\r\n\r\n**Via CLI**\n\n\r\n\r\nRun the following command to remove a policy from a RAM user:\n\n\r\n\r\n```bash\r\naliyun ram DetachPolicyFromUser --PolicyName <policyName> --PolicyType <System|Custom> --UserName <RAMUser>\r\n```",
+  "description": "",
+  "severity": 2
+}
