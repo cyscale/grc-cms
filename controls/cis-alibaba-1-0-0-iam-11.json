@@ -1,1 +1,24 @@
-{"name":"Ensure RAM password policy requires a minimum length of 14 or greater","slug":"cis-alibaba-1-0-0-iam-11","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPasswordPolicy"],"query":"cis-alibaba-1-0-0-iam-11-ram-password-policy-requires-a-minimum-length-of-14-or-greater","returnPath":""}]}
+{
+  "body": "RAM password policies can be used to ensure password complexity. It is recommended that the password policy require a minimum of 14 or greater characters for any password.\n\n### Rationale\n\nEnhancing complexity of a password policy increases account resiliency against brute force logon attempts.\n\n### Default Value\n\nThe default password policy requires a minimum of 8 characters for a password.",
+  "name": "Ensure RAM password policy requires a minimum length of 14 or greater",
+  "slug": "cis-alibaba-1-0-0-iam-11",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMPasswordPolicy"
+      ],
+      "query": "cis-alibaba-1-0-0-iam-11-ram-password-policy-requires-a-minimum-length-of-14-or-greater",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "### Console\n\n1. Open the security settings using the \\\"Open in Alibaba\\\" menu option\n1. In the **Password Strength Settings** section, click **Edit**.\n1. In the **Password Length** field, enter 14 or a greater number and click **OK**\n\n### CLI\n\n```sh\naliyun ram SetPasswordPolicy --MinimumPasswordLength 14\n```",
+  "description": "RAM password policies not enforcing long passwords",
+  "severity": 2
+}
