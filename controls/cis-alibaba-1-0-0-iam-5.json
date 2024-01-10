@@ -1,1 +1,24 @@
-{"name":"Ensure users not logged on for 90 days or longer are disabled for console logon","slug":"cis-alibaba-1-0-0-iam-5","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMUser"],"query":"cis-alibaba-1-0-0-iam-5-users-not-logged-on-for-90-days-or-longer-are-disabled-for-console-logon","returnPath":""}]}
+{
+  "body": "### Description\n\n\r\n\r\nAlibaba Cloud RAM users can logon to Alibaba Cloud console by using their user name and password. If a user has not logged on for 90 days or longer, it is recommended to disable the console access of the user.\n\n\r\n\r\n### Rationale\n\n\r\n\r\nDisabling users from having unnecessary logon privileges will reduce the opportunity that  an abandoned user or a user with compromised password to be used.\n\n\r\n\r\n\r\n### Impact\n\n\r\n\r\nRAM users who still need to log on to the management console or other Alibaba Cloud sites  may encounter logon failure.\r\n\r\n",
+  "name": "Ensure users not logged on for 90 days or longer are disabled for console logon",
+  "slug": "cis-alibaba-1-0-0-iam-5",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMUser"
+      ],
+      "query": "cis-alibaba-1-0-0-iam-5-users-not-logged-on-for-90-days-or-longer-are-disabled-for-console-logon",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "Perform the following to disable console logon for a user:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the `RAM Console`\r\n2. Under `Identities`, choose `Users`\r\n3. In the `User Logon Name/Display Name`` column, click the username of the target RAM user\r\n4. In the `Console Logon Management` section, click `Modify Logon Settings`\r\n5. In the `Console Password Logon` section, select `Disabled`\r\n6. Click `OK`\n\n\r\n\r\n**Via CLI**\n\n\r\n\r\n```bash\r\naliyun ram DeleteLoginProfile --UserName <RAMUser>\r\n```\n",
+  "description": "",
+  "severity": 2
+}
