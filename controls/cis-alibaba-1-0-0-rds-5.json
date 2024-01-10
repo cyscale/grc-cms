@@ -1,1 +1,24 @@
-{"name":"Ensure that 'TDE' is set to 'Enabled' for applicable database instances","slug":"cis-alibaba-1-0-0-rds-5","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["DBInstance"],"query":"cis-alibaba-1-0-0-rds-5-tde-is-set-to-enabled-for-applicable-database-instances","returnPath":""}]}
+{
+  "body": "### Description\n\n\r\n\r\nEnable Transparent Data Encryption on every RDS instance.\n\n\r\n\r\n\r\n\r\n### Rationale\n\n\r\n\r\nRDS Database transparent data encryption helps protect against the threat of malicious activity by performing real-time encryption and decryption of the database, associated backups, and log files at rest without requiring changes to the application.\n\n### References\n\n\r\n\r\n1. [https://www.alibabacloud.com/help/doc-detail/33510.html](https://www.alibabacloud.com/help/doc-detail/33510.html)\n\n\r\n\r\n### Additional Information\n\n\r\n\r\nSQL Server 2008 R2, SQL Server 2008R2, SQL Server 2012 Enterprise Edition, SQL Server 2016 Enterprise Edition, SQL Server 2017 Enterprise Edition and MySQL 5.6/5.7/8.0 all support TDE enablement. You have to log in with an Alibaba Cloud account rather than a RAM user account. KMS should be activated. If KMS is not activated, you will be prompted to activate it when attempting to enable TDE.",
+  "name": "Ensure that 'TDE' is set to 'Enabled' for applicable database instances",
+  "slug": "cis-alibaba-1-0-0-rds-5",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "cis-alibaba-1-0-0-rds-5-tde-is-set-to-enabled-for-applicable-database-instances",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "**Via the management console**\n\n\r\n\r\n1. Login to the [`RDS Console`](https://rdsnext.console.aliyun.com/)\r\n2. In the upper pane, select the region of the target instance\r\n3. Locate the target instance, and click the instance ID to enter the details page\r\n4. Select the `TDE` tab\r\n5. On the `TDE` tab, find `TDE Status` and click the switch next to `Disabled`\r\n6. In the displayed dialog box, choose an automatically generated key or custom key, and click `Confirm`\n\n\r\n\r\n**Encrypt a table**\n\n\r\n\r\nFor RDS for MySQL, connect to the instance and run the following command to encrypt tables.\n\n\r\n\r\n```bash\r\nalter table <tableName> engine=innodb, block_format=encrypted\r\n```\n\n\r\n\r\nFor RDS for SQL Server, click `Configure TDE`, select the databases to encrypt, add them to the right, and click `OK`.\n\n\r\n\r\n**Decrypt data**\n\n\r\n\r\nTo decrypt a MySQL table encrypted by TDE, run the following command:\n\n\r\n\r\n```bash\r\nalter table <tableName> engine=innodb, block_format=default\r\n```\r\n\r\nTo decrypt an SQL Server table encrypted by TDE, click `Configure TDE` and move the \r\ndatabase to the left.",
+  "description": "",
+  "severity": 2
+}
