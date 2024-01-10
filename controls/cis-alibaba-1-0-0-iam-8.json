@@ -1,1 +1,24 @@
-{"name":"Ensure RAM password policy requires at least one lowercase letter","slug":"cis-alibaba-1-0-0-iam-8","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPasswordPolicy"],"query":"cis-alibaba-1-0-0-iam-8-ram-password-policy-requires-at-least-one-lowercase-letter","returnPath":""}]}
+{
+  "body": "RAM password policies can be used to ensure password complexity. It is recommended that the password policy requires at least one lowercase letter.\n\n### Rationale\n\nEnhancing complexity of a password policy increases account resiliency against brute force logon attempts.\n\n### Default Value\n\nThe default password policy does not enforce any element in a password.",
+  "name": "Ensure RAM password policy requires at least one lowercase letter",
+  "slug": "cis-alibaba-1-0-0-iam-8",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMPasswordPolicy"
+      ],
+      "query": "cis-alibaba-1-0-0-iam-8-ram-password-policy-requires-at-least-one-lowercase-letter",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "### Console\n\n1. Open the security settings using the \\\"Open in Alibaba\\\" menu option\n1. In the **Password Strength Settings** section, click **Edit**.\n1. In the Required Elements in Password section, enable **Lowercase Letters** and click **OK**\n\n### CLI\n\n```sh\naliyun ram SetPasswordPolicy --RequireLowercaseCharacters true\n```",
+  "description": "RAM password policies not requiring lower case letters",
+  "severity": 2
+}
