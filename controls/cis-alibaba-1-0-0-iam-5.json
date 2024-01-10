@@ -18,7 +18,7 @@
       "returnPath": ""
     }
   ],
-  "remediationDescription": "Perform the following to disable console logon for a user:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`RAM Console`](https://ram.console.aliyun.com/overview)\r\n2. Under `Identities`, choose `Users`\r\n3. In the `User Logon Name/Display Name`` column, click the username of the target RAM user\r\n4. In the `Console Logon Management` section, click `Modify Logon Settings`\r\n5. In the `Console Password Logon` section, select `Disabled`\r\n6. Click `OK`\n\n\r\n\r\n**Via CLI**\n\n\r\n\r\n```bash\r\naliyun ram DeleteLoginProfile --UserName <RAMUser>\r\n```\n",
+  "remediationDescription": "Perform the following to disable console logon for a user:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`RAM Console`](https://ram.console.aliyun.com/overview)\r\n2. Under `Identities`, choose `Users`\r\n3. In the `User Logon Name/Display Name` column, click the username of the target RAM user\r\n4. In the `Console Logon Management` section, click `Modify Logon Settings`\r\n5. In the `Console Password Logon` section, select `Disabled`\r\n6. Click `OK`\n\n\r\n\r\n**Via CLI**\n\n\r\n\r\n```bash\r\naliyun ram DeleteLoginProfile --UserName <RAMUser>\r\n```\n",
   "description": "",
   "severity": 2
 }
