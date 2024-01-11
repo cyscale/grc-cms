@@ -1,0 +1,5 @@
+{
+  "name": "Ensure that the securityContext.readOnlyRootFilesystem field in the container spec is set to true",
+  "slug": "query-k8s-immutable-container-filesystem",
+  "query": "{\n  containers (where: {securityContext: {\n    readOnlyRootFilesystem: false\n  }}) {\n    ...AssetFragment\n  }\n}"
+}
