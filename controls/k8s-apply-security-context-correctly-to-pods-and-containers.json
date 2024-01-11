@@ -34,6 +34,17 @@
         "Container"
       ],
       "query": "query-k8s-non-root-containers"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Container"
+      ],
+      "query": "query-k8s-drop-capability-netraw"
     }
   ],
   "name": "Apply Security Context correctly to Pods and Containers",
