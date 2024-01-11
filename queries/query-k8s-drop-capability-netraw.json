@@ -1,0 +1,5 @@
+{
+  "name": "Ensure that the drop list in security context capabilities to include NET_RAW",
+  "slug": "query-k8s-drop-capability-netraw",
+  "query": "{\n  containers (where: {securityContext: {\n    NOT: {\n      capabilitiesDrop_INCLUDES: \"NET_RAW\"\n    }\n  }}) {\n    ...AssetFragment\n  }\n}"
+}
