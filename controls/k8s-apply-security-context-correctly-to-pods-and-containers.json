@@ -67,6 +67,17 @@
         "Container"
       ],
       "query": "query-k8s-seccomp-profile"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Container"
+      ],
+      "query": "query-set-procmount-to-default"
     }
   ],
   "name": "Apply Security Context correctly to Pods and Containers",
