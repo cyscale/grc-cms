@@ -1,0 +1,5 @@
+{
+  "name": "Make sure you set seLinuxOptions in the workload/container security context.",
+  "slug": "query-k8s-set-se-linux-options",
+  "query": "{\n  containers (where: {securityContext: {\n    AND: [\n      {\n        seLinuxOptionsUser: \"\"\n      }, \n      {\n        seLinuxOptionsRole: \"\"\n      },\n      {\n        seLinuxOptionsType: \"\"\n      },\n      {\n        seLinuxOptionsLevel: \"\"\n      }\n    ]\n  }}) {\n    ...AssetFragment\n  }\n}"
+}
