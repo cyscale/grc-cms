@@ -9,7 +9,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Pod"
+        "Container"
       ],
       "query": "query-k8s-rule-privileged-container"
     },
@@ -20,9 +20,20 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Pod"
+        "Container"
       ],
       "query": "query-k8s-immutable-container-filesystem"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Container"
+      ],
+      "query": "query-k8s-non-root-containers"
     }
   ],
   "name": "Apply Security Context correctly to Pods and Containers",
