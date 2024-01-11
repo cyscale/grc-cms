@@ -74,6 +74,10 @@ collections:
         widget: 'boolean'
         default: false
         hint: 'Create alerts for this control only if there are other impacted assets besides the primary one'
+      - label: 'Is Enabled'
+        name: 'isEnabled'
+        widget: 'boolean'
+        default: true
       - label: 'Is Insight'
         name: 'isInsight'
         widget: 'boolean'
