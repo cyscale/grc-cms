@@ -56,6 +56,17 @@
         "Container"
       ],
       "query": "query-k8s-set-se-linux-options"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Container"
+      ],
+      "query": "query-k8s-seccomp-profile"
     }
   ],
   "name": "Apply Security Context correctly to Pods and Containers",
