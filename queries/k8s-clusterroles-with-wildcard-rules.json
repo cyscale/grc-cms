@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes ClusterRoles with wildcard rules",
+  "slug": "k8s-clusterroles-with-wildcard-rules",
+  "query": "{\n  clusterRoles (where: {rules_SOME: {AND: [{verbs_INCLUDES: \"*\"}, {resources_INCLUDES: \"*\"}, {OR: [{apiGroup_INCLUDES: \"\"}, {apiGroup_INCLUDES: \"*\"}]}]}}){\n    ...AssetFragment\n  }\n}"
+}
