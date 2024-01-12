@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes nodes without container-optimized OS",
+  "slug": "k8s-nodes-without-container-optimized-os",
+  "query": "{\n  kubernetesNodes(where: { osImage_NOT_STARTS_WITH: \"Bottlerocket\" }) {\n    ...AssetFragment\n  }\n}"
+}
