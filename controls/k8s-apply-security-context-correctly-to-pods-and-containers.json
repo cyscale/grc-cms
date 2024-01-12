@@ -1,6 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
+  "body": "A security context defines the operating system security settings (uid, gid, capabilities, SELinux role, etc..) applied to a container. When designing your containers and pods, make sure that you configure the security context for your pods, containers, and volumes. A security context is a property defined in the deployment yaml. It controls the security parameters that will be assigned to the pod/container/volume. There are two levels of security context: pod level security context, and container level security context.",
+  "name": "Apply Security Context correctly to Pods and Containers",
+  "slug": "k8s-apply-security-context-correctly-to-pods-and-containers",
   "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -69,20 +72,18 @@
       "query": "query-k8s-seccomp-profile"
     },
     {
+      "query": "query-k8s-set-fsgroup-value",
       "cloudProviders": [
         "k8s"
       ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
-      ],
-      "query": "query-set-procmount-to-default"
+        "Pod"
+      ]
     }
   ],
-  "name": "Apply Security Context correctly to Pods and Containers",
-  "slug": "k8s-apply-security-context-correctly-to-pods-and-containers",
-  "body": "A security context defines the operating system security settings (uid, gid, capabilities, SELinux role, etc..) applied to a container. When designing your containers and pods, make sure that you configure the security context for your pods, containers, and volumes. A security context is a property defined in the deployment yaml. It controls the security parameters that will be assigned to the pod/container/volume. There are two levels of security context: pod level security context, and container level security context.",
   "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
+  "isEnabled": true,
   "severity": 2
 }
