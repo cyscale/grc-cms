@@ -28,7 +28,7 @@
       "query": "k8s-clusterrolebindings-that-use-cluster-admin-role"
     }
   ],
-  "remediationDescription": "Check each principal for the RoleBindings and ClusterRoleBindings that are attached to the `cluster-admin` role. Check if they need this role or if they could use a role with fewer privileges. Where possible, first bind users to a lower privileged role and then remove the ClusterRoleBinding to the `cluster-admin` role.\n\n**Default Value**\n\nBy default, a single `ClusterRoleBinding` called `cluster-admin` is provided with the `system:masters` group as its principal.\n\n**References**\n\n1.  [https://workbench.cisecurity.org/sections/1126661/recommendations/1838588](https://workbench.cisecurity.org/sections/1126661/recommendations/1838588)\n\n2.  [https://kubernetes.io/docs/reference/access-authn-authz/rbac/](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)",
+  "remediationDescription": "Check each principal for the RoleBindings and ClusterRoleBindings that are attached to the `cluster-admin` role. Check if they need this role or if they could use a role with fewer privileges. Where possible, first bind users to a lower privileged role and then remove the ClusterRoleBinding to the `cluster-admin` role.\n\n**Default Value**\n\nBy default, a single `ClusterRoleBinding` called `cluster-admin` is provided with the `system:masters` group as its principal.\n\n**References**\n\n1.  [https://workbench.cisecurity.org/sections/1126661/recommendations/1838588](https://workbench.cisecurity.org/sections/1126661/recommendations/1838588)\n\n2.  [https://kubernetes.io/docs/admin/authorization/rbac/#user-facing-roles](https://kubernetes.io/docs/admin/authorization/rbac/#user-facing-roles)",
   "isEnabled": true,
   "severity": 3
 }
