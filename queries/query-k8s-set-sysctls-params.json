@@ -1,0 +1,5 @@
+{
+  "query": "{\n  pods(where: { securityContext: { isSysctlsContainingElements: false } }) {\n    ...AssetFragment\n  }\n}",
+  "name": "Ensure to set securityContext.sysctls params",
+  "slug": "query-k8s-set-sysctls-params"
+}
