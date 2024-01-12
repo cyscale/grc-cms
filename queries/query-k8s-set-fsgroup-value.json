@@ -1,0 +1,5 @@
+{
+  "name": "Fails if securityContext.fsGroup is not set",
+  "slug": "query-k8s-set-fsgroup-value",
+  "query": "{\n  pods(\n    where: {\n      securityContext: {\n        OR: [\n          { isFSGroupSet: false }\n          { AND: [{ isFSGroupSet: true }, { fsGroup_LTE: 0 }] }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
