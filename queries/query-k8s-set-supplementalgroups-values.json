@@ -1,0 +1,5 @@
+{
+  "query": "{\n  pods(where: { securityContext: { supplementalGroups: [] } }) {\n    ...AssetFragment\n  }\n}",
+  "name": "Ensure to set securityContext.supplementalgroups values",
+  "slug": "query-k8s-set-supplementalgroups-values"
+}
