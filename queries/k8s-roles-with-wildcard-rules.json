@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes Roles with wildcard rules",
+  "slug": "k8s-roles-with-wildcard-rules",
+  "query": "{\n  roles (where: {rules_SOME: {AND: [{verbs_INCLUDES: \"*\"}, {resources_INCLUDES: \"*\"}, {OR: [{apiGroup_INCLUDES: \"\"}, {apiGroup_INCLUDES: \"*\"}]}]}}){\n    ...AssetFragment\n  }\n}"
+}
