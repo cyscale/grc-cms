@@ -1,5 +1,0 @@
-{
-  "name": "Set securityContext.procMount to Default",
-  "slug": "query-set-procmount-to-default",
-  "query": "{\n  containers (where: {securityContext: {\n    NOT: {\n      procMount: \"Default\"\n    }\n  }}) {\n    ...AssetFragment\n  }\n}"
-}
