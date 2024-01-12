@@ -316,6 +316,10 @@ collections:
                 CloudAccount,
                 DaemonSet,
                 ConfigMap,
+                Role,
+                ClusterRole,
+                RoleBinding,
+                ClusterRoleBinding,
               ]
           - label: 'Query'
             name: 'query'
@@ -632,6 +636,10 @@ collections:
             CloudAccount,
             DaemonSet,
             ConfigMap,
+            Role,
+            ClusterRole,
+            RoleBinding,
+            ClusterRoleBinding,
           ]
       - label: 'Assets'
         name: 'assets'
@@ -836,4 +844,8 @@ collections:
             CloudAccount,
             DaemonSet,
             ConfigMap,
+            Role,
+            ClusterRole,
+            RoleBinding,
+            ClusterRoleBinding,
           ]
