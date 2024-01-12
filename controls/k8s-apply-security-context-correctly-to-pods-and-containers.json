@@ -114,6 +114,17 @@
         "Pod"
       ],
       "query": "query-k8s-set-sysctls-params"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Pod"
+      ],
+      "query": "query-k8s-set-supplementalgroups-values"
     }
   ],
   "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
