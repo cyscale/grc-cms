@@ -4,7 +4,30 @@
   "slug": "k8s-minimize-wildcard-use-in-roles-and-clusterroles",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Role"
+      ],
+      "query": "k8s-roles-with-wildcard-rules"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ClusterRole"
+      ],
+      "query": "k8s-clusterroles-with-wildcard-rules"
+    }
+  ],
   "remediationDescription": "Where possible, replace any use of wildcards in ClusterRoles and Roles with specific objects or actions.\n\n**References**\n1. [https://kubernetes.io/docs/concepts/security/rbac-good-practices/#least-privilege](https://kubernetes.io/docs/concepts/security/rbac-good-practices/#least-privilege)\n",
   "isEnabled": true,
   "description": "",
