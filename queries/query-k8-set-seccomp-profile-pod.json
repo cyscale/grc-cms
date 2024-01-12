@@ -1,0 +1,5 @@
+{
+  "name": "Make sure to define seccompProfile at pod level",
+  "slug": "query-k8-set-seccomp-profile-pod",
+  "query": "{\n  pods(where: { securityContext: { isSeccompProfileSet: false } }) {\n    ...AssetFragment\n  }\n}"
+}
