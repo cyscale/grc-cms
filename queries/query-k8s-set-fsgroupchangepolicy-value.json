@@ -1,0 +1,5 @@
+{
+  "query": "{\n  pods(\n    where: {\n      securityContext: {\n        OR: [\n          {\n            NOT: {\n              OR: [\n                {\n                  isFSGroupChangePolicySet: true\n                  fsGroupChangePolicy_CONTAINS: \"Always\"\n                }\n                {\n                  isFSGroupChangePolicySet: true\n                  fsGroupChangePolicy_CONTAINS: \"OnRootMismatch\"\n                }\n              ]\n            }\n          }\n          { isFSGroupChangePolicySet: false }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "slug": "query-k8s-set-fsgroupchangepolicy-value",
+  "name": "Ensure to set securityContext.fsGroup value"
+}
