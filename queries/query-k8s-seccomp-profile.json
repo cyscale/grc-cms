@@ -1,5 +1,5 @@
 {
-  "name": "Make sure to define seccompProfile at container lever",
+  "name": "Make sure to define seccompProfile at container level",
   "slug": "query-k8s-seccomp-profile",
   "query": "{\n  containers(where: { securityContext: { isSeccompProfileSet: false } }) {\n    ...AssetFragment\n  }\n}"
 }
