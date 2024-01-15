@@ -1,0 +1,48 @@
+{
+  "body": "The ability to create pods in a namespace can provide a number of opportunities for privilege escalation, such as assigning privileged service accounts to these pods or mounting hostPaths with access to sensitive data (unless Pod Security Policies are implemented to restrict this access)\n\nAs such, access to create new pods should be restricted to the smallest possible group of users.\n\n**Rationale**\n\nThe ability to create pods in a cluster opens up possibilities for privilege escalation and should be restricted, where possible.\n\n**Impact**\n\nCare should be taken not to remove access to pods to system components which require this for their operation.",
+  "name": "Minimize access to create pods",
+  "slug": "k8s-minimize-access-to-create-pods",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-roles-that-can-create-pods",
+      "returnPath": "bindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-clusterroles-that-can-create-pods",
+      "returnPath": "roleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ClusterRoleBinding"
+      ],
+      "query": "k8s-clusterrolebindings-to-clusterroles-that-can-create-pods",
+      "returnPath": "clusterRoleBindings"
+    }
+  ],
+  "remediationDescription": "Where possible, remove `create` access to `pod` objects in the cluster.\n\n**References**\n\n1. [https://workbench.cisecurity.org/sections/1126661/recommendations/1838592](https://workbench.cisecurity.org/sections/1126661/recommendations/1838592)\n\n2. [https://kubernetes.io/docs/reference/access-authn-authz/rbac/](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)",
+  "isEnabled": true,
+  "severity": 2
+}
