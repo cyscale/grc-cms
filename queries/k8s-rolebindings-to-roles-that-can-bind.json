@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes RoleBindings to Roles which provide bind privileges",
+  "slug": "k8s-rolebindings-to-roles-that-can-bind",
+  "query": "{\n  roles(\n    where: {\n      AND: [\n        {\n          rules_SOME: {\n            AND: [\n              {\n                OR: [\n                  { verbs_INCLUDES: \"bind\" }\n                  { verbs_INCLUDES: \"*\" }\n                ]\n              }\n              {\n                OR: [\n                  { resources_INCLUDES: \"clusterroles\" }\n                  { resources_INCLUDES: \"roles\" }\n                  { resources_INCLUDES: \"*\" }\n                ]\n              }\n              { OR: [{ apiGroup_INCLUDES: \"rbac.authorization.k8s.io\" }, { apiGroup_INCLUDES: \"*\" }] }\n            ]\n          }\n        },\n        {bindings_SOME: {idFromProvider_NOT: \"\"}}\n      ]\n    }\n  ) {\n    bindings {\n      ...AssetFragment\n    }\n  }\n}\n"
+}
