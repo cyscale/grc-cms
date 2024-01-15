@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes RoleBindings to Roles that can create pods",
+  "slug": "k8s-rolebindings-to-roles-that-can-create-pods",
+  "query": "{\n  roles(\n    where: {\n      AND: [\n        {\n          rules_SOME: {\n            AND: [\n              {\n                OR: [\n                  { verbs_INCLUDES: \"create\" }\n                  { verbs_INCLUDES: \"*\" }\n                ]\n              }\n              {\n                OR: [\n                  { resources_INCLUDES: \"pods\" }\n                  { resources_INCLUDES: \"*\" }\n                ]\n              }\n              { OR: [{ apiGroup_INCLUDES: \"\" }, { apiGroup_INCLUDES: \"*\" }] }\n            ]\n          }\n        },\n        {bindings_SOME: {idFromProvider_NOT: \"\"}}\n      ]\n    }\n  ) {\n    bindings {\n      ...AssetFragment\n    }\n  }\n}\n"
+}
