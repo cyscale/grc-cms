@@ -1,0 +1,23 @@
+{
+  "body": "Use network policies to isolate traffic in your cluster network.\n\n**Rationale**\n\nRunning different applications on the same Kubernetes cluster creates a risk of one compromised application attacking a neighboring application. Network segmentation is important to ensure that containers can communicate only with those they are supposed to. A network policy is a specification of how selections of pods are allowed to communicate with each other and other network endpoints.\n\nNetwork Policies are namespace scoped. When a network policy is introduced to a given namespace, all traffic not allowed by the policy is denied. However, if there are no network policies in a namespace all traffic will be allowed into and out of the pods in that namespace.\n\n**Impact**\n\nOnce network policies are in use within a given namespace, traffic not explicitly allowed by a network policy will be denied. As such it is important to ensure that, when introducing network policies, legitimate traffic is not blocked.",
+  "name": "Ensure that all Namespaces have Network Policies defined",
+  "slug": "k8s-namespaces-without-network-policies",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Namespace"
+      ],
+      "query": "k8s-namespaces-without-network-policies"
+    }
+  ],
+  "remediationDescription": "Follow the documentation and create `NetworkPolicy` objects as you need them.\n\n**References**\n\n1. [https://kubernetes.io/docs/concepts/services-networking/networkpolicies](https://kubernetes.io/docs/concepts/services-networking/networkpolicies)",
+  "isEnabled": true,
+  "severity": 2
+}
