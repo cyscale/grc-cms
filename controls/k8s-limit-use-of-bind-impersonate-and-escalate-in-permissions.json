@@ -1,0 +1,120 @@
+{
+  "body": "Cluster roles and roles with the impersonate, bind or escalate permissions should not be granted unless strictly required. Each of these permissions allow a particular subject to escalate their privileges beyond those explicitly granted by cluster administrators.\n\n**Rationale**\n\nThe impersonate privilege allows a subject to impersonate other users gaining their rights to the cluster. The bind privilege allows the subject to add a binding to a cluster role or role which escalates their effective permissions in the cluster. The escalate privilege allows a subject to modify cluster roles to which they are bound, increasing their rights to that level.\n\nEach of these permissions has the potential to allow for privilege escalation to cluster-admin level.\n\n**Impact**\n\nThere are some cases where these permissions are required for cluster service operation, and care should be taken before removing these permissions from system service accounts.",
+  "name": "Limit use of the Bind, Impersonate and Escalate permissions in the Kubernetes cluster",
+  "slug": "k8s-limit-use-of-bind-impersonate-and-escalate-in-permissions",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-roles-that-can-escalate",
+      "returnPath": "bindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-clusterroles-that-can-escalate",
+      "returnPath": "roleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ClusterRoleBinding"
+      ],
+      "query": "k8s-clusterrolebindings-to-clusterroles-that-can-escalate",
+      "returnPath": "clusterRoleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-roles-that-can-bind",
+      "returnPath": "bindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-clusterroles-that-can-bind",
+      "returnPath": "roleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ClusterRoleBinding"
+      ],
+      "query": "k8s-clusterrolebindings-to-clusterroles-that-can-bind",
+      "returnPath": "clusterRoleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-roles-that-can-impersonate",
+      "returnPath": "bindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-to-clusterroles-that-can-impersonate",
+      "returnPath": "roleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ClusterRoleBinding"
+      ],
+      "query": "k8s-clusterrolebindings-to-clusterroles-that-can-impersonate",
+      "returnPath": "clusterRoleBindings"
+    }
+  ],
+  "remediationDescription": "Where possible, remove the impersonate, bind and escalate rights from subjects.\n\n**References**\n\n1. [https://workbench.cisecurity.org/sections/1126661/recommendations/1838597](https://workbench.cisecurity.org/sections/1126661/recommendations/1838597)\n\n2. [https://www.impidio.com/blog/kubernetes-rbac-security-pitfalls](https://www.impidio.com/blog/kubernetes-rbac-security-pitfalls)",
+  "isEnabled": true,
+  "severity": 2
+}
