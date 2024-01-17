@@ -1,0 +1,24 @@
+{
+  "body": "A container running in the host's PID namespace can inspect processes running outside the container. If the container also has access to ptrace capabilities this can be used to escalate privileges outside of the container.\n\n\rThere should be at least one admission control policy defined which does not permit containers to share the host PID namespace.\r\n\nIf you need to run containers which require hostPID, this should be defined in a separate policy and you should carefully check to ensure that only limited service accounts and users are given permission to use that policy.",
+  "name": "Minimize the admission of containers wishing to share the host process ID namespace",
+  "slug": "k8s-minimize-the-admission-of-containers-whishing-to-share-the-hostpid",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Pod"
+      ],
+      "query": "query-k8s-check-restrictions-on-the-creation-of-hostpid-pods"
+    }
+  ],
+  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the admission of hostPID containers. ",
+  "isEnabled": true,
+  "description": "Do not generally permit containers to be run with the hostPID flag set to true.",
+  "severity": 2
+}
