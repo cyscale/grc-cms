@@ -1,5 +1,5 @@
 {
-  "body": "Kubernetes provides a default namespace, where objects are placed if no namespace is specified for them. Placing objects in this namespace makes application of RBAC and other controls more difficult.\n\nResources in a Kubernetes cluster should be segregated by namespace, to allow for security controls to be applied at that level and to make it easier to manage resources.\n\n*﻿*Audit**\n\nRun this command to list objects in default namespace\n```bash\nkubectl get $(kubectl api-resources --verbs=list --namespaced=true -o name | paste -sd, -) --ignore-not-found -n default\n```\n\nThe only entries there should be system managed resources such as the `kubernetes` service.\n",
+  "body": "Kubernetes provides a default namespace, where objects are placed if no namespace is specified for them. Placing objects in this namespace makes application of RBAC and other controls more difficult.\n\nResources in a Kubernetes cluster should be segregated by namespace, to allow for security controls to be applied at that level and to make it easier to manage resources.\n\n**Audit**\n\nRun this command to list objects in default namespace\n\n```bash\nkubectl get $(kubectl api-resources --verbs=list --namespaced=true -o name | paste -sd, -) --ignore-not-found -n default\n```\n\nThe only entries there should be system managed resources such as the `kubernetes` service.\n",
   "name": "The default namespace should not be used",
   "slug": "k8s-the-default-namespace-should-not-be-used",
   "isInsight": false,
@@ -28,9 +28,153 @@
       ],
       "query": "k8s-endpoints-in-default-namespace",
       "returnPath": "endpoints"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "PersistentVolumeClaim"
+      ],
+      "query": "k8s-persistentvolumeclaims-in-default-namespace",
+      "returnPath": "persistentVolumeClaims"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Pod"
+      ],
+      "query": "k8s-pods-in-default-namespace",
+      "returnPath": "pods"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ServiceAccount"
+      ],
+      "query": "k8s-serviceaccounts-in-default-namespace",
+      "returnPath": "serviceAccounts"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Service"
+      ],
+      "query": "k8s-services-in-default-namespace",
+      "returnPath": "services"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DaemonSet"
+      ],
+      "query": "k8s-daemonsets-in-default-namespace",
+      "returnPath": "daemonSets"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Deployment"
+      ],
+      "query": "k8s-deployments-in-default-namespace",
+      "returnPath": "deployments"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ReplicaSet"
+      ],
+      "query": "k8s-replicasets-in-default-namespace",
+      "returnPath": "replicaSets"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StatefulSet"
+      ],
+      "query": "k8s-statefulsets-in-default-namespace",
+      "returnPath": "statefulSets"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Ingress"
+      ],
+      "query": "k8s-ingresses-in-default-namespace",
+      "returnPath": "ingresses"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "NetworkPolicy"
+      ],
+      "query": "k8s-networkpolicies-in-default-namespace",
+      "returnPath": "networkPolicies"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RoleBinding"
+      ],
+      "query": "k8s-rolebindings-in-default-namespace",
+      "returnPath": "roleBindings"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Role"
+      ],
+      "query": "k8s-rolebindings-in-default-namespace",
+      "returnPath": "roles"
     }
   ],
-  "remediationDescription": "Ensure that namespaces are created to allow for appropriate segregation of Kubernetes resources and that all new resources are created in a specific namespace.\n\n*﻿*Default value**\n\nUnless a namespace is specific on object creation, the `default` namespace will be used.",
+  "remediationDescription": "Ensure that namespaces are created to allow for appropriate segregation of Kubernetes resources and that all new resources are created in a specific namespace.\n\n**Default value**\n\nUnless a namespace is specific on object creation, the `default` namespace will be used.",
   "isEnabled": true,
   "severity": 2
 }
