@@ -1,0 +1,36 @@
+{
+  "body": "Kubernetes provides a default namespace, where objects are placed if no namespace is specified for them. Placing objects in this namespace makes application of RBAC and other controls more difficult.\n\nResources in a Kubernetes cluster should be segregated by namespace, to allow for security controls to be applied at that level and to make it easier to manage resources.\n\n*﻿*Audit**\n\nRun this command to list objects in default namespace\n```bash\nkubectl get $(kubectl api-resources --verbs=list --namespaced=true -o name | paste -sd, -) --ignore-not-found -n default\n```\n\nThe only entries there should be system managed resources such as the `kubernetes` service.\n",
+  "name": "The default namespace should not be used",
+  "slug": "k8s-the-default-namespace-should-not-be-used",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ConfigMap"
+      ],
+      "query": "k8s-configmaps-in-default-namespace",
+      "returnPath": "configmaps"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Endpoints"
+      ],
+      "query": "k8s-endpoints-in-default-namespace",
+      "returnPath": "endpoints"
+    }
+  ],
+  "remediationDescription": "Ensure that namespaces are created to allow for appropriate segregation of Kubernetes resources and that all new resources are created in a specific namespace.\n\n*﻿*Default value**\n\nUnless a namespace is specific on object creation, the `default` namespace will be used.",
+  "isEnabled": true,
+  "severity": 2
+}
