@@ -320,6 +320,9 @@ collections:
                 ClusterRole,
                 RoleBinding,
                 ClusterRoleBinding,
+                PersistentVolumeClaim,
+                Ingress,
+                NetworkPolicy,
               ]
           - label: 'Query'
             name: 'query'
@@ -640,6 +643,9 @@ collections:
             ClusterRole,
             RoleBinding,
             ClusterRoleBinding,
+            PersistentVolumeClaim,
+            Ingress,
+            NetworkPolicy,
           ]
       - label: 'Assets'
         name: 'assets'
@@ -848,4 +854,7 @@ collections:
             ClusterRole,
             RoleBinding,
             ClusterRoleBinding,
+            PersistentVolumeClaim,
+            Ingress,
+            NetworkPolicy,
           ]
