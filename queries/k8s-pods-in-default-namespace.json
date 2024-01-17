@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes Pods in default namespace",
+  "slug": "k8s-pods-in-default-namespace",
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    pods {\n      ...AssetFragment\n    }\n  }\n}"
+}
