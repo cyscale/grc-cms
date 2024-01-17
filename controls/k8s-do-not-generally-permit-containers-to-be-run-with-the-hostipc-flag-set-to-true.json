@@ -1,0 +1,24 @@
+{
+  "body": "A container running in the host's IPC namespace can use IPC to interact with processes outside the container.\r\n\nThere should be at least one admission control policy defined which does not permit containers to share the host IPC namespace.\r\n\nIf you need to run containers which require hostIPC, this should be defined in a separate policy and you should carefully check to ensure that only limited service accounts and users are given permission to use that policy.",
+  "name": "Minimize the admission of containers wishing to share the host IPC namespace",
+  "slug": "k8s-do-not-generally-permit-containers-to-be-run-with-the-hostIPC-flag-set-to-true",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Pod"
+      ],
+      "query": "query-k8s-check-restrictions-on-the-creation-of-hostipc-pods"
+    }
+  ],
+  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the admission of hostIPC containers.",
+  "isEnabled": true,
+  "description": "Do not generally permit containers to be run with the hostIPC flag set to true",
+  "severity": 2
+}
