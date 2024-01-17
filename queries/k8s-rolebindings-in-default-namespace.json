@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes RoleBindings in default namespace",
+  "slug": "k8s-rolebindings-in-default-namespace",
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    roleBindings {\n      ...AssetFragment\n    }\n  }\n}"
+}
