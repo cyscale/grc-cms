@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes DaemonSets in default namespace",
+  "slug": "k8s-daemonsets-in-default-namespace",
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    daemonSets {\n      ...AssetFragment\n    }\n  }\n}"
+}
