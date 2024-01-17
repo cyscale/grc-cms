@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes NetworkPolicies in default namespace",
+  "slug": "k8s-networkpolicies-in-default-namespace",
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    networkPolicies {\n      ...AssetFragment\n    }\n  }\n}"
+}
