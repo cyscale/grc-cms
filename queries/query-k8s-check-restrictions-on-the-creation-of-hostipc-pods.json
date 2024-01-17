@@ -1,0 +1,5 @@
+{
+  "name": "Check there are restrictions on the creation of hostIPC pods",
+  "slug": "query-k8s-check-restrictions-on-the-creation-of-hostipc-pods",
+  "query": "{\n  pods(where: { hostIPC: true }) {\n    ...AssetFragment\n  }\n}"
+}
