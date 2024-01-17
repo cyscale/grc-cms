@@ -1,0 +1,5 @@
+{
+  "name": "Check if there are external policies applied for namespaced resources - mutating",
+  "slug": "query-k8s-external-policies-mutating-webhook-configuration",
+  "query": "{\n  mutatingWebhookConfigurations(\n    where: {\n      webhooks_SOME: {\n        NOT: {\n          rulesScope_INCLUDES: \"Cluster\"\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
