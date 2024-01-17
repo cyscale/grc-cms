@@ -1,0 +1,24 @@
+{
+  "body": "Checks that every namespace enabled restricted pod security admission, or if there are external policies applied for namespaced resources (validating/mutating webhooks) - returns them to be reviewed.",
+  "name": "Ensure namespace enabled restricted pod security admission or if there are external policies (validating/mutating webhooks)",
+  "slug": "k8s-ensure-namespace-enable-restricted-pod-security-admission",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "query": "query-k8s-ensure-namespace-enable-restricted-pod-security-admission",
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Namespace"
+      ]
+    }
+  ],
+  "remediationDescription": "Ensure that either Pod Security Admission or an external policy control system is in place for every namespace which contains user workloads.\n\n#### Impact Statement\n\nWhere policy control systems are in place, there is a risk that workloads required for the operation of the cluster may be stopped from running. Care is required when implementing admission control policies to ensure that this does not occur.\n\n#### Default Value\n\nBy default, Pod Security Admission is enabled but no policies are in place.",
+  "isEnabled": true,
+  "description": "Checks that every namespace enabled restricted pod security admission",
+  "severity": 1
+}
