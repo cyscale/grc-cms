@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes Roles in default namespace",
+  "slug": "k8s-roles-in-default-namespace",
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    roles {\n      ...AssetFragment\n    }\n  }\n}\n"
+}
