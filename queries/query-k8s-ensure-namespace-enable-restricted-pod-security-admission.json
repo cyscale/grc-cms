@@ -1,0 +1,5 @@
+{
+  "name": "Ensure namespace enable restricted pod security admission",
+  "slug": "query-k8s-ensure-namespace-enable-restricted-pod-security-admission",
+  "query": "{\n  namespaces(\n    where: {\n      tags_NONE: {\n        key: \"pod-security.kubernetes.io/enforce\"\n        value: \"restricted\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
