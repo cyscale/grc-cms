@@ -1,0 +1,5 @@
+{
+  "name": "Check there are restrictions on the creation of hostNetwork containers",
+  "slug": "query-k8s-check-restrictions-on-the-creation-of-hostnetwork-containers",
+  "query": "{\n  pods(where: { hostNetwork: true }) {\n    ...AssetFragment\n  }\n}"
+}
