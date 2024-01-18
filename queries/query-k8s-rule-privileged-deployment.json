@@ -1,0 +1,5 @@
+{
+  "name": "Ensure that no deployment is defined as privileged",
+  "slug": "query-k8s-rule-privileged-deployment",
+  "query": "{\n  deployments(\n    where: {\n      replicaSets_SOME: {\n        pods_SOME: {\n          containers_SOME: {\n            securityContext: {\n              OR: [\n                { capabilitiesAdd_INCLUDES: \"SYS_ADMIN\" }\n                { privileged: true }\n              ]\n            }\n          }\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
