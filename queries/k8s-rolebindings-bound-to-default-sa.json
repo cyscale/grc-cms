@@ -1,0 +1,5 @@
+{
+  "query": "{\n  serviceAccounts(\n    where: {\n      internalName: \"default\"\n      roleBindingSubjects_SOME: { roleBinding: { idFromProvider_NOT: \"\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n",
+  "name": "Kubernetes RoleBindings bound to default Service Accounts",
+  "slug": "k8s-rolebindings-bound-to-default-sa"
+}
