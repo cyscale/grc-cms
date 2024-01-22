@@ -17,7 +17,7 @@
       "query": "k8s-nodes-without-container-optimized-os"
     }
   ],
-  "remediationDescription": "**References**\n\n1. [https://docs.aws.amazon.com/eks/latest/userguide/launch-node-bottlerocket.html](https://docs.aws.amazon.com/eks/latest/userguide/launch-node-bottlerocket.html)",
+  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\r\n\r\n\r\n\r\n#### AWS\r\n* You can launch Auto Scaling groups of Bottlerocket nodes that register with your Amazon EKS cluster. After the nodes join the cluster, you can deploy Kubernetes applications to them. For more information, see [Launching self-managed Bottlerocket nodes](https://docs.aws.amazon.com/eks/latest/userguide/launch-node-bottlerocket.html)\r\n\r",
   "isEnabled": true,
   "description": "Generally prefer using container-optimized OSes for worker nodes.",
   "severity": 1
