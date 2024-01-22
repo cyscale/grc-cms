@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes Jobs in default namespace",
+  "slug": "k8s-jobs-in-default-namespace",
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    jobs(where: { cronJobName: \"\" }) {\n      internalName\n    }\n  }\n}\n"
+}
