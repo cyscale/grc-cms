@@ -170,7 +170,7 @@
       "subjects": [
         "Role"
       ],
-      "query": "k8s-rolebindings-in-default-namespace",
+      "query": "k8s-roles-in-default-namespace",
       "returnPath": "roles"
     },
     {
