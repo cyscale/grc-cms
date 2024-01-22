@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes default Service Accounts that automatically mount",
+  "slug": "k8s-default-sa-that-automount",
+  "query": "{\n  serviceAccounts(\n    where: { internalName: \"default\", automountServiceAccountToken: true }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+}
