@@ -172,6 +172,30 @@
       ],
       "query": "k8s-rolebindings-in-default-namespace",
       "returnPath": "roles"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CronJob"
+      ],
+      "query": "k8s-cronjobs-in-default-namespace",
+      "returnPath": "cronjobs"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Job"
+      ],
+      "query": "k8s-jobs-in-default-namespace",
+      "returnPath": "jobs"
     }
   ],
   "remediationDescription": "Ensure that namespaces are created to allow for appropriate segregation of Kubernetes resources and that all new resources are created in a specific namespace.\n\n**Default value**\n\nUnless a namespace is specific on object creation, the `default` namespace will be used.",
