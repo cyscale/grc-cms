@@ -323,6 +323,8 @@ collections:
                 PersistentVolumeClaim,
                 Ingress,
                 NetworkPolicy,
+                Job,
+                CronJob,
               ]
           - label: 'Query'
             name: 'query'
@@ -646,6 +648,8 @@ collections:
             PersistentVolumeClaim,
             Ingress,
             NetworkPolicy,
+            Job,
+            CronJob,
           ]
       - label: 'Assets'
         name: 'assets'
@@ -857,4 +861,6 @@ collections:
             PersistentVolumeClaim,
             Ingress,
             NetworkPolicy,
+            Job,
+            CronJob,
           ]
