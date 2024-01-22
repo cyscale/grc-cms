@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes DaemonSets pod templates which automounts service accounts",
+  "slug": "k8s-daemonset-podtemplate-with-sa-automount",
+  "query": "{\n  daemonSets(\n    where: {\n      podTemplate: {\n        isAutomountServiceAccountTokenSet: true\n        automountServiceAccountToken: true\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
