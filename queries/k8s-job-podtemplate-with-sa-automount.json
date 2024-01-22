@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes Jobs pod templates which automounts service accounts",
+  "slug": "k8s-job-podtemplate-with-sa-automount",
+  "query": "{\n  jobs(\n    where: {\n      cronJobName: \"\"\n      podTemplate: {\n        isAutomountServiceAccountTokenSet: true\n        automountServiceAccountToken: true\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
