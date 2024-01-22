@@ -1,5 +1,5 @@
 {
   "name": "Kubernetes ReplicaSets in default namespace",
   "slug": "k8s-replicasets-in-default-namespace",
-  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    replicaSets {\n      ...AssetFragment\n    }\n  }\n}\n"
+  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    replicaSets(where: {deploymentName: \"\"}) {\n      ...AssetFragment\n    }\n  }\n}\n"
 }
