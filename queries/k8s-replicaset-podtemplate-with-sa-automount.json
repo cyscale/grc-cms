@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes ReplicaSets pod templates which automounts service accounts",
+  "slug": "k8s-replicaset-podtemplate-with-sa-automount",
+  "query": "{\n  replicaSets(\n    where: {\n      deploymentName: \"\"\n      podTemplate: {\n        isAutomountServiceAccountTokenSet: true\n        automountServiceAccountToken: true\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+}
