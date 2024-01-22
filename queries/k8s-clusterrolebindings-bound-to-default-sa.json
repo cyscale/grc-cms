@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes ClusterRoleBindings bound to default Service Accounts",
+  "slug": "k8s-clusterrolebindings-bound-to-default-sa",
+  "query": "{\n  serviceAccounts(\n    where: {\n      internalName: \"default\"\n      clusterRoleBindingSubjects_SOME: {\n        clusterRoleBindings: { idFromProvider_NOT: \"\" }\n      }\n    }\n  ) {\n    clusterRoleBindingSubjects {\n      clusterRoleBindings {\n        ...AssetFragment\n      }\n    }\n  }\n}\n"
+}
