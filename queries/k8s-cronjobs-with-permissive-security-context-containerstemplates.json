@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes CronJobs with ContainersTemplates that have permissive security context",
+  "slug": "k8s-cronjobs-with-permissive-security-context-containerstemplates",
+  "query": "{\n  cronJobs(\n    where: {\n      podTemplate: {\n        containersTemplates_SOME: {\n          securityContext: {\n            OR: [\n              { isSeccompProfileSet: false }\n              { isSELinuxOptionsSet: false }\n              { allowPrivilegeEscalation: true }\n              { runAsNonRoot: false }\n              { runAsUser_GTE: 1000 }\n              { runAsGroup_GTE: 1000 }\n              { readOnlyRootFilesystem: false }\n              { capabilitiesAdd_INCLUDES: \"SYS_ADMIN\" }\n              { privileged: true }              \n              {\n                NOT: {\n                  OR: [\n                    { capabilitiesDrop_INCLUDES: \"NET_RAW\" }\n                    { capabilitiesDrop_INCLUDES: \"ALL\" }\n                    { capabilitiesDrop_INCLUDES: \"all\" }\n                  ]\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
