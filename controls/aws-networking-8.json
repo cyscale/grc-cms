@@ -1,1 +1,25 @@
-{"name":"Ensure RDS instances are not publicly reachable","slug":"aws-networking-8","body":"RDS instances should be accessible only through well-defined paths and only from networks you manage. We recommend to disable 'Public access' if possible which removes the public IP address assigned to the database instance.","description":"","severity":2,"remediationDescription":"Consult the [AWS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Hiding) describing the RDS behavior with regards to public and private access.","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["DBInstance"],"query":"aws-networking-8-rds-instances-are-not-publicly-reachable","returnPath":""}]}
+{
+  "body": "RDS instances should be accessible only through well-defined paths and only from networks you manage. We recommend to disable 'Public access' if possible which removes the public IP address assigned to the database instance.",
+  "name": "Ensure RDS instances are not publicly reachable",
+  "slug": "aws-networking-8",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "aws-networking-8-rds-instances-are-not-publicly-reachable",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "**From the Console**\n\n\r\n\r\nPerform the following action to turn off public accessibility:\n\n\r\n\r\n1. Sign into the AWS console and navigate to the [Amazon RDS Dashboard](https://console.aws.amazon.com/rds/home#/home)\r\n2. In the left navigation pane, choose `Databases`\r\n3. Select the database with public accessibility and click `Modify`\r\n4. Navigate to `Connectivity` and click `Additional configurations`\r\n5. Select the `No public access` button\r\n6. Click `Continue` and then `Modify DB instance`\n\n\r\n\r\n**Default Value**\n\n\r\n\r\nBy default, public access is not allowed in your database instance. Only Amazon resources inside the VPC can connect to your database.\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Hiding a DB instance in a VPC from the internet](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Hiding)\r\n\r\n\r\n",
+  "isEnabled": false,
+  "description": "",
+  "severity": 2
+}
