@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes Pods with permissive security context",
+  "slug": "k8s-pods-with-permissive-security-context",
+  "query": "{\n  pods(\n    where: {\n      managerName: \"\"\n      securityContext: {\n        OR: [\n          { supplementalGroups: [] }\n          { isSysctlsContainingElements: false }\n          { isSeccompProfileSet: false }\n          { isFSGroupChangePolicySet: false }\n          { isFSGroupSet: false }\n          {\n            NOT: {\n              OR: [\n                {\n                  isFSGroupChangePolicySet: true\n                  fsGroupChangePolicy_CONTAINS: \"Always\"\n                }\n                {\n                  isFSGroupChangePolicySet: true\n                  fsGroupChangePolicy_CONTAINS: \"OnRootMismatch\"\n                }\n              ]\n            }\n          }\n          { AND: [{ isFSGroupSet: true }, { fsGroup_LTE: 0 }] }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
