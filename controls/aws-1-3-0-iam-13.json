@@ -18,7 +18,8 @@
       "returnPath": ""
     }
   ],
-  "remediationDescription": "**From Console**\n\nPerform the following action to deactivate access keys:\n\n1. Sign into the AWS console as an **Administrator** and navigate to the [IAM Dashboard](https://console.aws.amazon.com/iam/home#/home).\n2. In the left navigation pane, choose Users.\n3. Click on the **User name** for which more than one active access key exists.\n4. Click on **Security credentials** tab.\n5. Click on the **Make inactive** to `deactivate` the non-operational key.\n\n**Note**: Test your application to make sure that the active access key is working.\n\n**From Command Line**\n\nRun the `update-access-key` command below using the IAM user name and the non-operational access key IDs to deactivate the unnecessary key.\n\n```bash\naws iam update-access-key --access-key-id <access-key-id> --status Inactive --user-name <user-name>\n```",
+  "remediationDescription": "**From Console**\n\nPerform the following action to deactivate access keys:\n\n1. Sign into the AWS console as an **Administrator** and navigate to the [IAM Dashboard](https://console.aws.amazon.com/iam/home#/home).\n2. In the left navigation pane, choose Users.\n3. Click on the **User name** for which more than one active access key exists.\n4. Click on **Security credentials** tab.\n5. Click on the **Make inactive** to `deactivate` the non-operational key.\n\n**Note**: Test your application to make sure that the active access key is working.\n\n**From Command Line**\n\nRun the `update-access-key` command below using the IAM user name and the non-operational access key IDs to deactivate the unnecessary key.\n\n```bash\naws iam update-access-key --access-key-id <accessKeyID> --status Inactive --user-name <username>\n```",
+  "isEnabled": false,
   "description": "",
   "severity": 2
 }
