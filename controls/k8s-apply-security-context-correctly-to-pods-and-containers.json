@@ -12,9 +12,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
+        "Deployment"
       ],
-      "query": "query-k8s-rule-privileged-container"
+      "query": "k8s-deployments-with-permissive-security-context-containerstemplates"
     },
     {
       "cloudProviders": [
@@ -23,9 +23,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
+        "StatefulSet"
       ],
-      "query": "query-k8s-immutable-container-filesystem"
+      "query": "k8s-statefulsets-with-permissive-security-context-containerstemplates"
     },
     {
       "cloudProviders": [
@@ -34,9 +34,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
+        "ReplicaSet"
       ],
-      "query": "query-k8s-non-root-containers"
+      "query": "k8s-replicasets-with-permissive-security-context-containerstemplates"
     },
     {
       "cloudProviders": [
@@ -45,9 +45,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
+        "DaemonSet"
       ],
-      "query": "query-k8s-drop-capability-netraw"
+      "query": "k8s-daemonsets-with-permissive-security-context-containerstemplates"
     },
     {
       "cloudProviders": [
@@ -56,9 +56,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
+        "Job"
       ],
-      "query": "query-k8s-set-se-linux-options"
+      "query": "k8s-jobs-with-permissive-security-context-containerstemplates"
     },
     {
       "cloudProviders": [
@@ -67,20 +67,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Container"
+        "CronJob"
       ],
-      "query": "query-k8s-seccomp-profile"
-    },
-    {
-      "query": "query-k8s-set-fsgroup-value",
-      "cloudProviders": [
-        "k8s"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "Pod"
-      ]
+      "query": "k8s-cronjobs-with-permissive-security-context-containerstemplates"
     },
     {
       "cloudProviders": [
@@ -91,7 +80,73 @@
       "subjects": [
         "Pod"
       ],
-      "query": "query-k8-set-seccomp-profile-pod"
+      "query": "k8s-pods-with-permissive-security-context-containers"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StatefulSet"
+      ],
+      "query": "k8s-statefulsets-podtemplates-with-permissive-security-context"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ReplicaSet"
+      ],
+      "query": "k8s-replicasets-podtemplates-with-permissive-security-context"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Deployment"
+      ],
+      "query": "k8s-deployments-podtemplates-with-permissive-security-context"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DaemonSet"
+      ],
+      "query": "k8s-daemonsets-podtemplates-with-permissive-security-context"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Job"
+      ],
+      "query": "k8s-jobs-podtemplates-with-permissive-security-context"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CronJob"
+      ],
+      "query": "k8s-cronjobs-podtemplates-with-permissive-security-context"
     },
     {
       "cloudProviders": [
@@ -102,29 +157,7 @@
       "subjects": [
         "Pod"
       ],
-      "query": "query-k8s-set-fsgroupchangepolicy-value"
-    },
-    {
-      "cloudProviders": [
-        "k8s"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "Pod"
-      ],
-      "query": "query-k8s-set-sysctls-params"
-    },
-    {
-      "cloudProviders": [
-        "k8s"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "Pod"
-      ],
-      "query": "query-k8s-set-supplementalgroups-values"
+      "query": "k8s-pods-with-permissive-security-context"
     }
   ],
   "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
