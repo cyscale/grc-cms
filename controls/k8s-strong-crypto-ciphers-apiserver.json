@@ -1,11 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
-  "isInsight": false,
   "body": "Ensure that the API server is configured to only use strong cryptographic ciphers.\n\n**Rationale**\n\nTLS ciphers have had a number of known vulnerabilities and weaknesses, which can reduce the protection provided by them. By default, Kubernetes supports a number of TLS ciphersuites including some that have security concerns, weakening the protection provided.\n\n**Impact**\n\nAPI server clients that cannot support modern cryptographic ciphers will not be able to make connections to the API server.",
-  "slug": "k8s-strong-crypto-ciphers-apiserver",
   "name": "Ensure the API Server only makes use of Strong Cryptographic Ciphers",
-  "severity": 3,
-  "remediationDescription": "Edit the API server pod specification file `/etc/kubernetes/manifests/kube-apiserver.yaml` on the Control Plane node and set the below parameter.\n\n```bash\n--tls-ciphersuites=TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,TLS_RSA_WITH_3DES_EDE_CBC_SHA,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\n```\n\n**Default Value**\n\nBy default, the Kubernetes API server supports a wide range of TLS ciphers.\n\n**References**\n\n1. [https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices#23-use-secure-cipher-suites](https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices#23-use-secure-cipher-suites)\n\n**Additional Information**\n\nThe list chosen above should be fine for modern clients. It's essentially the list from the Mozilla \"Modern cipher\" option with the ciphersuites supporting CBC mode removed, as CBC has traditionally had a lot of issues.",
+  "slug": "k8s-strong-crypto-ciphers-apiserver",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -18,5 +16,8 @@
       ],
       "query": "query-k8s-api-server-strong-cryptographic-ciphers"
     }
-  ]
+  ],
+  "remediationDescription": "Edit the API server pod specification file `/etc/kubernetes/manifests/kube-apiserver.yaml` on the Control Plane node and set the below parameter.\n\n```bash\n--tls-ciphersuites=TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,TLS_RSA_WITH_3DES_EDE_CBC_SHA,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_GCM_SHA384\n```\n\n**Default Value**\n\nBy default, the Kubernetes API server supports a wide range of TLS ciphers.\n\n**References**\n\n1. [https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices#23-use-secure-cipher-suites](https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices#23-use-secure-cipher-suites)\n\n**Additional Information**\n\nThe list chosen above should be fine for modern clients. It's essentially the list from the Mozilla \"Modern cipher\" option with the ciphersuites supporting CBC mode removed, as CBC has traditionally had a lot of issues.",
+  "isEnabled": false,
+  "severity": 3
 }
