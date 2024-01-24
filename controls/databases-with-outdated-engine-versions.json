@@ -1,10 +1,9 @@
 {
-  "name": "Ensure no databases have outdated engine versions",
-  "description": "Databases with outdated engine versions",
-  "slug": "databases-with-outdated-engine-versions",
   "body": "Cyscale looks for managed databases running on unmaintained engines. If the database engines no longer receive updates and security patches, you risk being vulnerable to attacks.",
-  "severity": 3,
-  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n* [Upgrading a DB instance engine version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html)\n\n#### Azure\n* [PostgreSQL Single Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [PostgreSQL Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [MySQL Single Server](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-major-version-upgrade)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/docs/postgres/upgrade-major-db-version-inplace)\n\n#### Alibaba\n* [ApsaraDB RDS for MySQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-mysql-instance-2)\n* [ApsaraDB RDS for PostgreSQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-postgresql-instance-1)\n* [ApsaraDB RDS for SQL Server](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-an-instance-from-sql-server-2012-to-sql-server-2016)",
+  "name": "Ensure no databases have outdated engine versions",
+  "slug": "databases-with-outdated-engine-versions",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -185,5 +184,9 @@
       ],
       "query": "azure-mariadb-servers-with-outdated-engine"
     }
-  ]
+  ],
+  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\n**From the Console**\n\n\r\n\r\nPerform the following action to upgrade to the newest database engine version:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select `Modify`\r\n3. Under `Settings`, `DB engine version`, select the newest version possible \r\n4. Click `Continue` and `Modify DB Instance`\n\n\r\n\r\n**From the AWS CLI**\n\n\r\n\r\n```bash\r\naws rds modify-db-instance --db-instance-identifier <dbInstanceIdentifier> --engine-version <newVersion>\r\n```\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Upgrading a DB instance engine version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html)\n\n#### Azure\n* [PostgreSQL Single Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [PostgreSQL Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [MySQL Single Server](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-major-version-upgrade)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/docs/postgres/upgrade-major-db-version-inplace)\n\n#### Alibaba\n* [ApsaraDB RDS for MySQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-mysql-instance-2)\n* [ApsaraDB RDS for PostgreSQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-postgresql-instance-1)\n* [ApsaraDB RDS for SQL Server](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-an-instance-from-sql-server-2012-to-sql-server-2016)",
+  "isEnabled": false,
+  "description": "Databases with outdated engine versions",
+  "severity": 3
 }
