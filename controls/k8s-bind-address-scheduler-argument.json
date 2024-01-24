@@ -1,11 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
-  "isInsight": false,
+  "body": "Do not bind the scheduler service to non-loopback, insecure addresses.\n\n**Rationale**\n\nThe Scheduler API service, which runs on port TCP 10251 by default, is used for health and metrics information and is available without authentication or encryption. As such, it should only be bound to a localhost interface, to minimize the cluster's attack surface.",
   "name": "Ensure the --bind-address argument is set to 127.0.0.1 (Scheduler)",
   "slug": "k8s-bind-address-scheduler-argument",
-  "remediationDescription": "Edit the Scheduler pod specification file `/etc/kubernetes/manifests/kubecontroller-manager.yaml` on the Control Plane node and add the correct value for the `--bind-address parameter`.\n\n```bash\n--bind-address=127.0.0.1\n```\n\n**Default Value**\n\nBy default, the `--bind-address` parameter is set to `0.0.0.0`.\n\n**References**\n\n1. [https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)\n",
-  "severity": 3,
-  "body": "Do not bind the scheduler service to non-loopback, insecure addresses.\n\n**Rationale**\n\nThe Scheduler API service, which runs on port TCP 10251 by default, is used for health and metrics information and is available without authentication or encryption. As such, it should only be bound to a localhost interface, to minimize the cluster's attack surface.",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -18,5 +16,8 @@
       ],
       "query": "query-k8s-scheduler-bind-address"
     }
-  ]
+  ],
+  "remediationDescription": "Edit the Scheduler pod specification file `/etc/kubernetes/manifests/kubecontroller-manager.yaml` on the Control Plane node and add the correct value for the `--bind-address parameter`.\n\n```bash\n--bind-address=127.0.0.1\n```\n\n**Default Value**\n\nBy default, the `--bind-address` parameter is set to `0.0.0.0`.\n\n**References**\n\n1. [https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)\n",
+  "isEnabled": false,
+  "severity": 3
 }
