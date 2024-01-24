@@ -1,11 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
-  "isInsight": false,
+  "body": "Enable kubelet server certificate rotation.\n\n**Rationale**\n\n`RotateKubeletServerCertificate` causes the kubelet to both request a serving certificate after bootstrapping its client credentials and rotate the certificate as its existing credentials expire. This automated periodic rotation ensures that the there are no downtimes due to expired certificates and thus addressing availability in the CIA security triad.\n\nNote: This recommendation only applies if you let kubelets get their certificates from the API server. In case your kubelet certificates come from an outside authority/tool (e.g. Vault) then you need to take care of the rotation yourself.",
   "name": " Ensure the RotateKubeletServerCertificate argument is set to true (Kubelet)",
   "slug": "k8s-kubelet-rotatekubeletservercertificate-argument",
-  "body": "Enable kubelet server certificate rotation.\n\n**Rationale**\n\n`RotateKubeletServerCertificate` causes the kubelet to both request a serving certificate after bootstrapping its client credentials and rotate the certificate as its existing credentials expire. This automated periodic rotation ensures that the there are no downtimes due to expired certificates and thus addressing availability in the CIA security triad.\n\nNote: This recommendation only applies if you let kubelets get their certificates from the API server. In case your kubelet certificates come from an outside authority/tool (e.g. Vault) then you need to take care of the rotation yourself.",
-  "remediationDescription": "Edit the kubelet service file `/etc/kubernetes/kubelet.conf` on each worker node and set the below parameter in the `KUBELET_CERTIFICATE_ARGS` variable.\n\n```bash\n--feature-gates=RotateKubeletServerCertificate=true\n```\n\nBased on your system, restart the kubelet service. For example:\n\n\n```bash\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n```\n\n**Default Value**\n\nBy default, kubelet server certificate rotation is enabled.\n\n**References**\n\n1. [https://github.com/kubernetes/kubernetes/pull/45059](https://github.com/kubernetes/kubernetes/pull/45059)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/](https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/)",
-  "severity": 2,
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -18,5 +16,8 @@
       ],
       "query": "query-k8s-kubelet-rotate-kubelet-server-certificate"
     }
-  ]
+  ],
+  "remediationDescription": "Edit the kubelet service file `/etc/kubernetes/kubelet.conf` on each worker node and set the below parameter in the `KUBELET_CERTIFICATE_ARGS` variable.\n\n```bash\n--feature-gates=RotateKubeletServerCertificate=true\n```\n\nBased on your system, restart the kubelet service. For example:\n\n\n```bash\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n```\n\n**Default Value**\n\nBy default, kubelet server certificate rotation is enabled.\n\n**References**\n\n1. [https://github.com/kubernetes/kubernetes/pull/45059](https://github.com/kubernetes/kubernetes/pull/45059)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/](https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/)",
+  "isEnabled": false,
+  "severity": 2
 }
