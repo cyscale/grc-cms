@@ -15,7 +15,7 @@
         "ConfigMap"
       ],
       "query": "k8s-configmaps-in-default-namespace",
-      "returnPath": "configmaps"
+      "returnPath": "configMaps"
     },
     {
       "cloudProviders": [
@@ -183,7 +183,7 @@
         "CronJob"
       ],
       "query": "k8s-cronjobs-in-default-namespace",
-      "returnPath": "cronjobs"
+      "returnPath": "cronJobs"
     },
     {
       "cloudProviders": [
