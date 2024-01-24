@@ -84,10 +84,25 @@
       "name": "5.1 RBAC and Service Accounts",
       "controls": [
         {
+          "control": "k8s-cluster-admin-role-usage"
+        },
+        {
+          "control": "k8s-minimize-access-to-secrets"
+        },
+        {
+          "control": "k8s-minimize-wildcard-use-in-roles-and-clusterroles"
+        },
+        {
+          "control": "k8s-minimize-access-to-create-pods"
+        },
+        {
           "control": "k8s-service-account-default"
         },
         {
-          "control": "k8s-bind-impersonate-escalate"
+          "control": "k8s-ensure-service-account-tokens-are-only-mounted-where-necessary"
+        },
+        {
+          "control": "k8s-limit-use-of-bind-impersonate-and-escalate-in-permissions"
         }
       ]
     },
@@ -100,6 +115,15 @@
           "control": "k8s-pod-admission-privileged-containers"
         },
         {
+          "control": "k8s-minimize-the-admission-of-containers-whishing-to-share-the-hostpid"
+        },
+        {
+          "control": "k8s-do-not-generally-permit-containers-to-be-run-with-the-hostipc-flag-set-to-true"
+        },
+        {
+          "control": "k8s-minimize-admission-of-containers-wishing-to-share-the-host-network-namespace"
+        },
+        {
           "control": "k8s-pod-admission-allow-privilege-escalation"
         },
         {
@@ -107,6 +131,39 @@
         },
         {
           "control": "k8s-pod-admission-host-ports"
+        }
+      ]
+    },
+    {
+      "name": "5.3 Network Policies and CNI",
+      "slug": "k8s-5-3-network-policies-and-cni",
+      "controls": [
+        {
+          "control": "k8s-namespaces-without-network-policies"
+        }
+      ]
+    },
+    {
+      "name": "5.4 Secrets Management",
+      "slug": "k8s-5-4-secrets-management",
+      "controls": [
+        {
+          "control": "k8s-prefer-using-secrets-as-files-over-secrets-as-env-var"
+        },
+        {
+          "control": "k8s-use-external-secret-storage"
+        }
+      ]
+    },
+    {
+      "name": "5.7 General Policies",
+      "slug": "k8s-5-7-general-policies",
+      "controls": [
+        {
+          "control": "k8s-apply-security-context-correctly-to-pods-and-containers"
+        },
+        {
+          "control": "k8s-the-default-namespace-should-not-be-used"
         }
       ]
     }
