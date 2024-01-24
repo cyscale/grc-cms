@@ -1,11 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
-  "isInsight": false,
   "body": "Enable kubelet client certificate rotation.\n\n**Rationale**\n\nThe `--rotate-certificates` setting causes the kubelet to rotate its client certificates by creating new CSRs as its existing credentials expire. This automated periodic rotation ensures that the there is no downtime due to expired certificates and, thus, addressing the availability in the CIA security triad.\n\nNote: This recommendation only applies if you let kubelets get their certificates from the API server. In case your kubelet certificates come from an outside authority/tool (e.g. Vault), then you need to take care of rotation yourself.\n\nNote: This feature also requires the RotateKubeletClientCertificate feature gate to be enabled (which is the default since Kubernetes v1.7).",
   "name": "Ensure the --rotate-certificates argument is not set to false",
   "slug": "k8s-kubelet-rotate-certificate-false",
-  "severity": 3,
-  "remediationDescription": "If you're using a Kubelet config file, edit the file to add the line `rotateCertificates: true` or remove it altogether to use the default value.\n\nIf using command line arguments, edit the kubelet service file\n`/etc/kubernetes/kubelet.conf` on each worker node and remove `--rotatecertificates=false` argument from the `KUBELET_CERTIFICATE_ARGS` variable.\nBased on your system, restart the kubelet service. For example:\n\n```bash\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n```\n\n**Default Value**\n\nBy default, kubelet client certificate rotation is enabled.\n\n**References**\n\n1. [https://github.com/kubernetes/kubernetes/pull/41912](https://github.com/kubernetes/kubernetes/pull/41912)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/](https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/)\n3. [https://kubernetes.io/releases/notes/](https://kubernetes.io/releases/notes/)\n4. [https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/)",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -18,5 +16,8 @@
       ],
       "query": "query-k8s-kubelet-rotate-certificates"
     }
-  ]
+  ],
+  "remediationDescription": "If you're using a Kubelet config file, edit the file to add the line `rotateCertificates: true` or remove it altogether to use the default value.\n\nIf using command line arguments, edit the kubelet service file\n`/etc/kubernetes/kubelet.conf` on each worker node and remove `--rotatecertificates=false` argument from the `KUBELET_CERTIFICATE_ARGS` variable.\nBased on your system, restart the kubelet service. For example:\n\n```bash\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n```\n\n**Default Value**\n\nBy default, kubelet client certificate rotation is enabled.\n\n**References**\n\n1. [https://github.com/kubernetes/kubernetes/pull/41912](https://github.com/kubernetes/kubernetes/pull/41912)\n2. [https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/](https://kubernetes.io/docs/reference/access-authn-authz/kubelet-tls-bootstrapping/)\n3. [https://kubernetes.io/releases/notes/](https://kubernetes.io/releases/notes/)\n4. [https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/)",
+  "isEnabled": false,
+  "severity": 3
 }
