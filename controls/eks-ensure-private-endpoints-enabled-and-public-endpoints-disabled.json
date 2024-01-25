@@ -1,0 +1,23 @@
+{
+  "body": "Disable access to the Kubernetes API from outside the node network if it is not required.\n\n**Rationale**\n\nIn a private cluster, the master node has two endpoints, a private and public endpoint. \r\nThe private endpoint is the internal IP address of the master, behind an internal load \r\nbalancer in the master's VPC network. Nodes communicate with the master using the\r\nprivate endpoint. The public endpoint enables the Kubernetes API to be accessed from \r\noutside the master's VPC network.\n\n\r\nAlthough Kubernetes API requires an authorized token to perform sensitive actions, a \r\nvulnerability could potentially expose the Kubernetes publically with unrestricted access. \r\nAdditionally, an attacker may be able to identify the current cluster and Kubernetes API \r\nversion and determine whether it is vulnerable to an attack. Unless required, disabling \r\npublic endpoint will help prevent such threats, and require the attacker to be on the \r\nmaster's VPC network to perform any attack on the Kubernetes API.\n\n**Impact**\n\nConfigure the EKS cluster endpoint to be private.\r\n1. Leave the cluster endpoint public and specify which CIDR blocks can \r\ncommunicate with the cluster endpoint. The blocks are effectively a whitelisted \r\nset of public IP addresses that are allowed to access the cluster endpoint.\r\n2. Configure public access with a set of whitelisted CIDR blocks and set private \r\nendpoint access to enabled. This will allow public access from a specific range of \r\npublic IPs while forcing all network traffic between the kubelets (workers) and the \r\nKubernetes API through the cross-account ENIs that get provisioned into the \r\ncluster VPC when the control plane is provisioned.\n\n**Audit**\n\nCheck for private endpoint access to the Kubernetes API server\r\nCheck for the following to be 'enabled: false'\n\n```bash\r\nexport CLUSTER_NAME=<your cluster name>\r\naws eks describe-cluster --name ${CLUSTER_NAME} --query \r\n\"cluster.resourcesVpcConfig.endpointPublicAccess\"\r\n```\n\nCheck for the following to be 'enabled: true'\r\n```bash\r\nexport CLUSTER_NAME=<your cluster name>\r\naws eks describe-cluster --name ${CLUSTER_NAME} --query \r\n\"cluster.resourcesVpcConfig.endpointPrivateAccess\"\r\n```\n\n**Default value**\n\nBy default, the Public Endpoint is disabled\n\r\n\r",
+  "name": "Ensure clusters are created with Private Endpoint Enabled  and Public Access Disabled",
+  "slug": "eks-ensure-private-endpoints-enabled-and-public-endpoints-disabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "EKSCluster"
+      ],
+      "query": "eks-clusters-with-private-endpoints-enabled-and-public-endpoints-disabled"
+    }
+  ],
+  "remediationDescription": "By enabling private endpoint access to the Kubernetes API server, all communication \r\nbetween your nodes and the API server stays within your VPC.\r\nWith this in mind, you can update your cluster accordingly using the AWS CLI to ensure \r\nthat Private Endpoint Access is enabled.\r\nFor example, the following command would enable private access to the Kubernetes \r\nAPI and ensure that no public access is permitted:\n\n```bash\r\naws eks update-cluster-config --region $AWS_REGION --name $CLUSTER_NAME --\r\nresources-vpc-config endpointPrivateAccess=true,endpointPublicAccess=false\r\n```\n\n\r\n\r\nNote: For more detailed information, see the EKS Cluster Endpoint documentation link \r\nin the references section.\n\n**References**\n\n1. [https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html](https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html)",
+  "isEnabled": true,
+  "severity": 3
+}
