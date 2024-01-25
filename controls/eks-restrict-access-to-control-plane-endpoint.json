@@ -1,0 +1,23 @@
+{
+  "body": "Enable Endpoint Private Access to restrict access to the cluster's control plane to only \r\nan allowlist of authorized IPs.\n\n**Rationale**\n\nAuthorized networks are a way of specifying a restricted range of IP addresses that are \r\npermitted to access your cluster's control plane. Kubernetes Engine uses both \r\nTransport Layer Security (TLS) and authentication to provide secure access to your \r\ncluster's control plane from the public internet. This provides you the flexibility to \r\nadminister your cluster from anywhere; however, you might want to further restrict \r\naccess to a set of IP addresses that you control. You can set this restriction by \r\nspecifying an authorized network.\r\nRestricting access to an authorized network can provide additional security benefits for \r\nyour container cluster, including:\r\n• Better protection from outsider attacks: Authorized networks provide an \r\nadditional layer of security by limiting external access to a specific set of \r\naddresses you designate, such as those that originate from your premises. This \r\nhelps protect access to your cluster in the case of a vulnerability in the cluster's \r\nauthentication or authorization mechanism.\r\n• Better protection from insider attacks: Authorized networks help protect your \r\ncluster from accidental leaks of master certificates from your company's \r\npremises. Leaked certificates used from outside Cloud Services and outside the \r\nauthorized IP ranges (for example, from addresses outside your company) are \r\nstill denied access\n\n**Impact**\n\nWhen implementing Endpoint Private Access, be careful to ensure all desired networks \r\nare on the allowlist (whitelist) to prevent inadvertently blocking external access to your \r\ncluster's control plane.\n\n**Audit**\n\nCheck for the following to be 'enabled: true'\r\n\n```bash\nexport CLUSTER_NAME=<your cluster name>\r\naws eks describe-cluster --name ${CLUSTER_NAME} --query \"cluster.resourcesVpcConfig.endpointPublicAccess\"\n\naws eks describe-cluster --name ${CLUSTER_NAME} --query \r\n\"cluster.resourcesVpcConfig.endpointPrivateAccess\"\n```\n\nCheck for the following is not null:\n\n```bash\nexport CLUSTER_NAME=<your cluster name>\r\naws eks describe-cluster --name ${CLUSTER_NAME} --query \r\n\"cluster.resourcesVpcConfig.publicAccessCidrs\"\n```\n\n**Default value**\n\nBy default, Endpoint Public Access is disabled.",
+  "name": "Restrict Access to the Control Plane Endpoint",
+  "slug": "eks-restrict-access-to-control-plane-endpoint",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "EKSCluster"
+      ],
+      "query": "eks-clusters-without-restricted-access-to-control-plane-endpoint"
+    }
+  ],
+  "remediationDescription": "By enabling private endpoint access to the Kubernetes API server, all communication \r\nbetween your nodes and the API server stays within your VPC. You can also limit the IP \r\naddresses that can access your API server from the internet, or completely disable \r\ninternet access to the API server.\r\nWith this in mind, you can update your cluster accordingly using the AWS CLI to ensure \r\nthat Private Endpoint Access is enabled.\r\nIf you choose to also enable Public Endpoint Access then you should also configure a \r\nlist of allowable CIDR blocks, resulting in restricted access from the internet. If you \r\nspecify no CIDR blocks, then the public API server endpoint is able to receive and \r\nprocess requests from all IP addresses by defaulting to ['0.0.0.0/0'].\r\nFor example, the following command would enable private access to the Kubernetes \r\nAPI as well as limited public access over the internet from a single IP address (noting \r\nthe /32 CIDR suffix):\n\n```bash\naws eks update-cluster-config --region $AWS_REGION --name $CLUSTER_NAME --\r\nresources-vpc-config endpointPrivateAccess=true, endpointPrivateAccess=true, \r\npublicAccessCidrs=\"203.0.113.5/32\"\n```\n\n\r\n\r\nNote:\r\nThe CIDR blocks specified cannot include reserved addresses.\r\nThere is a maximum number of CIDR blocks that you can specify. For more information, \r\nsee the EKS Service Quotas link in the references section.\r\nFor more detailed information, see the EKS Cluster Endpoint documentation link in the \r\nreferences section.\n\n**References**\n\n1. [https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html](https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html)\n\r",
+  "isEnabled": true,
+  "severity": 3
+}
