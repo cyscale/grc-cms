@@ -1,10 +1,9 @@
 {
-  "name": "Ensure buckets have versioning enabled",
-  "description": "Buckets without versioning enabled",
-  "slug": "object-containers-without-versioning-enabled",
   "body": "Cyscale looks for buckets that do not have versioning enabled. Versioning is a means of keeping multiple variants of an object. With versioning you can recover more easily from both unintended user actions and application failures. ",
-  "severity": 2,
-  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n* [Enabling versioning on buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html)\n\n#### Azure\n* [Enable and manage blob versioning](https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-enable?tabs=portal)\n\n#### Google Cloud\n* [Use Object Versioning](https://cloud.google.com/storage/docs/using-object-versioning#set)\n\n#### Alibaba\n* [Enable Versioning to Protect Valuable Data in Alibaba Cloud OSS](https://www.alibabacloud.com/blog/enable-versioning-to-protect-valuable-data-in-alibaba-cloud-oss_597400)\n",
+  "name": "Ensure buckets have versioning enabled",
+  "slug": "object-containers-without-versioning-enabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -21,5 +20,9 @@
       ],
       "query": "object-containers-without-versioning-enabled"
     }
-  ]
+  ],
+  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n\n**From the Console**\n\n\r\n\r\nPerform the following actions to enable versioning for a bucket:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select the tab `Properties`\r\n3. Under `Bucket versioning`, select `Edit` \r\n4. Under `Bucket versioning`, select the `Enable` button\r\n5. Click `Save changes`\n\n\r\n\r\n**From the AWS CLI**\n\n\r\n\r\n```bash\r\naws s3api put-bucket-versioning --bucket <bucketName> --versioning-configuration Status=Enabled\r\n```\n\n\r\n\r\n**Default Value**\n\n\r\n\r\nBy default, buckets are not versioned.\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Enabling versioning on buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html)\n\n#### Azure\n* [Enable and manage blob versioning](https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-enable?tabs=portal)\n\n#### Google Cloud\n* [Use Object Versioning](https://cloud.google.com/storage/docs/using-object-versioning#set)\n\n#### Alibaba\n* [Enable Versioning to Protect Valuable Data in Alibaba Cloud OSS](https://www.alibabacloud.com/blog/enable-versioning-to-protect-valuable-data-in-alibaba-cloud-oss_597400)\n",
+  "isEnabled": false,
+  "description": "Buckets without versioning enabled",
+  "severity": 2
 }
