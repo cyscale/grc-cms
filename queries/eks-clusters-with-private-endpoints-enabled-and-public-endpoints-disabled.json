@@ -1,0 +1,5 @@
+{
+  "name": "EKS Clusters with private endpoints enabled and public endpoints disabled",
+  "slug": "eks-clusters-with-private-endpoints-enabled-and-public-endpoints-disabled",
+  "query": "{\n  eksClusters(where:{\n    OR:[{vpcConfigEndpointPublicAccess: true}, {vpcConfigEndpointPrivateAccess: false}]\n  }) {\n    ...AssetFragment\n  }\n}"
+}
