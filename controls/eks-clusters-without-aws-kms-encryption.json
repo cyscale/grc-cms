@@ -4,7 +4,19 @@
   "slug": "eks-clusters-without-aws-kms-encryption",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "EKSCluster"
+      ],
+      "query": "eks-clusters-without-secrets-encryption"
+    }
+  ],
   "remediationDescription": "This process can only be performed during Cluster Creation.\r\nEnable 'Secrets Encryption' during Amazon EKS cluster creation as described in the \r\nlinks within the 'References' section.\n\n**References**\n\n1. [https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/](https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/)",
   "isEnabled": true,
   "severity": 2
