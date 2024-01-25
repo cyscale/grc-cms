@@ -1,0 +1,5 @@
+{
+  "name": "ECR Repositories without scan on push enabled",
+  "slug": "ecr-repositories-without-scan-on-push-enabled",
+  "query": "{\n  ecrRepositories(where: { scanOnPush: false }) {\n    ...AssetFragment\n  }\n}\n"
+}
