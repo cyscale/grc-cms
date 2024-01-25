@@ -1,5 +1,5 @@
 {
   "name": "EKS Clusters without restricted access to control plane endpoint",
   "slug": "eks-clusters-without-restricted-access-to-control-plane-endpoint",
-  "query": "{\n  eksClusters(where:{\n    OR:[{vpcConfigEndpointPublicAccess: false}, {vpcConfigEndpointPrivateAccess: false}, {vpcConfigPublicAccessCIDRs: null}, {vpcConfigPublicAccessCIDRs: []}]\n  }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  eksClusters(where:{\n    OR:[{vpcConfigEndpointPrivateAccess: false}, {vpcConfigPublicAccessCIDRs: []}]\n  }) {\n    ...AssetFragment\n  }\n}"
 }
