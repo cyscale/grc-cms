@@ -325,6 +325,10 @@ collections:
                 NetworkPolicy,
                 Job,
                 CronJob,
+                EKSCluster,
+                EKSFargateProfile,
+                EKSIdentityProviderConfig,
+                EKSNodeGroup,
               ]
           - label: 'Query'
             name: 'query'
@@ -650,6 +654,10 @@ collections:
             NetworkPolicy,
             Job,
             CronJob,
+            EKSCluster,
+            EKSFargateProfile,
+            EKSIdentityProviderConfig,
+            EKSNodeGroup,
           ]
       - label: 'Assets'
         name: 'assets'
@@ -863,4 +871,8 @@ collections:
             NetworkPolicy,
             Job,
             CronJob,
+            EKSCluster,
+            EKSFargateProfile,
+            EKSIdentityProviderConfig,
+            EKSNodeGroup,
           ]
