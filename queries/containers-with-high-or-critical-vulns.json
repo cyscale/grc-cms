@@ -1,0 +1,5 @@
+{
+  "name": "Containers with exploitable high/critical vulnerabilities",
+  "slug": "containers-with-high-or-critical-vulns",
+  "query": "{\n  ContainersWithExploitableVulnerabilities {\n    ...AssetFragment\n  }\n}\n"
+}
