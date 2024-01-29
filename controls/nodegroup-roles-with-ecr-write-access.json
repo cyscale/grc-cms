@@ -1,0 +1,10 @@
+{
+  "alertForSecondaryOnly": false,
+  "isEnabled": true,
+  "isInsight": false,
+  "name": "Minimize cluster access to read-only for Amazon ECR",
+  "slug": "nodegroup-roles-with-ecr-write-access",
+  "body": "Configure the Cluster Service Account with Storage Object Viewer Role to only allow \r\nread-only access to Amazon ECR.\n\n**Rationale**\n\nThe Cluster Service Account does not require administrative access to Amazon ECR, \r\nonly requiring pull access to containers to deploy onto Amazon EKS. Restricting \r\npermissions follows the principles of least privilege and prevents credentials from being \r\nabused beyond the required role.\n\n**Impact**\n\nA separate dedicated service account may be required for use by build servers and \r\nother robot users pushing or managing container images.\n\n**Audit**\n\nReview AWS ECS worker node IAM role (NodeInstanceRole) IAM Policy Permissions to \r\nverify that they are set and the minimum required level.\n\n**Default value**\n\nIf you used eksctl or the AWS CloudFormation templates in Getting Started with \r\nAmazon EKS to create your cluster and worker node groups, these IAM permissions \r\nare applied to your worker node IAM role by default.",
+  "severity": 2,
+  "remediationDescription": "You can use your Amazon ECR images with Amazon EKS, but you need to satisfy the \r\nfollowing prerequisites.\r\nThe Amazon EKS worker node IAM role (NodeInstanceRole) that you use with your \r\nworker nodes must n\rot include permissions with write access level.\n\n**References**\n\n1. [https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_on_EKS.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_on_EKS.html)"
+}
