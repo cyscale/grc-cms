@@ -12,7 +12,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "EKSCluster"
+        "EKSNodeGroup"
       ],
       "query": "eks-nodegroups-with-public-nodes"
     }
