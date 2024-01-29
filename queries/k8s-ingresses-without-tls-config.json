@@ -1,0 +1,5 @@
+{
+  "name": "Ingresses without TLS config",
+  "slug": "k8s-ingresses-without-tls-config",
+  "query": "{\n  EKSIngressesWithoutTLSConfig {\n    ...AssetFragment\n  }\n}\n"
+}
