@@ -48,18 +48,6 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Pod"
-      ],
-      "query": "k8s-pods-in-default-namespace",
-      "returnPath": "pods"
-    },
-    {
-      "cloudProviders": [
-        "k8s"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
         "ServiceAccount"
       ],
       "query": "k8s-serviceaccounts-in-default-namespace",
