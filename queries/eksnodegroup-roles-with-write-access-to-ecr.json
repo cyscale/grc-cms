@@ -1,0 +1,5 @@
+{
+  "name": "EKSNodeGroup roles with write access to ECR",
+  "slug": "eksnodegroup-roles-with-write-access-to-ecr",
+  "query": "{\n  EKSNodeGroupRolesWithWriteAccessToECR {\n    ...AssetFragment\n  }\n}\n"
+}
