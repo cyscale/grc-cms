@@ -1,0 +1,5 @@
+{
+  "name": "EKS NodeGroups with public nodes",
+  "slug": "eks-nodegroups-with-public-nodes",
+  "query": "{\n  EKSNodeGroupsWithPublicNodes {\n    ...AssetFragment\n  }\n}"
+}
