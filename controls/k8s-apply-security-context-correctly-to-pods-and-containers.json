@@ -78,17 +78,6 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Pod"
-      ],
-      "query": "k8s-pods-with-permissive-security-context-containers"
-    },
-    {
-      "cloudProviders": [
-        "k8s"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
         "StatefulSet"
       ],
       "query": "k8s-statefulsets-podtemplates-with-permissive-security-context"
@@ -147,17 +136,6 @@
         "CronJob"
       ],
       "query": "k8s-cronjobs-podtemplates-with-permissive-security-context"
-    },
-    {
-      "cloudProviders": [
-        "k8s"
-      ],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": [
-        "Pod"
-      ],
-      "query": "k8s-pods-with-permissive-security-context"
     }
   ],
   "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
