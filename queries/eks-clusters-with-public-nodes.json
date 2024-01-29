@@ -1,5 +1,0 @@
-{
-  "name": "EKS Clusters with public nodes",
-  "slug": "eks-clusters-with-public-nodes",
-  "query": "{\n  eksClusters(\n    where: {\n      vpcConfigEndpointPublicAccess: true\n      vpcConfigPublicAccessCIDRs_INCLUDES: \"0.0.0.0/0\"\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
-}
