@@ -1,0 +1,23 @@
+{
+  "body": "Encrypt traffic to HTTPS load balancers using TLS certificates.\n\n**Rationale**\n\nEncrypting traffic between users and your Kubernetes workload is fundamental to \r\nprotecting data sent over the web.\n\n**Audit**\n\nYour load balancer vendor can provide details on auditing the certificates and policies \r\nrequired to utilize TLS.",
+  "name": "Encrypt traffic to HTTPS load balancers with TLS  certificates",
+  "slug": "ingresses-without-encrypted-traffic",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Ingress"
+      ],
+      "query": "k8s-ingresses-without-tls-config"
+    }
+  ],
+  "remediationDescription": "Your load balancer vendor can provide details on configuring HTTPS with TLS.\n\n**References**\n\n1. [https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/guide/ingress/annotations/#load-balancer-name](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/guide/ingress/annotations/#load-balancer-name)\n\n2. [https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html)\n",
+  "isEnabled": true,
+  "severity": 2
+}
