@@ -14,7 +14,7 @@
       "subjects": [
         "EKSCluster"
       ],
-      "query": "eks-clusters-with-public-nodes"
+      "query": "eks-nodegroups-with-public-nodes"
     }
   ],
   "remediationDescription": "R﻿un the following command to disable public IP addresses for cluster nodes:\n\n```bash\r\naws eks update-cluster-config \\\r\n --region region-code \\\r\n --name my-cluster \\\r\n --resources-vpc-config \r\nendpointPublicAccess=true,publicAccessCidrs=\"203.0.113.5/32\",endpointPrivateA\r\nccess=true\r\n```\n\r",
