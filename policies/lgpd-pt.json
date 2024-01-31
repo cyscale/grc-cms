@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "name": "LGPD - Lei Geral de Proteção de Dados",
   "isStandard": true,
   "slug": "lgpd-pt",
