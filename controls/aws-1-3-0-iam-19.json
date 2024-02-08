@@ -6,20 +6,16 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "IAMServerCertificate"
-      ],
+      "subjects": ["IAMServerCertificate"],
       "query": "aws-1-3-0-iam-19-all-the-expired-ssltls-certificates-stored-in-aws-iam-are-removed",
       "returnPath": ""
     }
   ],
   "remediationDescription": "**From Command Line**\n\nRun the following command to delete the expired certificate:\n\n```bash\naws iam delete-server-certificate --server-certificate-name <certificateName>\n```\n\nWhen the preceding command is successful, it does not return any output.\n\n**Note**: By default, expired certificates never get deleted.",
-  "isEnabled": false,
+  "isEnabled": true,
   "description": "",
   "severity": 2
 }

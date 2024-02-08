@@ -6,20 +6,16 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "KMSKey"
-      ],
+      "subjects": ["KMSKey"],
       "query": "aws-logging-8-rotation-for-customer-created-cmks-is-enabled",
       "returnPath": ""
     }
   ],
   "remediationDescription": "**Via the Management Console**\n\n1. Open the security settings using the \"Open in AWS\" menu option\n2. Under `Key rotation`, check the `Automatically rotate this KMS key every year` checkbox\n3. Select a customer created master key (CMK)\n4. Under the `Key Policy` section, move down to `Key Rotation` \n\n**Via CLI**\n\n1. Run the following command to enable key rotation:\n\n```bash\naws kms enable-key-rotation --key-id <KMSKeyID>\n```\n\n**References**\n\n1. https://aws.amazon.com/kms/pricing/\n2. http://csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf\n3. CCE-78920-6",
-  "isEnabled": false,
+  "isEnabled": true,
   "description": "",
   "severity": 2
 }

@@ -6,20 +6,16 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Trail"
-      ],
+      "subjects": ["Trail"],
       "query": "aws-logging-2-cloudtrail-log-file-validation-is-enabled",
       "returnPath": ""
     }
   ],
   "remediationDescription": "Perform the following to enable log file validation on a given trail: \n\n**Via the management Console**\n\n1. Sign in to the AWS Management Console and open the IAM console at\nhttps://console.aws.amazon.com/cloudtrail\n2. Click on `Trails` on the left navigation pane\n3. Click on target trail\n4. Within the `S3` section click on the edit icon (pencil)\n5. Click `Advanced`\n6. Click on the Yes radio button in section `Enable log file validation`\n7. Click `Save`\n\n**Via CLI**\n\n```bash\naws cloudtrail update-trail --name <trailName> --enable-log-file-validation\n```\n\nNote that periodic validation of logs using these digests can be performed by running the following command:\n\n```bash\naws cloudtrail validate-logs --trail-arn <trailARN> --start-time\n<startTime> --end-time <endTime>\n```\n\n**Default Value**\n\nThe default value is `Not Enabled`.\n\n**References**\n\n1. http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-enabling.html\n2. CCE-78914-9\n3. CIS CSC v6.0 #6.3",
-  "isEnabled": false,
+  "isEnabled": true,
   "description": "",
   "severity": 2
 }

@@ -6,52 +6,36 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Bucket"
-      ],
+      "subjects": ["Bucket"],
       "query": "publicly-aws-buckets"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "BlobContainer"
-      ],
+      "subjects": ["BlobContainer"],
       "query": "publicly-readable-azure-blob-containers"
     },
     {
-      "cloudProviders": [
-        "gcp"
-      ],
+      "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Bucket"
-      ],
+      "subjects": ["Bucket"],
       "query": "publicly-gcp-buckets"
     },
     {
-      "cloudProviders": [
-        "alibaba"
-      ],
+      "cloudProviders": ["alibaba"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Bucket"
-      ],
+      "subjects": ["Bucket"],
       "query": "publicly-alibaba-buckets"
     }
   ],
   "remediationDescription": "#### AWS\n\n**From the Console**\n\n\r\n\r\nPerform the following actions to block all public access for a bucket:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select the tab `Permissions`\r\n3. Under `Block public access (bucket settings)`, select `Edit` \r\n4. Check the `Block all public access` checkbox\r\n5. Click `Save changes`\n\n\r\n\r\n**From the AWS CLI**\n\n\r\n\r\n```bash\r\naws s3api put-public-access-block --bucket <bucketName> --public-access-block-configuration \"BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true\"\r\n```\n\n\r\n\r\n**Default Value**\n\n\r\n\r\nBy default, new buckets, access points, and objects do not allow public access.\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Configuring block public access settings for your S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-block-public-access-bucket.html)\r\n2. [put-public-access-block](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-public-access-block.html)\n\n#### Azure\n* [Prevent anonymous public read access to containers and blobs](https://learn.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent)\n\n#### Google Cloud\n* [Public access prevention](https://cloud.google.com/storage/docs/access-control#public_access_prevention)\n\n#### Alibaba Cloud\n* [Overview](https://www.alibabacloud.com/help/en/object-storage-service/latest/access-and-control-overview)",
-  "isEnabled": false,
+  "isEnabled": true,
   "description": "Buckets with public access",
   "severity": 3
 }

@@ -6,118 +6,78 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "gcp"
-      ],
+      "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "CloudSQLInstance"
-      ],
+      "subjects": ["CloudSQLInstance"],
       "query": "publicly-accessible-gcp-cloud-sql-instances"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "MySQLServer"
-      ],
+      "subjects": ["MySQLServer"],
       "query": "publicly-accessible-azure-mysql-single-servers"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "MySQLFlexibleServer"
-      ],
+      "subjects": ["MySQLFlexibleServer"],
       "query": "publicly-accessible-azure-mysql-flex-servers"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "PostgreSQLServer"
-      ],
+      "subjects": ["PostgreSQLServer"],
       "query": "publicly-accessible-azure-postgres-single-servers"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "PostgreSQLFlexibleServer"
-      ],
+      "subjects": ["PostgreSQLFlexibleServer"],
       "query": "publicly-accessible-azure-postgres-flex-servers"
     },
     {
-      "cloudProviders": [
-        "alibaba"
-      ],
+      "cloudProviders": ["alibaba"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "DBInstance"
-      ],
+      "subjects": ["DBInstance"],
       "query": "publicly-accessible-alibaba-apsaradb-instances"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "SQLDatabase"
-      ],
+      "subjects": ["SQLDatabase"],
       "query": "publicly-accessible-azure-sql-servers"
     },
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "DBCluster"
-      ],
+      "subjects": ["DBCluster"],
       "query": "publicly-accessible-aws-rds-clusters"
     },
     {
-      "cloudProviders": [
-        "azure"
-      ],
+      "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "MariaDBServer"
-      ],
+      "subjects": ["MariaDBServer"],
       "query": "publicly-accessible-azure-mariadb-servers"
     },
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "DBInstance"
-      ],
+      "subjects": ["DBInstance"],
       "query": "publicly-accessible-aws-rds-instances"
     }
   ],
   "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\n**From the Console**\n\n\r\n\r\nPerform the following action to turn off public accessibility:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n\r\n2. Click `Modify`\r\n3. Navigate to `Connectivity` and click `Additional configurations`\r\n4. Select the `No public access` button\r\n5. Click `Continue` and then `Modify DB instance`\n\n\r\n\r\n**Default Value**\n\n\r\n\r\nBy default, public access is not allowed in your database instance. Only Amazon resources inside the VPC can connect to your database.\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Hiding a DB instance in a VPC from the internet](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Hiding)\r\n\r\n\r\n\n#### Azure\n* [Azure SQL connectivity settings](https://learn.microsoft.com/en-us/azure/azure-sql/database/connectivity-settings?view=azuresql&tabs=azure-portal#deny-public-network-access)\n* [PostgreSQL Single Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-deny-public-network-access)\n* [PostgreSQL Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-security#network-security)\n* [MySQL Single Server](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-deny-public-network-access)\n* [MySQL Flexible Server](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-networking)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/docs/mysql/configure-ip)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/best-practices-for-data-security#section-xca-tks-vqs)",
-  "isEnabled": false,
+  "isEnabled": true,
   "description": "Databases with public IP addresses",
   "severity": 3
 }

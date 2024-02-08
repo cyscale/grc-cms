@@ -6,19 +6,15 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "aws"
-      ],
+      "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "VM"
-      ],
+      "subjects": ["VM"],
       "query": "aws-vms-no-imdsv2"
     }
   ],
   "remediationDescription": "**From the Console**\n\n\r\n\r\nPerform the following actions to configure the EC2 instance to use IMDSv2:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select `Modify`\r\n3. Under `Actions`, select `Instance settings`, and then `Modify instance metadata options` \r\n4. Under `IMDSv2`, select the `Required` button\r\n5. Click `Save`\n\n\r\n\r\n**From the AWS CLI**\n\n\r\n\r\n```bash\r\naws ec2 modify-instance-metadata-options --instance-id <instanceID> --http-tokens required\r\n```\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Use IMDSv2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html)\r\n2. [Configure the instance metadata options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html)",
-  "isEnabled": false,
+  "isEnabled": true,
   "description": "EC2 Instances allowing IMDSv1",
   "severity": 2
 }
