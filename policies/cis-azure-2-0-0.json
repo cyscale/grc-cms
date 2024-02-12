@@ -294,7 +294,5 @@
       "body": "This section covers security recommendations for miscellaneous."
     }
   ],
-  "targetCloudProviders": [
-    "azure"
-  ]
+  "targetCloudProviders": ["azure"]
 }
