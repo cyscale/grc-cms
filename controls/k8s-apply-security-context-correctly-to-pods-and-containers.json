@@ -6,139 +6,91 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Deployment"
-      ],
+      "subjects": ["Deployment"],
       "query": "k8s-deployments-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "StatefulSet"
-      ],
+      "subjects": ["StatefulSet"],
       "query": "k8s-statefulsets-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "ReplicaSet"
-      ],
+      "subjects": ["ReplicaSet"],
       "query": "k8s-replicasets-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "DaemonSet"
-      ],
+      "subjects": ["DaemonSet"],
       "query": "k8s-daemonsets-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Job"
-      ],
+      "subjects": ["Job"],
       "query": "k8s-jobs-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "CronJob"
-      ],
+      "subjects": ["CronJob"],
       "query": "k8s-cronjobs-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "StatefulSet"
-      ],
+      "subjects": ["StatefulSet"],
       "query": "k8s-statefulsets-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "ReplicaSet"
-      ],
+      "subjects": ["ReplicaSet"],
       "query": "k8s-replicasets-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Deployment"
-      ],
+      "subjects": ["Deployment"],
       "query": "k8s-deployments-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "DaemonSet"
-      ],
+      "subjects": ["DaemonSet"],
       "query": "k8s-daemonsets-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "Job"
-      ],
+      "subjects": ["Job"],
       "query": "k8s-jobs-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": [
-        "k8s"
-      ],
+      "cloudProviders": ["k8s"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": [
-        "CronJob"
-      ],
+      "subjects": ["CronJob"],
       "query": "k8s-cronjobs-podtemplates-with-permissive-security-context"
     }
   ],
   "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
   "isEnabled": true,
-  "severity": 2
+  "severity": 1
 }
