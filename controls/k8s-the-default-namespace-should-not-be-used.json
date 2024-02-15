@@ -188,5 +188,5 @@
   ],
   "remediationDescription": "Ensure that namespaces are created to allow for appropriate segregation of Kubernetes resources and that all new resources are created in a specific namespace.\n\n**Default value**\n\nUnless a namespace is specific on object creation, the `default` namespace will be used.",
   "isEnabled": true,
-  "severity": 2
+  "severity": 1
 }
