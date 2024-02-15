@@ -9,7 +9,6 @@
     "cis-alibaba-1-0-0-logging-2",
     "cis-alibaba-1-0-0-storage-1",
     "cis-alibaba-1-0-0-storage-7",
-    "gcp-bucket-publicly-accessible",
     "publicly-readable-object-containers"
   ],
   "mid": "T1619",
