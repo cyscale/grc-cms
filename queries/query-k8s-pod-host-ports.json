@@ -1,5 +1,5 @@
 {
   "name": "Minimize the admission of containers which use HostPorts (Pod)",
   "slug": "query-k8s-pod-host-ports",
-  "query": "{\n  pods(where: { containers_SOME: { ports_SOME: { hostPort_GT: 0 } } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  pods(where: { containers_SOME: { ports_SOME: { hostPort_GT: 0 } NOT: { namespace: \"kube-system\" } } }) {\n    ...AssetFragment\n  }\n}"
 }

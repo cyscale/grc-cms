@@ -1,5 +1,5 @@
 {
-  "query": "{\n  pods(where: { hostPID: true }) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  pods(where: { hostPID: true NOT: { namespace: \"kube-system\" } }) {\n    ...AssetFragment\n  }\n}",
   "name": "Check there are restrictions on the creation of hostPID pods",
   "slug": "query-k8s-check-restrictions-on-the-creation-of-hostpid-pods"
 }
