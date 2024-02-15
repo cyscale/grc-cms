@@ -1,15 +1,7 @@
 {
   "display_name": "Transfer Data to Cloud Account - T1537",
   "mid": "T1537",
-  "controls": [
-    "object-containers-with-public-access",
-    "aws-1-3-0-iam-20",
-    "azure-1-3-0-storage-5",
-    "cis-alibaba-1-0-0-storage-1",
-    "cis-alibaba-1-0-0-storage-7",
-    "gcp-bucket-publicly-accessible",
-    "publicly-readable-object-containers"
-  ],
+  "controls": [],
   "assets": [
     "Bucket",
     "BlobContainer"
