@@ -1,5 +1,5 @@
 {
   "name": "Minimize the admission of privileged containers (Pod)",
   "slug": "query-k8s-pod-privileged-containers",
-  "query": "{\n  pods(where: { containers_SOME: { securityContext: { privileged: true } } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  pods(where: { containers_SOME: { securityContext: { privileged: true } NOT: { namespace: \"kube-system\" } } }) {\n    ...AssetFragment\n  }\n}"
 }
