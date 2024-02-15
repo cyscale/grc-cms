@@ -44,5 +44,5 @@
   ],
   "remediationDescription": "Where possible, remove `create` access to `pod` objects in the cluster.\n\n**References**\n\n1. [https://workbench.cisecurity.org/sections/1126661/recommendations/1838592](https://workbench.cisecurity.org/sections/1126661/recommendations/1838592)\n\n2. [https://kubernetes.io/docs/reference/access-authn-authz/rbac/](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)",
   "isEnabled": true,
-  "severity": 2
+  "severity": 1
 }
