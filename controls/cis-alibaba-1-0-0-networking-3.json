@@ -1,1 +1,9 @@
-{"name":"Ensure VPC flow logging is enabled in all VPCs","slug":"cis-alibaba-1-0-0-networking-3","body":"","description":"","severity":2,"remediationDescription":"","rules":null}
+{
+  "name": "Ensure VPC flow logging is enabled in all VPCs",
+  "slug": "cis-alibaba-1-0-0-networking-3",
+  "body": "",
+  "description": "",
+  "severity": 1,
+  "remediationDescription": "",
+  "rules": null
+}
