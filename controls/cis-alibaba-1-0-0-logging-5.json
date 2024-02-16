@@ -1,1 +1,9 @@
-{"name":"Ensure virtual network flow log service is enabled","slug":"cis-alibaba-1-0-0-logging-5","body":"","description":"","severity":2,"remediationDescription":"","rules":null}
+{
+  "name": "Ensure virtual network flow log service is enabled",
+  "slug": "cis-alibaba-1-0-0-logging-5",
+  "body": "",
+  "description": "",
+  "severity": 1,
+  "remediationDescription": "",
+  "rules": null
+}
