@@ -1,1 +1,1 @@
-{"name":"Legacy Authorization is set to Disabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-3-legacy-authorization-is-set-to-disabled-on-kubernetes-engine-clusters","query":"clusters(where:{legacyAbacEnabled_NOT:false}){...AssetFragment}"}
+{"name":"Legacy Authorization is set to Disabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-3-legacy-authorization-is-set-to-disabled-on-kubernetes-engine-clusters","query":"gkeClusters(where:{legacyAbacEnabled_NOT:false}){...AssetFragment}"}

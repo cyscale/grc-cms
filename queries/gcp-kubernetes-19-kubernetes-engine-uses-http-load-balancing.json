@@ -1,1 +1,1 @@
-{"name":"Kubernetes Engine uses HTTP load balancing","slug":"gcp-kubernetes-19-kubernetes-engine-uses-http-load-balancing","query":"{clusters(where:{httpLoadBalancingEnabled:false}){...AssetFragment}}"}
+{"name":"Kubernetes Engine uses HTTP load balancing","slug":"gcp-kubernetes-19-kubernetes-engine-uses-http-load-balancing","query":"{gkeClusters(where:{httpLoadBalancingEnabled:false}){...AssetFragment}}"}

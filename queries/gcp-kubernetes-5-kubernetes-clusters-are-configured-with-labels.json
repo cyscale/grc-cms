@@ -1,1 +1,1 @@
-{"name":"Kubernetes Clusters are configured with Labels","slug":"gcp-kubernetes-5-kubernetes-clusters-are-configured-with-labels","query":"clusters(where:{tags:null}){...AssetFragment}"}
+{"name":"Kubernetes Clusters are configured with Labels","slug":"gcp-kubernetes-5-kubernetes-clusters-are-configured-with-labels","query":"gkeClusters(where:{tags:null}){...AssetFragment}"}

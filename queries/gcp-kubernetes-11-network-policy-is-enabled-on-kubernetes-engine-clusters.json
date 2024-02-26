@@ -1,1 +1,1 @@
-{"name":"Network policy is enabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-11-network-policy-is-enabled-on-kubernetes-engine-clusters","query":"clusters(where:{networkPolicyEnabled:false}){...AssetFragment}"}
+{"name":"Network policy is enabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-11-network-policy-is-enabled-on-kubernetes-engine-clusters","query":"gkeClusters(where:{networkPolicyEnabled:false}){...AssetFragment}"}

@@ -1,1 +1,1 @@
-{"name":"Automatic node upgrades is enabled on Kubernetes Engine Clusters nodes","slug":"gcp-kubernetes-8-automatic-node-upgrades-is-enabled-on-kubernetes-engine-clusters-nodes","query":"clusters(where:{hasClusterNodePools_SOME:{managementAutoUpgrade_NOT:true}}){...AssetFragment}"}
+{"name":"Automatic node upgrades is enabled on Kubernetes Engine Clusters nodes","slug":"gcp-kubernetes-8-automatic-node-upgrades-is-enabled-on-kubernetes-engine-clusters-nodes","query":"gkeClusters(where:{hasClusterNodePools_SOME:{managementAutoUpgrade_NOT:true}}){...AssetFragment}"}

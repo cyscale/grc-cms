@@ -1,1 +1,1 @@
-{"name":"Stackdriver Monitoring is set to Enabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-2-stackdriver-monitoring-is-set-to-enabled-on-kubernetes-engine-clusters","query":"clusters(where:{monitoringService_NOT:\"monitoring.googleapis.com\"}){...AssetFragment}"}
+{"name":"Stackdriver Monitoring is set to Enabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-2-stackdriver-monitoring-is-set-to-enabled-on-kubernetes-engine-clusters","query":"gkeClusters(where:{monitoringService_NOT:\"monitoring.googleapis.com\"}){...AssetFragment}"}

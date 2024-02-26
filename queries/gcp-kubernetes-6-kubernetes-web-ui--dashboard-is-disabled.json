@@ -1,1 +1,1 @@
-{"name":"Kubernetes web UI / Dashboard is disabled","slug":"gcp-kubernetes-6-kubernetes-web-ui--dashboard-is-disabled","query":"clusters(where:{kubernetesDashboardDisabled:false}){...AssetFragment}"}
+{"name":"Kubernetes web UI / Dashboard is disabled","slug":"gcp-kubernetes-6-kubernetes-web-ui--dashboard-is-disabled","query":"gkeClusters(where:{kubernetesDashboardDisabled:false}){...AssetFragment}"}
