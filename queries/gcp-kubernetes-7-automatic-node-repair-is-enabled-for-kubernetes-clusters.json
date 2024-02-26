@@ -1,1 +1,1 @@
-{"name":"Automatic node repair is enabled for Kubernetes Clusters","slug":"gcp-kubernetes-7-automatic-node-repair-is-enabled-for-kubernetes-clusters","query":"gkeClusters(where:{hasClusterNodePools_SOME:{managementAutoRepair_NOT:true}}){...AssetFragment}"}
+{"name":"Automatic node repair is enabled for Kubernetes Clusters","slug":"gcp-kubernetes-7-automatic-node-repair-is-enabled-for-kubernetes-clusters","query":"gkeClusters(where:{nodePools_SOME:{managementAutoRepair_NOT:true}}){...AssetFragment}"}

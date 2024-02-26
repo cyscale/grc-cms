@@ -1,1 +1,1 @@
-{"name":"Private Google Access is set on Kubernetes Engine Cluster Subnets","slug":"gcp-kubernetes-16-private-google-access-is-set-on-kubernetes-engine-cluster-subnets","query":"gkeClusters(where:{hasSubnetwork_SOME:{privateIpGoogleAccess:false}}){...AssetFragment}"}
+{"name":"Private Google Access is set on Kubernetes Engine Cluster Subnets","slug":"gcp-kubernetes-16-private-google-access-is-set-on-kubernetes-engine-cluster-subnets","query":"gkeClusters(where:{subnetworks_SOME:{privateIpGoogleAccess:false}}){...AssetFragment}"}
