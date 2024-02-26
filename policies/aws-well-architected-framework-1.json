@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "name": "AWS Well-Architected Framework",
+  "isStandard": true,
+  "slug": "aws-well-architected-framework-1",
+  "version": "1.0",
+  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Security\n\n#﻿## Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n",
+  "targetCloudProviders": [
+    "aws"
+  ],
+  "procedures": [
+    {
+      "name": "SEC 1. How do you securely operate your workload?",
+      "slug": "aws-waf-sec-1",
+      "body": "To operate your workload securely, you must apply overarching best practices to every area of security. Take requirements and processes that you have defined in operational excellence at an organizational and workload level, and apply them to all areas. Staying up to date with AWS and industry recommendations and threat intelligence helps you evolve your threat model and control objectives. Automating security processes, testing, and validation permit you to scale your security operations.",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-7"
+        }
+      ]
+    }
+  ]
+}
