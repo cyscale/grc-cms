@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "name": "AWS Well-Architected Framework",
   "isStandard": true,
   "slug": "aws-well-architected-framework-1",
