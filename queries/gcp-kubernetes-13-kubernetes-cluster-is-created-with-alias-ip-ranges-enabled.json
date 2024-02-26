@@ -1,1 +1,1 @@
-{"name":"Kubernetes Cluster is created with Alias IP ranges enabled","slug":"gcp-kubernetes-13-kubernetes-cluster-is-created-with-alias-ip-ranges-enabled","query":"gkeClusters(where:{hasIPAllocationPolicy_SOME:{useIPAliases:false}}){...AssetFragment}"}
+{"name":"Kubernetes Cluster is created with Alias IP ranges enabled","slug":"gcp-kubernetes-13-kubernetes-cluster-is-created-with-alias-ip-ranges-enabled","query":"gkeClusters(where:{ipAllocationPolicy_SOME:{useIPAliases:false}}){...AssetFragment}"}
