@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "aws-well-architected-framework-1",
   "version": "1.0",
-  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Security\n\n### Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n### Identity and access management\n\n<Procedure slug=\"aws-waf-sec-2\"/>\n<Procedure slug=\"aws-waf-sec-3\"/>\n\n### Detection\n\n<Procedure slug=\"aws-waf-sec-4\"/>\n\n### Infrastructure protection\n\n<Procedure slug=\"aws-waf-sec-5\"/>\n<Procedure slug=\"aws-waf-sec-6\"/>\n\n",
+  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Security\n\n### Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n### Identity and access management\n\n<Procedure slug=\"aws-waf-sec-2\"/>\n<Procedure slug=\"aws-waf-sec-3\"/>\n\n### Detection\n\n<Procedure slug=\"aws-waf-sec-4\"/>\n\n### Infrastructure protection\n\n<Procedure slug=\"aws-waf-sec-5\"/>\n<Procedure slug=\"aws-waf-sec-6\"/>\n\n### Data protection\n\n<Procedure slug=\"aws-waf-sec-8\"/>\n<Procedure slug=\"aws-waf-sec-9\"/>\n\n### Incident response\n\n<Procedure slug=\"aws-waf-sec-10\"/>\n",
   "targetCloudProviders": [
     "aws"
   ],
@@ -182,6 +182,151 @@
         },
         {
           "control": "networking-management-ports-from-internet"
+        }
+      ]
+    },
+    {
+      "name": "SEC 6. How do you protect your compute resources?",
+      "slug": "aws-waf-sec-6",
+      "body": "Compute resources in your workload require multiple layers of defense to help protect from external and internal threats. Compute resources include EC2 instances, containers, AWS Lambda functions, database services, IoT devices, and more.",
+      "controls": [
+        {
+          "control": "aws-scan-1"
+        },
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "aws-networking-7"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "eks-ensure-private-endpoints-enabled-and-public-endpoints-disabled"
+        },
+        {
+          "control": "eks-clusters-with-public-nodes"
+        },
+        {
+          "control": "eks-restrict-access-to-control-plane-endpoint"
+        },
+        {
+          "control": "aws-networking-8"
+        },
+        {
+          "control": "aws-rds-1"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "databases-with-outdated-engine-versions"
+        },
+        {
+          "control": "aws-1-4-0-storage-3-1"
+        },
+        {
+          "control": "aws-ec2-1"
+        }
+      ]
+    },
+    {
+      "slug": "aws-waf-sec-8",
+      "name": "SEC 8. How do you protect your data at rest?",
+      "body": "Protect your data at rest by implementing multiple controls, to reduce the risk of unauthorized access or mishandling.\r\n\r\n\r\n",
+      "controls": [
+        {
+          "control": "aws-1-3-0-storage-1-1"
+        },
+        {
+          "control": "aws-integration-1"
+        },
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "aws-ec2-2"
+        },
+        {
+          "control": "aws-1-4-0-storage-3-1"
+        },
+        {
+          "control": "vm-templates-with-disk-configuration-are-encrypted"
+        },
+        {
+          "control": "aws-1-3-0-storage-2-1"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "aws-integration-2"
+        },
+        {
+          "control": "sage-maker-notebooks-encrypted"
+        },
+        {
+          "control": "used-kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "kms-keys-exposed-through-vulnerable-vms"
+        },
+        {
+          "control": "kms-keys-expiring-within-the-next-14-days"
+        },
+        {
+          "control": "publicly-accessible-encryption-keys"
+        },
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "kms-keys-with-permissive-access-policy"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        }
+      ]
+    },
+    {
+      "slug": "aws-waf-sec-9",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-19"
+        },
+        {
+          "control": "aws-loadbalancing-3"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "aws-networking-6"
+        }
+      ],
+      "name": "SEC 9. How do you protect your data in transit?",
+      "body": "Protect your data in transit by implementing multiple controls to reduce the risk of unauthorized access or loss.\r\n\r\n"
+    },
+    {
+      "name": "SEC 10. How do you anticipate, respond to, and recover from incidents?",
+      "slug": "aws-waf-sec-10",
+      "body": "Even with mature preventive and detective controls, your organization should implement mechanisms to respond to and mitigate the potential impact of security incidents. Your preparation strongly affects the ability of your teams to operate effectively during an incident, to isolate, contain and perform forensics on issues, and to restore operations to a known good state. Putting in place the tools and access ahead of a security incident, then routinely practicing incident response through game days, helps ensure that you can recover while minimizing business disruption.\r\n\r\n",
+      "controls": [
+        {
+          "control": "aws-iam-16"
         }
       ]
     }
