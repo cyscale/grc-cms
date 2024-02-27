@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "aws-well-architected-framework-1",
   "version": "1.0",
-  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Operational Excellence\n\n### Prepare\n\n<Procedure slug=\"aws-waf-ops-4\"/>\n<Procedure slug=\"aws-waf-ops-5\"/>\n\n## Security\n\n### Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n### Identity and access management\n\n<Procedure slug=\"aws-waf-sec-2\"/>\n<Procedure slug=\"aws-waf-sec-3\"/>\n\n### Detection\n\n<Procedure slug=\"aws-waf-sec-4\"/>\n\n### Infrastructure protection\n\n<Procedure slug=\"aws-waf-sec-5\"/>\n<Procedure slug=\"aws-waf-sec-6\"/>\n\n### Data protection\n\n<Procedure slug=\"aws-waf-sec-8\"/>\n<Procedure slug=\"aws-waf-sec-9\"/>\n\n### Incident response\n\n<Procedure slug=\"aws-waf-sec-10\"/>\n\n## Reliability\n\n### Foundations\n\n<Procedure slug=\"aws-waf-rel-2\"/>\n",
+  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Operational Excellence\n\n### Prepare\n\n<Procedure slug=\"aws-waf-ops-4\"/>\n<Procedure slug=\"aws-waf-ops-5\"/>\n\n## Security\n\n### Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n### Identity and access management\n\n<Procedure slug=\"aws-waf-sec-2\"/>\n<Procedure slug=\"aws-waf-sec-3\"/>\n\n### Detection\n\n<Procedure slug=\"aws-waf-sec-4\"/>\n\n### Infrastructure protection\n\n<Procedure slug=\"aws-waf-sec-5\"/>\n<Procedure slug=\"aws-waf-sec-6\"/>\n\n### Data protection\n\n<Procedure slug=\"aws-waf-sec-8\"/>\n<Procedure slug=\"aws-waf-sec-9\"/>\n\n### Incident response\n\n<Procedure slug=\"aws-waf-sec-10\"/>\n\n## Reliability\n\n### Foundations\n\n<Procedure slug=\"aws-waf-rel-2\"/>\n<Procedure slug=\"aws-waf-rel-6\"/>\n",
   "targetCloudProviders": [
     "aws"
   ],
@@ -383,6 +383,82 @@
           "control": "aws-1-3-0-networking-1"
         }
       ]
+    },
+    {
+      "name": "REL 6:  How do you monitor workload resources?",
+      "body": "Logs and metrics are powerful tools to gain insight into the health of your workload. You can configure your workload to monitor logs and metrics and send notifications when thresholds are crossed or significant events occur. Monitoring allows your workload to recognize when low-performance thresholds are crossed or failures occur, so it can recover automatically in response.\r\n",
+      "controls": [
+        {
+          "control": "aws-loadbalancing-1"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-logging-6"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "aws-1-3-0-monitoring-15"
+        },
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "aws-monitoring-2"
+        },
+        {
+          "control": "aws-monitoring-3"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-monitoring-6"
+        },
+        {
+          "control": "aws-monitoring-7"
+        },
+        {
+          "control": "aws-monitoring-8"
+        },
+        {
+          "control": "aws-monitoring-9"
+        },
+        {
+          "control": "aws-monitoring-10"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "aws-monitoring-12"
+        },
+        {
+          "control": "aws-monitoring-13"
+        },
+        {
+          "control": "aws-monitoring-14"
+        },
+        {
+          "control": "aws-monitoring-16"
+        },
+        {
+          "control": "aws-1-3-0-logging-10"
+        },
+        {
+          "control": "aws-1-3-0-logging-11"
+        }
+      ],
+      "slug": "aws-waf-rel-6"
     }
   ]
 }
