@@ -1,0 +1,5 @@
+{
+  "name": "Entra users without mfa",
+  "slug": "entra-users-without-mfa",
+  "query": "{\n  users(where: { mfaActive: false }) {\n    ...AssetFragment\n  }\n}"
+}
