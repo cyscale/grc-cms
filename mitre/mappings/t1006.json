@@ -17,8 +17,8 @@
   "propagators": [
     "IAMGroup",
     "IAMPolicy",
-    "IAMPolicyStatement",
-    "IAMServiceAccount"
+    "IAMServiceAccount",
+    "Group"
   ],
   "mid": "T1006"
 }
