@@ -1,0 +1,5 @@
+{
+  "query": "{\n  connectors(where: { cloudProvider: \"entra\", securityDefaultsEnabled: false }) {\n    ...AssetFragment\n  }\n}\n",
+  "name": "Entra connectors with security defaults disabled",
+  "slug": "entra-connectors-with-security-defaults-disabled"
+}
