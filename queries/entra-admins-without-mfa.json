@@ -1,0 +1,5 @@
+{
+  "name": "Entra admins without MFA",
+  "slug": "entra-admins-without-mfa",
+  "query": "{\n  users(where: { cloudProvider: \"entra\", isAdmin: true, mfaActive: false }) {\n    ...AssetFragment\n  }\n}\n"
+}
