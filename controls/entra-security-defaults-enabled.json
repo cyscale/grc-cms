@@ -1,0 +1,11 @@
+{
+  "body": "Security defaults in Microsoft Entra ID make it easier to be secure and help protect your \r\norganization. Security defaults contain preconfigured security settings for common \r\nattacks. \r\nSecurity defaults is available to everyone. The goal is to ensure that all organizations \r\nhave a basic level of security enabled at no extra cost. You may turn on security \r\ndefaults in the Azure portal. \n\n**Rationale**\n\n\r\nSecurity defaults provide secure default settings that we manage on behalf of \r\norganizations to keep customers safe until they are ready to manage their own identity \r\nsecurity settings. \r\nFor example, doing the following: \r\n• Requiring all users and admins to register for MFA. \r\n• Challenging users with MFA - when necessary, based on factors such as \r\nlocation, device, role, and task. \r\n• Disabling authentication from legacy authentication clients, which can’t do MFA.\n\n*﻿*Impact**\n\nThis recommendation should be implemented initially and then may be overridden by \r\nother service/product specific CIS Benchmarks. Administrators should also be aware \r\nthat certain configurations in Microsoft Entra ID may impact other Microsoft services \r\nsuch as Microsoft 365.",
+  "name": "Ensure Security Defaults is enabled on Microsoft Entra ID",
+  "slug": "entra-security-defaults-enabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [],
+  "remediationDescription": "From Azure Portal \n\n\r\nTo enable security defaults in your directory: \r\n1. From Azure Home select the Portal Menu. \r\n2. Browse to Microsoft Entra ID > Properties \r\n3. Select Manage security defaults \r\n4. Set the Enable security defaults to Enabled \r\n5. Select Save ",
+  "isEnabled": true,
+  "severity": 2
+}
