@@ -4,11 +4,52 @@
   "isStandard": true,
   "slug": "aws-well-architected-framework-1",
   "version": "1.0",
-  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Security\n\n### Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n### Identity and access management\n\n<Procedure slug=\"aws-waf-sec-2\"/>\n<Procedure slug=\"aws-waf-sec-3\"/>\n\n### Detection\n\n<Procedure slug=\"aws-waf-sec-4\"/>\n\n### Infrastructure protection\n\n<Procedure slug=\"aws-waf-sec-5\"/>\n<Procedure slug=\"aws-waf-sec-6\"/>\n\n### Data protection\n\n<Procedure slug=\"aws-waf-sec-8\"/>\n<Procedure slug=\"aws-waf-sec-9\"/>\n\n### Incident response\n\n<Procedure slug=\"aws-waf-sec-10\"/>\n",
+  "body": "The AWS Well-Architected Framework helps you understand the pros and cons of decisions you make while building systems on AWS. By using the Framework you will learn architectural best practices for designing and operating reliable, secure, efficient, cost-effective, and sustainable systems in the cloud.\nThis framework is intended for those in technology roles, such as chief technology officers (CTOs), architects, developers, and operations team members. It describes AWS best practices and strategies to use when designing and operating a cloud workload, and provides links to further implementation details and architectural patterns. \n\nT﻿he 6 pillars of the Well-Architected Framework are:\n• Operational Excellence\n• Security\n• Reliability\n• Performance Efficiency\n• Cost Optimization\n• Sustainability\n\n#﻿ Best practices\n\n## Operational Excellence\n\n### Prepare\n\n<Procedure slug=\"aws-waf-ops-4\"/>\n<Procedure slug=\"aws-waf-ops-5\"/>\n\n## Security\n\n### Security foundations\n\n<Procedure slug=\"aws-waf-sec-1\"/>\n\n### Identity and access management\n\n<Procedure slug=\"aws-waf-sec-2\"/>\n<Procedure slug=\"aws-waf-sec-3\"/>\n\n### Detection\n\n<Procedure slug=\"aws-waf-sec-4\"/>\n\n### Infrastructure protection\n\n<Procedure slug=\"aws-waf-sec-5\"/>\n<Procedure slug=\"aws-waf-sec-6\"/>\n\n### Data protection\n\n<Procedure slug=\"aws-waf-sec-8\"/>\n<Procedure slug=\"aws-waf-sec-9\"/>\n\n### Incident response\n\n<Procedure slug=\"aws-waf-sec-10\"/>\n\n## Reliability\n\n### Foundations\n\n<Procedure slug=\"aws-waf-rel-2\"/>\n",
   "targetCloudProviders": [
     "aws"
   ],
   "procedures": [
+    {
+      "slug": "aws-waf-ops-4",
+      "name": "OPS 4. How do you implement observability in your workload?",
+      "body": "Implement observability in your workload so that you can understand its state and make data-driven decisions based on business requirements.\r\n\r\n",
+      "controls": [
+        {
+          "control": "aws-logging-"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "aws-loadbalancing-1"
+        }
+      ]
+    },
+    {
+      "slug": "aws-waf-ops-5",
+      "name": "OPS 5. How do you reduce defects, ease remediation, and improve flow into production?",
+      "body": "Adopt approaches that improve flow of changes into production, that activate refactoring, fast feedback on quality, and bug fixing. These accelerate beneficial changes entering production, limit issues deployed, and achieve rapid identification and remediation of issues introduced through deployment activities.\r\n\r\n",
+      "controls": [
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "aws-ec2-1"
+        },
+        {
+          "control": "ecr-ensure-scan-on-push-is-enabled"
+        }
+      ]
+    },
     {
       "name": "SEC 1. How do you securely operate your workload?",
       "slug": "aws-waf-sec-1",
@@ -327,6 +368,19 @@
       "controls": [
         {
           "control": "aws-iam-16"
+        }
+      ]
+    },
+    {
+      "slug": "aws-waf-rel-2",
+      "name": "REL 2. How do you plan your network topology?",
+      "body": "Workloads often exist in multiple environments. These include multiple cloud environments (both publicly accessible and private) and possibly your existing data center infrastructure. Plans must include network considerations such as intra- and intersystem connectivity, public IP address management, private IP address management, and domain name resolution.\r\n\r\n",
+      "controls": [
+        {
+          "control": "aws-ecs-2-service-assign-public-ip-disabled"
+        },
+        {
+          "control": "aws-1-3-0-networking-1"
         }
       ]
     }
