@@ -48,9 +48,21 @@
         "IAMUser"
       ],
       "query": "cis-alibaba-1-0-0-iam-4-multi-factor-authentication-is-enabled-for-all-ram-users-that-have-a-console-password"
+    },
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "entra-users-without-mfa"
     }
   ],
   "remediationDescription": "Make sure these users have MFA activated. Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\n[Enabling MFA devices for users in AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable.html)\n\n#### Azure\n\n[Common Conditional Access policy: Require MFA for administrators](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-conditional-access-policy-admin-mfa#create-a-conditional-access-policy)\n\n#### Alibaba\n\n[Enable an MFA device for an Alibaba Cloud account](https://www.alibabacloud.com/help/en/resource-access-management/latest/enable-an-mfa-device-for-an-alibaba-cloud-account)\n\n#### Google Cloud\n\n[Google Workspace Help - Deploy 2-Step Verification](https://apps.google.com/supportwidget/articlehome?hl=en&article_url=https%3A%2F%2Fsupport.google.com%2Fa%2Fanswer%2F9176657%3Fhl%3Den&assistant_id=generic-unu&product_context=9176657&product_name=UnuFlow&trigger_context=a)\n\n",
+  "isEnabled": true,
   "description": "Users Without MFA",
   "severity": 2
 }
