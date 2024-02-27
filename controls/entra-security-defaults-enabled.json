@@ -4,7 +4,19 @@
   "slug": "entra-security-defaults-enabled",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "subjects": [
+        "Connector"
+      ],
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "query": "entra-connectors-with-security-defaults-disabled"
+    }
+  ],
   "remediationDescription": "From Azure Portal \n\n\r\nTo enable security defaults in your directory: \r\n1. From Azure Home select the Portal Menu. \r\n2. Browse to Microsoft Entra ID > Properties \r\n3. Select Manage security defaults \r\n4. Set the Enable security defaults to Enabled \r\n5. Select Save ",
   "isEnabled": true,
   "severity": 2
