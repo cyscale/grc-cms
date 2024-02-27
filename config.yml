@@ -100,6 +100,7 @@ collections:
               - { label: 'Okta', value: 'okta' }
               - { label: 'Google Workspace', value: 'googleworkspace' }
               - { label: 'Kubernetes', value: 'k8s'}
+              - { label: 'Entra', value: 'entra'}
           - label: 'Comparator'
             name: 'comparator'
             widget: 'select'
@@ -373,6 +374,7 @@ collections:
           - { label: 'Okta', value: 'okta' }
           - { label: 'Google Workspace', value: 'googleworkspace' }
           - { label: 'Kubernetes', value: 'k8s'}
+          - { label: 'Entra', value: 'entra'}
       - label: 'Procedures'
         name: 'procedures'
         widget: 'list'
