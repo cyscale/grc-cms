@@ -1,7 +1,9 @@
 {
   "display_name": "Access to Datastores",
   "controls": [
-    "datastores-accessible-by-users-without-mfa"
+    "datastores-accessible-by-users-without-mfa",
+    "admins-with-enabled-mfa",
+    "users-without-mfa"
   ],
   "assets": [
     "Bucket",
@@ -12,7 +14,14 @@
     "BigTable",
     "CloudSQLInstance",
     "CloudSpanner",
-    "DynamoDBTable"
+    "DynamoDBTable",
+    "StorageAccount",
+    "CosmosDBAccount",
+    "MySQLFlexibleServer",
+    "MySQLServer",
+    "PostgreSQLFlexibleServer",
+    "PostgreSQLServer",
+    "SQLDatabase"
   ],
   "propagators": [
     "IAMGroup",
