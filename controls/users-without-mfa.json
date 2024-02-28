@@ -1,9 +1,9 @@
 {
   "body": "Multi-factor authentication (MFA) is an important tool in protecting corporate resources. MFA, also called 2-step verification (2SV), requires users to verify their identity through something they know (such as a password) plus something they have (such as a physical key or access code).\n",
-  "name": "Ensure Users With Access to Datastores Have MFA/2SV",
-  "slug": "datastores-accessible-by-users-without-mfa",
-  "isInsight": true,
-  "alertForSecondaryOnly": true,
+  "name": "Users Should Have Multi-Factor Authentication (MFA/2SV)",
+  "slug": "users-without-mfa",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": ["aws"],
@@ -43,6 +43,6 @@
   ],
   "remediationDescription": "Make sure these users have MFA activated. Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\n[Enabling MFA devices for users in AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable.html)\n\n#### Azure\n\n[Common Conditional Access policy: Require MFA for administrators](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-conditional-access-policy-admin-mfa#create-a-conditional-access-policy)\n\n#### Alibaba\n\n[Enable an MFA device for an Alibaba Cloud account](https://www.alibabacloud.com/help/en/resource-access-management/latest/enable-an-mfa-device-for-an-alibaba-cloud-account)\n\n#### Google Cloud\n\n[Google Workspace Help - Deploy 2-Step Verification](https://apps.google.com/supportwidget/articlehome?hl=en&article_url=https%3A%2F%2Fsupport.google.com%2Fa%2Fanswer%2F9176657%3Fhl%3Den&assistant_id=generic-unu&product_context=9176657&product_name=UnuFlow&trigger_context=a)\n\n",
   "isEnabled": true,
-  "description": "Users Without MFA with access to datastores",
+  "description": "Users Without MFA",
   "severity": 2
 }
