@@ -68,7 +68,7 @@
       "body": "The <Var keyName=\"companyName\"/> Security team adheres to a formal access control procedure that addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance.\n\nAs \"*Complexity is the enemy of security*\", authorization must be configured using attribute-based access control (ABAC) or role-based access control (RBAC) mechanisms.\n\n1. Access to <Var keyName=\"companyName\"/> systems is made as part of the user onboarding process, initiated by HR:\n     - A new ticket is created in the onboarding project\n     - The HR Team must attach the **New Joiner Request Form** which states the role and additional systems the new joiner must have access granted for\n     - The Security Team picks up the ticket and starts evaluating the access request\n1. The Security Team must:\n   - Configure IT and Cloud Services to enforce strong passwords based on the <Var keyName=\"companyName\"/> [Password Policy](/policies/password-management/show)\n   - Establish conditions for group membership\n   - Review accounts periodically or at least annually\n   - Provide clear classification for data and systems\n   - Not grant access to any Production environments by default\n1. Once approved, the accounts are created with temporary passwords and are forced to change their password at first login.\n1. For Local accounts on laptops/workstations, <Var keyName=\"companyName\"/> uses Azure AD and users must be added to designated groups.\n1. Online accounts are provisioned in the IdP\n1. Accounts are created by default for the following services:\n    - Productivity solution account for productivity and access to email, office suite, collaboration, etc.\n    - Developers receive VPN Access for access to the internal <Var keyName=\"companyName\"/> infrastructure\n      - CI/CD\n      - VCS\n    - Ticket management\n    - Company Wiki\n    - HR solution for paperwork, payroll, expense reporting, etc.\n    - Time management solution for timesheets and logging work\n\n    Additional access can be requested in another ticket and must include a justification.\n1. Access control for Mobile Devices is defined in the [Mobile Device Management Policy](/policies/mdm-device-management/show)\n1. Guest access to <Var keyName=\"companyName\"/> IT and Cloud Systems is permitted only if it is approved by the Security Team\n\n> For each New Joiner, there is a master checklist in the ticketing solution that must be filled out by the Security Team after access has been granted.",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "aws-iam-4"
@@ -105,9 +105,6 @@
         },
         {
           "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "aws-1-3-0-networking-2"
         },
         {
           "control": "azure-rbac-kubernetes"
@@ -165,7 +162,7 @@
       "body": "Privileged User/Accounts is a User/Account that by function, and/or by seniority, has been allocated powers within the computer system, which are significantly greater than those available to the majority of users. Such entities are either root accounts on Linux systems, administrator accounts on Windows, or highly privileged users in the Cloud Service Providers.\n\nIn defining access control for groups and individuals, <Var keyName=\"companyName\"/> adopts the concept of least privilege, allowing only authorized access for users (and processes acting on behalf of users) which is necessary to accomplish assigned tasks following organizational missions and business functions. In case Privileged Access is needed, accessing the system is done using the user identity of the employee/contractor, then switching to the privileged user.",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "aws-networking-3"

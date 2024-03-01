@@ -2590,7 +2590,7 @@
       "body": "Requires ensuring the protection of networks.",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "aws-1-3-0-iam-3"
@@ -2603,9 +2603,6 @@
         },
         {
           "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "aws-1-3-0-networking-2"
         },
         {
           "control": "aws-loadbalancing-2"
@@ -2804,7 +2801,7 @@
       "body": "Requires ensuring proper network segregation.",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "aws-iam-16"
@@ -2817,9 +2814,6 @@
         },
         {
           "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "aws-1-3-0-networking-2"
         },
         {
           "control": "aws-ec2-1"
