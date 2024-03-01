@@ -16,7 +16,6 @@
   ],
   "display_name": "External Remote Services - T1133",
   "controls": [
-    "networking-ssh-from-internet",
     "networking-management-ports-from-internet"
   ]
 }
