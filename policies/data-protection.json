@@ -104,7 +104,7 @@
       "body": "*Data at rest* is data that is not actively moving from device to device or network to network such as data stored on a hard drive, laptop, flash drive, or archived/stored in some other way. Data protection at rest aims to secure inactive data stored on any device or network. While data at rest is sometimes considered to be less vulnerable than data in transit, attackers often find data at rest a more valuable target than data in motion.\n\nAll data repositories, databases, and file systems are encrypted with AES-256 and separate keys for each storage type, and the keys must be rotated periodically. For best practices, the rotation should happen annually.",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "aws-iam-4"
@@ -195,7 +195,7 @@
           "control": "aws-1-3-0-networking-1"
         },
         {
-          "control": "aws-1-3-0-networking-2"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "gcp-logging-7"
@@ -241,7 +241,7 @@
       "body": "The default access to production environments is disabled by enforcing the principle of \"Zero Trust\" with access being permitted only by prior approval. When access is approved, temporary access is granted that allows access to production. The principle of \"Zero Trust\" is to never trust, always verify, and enforce the least-privilege approach to cybersecurity.",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "aws-iam-4"
@@ -281,9 +281,6 @@
         },
         {
           "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "aws-1-3-0-networking-2"
         },
         {
           "control": "gcp-networking-4"

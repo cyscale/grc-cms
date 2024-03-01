@@ -123,7 +123,7 @@
           "control": "gcp-rsasha1-zsk-cloud-dns"
         },
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "gcp-networking-4"

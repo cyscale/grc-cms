@@ -206,7 +206,7 @@
           "control": "azure-restrict-rdp"
         },
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "azure-restrict-udp"

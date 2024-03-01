@@ -143,7 +143,7 @@
       "body": "",
       "controls": [
         {
-          "control": "networking-ssh-from-internet"
+          "control": "management-ports-restricted-from-internet"
         },
         {
           "control": "cis-alibaba-1-0-0-networking-1"

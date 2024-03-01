@@ -222,7 +222,7 @@
           "control": "aws-networking-6"
         },
         {
-          "control": "networking-management-ports-from-internet"
+          "control": "management-ports-restricted-from-internet"
         }
       ]
     },
