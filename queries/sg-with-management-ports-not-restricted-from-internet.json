@@ -1,0 +1,5 @@
+{
+  "slug": "sg-with-management-ports-not-restricted-from-internet",
+  "name": "Security Groups with management ports not restricted from the internet",
+  "query": "{\n  securityGroups(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        action: \"Allow\"\n        AND: [\n          {\n            OR: [\n              { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n              { sources_INCLUDES: \"cidr:::/0\" }\n              { sources_INCLUDES: \"tag:Internet\" }\n              { sources: [] }\n            ]\n          }\n          { \n            OR: [\n                { sourceFromPort_LTE: 22, sourceToPort_GTE: 22 }\n                { sourceFromPort_LTE: 3389, sourceToPort_GTE: 3389 }\n              ]\n          }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
