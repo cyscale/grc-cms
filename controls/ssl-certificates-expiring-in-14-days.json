@@ -8,17 +8,50 @@
     {
       "query": "ssl-certificates-expiration-14-days",
       "cloudProviders": [
-        "aws",
-        "gcp"
+        "aws"
       ],
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
         "IAMServerCertificate"
       ]
+    },
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ACMSSLCertificate"
+      ],
+      "query": "ssl-certificates-expiration-14-days"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SSLCertificate"
+      ],
+      "query": "ssl-certificates-expiration-14-days"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ComputeSSLCertificate"
+      ],
+      "query": "ssl-certificates-expiration-14-days"
     }
   ],
-  "remediationDescription": "**AWS**\n\n\r\n\r\nACM will either renew your certificates automatically (if you are using DNS validation), or it will send you email notifications when expiration is approaching. \n\n\r\n\r\nTo renew your certificate SSL certificate manually:\r\n1. Navigate to the [EC2 Console](https://console.aws.amazon.com/ec2/)\r\n2. Under `Load Balancing`, select `Load Balancers`\r\n3. Select the load balancer you want to renew the certificate for and, on the `Listeners` tab, choose `Manage listeners`\r\n4. On the `Manage listeners` page, locate the listener to be updated, choose `Edit` under `Default SSL cert` and select it from ACM or IAM.\n\n\r\n\r\n**Google Cloud**\n\n\r\n\r\nGoogle-managed SSL certificates are renewed automatically, but you have to manually review any self-managed SSL certificates.\r\nTo renew a self-managed SSL certificate, upload your new certificate and update the target proxy so that its list of SSL certificates includes the new SSL certificate in the first position to make it the primary certificate. After the new certificate, include any existing SSL certificates that you want to retain. If you have only one certificate, you need to firstly configure a new SSL certificate.\n\n**References**\n\n\r\n\r\n1. [https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html)\n\n\r\n2. [https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html)\n\n\r\n3. [https://cloud.google.com/load-balancing/docs/ssl-certificates#config-tech](https://cloud.google.com/load-balancing/docs/ssl-certificates#config-tech)\n",
+  "remediationDescription": "## AWS\n\n\r\n\r\nACM will either renew your certificates automatically (if you are using DNS validation), or it will send you email notifications when expiration is approaching. \n\n\r\n\r\nTo renew your certificate SSL certificate manually:\r\n1. Navigate to the [EC2 Console](https://console.aws.amazon.com/ec2/)\r\n2. Under `Load Balancing`, select `Load Balancers`\r\n3. Select the load balancer you want to renew the certificate for and, on the `Listeners` tab, choose `Manage listeners`\r\n4. On the `Manage listeners` page, locate the listener to be updated, choose `Edit` under `Default SSL cert` and select it from ACM or IAM.\n\n\r\n\r\n## Google Cloud\n\n\r\n\r\nGoogle-managed SSL certificates are renewed automatically, but you have to manually review any self-managed SSL certificates.\r\nTo renew a self-managed SSL certificate, upload your new certificate and update the target proxy so that its list of SSL certificates includes the new SSL certificate in the first position to make it the primary certificate. After the new certificate, include any existing SSL certificates that you want to retain. If you have only one certificate, you need to firstly configure a new SSL certificate.\n\n**References**\n\n\r\n\r\n1. [https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html)\n\n\r\n2. [https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html)\n\n\r\n3. [https://cloud.google.com/load-balancing/docs/ssl-certificates#config-tech](https://cloud.google.com/load-balancing/docs/ssl-certificates#config-tech)\n",
   "isEnabled": true,
+  "description": "SSL Certificates expiring in the next 14 days",
   "severity": 2
 }
