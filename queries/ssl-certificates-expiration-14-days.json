@@ -1,0 +1,5 @@
+{
+  "name": "SSL Certificates Expire in 14 Days",
+  "slug": "ssl-certificates-expiration-14-days",
+  "query": "{\n  ExpiringSSLCertificates(days: 14) {\n    ...AssetFragment\n  }\n}"
+}
