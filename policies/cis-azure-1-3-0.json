@@ -287,9 +287,6 @@
           "control": "management-ports-restricted-from-internet"
         },
         {
-          "control": "azure-restrict-rdp"
-        },
-        {
           "control": "azure-sql-db-disallow-any-ip"
         },
         {

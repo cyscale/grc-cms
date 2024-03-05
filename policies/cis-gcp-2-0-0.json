@@ -126,9 +126,6 @@
           "control": "management-ports-restricted-from-internet"
         },
         {
-          "control": "gcp-networking-4"
-        },
-        {
           "control": "gcp-networking-6"
         },
         {

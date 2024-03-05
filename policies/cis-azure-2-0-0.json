@@ -203,9 +203,6 @@
       "body": "This section covers security recommendations to follow in order to set networking policies on an Azure subscription.",
       "controls": [
         {
-          "control": "azure-restrict-rdp"
-        },
-        {
           "control": "management-ports-restricted-from-internet"
         },
         {
