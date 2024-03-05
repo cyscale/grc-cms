@@ -143,9 +143,6 @@
           "control": "gcp-iam-7"
         },
         {
-          "control": "gcp-networking-4"
-        },
-        {
           "control": "gcp-vm-2"
         },
         {
@@ -281,9 +278,6 @@
         },
         {
           "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "gcp-networking-4"
         },
         {
           "control": "gcp-vm-1"

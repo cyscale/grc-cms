@@ -2626,9 +2626,6 @@
           "control": "api-keys-not-rotated-90-days"
         },
         {
-          "control": "gcp-networking-4"
-        },
-        {
           "control": "gcp-networking-6"
         },
         {
@@ -2840,9 +2837,6 @@
           "control": "aws-networking-10"
         },
         {
-          "control": "gcp-networking-4"
-        },
-        {
           "control": "gcp-vm-4"
         },
         {
@@ -2892,9 +2886,6 @@
         },
         {
           "control": "azure-trusted-services-storage-account"
-        },
-        {
-          "control": "azure-restrict-rdp"
         },
         {
           "control": "azure-restrict-udp"

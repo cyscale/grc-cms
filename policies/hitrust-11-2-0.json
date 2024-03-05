@@ -97,9 +97,6 @@
       "slug": "hitrust-1-4-j-user-authentication-for-external-connections",
       "controls": [
         {
-          "control": "azure-restrict-rdp"
-        },
-        {
           "control": "management-ports-restricted-from-internet"
         },
         {
@@ -116,12 +113,6 @@
       "controls": [
         {
           "control": "management-ports-restricted-from-internet"
-        },
-        {
-          "control": "aws-networking-2"
-        },
-        {
-          "control": "gcp-networking-4"
         },
         {
           "control": "gcp-vm-4"
@@ -191,9 +182,6 @@
         },
         {
           "control": "aws-1-3-0-networking-1"
-        },
-        {
-          "control": "aws-networking-2"
         },
         {
           "control": "management-ports-restricted-from-internet"
@@ -676,9 +664,6 @@
           "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
         },
         {
-          "control": "aws-networking-2"
-        },
-        {
           "control": "aws-networking-7"
         },
         {
@@ -698,9 +683,6 @@
         },
         {
           "control": "gcp-networking-1"
-        },
-        {
-          "control": "gcp-networking-4"
         },
         {
           "control": "gcp-networking-7"
@@ -749,9 +731,6 @@
         },
         {
           "control": "aws-ec2-1"
-        },
-        {
-          "control": "azure-restrict-rdp"
         }
       ]
     },

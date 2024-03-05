@@ -116,9 +116,6 @@
           "control": "azure-no-custom-admin-role"
         },
         {
-          "control": "gcp-networking-4"
-        },
-        {
           "control": "gcp-vm-1"
         },
         {
@@ -205,9 +202,6 @@
         },
         {
           "control": "gcp.kubernetes.18"
-        },
-        {
-          "control": "gcp-networking-4"
         },
         {
           "control": "gcp-project-lvl-service-account-roles"

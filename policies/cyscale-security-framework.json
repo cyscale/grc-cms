@@ -563,13 +563,7 @@
           "control": "gcp-networking-2"
         },
         {
-          "control": "gcp-networking-4"
-        },
-        {
           "control": "gcp-networking-6"
-        },
-        {
-          "control": "aws-networking-2"
         },
         {
           "control": "aws-networking-3"
@@ -588,9 +582,6 @@
         },
         {
           "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
-        },
-        {
-          "control": "azure-restrict-rdp"
         },
         {
           "control": "azure-sql-db-disallow-any-ip"

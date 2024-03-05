@@ -66,9 +66,6 @@
           "control": "aws-logging-5"
         },
         {
-          "control": "aws-networking-2"
-        },
-        {
           "control": "aws-networking-3"
         },
         {
@@ -115,9 +112,6 @@
         },
         {
           "control": "azure-key-vault-logging-enabled"
-        },
-        {
-          "control": "azure-restrict-rdp"
         },
         {
           "control": "azure-sql-db-disallow-any-ip"
@@ -303,22 +297,13 @@
           "control": "aws-logging-5"
         },
         {
-          "control": "aws-networking-2"
-        },
-        {
           "control": "aws-networking-3"
         },
         {
           "control": "aws-1-3-0-networking-1"
         },
         {
-          "control": "azure-restrict-rdp"
-        },
-        {
           "control": "azure-sql-db-disallow-any-ip"
-        },
-        {
-          "control": "gcp-networking-4"
         },
         {
           "control": "gcp-vm-5"
