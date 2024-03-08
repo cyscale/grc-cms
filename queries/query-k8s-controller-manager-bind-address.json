@@ -1,5 +1,0 @@
-{
-  "name": "Ensure that the --bind-address argument is set to 127.0.0.1 (Controller Manager)",
-  "slug": "query-k8s-controller-manager-bind-address",
-  "query": "{\n  K8sControllerManager3 {\n    ...AssetFragment\n  }\n}"
-}
