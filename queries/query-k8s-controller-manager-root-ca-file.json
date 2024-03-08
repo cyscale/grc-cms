@@ -1,5 +1,0 @@
-{
-  "name": "Ensure that the --root-ca-file argument is set as appropriate (Controller Manager)",
-  "slug": "query-k8s-controller-manager-root-ca-file",
-  "query": "{\n  K8sControllerManager1 {\n    ...AssetFragment\n  }\n}"
-}

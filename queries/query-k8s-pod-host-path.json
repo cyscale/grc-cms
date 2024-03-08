@@ -1,5 +1,0 @@
-{
-  "name": "Minimize the admission of HostPath volumes (Pod)",
-  "slug": "query-k8s-pod-host-path",
-  "query": "{\n  K8sPod3 {\n    ...AssetFragment\n  }\n}"
-}

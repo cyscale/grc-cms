@@ -1,5 +1,0 @@
-{
-  "name": "Limit use of the Bind, Impersonate and Escalate permissions in the Kubernetes cluster",
-  "slug": "query-k8s-rbac-bind-impersonate-escalate",
-  "query": "{\n  K8sRBAC2 {\n    ...AssetFragment\n  }\n}"
-}

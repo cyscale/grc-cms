@@ -1,5 +1,0 @@
-{
-  "name": "Verify that the RotateKubeletServerCertificate argument is set to true",
-  "slug": "query-k8s-kubelet-rotate-kubelet-server-certificate",
-  "query": "{\n  K8sKubelet3 {\n    ...AssetFragment\n  }\n}"
-}

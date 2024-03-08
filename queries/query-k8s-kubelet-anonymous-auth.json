@@ -1,5 +1,0 @@
-{
-  "name": "Ensure that the --anonymous-auth argument is set to false (Kubelet)",
-  "slug": "query-k8s-kubelet-anonymous-auth",
-  "query": "{\n  K8sKubelet1 {\n    ...AssetFragment\n  }\n}"
-}

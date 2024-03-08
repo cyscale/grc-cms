@@ -12,72 +12,26 @@
     {
       "slug": "k8s-1-2-api-server",
       "name": "1.2 API Server",
-      "controls": [
-        {
-          "control": "k8s-anonymous-auth-argument"
-        },
-        {
-          "control": "k8s-token-auth-file-parameter"
-        },
-        {
-          "control": "k8s-encryption-provider-config-argument"
-        },
-        {
-          "control": "k8s-strong-crypto-ciphers-apiserver"
-        },
-        {
-          "control": "k8s-service-account-lookup-argument"
-        },
-        {
-          "control": "k8s-service-account-key-file-argument"
-        }
-      ],
+      "controls": [],
       "body": "This section contains recommendations relating to API server configuration flags."
     },
     {
       "body": "This section contains recommendations relating to Controller Manager configuration flags.",
       "slug": "k8s-1-3-controller-manager",
       "name": "1.3 Controller Manager",
-      "controls": [
-        {
-          "control": "k8s-root-ca-file-argument"
-        },
-        {
-          "control": "k8s-rotatekubeletservercertificate-argument"
-        },
-        {
-          "control": "k8s-bind-address-controller-manager-argument"
-        },
-        {
-          "control": "k8s-user-service-account-credentials-argument"
-        }
-      ]
+      "controls": []
     },
     {
       "slug": "k8s-1-4-scheduler",
       "name": "1.4 Scheduler",
       "body": "This section contains recommendations relating to Scheduler configuration flags.",
-      "controls": [
-        {
-          "control": "k8s-bind-address-scheduler-argument"
-        }
-      ]
+      "controls": []
     },
     {
       "slug": "k8s-4-1-kubelet",
       "name": "4.2 Kubelet",
       "body": "This section contains recommendations for kubelet configuration.\n\nKubelet settings may be configured using arguments on the running kubelet executable, or they may be taken from a Kubelet config file. If both are specified, the executable argument takes precedence.\n\nTo find the Kubelet config file, run the following command:\n\n`ps -ef | grep kubelet | grep config`\n\nIf the `--config` argument is present, this gives the location of the Kubelet config file. This config file could be in JSON or YAML format depending on your distribution.",
-      "controls": [
-        {
-          "control": "k8s-kubelet-anonymous-auth-argument"
-        },
-        {
-          "control": "k8s-kubelet-rotate-certificate-false"
-        },
-        {
-          "control": "k8s-kubelet-rotatekubeletservercertificate-argument"
-        }
-      ]
+      "controls": []
     },
     {
       "slug": "k8s-5-1-rbac-service-accounts",
@@ -125,9 +79,6 @@
         },
         {
           "control": "k8s-pod-admission-allow-privilege-escalation"
-        },
-        {
-          "control": "k8s-pod-admission-host-path"
         },
         {
           "control": "k8s-pod-admission-host-ports"

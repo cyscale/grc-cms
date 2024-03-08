@@ -1,5 +1,0 @@
-{
-  "name": "Ensure that the --anonymous-auth argument is set to false (API Server)",
-  "slug": "query-k8s-api-server-anonymous-auth",
-  "query": "{\n  K8sApiServer1 {\n    ...AssetFragment\n  }\n}"
-}
