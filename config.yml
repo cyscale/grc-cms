@@ -83,6 +83,11 @@ collections:
         widget: 'boolean'
         default: false
         hint: 'This control will not be listed on the controls page and will not contribute to security and compliance scores. It will be used mostly for filtering.'
+      - label: 'Replacement for'
+        name: 'replacementFor'
+        widget: 'list'
+        allow_add: true
+        hint: 'Comma-separated control slugs'
       - label: 'Rules'
         name: 'rules'
         widget: 'list'
