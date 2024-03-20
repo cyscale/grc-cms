@@ -16,5 +16,6 @@
   ],
   "display_name": "External Remote Services - T1133",
   "controls": [
+    "management-ports-restricted-from-internet"
   ]
 }
