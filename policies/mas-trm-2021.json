@@ -584,9 +584,6 @@
           "control": "cis-alibaba-1-0-0-vm-2"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
-        },
-        {
           "control": "cis-alibaba-1-0-0-logging-2"
         },
         {
@@ -694,9 +691,6 @@
         },
         {
           "control": "gcp-networking-12"
-        },
-        {
-          "control": "cis-alibaba-1-0-0-storage-1"
         },
         {
           "control": "cis-alibaba-1-0-0-rds-2"

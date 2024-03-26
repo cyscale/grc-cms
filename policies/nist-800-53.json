@@ -261,9 +261,6 @@
           "control": "object-containers-with-permissive-access-policy"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
-        },
-        {
           "control": "cis-alibaba-1-0-0-logging-2"
         },
         {

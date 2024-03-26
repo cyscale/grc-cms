@@ -310,9 +310,6 @@
           "control": "cis-alibaba-1-0-0-logging-21"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
-        },
-        {
           "control": "cis-alibaba-1-0-0-storage-5"
         },
         {
@@ -513,9 +510,6 @@
         },
         {
           "control": "cis-alibaba-1-0-0-logging-20"
-        },
-        {
-          "control": "cis-alibaba-1-0-0-storage-1"
         },
         {
           "control": "cis-alibaba-1-0-0-storage-5"
@@ -971,9 +965,6 @@
           "control": "cis-alibaba-1-0-0-logging-20"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
-        },
-        {
           "control": "cis-alibaba-1-0-0-storage-5"
         },
         {
@@ -1236,9 +1227,6 @@
         },
         {
           "control": "cis-alibaba-1-0-0-logging-20"
-        },
-        {
-          "control": "cis-alibaba-1-0-0-storage-1"
         },
         {
           "control": "cis-alibaba-1-0-0-storage-5"
@@ -2143,9 +2131,6 @@
           "control": "cis-alibaba-1-0-0-networking-3"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
-        },
-        {
           "control": "cis-alibaba-1-0-0-storage-3"
         },
         {
@@ -2672,9 +2657,6 @@
         },
         {
           "control": "cis-alibaba-1-0-0-networking-5"
-        },
-        {
-          "control": "cis-alibaba-1-0-0-storage-1"
         },
         {
           "control": "cis-alibaba-1-0-0-storage-2"

@@ -901,7 +901,7 @@
           "control": "azure-1-3-0-storage-11"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
+          "control": "object-containers-with-public-access"
         },
         {
           "control": "cis-alibaba-1-0-0-storage-2"

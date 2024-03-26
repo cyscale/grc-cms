@@ -190,7 +190,7 @@
       "body": "",
       "controls": [
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
+          "control": "object-containers-with-public-access"
         },
         {
           "control": "cis-alibaba-1-0-0-storage-2"

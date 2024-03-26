@@ -638,9 +638,6 @@
           "control": "publicly-accessible-queues"
         },
         {
-          "control": "cis-alibaba-1-0-0-storage-1"
-        },
-        {
           "control": "cis-alibaba-1-0-0-logging-2"
         },
         {
