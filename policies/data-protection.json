@@ -283,7 +283,7 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
+          "control": "object-containers-with-public-access"
         },
         {
           "control": "gcp-kubernetes-16"

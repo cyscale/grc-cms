@@ -50,9 +50,6 @@
           "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "publicly-accessible-vms"
         },
         {
@@ -62,13 +59,7 @@
           "control": "aws-networking-8"
         },
         {
-          "control": "publicly-writable-object-containers"
-        },
-        {
           "control": "object-containers-with-public-access"
-        },
-        {
-          "control": "publicly-readable-object-containers"
         },
         {
           "control": "publicly-accessible-disks"
@@ -268,9 +259,6 @@
           "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "publicly-accessible-functions"
         },
         {
@@ -284,12 +272,6 @@
         },
         {
           "control": "object-containers-with-public-access"
-        },
-        {
-          "control": "publicly-writable-object-containers"
-        },
-        {
-          "control": "publicly-readable-object-containers"
         },
         {
           "control": "publicly-accessible-databases"

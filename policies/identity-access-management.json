@@ -119,9 +119,6 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-kubernetes-16"
         },
         {

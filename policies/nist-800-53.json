@@ -78,9 +78,6 @@
           "control": "gcp-vm-1"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-storage-2"
         },
         {
@@ -244,12 +241,6 @@
         },
         {
           "control": "object-containers-with-public-access"
-        },
-        {
-          "control": "publicly-readable-object-containers"
-        },
-        {
-          "control": "publicly-writable-object-containers"
         },
         {
           "control": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
@@ -1170,9 +1161,6 @@
         },
         {
           "control": "gcp-vm-6"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-storage-2"

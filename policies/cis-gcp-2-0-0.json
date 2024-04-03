@@ -180,7 +180,7 @@
           "control": "gcp-buckets-uniform-level-access"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
+          "control": "object-containers-with-public-access"
         }
       ]
     },
@@ -269,7 +269,5 @@
       ]
     }
   ],
-  "targetCloudProviders": [
-    "gcp"
-  ]
+  "targetCloudProviders": ["gcp"]
 }

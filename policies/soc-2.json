@@ -180,7 +180,7 @@
           "control": "gcp-vms-public-ip-addresses"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
+          "control": "object-containers-with-public-access"
         },
         {
           "control": "gcp-buckets-uniform-level-access"

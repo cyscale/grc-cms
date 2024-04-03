@@ -91,7 +91,7 @@
           "control": "gcp-sql-4"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
+          "control": "object-containers-with-public-access"
         },
         {
           "control": "gcp-storage-2"

@@ -265,9 +265,6 @@
           "control": "gcp-vm-3"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-project-asset-inventory"
         },
         {
@@ -471,9 +468,6 @@
         },
         {
           "control": "gcp-vm-3"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-6"
@@ -926,9 +920,6 @@
           "control": "gcp-vm-3"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "cis-alibaba-1-0-0-iam-6"
         },
         {
@@ -1188,9 +1179,6 @@
         },
         {
           "control": "gcp-vm-3"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-6"
@@ -2050,9 +2038,6 @@
           "control": "gcp-vm-3"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-1-1-0-sql-2-1"
         },
         {
@@ -2627,9 +2612,6 @@
         },
         {
           "control": "gcp-app-engine-enforce-https"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-db-require-incoming-conn-ssl"

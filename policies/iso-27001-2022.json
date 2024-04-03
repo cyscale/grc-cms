@@ -113,9 +113,6 @@
           "control": "gcp-vm-3"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-project-asset-inventory"
         },
         {
@@ -232,9 +229,6 @@
         },
         {
           "control": "gcp-vm-3"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-6"
@@ -469,12 +463,6 @@
           "control": "object-containers-with-public-access"
         },
         {
-          "control": "publicly-readable-object-containers"
-        },
-        {
-          "control": "publicly-writable-object-containers"
-        },
-        {
           "control": "publicly-accessible-queues"
         },
         {
@@ -542,9 +530,6 @@
         },
         {
           "control": "gcp-bigquery-publicly-accessible"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "cis-alibaba-1-0-0-rds-2"
@@ -660,9 +645,6 @@
         },
         {
           "control": "gcp-vm-3"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-6"
@@ -815,9 +797,6 @@
         },
         {
           "control": "gcp-vm-3"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-6"
@@ -1367,9 +1346,6 @@
           "control": "gcp-vm-3"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-1-1-0-sql-2-1"
         },
         {
@@ -1697,9 +1673,6 @@
         },
         {
           "control": "gcp-vms-public-ip-addresses"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-db-require-incoming-conn-ssl"

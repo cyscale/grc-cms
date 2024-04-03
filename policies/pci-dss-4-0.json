@@ -72,9 +72,6 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "gcp-bucket-publicly-accessible"
-        },
-        {
           "control": "gcp-instances-no-default-service-account"
         },
         {
@@ -388,9 +385,6 @@
         },
         {
           "control": "gcp-bigquery-publicly-accessible"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "object-containers-with-public-access"

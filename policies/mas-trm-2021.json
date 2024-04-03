@@ -434,12 +434,6 @@
           "control": "object-containers-with-permissive-access-policy"
         },
         {
-          "control": "publicly-readable-object-containers"
-        },
-        {
-          "control": "publicly-writable-object-containers"
-        },
-        {
           "control": "publicly-accessible-queues"
         },
         {
@@ -513,9 +507,6 @@
         },
         {
           "control": "gcp-cross-db-ownership-chaining-db-flag-sqlserver"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-vm-5"
@@ -643,9 +634,6 @@
         },
         {
           "control": "gcp-vms-public-ip-addresses"
-        },
-        {
-          "control": "gcp-bucket-publicly-accessible"
         },
         {
           "control": "gcp-db-require-incoming-conn-ssl"
