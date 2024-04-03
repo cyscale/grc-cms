@@ -693,9 +693,6 @@
           "control": "azure-https-transfer-enabled"
         },
         {
-          "control": "azure-1-3-0-storage-5"
-        },
-        {
           "control": "azure-deny-access-storage-account"
         },
         {

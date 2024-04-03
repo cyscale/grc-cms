@@ -246,9 +246,6 @@
           "control": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated"
         },
         {
-          "control": "azure-1-3-0-storage-5"
-        },
-        {
           "control": "object-containers-with-permissive-access-policy"
         },
         {
