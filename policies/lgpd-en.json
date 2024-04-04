@@ -34,7 +34,7 @@
           "control": "admins-with-enabled-mfa"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-iam-5"
@@ -79,9 +79,6 @@
           "control": "aws-1-3-0-iam-18"
         },
         {
-          "control": "gcp-mfa"
-        },
-        {
           "control": "gcp-project-lvl-service-account-roles"
         },
         {
@@ -91,19 +88,13 @@
           "control": "gcp-separation-of-duties-service-account"
         },
         {
-          "control": "datastores-accessible-by-users-without-mfa"
-        },
-        {
           "control": "okta-strong-factors"
         },
         {
           "control": "gcp-iam-8"
         },
         {
-          "control": " okta-app-group-assignments"
-        },
-        {
-          "control": "okta-mfa"
+          "control": "okta-app-group-assignments"
         },
         {
           "control": "gcp-sql-4"

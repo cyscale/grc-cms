@@ -14,7 +14,7 @@
           "control": "gcp-iam-1"
         },
         {
-          "control": "gcp-mfa"
+          "control": "users-without-mfa"
         },
         {
           "control": "gcp-iam-2"

@@ -87,7 +87,7 @@
           "control": "aws-iam-11"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-monitoring-2"

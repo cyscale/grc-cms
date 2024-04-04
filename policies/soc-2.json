@@ -18,7 +18,7 @@
           "control": "aws-1-3-0-iam-7"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-1-4-0-iam-12"
@@ -130,9 +130,6 @@
         },
         {
           "control": "okta-app-group-assignments"
-        },
-        {
-          "control": "okta-mfa"
         },
         {
           "control": "okta-strong-factors"
@@ -288,7 +285,7 @@
           "control": "management-ports-restricted-from-internet"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-iam-13"
@@ -339,9 +336,6 @@
       "slug": "soc2-cc6-7",
       "body": "The entity restricts the transmission, movement, and removal of information to authorized internal and external users and processes, and protects it during transmission, movement, or removal to meet the entity’s objectives.",
       "controls": [
-        {
-          "control": "aws-iam-2"
-        },
         {
           "control": "aws-1-4-0-iam-12"
         },

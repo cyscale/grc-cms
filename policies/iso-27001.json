@@ -1333,7 +1333,7 @@
           "control": "azure-rbac-kubernetes"
         },
         {
-          "control": "okta-mfa"
+          "control": "users-without-mfa"
         },
         {
           "control": "okta-strong-factors"
@@ -1356,9 +1356,6 @@
         },
         {
           "control": "aws-iam-10"
-        },
-        {
-          "control": "aws-iam-2"
         },
         {
           "control": "aws-1-3-0-iam-13"

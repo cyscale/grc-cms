@@ -21,7 +21,7 @@
           "control": "cis-alibaba-1-0-0-iam-3"
         },
         {
-          "control": "cis-alibaba-1-0-0-iam-4"
+          "control": "users-without-mfa"
         },
         {
           "control": "cis-alibaba-1-0-0-iam-5"
@@ -321,7 +321,5 @@
       ]
     }
   ],
-  "targetCloudProviders": [
-    "alibaba"
-  ]
+  "targetCloudProviders": ["alibaba"]
 }

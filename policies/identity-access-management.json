@@ -43,7 +43,7 @@
       "body": "The purpose of Multi‐Factor Authentication (MFA) is to enable a means of strong authentication for those users with access to sensitive information and information systems resources or that have a privileged level of system support access while ensuring ease of use and adoption for the user(s). This will reduce the likelihood of unauthorized access, provide demonstrated compliance to federal and industry mandates, as well as enable the solicitation, assessment, and selection of MFA solutions that will implement the requirements of this policy.\n\nUsers will use the MFA self-enrollment process to register their authentication device(s) and install an MFA application (such as Google Authenticator, Microsoft Authenticator, or similar). The process guide for registration is located in the IdP documentation page.\n\n#### MFA methods\n\n- Hardware MFA token, for the Executives and IT Operations on Production Environments\n- One-Time Password (time-based) using Google Authenticator, Microsoft Authenticator, or similar\n- IdP mobile app for authentication",
       "controls": [
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-iam-13"
@@ -53,9 +53,6 @@
         },
         {
           "control": "gcp-monitoring-2"
-        },
-        {
-          "control": "okta-mfa"
         },
         {
           "control": "okta-strong-factors"

@@ -200,22 +200,13 @@
           "control": "aws-iam-13"
         },
         {
-          "control": "gcp-mfa"
-        },
-        {
-          "control": "datastores-accessible-by-users-without-mfa"
-        },
-        {
           "control": "admins-with-enabled-mfa"
-        },
-        {
-          "control": "okta-mfa"
         },
         {
           "control": "aws-iam-14"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "azure-rbac-kubernetes"

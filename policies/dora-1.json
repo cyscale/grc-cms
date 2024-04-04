@@ -65,16 +65,13 @@
           "control": "admins-with-enabled-mfa"
         },
         {
-          "control": "okta-mfa"
-        },
-        {
           "control": "aws-1-4-0-iam-12"
         },
         {
           "control": "aws-iam-14"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-iam-12"

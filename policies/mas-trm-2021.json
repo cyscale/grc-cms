@@ -237,13 +237,7 @@
           "control": "aws-iam-14"
         },
         {
-          "control": "aws-iam-2"
-        },
-        {
-          "control": "cis-alibaba-1-0-0-iam-4"
-        },
-        {
-          "control": "okta-mfa"
+          "control": "users-without-mfa"
         },
         {
           "control": "okta-strong-factors"

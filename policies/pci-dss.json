@@ -201,7 +201,7 @@
           "control": "aws-1-3-0-iam-7"
         },
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-1-4-0-iam-12"

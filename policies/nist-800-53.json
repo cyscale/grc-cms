@@ -141,9 +141,6 @@
           "control": "okta-app-group-assignments"
         },
         {
-          "control": "okta-mfa"
-        },
-        {
           "control": "okta-strong-factors"
         },
         {
@@ -740,7 +737,7 @@
       "body": "",
       "controls": [
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-1-4-0-iam-12"
@@ -816,9 +813,6 @@
         },
         {
           "control": "gcp-iam-1"
-        },
-        {
-          "control": "cis-alibaba-1-0-0-iam-4"
         },
         {
           "control": "gcp-iam-2"
@@ -1107,9 +1101,6 @@
       "controls": [
         {
           "control": "management-ports-restricted-from-internet"
-        },
-        {
-          "control": "aws-iam-2"
         },
         {
           "control": "aws-iam-4"

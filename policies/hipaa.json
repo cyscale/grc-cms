@@ -126,9 +126,6 @@
           "control": "okta-app-group-assignments"
         },
         {
-          "control": "okta-mfa"
-        },
-        {
           "control": "okta-strong-factors"
         },
         {
@@ -263,7 +260,7 @@
       "body": "A covered entity must implement procedures to verify that a person or entity seeking access to electronic protected health information is the one claimed.",
       "controls": [
         {
-          "control": "aws-iam-2"
+          "control": "users-without-mfa"
         },
         {
           "control": "aws-iam-5"
@@ -312,9 +309,6 @@
         },
         {
           "control": "azure-client-certs-web-app"
-        },
-        {
-          "control": "okta-mfa"
         }
       ]
     },
