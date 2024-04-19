@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "name": "CIS Amazon Web Services (AWS) Foundations Benchmark",
   "isStandard": true,
   "slug": "cis-aws-2-0-0",
@@ -205,7 +205,5 @@
       ]
     }
   ],
-  "targetCloudProviders": [
-    "aws"
-  ]
+  "targetCloudProviders": ["aws"]
 }
