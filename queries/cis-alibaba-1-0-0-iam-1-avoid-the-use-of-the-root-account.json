@@ -1,1 +1,5 @@
-{"name":"Avoid the use of the 'root' account","slug":"cis-alibaba-1-0-0-iam-1-avoid-the-use-of-the-root-account","query":"AlibabaIAM1{...AssetFragment}"}
+{
+  "name": "Avoid the use of the 'root' account",
+  "slug": "cis-alibaba-1-0-0-iam-1-avoid-the-use-of-the-root-account",
+  "query": "AlibabaIAM1{...AssetFragment}"
+}

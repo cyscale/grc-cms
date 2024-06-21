@@ -1,1 +1,18 @@
-{"name":"Ensure IAM Role can be assumed only by specific Principals","slug":"aws-iam-19","body":"The list of principals able to assume a role should be limited as much as possible, and should not include \"*\", meaning that any authenticated identity across all of AWS can assume the role.","description":"","severity":3,"remediationDescription":"","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["IAMRole"],"query":"aws-iam-19-iam-role-can-be-assumed-only-by-specific-principals","returnPath":""}]}
+{
+  "name": "Ensure IAM Role can be assumed only by specific Principals",
+  "slug": "aws-iam-19",
+  "body": "The list of principals able to assume a role should be limited as much as possible, and should not include \"*\", meaning that any authenticated identity across all of AWS can assume the role.",
+  "description": "",
+  "severity": 3,
+  "remediationDescription": "",
+  "rules": [
+    {
+      "cloudProviders": ["aws"],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": ["IAMRole"],
+      "query": "aws-iam-19-iam-role-can-be-assumed-only-by-specific-principals",
+      "returnPath": ""
+    }
+  ]
+}

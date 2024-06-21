@@ -1,1 +1,18 @@
-{"name":"Ensure IAM password policy requires at least one lowercase letter","slug":"aws-iam-6","body":"Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are comprised of different character sets. It is recommended that the password policy require at least one lowercase letter.\n\n**Rationale**\n\nSetting a password complexity policy increases account resiliency against brute force login attempts.","description":"","severity":2,"remediationDescription":"Perform the following to set the password policy as prescribed: Via AWS Console\n\n**Via AWS Console**\n\n1. Login to `AWS Console` (with appropriate permissions to View Identity Access Management Account Settings)\n2. Go to `IAM Service` on the AWS Console\n3. Click on `Account Settings` on the Left Pane\n4. Check `Requires at least one lowercase letter`\n5. Click `Apply password policy`\n\n**Via CLI**\n\n```bash\naws iam update-account-password-policy --require-lowercase-characters\n```\n\nNote: All commands starting with `aws iam update-account-password-policy` can be combined into a single command.\n\n**References**\n\n1. CCE-78904-2","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPasswordPolicy"],"query":"aws-iam-6-iam-password-policy-requires-at-least-one-lowercase-letter","returnPath":""}]}
+{
+  "name": "Ensure IAM password policy requires at least one lowercase letter",
+  "slug": "aws-iam-6",
+  "body": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are comprised of different character sets. It is recommended that the password policy require at least one lowercase letter.\n\n**Rationale**\n\nSetting a password complexity policy increases account resiliency against brute force login attempts.",
+  "description": "",
+  "severity": 1,
+  "remediationDescription": "Perform the following to set the password policy as prescribed: Via AWS Console\n\n**Via AWS Console**\n\n1. Login to `AWS Console` (with appropriate permissions to View Identity Access Management Account Settings)\n2. Go to `IAM Service` on the AWS Console\n3. Click on `Account Settings` on the Left Pane\n4. Check `Requires at least one lowercase letter`\n5. Click `Apply password policy`\n\n**Via CLI**\n\n```bash\naws iam update-account-password-policy --require-lowercase-characters\n```\n\nNote: All commands starting with `aws iam update-account-password-policy` can be combined into a single command.\n\n**References**\n\n1. CCE-78904-2",
+  "rules": [
+    {
+      "cloudProviders": ["aws"],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": ["IAMPasswordPolicy"],
+      "query": "aws-iam-6-iam-password-policy-requires-at-least-one-lowercase-letter",
+      "returnPath": ""
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "slug": "aws-iam-14",
   "body": "The root account is the most privileged user in an AWS account. MFA adds an extra layer of protection on top of a user name and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their user name and password as well as for an authentication code from their AWS MFA device. For Level 2, it is recommended that the root account be protected with a hardware MFA.\n\n**Rationale**\n\nA hardware MFA has a smaller attack surface than a virtual MFA. For example, a hardware MFA does not suffer the attack surface introduced by the mobile smartphone on which a virtual MFA resides.\n\n**Note**: Using hardware MFA for many, many AWS accounts may create a logistical device management issue. If this is the case, consider implementing this Level 2 recommendation selectively to the highest security AWS accounts and the Level 1 recommendation applied to the remaining accounts.\n\nLink to order AWS compatible hardware MFA device: http://onlinenoram.gemalto.com/",
   "description": "",
-  "severity": 2,
+  "severity": 1,
   "isEnabled": true,
   "isInsight": false,
   "alertForSecondaryOnly": false,
