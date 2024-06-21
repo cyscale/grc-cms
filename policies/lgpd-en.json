@@ -58,9 +58,6 @@
           "control": "aws-iam-11"
         },
         {
-          "control": "aws-iam-15"
-        },
-        {
           "control": "aws-iam-19"
         },
         {

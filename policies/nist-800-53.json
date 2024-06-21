@@ -24,9 +24,6 @@
           "control": "aws-iam-12"
         },
         {
-          "control": "aws-iam-15"
-        },
-        {
           "control": "aws-iam-16"
         },
         {
@@ -568,9 +565,6 @@
       "slug": "nist-800-53-cm",
       "body": "",
       "controls": [
-        {
-          "control": "aws-iam-15"
-        },
         {
           "control": "aws-logging-5"
         },

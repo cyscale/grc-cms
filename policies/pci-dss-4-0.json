@@ -281,9 +281,6 @@
           "control": "aws-1-3-0-iam-15"
         },
         {
-          "control": "aws-iam-15"
-        },
-        {
           "control": "gcp-project-lvl-service-account-roles"
         },
         {

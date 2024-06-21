@@ -57,9 +57,6 @@
           "control": "aws-iam-14"
         },
         {
-          "control": "aws-iam-15"
-        },
-        {
           "control": "aws-iam-16"
         },
         {
@@ -234,9 +231,6 @@
       "controls": [
         {
           "control": "aws-1-4-0-iam-12"
-        },
-        {
-          "control": "aws-iam-15"
         },
         {
           "control": "aws-iam-16"

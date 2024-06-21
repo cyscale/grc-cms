@@ -1,5 +1,0 @@
-{
-  "name": "IAM policies are attached only to groups or roles",
-  "slug": "aws-iam-15-iam-policies-are-attached-only-to-groups-or-roles",
-  "query": "iamUsers(where: { cloudProvider: \"aws\", iamPolicies_NOT: null }) {...AssetFragment}"
-}

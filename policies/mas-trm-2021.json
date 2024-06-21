@@ -90,9 +90,6 @@
           "control": "aws-iam-19"
         },
         {
-          "control": "aws-iam-15"
-        },
-        {
           "control": "aws-iam-18"
         },
         {

@@ -66,9 +66,6 @@
           "control": "aws-iam-14"
         },
         {
-          "control": "aws-iam-15"
-        },
-        {
           "control": "aws-iam-16"
         },
         {
