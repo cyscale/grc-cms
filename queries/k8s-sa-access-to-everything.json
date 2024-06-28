@@ -1,0 +1,5 @@
+{
+  "name": "K8s Service Accounts granting access to everything",
+  "slug": "k8s-sa-access-to-everything",
+  "query": "{\n  serviceAccounts(\n    where: {\n      podIdentityAssociations_SOME: {\n        role: {\n          iamPolicies_SOME: {\n            iamPolicyStatements_SOME: {\n              actions_INCLUDES: \"*\"\n              resources_INCLUDES: \"*\"\n            }\n          }\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
