@@ -1,0 +1,5 @@
+{
+  "name": "Azure Managed Identities with access to everything",
+  "slug": "azure-managed-identities-with-access-to-everything",
+  "query": "{\n  managedIdentities(\n    where: {\n      servicePrincipals_SOME: { roles_SOME: { permissions_INCLUDES: \"*\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
