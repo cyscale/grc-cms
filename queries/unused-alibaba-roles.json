@@ -1,0 +1,5 @@
+{
+  "name": "Unused Alibaba RAM Roles",
+  "slug": "unused-alibaba-roles",
+  "query": "{\n  UnusedAlibabaIAMRoles {\n    ...AssetFragment\n  }\n}"
+}
