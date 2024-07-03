@@ -17,7 +17,7 @@
       "query": "eks-nodegroups-with-public-nodes"
     }
   ],
-  "remediationDescription": "D﻿isable the public IP addresses.\n\n**References**\n\n1. [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses)\n\r",
+  "remediationDescription": "Disable the public IP addresses.\n\n**References**\n\n1. [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses)\n\r",
   "isEnabled": true,
   "severity": 3
 }

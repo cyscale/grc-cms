@@ -17,7 +17,7 @@
       "query": "gcp-app-engine-plain-http"
     }
   ],
-  "remediationDescription": "Add a line to the `app.yaml` file controlling the application which enforces secure connections. For example:\n\n```\nhandlers:\n  \\- url: /.*\n    **secure: always**\n    redirect_http_response_code: 301\n    script: auto\n```\n\n### Default Value\n\nBy default, both HTTP and HTTP are supported.\n\n### References\n\n-﻿ https://cloud.google.com/appengine/docs/standard/reference/app-yaml",
+  "remediationDescription": "Add a line to the `app.yaml` file controlling the application which enforces secure connections. For example:\n\n```\nhandlers:\n  \\- url: /.*\n    **secure: always**\n    redirect_http_response_code: 301\n    script: auto\n```\n\n### Default Value\n\nBy default, both HTTP and HTTP are supported.\n\n### References\n\n- https://cloud.google.com/appengine/docs/standard/reference/app-yaml",
   "description": "App Engine Services Allowing Plain HTTP",
   "severity": 2
 }

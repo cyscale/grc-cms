@@ -1,5 +1,5 @@
 {
-  "body": "It is recommended that a metric filter and alarm be established for Virtual Private Cloud (VPC) Network Firewall rule changes.\n\n### Rationale\n\nMonitoring for create or update firewall rule events gives insight to network access changes and may reduce the time it takes to detect suspicious activity.\n\n#﻿## Impact\n\nEnabling of logging may result in your project being charged for the additional logs\nusage. These charges could be significant depending on the size of the organization.",
+  "body": "It is recommended that a metric filter and alarm be established for Virtual Private Cloud (VPC) Network Firewall rule changes.\n\n### Rationale\n\nMonitoring for create or update firewall rule events gives insight to network access changes and may reduce the time it takes to detect suspicious activity.\n\n### Impact\n\nEnabling of logging may result in your project being charged for the additional logs\nusage. These charges could be significant depending on the size of the organization.",
   "name": "Ensure log metric filter and alerts exist for VPC Network Firewall rule changes",
   "slug": "gcp-logging-7",
   "isInsight": false,

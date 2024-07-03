@@ -1,5 +1,5 @@
 {
-  "body": "S﻿ervice identities with permissions to access every resource in the given environment. It is almost never the case that an identity used by a workload requires access to everything.",
+  "body": "Service identities with permissions to access every resource in the given environment. It is almost never the case that an identity used by a workload requires access to everything.",
   "name": "Service Identities With Access to Everything",
   "slug": "service-ids-with-access-to-everything",
   "isInsight": true,
@@ -51,7 +51,7 @@
       "query": "azure-managed-identities-with-access-to-everything"
     }
   ],
-  "remediationDescription": "C﻿heck the insights to find out the permissions that the workload uses and remove the rest of the permissions.",
+  "remediationDescription": "Check the insights to find out the permissions that the workload uses and remove the rest of the permissions.",
   "isEnabled": true,
   "description": "Service Identities With Access to Everything",
   "severity": 2

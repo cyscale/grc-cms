@@ -18,7 +18,7 @@
       "returnPath": ""
     }
   ],
-  "remediationDescription": "**Using Gsutils**\n\nTo set Storage Access Logs and Storage logs for a bucket run:\n\n`﻿``bash\ngsutil logging set on -b gs://<bucketName for a bucket used to store logs> gs://<your bucket name>\n```\n\n**Default Value**\n\nBy Default, Access logs and storage logs are not enabled for storage buckets.\n\n**References**\n\n1. https://cloud.google.com/storage/docs/access-logs",
+  "remediationDescription": "**Using Gsutils**\n\nTo set Storage Access Logs and Storage logs for a bucket run:\n\n```bash\ngsutil logging set on -b gs://<bucketName for a bucket used to store logs> gs://<your bucket name>\n```\n\n**Default Value**\n\nBy Default, Access logs and storage logs are not enabled for storage buckets.\n\n**References**\n\n1. https://cloud.google.com/storage/docs/access-logs",
   "description": "",
   "severity": 2
 }
