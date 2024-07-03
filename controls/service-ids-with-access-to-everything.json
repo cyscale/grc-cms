@@ -16,6 +16,28 @@
         "IAMRole"
       ],
       "query": "iam-roles-granting-access-to-everything"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMServiceAccount"
+      ],
+      "query": "gcp-service-accounts-with-access-to-everything"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ServiceAccount"
+      ],
+      "query": "k8s-sa-access-to-everything"
     }
   ],
   "remediationDescription": "C﻿heck the insights to find out the permissions that the workload uses and remove the rest of the permissions.",
