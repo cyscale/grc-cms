@@ -1,0 +1,5 @@
+{
+  "name": "Unused Azure Managed Identities",
+  "slug": "unused-azure-managed-identities",
+  "query": "{\n  UnusedAzureManagedIdentities {\n    ...AssetFragment\n  }\n}"
+}
