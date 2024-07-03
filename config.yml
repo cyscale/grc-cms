@@ -23,11 +23,15 @@ collections:
     slug: '{{fields.slug}}'
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
-      - { 
+      - {
           name: 'slug',
           label: 'Slug',
           widget: 'string',
-          pattern: ['[\d\w\-]{3,256}', 'Slug must contain only alphanumeric characters and dash']
+          pattern:
+            [
+              '[\d\w\-]{3,256}',
+              'Slug must contain only alphanumeric characters and dash',
+            ],
         }
       - {
           name: 'query',
@@ -56,7 +60,11 @@ collections:
       - name: 'slug'
         label: 'Slug'
         widget: 'string'
-        pattern: ['[\d\w\-]{3,256}', 'Slug must contain only alphanumeric characters and dash']
+        pattern:
+          [
+            '[\d\w\-]{3,256}',
+            'Slug must contain only alphanumeric characters and dash',
+          ]
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Severity'
         name: 'severity'
@@ -104,8 +112,8 @@ collections:
               - { label: 'Google Cloud', value: 'gcp' }
               - { label: 'Okta', value: 'okta' }
               - { label: 'Google Workspace', value: 'googleworkspace' }
-              - { label: 'Kubernetes', value: 'k8s'}
-              - { label: 'Entra', value: 'entra'}
+              - { label: 'Kubernetes', value: 'k8s' }
+              - { label: 'Entra', value: 'entra' }
           - label: 'Comparator'
             name: 'comparator'
             widget: 'select'
@@ -321,6 +329,7 @@ collections:
                 EKSFargateProfile,
                 EKSIdentityProviderConfig,
                 EKSNodeGroup,
+                ManagedIdentity,
               ]
           - label: 'Query'
             name: 'query'
@@ -350,7 +359,11 @@ collections:
       - name: 'slug'
         label: 'Slug'
         widget: 'string'
-        pattern: ['[\d\w\-]{3,256}', 'Slug must contain only alphanumeric characters and dash']
+        pattern:
+          [
+            '[\d\w\-]{3,256}',
+            'Slug must contain only alphanumeric characters and dash',
+          ]
       - { name: 'version', label: 'Version', widget: 'string' }
       - { name: 'body', label: 'Body', widget: 'markdown', modes: ['raw'] }
       - label: 'Target Providers'
@@ -364,8 +377,8 @@ collections:
           - { label: 'Google Cloud', value: 'gcp' }
           - { label: 'Okta', value: 'okta' }
           - { label: 'Google Workspace', value: 'googleworkspace' }
-          - { label: 'Kubernetes', value: 'k8s'}
-          - { label: 'Entra', value: 'entra'}
+          - { label: 'Kubernetes', value: 'k8s' }
+          - { label: 'Entra', value: 'entra' }
       - label: 'Procedures'
         name: 'procedures'
         widget: 'list'
@@ -637,6 +650,7 @@ collections:
             EKSFargateProfile,
             EKSIdentityProviderConfig,
             EKSNodeGroup,
+            ManagedIdentity,
           ]
       - label: 'Assets'
         name: 'assets'
@@ -840,4 +854,5 @@ collections:
             EKSFargateProfile,
             EKSIdentityProviderConfig,
             EKSNodeGroup,
+            ManagedIdentity,
           ]
