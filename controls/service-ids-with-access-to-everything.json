@@ -38,6 +38,17 @@
         "ServiceAccount"
       ],
       "query": "k8s-sa-access-to-everything"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ManagedIdentity"
+      ],
+      "query": "azure-managed-identities-with-access-to-everything"
     }
   ],
   "remediationDescription": "C﻿heck the insights to find out the permissions that the workload uses and remove the rest of the permissions.",
