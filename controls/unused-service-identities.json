@@ -1,0 +1,68 @@
+{
+  "body": " ",
+  "name": "Unused Service Identities",
+  "slug": "unused-service-identities",
+  "isInsight": true,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMRole"
+      ],
+      "query": "unused-aws-roles"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ManagedIdentity"
+      ],
+      "query": "unused-azure-managed-identities"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMServiceAccount"
+      ],
+      "query": "unused-gcp-service-accounts"
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ServiceAccount"
+      ],
+      "query": "unused-k8s-service-accounts"
+    },
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMRole"
+      ],
+      "query": "unused-alibaba-roles"
+    }
+  ],
+  "remediationDescription": " ",
+  "isEnabled": true,
+  "description": "Unused Service Identities",
+  "severity": 2
+}
