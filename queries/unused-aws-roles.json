@@ -1,0 +1,5 @@
+{
+  "name": "Unused AWS IAM Roles",
+  "slug": "unused-aws-roles",
+  "query": "{\n  UnusedAWSIAMRoles {\n    ...AssetFragment\n  }\n}"
+}
