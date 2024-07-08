@@ -1,6 +1,16 @@
 {
   "display_name": "Valid Accounts - T1078",
   "mid": "T1078",
-  "controls": ["aws-iam-13"],
-  "assets": ["CloudAccount", "User"]
+  "controls": ["aws-iam-13", "aws-1-3-0-iam-16"],
+  "assets": [
+    "CloudAccount",
+    "User",
+    "IAMUser",
+    "IAMGroup",
+    "IAMRole",
+    "IAMServiceAccount",
+    "ServicePrincipal",
+    "ManagedIdentity"
+  ],
+  "propagators": ["IAMPolicy"]
 }

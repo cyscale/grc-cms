@@ -5,7 +5,20 @@
     "Function",
     "Disk",
     "Bucket",
-    "BigQueryTable"
+    "BigQueryTable",
+    "BlobContainer",
+    "DBInstance",
+    "CosmosDBAccount",
+    "BigQueryTable",
+    "SQLDatabase",
+    "MySQLServer",
+    "MySQLFlexibleServer",
+    "PostgreSQLServer",
+    "PostgreSQLFlexibleServer",
+    "MariaDBServer",
+    "CloudSpanner",
+    "CloudSQLInstance",
+    "BigTable"
   ],
   "propagators": [
     "VM",
@@ -15,7 +28,5 @@
     "IAMServiceAccount"
   ],
   "display_name": "External Remote Services - T1133",
-  "controls": [
-    "management-ports-restricted-from-internet"
-  ]
+  "controls": ["management-ports-restricted-from-internet"]
 }
