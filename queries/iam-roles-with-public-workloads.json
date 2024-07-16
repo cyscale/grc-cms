@@ -1,0 +1,5 @@
+{
+  "name": "AWS/Alibaba roles used by public workloads",
+  "slug": "iam-roles-with-public-workloads",
+  "query": "{\n  iamRoles(\n    where: {\n      OR: [\n        {\n          vms_SOME: {\n            NOT: { publicIpAddress: null }\n            networkInterfaces_SOME: {\n              securityGroups_SOME: {\n                rules_SOME: {\n                  direction: \"Inbound\"\n                  action: \"Allow\"\n                  OR: [\n                    { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n                    { sources_INCLUDES: \"cidr:::/0\" }\n                  ]\n                }\n              }\n            }\n          }\n        }\n        { functions_SOME: { NOT: { functionURL: \"\" }, authType: \"NONE\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
