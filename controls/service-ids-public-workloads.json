@@ -27,6 +27,17 @@
         "IAMServiceAccount"
       ],
       "query": "gcp-service-accounts-public-workloads"
+    },
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ManagedIdentity"
+      ],
+      "query": "managed-ids-public-workloads"
     }
   ],
   "remediationDescription": " ",
