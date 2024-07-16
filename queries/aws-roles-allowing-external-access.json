@@ -1,0 +1,5 @@
+{
+  "name": "AWS Roles allowing external access",
+  "slug": "aws-roles-allowing-external-access",
+  "query": "{\n  AWSRolesWithExternalAccess {\n    ...AssetFragment\n  }\n}"
+}
