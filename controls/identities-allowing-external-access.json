@@ -4,6 +4,30 @@
   "slug": "identities-allowing-external-access",
   "isInsight": true,
   "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMRole"
+      ],
+      "query": "aws-roles-allowing-external-access"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMServiceAccount"
+      ],
+      "query": "gcp-service-accounts-external-access"
+    }
+  ],
   "remediationDescription": " ",
   "isEnabled": true,
   "description": "Identities allowing external access",
