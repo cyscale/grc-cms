@@ -1,0 +1,5 @@
+{
+  "name": "Managed Identities used by publicly accessible workloads",
+  "query": "{\n  managedIdentities(\n    where: {\n      OR: [\n        {\n          vms_SOME: {\n            networkInterfaces_SOME: {\n              publicIp_NOT: null\n              securityGroups_SOME: {\n                rules_SOME: {\n                  direction: \"Inbound\"\n                  action: \"Allow\"\n                  OR: [\n                    { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n                    { sources_INCLUDES: \"cidr:::/0\" }\n                    { sources_INCLUDES: \"tag:Internet\" }\n                    { sources: [] }\n                  ]\n                }\n              }\n            }\n          }\n        }\n        {\n          functions_SOME: {\n            bindings_SOME: { direction: \"in\", type: \"httpTrigger\" }\n          }\n        }\n        {\n          appServices_SOME: {\n            hasSiteAuthSettings_SOME: { NOT: { enabled: true } }\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "slug": "managed-ids-public-workloads"
+}
