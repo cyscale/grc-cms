@@ -16,6 +16,17 @@
         "IAMRole"
       ],
       "query": "iam-roles-with-public-workloads"
+    },
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMServiceAccount"
+      ],
+      "query": "gcp-service-accounts-public-workloads"
     }
   ],
   "remediationDescription": " ",
