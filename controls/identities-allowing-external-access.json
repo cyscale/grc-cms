@@ -1,0 +1,11 @@
+{
+  "body": " ",
+  "name": "Identities allowing external access",
+  "slug": "identities-allowing-external-access",
+  "isInsight": true,
+  "alertForSecondaryOnly": false,
+  "remediationDescription": " ",
+  "isEnabled": true,
+  "description": "Identities allowing external access",
+  "severity": 2
+}
