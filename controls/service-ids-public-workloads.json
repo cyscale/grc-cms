@@ -1,0 +1,25 @@
+{
+  "body": " ",
+  "name": "Service Identities attached to publicly accessible workloads",
+  "slug": "service-ids-public-workloads",
+  "isInsight": true,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMRole"
+      ],
+      "query": "iam-roles-with-public-workloads"
+    }
+  ],
+  "remediationDescription": " ",
+  "isEnabled": true,
+  "description": "Service Identities attached to publicly accessible workloads",
+  "severity": 2
+}
