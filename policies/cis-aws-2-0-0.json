@@ -194,7 +194,7 @@
       "body": "",
       "controls": [
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "management-ports-restricted-from-internet"

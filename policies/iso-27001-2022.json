@@ -1630,7 +1630,7 @@
           "control": "aws-1-4-0-storage-1-2"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "aws-loadbalancing-2"
@@ -1739,7 +1739,7 @@
           "control": "aws-monitoring-8"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "aws-ec2-1"

@@ -26,7 +26,7 @@
         { "control": "management-ports-restricted-from-internet" },
         { "control": "aws-monitoring-10" },
         { "control": "aws-networking-3" },
-        { "control": "aws-1-3-0-networking-1" },
+        { "control": "aws-nacl-admin-ports" },
         { "control": "gcp-kubernetes-14" },
         { "control": "gcp-vms-public-ip-addresses" },
         { "control": "gcp-sql-no-public-ips" },
@@ -40,7 +40,7 @@
       "controls": [
         { "control": "aws-monitoring-11" },
         { "control": "aws-monitoring-12" },
-        { "control": "aws-1-3-0-networking-1" },
+        { "control": "aws-nacl-admin-ports" },
         { "control": "management-ports-restricted-from-internet" },
         { "control": "gcp-logging-7" },
         { "control": "gcp-logging-8" },

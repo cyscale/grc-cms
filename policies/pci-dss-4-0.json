@@ -29,7 +29,7 @@
           "control": "gcp-kubernetes-11"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "gcp-sql-no-whitelist-all-ips"

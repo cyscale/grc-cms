@@ -121,7 +121,7 @@
           "control": "gcp-networking-13"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         }
       ]
     },
@@ -181,7 +181,7 @@
           "control": "azure-sql-db-disallow-any-ip"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "management-ports-restricted-from-internet"
@@ -652,7 +652,7 @@
           "control": "aws-networking-10"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "management-ports-restricted-from-internet"

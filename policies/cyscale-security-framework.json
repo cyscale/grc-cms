@@ -560,7 +560,7 @@
           "control": "aws-networking-3"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         },
         {
           "control": "gcp-dnssec-enabled-cloud-dns"

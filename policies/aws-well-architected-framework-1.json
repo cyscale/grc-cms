@@ -380,7 +380,7 @@
           "control": "aws-ecs-2-service-assign-public-ip-disabled"
         },
         {
-          "control": "aws-1-3-0-networking-1"
+          "control": "aws-nacl-admin-ports"
         }
       ]
     },
