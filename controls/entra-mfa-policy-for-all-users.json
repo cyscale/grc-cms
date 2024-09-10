@@ -1,0 +1,10 @@
+{
+  "alertForSecondaryOnly": false,
+  "isEnabled": true,
+  "isInsight": false,
+  "name": "Ensure A Multi-factor Authentication Policy Exists for All Users",
+  "slug": "entra-mfa-policy-for-all-users",
+  "body": "Designated users will be prompted to use their multi-factor authentication (MFA) process upon login.\n\n### Rationale\n\nEnabling multi-factor authentication is a recommended setting to limit the potential for accounts to be compromised and to limit access to authenticated personnel.\n\n### Impact\n\nConditional Access policies require Microsoft Entra ID P1 or P2, which increases the cost. Similarly, if users lose access to their MFA, this may require additional overhead to maintain.\n\n### Default Value\n\nMFA is not enabled by default.",
+  "severity": 1,
+  "remediationDescription": "### From Azure Portal\n\n1. Open the [Conditional Access policies page](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n4. Click `+ New policy`.\n5. Enter a name for the policy.\n6. Select `Users or workload identities`.\n7. Under `Include`, select `All users`.\n9. Under `Exclude`, check `Users and groups`.\n10. Select users this policy should not apply to and click `Select`.\n11. Select `Cloud apps or actions`.\n12. Select `All cloud apps`.\n13. Select `Grant`.\n14. Under `Grant access`, check `Require multifactor authentication` and click `Select`.\n15. Set `Enable policy` to `Report-only`.\n16. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`."
+}
