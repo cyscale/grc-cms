@@ -11,6 +11,48 @@
       "slug": "cis-azure-2-0-0-iam",
       "controls": [
         {
+          "control": "entra-security-defaults-enabled"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "users-without-mfa"
+        },
+        {
+          "control": "azuread-legacy-remember-mfa-device"
+        },
+        {
+          "control": "entra-trusted-locations"
+        },
+        {
+          "control": "entra-exclusionary-geo-access-policy"
+        },
+        {
+          "control": "entra-mfa-policy-for-admins"
+        },
+        {
+          "control": "entra-mfa-policy-for-all-users"
+        },
+        {
+          "control": "entra-mfa-risky-sign-ins"
+        },
+        {
+          "control": "entra-mfa-azure-service-mgmt-api"
+        },
+        {
+          "control": "entra-mfa-admin-portals"
+        },
+        {
+          "control": "entra-restrict-non-admins-from-creating-tenants"
+        },
+        {
+          "control": "entra-review-guest-users"
+        },
+        {
+          "control": "entra-min-number-of-methods-for-sspr"
+        },
+        {
           "control": "azure-admin-resource-locks"
         },
         {

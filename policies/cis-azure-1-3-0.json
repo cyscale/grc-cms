@@ -21,7 +21,7 @@
           "control": "azure-1-3-0-iam-4"
         },
         {
-          "control": "azure-1-3-0-iam-5"
+          "control": "entra-min-number-of-methods-for-sspr"
         },
         {
           "control": "azure-1-3-0-iam-6"
