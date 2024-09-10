@@ -1,20 +1,24 @@
 {
-  "body": "With IMDSv2, every request is now protected by session authentication. A session begins and ends a series of requests that software running on an EC2 instance uses to access the locally-stored EC2 instance metadata and credentials. The software starts a session with a simple HTTP PUT request to IMDSv2.\n\nYou can read more about it at in this AWS Blog post: [Add defense in depth against open firewalls, reverse proxies, and SSRF vulnerabilities with enhancements to the EC2 Instance Metadata Service](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/#:~:text=The%20existing%20instance%20metadata%20service,try%20to%20access%20the%20IMDS.)",
+  "body": "When enabling the Metadata Service on AWS EC2 instances, users have the option of using either Instance Metadata Service Version 1 (IMDSv1; a request/response method) or Instance Metadata Service Version 2 (IMDSv2; a session-oriented method).\n\nAllowing Version 1 of the service may open EC2 instances to Server-Side Request Forgery (SSRF) attacks, so Amazon recommends utilizing Version 2 for better instance security.",
   "name": "EC2 Instances Should Only Allow IMDSv2",
   "slug": "vm-disallow-imds-v1",
   "isInsight": false,
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": ["aws"],
+      "cloudProviders": [
+        "aws"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["VM"],
+      "subjects": [
+        "VM"
+      ],
       "query": "aws-vms-no-imdsv2"
     }
   ],
-  "remediationDescription": "**From the Console**\n\n\r\n\r\nPerform the following actions to configure the EC2 instance to use IMDSv2:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select `Modify`\r\n3. Under `Actions`, select `Instance settings`, and then `Modify instance metadata options` \r\n4. Under `IMDSv2`, select the `Required` button\r\n5. Click `Save`\n\n\r\n\r\n**From the AWS CLI**\n\n\r\n\r\n```bash\r\naws ec2 modify-instance-metadata-options --instance-id <instanceID> --http-tokens required\r\n```\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Use IMDSv2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html)\r\n2. [Configure the instance metadata options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html)",
+  "remediationDescription": "### From Console:\n\n1. Sign in to the AWS Management Console and navigate to the EC2 dashboard at (https://console.aws.amazon.com/ec2/)[https://console.aws.amazon.com/ec2/].\n2. In the left navigation panel, under the `INSTANCES` section, choose `Instances`.\n3. Select the EC2 instance that you want to examine.\n4. Choose `Actions > Instance Settings > Modify instance metadata options`.\n5. Ensure `Instance metadata service` is set to `Enable` and set `IMDSv2` to `Required`.\n6. Repeat steps no. 1 – 5 to perform the remediation process for other EC2 \nInstances in the all applicable AWS region(s).\n### From Command Line:\n\n1. Run the `describe-instances` command using appropriate filtering to list the IDs of all the existing EC2 instances currently available in the selected region:\n\n```bash\naws ec2 describe-instances --region <region-name> --output table --query \"Reservations[*].Instances[*].InstanceId\"\n```\n\n2. The command output should return a table with the requested instance IDs.\n3. Now run the `modify-instance-metadata-options` command using an instance ID returned at the previous step to update the Instance Metadata Version:\n\n```bash\naws ec2 modify-instance-metadata-options --instance-id <instance-id> --http-tokens required --region <region-name>\n```\n\n4. Repeat steps no. 1 – 3 to perform the remediation process for other EC2 Instances in the same AWS region.\n5. Change the region by updating `--region` and repeat the entire process for other regions.\n\n**References**\n\n1. https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/\n2. https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html",
   "isEnabled": true,
   "description": "EC2 Instances allowing IMDSv1",
-  "severity": 2
+  "severity": 1
 }
