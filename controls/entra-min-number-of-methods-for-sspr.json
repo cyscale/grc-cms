@@ -1,0 +1,13 @@
+{
+  "body": "Ensures that two alternate forms of identification are provided before allowing a password reset.\n\n### Rationale\n\nA Self-service Password Reset (SSPR) through Azure Multi-factor Authentication (MFA) ensures the user's identity is confirmed using two separate methods of identification. With multiple methods set, an attacker would have to compromise both methods before they could maliciously reset a user's password.\n\n### Impact\n\nThere may be administrative overhead, as users who lose access to their secondary authentication methods will need an administrator with permission to remove it. There will also need to be organization-wide security policies and training to teach administrators to verify the identity of the requesting user so that social engineering can not render this setting useless.\n\n### Default Value\n\nBy default, the `Number of methods required to reset` is set to \"2\".",
+  "name": "Ensure 'Number of methods required to reset' is set to '2'",
+  "slug": "entra-min-number-of-methods-for-sspr",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "replacementFor": [
+    "azure-1-3-0-iam-5"
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open the [Password reset | Authentication methods page](https://portal.azure.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/AuthenticationMethods).\n2. Set the `Number of methods required to reset` to `2`.\n\nPlease note that, at this point, no Azure CLI or other API commands are available to programmatically conduct security configuration for this recommendation.",
+  "isEnabled": true,
+  "severity": 1
+}
