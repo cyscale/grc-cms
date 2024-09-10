@@ -1,0 +1,10 @@
+{
+  "alertForSecondaryOnly": false,
+  "isEnabled": true,
+  "isInsight": false,
+  "name": "Ensure A Multi-factor Authentication Policy Exists for Administrative Groups",
+  "slug": "entra-mfa-policy-for-admins",
+  "body": "Designated users will be prompted to use their multi-factor authentication (MFA) process upon login.\n\n### Rationale\n\nEnabling multi-factor authentication is a recommended setting to limit the use of Administrative accounts to authenticated personnel.\n\n### Impact\n\nThere is an increased cost, as Conditional Access policies require **Microsoft Entra ID P1**. Similarly, MFA may require additional overhead to maintain. There is also a potential scenario in which the multi-factor authentication method can be lost, and administrative users are no longer able to log in. For this scenario, there should be an emergency access account. See [Plan a Conditional Access deployment](https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access) before deploying this.\n\n### Default Value\n\nBy default, MFA is not enabled for any administrative accounts.",
+  "remediationDescription": "### From Azure Portal\n\n1. Open the [Conditional Access policies page](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n2. Click `+ New policy`.\n3. Enter a name for the policy.\n4. Select `Users or workload identities`.\n5. Check `Users and groups`.\n6. Select administrative groups this policy should apply to and click `Select`.\n7. Under `Exclude`, check `Users and groups`.\n8. Select users this policy should not apply to and click `Select`.\n9. Select `Cloud apps or actions`.\n10. Select `All cloud apps`.\n11. Select `Grant`.\n12. Under Grant access, check `Require multifactor authentication` and click `Select`.\n13. Set `Enable policy` to `Report-only`.\n14. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`.",
+  "severity": 2
+}
