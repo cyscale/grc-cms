@@ -129,9 +129,6 @@
           "control": "api-keys-not-rotated-90-days"
         },
         {
-          "control": "azure-1-3-0-iam-1"
-        },
-        {
           "control": "azure-1-3-0-iam-2"
         },
         {
@@ -141,37 +138,34 @@
           "control": "entra-min-number-of-methods-for-sspr"
         },
         {
-          "control": "azure-1-3-0-iam-6"
+          "control": "entra-number-of-days-before-reconfirm-auth-info"
         },
         {
-          "control": "azure-1-3-0-iam-7"
+          "control": "entra-notify-users-on-password-reset"
         },
         {
-          "control": "azure-1-3-0-iam-8"
+          "control": "entra-notify-admins-on-admin-password-resets"
         },
         {
-          "control": "azure-1-3-0-iam-9"
+          "control": "entra-do-not-allow-user-consent"
         },
         {
-          "control": "azure-1-3-0-iam-10"
+          "control": "entra-user-consent-verified-publishers"
         },
         {
-          "control": "azure-1-3-0-iam-11"
+          "control": "entra-user-app-registration"
         },
         {
-          "control": "azure-1-3-0-iam-12"
+          "control": "entra-guest-users-access-restrictions"
         },
         {
-          "control": "azure-1-3-0-iam-13"
+          "control": "entra-guest-invite-restrictions"
         },
         {
-          "control": "azure-1-3-0-iam-14"
+          "control": "entra-restrict-access-to-admin-center"
         },
         {
-          "control": "azure-1-3-0-iam-15"
-        },
-        {
-          "control": "azure-1-3-0-iam-16"
+          "control": "entra-restrict-access-to-groups-in-access-pane"
         },
         {
           "control": "azure-1-3-0-iam-17"

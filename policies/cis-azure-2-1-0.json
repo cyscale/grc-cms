@@ -54,6 +54,42 @@
           "control": "entra-min-number-of-methods-for-sspr"
         },
         {
+          "control": "entra-custom-bad-password-list"
+        },
+        {
+          "control": "entra-number-of-days-before-reconfirm-auth-info"
+        },
+        {
+          "control": "entra-notify-users-on-password-reset"
+        },
+        {
+          "control": "entra-notify-admins-on-admin-password-resets"
+        },
+        {
+          "control": "entra-do-not-allow-user-consent"
+        },
+        {
+          "control": "entra-user-consent-verified-publishers"
+        },
+        {
+          "control": "entra-users-can-add-gallery-apps-to-myapps"
+        },
+        {
+          "control": "entra-user-app-registration"
+        },
+        {
+          "control": "entra-guest-users-access-restrictions"
+        },
+        {
+          "control": "entra-guest-invite-restrictions"
+        },
+        {
+          "control": "entra-restrict-access-to-admin-center"
+        },
+        {
+          "control": "entra-restrict-access-to-groups-in-access-pane"
+        },
+        {
           "control": "azure-admin-resource-locks"
         },
         {
