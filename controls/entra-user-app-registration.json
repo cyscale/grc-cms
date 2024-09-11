@@ -1,0 +1,13 @@
+{
+  "body": "Require administrators or appropriately delegated users to register third-party applications.\n\n### Rationale\n\nIt is recommended that only an administrator register custom-developed applications. This ensures the application undergoes a formal security review and approval process before exposing Microsoft Entra ID data. Certain users, like developers or other high-request users, may also be delegated permissions to prevent them from waiting on an administrative user. Your organization should review your policies and decide your needs.\n\n### Impact\n\nEnforcing this setting will create additional requests for approval that will need to be addressed by an administrator. If permissions are delegated, a user may approve a malevolent third-party application, potentially giving it access to your data.\n\n### Default Value\n\nBy default, `Users can register applications` is set to \"Yes\".",
+  "name": "Ensure That 'Users Can Register Applications' Is Set to 'No'",
+  "slug": "entra-user-app-registration",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "replacementFor": [
+    "azure-1-3-0-iam-11"
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Users | User Settings](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set  `Users can register applications`  to  `No`.\n\n### From Powershell\n\n```bash\nConnect-MsolService\nSet-MsolCompanyInformation -UsersPermissionToCreateLOBAppsEnabled $False\n```",
+  "isEnabled": true,
+  "severity": 1
+}
