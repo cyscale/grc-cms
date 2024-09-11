@@ -1,0 +1,13 @@
+{
+  "body": "Limit guest user permissions.\n\n### Rationale\n\nLimiting guest access ensures that guest accounts do not have permission for certain directory tasks, such as enumerating users, groups, or other directory resources, and cannot be assigned to administrative roles in your directory. Guest access has three levels of restriction.\n\n1.  Guest users have the same access as members (most inclusive),\n2.  Guest users have limited access to properties and memberships of directory objects (default value),\n3.  Guest user access is restricted to properties and memberships of their own directory objects (most restrictive).\n\nThe recommended option is the 3rd, most restrictive: \"Guest user access is restricted to their own directory object\".\n\n### Impact\n\nThis may create additional requests for permissions to access resources that administrators will need to approve.\n\n[Certain services](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/users-restrict-guest-permissions#services-currently-not-supported) might have compatibility issues with this setting.\n\n### Default Value\n\nBy default, `Guest user access restrictions` is set to `Guest users have limited access to properties and memberships of directory objects`.",
+  "name": "Ensure 'Guest users access restrictions' is set to 'Guest user access is restricted to properties and memberships of their own directory objects'",
+  "slug": "entra-guest-users-access-restrictions",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "replacementFor": [
+    "azure-1-3-0-iam-12"
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open [External Identities | External collaboration settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/CompanyRelationshipsMenuBlade/~/Settings)\n5. Under `Guest user access`, change `Guest user access restrictions` to `Guest user access is restricted to properties and memberships of their own directory objects`.\n\n### From Powershell\n\n1. From a PowerShell session, enter `Set-AzureADMSAuthorizationPolicy- GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'`\n2. Check that the setting was applied by entering `Get- AzureADMSAuthorizationPolicy`\n3. Make sure the GuestUserRoleId is equal to `2af84b1e-32c8-42b7-82bc-daa82404023b`.",
+  "isEnabled": true,
+  "severity": 1
+}
