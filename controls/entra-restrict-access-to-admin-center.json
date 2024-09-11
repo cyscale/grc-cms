@@ -1,6 +1,6 @@
 {
   "body": "Restrict access to the Microsoft Entra ID administration portal to administrators only.\n\n**NOTE:** This only affects access to the Entra ID administrator's web portal. This setting does not prohibit privileged users from using other methods, such as Rest API or Powershell, to obtain sensitive information from Microsoft Entra ID.\n\n### Rationale\n\nThe Microsoft Entra ID administrative center has sensitive data and permission settings. To avoid exposure, all non-administrators should be prohibited from accessing any Microsoft Entra ID data in the administration center.\n\n### Impact\n\nAll administrative tasks will need to be done by Administrators, causing additional overhead in managing users and resources.\n\n### Default Value\n\nBy default, `Restrict access to Microsoft Entra admin center` is set to `No`.",
-  "name": "Ensure That 'Restrict access to Microsoft Entra admin center' is Set to 'Yes'",
+  "name": "Ensure 'Restrict access to Microsoft Entra admin center' is Set to 'Yes'",
   "slug": "entra-restrict-access-to-admin-center",
   "isInsight": false,
   "alertForSecondaryOnly": false,
