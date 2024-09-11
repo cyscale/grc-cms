@@ -1,0 +1,13 @@
+{
+  "body": "Allow users to provide consent for selected permissions when a request is coming from a verified publisher.\n\n### Rationale\n\nIf Microsoft Entra ID is running as an identity provider for third-party applications, permissions and consent should be limited to administrators or pre-approved. Malicious applications may attempt to exfiltrate data or abuse privileged user accounts.\n\n### Impact\n\nEnforcing this setting may create additional requests that administrators need to review.\n\n### Default Value\n\nBy default, `Users consent for applications` is set to `Allow user consent for apps`.\n\n### Additional Information\n\nThis control is a more permissive version of [Ensure 'User consent for applications' is set to 'Do not allow user consent'](https://app.cyscale.com/controls/entra-do-not-allow-user-consent/show). We recommend implementing one of them, based on your organization's policy, and creating an exemption for the other. Microsoft recommends following this control. You can read more about user consent [here](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent).",
+  "name": "Ensure 'User consent for applications' Is Set To 'Allow for Verified Publishers'",
+  "slug": "entra-user-consent-verified-publishers",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "replacementFor": [
+    "azure-1-3-0-iam-10"
+  ],
+  "remediationDescription": "1. Open [Enterprise Applications | Consent and permissions | User consent settings](https://portal.azure.com/#view/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings).\n2. Ensure `User consent for applications` is set to `Allow user consent for apps from verified publishers, for selected permissions`.",
+  "isEnabled": true,
+  "severity": 1
+}
