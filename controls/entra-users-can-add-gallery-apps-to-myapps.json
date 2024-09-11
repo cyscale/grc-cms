@@ -1,0 +1,13 @@
+{
+  "body": "Require administrators to provide consent for the apps before use.\n\n### Rationale\n\nUnless Microsoft Entra ID runs as an identity provider for third-party applications, users cannot use their identity outside your cloud environment. User profiles contain private information such as phone numbers and email addresses, which could then be sold off to other third parties without requiring further consent from the user.\n\n### Impact\n\nThis can cause additional requests to administrators that need to be fulfilled quite often.\n\n### Default Value\n\nBy default, `Users can add gallery apps to My Apps` is set to `No`.",
+  "name": "Ensure that 'Users can add gallery apps to My Apps' is set to 'No' (Deprecated)",
+  "slug": "entra-users-can-add-gallery-apps-to-myapps",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "replacementFor": [
+    "azure-1-3-0-iam-10"
+  ],
+  "remediationDescription": "This setting is no longer available in the Azure Portal. It was under [Enterprise Applications | User Settings ](https://portal.azure.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/UserSettings).",
+  "isEnabled": true,
+  "severity": 1
+}
