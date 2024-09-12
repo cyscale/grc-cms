@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants without trusted IP Named Locations",
+  "slug": "entra-tenants-without-trusted-locations",
+  "query": "{\n  connectors(\n    where: { namedLocations_NONE: { type: \"ipNamedLocation\", isTrusted: true } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
