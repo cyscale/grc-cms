@@ -1,0 +1,5 @@
+{
+  "name": "Entra Exclusionary Geographic Access Policy",
+  "slug": "entra-exclusionary-geo-access-policy",
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions_SOME: {\n          includedUsers: [\"All\"]\n          includedApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n          NOT: { includeLocations: [] }\n        }\n        grantControls_SOME: { builtInControls: [\"block\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
