@@ -89,10 +89,25 @@
           "control": "entra-restrict-access-to-groups-in-access-pane"
         },
         {
-          "control": "azure-admin-resource-locks"
+          "control": "entra-users-create-security-groups"
+        },
+        {
+          "control": "entra-owners-manage-group-membership-requests"
+        },
+        {
+          "control": "entra-users-create-ms365-groups"
+        },
+        {
+          "control": "entra-require-mfa-to-register-devices"
         },
         {
           "control": "azure-no-custom-admin-role"
+        },
+        {
+          "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "entra-disallow-subscription-movement"
         }
       ],
       "body": "This section covers security recommendations to set identity and access management policies on an Azure Subscription."

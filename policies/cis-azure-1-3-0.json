@@ -54,16 +54,16 @@
           "control": "entra-restrict-access-to-groups-in-access-pane"
         },
         {
-          "control": "azure-1-3-0-iam-17"
+          "control": "entra-users-create-security-groups"
         },
         {
-          "control": "azure-1-3-0-iam-18"
+          "control": "entra-owners-manage-group-membership-requests"
         },
         {
-          "control": "azure-1-3-0-iam-19"
+          "control": "entra-users-create-ms365-groups"
         },
         {
-          "control": "azure-1-3-0-iam-20"
+          "control": "entra-require-mfa-to-register-devices"
         },
         {
           "control": "azure-1-3-0-iam-21"
