@@ -1,0 +1,5 @@
+{
+  "name": "Entra Conditional Access - MFA for Microsoft Admin Portals",
+  "slug": "entra-conditional-access-mfa-admin-portals",
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers: [\"All\"]\n          NOT: { OR: { excludeUsers: [], excludeGroups: [], excludeRoles: [] } }\n          includeApplications: [\"MicrosoftAdminPortals\"]\n          clientAppTypes: [\"all\"]\n        }\n        grantControls: { builtInControls: [\"mfa\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
