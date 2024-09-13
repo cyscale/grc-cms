@@ -1,10 +1,23 @@
 {
-  "alertForSecondaryOnly": false,
-  "isEnabled": true,
-  "isInsight": false,
+  "body": "Require administrators or appropriately delegated users to create new tenants.\n\n### Rationale\n\nIt is recommended that only an administrator be able to create new tenants. This prevents users from creating new Azure AD or Azure AD B2C tenants and ensures that only authorized users can do so.\n\n### Impact\n\nEnforcing this setting will ensure that only authorized users are able to create new tenants.\n\n### Default Value\n\nBy default, all users can create tenants.",
   "name": "Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes'",
   "slug": "entra-restrict-non-admins-from-creating-tenants",
-  "body": "Require administrators or appropriately delegated users to create new tenants.\n\n### Rationale\n\nIt is recommended that only an administrator be able to create new tenants. This prevents users from creating new Azure AD or Azure AD B2C tenants and ensures that only authorized users can do so.\n\n### Impact\n\nEnforcing this setting will ensure that only authorized users are able to create new tenants.\n\n### Default Value\n\nBy default, all users can create tenants.",
-  "remediationDescription": "### From Azure Portal\n\n1. Open [the User Settings page](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set `Restrict non-admin users from creating tenants` to `Yes`\n\n### From PowerShell\n\n```bash\nImport-Module Microsoft.Graph.Identity.SignIns\nConnect-MgGraph -Scopes 'Policy.ReadWrite.Authorization'\nSelect-MgProfile -Name beta\n$params = @{\nDefaultUserRolePermissions = \n  @{\n  AllowedToCreateTenants = $false\n  }\n}\nUpdate-MgPolicyAuthorizationPolicy -AuthorizationPolicyId -BodyParameter\n$params\n```",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-non-admin-users-can-create-tenants"
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Users | User settings](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set `Restrict non-admin users from creating tenants` to `Yes`\n\n### From PowerShell\n\n```bash\nImport-Module Microsoft.Graph.Identity.SignIns\nConnect-MgGraph -Scopes 'Policy.ReadWrite.Authorization'\nSelect-MgProfile -Name beta\n$params = @{\nDefaultUserRolePermissions = \n  @{\n  AllowedToCreateTenants = $false\n  }\n}\nUpdate-MgPolicyAuthorizationPolicy -AuthorizationPolicyId -BodyParameter\n$params\n```",
+  "isEnabled": true,
   "severity": 2
 }
