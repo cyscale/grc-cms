@@ -4,6 +4,19 @@
   "slug": "entra-mfa-policy-for-admins",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-conditional-access-admins-mfa"
+    }
+  ],
   "replacementFor": [],
   "remediationDescription": "### From Azure Portal\n\n1. Open the [Conditional Access policies page](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n2. Click `+ New policy`.\n3. Enter a name for the policy.\n4. Select `Users or workload identities`.\n5. Check `Users and groups`.\n6. Select administrative groups this policy should apply to and click `Select`.\n7. Under `Exclude`, check `Users and groups`.\n8. Select users this policy should not apply to and click `Select`.\n9. Select `Cloud apps or actions`.\n10. Select `All cloud apps`.\n11. Select `Grant`.\n12. Under Grant access, check `Require multifactor authentication` and click `Select`.\n13. Set `Enable policy` to `Report-only`.\n14. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`.",
   "isEnabled": true,
