@@ -1,0 +1,5 @@
+{
+  "name": "Entra Non-Admin Users Can Create Tenants",
+  "slug": "entra-non-admin-users-can-create-tenants",
+  "query": "{\n  connectors(\n    where: { authorizationPolicy: { defaultUserAllowedToCreateTenants: true } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
