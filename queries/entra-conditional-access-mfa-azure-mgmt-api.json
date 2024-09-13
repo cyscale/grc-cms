@@ -1,0 +1,5 @@
+{
+  "name": "Entra Conditional Access - MFA for Windows Azure Service Management API",
+  "slug": "entra-conditional-access-mfa-azure-mgmt-api",
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers: [\"All\"]\n          NOT: { OR: { excludeUsers: [], excludeGroups: [], excludeRoles: [] } }\n          includeApplications: [\"797f4846-ba00-4fd7-ba43-dac1f8f63013\"]\n          clientAppTypes: [\"all\"]\n        }\n        grantControls: { builtInControls: [\"mfa\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
