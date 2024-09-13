@@ -1,0 +1,5 @@
+{
+  "name": "Entra Conditional Access - MFA for Risky Sign-Ins",
+  "slug": "entra-conditional-access-mfa-risky-sign-ins",
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers: [\"All\"]\n          NOT: { excludeUsers: [] }\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n          signInRiskLevels_INCLUDES: \"high\"\n        }\n        grantControls: { builtInControls: [\"mfa\"] }\n        sessionControls: {\n          signInFrequencyIsEnabled: true\n          signInFrequencyInterval: \"everytime\"\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
