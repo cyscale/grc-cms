@@ -1,5 +1,5 @@
 {
   "name": "Entra Conditional Access Policies  - MFA For All Users",
   "slug": "entra-conditional-access-mfa-for-all",
-  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions_SOME: {\n          includeUsers: [\"All\"]\n          NOT: { excludeUsers: [] }\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n        }\n        grantControls_SOME: { builtInControls: [\"mfa\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers: [\"All\"]\n          NOT: { excludeUsers: [] }\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n        }\n        grantControls: { builtInControls: [\"mfa\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }
