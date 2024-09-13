@@ -1,0 +1,5 @@
+{
+  "name": "Entra Conditional Access Policies - Admin MFA",
+  "query": "{\n  connectors(\n    where: {\n      cloudProvider: \"entra\"\n      conditionalAccessPolicies_NONE: {\n        conditions_SOME: {\n          NOT: {\n            excludeUsers: []\n            OR: { includeUsers: [], includeGroups: [], includeRoles: [] }\n          }\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n        }\n        grantControls_SOME: { builtInControls: [\"mfa\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "slug": "entra-conditional-access-admins-mfa"
+}
