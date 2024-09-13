@@ -1,10 +1,23 @@
 {
-  "alertForSecondaryOnly": false,
-  "isEnabled": true,
-  "isInsight": false,
+  "body": "Designated users will be prompted to use their multi-factor authentication (MFA) process upon login.\n\n### Rationale\n\nEnabling multi-factor authentication is a recommended setting to limit the potential for accounts to be compromised and to limit access to authenticated personnel.\n\n### Impact\n\nRisk-based conditional access requires **Microsoft Entra ID P2**, which increases the cost. Similarly, it may require additional overhead to maintain if users lose access to their MFA.\n\n### Default Value\n\nMFA is not enabled by default.",
   "name": "Ensure Multi-factor Authentication is Required for Risky Sign-ins",
   "slug": "entra-mfa-risky-sign-ins",
-  "body": "Designated users will be prompted to use their multi-factor authentication (MFA) process upon login.\n\n### Rationale\n\nEnabling multi-factor authentication is a recommended setting to limit the potential for accounts to be compromised and to limit access to authenticated personnel.\n\n### Impact\n\nRisk-based conditional access requires **Microsoft Entra ID P2**, which increases the cost. Similarly, it may require additional overhead to maintain if users lose access to their MFA.\n\n### Default Value\n\nMFA is not enabled by default.",
-  "remediationDescription": "### From Azure Portal\n\n1. Open the [Conditional Access policies page](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n4. Click `+ New policy`.\n5. Enter a name for the policy.\n6. Select `Users or workload identities`.\n7. Under `Include`, select `All users`.\n8. Under `Exclude`, check `Users and groups`.\n9. Select users this policy should not apply to and click Select.\n10. Select `Cloud apps or actions`.\n11. Select `All cloud apps`.\n12. Select `Conditions`.\n13. Select `Sign-in risk`.\n14. Update the `Configure` toggle to `Yes`.\n15. Check the sign-in risk level this policy should apply to, e.g., `High` and `Medium`.\n16. Select `Done`.\n17. Click the blue text under `Grant access` and check `Require multifactor authentication`, then click the `Select` button.\n18. Click the blue text under Session, then check Sign-in frequency and select `Every time`, and click the `Select` button.\n19. Set `Enable policy` to `Report-only`.\n20. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`.",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-conditional-access-mfa-risky-sign-ins"
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Conditional Access | Policies](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n4. Click `+ New policy`.\n5. Enter a name for the policy.\n6. Select `Users`.\n7. Under `Include`, select `All users`.\n8. Under `Exclude`, check `Users and groups`.\n9. Select users this policy should not apply to and click Select.\n10. Under `Target resources, select `Cloud apps`.\n11. Select `All cloud apps`.\n12. Select `Conditions`.\n13. Select `Sign-in risk`.\n14. Update the `Configure` toggle to `Yes`.\n15. Check the sign-in risk level this policy should apply to, e.g., `High` and `Medium`.\n16. Select `Done`.\n17. Click the blue text under `Grant access`, check `Require multifactor authentication`, then click the `Select` button.\n18. Click the blue text under Session, then check Sign-in frequency, select `Every time`, and click the `Select` button.\n19. Set `Enable policy` to `Report-only`.\n20. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`.",
+  "isEnabled": true,
   "severity": 1
 }
