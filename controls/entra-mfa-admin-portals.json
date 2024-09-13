@@ -1,10 +1,23 @@
 {
-  "alertForSecondaryOnly": false,
-  "isEnabled": true,
-  "isInsight": false,
+  "body": "This recommendation ensures that users accessing the Microsoft Admin Portals (i.e., Microsoft 365 Admin, Microsoft 365 Defender, Exchange Admin Center, Azure Portal, etc.) must use multifactor authentication (MFA) credentials when logging into an Admin Portal.\n\n### Rationale\n\nAdministrative Portals for Microsoft Azure should be secured with a higher level of scrutiny for authenticating mechanisms. Enabling multifactor authentication is recommended to reduce the potential for abuse of Administrative actions and to prevent intruders or compromised admin credentials from changing administrative settings.\n\n**IMPORTANT**: While this recommendation allows exceptions to specific Users or Groups, they should be very carefully tracked and reviewed for necessity on a regular interval through an Access Review process. This rule must be built to include \"All Users\" to ensure that all users not specifically excepted will be required to use MFA to access Admin Portals.\n\n### Impact\n\nConditional Access policies require Microsoft Entra ID **P1** or **P2** licenses. Similarly, they may require additional maintenance overhead if users lose access to their MFA. Any users or groups that are granted an exception to this policy should be carefully tracked and be granted only minimal necessary privileges, and conditional access exceptions should be regularly reviewed or investigated.\n\n### Default Value\n\nMFA is not enabled by default for administrative actions.",
   "name": "Ensure Multifactor Authentication is Required to access Microsoft Admin Portals",
   "slug": "entra-mfa-admin-portals",
-  "body": "This recommendation ensures that users accessing the Microsoft Admin Portals (i.e., Microsoft 365 Admin, Microsoft 365 Defender, Exchange Admin Center, Azure Portal, etc.) must use multifactor authentication (MFA) credentials when logging into an Admin Portal.\n\n### Rationale\n\nAdministrative Portals for Microsoft Azure should be secured with a higher level of scrutiny for authenticating mechanisms. Enabling multifactor authentication is recommended to reduce the potential for abuse of Administrative actions and to prevent intruders or compromised admin credentials from changing administrative settings.\n\n**IMPORTANT**: While this recommendation allows exceptions to specific Users or Groups, they should be very carefully tracked and reviewed for necessity on a regular interval through an Access Review process. This rule must be built to include \"All Users\" to ensure that all users not specifically excepted will be required to use MFA to access Admin Portals.\n\n### Impact\n\nConditional Access policies require Microsoft Entra ID **P1** or **P2** licenses. Similarly, they may require additional maintenance overhead if users lose access to their MFA. Any users or groups that are granted an exception to this policy should be carefully tracked and be granted only minimal necessary privileges, and conditional access exceptions should be regularly reviewed or investigated.\n\n### Default Value\n\nMFA is not enabled by default for administrative actions.",
-  "severity": 1,
-  "remediationDescription": "### From Azure Portal\n\n1. Open [Conditional Access | Policies](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n5. Click `+ New policy`.\n6. Enter a name for the policy.\n7. Click the blue text under `Users`.\n8. Under `Include`, select `All users`.\n9. Under `Exclude`, check `Users and groups`.\n10. Select users or groups to be exempted from this policy (e.g., break-glass emergency accounts and non-interactive service accounts), then click the `Select` button.\n11. Click the blue text under `Target Resources`.\n12. Under `Include`, click the `Select apps` radio button.\n13. Click the blue text under `Select`.\n14. Check the box next to `Microsoft Admin Portals`, then click the `Select` button.\n15. Click the blue text under `Grant`.\n16. Under `Grant access`, check the box for `Require multifactor authentication`, then click the `Select` button.\n17. Before creating, set `Enable policy` to `Report-only`.\n18. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`."
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-conditional-access-mfa-admin-portals"
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Conditional Access | Policies](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies).\n5. Click `+ New policy`.\n6. Enter a name for the policy.\n7. Click the blue text under `Users`.\n8. Under `Include`, select `All users`.\n9. Under `Exclude`, check `Users and groups`.\n10. Select users or groups to be exempted from this policy (e.g., break-glass emergency accounts and non-interactive service accounts), then click the `Select` button.\n11. Click the blue text under `Target Resources`.\n12. Under `Include`, click the `Select apps` radio button.\n13. Click the blue text under `Select`.\n14. Check the box next to `Microsoft Admin Portals`, then click the `Select` button.\n15. Click the blue text under `Grant`.\n16. Under `Grant access`, check the box for `Require multifactor authentication`, then click the `Select` button.\n17. Before creating, set `Enable policy` to `Report-only`.\n18. Click `Create`.\n\nAfter testing the policy in report-only mode, update the `Enable policy` setting from `Report-only` to `On`.",
+  "isEnabled": true,
+  "severity": 1
 }
