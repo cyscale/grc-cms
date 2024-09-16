@@ -1,0 +1,5 @@
+{
+  "name": "Entra with permissive guest user restrictions",
+  "slug": "entra-permissive-guest-user-restrictions",
+  "query": "{\n  connectors(\n    where: {\n      authorizationPolicy: {\n        NOT: { guestUserRoleId: \"2af84b1e-32c8-42b7-82bc-daa82404023b\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
