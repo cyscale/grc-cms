@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants allowing users to create security groups",
+  "slug": "entra-with-users-allowed-to-create-security-groups",
+  "query": "{\n  connectors(\n    where: {\n      authorizationPolicy: { defaultUserAllowedToCreateSecurityGroups: true }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
