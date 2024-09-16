@@ -1,0 +1,5 @@
+{
+  "name": "Entra Tenants without reconfirm authentication info",
+  "slug": "entra-without-reconfirm-auth-info",
+  "query": "{\n  connectors(\n    where: { passwordResetPolicy: { registrationReconfirmIntervalInDays: 0 } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
