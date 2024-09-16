@@ -4,6 +4,19 @@
   "slug": "entra-restrict-access-to-admin-center",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-access-to-entra-admin-center"
+    }
+  ],
   "replacementFor": [
     "azure-1-3-0-iam-15"
   ],
