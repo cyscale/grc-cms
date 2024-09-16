@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants allowing owners to manage group membership requests in My Groups",
+  "slug": "entra-owners-can-manage-groups-in-my-groups",
+  "query": "{\n  connectors(\n    where: { ssgmProperties: { selfServiceGroupManagementEnabled: true } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
