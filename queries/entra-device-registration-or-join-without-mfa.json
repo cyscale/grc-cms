@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants allowing device registration/join without MFA",
+  "slug": "entra-device-registration-or-join-without-mfa",
+  "query": "{\n  connectors(\n    where: {\n      deviceRegistrationPolicy: {\n        NOT: { multiFactorAuthConfiguration: \"required\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
