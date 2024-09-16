@@ -1,0 +1,5 @@
+{
+  "name": "Entra Tenants allowing users to register apps",
+  "slug": "entra-users-allowed-to-register-apps",
+  "query": "{\n  connectors(where: { directoryProperties: { usersCanRegisterApps: true } }) {\n    ...AssetFragment\n  }\n}"
+}
