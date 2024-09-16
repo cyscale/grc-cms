@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants that do not block user consent",
+  "slug": "entra-without-block-user-consent",
+  "query": "{\n  connectors(\n    where: {\n      authorizationPolicy: {\n        OR: [\n          {\n            defaultUserPermissionGrantPoliciesAssigned_INCLUDES: \"ManagePermissionGrantsForSelf.microsoft-user-default-low\"\n          }\n          {\n            defaultUserPermissionGrantPoliciesAssigned_INCLUDES: \"ManagePermissionGrantsForSelf.microsoft-user-default-legacy\"\n          }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
