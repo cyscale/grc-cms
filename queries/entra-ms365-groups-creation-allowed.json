@@ -1,0 +1,5 @@
+{
+  "name": "Entra Tenants allowing Microsoft 365 group creation",
+  "slug": "entra-ms365-groups-creation-allowed",
+  "query": "{\n  connectors(where: { groupUnifiedSettings: { enableGroupCreation: true } }) {\n    ...AssetFragment\n  }\n}"
+}
