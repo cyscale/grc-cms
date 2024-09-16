@@ -1,0 +1,5 @@
+{
+  "name": "Entra SSGM - Access to My Groups Enabled",
+  "slug": "entra-ssgm-my-groups-enabled",
+  "query": "{\n  connectors(where: { ssgmProperties: { groupsInAccessPanelEnabled: true } }) {\n    ...AssetFragment\n  }\n}"
+}
