@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants allowing access to the entra admin center",
+  "slug": "entra-access-to-entra-admin-center",
+  "query": "{\n  connectors(where: { directoryProperties: { restrictNonAdminUsers: false } }) {\n    ...AssetFragment\n  }\n}"
+}
