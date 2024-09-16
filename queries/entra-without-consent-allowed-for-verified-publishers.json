@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants without consent allowed for verified publishers",
+  "slug": "entra-without-consent-allowed-for-verified-publishers",
+  "query": "{\n  connectors(\n    where: {\n      authorizationPolicy: {\n        NOT: {\n          defaultUserPermissionGrantPoliciesAssigned_INCLUDES: \"ManagePermissionGrantsForSelf.microsoft-user-default-low\"\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
