@@ -1,0 +1,5 @@
+{
+  "name": "Azure Custom Subscription Administrator Roles",
+  "slug": "azure-custom-subscription-admin-roles",
+  "query": "query ($subscriptionResourceId: String!) {\n  iamRoles(\n    where: {\n      type: \"CustomRole\"\n      permissions_INCLUDES: \"*\"\n      assignableScopes_INCLUDES: $subscriptionResourceId\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
