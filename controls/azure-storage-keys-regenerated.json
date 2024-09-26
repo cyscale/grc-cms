@@ -17,7 +17,7 @@
       "query": "azure-1-3-0-storage-2-storage-account-access-keys-are-periodically-regenerated"
     }
   ],
-  "remediationDescription": "### From Azure Portal\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n3. Click `Rotate key` next to the outdated key, then click `Yes` to the prompt confirming that you want to regenerate the access key.\n\nAfter Azure regenerates the Access Key, you can confirm that `Access keys` reflects a `Last rotated` date of `(0 days ago)`.",
+  "remediationDescription": "### Azure Portal\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n3. Click `Rotate key` next to the outdated key, then click `Yes` to the prompt confirming that you want to regenerate the access key.\n\nAfter Azure regenerates the Access Key, you can confirm that `Access keys` reflects a `Last rotated` date of `(0 days ago)`.\n\n### Azure CLI\n\n1. Update the connection strings in your application to reference the secondary access key for the storage account.\n2. Call the [az storage account keys renew](https://learn.microsoft.com/en-us/cli/azure/storage/account/keys#az-storage-account-keys-renew) command to regenerate the primary access key, as shown in the following example:\n\n```bash\naz storage account keys renew \\\n  --resource-group <resource-group> \\\n  --account-name <storage-account> \\\n  --key primary\n```\n\n3. Update the connection strings in your application to reference the new primary access key.\n4. Regenerate the secondary access key in the same manner. To regenerate the secondary key, use `secondary` as the key name instead of `primary`.",
   "isEnabled": true,
   "severity": 2
 }
