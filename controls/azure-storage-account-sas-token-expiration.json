@@ -4,6 +4,19 @@
   "slug": "azure-storage-account-sas-token-expiration",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StorageAccount"
+      ],
+      "query": "azure-storage-accounts-without-sas-expiration-policy"
+    }
+  ],
   "replacementFor": [
     "azure-1-3-0-storage-4"
   ],
