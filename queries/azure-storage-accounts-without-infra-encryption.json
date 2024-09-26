@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Without Infrastructure Encryption",
+  "slug": "azure-storage-accounts-without-infra-encryption",
+  "query": "{\n  storageAccounts(where: { requireInfrastructureEncryption: false }) {\n    ...AssetFragment\n  }\n}"
+}
