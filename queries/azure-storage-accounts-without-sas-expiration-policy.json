@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Without SAS Expiration Policy",
+  "slug": "azure-storage-accounts-without-sas-expiration-policy",
+  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { sasPolicyExpirationAction: \"\" }\n        {\n          AND: [\n            { NOT: { sasPolicySasExpirationPeriod_STARTS_WITH: \"0.00\" } }\n            { NOT: { sasPolicySasExpirationPeriod: \"0.01:00:00\" } }\n          ]\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
