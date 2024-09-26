@@ -127,10 +127,16 @@
           "control": "azure-storage-account-infra-encryption"
         },
         {
+          "control": "azure-storage-account-key-rotation-reminder"
+        },
+        {
           "control": "azure-storage-keys-regenerated"
         },
         {
           "control": "azure-log-queue-read-write-delete"
+        },
+        {
+          "control": "azure-storage-account-sas-token-expiration"
         },
         {
           "control": "azure-private-access-containers"
