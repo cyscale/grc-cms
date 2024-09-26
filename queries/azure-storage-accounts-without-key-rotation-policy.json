@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Without Key Rotation Reminders",
+  "slug": "azure-storage-accounts-without-key-rotation-policy",
+  "query": "{\n  storageAccounts(where: { keyExpirationPeriodInDays: 0 }) {\n    ...AssetFragment\n  }\n}"
+}
