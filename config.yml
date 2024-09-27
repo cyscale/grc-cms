@@ -101,6 +101,11 @@ collections:
         widget: 'list'
         summary: '{{query.value}}'
         fields:
+          - label: 'Is Manual'
+            name: 'isManual'
+            widget: 'boolean'
+            default: false
+            hint: 'If true, the rule is not automated'
           - label: 'Providers'
             name: 'cloudProviders'
             widget: 'select'
@@ -117,12 +122,14 @@ collections:
           - label: 'Comparator'
             name: 'comparator'
             widget: 'select'
+            hint: 'Select anything for manual triggers'
             options:
               - { label: 'Equal', value: 'eq' }
               - { label: 'Not equal', value: 'neq' }
           - label: 'Expected result'
             name: 'expectedResult'
             widget: 'select'
+            hint: 'Select anything for manual triggers'
             options:
               - { label: 'Empty array', value: '[]' }
               - { label: 'True', value: 'true' }
