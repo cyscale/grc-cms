@@ -1,10 +1,23 @@
 {
   "body": "In some cases, Azure Storage sets the minimum TLS version to be 1.0 by default. TLS 1.0 is a legacy version with known vulnerabilities. However, this minimum TLS version can be configured to be later protocols, such as TLS 1.2.\n\n### Rationale\n\nTLS 1.0 has known vulnerabilities and has been replaced by later versions of the TLS protocol. Continued use of this legacy protocol affects the security of data in transit.\n\n### Impact\n\nWhen set to TLS 1.2, all requests must use this version of the protocol. Applications using legacy versions of the protocol will fail.\n\n### Default Value\n\nIf a storage account is created through the portal, its MinimumTlsVersion property will be set to TLS 1.2.\n\nIf a storage account is created through PowerShell or CLI, the MinimumTlsVersion property for that storage account will not be set and will default to TLS 1.0.",
-  "name": "Ensure the 'Minimum TLS version' for storage accounts is set to 'Version 1.2'",
+  "name": "Ensure 'Minimum TLS version' for storage accounts is set to 'Version 1.2'",
   "slug": "azure-storage-account-minimum-tls",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StorageAccount"
+      ],
+      "query": "azure-storage-accounts-allowing-old-tls-versions"
+    }
+  ],
   "remediationDescription": "### From Azure Console\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button\n2. Under the `Setting` section, Click on `Configuration`.\n3. Set the `minimum TLS version` to be Version 1.2.\n\n### From Azure CLI\n\n```bash\naz storage account update --name <storage_account> --resource-group <resource_group> --min-tls-version TLS1_2\n```\n\n### From Azure Powershell\n\nTo set the minimum TLS version, run the following command:\n\n```bash\nSet-AzStorageAccount -AccountName <STORAGEACCOUNTNAME> -ResourceGroupName <RESOURCEGROUPNAME> -MinimumTlsVersion TLS1_2\n```",
   "isEnabled": true,
   "severity": 2
