@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Without Minimum TLS 1.2",
+  "slug": "azure-storage-accounts-allowing-old-tls-versions",
+  "query": "{\n  storageAccounts(where: { minimumTlsVersion_IN: [\"TLS1_0\", \"TLS1_1\"] }) {\n    ...AssetFragment\n  }\n}"
+}
