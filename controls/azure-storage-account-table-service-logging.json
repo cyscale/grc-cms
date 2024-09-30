@@ -1,0 +1,24 @@
+{
+  "body": "Azure Table storage is a service that stores structured NoSQL data in the cloud, providing a key/attribute store with a schema-less design. Storage Logging happens server-side and allows details for successful and failed requests to be recorded in the storage account. These logs allow users to see the details of read, write, and delete operations against the tables. Storage Logging log entries contain the following information about individual requests: timing information such as start time, end-to-end latency, and server latency; authentication details; concurrency information; and the sizes of the request and response messages.\n\n### Rationale\n\nStorage Analytics logs contain detailed information about successful and failed requests to a storage service. This information can be used to monitor each individual request for increased security or diagnostics. Requests are logged on a best-effort basis.\n\n### Impact\n\nEnabling this setting can significantly impact the cost of the log analytics service and data storage used by logging more data per request. Do not enable this without determining your need for this level of logging, and do not forget to check in on data usage and projected cost. Some users have seen their logging costs increase from $10 per month to $10,000 per month.\n\n### Default Value\n\nStorage Analytics logging is not enabled by default for your storage account.\n\n### Additional Information\n\nDue to their nature and intent, we cannot practically generalize detailed audit log requirements for every table. This recommendation may be applicable to storage account table services where security is paramount.",
+  "name": "Ensure Storage Logging is Enabled for Table Service for 'Read', 'Write', and 'Delete' Requests",
+  "slug": "azure-storage-account-table-service-logging",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StorageAccount"
+      ],
+      "query": "azure-storage-accounts-without-table-diag-settings"
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button\n3. Click the `Diagnostics settings` under the `Monitoring` section in the left column.\n4. Select the 'table' tab indented below the storage account.\n5. Click '+ Add diagnostic setting'.\n6. Under the `Logging` section, select the `StorageRead`, `StorageWrite`, and `StorageDelete` options to enable Storage Logging for the Table service.\n7. Select a destination for your logs to be sent to.\n\n### From Azure CLI\n\nUse the below command to enable the Storage Logging for Table service.\n\n```bash\naz storage logging update --account-name <storageAccountName> --account-key <storageAccountKey> --services t --log rwd --retention 90\n```",
+  "isEnabled": true,
+  "severity": 1
+}
