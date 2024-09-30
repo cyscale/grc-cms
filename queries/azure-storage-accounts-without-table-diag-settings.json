@@ -1,0 +1,5 @@
+{
+  "name": "Storage Accounts without Table Diagnostic Settings",
+  "slug": "azure-storage-accounts-without-table-diag-settings",
+  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { isTableServicesDiagnosticsSettingsEnabled: false }\n        {\n          tableServicesDiagnosticSettings_NONE: {\n            AND: [\n              { logs_SINGLE: { enabled: true, category: \"StorageRead\" } }\n              { logs_SINGLE: { enabled: true, category: \"StorageWrite\" } }\n              { logs_SINGLE: { enabled: true, category: \"StorageDelete\" } }\n            ]\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
