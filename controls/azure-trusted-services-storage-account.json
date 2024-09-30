@@ -1,10 +1,9 @@
 {
+  "body": "Some Azure services that interact with storage accounts operate from networks that can't be granted access through network rules. To help this type of service work as intended, allow the trusted Azure services to bypass the network rules. These services will then use strong authentication to access the storage account. If the Allow trusted Azure services exception is enabled, the following services are granted access to the storage account: Azure Backup, Azure Site Recovery, Azure DevTest Labs, Azure Event Grid, Azure Event Hubs, Azure Networking, Azure Monitor, and Azure SQL Data Warehouse (when registered in the subscription).\n\n### Rationale\n\nTurning on firewall rules for a storage account will block access to incoming data requests, including from other Azure services. We can re-enable this functionality by enabling \"Trusted Azure Services\" through networking exceptions.\n\n### Impact\n\nThis creates authentication credentials for services that need access to storage resources so that services will no longer need to communicate via a network request. As you set each storage account, there may be a temporary loss of communication. It is recommended not to do this on mission-critical resources during business hours.\n\n### Default Value\n\nBy default, Storage Accounts will accept connections from clients on any network.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security](https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-2-secure-cloud-services-with-network-controls](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-2-secure-cloud-services-with-network-controls)",
   "name": "Ensure 'Allow Azure services on the trusted services list to access this storage account' is Enabled for Storage Account Access",
-  "description": "",
   "slug": "azure-trusted-services-storage-account",
-  "severity": 2,
-  "body": "Some Azure services that interact with storage accounts operate from networks that can't be granted access through network rules. To help this type of service work as intended, allow the set of trusted Azure services to bypass the network rules. These services will then use strong authentication to access the storage account. If the Allow trusted Azure services exception is enabled, the following services are granted access to the storage account: Azure Backup, Azure Site Recovery, Azure DevTest Labs, Azure Event Grid, Azure Event Hubs, Azure Networking, Azure Monitor, and Azure SQL Data Warehouse (when registered in the subscription).\n\n**Rationale**\n\nTurning on firewall rules for a storage account will block access to incoming requests for data, including from other Azure services. We can re-enable this functionality by enabling \"Trusted Azure Services\" through networking exceptions.\n\n**Impact**\n\nThis creates authentication credentials for services that need access to storage resources so that services will no longer need to communicate via network request. There may be a temporary loss of communication as you set each Storage Account. It is recommended to not do this on mission-critical resources during business hours.",
-  "remediationDescription": "**From Azure Console**\n\n1. Go to `Storage Accounts`\n2. For each storage account, click on the `Networking` blade\n3. Click on the `Firewalls and virtual networks` heading\n4. Ensure that `Enabled from selected virtual networks and IP addresses` is selected\n5. Under the `Exceptions` label, check `Allow Azure services on the trusted services list to access this storage account.`\n5. Click `Save` to apply your changes.\n\n**Using Azure Command Line Interface**\n\nUse the below command to update `Azure services`.\n\n```bash\naz storage account update --name <StorageAccountName> --resource-group <resourceGroupName> --bypass AzureServices\n```\n\n**Default value**\n\nBy default, Storage Accounts will accept connections from clients on any network.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security](https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-2-secure-cloud-services-with-network-controls](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-2-secure-cloud-services-with-network-controls)\n",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -15,7 +14,12 @@
       "subjects": [
         "StorageAccount"
       ],
-      "query": "azure-allow-azure-services-to-access-storage-account"
+      "query": "azure-allow-azure-services-to-access-storage-account",
+      "isManual": false
     }
-  ]
+  ],
+  "remediationDescription": "### Azure Console\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n3. Under `Networking`, click on the `Firewalls and virtual networks` heading\n4. Ensure that `Enabled from selected virtual networks and IP addresses` is selected\n5. Under the `Exceptions` label, check `Allow Azure services on the trusted services list to access this storage account.`\n5. Click `Save` to apply your changes.\n\n### Azure CLI\n\nUse the below command to update `Azure services`:\n\n```bash\naz storage account update --name <StorageAccountName> --resource-group <resourceGroupName> --bypass AzureServices\n```",
+  "isEnabled": true,
+  "description": "",
+  "severity": 2
 }
