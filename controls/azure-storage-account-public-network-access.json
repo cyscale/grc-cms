@@ -1,10 +1,23 @@
 {
   "body": "Disallowing public network access for a storage account overrides the public access settings for individual containers in that storage account for Azure Resource Manager Deployment Model storage accounts. Azure Storage accounts that use the classic deployment model will be retired on August 31, 2024.\n\n### Rationale\n\nThe default network configuration for a storage account permits a user with appropriate permissions to configure public network access to containers and blobs in a storage account. Remember that public access to a container is always turned off by default and must be explicitly configured to permit anonymous requests. It grants read-only access to these resources without sharing the account key or requiring a shared access signature. It is recommended not to provide public network access to storage accounts until and unless it is strongly desired. A shared access signature token or RBAC should provide controlled and timed access to blob containers.\n\n### Impact\n\nAccess will have to be managed using shared access signatures or via RBAC.\n\n### Default Value\n\nBy default, `Public Network Access` is set to `Enabled from all networks` for the Storage Account.",
-  "name": "Ensure that 'Public Network Access' is `Disabled' for storage accounts",
+  "name": "Ensure 'Public Network Access' is `Disabled' for storage accounts",
   "slug": "azure-storage-account-public-network-access",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StorageAccount"
+      ],
+      "query": "azure-storage-account-public-network-access"
+    }
+  ],
   "remediationDescription": "### From Azure Portal\n\nFirst, follow Microsoft documentation and create shared access signature tokens for your blob containers. Then,\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n2. Under the `Security + networking` section, click `Networking`.\n3. Set `Public Network Access` to `Disabled`.\n\n### From Azure CLI\n\n```bash\naz storage account update --name <storage_account> --resource-group <resource_group> --public-network-access Disabled\n```\n\n### From PowerShell\n\n```bash\nSet-AzStorageAccount -ResourceGroupName <resource group name> -Name <storage account name> -PublicNetworkAccess Disabled",
   "isEnabled": true,
   "severity": 2
