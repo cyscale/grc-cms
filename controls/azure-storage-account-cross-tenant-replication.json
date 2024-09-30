@@ -1,0 +1,11 @@
+{
+  "body": "Cross Tenant Replication in Azure allows data to be replicated across multiple Azure tenants. While this feature can be beneficial for data sharing and availability, it also poses a significant security risk if not properly managed. Unauthorized data access, data leakage, and compliance violations are potential risks. Disabling Cross Tenant Replication ensures data is not inadvertently replicated across tenant boundaries without explicit authorization.\n\n### Rationale\n\nDisabling Cross Tenant Replication minimizes the risk of unauthorized data access and ensures that data governance policies are strictly followed. This control is especially critical for organizations with stringent data security and privacy requirements, as it prevents the accidental sharing of sensitive information.\n\n### Impact\n\nDisabling Cross Tenant Replication may affect data availability and sharing across Azure tenants. Ensure that this change aligns with your organizational data sharing and availability requirements.\n\n### Default Value\n\nCross-tenant replication is not enabled for new storage accounts created after Dec 15, 2023 cross.",
+  "name": "Ensure 'Cross Tenant Replication' is not enabled",
+  "slug": "azure-storage-account-cross-tenant-replication",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [],
+  "remediationDescription": "### From Azure Console\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n2. Under Data Management, click on Object replication.\n3. Click on Advanced settings and untick Allow cross-tenant replication.\n4. Click on OK.\n\n### From Azure CLI\n\n```bash\naz storage account update --name <storageAccountName> --resource-group <resourceGroupName> --allow-cross-tenant-replication false\n```",
+  "isEnabled": true,
+  "severity": 3
+}
