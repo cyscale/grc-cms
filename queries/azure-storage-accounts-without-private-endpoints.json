@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Without Private Endpoints",
+  "slug": "azure-storage-accounts-without-private-endpoints",
+  "query": "{\n  storageAccounts(\n    where: {\n      privateEndpoints_NONE: {\n        type: \"Microsoft.Storage/storageAccounts/privateEndpointConnections\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
