@@ -1,0 +1,24 @@
+{
+  "body": "The Azure Storage setting `Allow Blob Anonymous Access` (a.k.a. `allowBlobPublicAccess`) controls whether anonymous access is allowed for blob data in a storage account. When this property is set to True, it enables public read access to blob data, which can be convenient for sharing data but may carry security risks. When set to False, it disallows public access to blob data, providing a more secure storage environment.\n\n### Rationale\n\nIf \"Allow Blob Anonymous Access\" is enabled, blobs can be accessed by adding the blob name to the URL to see the contents. An attacker can enumerate a blob using methods such as brute force and access them.\n\nIf this setting is set to 'Enabled,' data may be exfiltrated by brute-force enumeration of items from a storage account.\n\n### Impact\n\nAdditional consideration may be required in exceptional circumstances where elements of a storage account require public accessibility. In these circumstances, it is highly recommended that all data stored in the public-facing storage account be reviewed for sensitive or potentially compromising data and that sensitive or compromising data never be stored in these storage accounts.\n\n### Default Value\n\nDisabled",
+  "name": "Ensure that 'Allow Blob Anonymous Access' is set to 'Disabled'",
+  "slug": "azure-storage-account-blob-anonymous-access",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StorageAccount"
+      ],
+      "query": "azure-storage-accounts-allowing-blob-public-access"
+    }
+  ],
+  "remediationDescription": "### From Azure Console\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n2. Click on a Storage Account.\n3. Under the Settings section, click `Configuration`.\n4. Under Allow Blob Anonymous Access, select `Disabled`.\n\nRepeat these steps for each Storage Account.\n\n### From Azure Powershell\n\nFor every storage account in scope, run the following:\n\n```bash\n$storageAccount = Get-AzStorageAccount -ResourceGroupName \"<yourResourceGroup>\" -Name \"<yourStorageAccountName>\"\n$storageAccount.AllowBlobPublicAccess = $false\nSet-AzStorageAccount -InputObject $storageAccount\n```",
+  "isEnabled": true,
+  "severity": 2
+}
