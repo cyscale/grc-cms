@@ -4,7 +4,20 @@
   "slug": "azure-storage-account-cross-tenant-replication",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "StorageAccount"
+      ],
+      "query": "azure-storage-accounts-allowing-cross-tenant-replication"
+    }
+  ],
   "remediationDescription": "### From Azure Console\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n2. Under Data Management, click on Object replication.\n3. Click on Advanced settings and untick Allow cross-tenant replication.\n4. Click on OK.\n\n### From Azure CLI\n\n```bash\naz storage account update --name <storageAccountName> --resource-group <resourceGroupName> --allow-cross-tenant-replication false\n```",
   "isEnabled": true,
   "severity": 3
