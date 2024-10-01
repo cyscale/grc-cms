@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Allowing Cross Tenant Replication",
+  "slug": "azure-storage-accounts-allowing-cross-tenant-replication",
+  "query": "{\n  storageAccounts(where: { allowCrossTenantReplication: true }) {\n    ...AssetFragment\n  }\n}"
+}
