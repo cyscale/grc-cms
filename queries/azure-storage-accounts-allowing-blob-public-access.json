@@ -1,0 +1,5 @@
+{
+  "name": "Azure Storage Accounts Allowing Blob Public Access",
+  "slug": "azure-storage-accounts-allowing-blob-public-access",
+  "query": "{\n  storageAccounts(where: { allowBlobPublicAccess: true }) {\n    ...AssetFragment\n  }\n}"
+}
