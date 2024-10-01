@@ -139,13 +139,16 @@
           "control": "azure-storage-account-sas-token-expiration"
         },
         {
-          "control": "azure-private-access-containers"
+          "control": "azure-storage-account-public-network-access"
+        },
+        {
+          "control": "azure-deny-access-storage-account"
         },
         {
           "control": "azure-trusted-services-storage-account"
         },
         {
-          "control": "azure-deny-access-storage-account"
+          "control": "azure-storage-account-private-endpoints"
         },
         {
           "control": "azure-soft-delete-containers-blobs"
@@ -155,6 +158,18 @@
         },
         {
           "control": "azure-log-blob-read-write-delete"
+        },
+        {
+          "control": "azure-storage-accounts-without-table-diag-settings"
+        },
+        {
+          "control": "azure-storage-account-minimum-tls"
+        },
+        {
+          "control": "azure-storage-account-cross-tenant-replication"
+        },
+        {
+          "control": "azure-storage-account-blob-anonymous-access"
         }
       ]
     }

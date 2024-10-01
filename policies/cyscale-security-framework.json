@@ -439,9 +439,6 @@
           "control": "azure-alert-delete-sql-firewall"
         },
         {
-          "control": "azure-1-3-0-logging-3"
-        },
-        {
           "control": "cis-alibaba-1-0-0-logging-1"
         },
         {
@@ -877,7 +874,7 @@
           "control": "azure-log-blob-read-write-delete"
         },
         {
-          "control": "azure-1-3-0-storage-11"
+          "control": "azure-storage-accounts-without-table-diag-settings"
         },
         {
           "control": "object-containers-with-public-access"

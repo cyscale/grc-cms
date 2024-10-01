@@ -185,7 +185,7 @@
           "control": "azure-log-queue-read-write-delete"
         },
         {
-          "control": "azure-private-access-containers"
+          "control": "azure-storage-account-blob-anonymous-access"
         },
         {
           "control": "azure-trusted-services-storage-account"
