@@ -4,7 +4,20 @@
   "slug": "azure-mfa-privileged-users",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "entra-privileged-azure-assignments"
+    }
+  ],
   "remediationDescription": "### Azure Portal\n\n1. From Azure Home select the Portal Menu.\n2. Select Microsoft Entra ID blade.\n3. Under Manage, click Roles and administrators\n4. Take note of all users with the role of Service Co-Administrators, Owners, or Contributors\n5. Return to the Overview\n6. Under Manage, click Users\n7. Click on the Per-User MFA button in the top row menu\n8. Check the box next to each noted user\n9. Click Enable MFA\n10. Click Enable\n\n### Other Options within the Azure Portal\n\nFollow [Microsoft Azure documentation](https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa) and enable multi-factor authentication in your environment.\n\nEnabling and configuring MFA with a conditional access policy is a multi-step process. Here are some additional resources on the process within Entra ID to enable multifactor authentication for users within your subscriptions with a conditional access policy.\n\n- [https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/howtoconditional-access-policy-admin-mfa](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/howtoconditional-access-policy-admin-mfa)\n- [https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfagetstarted#enable-multi-factor-authentication-with-conditional-access](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfagetstarted#enable-multi-factor-authentication-with-conditional-access)\n- [https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfamfasettings](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfamfasettings)",
   "isEnabled": true,
   "severity": 3
