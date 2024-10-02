@@ -1,0 +1,5 @@
+{
+  "name": "Entra users with privileged Azure assignmnets",
+  "slug": "entra-privileged-azure-assignments",
+  "query": "{\n  users(\n    where: {\n      OR: [\n        {\n          iamRoleAssignments_SOME: {\n            OR: [\n              { internalName_IN: [\"Owner\", \"Contributor\"] }\n              { isClassicAdministratorAssignment: true }\n            ]\n          }\n        }\n        {\n          groups_SOME: {\n            iamRoleAssignments_SOME: {\n              OR: [\n                { internalName_IN: [\"Owner\", \"Contributor\"] }\n                { isClassicAdministratorAssignment: true }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
