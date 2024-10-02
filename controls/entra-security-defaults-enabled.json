@@ -7,7 +7,7 @@
   "rules": [
     {
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "cloudProviders": [
         "entra"

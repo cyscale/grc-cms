@@ -10,7 +10,7 @@
       "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CloudAccount"],
+      "subjects": ["Connector"],
       "query": "aws-iam-13-mfa-is-enabled-for-the-root-account",
       "returnPath": ""
     }

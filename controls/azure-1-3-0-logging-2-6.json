@@ -13,7 +13,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "query": "azure-1-3-0-logging-2-6-activity-log-alert-exists-for-the-delete-network-security-group-rule",
       "returnPath": ""

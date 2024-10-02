@@ -12,7 +12,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "query": "gcp-logging-10-log-metric-filter-and-alerts-exist-for-cloud-storage-iam-permission-changes",
       "returnPath": ""

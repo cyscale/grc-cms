@@ -10,7 +10,7 @@
       "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CloudAccount"],
+      "subjects": ["Connector"],
       "query": "gcp-logging-1-cloud-audit-logging-is-configured-properly-across-all-services-and-all-users-from-a-project",
       "returnPath": ""
     }

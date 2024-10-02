@@ -14,7 +14,7 @@
       "expectedResult": "[]",
       "query": "aws-multi-region-trails-with-logging-enabled",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ]
     }
   ]

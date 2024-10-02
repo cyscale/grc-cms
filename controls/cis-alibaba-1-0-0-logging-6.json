@@ -12,7 +12,7 @@
       "expectedResult": "[]",
       "query": "alibaba-iam-account-summaries-with-anti-ddos-log-enabled",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "returnPath": "connector"
     }

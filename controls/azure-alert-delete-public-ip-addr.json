@@ -13,7 +13,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "query": "azure-logging-activity-log-alert-exists-for-delete-public-ip-address"
     }

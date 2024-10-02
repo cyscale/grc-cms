@@ -3,7 +3,7 @@
   "mid": "T1078",
   "controls": ["aws-iam-13"],
   "assets": [
-    "CloudAccount",
+    "Connector",
     "User",
     "IAMUser",
     "IAMGroup",

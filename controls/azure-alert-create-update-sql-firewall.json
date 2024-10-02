@@ -11,7 +11,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "query": "azure-1-3-0-logging-2-9-activity-log-alert-exists-for-create-or-update-or-delete-sql-server-firewall-rule"
     }

@@ -10,7 +10,7 @@
       "cloudProviders": ["gcp"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CloudAccount"],
+      "subjects": ["Connector"],
       "query": "gcp-logging-2-sinks-are-configured-for-all-log-entries",
       "returnPath": ""
     }

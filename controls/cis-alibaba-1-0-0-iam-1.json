@@ -10,7 +10,7 @@
       "cloudProviders": ["alibaba"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CloudAccount"],
+      "subjects": ["Connector"],
       "query": "cis-alibaba-1-0-0-iam-1-avoid-the-use-of-the-root-account",
       "returnPath": ""
     }

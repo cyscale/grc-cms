@@ -11,7 +11,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "query": "azure-activity-log-alert-delete-sql-sever"
     }

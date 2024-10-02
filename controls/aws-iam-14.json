@@ -13,7 +13,7 @@
       "cloudProviders": ["aws"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CloudAccount"],
+      "subjects": ["Connector"],
       "query": "aws-iam-14-hardware-mfa-is-enabled-for-the-root-account-hardware-mfa",
       "returnPath": ""
     }

@@ -11,7 +11,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "query": "aws-iampolicies-with-support-role",
-      "subjects": ["CloudAccount"],
+      "subjects": ["Connector"],
       "returnPath": ""
     }
   ]

@@ -5,6 +5,6 @@
     "aws-monitoring-10"
   ],
   "assets": [
-    "CloudAccount"
+    "Connector"
   ]
 }
