@@ -1,0 +1,24 @@
+{
+  "body": "Conditional Access Policies can be used to prevent the Device code authentication flow. Device code flow should be permitted only for users who regularly perform duties that explicitly require using Device Code to authenticate, such as utilizing Azure with PowerShell.\n\n### Rationale\n\nAttackers use Device code flow in phishing attacks, which, if successful, results in the attacker gaining access tokens and refreshing tokens scoped to `user_impersonation` and can perform any action the user has permission to perform.\n\n### Impact\n\nMicrosoft Entra ID P1 or P2 is required.\n\nThis policy should be tested using the Report-only mode before implementation. Without a full and careful understanding of the accounts and personnel who require Device code authentication flow, implementing this policy can block authentication for users and devices who rely on Device code flow. More secure alternatives should be implemented wherever possible for users and devices that rely on device code flow authentication.\n\n### Default Value\n\nNo policies are configured by default.\n\n### Additional Information\n\nThese policies should be tested by using the What If tool in the References. Setting these can and will create issues with logging in for users until they use an MFA device linked to their accounts. Further testing can be done via the insights and reporting resource in References, which monitors Azure sign-ins.",
+  "name": "Ensure an exclusionary Device code flow policy is considered",
+  "slug": "entra-exclusionary-device-code-flow-policy",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-exclusionary-device-code-flow-policy",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n#### Part 1 of 2 - Create the policy and enable it in `Report-only` mode.\n\n1. Open [Conditional Access | Overview](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Overview)\n4. Click the `+ New policy` button, then:\n5. Provide a name for the policy.\n6. Under `Assignments`, select `Users` then:\n   - Under `Include`, select `All users`\n   - Under `Exclude`, check `Users and groups` and only select emergency access accounts\n7. Under `Target resources`, select `Cloud apps` then:\n   - Under `Include`, select `All cloud apps`\n   - Leave `Exclude` blank unless you have a well-defined exception.\n8. Under `Conditions`, select `Authentication Flows` then:\n   - Select `Device code flow`\n   - Select `Done`\n9. Under `Access Controls`, select `Grant` and Confirm that `Block Access` is selected.\n10. Set `Enable policy` to `Report-only`.\n11. Click `Create`.\n\n**NOTE:** The policy is not yet 'live' since `Report-only` is being used to audit its effect.\n\nPart 2 of 2 - Confirm that the policy is not blocking access that should be granted, then toggle to `On`.\n\n1. With your policy now in report-only mode, return to the Microsoft Entra blade and click on `Sign-in logs`.\n2. Review the recent sign-in events - click an event, then review the event details (specifically the `Report-only` tab) to ensure:\n   - The sign-in event you're reviewing occurred **after** turning on the policy in report-only mode.\n   - The policy name from step 5 above is listed in the `Policy Name` column.\n   - The `Result` column for the new policy shows that the policy was `Not applied` (indicating the device code authentication flow was not blocked).\n3. If the above conditions are present, navigate back to the policy name in Conditional Access and open it.\n4. Toggle the policy from `Report-only` to `On`.\n5. Click `Save`.",
+  "isEnabled": true,
+  "severity": 1
+}
