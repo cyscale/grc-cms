@@ -1,0 +1,25 @@
+{
+  "body": "If your organization pays for Microsoft Entra ID licensing (included in Microsoft 365 E3, E5, or F5, and EM&S E3 or E5 licenses) and **can** use Conditional Access, ignore the recommendations in this section and proceed to the Conditional Access section.\n\nEnable multi-factor authentication for all non-privileged users.\n\n### Rationale\n\nMulti-factor authentication requires an individual to present at least two separate forms of authentication before access is granted. Multi-factor authentication provides additional assurance that the individual attempting to gain access is who they claim to be. With multi-factor authentication, an attacker would need to compromise at least two different authentication mechanisms, increasing the difficulty of compromise and thus reducing the risk.\n\n### Impact\n\nUsers would require two forms of authentication before access is granted. Enabling multi-factor authentication will require additional administrative time to manage dual forms of authentication.\n\n### Default Value\n\nBy default, multi-factor authentication is disabled for all users.\n\n### References\n\n- [https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factorauthentication](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factorauthentication)\n- [https://stackoverflow.com/questions/41156206/azure-active-directory-premiummfa-attributes-via-graph-api](https://stackoverflow.com/questions/41156206/azure-active-directory-premiummfa-attributes-via-graph-api)\n- [https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identitymanagement#im-4-authenticate-server-and-services](https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identitymanagement#im-4-authenticate-server-and-services)",
+  "name": "Ensure 'Multi-Factor Auth Status' is 'Enabled' for all Non-Privileged Users",
+  "slug": "azure-mfa-all-users",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "azure-users-without-mfa"
+    }
+  ],
+  "remediationDescription": "### Azure Portal\n\n1. Open [Users](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers)\n2. Click on the `Per-User MFA` button in the top row menu\n3. Check the box next to each user reported by Cyscale\n4. Click `Enable MFA`\n5. Click `Enable`\n\n### Other Options within the Azure Portal\n\nFollow [Microsoft Azure documentation](https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa) and enable multi-factor authentication in your environment.\n\nEnabling and configuring MFA with a conditional access policy is a multi-step process. Here are some additional resources on the process within Entra ID to enable multifactor authentication for users within your subscriptions with a conditional access policy.\n\n- [https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/howtoconditional-access-policy-admin-mfa](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/howtoconditional-access-policy-admin-mfa)\n- [https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfagetstarted#enable-multi-factor-authentication-with-conditional-access](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfagetstarted#enable-multi-factor-authentication-with-conditional-access)\n- [https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfamfasettings](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfamfasettings)\n",
+  "isEnabled": true,
+  "description": "",
+  "severity": 2
+}
