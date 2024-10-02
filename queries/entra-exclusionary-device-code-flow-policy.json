@@ -1,0 +1,5 @@
+{
+  "name": "Entra Connectors Without Device Code Flow Exclusion Policy",
+  "slug": "entra-exclusionary-device-code-flow-policy",
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers: [\"All\"]\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n          authenticationFlowsTransferMethods_INCLUDES: \"deviceCodeFlow\"\n        }\n        grantControls: { builtInControls: [\"block\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
