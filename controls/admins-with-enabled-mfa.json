@@ -24,9 +24,9 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "IAMUser"
+        "User"
       ],
-      "query": "azure-admins-without-mfa"
+      "query": "entra-privileged-azure-assignments"
     },
     {
       "cloudProviders": [

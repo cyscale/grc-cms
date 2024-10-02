@@ -3,7 +3,9 @@
   "controls": [
     "datastores-accessible-by-users-without-mfa",
     "admins-with-enabled-mfa",
-    "users-without-mfa"
+    "users-without-mfa",
+    "azure-mfa-privileged-users",
+    "azure-mfa-all-users"
   ],
   "assets": [
     "Bucket",

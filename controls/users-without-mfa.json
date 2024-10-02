@@ -23,7 +23,7 @@
       "cloudProviders": ["azure"],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["IAMUser"],
+      "subjects": ["User"],
       "query": "azure-users-without-mfa"
     },
     {
