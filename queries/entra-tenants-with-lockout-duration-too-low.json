@@ -1,0 +1,5 @@
+{
+  "name": "Entra tenants with low lockout duration",
+  "slug": "entra-tenants-with-lockout-duration-too-low",
+  "query": "{\n  connectors(where: { passwordPolicy: { lockoutDurationInSeconds_LT: 60 } }) {\n    ...AssetFragment\n  }\n}"
+}
