@@ -12,7 +12,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "CloudAccount"
+        "Connector"
       ],
       "query": "azure-iam-custom-roles-with-locks-permission",
       "isManual": false
