@@ -1,0 +1,24 @@
+{
+  "body": "The account lockout duration value determines how long an account retains the lockout status and, therefore, how long before a user can continue to attempt to log in after passing the lockout threshold.\n\n### Rationale\n\nAccount lockout is a method of protecting against brute-force and password spray attacks. Once the lockout threshold has been exceeded, the account enters a lockout state that prevents all login attempts for a variable duration. The lockout, combined with a reasonable duration, reduces the total number of failed login attempts that a malicious actor can execute in a given period.\n\n### Impact\n\nIf the account lockout duration is too low (less than 60 seconds), malicious actors can perform more password spray and brute-force attempts over a given period.\n\nIf the account lockout duration is too high (more than 300 seconds), users may experience inconvenient delays during lockout.\n\n### Default Value\n\nBy default, Lockout duration in seconds is set to 60.",
+  "name": "Ensure account 'Lockout duration in seconds' is greater than or equal to '60'",
+  "slug": "entra-lockout-duration",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-tenants-with-lockout-duration-too-low"
+    }
+  ],
+  "remediationDescription": "### Azure Portal\n\n1. Open the [Security | Authentication methods | Password protection](https://portal.azure.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/PasswordProtection).\n1. Set the `Lockout duration in seconds` to 60 or higher.\n1. Click `Save`,",
+  "isEnabled": true,
+  "severity": 2
+}
