@@ -14,13 +14,14 @@
       "subjects": [
         "Connector"
       ],
-      "query": "entra-users-allowed-to-register-apps"
+      "query": "entra-users-allowed-to-register-apps",
+      "isManual": false
     }
   ],
   "replacementFor": [
     "azure-1-3-0-iam-11"
   ],
-  "remediationDescription": "### From Azure Portal\n\n1. Open [Users | User Settings](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set  `Users can register applications`  to  `No`.\n\n### From Powershell\n\n```bash\nConnect-MsolService\nSet-MsolCompanyInformation -UsersPermissionToCreateLOBAppsEnabled $False\n```",
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Users | User Settings](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set  `Users can register applications`  to  `No`.\n\n### From Powershell\n\n```bash\n$param = @{ AllowedToCreateApps = \"$false\" }\nUpdate-MgPolicyAuthorizationPolicy -DefaultUserRolePermissions $param\n```",
   "isEnabled": true,
   "severity": 1
 }
