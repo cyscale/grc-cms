@@ -30,6 +30,9 @@
           "control": "entra-exclusionary-geo-access-policy"
         },
         {
+          "control": "entra-exclusionary-device-code-flow-policy"
+        },
+        {
           "control": "entra-mfa-policy-for-admins"
         },
         {
@@ -54,6 +57,12 @@
           "control": "entra-min-number-of-methods-for-sspr"
         },
         {
+          "control": "entra-lockout-threshold"
+        },
+        {
+          "control": "entra-lockout-duration"
+        },
+        {
           "control": "entra-custom-bad-password-list"
         },
         {
@@ -70,9 +79,6 @@
         },
         {
           "control": "entra-user-consent-verified-publishers"
-        },
-        {
-          "control": "entra-users-can-add-gallery-apps-to-myapps"
         },
         {
           "control": "entra-user-app-registration"

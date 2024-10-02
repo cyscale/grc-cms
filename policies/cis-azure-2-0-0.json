@@ -71,9 +71,6 @@
           "control": "entra-user-consent-verified-publishers"
         },
         {
-          "control": "entra-users-can-add-gallery-apps-to-myapps"
-        },
-        {
           "control": "entra-user-app-registration"
         },
         {
