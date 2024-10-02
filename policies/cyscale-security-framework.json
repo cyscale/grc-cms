@@ -129,9 +129,6 @@
           "control": "api-keys-not-rotated-90-days"
         },
         {
-          "control": "azure-1-3-0-iam-2"
-        },
-        {
           "control": "azure-1-3-0-iam-4"
         },
         {
