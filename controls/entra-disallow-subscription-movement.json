@@ -1,10 +1,24 @@
 {
-  "alertForSecondaryOnly": false,
-  "isEnabled": true,
-  "isInsight": false,
-  "name": "Ensure `Subscription leaving Microsoft Entra ID directory` and `Subscription entering Microsoft Entra ID directory` Is Set To ‘Permit No One’",
-  "slug": "entra-disallow-subscription-movement",
   "body": "Users who are set as subscription owners can make administrative changes to the subscriptions and move them into and out of Microsoft Entra ID.\n\n### Rationale\n\nPermission to move subscriptions in and out of Microsoft Entra ID must only be given to appropriate administrative personnel. A subscription moved into a Microsoft Entra ID may be within a folder to which other users have elevated permissions. This prevents loss of data or unapproved changes of the objects within by potential bad actors.\n\n### Impact\n\nSubscriptions will need to have these settings turned off to be moved.\n\n### Default Value\n\nBy default, `Subscription leaving Microsoft Entra ID directory` and `Subscription entering Microsoft Entra ID directory` are set to `Allow everyone (default)`",
-  "severity": 1,
-  "remediationDescription": "### From Azure Portal\n\n1. Open [Subscriptions | Manage policies](https://portal.azure.com/#view/Microsoft_Azure_SubscriptionManagement/ManageSubscriptionPoliciesBlade)\n4. Under `Subscription leaving Microsoft Entra ID directory` and `Subscription entering Microsoft Entra ID directory`, select `Permit no one`."
+  "name": "Ensure 'Subscription leaving Microsoft Entra ID directory' and 'Subscription entering Microsoft Entra ID directory' Is Set To ‘Permit No One’",
+  "slug": "entra-disallow-subscription-movement",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "azure-tenant-policies-allowing-subscriptions-into-or-leave"
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Subscriptions | Manage policies](https://portal.azure.com/#view/Microsoft_Azure_SubscriptionManagement/ManageSubscriptionPoliciesBlade)\n1. Under `Subscription leaving Microsoft Entra ID directory` and `Subscription entering Microsoft Entra ID directory`, select `Permit no one`.",
+  "isEnabled": true,
+  "severity": 1
 }
