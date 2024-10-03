@@ -1,10 +1,24 @@
 {
-  "alertForSecondaryOnly": false,
-  "isEnabled": true,
-  "isInsight": false,
+  "body": "This recommendation aims to balance security and operational efficiency by ensuring that a minimum of 2 and a maximum of 4 users are assigned the Global Administrator role in Microsoft Entra ID. Having at least two Global Administrators ensures redundancy while limiting the number to four reduces the risk of excessive privileged access.\n\n### Rationale\n\nThe Global Administrator role has extensive privileges across all services in Microsoft Entra ID. The Global Administrator role should never be used in daily activities; administrators should have a regular user account for daily activities and a separate account for administrative responsibilities. Limiting the number of Global Administrators helps mitigate the risk of unauthorized access, reduces the potential impact of human error, and aligns with the principle of least privilege to reduce the attack surface of an Azure tenant. Conversely, having at least two Global Administrators ensures that administrative functions can be performed without interruption in case of unavailability of a single admin.\n\n### Impact\n\nImplementing this recommendation may require changes in administrative workflows or the redistribution of roles and responsibilities. Adequate training and awareness should be provided to all Global Administrators.\n\n### References\n\n- [https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)",
   "name": "Ensure Fewer Than 5 Users Have Global Administrator Assignment",
   "slug": "entra-number-of-global-administrators",
-  "body": "This recommendation aims to balance security and operational efficiency by ensuring that a minimum of 2 and a maximum of 4 users are assigned the Global Administrator role in Microsoft Entra ID. Having at least two Global Administrators ensures redundancy while limiting the number to four reduces the risk of excessive privileged access.\n\n### Rationale\n\nThe Global Administrator role has extensive privileges across all services in Microsoft Entra ID. The Global Administrator role should never be used in daily activities; administrators should have a regular user account for daily activities and a separate account for administrative responsibilities. Limiting the number of Global Administrators helps mitigate the risk of unauthorized access, reduces the potential impact of human error, and aligns with the principle of least privilege to reduce the attack surface of an Azure tenant. Conversely, having at least two Global Administrators ensures that administrative functions can be performed without interruption in case of unavailability of a single admin.\n\n### Impact\n\nImplementing this recommendation may require changes in administrative workflows or the redistribution of roles and responsibilities. Adequate training and awareness should be provided to all Global Administrators.\n\n### References\n\n- [https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices#5-limit-the-number-of-global-administrators-to-less-than-5)",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "entra"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "entra-excessive-global-administrators"
+    }
+  ],
   "remediationDescription": "### From Azure Portal\n\n1. Open [Global Administrator | Assignments](https://portal.azure.com/#view/Microsoft_AAD_IAM/RoleMenuBlade/~/RoleMembers/objectId/62e90394-69f5-4237-9190-012177145e10/roleName/Global%20Administrator/roleTemplateId/62e90394-69f5-4237-9190-012177145e10/adminUnitObjectId//customRole~/false/resourceScope/%2F/isPrivilegedRole~/true)\n2. Remove the Global Administrator role for users who do not or no longer require the role.\n3. Assign Global Administrator role via [PIM](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) which can be activated when required.\n4. Assign more granular roles to users to conduct their duties.",
+  "isEnabled": true,
   "severity": 3
 }
