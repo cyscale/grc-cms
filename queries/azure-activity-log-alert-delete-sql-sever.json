@@ -1,5 +1,0 @@
-{
-  "name": "Ensure that Activity Log Alert exists for Delete SQL Server Firewall Rule",
-  "slug": "azure-activity-log-alert-delete-sql-sever",
-  "query": "{\n  AzureLogging21To29(equals: \"microsoft.sql/servers/firewallrules/delete\") {...AssetFragment}\n}"
-}

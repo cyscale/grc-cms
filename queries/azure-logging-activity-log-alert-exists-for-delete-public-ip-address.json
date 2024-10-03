@@ -1,5 +1,5 @@
 {
   "name": "Activity Log Alert exists for Delete Public IP Address",
   "slug": "azure-logging-activity-log-alert-exists-for-delete-public-ip-address",
-  "query": "{\n  AzureLogging21To29(equals: \"microsoft.network/publicIPAddresses/delete\") {\n    ...AssetFragment\n  }\n}"
+  "query": "query ($subscriptionResourceId: String!) {\n  AzureActivityLogAlertsForAction(\n    subscriptionResourceId: $subscriptionResourceId\n    equals: \"microsoft.network/publicIPAddresses/delete\") {\n    ...AssetFragment\n  }\n}"
 }
