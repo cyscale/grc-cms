@@ -1,1 +1,0 @@
-{"name":"No custom subscription owner roles are created","slug":"azure-1-3-0-iam-21-no-custom-subscription-owner-roles-are-created","query":"{AzureIAM21{...AssetFragment}}"}

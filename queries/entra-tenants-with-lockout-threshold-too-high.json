@@ -1,5 +1,5 @@
 {
   "name": "Entra tenants allowing too many login attempts",
   "slug": "entra-tenants-with-lockout-threshold-too-high",
-  "query": "{\n  connectors(where: { passwordPolicy: { lockoutThreshold_GT: 10 } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(where: { passwordRuleSettings: { lockoutThreshold_GT: 10 } }) {\n    ...AssetFragment\n  }\n}"
 }
