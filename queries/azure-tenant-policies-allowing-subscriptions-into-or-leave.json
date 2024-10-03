@@ -1,0 +1,5 @@
+{
+  "query": "{\n  connectors(\n    where: {\n      OR: [\n        { blockSubscriptionsIntoTenant: false }\n        { blockSubscriptionsLeavingTenant: false }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "name": "Azure connectors letting subscription into/out of the tenant",
+  "slug": "azure-tenant-policies-allowing-subscriptions-into-or-leave"
+}
