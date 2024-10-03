@@ -1,0 +1,5 @@
+{
+  "name": "Entra Tenants with too many global administrators",
+  "slug": "entra-excessive-global-administrators",
+  "query": "{\n  EntraMultipleGlobalAdministrators {\n    ...AssetFragment\n  }\n}"
+}
