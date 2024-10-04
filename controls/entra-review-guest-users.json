@@ -6,7 +6,7 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "isManual": false,
+      "isManual": true,
       "cloudProviders": [
         "entra"
       ],
