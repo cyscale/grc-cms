@@ -1,0 +1,5 @@
+{
+  "name": "Entra Guest Users",
+  "slug": "entra-guest-users",
+  "query": "{\n  users(where: { userType: \"Guest\" }) {\n    ...AssetFragment\n  }\n}"
+}
