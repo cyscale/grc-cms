@@ -139,9 +139,6 @@
           "control": "azure-storage-keys-regenerated"
         },
         {
-          "control": "azure-log-queue-read-write-delete"
-        },
-        {
           "control": "azure-storage-account-sas-token-expiration"
         },
         {
@@ -161,6 +158,9 @@
         },
         {
           "control": "azure-storage-encryption-cmk"
+        },
+        {
+          "control": "azure-log-queue-read-write-delete"
         },
         {
           "control": "azure-log-blob-read-write-delete"
