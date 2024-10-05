@@ -1,0 +1,5 @@
+{
+  "name": "Azure storage accounts not enforcing HTTPS",
+  "slug": "azure-storage-accounts-without-secure-transfer-required",
+  "query": "{\n  storageAccounts(where: { NOT: { supportsHttpsTrafficOnly: true } }) {\n    ...AssetFragment\n  }\n}"
+}
