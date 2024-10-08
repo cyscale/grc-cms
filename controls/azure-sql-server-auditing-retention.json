@@ -1,0 +1,27 @@
+{
+  "body": "SQL Server Audit Retention should be configured to be greater than 90 days.\n\n### Rationale\n\nAudit Logs can check for anomalies and give insight into suspected breaches or misuse of information and access.\n\n### Default Value\n\nBy default, SQL Server audit storage is disabled.\n\n### References\n\n1. [https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auditing](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-auditing)\n2. [https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/get-azurermsqlserverauditing?view=azurermps-5.2.0](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/get-azurermsqlserverauditing?view=azurermps-5.2.0)\n3. [https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqlserverauditing?view=azurermps-5.2.0](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqlserverauditing?view=azurermps-5.2.0)\n4. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-6-configure-log-storage-retention](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-6-configure-log-storage-retention)",
+  "name": "Ensure 'Auditing' Retention is greater than 90 days for SQL Servers",
+  "slug": "azure-sql-server-auditing-retention",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SQLServer"
+      ],
+      "query": "azure-sql-servers-with-low-retention-days",
+      "isManual": false
+    }
+  ],
+  "replacementFor": [
+    "azure-auditing-retention-greater-90"
+  ],
+  "remediationDescription": "### From the Azure Portal\n\n1. Go to `SQL servers`\n2. For each server instance, under `Security`, select `Auditing`\n3. Under the `Azure SQL Auditing` heading, for `Storage`, click `Advanced properties`\n4. Set `Retention (days)` to 90 or more, or 0 for infinite\n5. Select `Save`\n\n### Using Azure PowerShell\n\nFor each Server, set the retention policy to more than or equal to 90 days.\n\nLog Analytics Example:\n```powershell\nSet-AzSqlServerAudit -ResourceGroupName <resource_group_name> `\n  -ServerName <SQL_Server_name> `\n  -RetentionInDays <number_greater_than_90> `\n  -LogAnalyticsTargetState Enabled `\n  -WorkspaceResourceId \"/subscriptions/<subscription_ID>/resourceGroups/insightsintegration/providers/Microsoft.OperationalInsights/workspaces/<workspace_name>\n```\n\nEvent Hub Example:\n```powershell\nSet-AzSqlServerAudit -ResourceGroupName <resource_group_name> `\n  -ServerName <SQL_Server_name> `\n  -EventHubTargetState Enabled\n  -EventHubName <event_Hub name>\n  -EventHubAuthorizationRuleResourceId \"<Event_Hub_Authorization_Rule_Resource_ID>\"\n```\n\nBlob Storage Example:\n```powershell\nSet-AzSqlServerAudit -ResourceGroupName <resource_group_name> `\n  -ServerName <SQL_Server_name> `\n  -RetentionInDays <number_greater_than_90> `\n  -BlobStorageTargetState Enabled\n  -StorageAccountResourceId \"/subscriptions/<subscription_ID>/resourceGroups/<Resource_Group>/providers/Microsoft.Storage/storageAccounts/<Storage_Account_name>\"\n```",
+  "isEnabled": true,
+  "severity": 2
+}
