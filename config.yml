@@ -355,6 +355,11 @@ collections:
             search_fields: ['slug', 'name']
             value_field: '{{slug}}'
             display_fields: ['{{slug}}: {{name}}']
+          - label: 'Applicable assets query'
+            name: 'applicableAssetsQuery'
+            widget: 'query'
+            hint: 'The GraphQL query for retrieving the assets relevant for this query. Optional'
+            required: false
           - label: 'Return path'
             name: 'returnPath'
             widget: 'string'
