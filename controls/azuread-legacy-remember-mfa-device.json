@@ -6,7 +6,7 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "isManual": true,
+      "isManual": false,
       "cloudProviders": [
         "entra"
       ],
@@ -15,7 +15,7 @@
       "subjects": [
         "Connector"
       ],
-      "query": "manual"
+      "query": "entra-tenants"
     }
   ],
   "remediationDescription": "1. Open the `Service Settings` page at [https://account.activedirectory.windowsazure.com/UserManagement/MfaSettings.aspx](https://account.activedirectory.windowsazure.com/UserManagement/MfaSettings.aspx). You might have to append the tenant ID to the URL: `?tenantId=yourtenantID`\n2. Uncheck `Allow users to remember multi-factor authentication on devices they trust`.",
