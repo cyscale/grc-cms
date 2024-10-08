@@ -1018,10 +1018,10 @@
           "control": "azure-log-retention-days-postgresql-server"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
           "control": "azure-alert-create-policy"

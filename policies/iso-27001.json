@@ -2176,10 +2176,10 @@
           "control": "azure-storage-accounts-without-table-diag-settings"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-log-checkpoints-postgresql-server"

@@ -455,10 +455,10 @@
           "control": "aws-monitoring-14"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-network-watcher-enabled"

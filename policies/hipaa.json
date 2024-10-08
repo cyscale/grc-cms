@@ -196,10 +196,10 @@
           "control": "gcp-kubernetes-2"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-diagnostic-settings-categories"
@@ -414,7 +414,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
           "control": "azure-ssl-enabled-postgresql-server"

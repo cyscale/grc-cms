@@ -1436,10 +1436,10 @@
           "control": "azure-log-blob-read-write-delete"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-log-checkpoints-postgresql-server"

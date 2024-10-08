@@ -313,7 +313,7 @@
           "control": "azure-1-3-0-networking-4"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "aws-1-4-0-storage-1-3"
@@ -410,10 +410,10 @@
           "control": "azure-network-watcher-enabled"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
           "control": "azure-1-3-0-networking-4"
@@ -535,10 +535,10 @@
           "control": "gcp-logging-1"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "gcp-logging-5"

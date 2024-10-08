@@ -207,7 +207,7 @@
       "body": "This section covers security recommendations to follow to set general database services policies on an Azure Subscription.",
       "controls": [
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
           "control": "azure-sql-db-disallow-any-ip"
@@ -222,7 +222,7 @@
           "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-ssl-enabled-postgresql-server"

@@ -39,7 +39,7 @@
           "control": "gcp-kubernetes-13"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
           "control": "azure-sql-db-disallow-any-ip"
@@ -437,10 +437,10 @@
           "control": "gcp-bucket-lock-log-buckets"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-1-3-0-networking-4"

@@ -430,10 +430,10 @@
           "control": "aws-monitoring-14"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-key-vault-logging-enabled"
@@ -623,10 +623,10 @@
           "control": "gcp-shielded-vm-enabled"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-1-3-0-networking-4"
@@ -678,7 +678,7 @@
       "body": "",
       "controls": [
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-sql-db-disallow-any-ip"
@@ -1018,10 +1018,10 @@
           "control": "gcp-bigquery-publicly-accessible"
         },
         {
-          "control": "azure-auditing-on"
+          "control": "azure-sql-server-auditing"
         },
         {
-          "control": "azure-auditing-retention-greater-90"
+          "control": "azure-sql-server-auditing-retention"
         },
         {
           "control": "azure-encryption-on-sql-database"
