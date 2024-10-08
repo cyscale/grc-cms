@@ -1,1 +1,0 @@
-{"name":"'Auditing' Retention is 'greater than 90 days'","slug":"azure-1-3-0-database-1-3-auditing-retention-is-greater-than-90-days","query":"{AzureDatabase13{...AssetFragment}}"}
