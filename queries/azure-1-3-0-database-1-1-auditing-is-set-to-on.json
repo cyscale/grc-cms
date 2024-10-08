@@ -1,5 +1,0 @@
-{
-  "name": "'Auditing' is set to 'On'",
-  "slug": "azure-1-3-0-database-1-1-auditing-is-set-to-on",
-  "query": "{sqlServers(where:{hasSQLServerTableAuditingPolicy_SOME:{auditingState_MATCHES:\"(?i)^((?!on).)*$\"}}){...AssetFragment}}"
-}
