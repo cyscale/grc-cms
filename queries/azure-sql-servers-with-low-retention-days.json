@@ -1,0 +1,5 @@
+{
+  "name": "Azure SQL Servers with audit retention lesser than 90 days",
+  "slug": "azure-sql-servers-with-low-retention-days",
+  "query": "{\n  sqlServers(\n    where: {\n      blobAuditingPolicies_NONE: {\n        state: \"Enabled\"\n        OR: [{ retentionDays: 0 }, { retentionDays_GT: 90 }]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
