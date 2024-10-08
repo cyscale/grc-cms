@@ -1,0 +1,5 @@
+{
+  "name": "All Entra tenants",
+  "slug": "entra-tenants",
+  "query": "{\n  connectors(where: {cloudProvider: \"entra\"}) {\n    ...AssetFragment\n  }\n}"
+}
