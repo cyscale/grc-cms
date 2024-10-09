@@ -1,5 +1,5 @@
 {
   "name": "SQL Servers that allow all Azure services to access the server",
-  "query": "{\n  sqlServers(\n    where: {\n      hasSQLServerFirewallRule_SOME: {\n        OR: [\n          { name_MATCHES: \"(?i)allowallwindowsazureips\" }\n          { name_MATCHES: \"(?i)allowallazureips\" }\n          { AND: [{ startIpAddress: \"0.0.0.0\" }, { endIpAddress: \"0.0.0.0\" }] }\n        ]\n      }\n    }\n  ) {...AssetFragment}\n}\n",
+  "query": "{\n  sqlServers(\n    where: {\n      firewallRules_SOME: {\n        OR: [\n          { name_MATCHES: \"(?i)allowallwindowsazureips\" }\n          { name_MATCHES: \"(?i)allowallazureips\" }\n          { AND: [{ startIpAddress: \"0.0.0.0\" }, { endIpAddress: \"0.0.0.0\" }] }\n        ]\n      }\n    }\n  ) {...AssetFragment}\n}\n",
   "slug": "sqlservers-that-allow-all-azure-services-access"
 }

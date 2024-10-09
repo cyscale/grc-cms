@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure SQL Databases",
   "slug": "publicly-accessible-azure-sql-servers",
-  "query": "{\n  sqlDatabases(\n    where: {\n      sqlServer: {\n        hasSQLServerFirewallRule_SOME: {\n          startIpAddress: \"0.0.0.0\"\n          endIpAddress: \"255.255.255.255\"\n        }\n      }\n    }\n  ) {...AssetFragment}\n}\n"
+  "query": "{\n  sqlDatabases(\n    where: {\n      sqlServer: {\n        firewallRules_SOME: {\n          startIpAddress: \"0.0.0.0\"\n          endIpAddress: \"255.255.255.255\"\n        }\n      }\n    }\n  ) {...AssetFragment}\n}\n"
 }
