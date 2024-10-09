@@ -1,5 +1,5 @@
 {
-  "body": "Restricts group creation to administrators with permissions only.\n\n### Rationale\n\nSelf-service group management enables users to create and manage security groups or Office 365 groups in Microsoft Entra ID. Unless a business requires this day-to-day delegation for some users, self-service group management should be disabled. Users can access the Access Panel to reset their passwords, view their information, etc. By default, users can also access the Group feature, which shows groups, members, and related resources (SharePoint URL, Group email address, Yammer URL, and Teams URL). By setting this feature to 'Yes', users will no longer have access to the web interface but still have access to the data using the API. This is useful to prevent non-technical users from enumerating group-related information, but technical users will still be able to access this information using APIs.\n\n### Impact\n\nSetting it to `Yes` could create administrative overhead by customers seeking certain group memberships that will have to be manually managed by administrators with appropriate permissions.\n\n### Default Value\n\nBy default, `Restrict user ability to access groups features in My Groups` is set to `No`.",
+  "body": "Restricts group creation to administrators with permissions only.\n\n### Rationale\n\nSelf-service group management enables users to create and manage security groups or Office 365 groups in Microsoft Entra ID. Unless a business requires this day-to-day delegation for some users, self-service group management should be disabled. Users can access the Access Panel to reset their passwords, view their information, etc. By default, users can also access the Group feature, which shows groups, members, and related resources (SharePoint URL, Group email address, Yammer URL, and Teams URL). By setting this feature to 'Yes', users will no longer have access to the web interface but still have access to the data using the API. This is useful to prevent non-technical users from enumerating group-related information, but technical users will still be able to access this information using APIs.\n\n### Impact\n\nSetting it to `Yes` could create administrative overhead by customers seeking certain group memberships that will have to be manually managed by administrators with appropriate permissions.\n\n### Default Value\n\nBy default, `Restrict user ability to access groups features in My Groups` is set to `No`.\n\n### Manual Audit\n\nThere is no customer-facing API available to check this setting. Please refer to the Remediation tab.\n\n**After you ensure the setting is correctly set, exempt the corresponding asset.**\n\nIf you need this checked automatically (it would make sense if you have multiple Entra ID tenants with multiple administrators who might change settings) and are willing to provide additional permissions, reach out to your Cyscale contact person.",
   "name": "Ensure 'Restrict user ability to access groups features in My Groups' is Set to 'Yes'",
   "slug": "entra-restrict-access-to-groups-in-access-pane",
   "isInsight": false,
@@ -14,7 +14,8 @@
       "subjects": [
         "Connector"
       ],
-      "query": "entra-ssgm-my-groups-enabled"
+      "query": "entra-tenants",
+      "isManual": false
     }
   ],
   "replacementFor": [
