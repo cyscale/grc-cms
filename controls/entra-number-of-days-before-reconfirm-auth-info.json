@@ -1,5 +1,5 @@
 {
-  "body": "Ensure that the number of days before users are asked to re-confirm their authentication information is not set to 0.\n\n### Rationale\n\nThis setting is necessary if you have setup the `Require users to register when signing in` option. If authentication re-confirmation is disabled, registered users will never be prompted to re-confirm their existing authentication information. If the authentication information for a user changes, such as a phone number or email, then the password reset information for that user reverts to the previously registered authentication information.\n\n### Impact\n\nUsers will be prompted for their multifactor authentication at the duration set here.\n\n### Default Value\n\nBy default, the `Number of days before users are asked to re-confirm their authentication information` is set to \"180 days\".",
+  "body": "Ensure that the number of days before users are asked to re-confirm their authentication information is not set to 0.\n\n### Rationale\n\nThis setting is necessary if you have set up the `Require users to register when signing in` option. If authentication re-confirmation is disabled, registered users will never be prompted to re-confirm their existing authentication information. If a user's authentication information changes, such as a phone number or email, then the password reset information for that user reverts to the previously registered authentication information.\n\n### Impact\n\nUsers will be prompted for their multifactor authentication at the duration set here.\n\n### Default Value\n\nBy default, the `Number of days before users are asked to re-confirm their authentication information` is set to 180 days.\n\n### Manual Audit\n\nThere is no customer-facing API available to check the Password Reset Policy. Please refer to the Remediation tab. **After you ensure the setting is correctly set, exempt the corresponding asset.**\n\nIf you need this checked automatically (it would make sense if you have multiple Entra ID tenants with multiple administrators who might change settings) and are willing to provide additional permissions, reach out to your Cyscale contact person.",
   "name": "Ensure 'Number of days before users are asked to reconfirm their authentication information' is not set to '0'",
   "slug": "entra-number-of-days-before-reconfirm-auth-info",
   "isInsight": false,
@@ -14,7 +14,8 @@
       "subjects": [
         "Connector"
       ],
-      "query": "entra-without-reconfirm-auth-info"
+      "query": "entra-tenants",
+      "isManual": false
     }
   ],
   "replacementFor": [
