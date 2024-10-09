@@ -1,5 +1,5 @@
 {
-  "body": "Restrict security group management to administrators only.\n\n### Rationale\n\nRestricting security group management to administrators only prohibits users from making changes to security groups. This ensures that security groups are appropriately managed and their management is not delegated to non-administrators.\n\n### Impact\n\nGroup Membership for user accounts will need to be handled by Admins and cause administrative overhead.\n\n### Default Value\n\nBy default, `Owners can manage group membership requests in My Groups` is set to `No`.\n",
+  "body": "Restrict security group management to administrators only.\n\n### Rationale\n\nRestricting security group management to administrators only prohibits users from making changes to security groups. This ensures that security groups are appropriately managed and their management is not delegated to non-administrators.\n\n### Impact\n\nGroup Membership for user accounts will need to be handled by Admins and cause administrative overhead.\n\n### Default Value\n\nBy default, `Owners can manage group membership requests in My Groups` is set to `No`.\n\n### Manual Audit\n\nThere is no customer-facing API available to check this setting. Please refer to the Remediation tab.\n\n**After you ensure the setting is correctly set, exempt the corresponding asset.**\n\nIf you need this checked automatically (it would make sense if you have multiple Entra ID tenants with multiple administrators who might change settings) and are willing to provide additional permissions, reach out to your Cyscale contact person.\n",
   "name": "Ensure 'Owners can manage group membership requests in My Groups' is set to 'No'",
   "slug": "entra-owners-manage-group-membership-requests",
   "isInsight": false,
@@ -14,7 +14,8 @@
       "subjects": [
         "Connector"
       ],
-      "query": "entra-owners-can-manage-groups-in-my-groups"
+      "query": "entra-tenants",
+      "isManual": false
     }
   ],
   "replacementFor": [
