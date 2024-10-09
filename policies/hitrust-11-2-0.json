@@ -667,9 +667,6 @@
           "control": "gcp-networking-7"
         },
         {
-          "control": "sqlserver-enabled-allow-all-azure-services-access"
-        },
-        {
           "control": "azure-allow-azure-services-postgresql-server"
         },
         {

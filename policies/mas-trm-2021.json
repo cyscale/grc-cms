@@ -678,9 +678,6 @@
           "control": "cis-alibaba-1-0-0-rds-1"
         },
         {
-          "control": "sqlserver-enabled-allow-all-azure-services-access"
-        },
-        {
           "control": "azure-https-transfer-enabled"
         },
         {
