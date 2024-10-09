@@ -1,5 +1,5 @@
 {
-  "body": "Restrict security group creation to administrators only.\n\n### Rationale\n\nWhen creating security groups is enabled, all users in the directory are allowed to create new security groups and add members to those groups. Unless a business requires this day-to-day delegation, security group creation should be restricted to administrators only.\n\n### Impact\n\nEnabling this setting could create a number of requests that would need to be managed by an administrator.\n\n### Default Value\n\nBy default, `Users can create security groups in Azure portals, API or PowerShell` is set to `Yes`.",
+  "body": "Restrict security group creation to administrators only.\n\n### Rationale\n\nWhen creating security groups is enabled, all users in the directory are allowed to create new security groups and add members to those groups. Unless a business requires this day-to-day delegation, security group creation should be restricted to administrators only.\n\n### Impact\n\nEnabling this setting could create many requests that would need to be managed by an administrator.\n\n### Default Value\n\nBy default, `Users can create security groups in Azure portals, API or PowerShell` is set to `Yes`.\n\n### Manual Audit\n\nThere is no customer-facing API available to check this setting. Please refer to the Remediation tab.\n\n**After you ensure the setting is correctly set, exempt the corresponding asset.**\n\nIf you need this checked automatically (it would make sense if you have multiple Entra ID tenants with multiple administrators who might change settings) and are willing to provide additional permissions, reach out to your Cyscale contact person.",
   "name": "Ensure 'Users can create security groups in Azure portals, API or PowerShell' is set to 'No'",
   "slug": "entra-users-create-security-groups",
   "isInsight": false,
@@ -14,7 +14,8 @@
       "subjects": [
         "Connector"
       ],
-      "query": "entra-with-users-allowed-to-create-security-groups"
+      "query": "entra-tenants",
+      "isManual": false
     }
   ],
   "replacementFor": [
