@@ -1,0 +1,24 @@
+{
+  "body": "Use Microsoft Entra authentication for authentication with SQL Database to manage credentials in a single place.\n\n### Rationale\n\nMicrosoft Entra authentication is a mechanism for connecting to Microsoft Azure SQL Database and SQL Data Warehouse using identities in the Microsoft Entra ID directory. With Entra ID authentication, the identities of database users and other Microsoft services can be managed in one central location. Central ID management provides a single place to manage database users and simplifies permission management.\n\n- It provides an alternative to SQL Server authentication.\n- Helps stop the proliferation of user identities across database servers.\n- Allows password rotation in a single place.\n- Customers can manage database permissions using external (Entra ID) groups.\n- It can eliminate storing passwords by enabling integrated Windows authentication and other forms of authentication supported by Microsoft Entra.\n- Entra ID authentication uses contained database users to authenticate identities at the database level.\n- Entra ID supports token-based authentication for applications connecting to SQL Database.\n- Entra ID authentication supports ADFS (domain federation) or native user/password authentication for a local Active Directory without domain synchronization.\n- Entra ID supports connections from SQL Server Management Studio that use Active Directory Universal Authentication, which includes Multi-Factor Authentication (MFA). MFA includes strong authentication with a range of easy verification options — phone calls, text messages, smart cards with pins, or mobile app notifications.\n\n### Impact\n\nThis will create administrative overhead with the user account and permission management. For further security on these administrative accounts, you may want to consider licensing that supports features like Multi-Factor Authentication.\n\n### Default Value\n\nEntra ID Authentication for SQL Database/Server is not enabled by default.\n\n### Additional Information\n\nAssigning an Administrator in Entra ID is just the first step. When using Entra ID for central authentication, there are many other groups and roles that need to be configured based on the needs of your organization. The How-to Guides should be used to determine what roles should be assigned and what groups should be created to manage permissions and access to resources.\n\n### References\n\n1. [https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication-configure)\n2. [https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-aad-authentication)\n3. [https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/get-azurermsqlserveractivedirectoryadministrator?view=azurermps-5.2.0](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/get-azurermsqlserveractivedirectoryadministrator?view=azurermps-5.2.0)\n4. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-identity-management#im-1-use-centralized-identity-and-authentication-system](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-identity-management#im-1-use-centralized-identity-and-authentication-system)\n5. [https://docs.microsoft.com/en-us/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az_sql_server_ad_admin_list](https://docs.microsoft.com/en-us/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az_sql_server_ad_admin_list)",
+  "name": "Ensure Microsoft Entra authentication is Configured for SQL Servers",
+  "slug": "azure-sql-server-entra-auth",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SQLServer"
+      ],
+      "query": "azure-sql-servers-without-entra-admin",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "### From Azure Console\n\n1. Open the SQL server using the `Open in Azure` button\n2. Under Settings, click `Microsoft Entra ID`\n3. Click `Set admin`\n4. Select an admin\n5. Click `Select`\n6. Click `Save`\n\n### Using Azure PowerShell\n\n```powershell\nSet-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DisplayName \"<displayName>\"\n```\n\n### From Azure CLI\n\n```bash\naz sql server ad-admin create --resource-group <resourceGroupName> --server <serverName> --display-name <displayName> --object-id <userObjectID>\n```\n",
+  "isEnabled": true,
+  "severity": 2
+}
