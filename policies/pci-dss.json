@@ -312,7 +312,7 @@
           "control": "api-keys-not-rotated-90-days"
         },
         {
-          "control": "azure-ad-admin-sql-servers"
+          "control": "azure-sql-server-entra-auth"
         },
         {
           "control": "azure-expiration-keys-key-vault"

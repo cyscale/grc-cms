@@ -188,6 +188,15 @@
           "control": "azure-sql-server-auditing"
         },
         {
+          "control": "azure-sql-db-disallow-any-ip"
+        },
+        {
+          "control": "azure-sql-server-tde-cmk-encryption"
+        },
+        {
+          "control": "azure-sql-server-entra-auth"
+        },
+        {
           "control": "azure-sql-server-auditing-retention"
         }
       ]

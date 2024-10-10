@@ -1016,7 +1016,7 @@
           "control": "azure-allow-azure-services-postgresql-server"
         },
         {
-          "control": "azure-ad-admin-sql-servers"
+          "control": "azure-sql-server-entra-auth"
         },
         {
           "control": "azure-sql-server-tde-cmk-encryption"

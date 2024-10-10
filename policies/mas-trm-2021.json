@@ -536,7 +536,7 @@
           "control": "azure-encryption-on-sql-database"
         },
         {
-          "control": "azure-ad-admin-sql-servers"
+          "control": "azure-sql-server-entra-auth"
         },
         {
           "control": "azure-1-3-0-logging-1-4"

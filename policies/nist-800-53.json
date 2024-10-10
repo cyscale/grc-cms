@@ -120,7 +120,7 @@
           "control": "gcp-bigquery-publicly-accessible"
         },
         {
-          "control": "azure-ad-admin-sql-servers"
+          "control": "azure-sql-server-entra-auth"
         },
         {
           "control": "azure-encryption-on-sql-database"

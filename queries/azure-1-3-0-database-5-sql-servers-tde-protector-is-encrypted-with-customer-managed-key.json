@@ -1,5 +1,0 @@
-{
-  "name": "SQL server's TDE protector is encrypted with Customer-managed key",
-  "slug": "azure-1-3-0-database-5-sql-servers-tde-protector-is-encrypted-with-customer-managed-key",
-  "query": "{sqlServers(where:{OR:[{encryptionProtector:null},{encryptionProtector:{serverKeyType_MATCHES:\"(?i)^((?!azurekeyvault).)*$\"}}]}){...AssetFragment}}"
-}

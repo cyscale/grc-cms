@@ -354,7 +354,7 @@
           "control": "aws-iam-12"
         },
         {
-          "control": "azure-ad-admin-sql-servers"
+          "control": "azure-sql-server-entra-auth"
         },
         {
           "control": "aws-1-3-0-iam-13"

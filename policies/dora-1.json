@@ -74,7 +74,7 @@
           "control": "aws-iam-12"
         },
         {
-          "control": "azure-ad-admin-sql-servers"
+          "control": "azure-sql-server-entra-auth"
         }
       ],
       "body": "Management arrangements such as budgets, roles, responsibilities, and audit plans are overseen in this first article."
