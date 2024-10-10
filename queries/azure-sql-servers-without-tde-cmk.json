@@ -1,0 +1,5 @@
+{
+  "name": "Azure SQL Servers without TDE protector key encrypted with CMK",
+  "slug": "azure-sql-servers-without-tde-cmk",
+  "query": "{\n  sqlServers(\n    where: {\n      OR: [\n        { encryptionProtector: null }\n        { encryptionProtector: { serverKeyType: \"ServiceManaged\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
