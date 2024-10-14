@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL Flex Servers with low logfiles retention days",
+  "slug": "azure-postgres-server-with-low-log-retention",
+  "query": "{\n  postgreSqlFlexibleServers(\n    where: {\n      configurations_SOME: {\n        name: \"logfiles.retention_days\"\n        value_MATCHES: \"[0-3]\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
