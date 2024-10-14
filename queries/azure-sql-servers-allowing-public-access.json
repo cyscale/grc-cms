@@ -1,0 +1,5 @@
+{
+  "name": "Azure SQL Servers allowing public access",
+  "slug": "azure-sql-servers-allowing-public-access",
+  "query": "{\n  sqlServers(where: { publicNetworkAccess: \"Enabled\" }) {\n    ...AssetFragment\n  }\n}"
+}
