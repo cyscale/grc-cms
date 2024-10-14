@@ -1,0 +1,5 @@
+{
+  "name": "Azure MySQL Flex Servers Without Secure Transport",
+  "slug": "azure-mysql-flex-servers-without-secure-transport",
+  "query": "{\n  mySqlFlexibleServers(\n    where: {\n      configurations_SOME: {\n        name: \"require_secure_transport\"\n        value_MATCHES: \"(?i)off\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
