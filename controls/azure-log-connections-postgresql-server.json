@@ -1,9 +1,9 @@
 {
-  "name": "Ensure server parameter 'log_connections' is set to 'ON' for PostgreSQL Database Server",
+  "body": "Enable `log_connections` on PostgreSQL Database Servers.\n\n### Rationale\n\nEnabling `log_connections` helps the PostgreSQL Database log attempted connections to the server and successful client authentications. Log data can be used to identify, troubleshoot, and repair configuration errors and sub-optimal performance.\n\n### Default value\n\nBy default, `log_connections` is set to `on` (enabled).",
+  "name": "[LEGACY] Ensure server parameter 'log_connections' is set to 'ON' for PostgreSQL single server",
   "slug": "azure-log-connections-postgresql-server",
-  "body": "Enable `log_connections` on PostgreSQL Database Servers.\n\n**Rationale**\n\nEnabling `log_connections` helps the PostgreSQL Database to log attempted connections to the server, as well as successful client authentications. Log data can be used to identify, troubleshoot, and repair configuration errors and sub-optimal performance.",
-  "severity": 2,
-  "remediationDescription": "**From Azure Console**\n\n1. Go to `Azure Database for PostgreSQL servers`\n2. For each database, under `Settings`, select `Server parameters`\n3. Search for `log_connections` and set its value to `ON`\n4. Click `Save`\n\n**Using Azure Command Line Interface**\n\nUse the below command to update the configuration for `log_connections`.\n\n```bash\naz postgres server configuration set --resource-group <resourceGroupName> --server-name <serverName> --name log_connections --value on\n```\n\n**Using PowerShell**\n\n```powershell\nUpdate-AzPostgreSqlConfiguration -ResourceGroupName <resourceGroupName> -ServerName <serverName> -Name log_connections -Value on\n```\n\n**Default value**\n\nBy default, `log_connections` is set to `ON` (enabled).\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/rest/api/postgresql/singleserver/configurations/list-by-server](https://docs.microsoft.com/en-us/rest/api/postgresql/singleserver/configurations/list-by-server)\n2. [https://docs.microsoft.com/en-us/azure/postgresql/howto-configure-server-parameters-using-portal](https://docs.microsoft.com/en-us/azure/postgresql/howto-configure-server-parameters-using-portal)\n3. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-3-enable-logging-for-security-investigation](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-3-enable-logging-for-security-investigation)\n4. [https://learn.microsoft.com/en-us/powershell/module/az.postgresql/get-azpostgresqlconfiguration?view=azps-9.2.0#example-2-get-specified-postgresql-configuration-by-name](https://learn.microsoft.com/en-us/powershell/module/az.postgresql/get-azpostgresqlconfiguration?view=azps-9.2.0#example-2-get-specified-postgresql-configuration-by-name)\n5. [https://learn.microsoft.com/en-us/powershell/module/az.postgresql/update-azpostgresqlconfiguration?view=azps-9.2.0#example-1-update-postgresql-configuration-by-name](https://learn.microsoft.com/en-us/powershell/module/az.postgresql/update-azpostgresqlconfiguration?view=azps-9.2.0#example-1-update-postgresql-configuration-by-name)",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -14,7 +14,11 @@
       "subjects": [
         "PostgreSQLServer"
       ],
-      "query": "azure-1-3-0-database-3-4-server-parameter-log-connections-is-set-to-on-for-postgresql-database-server"
+      "query": "azure-1-3-0-database-3-4-server-parameter-log-connections-is-set-to-on-for-postgresql-database-server",
+      "isManual": false
     }
-  ]
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the server using the `Open in Azure` button\n1. Under `Settings`, click `Server parameters`.\n1. In the filter bar, type `log_connections`.\n1. Set `log_connections` to `ON`.\n1. Click `Save`.\n\n### Remediate from Azure CLI\n\nUse the below command to update `log_connections` configuration.\n\n```\naz postgres server configuration set --resource-group <resourceGroupName> --server-name <serverName> --name log_connections --value on\n```\n\n### Remediate from PowerShell\n\nUse the below command to update `log_connections` configuration.\n\n```\nUpdate-AzPostgreSqlConfiguration -ResourceGroupName <ResourceGroupName> -ServerName <ServerName> -Name log_connections -Value on\n```",
+  "isEnabled": true,
+  "severity": 2
 }
