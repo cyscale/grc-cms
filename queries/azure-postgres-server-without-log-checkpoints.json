@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL Flex Servers Without Log Checkpoints",
+  "slug": "azure-postgres-server-without-log-checkpoints",
+  "query": "{\n  postgreSqlFlexibleServers(\n    where: {\n      configurations_SOME: {\n        name: \"log_checkpoints\"\n        value_MATCHES: \"(?i)off\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
