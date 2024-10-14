@@ -1,1 +1,5 @@
-{"name":"Server parameter 'log_disconnections' is set to 'ON' for PostgreSQL Database Server","slug":"azure-1-3-0-database-3-5-server-parameter-log-disconnections-is-set-to-on-for-postgresql-database-server","query":"{postgreSqlServers(where:{configurations_NONE:{name:\"log_disconnections\", value_MATCHES:\"(?i)on\"}}){...AssetFragment}}"}
+{
+  "name": "Server parameter 'log_disconnections' is set to 'ON' for PostgreSQL Database Server",
+  "slug": "azure-1-3-0-database-3-5-server-parameter-log-disconnections-is-set-to-on-for-postgresql-database-server",
+  "query": "{\n  postgreSqlServers(\n    where: {\n      configurations_SOME: {\n        name: \"log_disconnections\"\n        value_MATCHES: \"(?i)off\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
