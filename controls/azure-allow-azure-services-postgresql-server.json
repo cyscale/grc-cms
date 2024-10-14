@@ -1,9 +1,9 @@
 {
-  "name": "Ensure 'Allow access to Azure services' for PostgreSQL Database Server is disabled",
+  "body": "Disable access from Azure services to PostgreSQL Flexible Server.\n\n### Rationale\n\nIf access from Azure services is enabled, the server's firewall will accept connections from all Azure resources, including resources not in your subscription. This is usually not a desired configuration. Instead, set up firewall rules to allow access from specific network ranges or VNET rules to allow access from specific virtual networks.\n\n### Default Value\n\nThe Azure Postgres firewall is set to block all access by default.",
+  "name": " Ensure 'Allow public access from any Azure service within Azure to this server' for PostgreSQL flexible server is disabled",
   "slug": "azure-allow-azure-services-postgresql-server",
-  "body": "Disable access from Azure services to PostgreSQL Database Server.\n\n**Rationale**\n\nIf access from Azure services is enabled, the server's firewall will accept connections from all Azure resources, including resources not in your subscription. This is usually not a desired configuration. Instead, set up firewall rules to allow access from specific network ranges or VNET rules to allow access from specific virtual networks.",
-  "remediationDescription": "**From Azure Console**\n\nFor Azure Database for PostgreSQL single server:\n\n1. Go to `Azure Database for PostgreSQL servers`\n2. For each database, under `Settings`, select `Connection security`\n3. Under `Firewall rules`, select `No` for `Allow access to Azure services`\n4. Select `Save`\n\nFor Azure Database for PostgreSQL flexible server:\n\n1. Go to `Azure Database for PostgreSQL servers`\n2. For each database, under `Settings`, select `Networking`\n3. Under `Firewall rules`, uncheck `Allow public access from any Azure service within Azure to access this server`\n4. Select `Save`\n\n**Using Azure Command Line Interface**\n\nUse the below command to delete the `AllowAllWindowsAzureIps` rule for PostgreSQL Server.\n\n```bash\naz postgres server firewall-rule delete --name AllowAllWindowsAzureIps --resource-group <resourceGroupName> --server <serverName>\n```\n\n**References**\n\n1. [https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure](https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure)\n2. [https://learn.microsoft.com/en-us/azure/azure-sql/database/network-access-controls-overview](https://learn.microsoft.com/en-us/azure/azure-sql/database/network-access-controls-overview)\n3. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-1-implement-security-for-internal-traffic](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-1-implement-security-for-internal-traffic)\n4. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-4-protect-applications-and-services-from-external-network-attacks](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-4-protect-applications-and-services-from-external-network-attacks)\n5. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-1-implement-security-for-internal-traffic](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-network-security#ns-1-implement-security-for-internal-traffic)",
-  "severity": 3,
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -14,7 +14,8 @@
       "subjects": [
         "PostgreSQLServer"
       ],
-      "query": "azure-1-3-0-database-3-8-allow-access-to-azure-services-for-postgresql-database-server-is-disabled"
+      "query": "azure-1-3-0-database-3-8-allow-access-to-azure-services-for-postgresql-database-server-is-disabled",
+      "isManual": false
     },
     {
       "cloudProviders": [
@@ -25,7 +26,11 @@
       "subjects": [
         "PostgreSQLFlexibleServer"
       ],
-      "query": "azure-postgresql-flexible-servers-disable-azure-services"
+      "query": "azure-postgresql-flexible-servers-disable-azure-services",
+      "isManual": false
     }
-  ]
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the server using the `Open in Azure` button\n1. Under `Settings`, click `Networking`.\n1. Under `Firewall rules`, uncheck `Allow public access from any Azure service within Azure to this server`.\n1. Click `Save`.\n\n### Remediate from Azure CLI\n\nUsing the firewall rule name from the `Audit from Azure CLI` steps, use the below command to delete the `AllowAllAzureServicesAndResourcesWithinAzureIps` rule for PostgreSQL flexible server:\n\n```\naz postgres flexible-server firewall-rule delete --resource-group <resourceGroup> --name <serverName> --rule-name <ruleName>\n```\n\nType `y` and press `enter` to confirm.\n\n### Remediate from PowerShell\n\nUsing the firewall rule name from the `Audit from PowerShell` steps, use the below command to delete the `AllowAllAzureServicesAndResourcesWithinAzureIps` rule for each PostgreSQL flexible server:\n\n```\nRemove-AzPostgreSqlFlexibleServerFirewallRule -ResourceGroupName <resourceGroup> -ServerName <serverName> -Name <ruleName>\n```",
+  "isEnabled": true,
+  "severity": 3
 }
