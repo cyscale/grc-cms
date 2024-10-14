@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL Flex Servers Without Secure Transport",
+  "slug": "azure-postgres-server-without-secure-transport",
+  "query": "{\n  postgreSqlFlexibleServers(\n    where: {\n      configurations_SOME: { name: \"require_secure_transport\", value: \"OFF\" }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
