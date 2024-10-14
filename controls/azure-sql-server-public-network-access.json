@@ -1,0 +1,25 @@
+{
+  "body": "Disabling public network access restricts the service from accessing public networks.\n\n### Rationale\n\nA secure network architecture requires carefully constructed network segmentation. Public Network Access tends to be overly permissive and introduces unintended vectors for threat activity.\n\n### Impact\n\nSome architectural considerations may be necessary to ensure that network connectivity is available. No additional cost or performance impact is required to deploy this recommendation.\n\n### Default Value\n\nBy default, Azure SQL Server's Public network access is set to `Disable`.",
+  "name": "Ensure Public Network Access is Disabled for SQL Servers",
+  "slug": "azure-sql-server-public-network-access",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SQLServer"
+      ],
+      "query": "azure-sql-servers-allowing-public-access"
+    }
+  ],
+  "remediationDescription": "### From Azure Portal\n\n1. Open the SQL server using the `Open in Azure` button\n1. Under `Security`, click `Networking`.\n1. Set `Public network access` to `Disable`.\n1. Click `Save`.\n\n### From Azure CLI\n\nFor each SQL server with `publicNetworkAccess` `Enabled`, set it to `Disabled`:\n\n```\naz sql server update -n <sqlServerName> -g <resourceGroup> --set publicNetworkAccess=\"Disabled\"\n```\n\n### From PowerShell\n\nFor each SQL server with `PublicNetworkAccess` `Enabled`, set it to `Disabled`:\n\n```\nSet-AzSqlServer -ServerName <sqlServerName> -ResourceGroupName <resourceGroup> -PublicNetworkAccess \"Disabled\"\n```",
+  "isEnabled": true,
+  "description": "Azure SQL Servers Allowing Public Network Access",
+  "severity": 2
+}
