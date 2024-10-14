@@ -197,7 +197,13 @@
           "control": "azure-sql-server-entra-auth"
         },
         {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
           "control": "azure-sql-server-auditing-retention"
+        },
+        {
+          "control": "azure-sql-server-public-network-access"
         }
       ]
     }
