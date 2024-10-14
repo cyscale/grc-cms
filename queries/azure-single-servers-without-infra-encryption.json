@@ -1,0 +1,5 @@
+{
+  "name": "Azure Postgres Single Servers without infrastructure encryption",
+  "slug": "azure-single-servers-without-infra-encryption",
+  "query": "{\n  postgreSqlServers(where: { infrastructureEncryption: \"Disabled\" }) {\n    ...AssetFragment\n  }\n}"
+}
