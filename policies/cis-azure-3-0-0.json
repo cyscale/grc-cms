@@ -204,6 +204,51 @@
         },
         {
           "control": "azure-sql-server-public-network-access"
+        },
+        {
+          "control": "azure-postgres-require-secure-transport"
+        },
+        {
+          "control": "azure-postgres-log-checkpoints"
+        },
+        {
+          "control": "azure-postgres-connection-throttle"
+        },
+        {
+          "control": "azure-postgres-logfiles-retention-days"
+        },
+        {
+          "control": "azure-allow-azure-services-postgresql-server"
+        },
+        {
+          "control": "azure-log-connections-postgresql-server"
+        },
+        {
+          "control": "azure-log-disconnections-postgresql-server"
+        },
+        {
+          "control": "azure-single-servers-without-infra-encryption"
+        },
+        {
+          "control": "azure-mysql-flexible-server-require-secure-transport"
+        },
+        {
+          "control": "azure-mysql-flex-tls-versions"
+        },
+        {
+          "control": "azure-mysql-flex-server-audit-log"
+        },
+        {
+          "control": "azure-mysql-flex-server-audit-log-events-connection"
+        },
+        {
+          "control": "azure-cosmos-selected-networks"
+        },
+        {
+          "control": "azure-cosmos-db-private-endpoints"
+        },
+        {
+          "control": "azure-cosmos-db-rbac"
         }
       ]
     }
