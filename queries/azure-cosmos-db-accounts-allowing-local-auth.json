@@ -1,0 +1,5 @@
+{
+  "name": "Azure Cosmos DB Accounts allowing local auth",
+  "slug": "azure-cosmos-db-accounts-allowing-local-auth",
+  "query": "{\n  cosmosDbAccounts(where: { disableLocalAuth: false }) {\n    ...AssetFragment\n  }\n}"
+}
