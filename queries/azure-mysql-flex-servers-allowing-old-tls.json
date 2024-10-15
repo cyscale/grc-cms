@@ -1,0 +1,5 @@
+{
+  "name": "Azure MySQL Flexible Servers allowing old TLS versions",
+  "slug": "azure-mysql-flex-servers-allowing-old-tls",
+  "query": "{\n  mySqlFlexibleServers(\n    where: {\n      configurations_SOME: {\n        name: \"tls_version\"\n        OR: [{ value_CONTAINS: \"TLSv1.0\" }, { value_CONTAINS: \"TLSv1.1\" }]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
