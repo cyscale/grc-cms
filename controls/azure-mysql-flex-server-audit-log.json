@@ -1,0 +1,24 @@
+{
+  "body": "Enable `audit_log_enabled` on `MySQL flexible servers`.\n\n### Rationale\n\nEnabling `audit_log_enabled` helps MySQL Database to log items such as connection attempts to the server, DDL/DML access, and more. Log data can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance.\n\n### Impact\n\nFurther costs are incurred for storing logs, which will be significant for high-traffic databases. Determine your organization's needs before enabling.\n\n### Default Value\n\nBy default, `audit_log_enabled` is set to `OFF`.",
+  "name": "Ensure server parameter 'audit_log_enabled' is set to 'ON' for MySQL flexible server",
+  "slug": "azure-mysql-flex-server-audit-log",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MySQLFlexibleServer"
+      ],
+      "query": "azure-mysql-flex-servers-without-audit-log"
+    }
+  ],
+  "remediationDescription": "**Remediate from Azure Portal**\n\nTurn on audit logs\n1. Login to Azure Portal using https://portal.azure.com.\n1. Go to `Azure Database for MySQL flexible servers`.\n1. For each database, under `Settings`, click `Server parameters`.\n1. Set `audit_log_enabled` to `ON`.\n1. Click `Save`.\n\n**Remediate from Azure CLI**\n\nUse the below command to enable `audit_log_enabled `:\n\n```\naz mysql flexible-server parameter set --resource-group <resourceGroup> --server-name <serverName> --name audit_log_enabled --value on\n```\n\n**Remediate from PowerShell**\n\nUse the below command to enable `audit_log_enabled `:\n\n```\nUpdate-AzMySqlFlexibleServerConfiguration -ResourceGroupName <resourceGroup> -ServerName <serverName> -Name audit_log_enabled -Value on\n```\n\n### Capture the Audit Logs\n\nOnce you have `audit_log_enabled` enabled, you can capture the logs.\n\n1. Under Monitoring, select `Diagnostic settings`.\n1. Select `+ Add diagnostic setting`.\n1. Provide a diagnostic setting name.\n1. Under Categories, select `MySQL Audit Logs`.\n1. Specify destination details.\n1. Click `Save`.\n\nIt may take up to 10 minutes for the logs to appear in the configured destination.",
+  "isEnabled": true,
+  "severity": 2
+}
