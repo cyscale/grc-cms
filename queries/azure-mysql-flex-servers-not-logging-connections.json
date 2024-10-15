@@ -1,0 +1,5 @@
+{
+  "name": "Azure MySQL Flex Servers not logging connections",
+  "slug": "azure-mysql-flex-servers-not-logging-connections",
+  "query": "{\n  mySqlFlexibleServers(\n    where: {\n      configurations_SOME: {\n        name: \"audit_log_events\"\n        NOT: { value_CONTAINS: \"CONNECTION\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
