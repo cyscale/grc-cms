@@ -1,0 +1,5 @@
+{
+  "name": "Azure Cosmos DB accounts without private endpoints",
+  "slug": "azure-cosmos-db-accounts-without-private-endpoints",
+  "query": "{\n  cosmosDbAccounts(where: { privateEndpoints_ALL: null }) {\n    ...AssetFragment\n  }\n}"
+}
