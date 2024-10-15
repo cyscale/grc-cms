@@ -1,0 +1,24 @@
+{
+  "body": "Limiting your Cosmos DB to only communicate on whitelisted networks lowers its attack footprint.\n\n### Rationale\n\nSelecting certain networks for your Cosmos DB to communicate restricts the number of networks, including the internet, that can interact with what is stored within the database.\n\n### Impact\n\n**WARNING:** Failure to whitelist the correct networks will result in a connection loss.\n\n**WARNING:** Changes to Cosmos DB firewalls may take up to 15 minutes to apply. To avoid disruption, ensure that sufficient time is planned for remediation or changes.\n\n### Default Value\n\nBy default, Cosmos DBs allow access from all networks.",
+  "name": "Ensure 'Firewalls & Networks' Is Limited to Use Selected Networks Instead of All Networks for Cosmos DB",
+  "slug": "azure-cosmos-selected-networks",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CosmosDBAccount"
+      ],
+      "query": "azure-cosmos-db-accounts-allowing-all-networks"
+    }
+  ],
+  "remediationDescription": "**Remediate from Azure Portal**\n\n1. Open the Cosmos DB account using the `Open in Azure` button\n1. Select `Networking`.\n1. Under `Public network access`, select `Selected networks`.\n1. Under `Virtual networks`, select `+ Add existing virtual network` or `+ Add a new virtual network`.\n1. For existing networks, select subscription, virtual network, subnet and click `Add`. For new networks, provide a name, update the default values if required, and click `Create`.\n1. Click `Save`.",
+  "isEnabled": true,
+  "severity": 2
+}
