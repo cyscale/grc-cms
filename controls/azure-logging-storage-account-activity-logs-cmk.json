@@ -1,0 +1,12 @@
+{
+  "body": "Storage accounts with the activity log exports can be configured to use Customer Managed Keys (CMK).\n\n### Rationale\n\nConfiguring the storage account with the activity log export container to use CMKs provides additional confidentiality controls on log data. A given user must have read permission on the corresponding storage account and must be granted decryption permission by the CMK.\n\n### Impact\n\n**NOTE:** You must have your key vault setup to utilize this.\n\nAll Audit Logs will be encrypted with a key you provide. You will need to set up customer-managed keys separately, and you will select which key to use via the instructions here. You will be responsible for the keys' lifecycle and will need to manually replace them at your own determined intervals to keep the data secure.\n\n### Default Value\n\nBy default, storage accounts are encrypted with keys managed by Microsoft.",
+  "name": "Ensure the storage account containing storing activity logs is encrypted with Customer Managed Key (CMK)",
+  "slug": "azure-logging-storage-account-activity-logs-cmk",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [],
+  "remediationDescription": "**Remediate from Azure Portal**\n\n1. Go to `Monitor`.\n1. Select `Activity log`.\n1. Select `Export Activity Logs`.\n1. Select a `Subscription`.\n1. Note the name of the `Storage Account` for the diagnostic setting.\n1. Navigate to `Storage accounts`.\n1. Click on the storage account.\n1. Under `Security + networking`, click `Encryption`.\n1. Next to `Encryption type`, select `Customer-managed keys`.\n1. Complete the steps to configure a customer-managed key for encryption of the storage account.\n\n**Remediate from Azure CLI**\n\n```\naz storage account update --name <name of the storage account> --resource-group <resource group for a storage account> --encryption-key-source=Microsoft.Keyvault --encryption-key-vault <KeyVaultURI> --encryption-key-name <KeyName> --encryption-key-version <KeyVersion> \n```\n\n**Remediate from PowerShell**\n\n```\nSet-AzStorageAccount -ResourceGroupName <resourceGroupName> -Name <storageAccountName> -KeyvaultEncryption -KeyVaultUri <KeyVaultURI> -KeyName <KeyName>\n```",
+  "isEnabled": true,
+  "description": "",
+  "severity": 2
+}
