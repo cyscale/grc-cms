@@ -1,0 +1,24 @@
+{
+  "body": "Enable Diagnostic settings for exporting activity logs.\n\nDiagnostic settings are available for each individual resource within a subscription. You should configure settings for all appropriate resources in your environment.\n\n### Rationale\n\nA diagnostic setting controls how a diagnostic log is exported. By default, logs are retained only for 90 days. Diagnostic settings should be defined so that logs can be exported and stored longer to analyze security activities within an Azure subscription.\n",
+  "name": "Ensure a 'Diagnostic Setting' exists for Subscription Activity Logs",
+  "slug": "azure-diagnostic-setting-subscription-activity-logs",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SubscriptionDiagnosticSettings"
+      ],
+      "query": "azure-logging-subscription-diagnostic-settings"
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\nTo enable Diagnostic Settings on a subscription:\n\n1. Go to `Monitor`\n2. Click on `Activity log`\n3. Click on `Export Activity Logs`\n4. Click `+ Add diagnostic setting`\n5. Enter a `Diagnostic setting name`\n6. Select `Categories` for the diagnostic setting\n7. Select the appropriate `Destination details` (this may be Log Analytics, Storage Account, Event Hub, or Partner solution)\n8. Click `Save`\n\n### Remediate from Azure CLI\n\nTo configure Diagnostic Settings on a subscription:\n\n```\naz monitor diagnostic-settings subscription create --subscription <subscription id> --name <diagnostic settings name> --location <location> <[--event-hub <event hub ID> --event-hub-auth-rule <event hub auth rule ID>] [--storage-account <storage account ID>] [--workspace <log analytics workspace ID>] --logs \"<JSON encoded categories>\" (e.g. [{category:Security,enabled:true},{category:Administrative,enabled:true},{category:Alert,enabled:true},{category:Policy,enabled:true}])\n```\n\n### Remediate from PowerShell\n\nTo configure Diagnostic Settings on a subscription:\n\n```\n$logCategories = @();\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Administrative -Enabled $true\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Security -Enabled $true\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Alert -Enabled $true\n$logCategories += New-AzDiagnosticSettingSubscriptionLogSettingsObject -Category Policy -Enabled $true\n\nNew-AzSubscriptionDiagnosticSetting -SubscriptionId <subscription ID> -Name <Diagnostic settings name> <[-EventHubAuthorizationRule <event hub auth rule ID> -EventHubName <event hub name>] [-StorageAccountId <storage account ID>] [-WorkSpaceId <log analytics workspace ID>] [-MarketplacePartner ID <full ARM Marketplace resource ID>]> -Log $logCategories\n```",
+  "isEnabled": true,
+  "severity": 1
+}
