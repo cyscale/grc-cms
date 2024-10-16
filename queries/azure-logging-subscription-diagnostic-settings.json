@@ -1,5 +1,5 @@
 {
   "name": "Azure subscriptions without diagnostic settings",
   "slug": "azure-logging-subscription-diagnostic-settings",
-  "query": "{\n  subscriptionDiagnosticSettings(\n    where: {\n      OR: [\n        { hasSubscriptionDiagnosticSettingLog_ALL: null }\n        {\n          hasSubscriptionDiagnosticSettingLog_SOME: {\n            category_IN: [\"Administrative\", \"Alert\", \"Policy\", \"Security\"]\n            enabled: false\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  subscriptionDiagnosticSettings(\n    where: {\n      OR: [\n        { logSettings_ALL: null }\n        {\n          logSettings_SOME: {\n            category_IN: [\"Administrative\", \"Alert\", \"Policy\", \"Security\"]\n            enabled: false\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }
