@@ -1,5 +1,5 @@
 {
   "name": "Azure storage accounts without queue service diagnostic settings logging",
-  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { NOT: { isQueueServicesDiagnosticsSettingsEnabled: true } }\n        {\n          queueServicesDiagnosticSettings_NONE: {\n            AND: [\n              { logs_SINGLE: { enabled: true, category: \"StorageRead\" } }\n              { logs_SINGLE: { enabled: true, category: \"StorageWrite\" } }\n              { logs_SINGLE: { enabled: true, category: \"StorageDelete\" } }\n            ]\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { NOT: { isQueueServicesDiagnosticsSettingsEnabled: true } }\n        {\n          diagnosticSettings_NONE: {\n            resourceType: \"Microsoft.Storage/storageAccounts/queueServices\"\n            AND: [\n              { logs_SINGLE: { enabled: true, category: \"StorageRead\" } }\n              { logs_SINGLE: { enabled: true, category: \"StorageWrite\" } }\n              { logs_SINGLE: { enabled: true, category: \"StorageDelete\" } }\n            ]\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
   "slug": "azure-storage-accounts-without-queue-logging"
 }
