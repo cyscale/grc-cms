@@ -14,7 +14,7 @@
       "subjects": [
         "BlobContainer"
       ],
-      "query": "azure-1-3-0-storage-10-storage-logging-is-enabled-for-blob-service-for-read-write-and-delete-requests",
+      "query": "azure-storage-accounts-without-blob-diag-settings",
       "isManual": false
     }
   ],
