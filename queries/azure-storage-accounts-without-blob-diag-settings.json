@@ -1,0 +1,5 @@
+{
+  "name": "Storage Accounts without Blob Diagnostic Settings",
+  "slug": "azure-storage-accounts-without-blob-diag-settings",
+  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { isBlobServicesDiagnosticsSettingsEnabled: false }\n        {\n          AND: [\n            {\n              diagnosticSettings_NONE: {\n                resourceType: \"Microsoft.Storage/storageAccounts/blobServices\"\n                AND: [\n                  { logs_SINGLE: { enabled: true, category: \"StorageRead\" } }\n                  { logs_SINGLE: { enabled: true, category: \"StorageWrite\" } }\n                  { logs_SINGLE: { enabled: true, category: \"StorageDelete\" } }\n                ]\n              }\n            }\n            {\n              diagnosticSettings_NONE: {\n                resourceType: \"Microsoft.Storage/storageAccounts/blobServices\"\n                logs_SOME: {\n                  enabled: true\n                  categoryGroup_IN: [\"audit\", \"allLogs\"]\n                }\n              }\n            }\n          ]\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
