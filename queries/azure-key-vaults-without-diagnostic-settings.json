@@ -1,0 +1,5 @@
+{
+  "name": "Key Vaults without Diagnostic Settings",
+  "slug": "azure-key-vaults-without-diagnostic-settings",
+  "query": "{\n  kmsVaults(\n    where: {\n      OR: [\n        { loggingEnabled: false }\n        {\n          diagnosticSettings_SOME: {\n            resourceType: \"Microsoft.KeyVault/vaults\"\n            logs_SOME: {\n              enabled: false\n              categoryGroup_IN: [\"audit\", \"allLogs\"]\n            }\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
