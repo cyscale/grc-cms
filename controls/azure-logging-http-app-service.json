@@ -1,0 +1,24 @@
+{
+  "body": "Enable AppServiceHTTPLogs diagnostic log category for Azure App Service instances to ensure all HTTP requests are captured and centrally logged.\n\n### Rationale\n\nCapturing web requests can provide important supporting information for security analysts performing monitoring and incident response activities. Once logged, these logs can be ingested into SIEM or another central aggregation point for the organization.\n\n### Impact\n\nLog consumption and processing will incur additional costs.\n\n### Default Value\n\nBy default, HTTP logs are not collected",
+  "name": "Ensure logging for Azure AppService 'HTTP logs' is enabled",
+  "slug": "azure-logging-http-app-service",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-service-without-http-logging"
+    }
+  ],
+  "remediationDescription": "**Remediate from Azure Portal**\n\n1. Open the App Service using the `Open in Azure` button.\n1. Under `Monitoring`, go to `Diagnostic settings`.\n1. To update an existing diagnostic setting, click `Edit setting` against the setting. To create a new diagnostic setting, click `Add diagnostic setting` and provide a name for the new setting.\n1. Check the checkbox next to `HTTP logs`.\n1. Configure a destination based on your specific logging consumption capability (for example, streaming to an event hub and then consuming with SIEM integration for Event Hub logging).\n1. Click `Save`.",
+  "isEnabled": true,
+  "severity": 1
+}
