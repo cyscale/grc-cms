@@ -298,6 +298,15 @@
         },
         {
           "control": "azure-alert-delete-sql-firewall"
+        },
+        {
+          "control": "azure-alert-create-update-public-ip-addr"
+        },
+        {
+          "control": "azure-alert-delete-public-ip-addr"
+        },
+        {
+          "control": "azure-application-insights-are-configured"
         }
       ]
     }
