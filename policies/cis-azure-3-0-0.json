@@ -264,7 +264,16 @@
           "control": "azure-diagnostic-settings-categories"
         },
         {
+          "control": "azure-logging-storage-account-activity-logs-cmk"
+        },
+        {
           "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-flow-logs-nsg"
+        },
+        {
+          "control": "azure-logging-http-app-service"
         },
         {
           "control": "azure-alert-create-policy"
@@ -273,7 +282,7 @@
           "control": "azure-alert-delete-policy-assign"
         },
         {
-          "control": "azure-alert-create-update-nsg"
+          "control": "azure-activity-log-alerts-create-or-update-nsg"
         },
         {
           "control": "azure-alert-delete-nsg"

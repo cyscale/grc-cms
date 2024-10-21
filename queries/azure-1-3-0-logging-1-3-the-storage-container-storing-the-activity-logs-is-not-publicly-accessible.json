@@ -1,1 +1,0 @@
-{"name":"The storage container storing the activity logs is not publicly accessible","slug":"azure-1-3-0-logging-1-3-the-storage-container-storing-the-activity-logs-is-not-publicly-accessible","query":"{AzureLogging13{...AssetFragment}}"}

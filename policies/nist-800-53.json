@@ -493,7 +493,7 @@
           "control": "azure-alert-create-policy"
         },
         {
-          "control": "azure-alert-create-update-nsg"
+          "control": "azure-activity-log-alerts-create-or-update-nsg"
         },
         {
           "control": "azure-1-3-0-logging-2-5"

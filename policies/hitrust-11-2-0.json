@@ -880,7 +880,7 @@
           "control": "azure-alert-delete-policy-assign"
         },
         {
-          "control": "azure-alert-create-update-nsg"
+          "control": "azure-activity-log-alerts-create-or-update-nsg"
         },
         {
           "control": "azure-alert-delete-nsg"
