@@ -1,0 +1,25 @@
+{
+  "body": "Ensure that network flow logs are captured and fed into a central log analytics workspace.\n\n### Rationale\n\nNetwork Flow Logs provide valuable insight into the flow of traffic around your network and feed into Azure Monitor and Azure Sentinel (if in use), permitting the generation of visual flow diagrams to aid with analyzing for lateral movement, etc.\n\n### Impact\n\nThe impact of configuring NSG Flow logs is primarily cost and configuration. If deployed, it will create storage accounts that hold minimal amounts of data for a 5-day lifecycle before feeding it to the Log Analytics Workspace.\n\nThis will increase the amount of data stored and used by Azure Monitor.\n\n### Default Value\n\nBy default, Network Security Group logs are not sent to Log Analytics.\n\n### References\n\n- (https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal)[https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal]\n- (https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection#lt-4-enable-network-logging-for-security-investigation)[https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection#lt-4-enable-network-logging-for-security-investigation]",
+  "name": "Ensure Network Security Group Flow logs are captured and sent to Log Analytics",
+  "slug": "azure-flow-logs-nsg",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FlowLog"
+      ],
+      "query": "azure-flow-log-nsg-without-log-analytics",
+      "applicableAssetsQuery": "query ($options: FlowLogOptions) {\n  flowLogs(\n    options: $options\n    where: { targetResourceID_CONTAINS: \"networkSecurityGroups\" }\n  ) {\n    ...AssetFragment\n  }\n}"
+    }
+  ],
+  "remediationDescription": "**Remediate from Azure Portal**\n\n1. Navigate to `Network Watcher`.\n1. Under `Logs`, select `Flow logs`.\n1. Select `+ Create`.\n1. Select the desired Subscription.\n1. For `Flow log type`, select `Network security group`.\n1. Select `+ Select target resource`.\n1. Select `Network security group`.\n1. Select a network security group.\n1. Click `Confirm selection`.\n1. Select or create a new Storage Account.\n1. If using a v2 storage account, input the retention in days to retain the log.\n1. Click `Next`.\n1. Under `Analytics`, for `Flow log version`, select `Version 2`.\n1. Check the box next to `Enable traffic analytics`.\n1. Select a processing interval.\n1. Select a `Log Analytics Workspace`.\n1. Select `Next`.\n1. Optionally add Tags.\n1. Select `Review + create`.\n1. Select `Create`.\n\n***Warning***\n\nThe remediation policy creates remediation deployment and names them by concatenating the subscription name and the resource group name. The MAXIMUM permitted length of a deployment name is 64 characters. Exceeding this will cause the remediation task to fail.",
+  "isEnabled": true,
+  "severity": 1
+}
