@@ -1,0 +1,5 @@
+{
+  "query": "{\n  subscriptionDiagnosticSettings(\n    where: { storageAccount: { byokEncrypted: false } }\n  ) {\n    storageAccount {\n      ...AssetFragment\n    }\n  }\n}",
+  "name": "Azure Subscription Diagnostic Settings Without CMK",
+  "slug": "azure-subscription-diagnostic-settings-without-cmk"
+}
