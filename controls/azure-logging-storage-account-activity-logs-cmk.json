@@ -17,7 +17,7 @@
       ],
       "query": "azure-subscription-diagnostic-settings-without-cmk",
       "applicableAssetsQuery": "query ($options: StorageAccountOptions) {\n  storageAccounts(\n    options: $options\n    where: { NOT: { destinationForSubscriptionDiagnosticSettings_ALL: null } }\n  ) {\n    ...AssetFragment\n  }\n}",
-      "returnPath": "storageAccount"
+      "returnPath": ""
     }
   ],
   "replacementFor": [
