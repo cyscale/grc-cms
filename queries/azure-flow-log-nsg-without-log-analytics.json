@@ -1,0 +1,5 @@
+{
+  "name": "Azure Flow Logs for NSGs without Log Analytics",
+  "slug": "azure-flow-log-nsg-without-log-analytics",
+  "query": "{\n  flowLogs(\n    where: {\n      targetResourceID_CONTAINS: \"networkSecurityGroups\"\n      trafficAnalyticsEnabled: false\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
