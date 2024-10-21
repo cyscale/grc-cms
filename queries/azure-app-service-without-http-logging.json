@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Services (Sites) without HTTP logging",
+  "slug": "azure-app-service-without-http-logging",
+  "query": "{\n  sites(\n    where: {\n      diagnosticSettings_SOME: {\n        logs_SOME: { enabled: false, category: \"AppServiceHTTPLogs\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
