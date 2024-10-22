@@ -28,5 +28,9 @@
     "IAMServiceAccount"
   ],
   "display_name": "External Remote Services - T1133",
-  "controls": ["management-ports-restricted-from-internet"]
+  "controls": [
+    "management-ports-restricted-from-internet",
+    "azure-restrict-udp",
+    "azure-networking-restrict-http-https"
+  ]
 }

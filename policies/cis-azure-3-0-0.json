@@ -380,10 +380,16 @@
           "control": "azure-restrict-udp"
         },
         {
+          "control": "azure-networking-restrict-http-https"
+        },
+        {
           "control": "azure-networking-nsg-flow-log-retention"
         },
         {
           "control": "azure-network-watcher-enabled"
+        },
+        {
+          "control": "azure-networking-review-public-ip-addresses"
         }
       ]
     },
