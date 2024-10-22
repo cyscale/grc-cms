@@ -1,5 +1,5 @@
 {
-  "name": "Azure NSGs allowing UDP traffic",
+  "name": "Azure NSGs allowing HTTP(S) traffic",
   "slug": "azure-nsgs-allowing-http-https-traffic",
   "query": "{\n  securityGroups(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        action: \"Allow\"\n        protocol: \"TCP\"\n        AND: [\n          {\n            OR: [\n              { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n              { sources_INCLUDES: \"cidr:::/0\" }\n              { sources_INCLUDES: \"tag:Internet\" }\n              { sources: [] }\n            ]\n          }\n          {\n            OR: [\n              { sourceFromPort_LTE: 80, sourceToPort_GTE: 80 }\n              { sourceFromPort_LTE: 443, sourceToPort_GTE: 443 }\n            ]\n          }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }
