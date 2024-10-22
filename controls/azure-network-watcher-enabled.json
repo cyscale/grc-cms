@@ -1,9 +1,9 @@
 {
-  "name": "Ensure Network Watcher is 'Enabled'",
-  "body": "Enable Network Watcher for Azure subscriptions.\n\n**Rationale**\n\nNetwork diagnostic and visualization tools available with Network Watcher help users understand, diagnose, and gain insights to the network in Azure.\n\n**Impact**\n\nThere are additional costs per transaction to run and store network data. For high-volume networks these charges will add up quickly.",
+  "body": "Enable Network Watcher for Azure subscriptions.\n\n**Rationale**\n\nNetwork diagnostic and visualization tools available with Network Watcher help users understand, diagnose, and gain insights into the network in Azure.\n\n**Impact**\n\nRunning and storing network data incurs additional costs per transaction, which can quickly add up for high-volume networks.\n\n**Default Value**\n\nNetwork Watcher is automatically enabled.\n\nWhen you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact on your resources or associated charge for automatically enabling Network Watcher.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview)\n2. [https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_list](https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_list)\n3. [https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_configure](https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_configure)\n4. [https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-create](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-create)\n5. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-logging-threat-detection#lt-3-enable-logging-for-azure-network-activities](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-logging-threat-detection#lt-3-enable-logging-for-azure-network-activities)\n6. [https://azure.microsoft.com/en-ca/pricing/details/network-watcher/](https://azure.microsoft.com/en-ca/pricing/details/network-watcher/)",
+  "name": "Ensure that Network Watcher is 'Enabled' for Azure Regions that are in use",
   "slug": "azure-network-watcher-enabled",
-  "severity": 1,
-  "remediationDescription": "Opting-out of Network Watcher automatic enablement is a permanent change. Once you opt-out you cannot opt-in without contacting support.\n\n**Default Value**\n\nNetwork Watcher is automatically enabled. When you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact to your resources or associated charge for automatically enabling Network Watcher.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview)\n2. [https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_list](https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_list)\n3. [https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_configure](https://docs.azure.cn/zh-cn/cli/network/watcher?view=azure-cli-latest#az_network_watcher_configure)\n4. [https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-create](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-create)\n5. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-logging-threat-detection#lt-3-enable-logging-for-azure-network-activities](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-logging-threat-detection#lt-3-enable-logging-for-azure-network-activities)\n6. [https://azure.microsoft.com/en-ca/pricing/details/network-watcher/](https://azure.microsoft.com/en-ca/pricing/details/network-watcher/)",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -14,7 +14,11 @@
       "subjects": [
         "NetworkWatcher"
       ],
-      "query": "azure-1-3-0-networking-5-network-watcher-is-enabled"
+      "query": "azure-1-3-0-networking-5-network-watcher-is-enabled",
+      "isManual": false
     }
-  ]
+  ],
+  "remediationDescription": "Opting out of Network Watcher automatic enablement is a permanent change. Once you opt-out, you cannot opt-in without contacting support.\n\nTo manually enable Network Watcher in each region where you want to use Network Watcher capabilities, follow the steps below.\n\n\n**Remediate from Azure Portal**\n\n1. Use the Search bar to search for and click on the `Network Watcher` service.\n1. Click `Create`.\n1. Select a `Region` from the drop-down menu.\n1. Click `Add`.\n\n\n**Remediate from Azure CLI**\n\n```bash\naz network watcher configure --locations <region> --enabled true --resource-group <resource_group>\n```",
+  "isEnabled": true,
+  "severity": 1
 }
