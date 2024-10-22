@@ -4,7 +4,7 @@
   "isStandard": true,
   "slug": "cis-azure-3-0-0",
   "version": "3.0.0",
-  "body": "#Statement\n\nCIS Microsoft Azure Foundations Benchmark provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The\nscope of this benchmark is to establish the foundation level of security for anyone\nadopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. The benchmark should be\nunderstood as a starting point. Site-specific tailoring will almost certainly be required.\nThe CIS Azure Foundations Benchmark provides recommendations for the following\nAzure Services:\n\n- App Service\n- Application Gateway\n- Azure Active Directory\n- Azure Advisor\n- Azure Cosmos DB\n- Azure Disk Storage\n- Azure Files\n- Azure Monitor\n- Azure Policy\n- Azure Private Link\n- Azure Resource Manager\n- Azure Service Health\n- Azure SQL\n- Azure SQL Database\n- Key Vault\n- Microsoft Azure portal\n- Microsoft Defender for Cloud\n- Static Web Apps\n- Storage Accounts\n- Virtual Machines\n- Virtual Network\n\n#Intended Audience\n\nThis document is intended for system and application administrators, security\nspecialists, auditors, help desk, and platform deployment personnel who plan to\ndevelop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\n#Recommendations\n\n<Procedure slug=\"cis-azure-3-0-0-iam\"/>\n<Procedure slug=\"cis-azure-3-0-0-security\"/>\n<Procedure slug=\"cis-azure-3-0-0-storage\"/>\n<Procedure slug=\"cis-azure-3-0-0-db\"/>\n<Procedure slug=\"cis-azure-3-0-0-logging\"/>",
+  "body": "#Statement\n\nCIS Microsoft Azure Foundations Benchmark provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The\nscope of this benchmark is to establish the foundation level of security for anyone\nadopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. The benchmark should be\nunderstood as a starting point. Site-specific tailoring will almost certainly be required.\nThe CIS Azure Foundations Benchmark provides recommendations for the following\nAzure Services:\n\n- App Service\n- Application Gateway\n- Azure Active Directory\n- Azure Advisor\n- Azure Cosmos DB\n- Azure Disk Storage\n- Azure Files\n- Azure Monitor\n- Azure Policy\n- Azure Private Link\n- Azure Resource Manager\n- Azure Service Health\n- Azure SQL\n- Azure SQL Database\n- Key Vault\n- Microsoft Azure portal\n- Microsoft Defender for Cloud\n- Static Web Apps\n- Storage Accounts\n- Virtual Machines\n- Virtual Network\n\n#Intended Audience\n\nThis document is intended for system and application administrators, security\nspecialists, auditors, help desk, and platform deployment personnel who plan to\ndevelop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\n#Recommendations\n\n<Procedure slug=\"cis-azure-3-0-0-iam\"/>\n<Procedure slug=\"cis-azure-3-0-0-security\"/>\n<Procedure slug=\"cis-azure-3-0-0-storage\"/>\n<Procedure slug=\"cis-azure-3-0-0-db\"/>\n<Procedure slug=\"cis-azure-3-0-0-logging\"/>\n<Procedure slug=\"cis-azure-3-0-0-networking\"/>\n<Procedure slug=\"cis-azure-3-0-0-vms\"/>\n<Procedure slug=\"cis-azure-3-0-0-appservice\"/>\n<Procedure slug=\"cis-azure-3-0-0-misc\"/>",
   "procedures": [
     {
       "name": "Identity and Access Management",
@@ -367,6 +367,87 @@
           "control": "azure-application-insights-are-configured"
         }
       ]
+    },
+    {
+      "name": "Networking",
+      "slug": "cis-azure-3-0-0-networking",
+      "body": "This section covers security recommendations to follow in order to set networking policies on an Azure subscription.",
+      "controls": [
+        {
+          "control": "management-ports-restricted-from-internet"
+        },
+        {
+          "control": "azure-restrict-udp"
+        },
+        {
+          "control": "azure-networking-nsg-flow-log-retention"
+        },
+        {
+          "control": "azure-network-watcher-enabled"
+        }
+      ]
+    },
+    {
+      "name": "Virtual Machines",
+      "slug": "cis-azure-3-0-0-vms",
+      "controls": [
+        {
+          "control": "azure-vm-disks-managed"
+        },
+        {
+          "control": "azure-vm-disks-cmk"
+        },
+        {
+          "control": "azure-unattached-disks-enc-cmk"
+        }
+      ],
+      "body": "This section covers security recommendations to follow for the configuration of Virtual Machines on an Azure subscription."
+    },
+    {
+      "name": "AppService",
+      "slug": "cis-azure-3-0-0-appservice",
+      "body": "This section covers security recommendations for Azure AppService.",
+      "controls": [
+        {
+          "control": "azure-redirect-http-to-https"
+        },
+        {
+          "control": "app-service-auth-azure-apps"
+        },
+        {
+          "control": "azure-latest-tls-version"
+        },
+        {
+          "control": "azure-client-certs-web-app"
+        },
+        {
+          "control": "azure-register-aad-app-service"
+        },
+        {
+          "control": "azure-latest-php-version"
+        },
+        {
+          "control": "azure-latest-python-version"
+        },
+        {
+          "control": "azure-latest-java-version"
+        },
+        {
+          "control": "azure-http-latest-version-web-app"
+        },
+        {
+          "control": "azure-ftp-deployments-disabled"
+        },
+        {
+          "control": "azure-key-vaults-store-secrets"
+        }
+      ]
+    },
+    {
+      "name": "Miscellaneous",
+      "slug": "cis-azure-3-0-0-misc",
+      "body": "This section covers security recommendations for miscellaneous.",
+      "controls": []
     }
   ],
   "targetCloudProviders": ["azure", "entra"]

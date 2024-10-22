@@ -977,9 +977,6 @@
           "control": "azure-sql-server-auditing-retention"
         },
         {
-          "control": "azure-1-3-0-database-2-1"
-        },
-        {
           "control": "azure-1-3-0-database-2-2"
         },
         {
