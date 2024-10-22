@@ -4,10 +4,10 @@
   "isStandard": true,
   "slug": "cis-azure-3-0-0",
   "version": "3.0.0",
-  "body": "#Statement\n\nCIS Microsoft Azure Foundations Benchmark provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The\nscope of this benchmark is to establish the foundation level of security for anyone\nadopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. The benchmark should be\nunderstood as a starting point. Site-specific tailoring will almost certainly be required.\nThe CIS Azure Foundations Benchmark provides recommendations for the following\nAzure Services:\n\n- App Service\n- Application Gateway\n- Azure Active Directory\n- Azure Advisor\n- Azure Cosmos DB\n- Azure Disk Storage\n- Azure Files\n- Azure Monitor\n- Azure Policy\n- Azure Private Link\n- Azure Resource Manager\n- Azure Service Health\n- Azure SQL\n- Azure SQL Database\n- Key Vault\n- Microsoft Azure portal\n- Microsoft Defender for Cloud\n- Static Web Apps\n- Storage Accounts\n- Virtual Machines\n- Virtual Network\n\n#Intended Audience\n\nThis document is intended for system and application administrators, security\nspecialists, auditors, help desk, and platform deployment personnel who plan to\ndevelop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\n#Recommendations\n\n<Procedure slug=\"cis-azure-3-0-0-iam\"/>\n<Procedure slug=\"cis-azure-3-0-0-storage\"/>\n<Procedure slug=\"cis-azure-3-0-0-db\"/>\n<Procedure slug=\"cis-azure-3-0-0-logging\"/>",
+  "body": "#Statement\n\nCIS Microsoft Azure Foundations Benchmark provides prescriptive guidance for establishing a secure baseline configuration for Microsoft Azure. The\nscope of this benchmark is to establish the foundation level of security for anyone\nadopting Microsoft Azure Cloud. The benchmark is, however, not an exhaustive list of all possible security configurations and architecture. The benchmark should be\nunderstood as a starting point. Site-specific tailoring will almost certainly be required.\nThe CIS Azure Foundations Benchmark provides recommendations for the following\nAzure Services:\n\n- App Service\n- Application Gateway\n- Azure Active Directory\n- Azure Advisor\n- Azure Cosmos DB\n- Azure Disk Storage\n- Azure Files\n- Azure Monitor\n- Azure Policy\n- Azure Private Link\n- Azure Resource Manager\n- Azure Service Health\n- Azure SQL\n- Azure SQL Database\n- Key Vault\n- Microsoft Azure portal\n- Microsoft Defender for Cloud\n- Static Web Apps\n- Storage Accounts\n- Virtual Machines\n- Virtual Network\n\n#Intended Audience\n\nThis document is intended for system and application administrators, security\nspecialists, auditors, help desk, and platform deployment personnel who plan to\ndevelop, deploy, assess, or secure solutions that incorporate Microsoft Azure.\n\n#Recommendations\n\n<Procedure slug=\"cis-azure-3-0-0-iam\"/>\n<Procedure slug=\"cis-azure-3-0-0-security\"/>\n<Procedure slug=\"cis-azure-3-0-0-storage\"/>\n<Procedure slug=\"cis-azure-3-0-0-db\"/>\n<Procedure slug=\"cis-azure-3-0-0-logging\"/>",
   "procedures": [
     {
-      "name": "1. Identity and Access Management",
+      "name": "Identity and Access Management",
       "slug": "cis-azure-3-0-0-iam",
       "body": "This section covers security recommendations to set identity and access management policies on an Azure Subscription.",
       "controls": [
@@ -122,7 +122,65 @@
       ]
     },
     {
-      "name": "3. Storage Accounts",
+      "name": "Security",
+      "slug": "cis-azure-3-0-0-security",
+      "body": "This section covers security best practice recommendations for products in the Azure Security services category.",
+      "controls": [
+        {
+          "control": "azure-auto-provisioning-log-analystics"
+        },
+        {
+          "control": "azure-defender-cloud-apps-selected"
+        },
+        {
+          "control": "azure-defender-for-servers"
+        },
+        {
+          "control": "azure-defender-endpoint-selected"
+        },
+        {
+          "control": "microsoft-defender-for-containers"
+        },
+        {
+          "control": "azure-defender-for-storage"
+        },
+        {
+          "control": "azure-defender-for-app-services"
+        },
+        {
+          "control": "azure-defender-cosmos-db"
+        },
+        {
+          "control": "azure-defender-open-source-relational-db"
+        },
+        {
+          "control": "azure-defender-for-sql-servers"
+        },
+        {
+          "control": "azure-defender-for-sql-servers-on-machines"
+        },
+        {
+          "control": "azure-defender-for-key-vault"
+        },
+        {
+          "control": "azure-defender-for-resource-manager"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
+        },
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "azure-notify-alerts-high-severity"
+        },
+        {
+          "control": "azure-defender-for-dns"
+        }
+      ]
+    },
+    {
+      "name": "Storage Accounts",
       "slug": "cis-azure-3-0-0-storage",
       "body": "This section covers security recommendations to follow to set storage account policies on an Azure Subscription.",
       "controls": [
@@ -180,7 +238,7 @@
       ]
     },
     {
-      "name": "5. Database Services",
+      "name": "Database Services",
       "slug": "cis-azure-3-0-0-db",
       "body": "This section covers security recommendations to follow to set general database services policies on an Azure Subscription.",
       "controls": [
@@ -253,7 +311,7 @@
       ]
     },
     {
-      "name": "6. Logging and Monitoring",
+      "name": "Logging and Monitoring",
       "slug": "cis-azure-3-0-0-logging",
       "body": "This section covers security recommendations to follow to set logging and monitoring policies on an Azure Subscription.",
       "controls": [
