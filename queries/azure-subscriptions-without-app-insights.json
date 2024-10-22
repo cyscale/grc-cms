@@ -1,0 +1,5 @@
+{
+  "name": "Azure Connectors without Application Insights",
+  "slug": "azure-subscriptions-without-app-insights",
+  "query": "{\n  connectors(where: { cloudProvider: \"azure\", applicationInsights_ALL: null }) {\n    ...AssetFragment\n  }\n}"
+}
