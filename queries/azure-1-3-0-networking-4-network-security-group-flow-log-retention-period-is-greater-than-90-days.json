@@ -1,5 +1,0 @@
-{
-  "name": "Network Security Group Flow Log retention period is 'greater than 90 days'",
-  "slug": "azure-nsg-flow-logs-with-short-retention",
-  "query": "{\n  flowLogs(where: { retentionPolicyDays_LT: 90 }) {\n    ...AssetFragment\n  }\n}"
-}
