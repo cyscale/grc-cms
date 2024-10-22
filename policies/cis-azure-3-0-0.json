@@ -311,5 +311,5 @@
       ]
     }
   ],
-  "targetCloudProviders": ["azure"]
+  "targetCloudProviders": ["azure", "entra"]
 }
