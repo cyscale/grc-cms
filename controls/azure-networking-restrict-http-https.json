@@ -1,0 +1,11 @@
+{
+  "body": "Network security groups should be periodically evaluated for port misconfigurations. Where certain ports and protocols may be exposed to the Internet, they should be evaluated for necessity and restricted wherever they are not explicitly required and narrowly configured.\n\n### Rationale\n\nThe potential security problem with using HTTP(S) over the Internet is that attackers can use various brute force techniques to gain access to Azure resources. Once the attackers gain access, they can use the resource as a launch point for compromising other resources within the Azure tenant.",
+  "name": "Ensure HTTP(S) access from the Internet is evaluated and restricted",
+  "slug": "azure-networking-restrict-http-https",
+  "isInsight": false,
+  "alertForSecondaryOnly": true,
+  "rules": [],
+  "remediationDescription": "1.  Run the below command to list network security groups:\n\n```bash\naz network nsg list --subscription <subscription-id> --output table\n```\n\n2.  For each network security group, run the below command to list the rules associated with the specified port:\n\n```bash\naz network nsg rule list --resource-group <resource-group> --nsg-name <nsg-name> --query \"[?destinationPortRange=='80 or 443']\"\n```\n\n3.  Run the below command to delete the rule with:\n\n- Port = 80/443 OR \\[port range containing 80/443\\]\n- Protocol = TCP OR \"\\*\"\n- Source = Any (\\*) OR IP Addresses(0.0.0.0/0) OR Service Tag(Internet)\n- Action = Allow\n\n```bash\naz network nsg rule delete --resource-group <resource-group> --nsg-name <nsg-name> --name <rule-name>\n```",
+  "isEnabled": true,
+  "severity": 2
+}
