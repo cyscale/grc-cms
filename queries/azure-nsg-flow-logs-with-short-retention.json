@@ -1,0 +1,5 @@
+{
+  "name": "Azure NSG Flow Logs with retention shorter than 90 days",
+  "slug": "azure-nsg-flow-logs-with-short-retention",
+  "query": "{\n  flowLogs(\n    where: {\n      targetResourceID_CONTAINS: \"networkSecurityGroups\"\n      retentionPolicyDays_LT: 90\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
