@@ -1,0 +1,5 @@
+{
+  "name": "Azure NSGs allowing UDP traffic",
+  "slug": "azure-nsgs-allowing-udp-traffic",
+  "query": "{\n  securityGroups(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        action: \"Allow\"\n        protocol: \"UDP\"\n        AND: [\n          {\n            OR: [\n              { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n              { sources_INCLUDES: \"cidr:::/0\" }\n              { sources_INCLUDES: \"tag:Internet\" }\n              { sources: [] }\n            ]\n          }\n          {\n            OR: [\n              { sourceFromPort_LTE: 53, sourceToPort_GTE: 53 }\n              { sourceFromPort_LTE: 123, sourceToPort_GTE: 123 }\n              { sourceFromPort_LTE: 161, sourceToPort_GTE: 161 }\n              { sourceFromPort_LTE: 389, sourceToPort_GTE: 389 }\n              { sourceFromPort_LTE: 1900, sourceToPort_GTE: 1900 }\n            ]\n          }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
