@@ -1,0 +1,5 @@
+{
+  "name": "Azure disks without data access authentication mode",
+  "slug": "azure-disks-without-data-access-auth-mode",
+  "query": "{\n  disks(where: { dataAccessAuthMode: \"None\" }) {\n    ...AssetFragment\n  }\n}"
+}
