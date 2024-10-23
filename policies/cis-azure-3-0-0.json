@@ -398,6 +398,9 @@
       "slug": "cis-azure-3-0-0-vms",
       "controls": [
         {
+          "control": "azure-bastion-host-exists"
+        },
+        {
           "control": "azure-vm-disks-managed"
         },
         {
@@ -405,6 +408,18 @@
         },
         {
           "control": "azure-unattached-disks-enc-cmk"
+        },
+        {
+          "control": "azure-compute-disk-network-access"
+        },
+        {
+          "control": "azure-compute-disk-data-access-auth-mode"
+        },
+        {
+          "control": "azure-1-3-0-vm-7"
+        },
+        {
+          "control": "azure-compute-trusted-launch"
         }
       ],
       "body": "This section covers security recommendations to follow for the configuration of Virtual Machines on an Azure subscription."
