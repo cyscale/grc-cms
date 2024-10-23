@@ -1,0 +1,5 @@
+{
+  "name": "Azure unmanaged disks",
+  "slug": "azure-unmanaged-disks",
+  "query": "{\n  disks(where: { diskAttachments: { NOT: { vhdURI: \"\" } } }) {\n    ...AssetFragment\n  }\n}"
+}
