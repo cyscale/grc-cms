@@ -1,0 +1,24 @@
+{
+  "body": "Virtual Machine Disks and snapshots can be configured to allow access from different network resources.\n\n### Rationale\n\nIn many cases, the setting 'Enable public access from all networks' is overly permissive on Virtual Machine Disks and presents atypical attack, data infiltration, and data exfiltration vectors. If a disk-to-network connection is required, the preferred setting is 'Disable public access and enable private access.'\n\n### Impact\n\nThe setting 'Disable public access and enable private access' will require configuring a private link (URL in references below). \n\nDisable public and private access is the most secure and preferred setting where disk network access is unnecessary.",
+  "name": "Ensure that 'Disk Network Access' is NOT set to 'Enable public access from all networks'",
+  "slug": "azure-compute-disk-network-access",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Disk"
+      ],
+      "query": "azure-disks-allowing-access-from-all-networks"
+    }
+  ],
+  "remediationDescription": "**Remediate from Azure Portal**\n\nPart A. Select the Virtual Machine to Remediate\n1. Using the search bar, search for and open the `Virtual Machines` service.\n1. Click on the name of the Virtual Machine to be remediated.\n\nPart B. Remediate each Virtual Machine Disk individually\n1. From the selected Virtual Machine resource window, expand the `Settings` menu item and click `Disks.`\n1. For each disk, click the name of the disk to open the disk resource window.\n1. From the selected Disk resource window, expand the `Settings` menu item, and click `Networking`.\n\nUnder Network access, select the radio button for either:\n- Disable public access and enable private access\n- Disable public and private access\n\nRepeat Part B for each Disk attached to a VM.\n\nRepeat Parts A and B to remediate all Disks in all VMs.\n\n\n**Remediate from PowerShell**\n\nTo disable `PublicNetworkAccess` and to set a `DenyAll` setting for the disk's `NetworkAccessPolicy` for each managed disk, run the following command:\n```\n$disk = Get-AzDisk -ResourceGroupName ‘<resource group name>’ -DiskName ‘<disk name>’\n$disk.NetworkAccessPolicy = 'DenyAll'\n$disk.PublicNetworkAccess = 'Disabled'\nUpdate-AzDisk -ResourceGroup '<resource group name> -DiskName $disk.Name -Disk $disk\n```\n\nTo disable `PublicNetworkAccess` and to set an `AllowPrivate` setting for the disk's `NetworkAccessPolicy` for each managed disk, run the following command:\n```\n$disk = Get-AzDisk -ResourceGroupName ‘<resource group name>’ -DiskName ‘<disk name>’\n$disk.NetworkAccessPolicy = 'AllowPrivate'\n$disk.PublicNetworkAccess = 'Disabled'\n$disk.DiskAccessId = '/subscriptions/<subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.Compute/diskAccesses/<private disk access name>\nUpdate-AzDisk -ResourceGroup '<resource group name> -DiskName $disk.Name -Disk $disk\n```\n\n\n**Remediate from Azure CLI**\n\nTo configure a disk to allow private access only, run the following command, ensuring you have the `Disk Access ID` from a private disk access endpoint.\n\n```\naz disk update --name <managed disk name> --resource-group <resource group name> --network-access-policy AllowPrivate --disk-access <disk access ID>\n```\n\nTo completely disable public and private access for a disk, run the following command (still in preview) for each disk:\n```\naz disk update --name <managed disk name> --resource-group <resource group name> --public-network-access Disabled --network-access-policy DenyAll\n```",
+  "isEnabled": true,
+  "severity": 2
+}
