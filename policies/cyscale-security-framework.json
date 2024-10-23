@@ -750,7 +750,7 @@
           "control": "azure-1-3-0-vm-5"
         },
         {
-          "control": "azure-1-3-0-vm-6"
+          "control": "azure-compute-vm-endpoint-protection"
         },
         {
           "control": "azure-1-3-0-vm-7"
