@@ -1,0 +1,5 @@
+{
+  "name": "Azure connectors without Bastion Hosts",
+  "slug": "azure-connectors-without-bastion-hosts",
+  "query": "{\n  connectors(where: { cloudProvider: \"azure\", bastionHosts_ALL: null }) {\n    ...AssetFragment\n  }\n}"
+}
