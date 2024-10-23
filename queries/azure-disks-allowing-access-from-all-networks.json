@@ -1,0 +1,5 @@
+{
+  "name": "Azure Disks allowing public access from all networks",
+  "slug": "azure-disks-allowing-access-from-all-networks",
+  "query": "{\n  disks(where: { networkAccessPolicy: \"AllowAll\" }) {\n    ...AssetFragment\n  }\n}"
+}
