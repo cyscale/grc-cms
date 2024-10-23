@@ -1,0 +1,24 @@
+{
+  "body": "The Azure Bastion service allows secure remote access to Azure Virtual Machines over the Internet without exposing remote access protocol ports and services directly to the Internet. It provides this access using TLS over 443/TCP and subscribes to hardened configurations within an organization's Azure Active Directory service.\n\n### Rationale\n\nThe Azure Bastion service allows organizations to access Azure Virtual Machines over the Internet more securely without assigning public IP addresses to those Virtual Machines. The Azure Bastion service provides Remote Desktop Protocol (RDP) and Secure Shell (SSH) access to Virtual Machines using TLS within a web browser, thus preventing organizations from opening up 3389/TCP and 22/TCP to the Internet on Azure Virtual Machines. Additional benefits of the Bastion service include Multi-Factor Authentication, Conditional Access Policies, and any other hardening measures configured within Azure Active Directory using a central point of access.\n\n### Impact\n\nThe Azure Bastion service incurs additional costs and requires a specific virtual network configuration. The `Standard` tier offers additional configuration options compared to the `Basic` tier and may incur additional costs for those added features.\n\n### Default Value\n\nBy default, the Azure Bastion service is not configured.",
+  "name": "Ensure an Azure Bastion Host Exists",
+  "slug": "azure-bastion-host-exists",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "azure-connectors-without-bastion-hosts"
+    }
+  ],
+  "remediationDescription": "**Remediate from Azure Portal**\n\n1. Click on `Bastions`\n2. Select the `Subscription`\n3. Select the `Resource group`\n4. Type a `Name` for the new Bastion host\n5. Select a `Region`\n6. Choose `Standard` next to `Tier`\n7. Use the slider to set the `Instance count`\n8. Select the `Virtual network` or `Create new` \n9. Select the `Subnet` named `AzureBastionSubnet`. Create a `Subnet` named `AzureBastionSubnet` using a `/26` CIDR range if it doesn't already exist.\n10. Select the appropriate `Public IP address` option.\n11. If `Create new` is selected for the `Public IP address` option, provide a `Public IP address name`.\n12. If `Use existing` is selected for `Public IP address` option, select an IP address from `Choose public IP address`\n13. Click `Next: Tags >`\n14. Configure the appropriate `Tags`\n15. Click `Next: Advanced >`\n16. Select the appropriate `Advanced` options\n17. Click `Next: Review + create >`\n18. Click `Create`\n\n\n**Remediate from Azure CLI**\n\n```\naz network bastion create --location <location> --name <name of bastion host> --public-ip-address <public IP address name or ID> --resource-group <resource group name or ID> --vnet-name <virtual network containing subnet called \"AzureBastionSubnet\"> --scale-units <integer> --sku Standard [--disable-copy-paste true|false] [--enable-ip-connect true|false] [--enable-tunneling true|false]\n```\n\n\n**Remediate from PowerShell**\n\nCreate the appropriate `Virtual network` settings and `Public IP Address` settings.\n\n```\n$subnetName = \"AzureBastionSubnet\"\n$subnet = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix <IP address range in CIDR notation making sure to use a /26>\n$virtualNet = New-AzVirtualNetwork -Name <virtual network name> -ResourceGroupName <resource group name> -Location <location> -AddressPrefix <IP address range in CIDR notation> -Subnet $subnet\n$publicip = New-AzPublicIpAddress -ResourceGroupName <resource group name> -Name <public IP address name> -Location <location> -AllocationMethod Dynamic -Sku Standard\n```\n\nCreate the `Azure Bastion` service using the information within the created variables from above.\n\n```\nNew-AzBastion -ResourceGroupName <resource group name> -Name <bastion name> -PublicIpAddress $publicip -VirtualNetwork $virtualNet -Sku \"Standard\" -ScaleUnit <integer> \n```",
+  "isEnabled": true,
+  "severity": 2
+}
