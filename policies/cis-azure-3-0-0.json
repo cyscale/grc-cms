@@ -416,7 +416,16 @@
           "control": "azure-compute-disk-data-access-auth-mode"
         },
         {
+          "control": "azure-1-3-0-vm-4"
+        },
+        {
+          "control": "azure-compute-vm-endpoint-protection"
+        },
+        {
           "control": "azure-1-3-0-vm-7"
+        },
+        {
+          "control": "azure-compute-mfa-privileged-vms"
         },
         {
           "control": "azure-compute-trusted-launch"
