@@ -1,0 +1,5 @@
+{
+  "name": "Azure VMs without boot security settings",
+  "slug": "azure-vms-without-secure-boot-and-vtpm",
+  "query": "{\n  vms(\n    where: {\n      OR: [\n        { securityProfileUefiSettingsSecureBootEnabled: false }\n        { securityProfileUefiSettingsVTpmEnabled: false }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
