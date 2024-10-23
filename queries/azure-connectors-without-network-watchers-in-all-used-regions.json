@@ -1,0 +1,5 @@
+{
+  "name": "Azure Connectors without network watchers in all used regions",
+  "slug": "azure-connectors-without-network-watchers-in-all-used-regions",
+  "query": "{\n  AzureRegionsWithoutNetworkWatcher {\n    ...AssetFragment\n  }\n}"
+}
