@@ -1,0 +1,5 @@
+{
+  "name": "Azure Key Vault keys without automatic rotation",
+  "slug": "azure-key-vault-keys-without-automatic-rotation",
+  "query": "{\n  kmsKeys(where: { automaticRotationEnabled: false }) {\n    ...AssetFragment\n  }\n}"
+}
