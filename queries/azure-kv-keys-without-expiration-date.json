@@ -1,0 +1,5 @@
+{
+  "name": "Azure Key Vault Keys without expiration date",
+  "slug": "azure-kv-keys-without-expiration-date",
+  "query": "{\n  kmsKeys(where: { expiration: \"0000-01-01T00:00:00.000Z\" }) {\n    ...AssetFragment\n  }\n}"
+}
