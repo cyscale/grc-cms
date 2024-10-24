@@ -1,0 +1,24 @@
+{
+  "body": "Private endpoints will secure network traffic from Azure Key Vault to the resources requesting secrets and keys.\n\n### Rationale\n\nPrivate endpoints will keep network requests to Azure Key Vault limited to the endpoints attached to the whitelisted resources to communicate with each other. Assigning the Key Vault to a network without an endpoint will allow other resources on that network to view all traffic from the Key Vault to its destination. Despite the complexity of the configuration, this is recommended for high-security secrets.\n\n### Impact\n\nIncorrect or poorly timed changes to network configuration could result in service interruption. There are additional cost tiers for running a private endpoint per petabyte or more of networking traffic.\n\n### Default Value\n\nBy default, Private Endpoints are not enabled for any services within Azure.\n\n### Additional Information\n\nThis recommendation assumes that you have created a Resource Group containing a Virtual Network with which the services are already associated and configured private DNS. A Bastion on the virtual network is also required, and the service you are connecting to must already have a Private Endpoint. For information concerning the installation of these services, please see the attached documentation.\n\nMicrosoft's documentation lists the requirements as:\n- A Key Vault.\n- An Azure virtual network.\n- A subnet in the virtual network.\n- Owner or contributor permissions for the Key Vault and the virtual network.",
+  "name": "Ensure Private Endpoints are Used for Azure Key Vault",
+  "slug": "azure-key-vault-private-endpoint",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSVault"
+      ],
+      "query": "azure-key-vaults-without-private-endpoints"
+    }
+  ],
+  "remediationDescription": "**Please see the additional information about the requirements needed before starting this remediation procedure.**\n\n### Remediate from Azure Portal\n\n1. Open the key vault using the `Open in Azure` button.\n4. Select `Networking` in the left column.\n5. Select `Private endpoint connections` from the top row.\n6. Select `+ Create`.\n7. Select the subscription the Key Vault is within and other desired configurations.\n8. Select `Next`.\n9. For resource type, select `Microsoft.KeyVault/vaults`.\n10. Select the Key Vault to associate the Private Endpoint with.\n11. Select `Next`.\n12. In the `Virtual Networking` field, select the network to assign the Endpoint.\n13. Select other configuration options as desired, including an existing or new application security group.\n14. Select `Next`.\n15. Select the private DNS the Private Endpoints will use.\n16. Select `Next`.\n17. Optionally add `Tags`.\n18. Select `Next: Review + Create`.\n19. Review the information and select `Create`. Follow the Audit Procedure to determine if it has been successfully applied.\n20. Repeat steps 3-19 for each Key Vault.\n\n### Remediate from Azure CLI\n\n1. To create an endpoint, run the following command:\n\n```bash\naz network private-endpoint create --resource-group <resourceGroup --vnet-name <vnetName> --subnet <subnetName> --name <PrivateEndpointName>  --private-connection-resource-id \"/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<resourceGroup>/providers/Microsoft.KeyVault/vaults/<keyVaultName>\" --group-ids vault --connection-name <privateLinkConnectionName> --location <azureRegion> --manual-request\n```\n\n2. To manually approve the endpoint request, run the following command:\n\n```bash\naz keyvault private-endpoint-connection approve --resource-group <resourceGroup> --vault-name <keyVaultName> –name <privateLinkName>\n```\n\n3. Determine the Private Endpoint's IP address to connect the Key Vault to the Private DNS you have previously created:\n\n4. Look for the property networkInterfaces then id; the value must be placed in the variable <privateEndpointNIC> within step 7.\n\n```bash\naz network private-endpoint show -g <resourceGroupName> -n <privateEndpointName> \n```\n\n5. Look for the property networkInterfaces then id; the value must be placed on <privateEndpointNIC> in step 7.\n\n```bash\naz network nic show --ids <privateEndpointName>   \n```\n\n6. Create a Private DNS record within the DNS Zone you created for the Private Endpoint:\n\n```bash\naz network private-dns record-set a add-record -g <resourcecGroupName> -z \"privatelink.vaultcore.azure.net\" -n <keyVaultName> -a <privateEndpointNIC>\n```\n\n7. `nslookup` the private endpoint to determine if the DNS record is correct:\n\n```bash\nnslookup <keyVaultName>.vault.azure.net\nnslookup <keyVaultName>.privatelink.vaultcore.azure.n\n```",
+  "isEnabled": true,
+  "severity": 2
+}
