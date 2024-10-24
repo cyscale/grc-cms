@@ -1,0 +1,5 @@
+{
+  "name": "Azure key vaults not using RBAC",
+  "slug": "azure-key-vaults-without-rbac",
+  "query": "{\n  kmsVaults(where: { enableRbacAuthorization: false }) {\n    ...AssetFragment\n  }\n}"
+}
