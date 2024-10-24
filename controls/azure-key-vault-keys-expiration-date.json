@@ -1,6 +1,6 @@
 {
   "body": "Ensure that all Keys in Azure Key Vaults have an expiration date set.\n\n### Rationale\n\nAzure Key Vault enables users to store and use cryptographic keys within the Microsoft Azure environment. The `exp` (expiration date) attribute identifies the expiration date on or after which the key MUST NOT be used to encrypt new data, wrap new keys, and sign. By default, keys never expire. Thus, keys should be rotated in the key vault, and an explicit expiration date should be set for all keys to help enforce the key rotation. This ensures that the keys cannot be used beyond their assigned lifetimes.\n\n### Impact\n\nKeys cannot be used beyond their assigned expiration dates. They need to be rotated periodically wherever they are used.",
-  "name": "Ensure the Expiration Date is set for all Key Vaults Keys",
+  "name": "Ensure the Expiration Date is set for Key Vaults Keys",
   "slug": "azure-key-vault-keys-expiration-date",
   "isInsight": false,
   "alertForSecondaryOnly": false,
@@ -18,7 +18,7 @@
       "query": "azure-kv-keys-without-expiration-date"
     }
   ],
-  "remediationDescription": "**Remediate from Azure Portal**\n\n1. Open the key using the `Open in Azure` button.\n1. Set an appropriate `Expiration date`.\n\n### Remediate from Azure CLI\n\nUpdate the `Expiration date` for the key using the below command:\n\n```bash\naz keyvault key set-attributes --name <keyName> --vault-name <vaultName> --expires <Y-m-d'T'H:M:S'Z'>\n```\n\n### Remediate from PowerShell\n\n```powershell\nSet-AzKeyVaultKeyAttribute -VaultName <VaultName> -Name <KeyName> -Expires <DateTime>\n```",
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the key using the `Open in Azure` button.\n1. Set an appropriate `Expiration date`.\n\n### Remediate from Azure CLI\n\nUpdate the `Expiration date` for the key using the below command:\n\n```bash\naz keyvault key set-attributes --name <keyName> --vault-name <vaultName> --expires <Y-m-d'T'H:M:S'Z'>\n```\n\n### Remediate from PowerShell\n\n```powershell\nSet-AzKeyVaultKeyAttribute -VaultName <VaultName> -Name <KeyName> -Expires <DateTime>\n```",
   "isEnabled": true,
   "severity": 2
 }
