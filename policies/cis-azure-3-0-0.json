@@ -176,6 +176,24 @@
         },
         {
           "control": "azure-defender-for-dns"
+        },
+        {
+          "control": "azure-key-vault-keys-expiration-date"
+        },
+        {
+          "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "azure-key-vault-recoverable"
+        },
+        {
+          "control": "azure-key-vault-rbac"
+        },
+        {
+          "control": "azure-key-vault-private-endpoint"
+        },
+        {
+          "control": "azure-key-vault-automatic-key-rotation"
         }
       ]
     },
