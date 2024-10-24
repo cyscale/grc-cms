@@ -1,0 +1,24 @@
+{
+  "body": "The recommended way to access Key Vaults is to use the Azure Role-Based Access Control (RBAC) permissions model.\n  \nAzure RBAC is an authorization system built on Azure Resource Manager that provides fine-grained access management of Azure resources. It allows users to manage Key, Secret, and Certificate permissions. It provides one place to manage all permissions across all key vaults.\n\n### Rationale\n\nThe new RBAC permissions model for Key Vaults enables a much finer-grained access control for key vault secrets, keys, certificates, etc., than the vault access policy. This, in turn, will permit the use of privileged identity management over these roles, thus securing the key vaults with JIT Access management.\n\n### Impact\n\nImplementation needs to be properly designed from the ground up, as this is a fundamental change to how key vaults are accessed/managed. Changing permissions to key vaults will result in a loss of service as permissions are re-applied. For the least downtime, map your current groups and users to their corresponding permission needs.",
+  "name": "Enable Role Based Access Control for Azure Key Vaults",
+  "slug": "azure-key-vault-rbac",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KMSVault"
+      ],
+      "query": "azure-key-vaults-without-rbac"
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\nKey Vaults can be configured to use `Azure role-based access control` on creation.\n\nFor existing Key Vaults:\n\n1. Open the Key Vault using the `Open in Azure` button.\n1. Select `Access configuration`\n1. Set the Permission model radio button to `Azure role-based access control`, taking note of the warning message\n1. Click `Save`\n1. Select `Access Control (IAM)`\n1. Select the `Role Assignments` tab\n1. Reapply permissions as needed to groups or users\n\n### Remediate from Azure CLI\n\nTo enable RBAC Authorization for each Key Vault, run the following Azure CLI command:\n\n```\naz keyvault update --resource-group <resource_group> --name <vault_name> --enable-rbac-authorization true\n```\n\n### Remediate from PowerShell\n\nTo enable RBAC authorization on each Key Vault, run the following PowerShell command:\n\n```\nUpdate-AzKeyVault -ResourceGroupName <resource_group> -VaultName <vault_name> -EnableRbacAuthorization $True\n```",
+  "isEnabled": true,
+  "severity": 2
+}
