@@ -17,7 +17,7 @@
       "query": "azure-nsg-flow-logs-with-short-retention",
       "returnPath": "",
       "isManual": false,
-      "applicableAssetsQuery": "query ($options: FlowLogOptions) {\n  flowLogs(\n    options: $options\n    where: { targetResourceID_CONTAINS: \"networkSecurityGroups\" }\n  ) {\n    ...AssetFragment\n  }\n}"
+      "applicableAssetsQuery": "query ($options: FlowLogOptions, $failedAssetsIdentifiers: [ID!]) {\n  flowLogs(\n    options: $options\n    where: {\n      NOT: { identifier_IN: $failedAssetsIdentifiers }\n      targetResourceID_CONTAINS: \"networkSecurityGroups\"\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
     }
   ],
   "remediationDescription": "**Remediate from Azure Portal**\n\n1.  Go to `Network Watcher`\n2.  Select the `NSG flow logs` blade in the Logs section\n3.  Select each Network Security Group from the list\n4.  Ensure `Status` is set to `On`\n5.  Set `Retention (days)` to 90 or greater.\n6.  Select your storage account in the `Storage account` field\n7.  Select `Save`\n\n**Remediate from Azure CLI**\n\nEnable the `NSG flow logs` and set the Retention (days) to greater than or equal to 90 days.\n\n```bash\naz network watcher flow-log configure --nsg <nsgNameOrID> --enabled true --resource-group <resourceGroupName> --retention 90 --storage-account <storageAccountNameOrID>\n```",
