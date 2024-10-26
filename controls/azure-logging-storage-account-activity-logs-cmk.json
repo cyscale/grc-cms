@@ -1,6 +1,6 @@
 {
   "body": "Storage accounts with the activity log exports can be configured to use Customer Managed Keys (CMK).\n\n### Rationale\n\nConfiguring the storage account with the activity log export container to use CMKs provides additional confidentiality controls on log data. A given user must have read permission on the corresponding storage account and must be granted decryption permission by the CMK.\n\n### Impact\n\n**NOTE:** You must have your key vault setup to utilize this.\n\nAll Audit Logs will be encrypted with a key you provide. You will need to set up customer-managed keys separately, and you will select which key to use via the instructions here. You will be responsible for the keys' lifecycle and will need to manually replace them at your own determined intervals to keep the data secure.\n\n### Default Value\n\nBy default, storage accounts are encrypted with keys managed by Microsoft.",
-  "name": "Ensure the storage account containing storing activity logs is encrypted with Customer Managed Key (CMK)",
+  "name": "Ensure the storage account storing activity logs is encrypted with Customer Managed Key (CMK)",
   "slug": "azure-logging-storage-account-activity-logs-cmk",
   "isInsight": false,
   "alertForSecondaryOnly": false,
@@ -16,7 +16,7 @@
         "StorageAccount"
       ],
       "query": "azure-subscription-diagnostic-settings-without-cmk",
-      "applicableAssetsQuery": "query ($options: StorageAccountOptions) {\n  storageAccounts(\n    options: $options\n    where: { NOT: { destinationForSubscriptionDiagnosticSettings_ALL: null } }\n  ) {\n    ...AssetFragment\n  }\n}",
+      "applicableAssetsQuery": "query ($options: StorageAccountOptions, $failedAssetsIdentifiers: [ID!]) {\n  storageAccounts(\n    options: $options\n    where: {\n      NOT: {\n        OR: [\n          { identifier_IN: $failedAssetsIdentifiers }\n          { destinationForSubscriptionDiagnosticSettings_ALL: null }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
       "returnPath": ""
     }
   ],
