@@ -16,7 +16,7 @@
         "FlowLog"
       ],
       "query": "azure-flow-log-nsg-without-log-analytics",
-      "applicableAssetsQuery": "query ($options: FlowLogOptions) {\n  flowLogs(\n    options: $options\n    where: { targetResourceID_CONTAINS: \"networkSecurityGroups\" }\n  ) {\n    ...AssetFragment\n  }\n}"
+      "applicableAssetsQuery": "query ($options: FlowLogOptions, $failedAssetsIdentifiers: [ID!]) {\n  flowLogs(\n    options: $options\n    where: {\n      NOT: { identifier_IN: $failedAssetsIdentifiers }\n      targetResourceID_CONTAINS: \"networkSecurityGroups\"\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
     }
   ],
   "remediationDescription": "**Remediate from Azure Portal**\n\n1. Navigate to `Network Watcher`.\n1. Under `Logs`, select `Flow logs`.\n1. Select `+ Create`.\n1. Select the desired Subscription.\n1. For `Flow log type`, select `Network security group`.\n1. Select `+ Select target resource`.\n1. Select `Network security group`.\n1. Select a network security group.\n1. Click `Confirm selection`.\n1. Select or create a new Storage Account.\n1. If using a v2 storage account, input the retention in days to retain the log.\n1. Click `Next`.\n1. Under `Analytics`, for `Flow log version`, select `Version 2`.\n1. Check the box next to `Enable traffic analytics`.\n1. Select a processing interval.\n1. Select a `Log Analytics Workspace`.\n1. Select `Next`.\n1. Optionally add Tags.\n1. Select `Review + create`.\n1. Select `Create`.\n\n***Warning***\n\nThe remediation policy creates remediation deployment and names them by concatenating the subscription name and the resource group name. The MAXIMUM permitted length of a deployment name is 64 characters. Exceeding this will cause the remediation task to fail.",
