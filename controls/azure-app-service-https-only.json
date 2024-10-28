@@ -1,0 +1,24 @@
+{
+  "body": "Azure App Service allows apps to run under both HTTP and HTTPS by default. Apps can be accessed by anyone using non-secure HTTP links by default. Non-secure HTTP requests can be restricted and all HTTP requests redirected to the secure HTTPS port. It is recommended to enforce HTTPS-only traffic.\n\n### Rationale\n\nEnabling HTTPS-only traffic will redirect all non-secure HTTP requests to HTTPS ports. HTTPS uses the TLS/SSL protocol to provide a secure connection which is both encrypted and authenticated. It is therefore important to support HTTPS for the security benefits.\n\n### Impact\n\nWhen it is enabled, every incoming HTTP request is redirected to the HTTPS port. This means an extra level of security will be added to the HTTP requests made to the app.\n\n### Default Value\n\nBy default, HTTPS-only feature will be disabled when a new app is created using the command-line tool or Azure Portal console.",
+  "name": "Ensure 'HTTPS Only' is set to 'On' for App Service",
+  "slug": "azure-app-service-https-only",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-services-allowing-http",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the web app using the `Open in Azure` button.\n1. Under `Setting` section, click on `Configuration`\n1. Under the `General Settings` tab, set `HTTPS Only` to `On` under `Platform Settings`\n\n### Remediate from Azure CLI\n\nTo set HTTPS-only traffic value for an existing app, run the following command:\n\n```bash\naz webapp update --resource-group <resourceGroupNmae> --name <appName> --set httpsOnly=true\n```\n\n### Remediate from PowerShell\n\n```powershell\nSet-AzWebApp -ResourceGroupName <ResourceGroupNmae> -Name <AppName> -HttpsOnly $true\n```",
+  "isEnabled": true,
+  "severity": 3
+}
