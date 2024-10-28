@@ -1,0 +1,27 @@
+{
+  "body": "The TLS (Transport Layer Security) protocol secures transmission of data over the internet using standard encryption technology. Encryption should be set with the latest version of TLS. App service allows TLS 1.2 by default, which is the recommended TLS level by industry standards such as PCI DSS.\n\n### Rationale\n\nApp service currently allows the web app to set TLS versions 1.0, 1.1 and 1.2. It is highly recommended to use the latest TLS 1.2 version for web app secure connections.\n\n### Default Value\n\nBy default, TLS Version feature will be set to 1.2 when a new app is created using the command-line tool or Azure Portal console.",
+  "name": "Ensure Web App is using the latest version of TLS encryption",
+  "slug": "azure-app-service-latest-tls",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-services-allowing-old-tls"
+    }
+  ],
+  "replacementFor": [
+    "azure-latest-tls-version"
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the web app using the `Open in Azure` button.\n1. Under `Setting` section, Click on `SSL settings`\n1. Under the `Bindings` pane, set `Minimum TLS Version` to `1.2` under `Protocol Settings` section\n\n### Remediate from Azure CLI\n\nTo set TLS Version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <RESOURCE_GROUP_NAME> --name <APP_NAME> --min-tls-version 1.2\n```\n\n### Remediate from PowerShell\n\n```powershell\nSet-AzWebApp -ResourceGroupName <RESOURCE_GROUP_NAME> -Name <APP_NAME> -MinTlsVersion 1.2\n```",
+  "isEnabled": true,
+  "severity": 2
+}
