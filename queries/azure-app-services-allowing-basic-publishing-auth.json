@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Service sites allowing basic publishing auth",
+  "slug": "azure-app-services-allowing-basic-publishing-auth",
+  "query": "{\n  sites(\n    where: {\n      basicPublishingCredentials_SOME: {\n        OR: [{ name: \"ftp\", allowed: true }, { name: \"scm\", allowed: true }]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
