@@ -776,7 +776,7 @@
           "control": "gcp-kubernetes-17"
         },
         {
-          "control": "azure-register-aad-app-service"
+          "control": "azure-app-service-managed-identity"
         }
       ]
     },

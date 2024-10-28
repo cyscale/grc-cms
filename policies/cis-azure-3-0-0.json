@@ -472,7 +472,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-register-aad-app-service"
+          "control": "azure-app-service-managed-identity"
         },
         {
           "control": "azure-latest-php-version"

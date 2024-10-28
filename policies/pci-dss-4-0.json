@@ -366,7 +366,7 @@
           "control": "admins-with-enabled-mfa"
         },
         {
-          "control": "azure-register-aad-app-service"
+          "control": "azure-app-service-managed-identity"
         },
         {
           "control": "publicly-accessible-functions"
