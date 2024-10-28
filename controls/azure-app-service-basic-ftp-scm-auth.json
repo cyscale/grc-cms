@@ -1,0 +1,24 @@
+{
+  "body": "Basic Authentication provides the ability to create identities and authentication for an App Service without a centralized Identity Provider. For a more effective, capable, and secure solution for Identity, Authentication, Authorization, and Accountability, a centralized Identity Provider such as Entra ID is strongly advised.\n\n### Rationale\n\nBasic Authentication introduces an identity silo which can produce privileged access to a resource. This can be exploited in numerous ways and represents a significant vulnerability and attack vector.\n\n### Impact\n\nAn identity provider that can be used by the app service to authenticate users is required.",
+  "name": "Ensure 'Basic Authentication' is 'Disabled' for App Service",
+  "slug": "azure-app-service-basic-ftp-scm-auth",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-services-allowing-basic-publishing-auth"
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the web app using the `Open in Azure` button.\n1. Under the `Settings` menu item, click on `Configuration`\n1. Under the `General settings` tab, scroll down to locate the two Basic Auth settings:\n- Set the `SCM Basic Auth Publishing Credentials` radio button to `Off`\n- Set the `FTP Basic Auth Publishing Credentials` radio button to `Off`\n\n**CAUTION:** The new settings are not yet applied. Applying them may cause your App Service resource to restart - proceed with caution. Click the `Save` button, then click `Continue` to apply the updated configuration.",
+  "isEnabled": true,
+  "severity": 2
+}
