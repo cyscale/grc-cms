@@ -1,0 +1,5 @@
+{
+  "name": "Azure app services allowing plain HTTP",
+  "slug": "azure-app-services-allowing-http",
+  "query": "{\n  sites(where: { httpsOnly: false }) {\n    ...AssetFragment\n  }\n}"
+}
