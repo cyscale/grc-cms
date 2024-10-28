@@ -1,6 +1,6 @@
 {
   "body": "Periodically, newer versions are released for Python software either due to security flaws or to include additional functionality. Using the latest Python version for web apps is recommended in order to take advantage of security fixes, if any, and/or new functionalities of the newer version.\n\n### Rationale\n\nNewer versions may contain security enhancements and additional functionality. Using the latest version is recommended in order to take advantage of enhancements and new capabilities. With each software installation, organizations need to determine if a given update meets their requirements. They must also verify the compatibility and support provided for any additional software against the update revision that is selected.\n\n### Impact\n\nIf your app is written using version-dependent features or libraries, they may not be available on the latest version. If you wish to upgrade, research the impact thoroughly. Upgrading may have unforeseen consequences that could result in downtime.\n\n### Default value\n\nYou have to select a version during app creation.",
-  "name": "Ensure that 'Python version' is the latest, if used to run the web app",
+  "name": "Ensure that 'Python version' is currently supported (if in use)",
   "slug": "azure-latest-python-version",
   "isInsight": false,
   "alertForSecondaryOnly": false,
