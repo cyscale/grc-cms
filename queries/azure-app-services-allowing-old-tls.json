@@ -1,0 +1,5 @@
+{
+  "name": "Azure app services allowing old TLS",
+  "slug": "azure-app-services-allowing-old-tls",
+  "query": "{\n  sites(where: { siteConfig: { NOT: { minTlsVersion_IN: [\"1.2\", \"1.3\"] } } }) {\n    ...AssetFragment\n  }\n}"
+}
