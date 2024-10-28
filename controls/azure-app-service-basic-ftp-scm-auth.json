@@ -1,6 +1,6 @@
 {
   "body": "Basic Authentication provides the ability to create identities and authentication for an App Service without a centralized Identity Provider. For a more effective, capable, and secure solution for Identity, Authentication, Authorization, and Accountability, a centralized Identity Provider such as Entra ID is strongly advised.\n\n### Rationale\n\nBasic Authentication introduces an identity silo which can produce privileged access to a resource. This can be exploited in numerous ways and represents a significant vulnerability and attack vector.\n\n### Impact\n\nAn identity provider that can be used by the app service to authenticate users is required.",
-  "name": "Ensure 'Basic Authentication' is 'Disabled' for App Service",
+  "name": "Ensure Basic SCM/FTP Authentication is 'Disabled' for App Service",
   "slug": "azure-app-service-basic-ftp-scm-auth",
   "isInsight": false,
   "alertForSecondaryOnly": false,
