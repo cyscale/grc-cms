@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Services allowing plain FTP deployments",
+  "slug": "azure-app-services-allowing-ftp",
+  "query": "{\n  sites(where: { siteConfig: { ftpsState: \"AllAllowed\" } }) {\n    internalName\n  }\n}"
+}
