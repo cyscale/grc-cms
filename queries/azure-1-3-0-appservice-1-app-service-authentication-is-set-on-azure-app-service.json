@@ -1,1 +1,0 @@
-{"name":"App Service Authentication is set on Azure App Service","slug":"azure-1-3-0-appservice-1-app-service-authentication-is-set-on-azure-app-service","query":"{sites(where:{hasSiteAuthSettings_SOME:{enabled_NOT:true}}){...AssetFragment}}"}
