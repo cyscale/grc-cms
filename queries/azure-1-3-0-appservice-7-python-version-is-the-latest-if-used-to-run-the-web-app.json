@@ -1,1 +1,0 @@
-{"name":"'Python version' is the latest, if used to run the web app","slug":"azure-1-3-0-appservice-7-python-version-is-the-latest-if-used-to-run-the-web-app","query":"{sites(where:{siteConfig:{AND:[{pythonVersion_NOT:\"\"},{pythonVersion_NOT:\"3.9\"}]}}){...AssetFragment}}"}
