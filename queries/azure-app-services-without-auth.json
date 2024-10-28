@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Services without authentication",
+  "slug": "azure-app-services-without-auth",
+  "query": "{\n  sites(where: { authSettings: { enabled: true } }) {\n    ...AssetFragment\n  }\n}"
+}
