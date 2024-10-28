@@ -148,7 +148,7 @@
           "control": "aws-networking-9"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         }
       ]
     },

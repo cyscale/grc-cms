@@ -373,7 +373,7 @@
           "control": "azure-rbac-kubernetes"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "azure-client-certs-web-app"
@@ -545,10 +545,10 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -989,7 +989,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         }
       ]
     },
@@ -1241,7 +1241,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         }
       ]
     },
@@ -1561,7 +1561,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-ftp-deployments-disabled"
+          "control": "azure-app-service-ftp-deployment"
         },
         {
           "control": "azure-key-vaults-store-secrets"
@@ -1802,7 +1802,7 @@
           "control": "azure-compute-vm-endpoint-protection"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -2242,7 +2242,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "gcp-vpc-dns-logging"
@@ -2484,7 +2484,7 @@
           "control": "entra-user-app-registration"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -2671,10 +2671,10 @@
           "control": "azure-1-3-0-security-3"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -2683,7 +2683,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-ftp-deployments-disabled"
+          "control": "azure-app-service-ftp-deployment"
         }
       ]
     },
@@ -2923,7 +2923,7 @@
           "control": "azure-expiration-keys-key-vault"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"

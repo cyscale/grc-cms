@@ -509,13 +509,13 @@
           "control": "azure-ssl-enabled-mysql-server"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-ftp-deployments-disabled"
+          "control": "azure-app-service-ftp-deployment"
         },
         {
           "control": "azure-vm-disks-managed"
@@ -542,7 +542,7 @@
           "control": "azure-1-3-0-logging-1-4"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-1-3-0-logging-1-3"
@@ -690,7 +690,7 @@
           "control": "azure-sql-db-disallow-any-ip"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"

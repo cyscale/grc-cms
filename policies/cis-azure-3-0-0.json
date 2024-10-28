@@ -457,10 +457,13 @@
       "body": "This section covers security recommendations for Azure AppService.",
       "controls": [
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
+        },
+        {
+          "control": "azure-app-service-ftp-deployment"
         },
         {
           "control": "azure-latest-tls-version"
@@ -482,9 +485,6 @@
         },
         {
           "control": "azure-http-latest-version-web-app"
-        },
-        {
-          "control": "azure-ftp-deployments-disabled"
         },
         {
           "control": "azure-key-vaults-store-secrets"

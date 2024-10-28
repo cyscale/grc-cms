@@ -1071,10 +1071,10 @@
       "body": "This procedure shows the security posture of your serverless assets such as functions as a service (FaaS).",
       "controls": [
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -1098,7 +1098,7 @@
           "control": "azure-http-latest-version-web-app"
         },
         {
-          "control": "azure-ftp-deployments-disabled"
+          "control": "azure-app-service-ftp-deployment"
         },
         {
           "control": "azure-key-vaults-store-secrets"

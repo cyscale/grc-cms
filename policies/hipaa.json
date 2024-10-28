@@ -81,7 +81,7 @@
           "control": "api-keys-not-rotated-90-days"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "azure-client-certs-web-app"
@@ -302,7 +302,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "azure-client-certs-web-app"
@@ -402,10 +402,10 @@
           "control": "gcp-bigquery-publicly-accessible"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"

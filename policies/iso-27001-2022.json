@@ -158,7 +158,7 @@
           "control": "azure-rbac-kubernetes"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "azure-client-certs-web-app"
@@ -270,10 +270,10 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -438,7 +438,7 @@
           "control": "azure-expiration-keys-key-vault"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -680,7 +680,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         }
       ]
     },
@@ -826,7 +826,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "gcp-skip-show-db-flag-mysql"
@@ -1118,7 +1118,7 @@
           "control": "azure-defender-cloud-apps-selected"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -1505,7 +1505,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "aws-1-3-0-iam-13"
@@ -1696,10 +1696,10 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "azure-latest-tls-version"
@@ -1923,7 +1923,7 @@
           "control": "azure-expiration-secrets-key-vault"
         },
         {
-          "control": "app-service-auth-azure-apps"
+          "control": "azure-app-service-authentication"
         },
         {
           "control": "azure-latest-tls-version"
@@ -1932,7 +1932,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-ftp-deployments-disabled"
+          "control": "azure-app-service-ftp-deployment"
         },
         {
           "control": "azure-key-vaults-store-secrets"

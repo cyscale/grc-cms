@@ -191,7 +191,7 @@
           "control": "azure-latest-tls-version"
         },
         {
-          "control": "azure-redirect-http-to-https"
+          "control": "azure-app-service-https-only"
         },
         {
           "control": "aws-networking-6"
