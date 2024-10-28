@@ -15,7 +15,8 @@
         "Site"
       ],
       "query": "azure-apps-with-unsupported-python-version",
-      "isManual": false
+      "isManual": false,
+      "applicableAssetsQuery": "query ($options: SiteOptions, $failedAssetsIdentifiers: [ID!]) {\n  sites(\n    options: $options\n    where: {\n      NOT: { identifier_IN: $failedAssetsIdentifiers }\n      siteConfig: { NOT: { pythonVersion: \"\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
     }
   ],
   "remediationDescription": "### From Azure Console\n\n1. Open the web app using the `Open in Azure` button.\n2. Select `Configuration`\n3. Go to `General settings`\n4. Under the `Stack settings`, for Python, select for `Major version` and `Minor version` the latest stable and supported release\n\n### Using Azure Command Line Interface\n\nTo see the list of supported runtimes:\n\n```bash\naz webapp list-runtimes\n```\n\nTo set the latest Python version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <resourceGroup> --name <applicationName> [--linux-fx-version <pythonRuntimeVersion>] [--windows-fx-version <pythonRuntimeVersion>] \n```",
