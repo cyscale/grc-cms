@@ -1,0 +1,5 @@
+{
+  "query": "{\n  sites(\n    where: {\n      siteConfig: {\n        NOT: {\n          OR: [\n            { pythonVersion: \"\" }\n            { pythonVersion_IN: [\"3.9\", \"3.10\", \"3.11\", \"3.12\", \"3.13\"] }\n          ]\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "slug": "azure-apps-with-unsupported-python-version",
+  "name": "Azure app services running unsupported Python versions"
+}
