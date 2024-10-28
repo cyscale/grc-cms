@@ -157,7 +157,7 @@
           "control": "azure-latest-python-version"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         }
       ],
       "body": "This article refers to how ICT systems, protocols, and tools should be resilient, reliable, and performant and how they should be updated regularly. \r\n\r\n"

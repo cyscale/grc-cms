@@ -325,7 +325,7 @@
           "control": "gcp-rsasha1-zsk-cloud-dns"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         }
       ]
     },
@@ -693,7 +693,7 @@
           "control": "azure-app-service-https-only"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "azure-client-certs-web-app"

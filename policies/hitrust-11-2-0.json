@@ -142,7 +142,7 @@
           "control": "aws-networking-6"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "aws-networking-9"
@@ -460,7 +460,7 @@
           "control": "gcp-kms-cryptokeys-publicly-accessible"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "gcp-rsasha1-ksk-cloud-dns"
@@ -739,7 +739,7 @@
           "control": "gcp-db-require-incoming-conn-ssl"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "aws-networking-6"
@@ -1124,7 +1124,7 @@
           "control": "azure-latest-python-version"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         }
       ],
       "slug": "hitrust-10-5-k-change-control-procedures"

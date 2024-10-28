@@ -188,7 +188,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "azure-app-service-https-only"
@@ -250,7 +250,7 @@
           "control": "azure-latest-python-version"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "aws-networking-6"

@@ -276,7 +276,7 @@
           "control": "azure-app-service-https-only"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         }
       ]
     },
@@ -441,7 +441,7 @@
           "control": "azure-app-service-https-only"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "azure-key-vaults-store-secrets"
@@ -1121,7 +1121,7 @@
           "control": "azure-app-service-https-only"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "gcp-external-scripts-enabled-flag-db-sqlserver"
@@ -1702,7 +1702,7 @@
           "control": "azure-app-service-https-only"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "azure-client-certs-web-app"
@@ -1926,7 +1926,7 @@
           "control": "azure-app-service-authentication"
         },
         {
-          "control": "azure-latest-tls-version"
+          "control": "azure-app-service-latest-tls"
         },
         {
           "control": "azure-client-certs-web-app"
