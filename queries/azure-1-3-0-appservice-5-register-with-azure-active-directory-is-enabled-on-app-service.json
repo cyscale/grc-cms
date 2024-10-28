@@ -1,1 +1,0 @@
-{"name":"Register with Azure Active Directory is enabled on App Service","slug":"azure-1-3-0-appservice-5-register-with-azure-active-directory-is-enabled-on-app-service","query":"{sites(where:{principalId:\"\"}){...AssetFragment}}"}
