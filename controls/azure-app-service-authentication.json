@@ -1,0 +1,24 @@
+{
+  "body": "Azure App Service Authentication is a feature that can prevent anonymous HTTP requests from reaching a Web Application or authenticate those with tokens before they reach the app. If an anonymous request is received from a browser, App Service will redirect to a logon page. To handle the logon process, a choice from a set of identity providers can be made, or a custom authentication mechanism can be implemented.\n\n### Rationale\n\nBy Enabling App Service Authentication, every incoming HTTP request passes through it before being handled by the application code. It also handles authentication of users with the specified provider (Entra ID, Facebook, Google, Microsoft Account, and Twitter), validation, storing and refreshing of tokens, managing the authenticated sessions and injecting identity information into request headers. Disabling HTTP Basic Authentication functionality further ensures legacy authentication methods are disabled within the application.\n\n### Impact\n\nThis is only required for App Services which require authentication. Enabling on site like a marketing or support website will prevent unauthenticated access which would be undesirable.\n\nAdding Authentication requirement will increase cost of App Service and require additional security components to facilitate the authentication.",
+  "name": "Ensure App Service Authentication is set up for apps in Azure App Service",
+  "slug": "azure-app-service-authentication",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-services-without-auth"
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the web app using the `Open in Azure` button.\n1. Under `Setting` section, click on `Authentication`\n1. If no identity providers are set up, then click `Add identity provider`\n1. Choose other parameters as per your requirements and click on `Add`\n\nTo disable the `Basic Auth Publishing Credentials` setting, perform the following steps:\n\n1. Login to Azure Portal using https://portal.azure.com \n2. Go to `App Services`\n3. Click on each App\n4. Under `Settings`, click on `Configuration`\n5. Click on the 'General Settings' tab\n6. Under `Platform settings`, ensure `Basic Auth Publishing Credentials` is set to `Off`\n\n### Remediate from Azure CLI\n\nTo set App Service Authentication for an existing app, run the following command:\n\n```bash\naz webapp auth update --resource-group <RESOURCE_GROUP_NAME> --name <APP_NAME> --enabled true\n```\n\n**Note**\n\nIn order to access `App Service authentication` settings for Web app using Microsoft API requires `Website contributor` permission at subscription level. A custom role can be created in place of `Website contributor` to provide more specific permission and maintain the principle of least privileged access.",
+  "isEnabled": true,
+  "severity": 2
+}
