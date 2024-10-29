@@ -1,0 +1,5 @@
+{
+  "name": "Azure Privileged VMs accessible by users without MFA",
+  "slug": "azure-privileged-vms-accessible-by-users-without-mfa",
+  "query": "{\n  PrivilegedVMsAccessibleByUsersWithoutMFA {\n    ...AssetFragment\n  }\n}"
+}
