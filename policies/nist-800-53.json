@@ -641,7 +641,7 @@
           "control": "azure-http-latest-version-web-app"
         },
         {
-          "control": "azure-latest-java-version"
+          "control": "azure-app-service-supported-java-stack"
         },
         {
           "control": "azure-latest-php-version"

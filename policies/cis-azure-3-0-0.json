@@ -469,10 +469,10 @@
           "control": "azure-app-service-latest-tls"
         },
         {
-          "control": "azure-client-certs-web-app"
+          "control": "azure-app-service-managed-identity"
         },
         {
-          "control": "azure-app-service-managed-identity"
+          "control": "azure-app-service-basic-ftp-scm-auth"
         },
         {
           "control": "azure-latest-php-version"
@@ -481,7 +481,7 @@
           "control": "azure-latest-python-version"
         },
         {
-          "control": "azure-latest-java-version"
+          "control": "azure-app-service-supported-java-stack"
         },
         {
           "control": "azure-http-latest-version-web-app"

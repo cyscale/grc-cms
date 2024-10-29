@@ -18,7 +18,7 @@
           "control": "gcp-kubernetes-8"
         },
         {
-          "control": "azure-latest-java-version"
+          "control": "azure-app-service-supported-java-stack"
         },
         {
           "control": "azure-latest-php-version"
