@@ -1,5 +1,0 @@
-{
-  "name": "Azure App Service apps without HTTP 2.0",
-  "slug": "azure-app-services-without-http-2.0",
-  "query": "{\n  sites(where: { siteConfig: { http20Enabled: false } }) {\n    ...AssetFragment\n  }\n}"
-}
