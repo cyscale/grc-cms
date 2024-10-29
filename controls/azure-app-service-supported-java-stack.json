@@ -1,0 +1,28 @@
+{
+  "body": "Older versions of Java may periodically be deprecated and no longer supported. To avoid potential unpatched vulnerabilities, it is recommended that you use a supported version of Java for app services.\n\n### Rationale\n\nDeprecated and unsupported versions of programming and scripting languages can present vulnerabilities that are either unaddressable or not addressable.\n\n### Impact\n\nIf your app is written using version-dependent features or libraries, they may not be available on more recent versions. If you wish to update, research the impact thoroughly.\n\n### Default Value\n\nYou select the value when creating the web app.",
+  "name": "Ensure that 'Java version' is currently supported (if in use)",
+  "slug": "azure-app-service-supported-java-stack",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-apps-with-unsupported-java-version",
+      "applicableAssetsQuery": "query ($options: SiteOptions, $failedAssetsIdentifiers: [ID!]) {\n  sites(\n    options: $options\n    where: {\n      NOT: { identifier_IN: $failedAssetsIdentifiers }\n      siteConfig: { NOT: { javaVersion: \"\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+    }
+  ],
+  "replacementFor": [
+    "azure-latest-java-version"
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the app using the `Open in Azure` button.\n1. Under `Settings` section, click on `Configuration`\n1. Click on the `General settings` pane and ensure that for a `Stack` of `Java` the `Major Version` and `Minor Version` reflect a currently supported release, and that the `Java web server version` is set to the `auto-update` option.\n\n### Remediate from Azure CLI\n\nTo see the list of supported runtimes:\n\n```\naz webapp list-runtimes\n```\n\nTo set a currently supported Java version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <RESOURCE_GROUP_NAME> --name <APP_NAME> [--java-version <JAVA_VERSION> --java-container <JAVA_CONTAINER> --java-container-version <JAVA_CONTAINER_VERSION> [--windows-fx-version <JAVA_RUNTIME_VERSION>] [--linux-fx-version <JAVA_RUNTIME_VERSION>]\n```",
+  "isEnabled": true,
+  "severity": 2
+}
