@@ -1,0 +1,24 @@
+{
+  "body": "Remote Debugging allows Azure App Service to be debugged in real-time directly on the Azure environment. When remote debugging is enabled, it opens a communication channel that could potentially be exploited by unauthorized users if not properly secured.\n\n### Rationale\n\nDisabling remote debugging on Azure App Service is primarily about enhancing security. \n\nRemote debugging opens a communication channel that attackers can exploit. By disabling it, you reduce the number of potential entry points for unauthorized access.\n\nIf remote debugging is enabled without proper access controls, unauthorized users can connect to your application, potentially leading to data breaches or malicious code execution.\n\nSensitive information might be exposed during a remote debugging session. Disabling remote debugging helps ensure that such data remains secure. This minimizes the use of remote access tools to reduce risk.\n\n### Impact\n\nYou will not be able to connect to your application from a remote location to diagnose and fix issues in real-time. You cannot step through code, set breakpoints, or inspect variables and the call stack while the application runs on the server. Remote debugging is particularly useful for diagnosing issues that only occur in the production environment. Without it, you must rely on logs and other diagnostic tools.\n\n### Default Value\n\nBy default, remote debugging is set to `off`",
+  "name": "Ensure 'Remote debugging' is set to 'Off' for App Service",
+  "slug": "azure-app-service-remote-debugging",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-services-allowing-remote-debugging"
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the web app using the `Open in Azure` button.\n1. Under `Setting` section, Click on `Configuration`\n1. Under the `General settings` tab, set the `Remote debugging` option to `Off`.\n\n### Remediate from Azure CLI\n\nTo set remote debugging status to off, run the following command\n\n```bash\naz webapp config set --resource-group <resource_group_name> --name <app_name> --remote-debugging-enabled false\n```\n\n### Remediation from PowerShell\n\nTo set remote debugging status to off, run the following command\n\n```powershell\nSet-AzWebApp -ResourceGroupName <resource_group_name> -Name <app_name> -RemoteDebuggingEnabled $false\n```",
+  "isEnabled": true,
+  "severity": 2
+}
