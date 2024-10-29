@@ -1,0 +1,5 @@
+{
+  "name": "Azure app services running unsupported Java versions",
+  "slug": "azure-apps-with-unsupported-java-version",
+  "query": "{\n  sites(\n    where: {\n      siteConfig: {\n        NOT: {\n          OR: [\n            { javaVersion: \"\" }\n            { javaVersion_STARTS_WITH: \"8\" }\n            { javaVersion_STARTS_WITH: \"11\" }\n            { javaVersion_STARTS_WITH: \"17\" }\n            { javaVersion_STARTS_WITH: \"21\" }\n          ]\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
