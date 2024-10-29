@@ -638,7 +638,7 @@
           "control": "aws-ecs-8-secrets-in-vars"
         },
         {
-          "control": "azure-http-latest-version-web-app"
+          "control": "azure-app-service-http-20"
         },
         {
           "control": "azure-app-service-supported-java-stack"
