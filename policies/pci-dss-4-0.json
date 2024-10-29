@@ -372,7 +372,7 @@
           "control": "publicly-accessible-functions"
         },
         {
-          "control": "azure-1-3-0-logging-1-3"
+          "control": "azure-storage-account-blob-anonymous-access"
         },
         {
           "control": "gcp-kms-cryptokeys-publicly-accessible"

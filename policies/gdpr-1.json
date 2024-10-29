@@ -83,7 +83,7 @@
           "control": "aws-logging-3"
         },
         {
-          "control": "azure-1-3-0-logging-1-3"
+          "control": "azure-storage-account-blob-anonymous-access"
         }
       ]
     },
@@ -292,7 +292,7 @@
           "control": "aws-logging-3"
         },
         {
-          "control": "azure-1-3-0-logging-1-3"
+          "control": "azure-storage-account-blob-anonymous-access"
         },
         {
           "control": "used-kms-keys-exposed-through-vulnerable-vms"

@@ -3,7 +3,7 @@
   "mid": "T1580",
   "controls": [
     "aws-logging-3",
-    "azure-1-3-0-logging-1-3",
+    "azure-storage-account-blob-anonymous-access",
     "cis-alibaba-1-0-0-logging-2"
   ],
   "assets": [
