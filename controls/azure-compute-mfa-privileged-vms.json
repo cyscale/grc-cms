@@ -4,7 +4,20 @@
   "slug": "azure-compute-mfa-privileged-vms",
   "isInsight": false,
   "alertForSecondaryOnly": false,
-  "rules": [],
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-privileged-vms-accessible-by-users-without-mfa"
+    }
+  ],
   "remediationDescription": "**Remediate from Azure Portal**\n\n1. Log in to the Azure portal.\n2. This can be remediated by enabling MFA for users, Removing user access, or Reducing access to managed identities attached to virtual machines.\n\n- Case I: Enable MFA for users having access to virtual machines.\n\t1. Navigate to `Entra ID` from the left pane and select `Users` from the `Manage` section.\n\t2. Click on `Per-User MFA` from the top menu options and select each user with `MULTI-FACTOR AUTH STATUS` as `Disabled` and can log in to virtual machines:\n\t\t* From `quick steps` on the right side, select `enable`.\n\t\t* Click on `enable multi-factor auth` and share the link with the user to set up MFA as required.\n\n- Case II: Removing user access on a virtual machine.\n\t1. Select the `Subscription`, then click on `Access control (IAM)`.\n\t2. Select `Role assignments` and search for `Virtual Machine Administrator Login` or `Virtual Machine User Login` or any role that provides access to log into virtual machines.\n\t3. Click on `Role Name`, Select `Assignments`, and remove identities with no MFA configured.\n\n- Case III: Reducing access to managed identities attached to virtual machines.\n\t1. Select the `Subscription`, then click on `Access control (IAM)`.\n\t2. Select `Role Assignments` from the top menu and apply filters on `Assignment type` as `Privileged administrator roles` and `Type` as `Virtual Machines`.\n\t3. Click on `Role Name`, Select `Assignments`, and remove identities' access. Make sure this follows the least privileges principle.",
   "isEnabled": true,
   "severity": 2
