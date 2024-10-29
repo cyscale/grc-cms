@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Services with remote debugging enabled",
+  "slug": "azure-app-services-allowing-remote-debugging",
+  "query": "{\n  sites(where: { siteConfig: { remoteDebuggingEnabled: true } }) {\n    ...AssetFragment\n  }\n}"
+}
