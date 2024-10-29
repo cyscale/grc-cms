@@ -488,6 +488,9 @@
         },
         {
           "control": "azure-key-vaults-store-secrets"
+        },
+        {
+          "control": "azure-app-service-remote-debugging"
         }
       ]
     },
