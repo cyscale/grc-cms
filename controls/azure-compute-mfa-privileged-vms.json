@@ -13,7 +13,7 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Site"
+        "VM"
       ],
       "query": "azure-privileged-vms-accessible-by-users-without-mfa"
     }
