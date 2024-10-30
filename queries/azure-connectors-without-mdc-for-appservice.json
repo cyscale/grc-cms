@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for App Services",
+  "slug": "azure-connectors-without-mdc-for-appservice",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"AppServices\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
