@@ -1,6 +1,6 @@
 {
-  "body": "Microsoft Defender for DNS scans all network traffic exiting from within a subscription.\n\n**Rationale**\n\nDNS lookups within a subscription are scanned and compared to a dynamic list of websites that might be potential security threats. These threats could be a result of a security breach within your services, thus scanning for them could prevent a potential security threat from being introduced.\n\n**Impact**\n\nEnabling Microsoft Defender for DNS requires enabling Microsoft Defender for your subscription. Both will incur additional charges, with Defender for DNS being a small amount per million queries.",
-  "name": "Ensure Microsoft Defender for DNS is set to 'On'",
+  "body": "[**NOTE:** As of August 1, 2023, customers with an existing subscription to Defender for DNS can continue to use the service, but new subscribers will receive alerts about suspicious DNS activity as part of Defender for Servers P2.]\n\nMicrosoft Defender for DNS scans all network traffic exiting from within a subscription.\n\n**Rationale**\n\nDNS lookups within a subscription are scanned and compared to a dynamic list of websites with potential security threats. These threats could result from a security breach within your services, so scanning for them could prevent a potential security threat from being introduced.\n\n**Impact**\n\nEnabling Microsoft Defender for DNS requires enabling Microsoft Defender for your subscription. Both will incur additional charges, with Defender for DNS being a small amount per million queries.",
+  "name": "[LEGACY] Ensure Microsoft Defender for DNS Is Set To 'On'",
   "slug": "azure-defender-for-dns",
   "isInsight": false,
   "alertForSecondaryOnly": false,
