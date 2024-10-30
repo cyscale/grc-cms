@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for Cosmos DB",
+  "slug": "azure-connectors-without-mdc-for-cosmosdb",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"CosmosDbs\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
