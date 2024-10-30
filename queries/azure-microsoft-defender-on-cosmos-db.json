@@ -1,5 +1,0 @@
-{
-  "query": "{\n  pricings(\n    where: {\n      name_MATCHES: \"(?i)cosmosdbs\"\n      pricingTier_MATCHES: \"(?i)^((?!Standard).)*$\"\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
-  "slug": "azure-microsoft-defender-on-cosmos-db",
-  "name": "Microsoft Defender is set to 'On' for Azure Cosmos DB"
-}

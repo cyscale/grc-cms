@@ -1,1 +1,0 @@
-{"name":"Azure Defender is set to On for Azure SQL database servers","slug":"azure-1-3-0-sc-3-azure-defender-is-set-to-on-for-azure-sql-database-servers","query":"{pricings(where:{name_MATCHES:\"(?i)sqlservers\",pricingTier_MATCHES:\"(?i)^((?!Standard).)*$\"}){...AssetFragment}}"}

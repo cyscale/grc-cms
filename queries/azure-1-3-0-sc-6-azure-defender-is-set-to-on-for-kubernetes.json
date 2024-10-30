@@ -1,1 +1,0 @@
-{"name":"Azure Defender is set to On for Kubernetes","slug":"azure-1-3-0-sc-6-azure-defender-is-set-to-on-for-kubernetes","query":"{pricings(where:{name_MATCHES:\"(?i)kubernetesservice\",pricingTier_MATCHES:\"(?i)^((?!Standard).)*$\"}){...AssetFragment}}"}
