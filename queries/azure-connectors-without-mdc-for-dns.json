@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for DNS",
+  "slug": "azure-connectors-without-mdc-for-dns",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"Dns\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
