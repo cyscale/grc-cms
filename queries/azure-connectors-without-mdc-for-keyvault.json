@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for Key Vault",
+  "slug": "azure-connectors-without-mdc-for-keyvault",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"KeyVaults\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
