@@ -1,1 +1,0 @@
-{"name":"Azure Defender is set to On for Container Registries","slug":"azure-1-3-0-sc-7-azure-defender-is-set-to-on-for-container-registries","query":"{pricings(where:{name_MATCHES:\"(?i)containerregistry\",pricingTier_MATCHES:\"(?i)^((?!Standard).)*$\"}){...AssetFragment}}"}
