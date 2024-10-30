@@ -1,0 +1,5 @@
+{
+  "name": "Azure subscriptions without Microsoft Defender for Containers",
+  "slug": "azure-connectors-without-defender-for-containers",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"Containers\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
