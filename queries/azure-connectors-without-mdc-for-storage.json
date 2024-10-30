@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for Storage",
+  "slug": "azure-connectors-without-mdc-for-storage",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"StorageAccounts\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
