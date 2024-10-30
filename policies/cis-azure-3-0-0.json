@@ -136,6 +136,9 @@
           "control": "azure-defender-for-servers"
         },
         {
+          "control": "azure-mdc-vuln-assessment-for-machines"
+        },
+        {
           "control": "azure-defender-endpoint-selected"
         },
         {

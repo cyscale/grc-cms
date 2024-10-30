@@ -1,5 +1,0 @@
-{
-  "query": "{\n  AzureSC9 {...AssetFragment}\n}\n",
-  "slug": "azure-iam-account-summaries-with-wdapt-enabled",
-  "name": "Azure IAM Account summaries with WDAPT enabled"
-}
