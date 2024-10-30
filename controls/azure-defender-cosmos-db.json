@@ -14,7 +14,7 @@
       "subjects": [
         "Connector"
       ],
-      "query": "azure-microsoft-defender-on-cosmos-db",
+      "query": "azure-connectors-without-mdc-for-cosmosdb",
       "isManual": false
     }
   ],
