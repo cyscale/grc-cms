@@ -1,0 +1,5 @@
+{
+  "name": "Azure subscriptions with MCAS disabled",
+  "slug": "azure-connectors-with-mcas-disabled",
+  "query": "{\n  connectors(\n    where: { dataExportSettings_SOME: { name: \"MCAS\", enabled: false } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
