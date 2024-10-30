@@ -1,0 +1,5 @@
+{
+  "query": "{\n  connectors(\n    where: { dataExportSettings_SOME: { name: \"WDATP\", enabled: false } }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "name": "Azure subscriptions with WDATP (endpoint protection) disabled",
+  "slug": "azure-connectors-with-wdatp-disabled"
+}
