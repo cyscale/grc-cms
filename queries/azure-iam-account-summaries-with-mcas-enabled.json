@@ -1,5 +1,0 @@
-{
-  "query": "{\n  AzureSC10 {...AssetFragment}\n}",
-  "slug": "azure-iam-account-summaries-with-mcas-enabled",
-  "name": "Azure IAM Account summaries with MCAS enabled"
-}
