@@ -1,8 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
+  "body": "Turning on Microsoft Defender for Open-source relational databases enables threat detection for Open-source relational databases, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\n\n**Rationale**\n\nEnabling Microsoft Defender for Open-source relational databases allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).\n\n**Impact**\n\nTurning on Microsoft Defender for Open-source relational databases incurs an additional cost per resource.",
   "name": "Ensure Microsoft Defender for Open-Source Relational Databases is set to 'On'",
   "slug": "azure-defender-open-source-relational-db",
-  "severity": 1,
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -11,11 +12,13 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Pricing"
+        "Connector"
       ],
-      "query": "azure-microsoft-defender-on-open-source-relational-db"
+      "query": "azure-connectors-without-mdc-for-oss-dbs",
+      "isManual": false
     }
   ],
-  "body": "Turning on Microsoft Defender for Open-source relational databases enables threat detection for Open-source relational databases, providing threat intelligence, anomaly detection, and behavior analytics in the Microsoft Defender for Cloud.\n\n**Rationale**\n\nEnabling Microsoft Defender for Open-source relational databases allows for greater defense-in-depth, with threat detection provided by the Microsoft Security Response Center (MSRC).\n\n**Impact**\n\nTurning on Microsoft Defender for Open-source relational databases incurs an additional cost per resource.",
-  "remediationDescription": "**From Azure Console**\n\n1. Go to `Microsoft Defender for Cloud`\n2. Under `Management`, select `Environment Settings`\n3. Click on the subscription name\n4. Under `Settings`, select `Defender plans`\n5. For `Open-source relational databases`, select `On` for `Status`\n6. Select Save\n\n**Using Azure Command Line Interface**\n\n```bash\naz security pricing create -n 'OpenSourceRelationalDatabases' --tier 'Standard'\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzSecurityPricing -Name 'OpenSourceRelationalDatabases' -PricingTier 'Standard'\n```\n\n**Default Value**\n\nBy default, the Microsoft Defender plan is off.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/security-center/security-center-detection-capabilities](https://docs.microsoft.com/en-us/azure/security-center/security-center-detection-capabilities)\n2. [https://docs.microsoft.com/en-us/rest/api/securitycenter/pricings/update](https://docs.microsoft.com/en-us/rest/api/securitycenter/pricings/update)\n3. [https://docs.microsoft.com/en-us/powershell/module/az.security/get-azsecuritypricing](https://docs.microsoft.com/en-us/powershell/module/az.security/get-azsecuritypricing)\n4. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-2-monitor-anomalies-and-threats-targeting-sensitive-data](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-2-monitor-anomalies-and-threats-targeting-sensitive-data)\n5. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities)"
+  "remediationDescription": "**From Azure Console**\n\n1. Open [Microsoft Defender for Cloud | Environment settings](https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/~/EnvironmentSettings)\n1. Select a subscription\n4. Under `Settings`, select `Defender plans`\n5. For `Open-source relational databases`, select `On` for `Status`\n6. Select Save\n\n**Using Azure Command Line Interface**\n\n```bash\naz security pricing create -n 'OpenSourceRelationalDatabases' --tier 'Standard'\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzSecurityPricing -Name 'OpenSourceRelationalDatabases' -PricingTier 'Standard'\n```\n\n**Default Value**\n\nBy default, the Microsoft Defender plan is off.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/security-center/security-center-detection-capabilities](https://docs.microsoft.com/en-us/azure/security-center/security-center-detection-capabilities)\n2. [https://docs.microsoft.com/en-us/rest/api/securitycenter/pricings/update](https://docs.microsoft.com/en-us/rest/api/securitycenter/pricings/update)\n3. [https://docs.microsoft.com/en-us/powershell/module/az.security/get-azsecuritypricing](https://docs.microsoft.com/en-us/powershell/module/az.security/get-azsecuritypricing)\n4. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-2-monitor-anomalies-and-threats-targeting-sensitive-data](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-data-protection#dp-2-monitor-anomalies-and-threats-targeting-sensitive-data)\n5. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities)",
+  "isEnabled": true,
+  "severity": 1
 }
