@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for SQL Servers on Machines",
+  "slug": "azure-connectors-without-mdc-for-sqlservers-on-vms",
+  "query": "{\n  connectors(\n    where: {\n      pricing_SOME: { name: \"SqlServerVirtualMachines\", pricingTier: \"Free\" }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
