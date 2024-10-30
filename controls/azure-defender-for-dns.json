@@ -1,9 +1,9 @@
 {
-  "alertForSecondaryOnly": false,
+  "body": "Microsoft Defender for DNS scans all network traffic exiting from within a subscription.\n\n**Rationale**\n\nDNS lookups within a subscription are scanned and compared to a dynamic list of websites that might be potential security threats. These threats could be a result of a security breach within your services, thus scanning for them could prevent a potential security threat from being introduced.\n\n**Impact**\n\nEnabling Microsoft Defender for DNS requires enabling Microsoft Defender for your subscription. Both will incur additional charges, with Defender for DNS being a small amount per million queries.",
   "name": "Ensure Microsoft Defender for DNS is set to 'On'",
   "slug": "azure-defender-for-dns",
-  "body": "Microsoft Defender for DNS scans all network traffic exiting from within a subscription.\n\n**Rationale**\n\nDNS lookups within a subscription are scanned and compared to a dynamic list of websites that might be potential security threats. These threats could be a result of a security breach within your services, thus scanning for them could prevent a potential security threat from being introduced.\n\n**Impact**\n\nEnabling Microsoft Defender for DNS requires enabling Microsoft Defender for your subscription. Both will incur additional charges, with Defender for DNS being a small amount per million queries.",
-  "severity": 1,
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
   "rules": [
     {
       "cloudProviders": [
@@ -12,10 +12,13 @@
       "comparator": "eq",
       "expectedResult": "[]",
       "subjects": [
-        "Pricing"
+        "Connector"
       ],
-      "query": "azure-microsoft-defender-on-dns"
+      "query": "azure-connectors-without-mdc-for-dns",
+      "isManual": false
     }
   ],
-  "remediationDescription": "**From Azure Console**\n\n1. Go to `Microsoft Defender for Cloud`\n2. Under `Management`, select `Environment Settings`\n3. Click on the subscription name\n4. Under `Settings`, select `Defender plans`\n5. For `DNS`, select `On` for `Status`\n6. Select Save\n\n**Using Azure Command Line Interface**\n\n```bash\naz security pricing create -n 'DNS' --tier 'Standard'\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzSecurityPricing -Name 'DNS' -PricingTier 'Standard'\n```\n\n**Default Value**\n\nBy default, Microsoft Defender for DNS is not enabled.\n\n**References**\n\n1. [https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/baselines/dns-security-baseline](https://docs.microsoft.com/en-us/security/benchmark/azure/baselines/dns-security-baseline)\n3. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-dns-alerts](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-dns-alerts)\n4. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-enhanced-security](https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-enhanced-security)\n5. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview)\n6. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-10-ensure-domain-name-system-dns-security](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-10-ensure-domain-name-system-dns-security)\n7. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities)"
+  "remediationDescription": "**From Azure Console**\n\n1. Open [Microsoft Defender for Cloud | Environment settings](https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/~/EnvironmentSettings)\n1. Select a subscription\n4. Under `Settings`, select `Defender plans`\n5. For `DNS`, select `On` for `Status`\n6. Select Save\n\n**Using Azure Command Line Interface**\n\n```bash\naz security pricing create -n 'DNS' --tier 'Standard'\n```\n\n**Using Azure PowerShell**\n\n```powershell\nSet-AzSecurityPricing -Name 'DNS' -PricingTier 'Standard'\n```\n\n**Default Value**\n\nBy default, Microsoft Defender for DNS is not enabled.\n\n**References**\n\n1. [https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/](https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/)\n2. [https://docs.microsoft.com/en-us/security/benchmark/azure/baselines/dns-security-baseline](https://docs.microsoft.com/en-us/security/benchmark/azure/baselines/dns-security-baseline)\n3. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-dns-alerts](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-dns-alerts)\n4. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-enhanced-security](https://docs.microsoft.com/en-us/azure/defender-for-cloud/enable-enhanced-security)\n5. [https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-overview)\n6. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-10-ensure-domain-name-system-dns-security](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-network-security#ns-10-ensure-domain-name-system-dns-security)\n7. [https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities](https://docs.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-logging-threat-detection#lt-1-enable-threat-detection-capabilities)",
+  "isEnabled": true,
+  "severity": 1
 }
