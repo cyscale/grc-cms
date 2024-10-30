@@ -1,0 +1,5 @@
+{
+  "name": "Azure Subscriptions without Microsoft Defender for Azure SQL",
+  "slug": "azure-connectors-without-mdc-for-sqlservers",
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"SqlServers\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
