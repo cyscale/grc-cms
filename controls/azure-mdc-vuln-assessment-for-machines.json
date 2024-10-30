@@ -1,0 +1,24 @@
+{
+  "body": "Enable vulnerability assessment for machines on both Azure and hybrid (Arc-enabled) machines.\n\n### Rationale\n\nVulnerability assessment for machines scans for various security-related configurations and events such as system updates, OS vulnerabilities, and endpoint protection, then produces alerts on threat and vulnerability findings.\n\n### Impact\n\nMicrosoft Defender for Servers plan 2 licensing is required, and the configuration of Azure Arc introduces complexity beyond this recommendation.",
+  "name": "Ensure 'Vulnerability assessment for machines' component status is set to 'On'",
+  "slug": "azure-mdc-vuln-assessment-for-machines",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "isManual": false,
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "azure-subscriptions-without-server-vulnerability-providers"
+    }
+  ],
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open [Microsoft Defender for Cloud | Environment settings](https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/~/EnvironmentSettings)\n1. Select a subscription\n1. Click on `Settings & Monitoring`\n1. Set the `Status` of `Vulnerability assessment for machines` to `On`\n1. Click `Continue`\n\nRepeat the above for any additional subscriptions.",
+  "isEnabled": true,
+  "severity": 1
+}
