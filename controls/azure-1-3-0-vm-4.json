@@ -16,7 +16,7 @@
         "VM"
       ],
       "query": "azure-vms-with-extensions",
-      "applicableAssetsQuery": "query ($options: VMOptions, $failedAssetsIdentifiers: [ID!]) {\n  vms(\n    options: $options\n    where: {\n      NOT: { extensions_ALL: null, identifier_IN: $failedAssetsIdentifiers }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+      "applicableAssetsQuery": "query ($options: VMOptions, $failedAssetsIdentifiers: [ID!]) {\n  vms(\n    options: $options\n    where: {\n      cloudProvider: \"azure\"\n      AND: [\n        { NOT: { extensions_ALL: null } }\n        { NOT: { identifier_IN: $failedAssetsIdentifiers } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
     }
   ],
   "remediationDescription": "### From Azure Console\n\n1. Open the VM using the `Open in Azure` button\n2. Go to `Settings`\n3. Click on `Extensions`\n4. If there are unapproved extensions, uninstall them.\n\n### From Azure Command Line Interface\n\nList the installed extensions for the VM:\n\n```bash\naz vm extension list --vm-name <vmName> --resource-group <resourceGroupName> --query [*].name\n```\n\nDelete the extensions that are not approved:\n\n```bash\naz vm extension delete --resource-group <resourceGroupName> --vm-name <vmName> --name <extensionName>\n```\n\n### Default Value\n\nBy default, no extensions are added to the virtual machines.\n\n**References**\n\n1. [https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-features](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-features)\n2. [https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-endpoint-security](https://docs.microsoft.com/en-us/azure/security/benchmarks/security-controls-v2-endpoint-security)",
