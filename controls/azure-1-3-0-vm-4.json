@@ -1,5 +1,5 @@
 {
-  "body": "Only install organization-approved extensions on VMs.\n\n### Rationale\n\nAzure virtual machine extensions are small applications that provide post-deployment configuration and automation tasks on Azure virtual machines. These extensions run with administrative privileges and can access anything on a virtual machine. The Azure Portal and community provide several such extensions. Each organization should carefully evaluate these extensions and ensure that only those that are approved for use are implemented.",
+  "body": "Only install organization-approved extensions on VMs.\n\nCyscale lists all VMs with any extension installed. Please review them and exempt the VMs with approved extensions.\n\n### Rationale\n\nAzure virtual machine extensions are small applications that provide post-deployment configuration and automation tasks on Azure virtual machines. These extensions run with administrative privileges and can access anything on a virtual machine. The Azure Portal and community provide several such extensions. Each organization should carefully evaluate these extensions and ensure that only those approved for use are implemented.",
   "name": "Ensure Only Approved Extensions Are Installed (Manual)",
   "slug": "azure-1-3-0-vm-4",
   "isInsight": false,
