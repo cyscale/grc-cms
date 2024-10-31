@@ -1,0 +1,5 @@
+{
+  "name": "Azure connectors without notifications for high alerts",
+  "slug": "azure-connectors-without-notification-for-alerts",
+  "query": "{\n  connectors(\n    where: {\n      OR: [\n        { securityContacts_ALL: null }\n        { securityContacts_SOME: { alertNotifications: false } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
