@@ -1,1 +1,0 @@
-{"name":"'Notify about alerts with the following severity' is set to 'High'","slug":"azure-1-3-0-sc-14-notify-about-alerts-with-the-following-severity-is-set-to-high","query":"{securityContacts(where:{alertNotifications_MATCHES:\"(?i)^((?!on).)*$\"}){...AssetFragment}}"}

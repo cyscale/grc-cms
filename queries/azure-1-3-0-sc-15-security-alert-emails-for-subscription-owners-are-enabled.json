@@ -1,5 +1,0 @@
-{
-  "name": "Security alert emails for subscription owners are enabled",
-  "slug": "azure-1-3-0-sc-15-security-alert-emails-for-subscription-owners-are-enabled",
-  "query": "{\n  securityContacts(\n    where: {\n      OR: [\n        { NOT: { isEnabled: true } }\n        { NOT: { notificationRoles_INCLUDES: \"Owner\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
-}
