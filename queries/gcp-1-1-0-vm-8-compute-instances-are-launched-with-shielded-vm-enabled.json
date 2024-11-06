@@ -1,1 +1,5 @@
-{"name":"Compute instances are launched with Shielded VM enabled","slug":"gcp-1-1-0-vm-8-compute-instances-are-launched-with-shielded-vm-enabled","query":"vms(where:{OR:[{shieldedInstanceConfigEnableIntegrityMonitoring_NOT:true},{shieldedInstanceConfigEnableVtpm_NOT:true}]}){...AssetFragment}"}
+{
+  "name": "GCP VMs with security features disabled",
+  "slug": "gcp-1-1-0-vm-8-compute-instances-are-launched-with-shielded-vm-enabled",
+  "query": "{\n  vms(\n    where: {\n      OR: [\n        { shieldedInstanceConfigEnableVtpm: false }\n        { shieldedInstanceConfigEnableSecureBoot: false }\n        { shieldedInstanceConfigEnableIntegrityMonitoring: false }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
