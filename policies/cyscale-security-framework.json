@@ -418,9 +418,6 @@
           "control": "azure-1-3-0-logging-2-5"
         },
         {
-          "control": "azure-1-3-0-logging-2-6"
-        },
-        {
           "control": "azure-alert-create-update-sec-solution"
         },
         {
@@ -744,9 +741,6 @@
           "control": "azure-1-3-0-vm-4"
         },
         {
-          "control": "azure-1-3-0-vm-5"
-        },
-        {
           "control": "azure-compute-vm-endpoint-protection"
         },
         {
@@ -972,15 +966,6 @@
         },
         {
           "control": "azure-sql-server-auditing-retention"
-        },
-        {
-          "control": "azure-1-3-0-database-2-3"
-        },
-        {
-          "control": "azure-1-3-0-database-2-4"
-        },
-        {
-          "control": "azure-1-3-0-database-2-5"
         },
         {
           "control": "azure-ssl-enabled-postgresql-server"

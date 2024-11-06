@@ -226,9 +226,6 @@
       "body": "Actors with bad intentions can use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by vendor provided security patches, which must be installed by the entities that manage the systems. All system components must have all appropriate software patches to protect against the exploitation and compromise of account data by malicious individuals and malicious software. ",
       "controls": [
         {
-          "control": "azure-1-3-0-vm-5"
-        },
-        {
           "control": "cis-alibaba-1-0-0-vm-5"
         },
         {
@@ -506,9 +503,6 @@
         },
         {
           "control": "azure-1-3-0-logging-2-5"
-        },
-        {
-          "control": "azure-1-3-0-logging-2-6"
         },
         {
           "control": "azure-key-vault-logging-enabled"

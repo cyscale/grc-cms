@@ -143,9 +143,6 @@
         },
         {
           "control": "azure-security-alert-emails-owners"
-        },
-        {
-          "control": "azure-1-3-0-database-2-5"
         }
       ],
       "name": "A representative",
@@ -230,9 +227,6 @@
         },
         {
           "control": "azure-1-3-0-logging-2-5"
-        },
-        {
-          "control": "azure-1-3-0-logging-2-6"
         },
         {
           "control": "azure-alert-delete-policy-assign"
