@@ -5,7 +5,7 @@
   "isInsight": false,
   "alertForSecondaryOnly": false,
   "rules": [],
-  "remediationDescription": "Follow Microsoft Azure documentation to install endpoint protection from the security center. Alternatively, you can employ your endpoint protection tool for your OS.\n\n### References\n\n- (https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware)[https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware]",
+  "remediationDescription": "Follow Microsoft Azure documentation to install endpoint protection from the security center. Alternatively, you can employ your endpoint protection tool for your OS.\n\n### References\n\n- [https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware](https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware)",
   "isEnabled": true,
   "severity": 1
 }
