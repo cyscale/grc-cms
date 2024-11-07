@@ -1,5 +1,5 @@
 {
   "name": "Azure Storage Accounts Without Soft Delete",
   "slug": "azure-storage-accounts-without-soft-delete",
-  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { blobServiceDeletePolicyEnabled: false }\n        { blobServiceDeletePolicyDays: 0 }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  storageAccounts(\n    where: {\n      OR: [\n        { blobServiceDeletePolicyEnabled: false }\n        { blobServiceDeletePolicyDays: 0 }\n        { containerDeleteRetentionPolicyEnabled: false }\n        { containerDeleteRetentionPolicyDays: 0 }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }
