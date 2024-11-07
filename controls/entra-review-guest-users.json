@@ -3,7 +3,7 @@
   "name": "Ensure Guest Users Are Reviewed on a Regular Basis (Manual)",
   "slug": "entra-review-guest-users",
   "isInsight": false,
-  "alertForSecondaryOnly": false,
+  "alertForSecondaryOnly": true,
   "rules": [
     {
       "isManual": false,
