@@ -1,5 +1,5 @@
 {
-  "query": "{\n  firewalls(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        sourceFromPort_LTE: 22\n        sourceToPort_GTE: 22\n        OR: [\n          { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n          { sources_INCLUDES: \"cidr:::/0\" }\n        ]\n      }\n    }\n  ) {...AssetFragment}\n}",
+  "query": "{\n  firewalls(\n    where: {\n      rules_SOME: {\n        direction: \"Inbound\"\n        destFromPort_LTE: 22\n        destToPort_GTE: 22\n        OR: [\n          { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n          { sources_INCLUDES: \"cidr:::/0\" }\n        ]\n      }\n    }\n  ) {...AssetFragment}\n}",
   "name": "Check for Firewall Rules that allow inbound access from the Internet",
   "slug": "gcp-inbdoun-internet-firewall-rules"
 }
