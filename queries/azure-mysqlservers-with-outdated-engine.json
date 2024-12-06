@@ -1,0 +1,5 @@
+{
+  "query": "{\n  mySqlServers\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n",
+  "name": "Azure MySQL servers with outdated engine",
+  "slug": "azure-mysqlservers-with-outdated-engine"
+}
