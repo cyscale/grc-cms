@@ -6,123 +6,95 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["MySQLServer"],
-      "query": "azure-mysql-servers-with-outdated-engine-versions",
-      "returnPath": ""
+      "subjects": [
+        "MySQLServer"
+      ],
+      "query": "azure-mysqlservers-with-outdated-engine",
+      "returnPath": "",
+      "isManual": false
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["MySQLFlexibleServer"],
-      "query": "azure-mysql-flexible-servers-with-outdated-engine-versions",
-      "returnPath": ""
+      "subjects": [
+        "MySQLFlexibleServer"
+      ],
+      "query": "azure-mysql-flexible-servers-with-outdated-engine",
+      "returnPath": "",
+      "isManual": false
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["PostgreSQLServer"],
-      "query": "azure-postgresql-servers-with-outdated-engine-versions",
-      "returnPath": ""
+      "subjects": [
+        "PostgreSQLServer"
+      ],
+      "query": "azure-postgresql-servers-with-outdated-engine",
+      "returnPath": "",
+      "isManual": false
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["PostgreSQLFlexibleServer"],
-      "query": "azure-postgresql-flexible-servers-with-outdated-engine-versions",
-      "returnPath": ""
+      "subjects": [
+        "PostgreSQLFlexibleServer"
+      ],
+      "query": "azure-postgresql-flexible-servers-with-outdated-engine",
+      "returnPath": "",
+      "isManual": false
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "aws",
+        "alibaba"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "apsaradb-rds-mysql-with-outdated-engine-versions",
-      "returnPath": ""
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "dbinstances-with-outdated-engines",
+      "returnPath": "",
+      "isManual": false
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "gcp"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "apsaradb-rds-postgresql-with-outdated-engine-versions",
-      "returnPath": ""
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "query": "cloudsqlinstances-with-outdated-engines",
+      "returnPath": "",
+      "isManual": false
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "apsaradb-rds-sqlserver-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["aws"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "aws-rds-mysql-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["aws"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "aws-rds-postgresql-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["aws"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "aws-rds-sqlserver-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["aws"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["DBInstance"],
-      "query": "aws-rds-mariadb-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["gcp"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["CloudSQLInstance"],
-      "query": "gcp-cloudsql-mysql-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["gcp"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["CloudSQLInstance"],
-      "query": "gcp-cloudsql-postgresql-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["gcp"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["CloudSQLInstance"],
-      "query": "gcp-cloudsql-sqlservers-with-outdated-engine-versions",
-      "returnPath": ""
-    },
-    {
-      "cloudProviders": ["azure"],
-      "comparator": "eq",
-      "expectedResult": "[]",
-      "subjects": ["MariaDBServer"],
-      "query": "azure-mariadb-servers-with-outdated-engine"
+      "subjects": [
+        "MariaDBServer"
+      ],
+      "query": "azure-mariadb-servers-with-outdated-engine",
+      "isManual": false
     }
   ],
   "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\n**From the Console**\n\n\r\n\r\nPerform the following actions to upgrade to the newest database engine version:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select `Modify`\r\n3. Under `Settings`, `DB engine version`, select the newest version possible \r\n4. Click `Continue` and `Modify DB Instance`\n\n\r\n\r\n**From the AWS CLI**\n\n\r\n\r\n```bash\r\naws rds modify-db-instance --db-instance-identifier <dbInstanceIdentifier> --engine-version <newVersion>\r\n```\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Upgrading a DB instance engine version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html)\n\n#### Azure\n* [PostgreSQL Single Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [PostgreSQL Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [MySQL Single Server](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-major-version-upgrade)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/docs/postgres/upgrade-major-db-version-inplace)\n\n#### Alibaba\n* [ApsaraDB RDS for MySQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-mysql-instance-2)\n* [ApsaraDB RDS for PostgreSQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-postgresql-instance-1)\n* [ApsaraDB RDS for SQL Server](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-an-instance-from-sql-server-2012-to-sql-server-2016)",
