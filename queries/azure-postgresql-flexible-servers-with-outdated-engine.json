@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL Flexible servers with outdated engine",
+  "slug": "azure-postgresql-flexible-servers-with-outdated-engine",
+  "query": "{\n  postgreSqlFlexibleServers\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+}
