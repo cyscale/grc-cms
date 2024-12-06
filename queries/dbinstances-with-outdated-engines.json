@@ -1,0 +1,5 @@
+{
+  "name": "DBInstances with outdated engines",
+  "slug": "dbinstances-with-outdated-engines",
+  "query": "{\n  dbInstances\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+}
