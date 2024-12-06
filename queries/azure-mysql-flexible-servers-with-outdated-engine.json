@@ -1,0 +1,5 @@
+{
+  "query": "{\n  mySqlFlexibleServers\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n",
+  "slug": "azure-mysql-flexible-servers-with-outdated-engine",
+  "name": "Azure MySQL Flexible servers with outdated engine"
+}
