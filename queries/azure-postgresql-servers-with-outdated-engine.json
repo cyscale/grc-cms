@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL servers with outdated engine",
+  "slug": "azure-postgresql-servers-with-outdated-engine",
+  "query": "{\n  postgreSqlServers\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+}
