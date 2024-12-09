@@ -1,5 +1,0 @@
-{
-  "name": "Cloud SQL Instances with outdated engines",
-  "slug": "cloudSqlInstances-with-outdated-engines",
-  "query": "{\n  cloudSqlInstances\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
-}
