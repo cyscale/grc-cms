@@ -80,7 +80,7 @@
       "subjects": [
         "CloudSQLInstance"
       ],
-      "query": "cloudsqlinstances-with-outdated-engines",
+      "query": "cloudsql-instances-with-outdated-engines",
       "returnPath": "",
       "isManual": false
     },
