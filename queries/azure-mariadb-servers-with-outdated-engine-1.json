@@ -1,5 +1,0 @@
-{
-  "name": "Azure MariaDB servers with outdated engine",
-  "slug": "azure-mariadb-servers-with-outdated-engine",
-  "query": "{\n  mariaDbServers\n  (\n    where: {\n      cyscaleEngineIsOutdated: true\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
-}
