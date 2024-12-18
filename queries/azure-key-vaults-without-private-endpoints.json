@@ -1,5 +1,5 @@
 {
   "name": "Azure key vaults without private endpoints",
   "slug": "azure-key-vaults-without-private-endpoints",
-  "query": "{\n  kmsVaults(where: { privateEndpoints_ALL: null }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  kmsVaults(where: { privateEndpoints_SOME: null }) {\n    ...AssetFragment\n  }\n}"
 }

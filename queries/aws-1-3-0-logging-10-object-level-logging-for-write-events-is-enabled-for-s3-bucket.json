@@ -1,1 +1,5 @@
-{"name":"Object-level logging for write events is enabled for S3 bucket","slug":"aws-1-3-0-logging-10-object-level-logging-for-write-events-is-enabled-for-s3-bucket","query":"{buckets( where: { OR: [ { trailEventSelectorDataResources_ALL: { eventSelector: { readWriteType_NOT_IN: [\"All\", \"WriteOnly\"] } } } { trailEventSelectorDataResources_ALL: null } ] } ) {...AssetFragment}}"}
+{
+  "name": "Object-level logging for write events is enabled for S3 bucket",
+  "slug": "aws-1-3-0-logging-10-object-level-logging-for-write-events-is-enabled-for-s3-bucket",
+  "query": "{buckets( where: { OR: [ { trailEventSelectorDataResources_ALL: { eventSelector: { NOT: { readWriteType_IN: [\"All\", \"WriteOnly\"] } } } } { trailEventSelectorDataResources_SOME: null } ] } ) {...AssetFragment}}"
+}

@@ -1,5 +1,5 @@
 {
   "name": "Entra Users Without MFA With Access to Azure",
   "slug": "azure-users-without-mfa",
-  "query": "{\n  users(where: { mfaActive: false, NOT: { iamRoleAssignments_ALL: null } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  users(where: { mfaActive: false, NOT: { iamRoleAssignments_SOME: null } }) {\n    ...AssetFragment\n  }\n}"
 }

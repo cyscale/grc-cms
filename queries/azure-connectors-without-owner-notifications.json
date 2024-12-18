@@ -1,5 +1,5 @@
 {
   "name": "Azure connectors without subscription owner notifications",
   "slug": "azure-connectors-without-owner-notifications",
-  "query": "{\n  connectors(\n    where: {\n      OR: [\n        { securityContacts_ALL: null }\n        { securityContacts_SOME: { notificationByRoleState: \"Off\" } }\n        {\n          NOT: {\n            securityContacts_SOME: { notificationRoles_INCLUDES: \"Owner\" }\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(\n    where: {\n      OR: [\n        { securityContacts_SOME: null }\n        { securityContacts_SOME: { notificationByRoleState: \"Off\" } }\n        {\n          NOT: {\n            securityContacts_SOME: { notificationRoles_INCLUDES: \"Owner\" }\n          }\n        }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

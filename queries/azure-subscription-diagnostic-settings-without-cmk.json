@@ -1,5 +1,5 @@
 {
-  "query": "{\n  storageAccounts(\n    where: {\n      NOT: { destinationForSubscriptionDiagnosticSettings_ALL: null }\n      byokEncrypted: false\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  storageAccounts(\n    where: {\n      NOT: { destinationForSubscriptionDiagnosticSettings_SOME: null }\n      byokEncrypted: false\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
   "name": "Azure Subscription Diagnostic Settings Without CMK",
   "slug": "azure-subscription-diagnostic-settings-without-cmk"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Azure App Service apps without managed identity",
   "slug": "azure-app-services-without-managed-identity",
-  "query": "{\n  sites(where: { managedIdentities_ALL: null }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  sites(where: { managedIdentities_SOME: null }) {\n    ...AssetFragment\n  }\n}"
 }

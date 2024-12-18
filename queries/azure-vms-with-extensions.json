@@ -1,5 +1,5 @@
 {
   "name": "Azure VMs with extensions",
   "slug": "azure-vms-with-extensions",
-  "query": "{\n  vms(where: { NOT: { extensions_ALL: null } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  vms(where: { NOT: { extensions_SOME: null } }) {\n    ...AssetFragment\n  }\n}"
 }

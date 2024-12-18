@@ -1,5 +1,5 @@
 {
   "name": "Azure connectors without security contact additional email addresses",
   "slug": "azure-connectors-without-additional-security-contact-emails",
-  "query": "{\n  connectors(\n    where: {\n      OR: [\n        { securityContacts_ALL: null }\n        { securityContacts_SOME: { email: null } }\n        { securityContacts_SOME: { email: \"\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(\n    where: {\n      OR: [\n        { securityContacts_SOME: null }\n        { securityContacts_SOME: { email: null } }\n        { securityContacts_SOME: { email: \"\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }
