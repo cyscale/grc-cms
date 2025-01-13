@@ -1,5 +1,5 @@
 {
-  "name": "Publicly Accessible WMs for Azure",
+  "name": "Publicly Accessible VMs for Azure",
   "slug": "publicly-accessible-azure-wms",
   "query": "{\n  vms(\n    where: {\n      networkInterfaces_SOME: {\n        publicIp_NOT: null\n        securityGroups_SOME: {\n          rules_SOME: {\n            direction: \"Inbound\"\n            action: \"Allow\"\n            AND: [\n              {\n                OR: [\n                  { sources_INCLUDES: \"cidr:0.0.0.0/0\" }\n                  { sources_INCLUDES: \"cidr:::/0\" }\n                  { sources_INCLUDES: \"tag:Internet\" }\n                  { sources: [] }\n                ]\n              }\n              {\n                OR: [\n                  { destFromPort_LTE: 22, destToPort_GTE: 22 }\n                  { destFromPort_LTE: 3389, destToPort_GTE: 3389 }\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
 }

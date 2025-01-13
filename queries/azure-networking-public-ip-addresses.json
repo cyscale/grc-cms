@@ -1,5 +1,5 @@
 {
   "name": "Azure Public IP addresses",
   "slug": "azure-networking-public-ip-addresses",
-  "query": "{\n  publicIps {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  staticIps {\n    ...AssetFragment\n  }\n}"
 }
