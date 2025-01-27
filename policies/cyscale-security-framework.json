@@ -1127,9 +1127,6 @@
           "control": "azure-defender-for-storage"
         },
         {
-          "control": "azure-1-3-0-sc-6"
-        },
-        {
           "control": "azure-defender-for-containers"
         },
         {
@@ -1172,7 +1169,7 @@
           "control": "azure-1-3-0-security-3"
         },
         {
-          "control": "azure-key-vault-recoverable"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
           "control": "azure-rbac-kubernetes"

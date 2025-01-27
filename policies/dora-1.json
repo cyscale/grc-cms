@@ -189,7 +189,7 @@
           "control": "azure-client-certs-web-app"
         },
         {
-          "control": "azure-key-vault-recoverable"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
           "control": "aws-logging-5"
@@ -453,7 +453,7 @@
       "slug": "dora-2-12-backup-restoration-and-recovery",
       "controls": [
         {
-          "control": "azure-key-vault-recoverable"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
           "control": "gcp-db-automated-backups"

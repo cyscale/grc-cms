@@ -409,7 +409,7 @@
           "control": "vm-templates-with-disk-configuration-are-encrypted"
         },
         {
-          "control": "azure-key-vault-recoverable"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
           "control": "azure-soft-delete-containers-blobs"
@@ -595,7 +595,7 @@
           "control": "gcp-db-automated-backups"
         },
         {
-          "control": "azure-key-vault-recoverable"
+          "control": "azure-expiration-keys-key-vault"
         },
         {
           "control": "object-containers-without-versioning-enabled"
