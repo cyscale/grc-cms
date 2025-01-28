@@ -1,6 +1,6 @@
 {
   "body": "Require administrators to provide consent for applications before use.\n\n### Rationale\n\nIf Microsoft Entra ID is running as an identity provider for third-party applications, permissions and consent should be limited to administrators or pre-approved. Malicious applications may attempt to exfiltrate data or abuse privileged user accounts.\n\n### Impact\n\nEnforcing this setting may create additional requests that administrators need to review.\n\n### Default Value\n\nBy default, `Users consent for applications` is set to `Allow user consent for apps`.",
-  "name": " Ensure 'User consent for applications' is set to 'Do not allow user consent'",
+  "name": "Ensure 'User consent for applications' is set to 'Do not allow user consent'",
   "slug": "entra-do-not-allow-user-consent",
   "isInsight": false,
   "alertForSecondaryOnly": false,

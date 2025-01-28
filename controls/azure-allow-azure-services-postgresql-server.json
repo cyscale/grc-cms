@@ -1,6 +1,6 @@
 {
   "body": "Disable access from Azure services to PostgreSQL Flexible Server.\n\n### Rationale\n\nIf access from Azure services is enabled, the server's firewall will accept connections from all Azure resources, including resources not in your subscription. This is usually not a desired configuration. Instead, set up firewall rules to allow access from specific network ranges or VNET rules to allow access from specific virtual networks.\n\n### Default Value\n\nThe Azure Postgres firewall is set to block all access by default.",
-  "name": " Ensure 'Allow public access from any Azure service within Azure to this server' for PostgreSQL flexible server is disabled",
+  "name": "Ensure 'Allow public access from any Azure service within Azure to this server' for PostgreSQL flexible server is disabled",
   "slug": "azure-allow-azure-services-postgresql-server",
   "isInsight": false,
   "alertForSecondaryOnly": false,
