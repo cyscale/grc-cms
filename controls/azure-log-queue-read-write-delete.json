@@ -18,7 +18,7 @@
       "isManual": false
     }
   ],
-  "remediationDescription": "### From Azure Console\n\n1. Go to `Storage Accounts`.\n1. For each storage account, under `Monitoring`, click `Diagnostics settings`.\n1. Select the `queue` tab indented below the storage account.\n1. To create a new diagnostic setting, click `+ Add diagnostic setting`. To update an existing diagnostic setting, click `Edit setting` on the diagnostic setting.\n1. Check the boxes next to `StorageRead`, `StorageWrite`, and `StorageDelete`.\n1. Select an appropriate destination.\n1. Click `Save`.\n\n### Azure CLI\n\n```\naz storage logging update --account-name <storageAccountName> --account-key <storageAccountKey> --services q --log rwd --retention 90\n```",
+  "remediationDescription": "### From Azure Console\n\n1. Go to `Storage Accounts`.\n1. For each storage account, under `Monitoring`, click `Diagnostics settings`.\n1. Select the `queue` tab indented below the storage account.\n1. To create a new diagnostic setting, click `+ Add diagnostic setting`. To update an existing diagnostic setting, click `Edit setting` on the diagnostic setting.\n1. Check the boxes next to `StorageRead`, `StorageWrite`, and `StorageDelete`.\n1. Select an appropriate destination.\n1. Click `Save`.\n\n### Azure CLI\n\n```bash\naz storage logging update --account-name <storageAccountName> --account-key <storageAccountKey> --services q --log rwd --retention 90\n```",
   "isEnabled": true,
   "severity": 1
 }

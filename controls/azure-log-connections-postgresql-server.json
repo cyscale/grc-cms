@@ -18,7 +18,7 @@
       "isManual": false
     }
   ],
-  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the server using the `Open in Azure` button\n1. Under `Settings`, click `Server parameters`.\n1. In the filter bar, type `log_connections`.\n1. Set `log_connections` to `ON`.\n1. Click `Save`.\n\n### Remediate from Azure CLI\n\nUse the below command to update `log_connections` configuration.\n\n```\naz postgres server configuration set --resource-group <resourceGroupName> --server-name <serverName> --name log_connections --value on\n```\n\n### Remediate from PowerShell\n\nUse the below command to update `log_connections` configuration.\n\n```\nUpdate-AzPostgreSqlConfiguration -ResourceGroupName <ResourceGroupName> -ServerName <ServerName> -Name log_connections -Value on\n```",
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the server using the `Open in Azure` button\n1. Under `Settings`, click `Server parameters`.\n1. In the filter bar, type `log_connections`.\n1. Set `log_connections` to `ON`.\n1. Click `Save`.\n\n### Remediate from Azure CLI\n\nUse the below command to update `log_connections` configuration.\n\n```bash\naz postgres server configuration set --resource-group <resourceGroupName> --server-name <serverName> --name log_connections --value on\n```\n\n### Remediate from PowerShell\n\nUse the below command to update `log_connections` configuration.\n\n```powershell\nUpdate-AzPostgreSqlConfiguration -ResourceGroupName <ResourceGroupName> -ServerName <ServerName> -Name log_connections -Value on\n```",
   "isEnabled": true,
   "severity": 2
 }
