@@ -213,7 +213,7 @@
     {
       "name": "SEC 5. How do you protect your network resources?",
       "slug": "aws-waf-sec-5",
-      "body": "Any workload that has some form of network connectivity, whether it’s the internet or a private network, requires multiple layers of defense to help protect from external and internal network-based threats.",
+      "body": "Any workload that has some form of network connectivity, whether it's the internet or a private network, requires multiple layers of defense to help protect from external and internal network-based threats.",
       "controls": [
         {
           "control": "aws-networking-3"

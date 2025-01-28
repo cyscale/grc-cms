@@ -1,6 +1,6 @@
 {
   "alertForSecondaryOnly": false,
-  "name": "Ensure ‘skip_show_database’ database flag for Cloud SQL MySQL instance is set to ‘On’",
+  "name": "Ensure 'skip_show_database' database flag for Cloud SQL MySQL instance is set to 'On'",
   "slug": "gcp-skip-show-db-flag-mysql",
   "severity": 1,
   "rules": [

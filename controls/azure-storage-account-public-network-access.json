@@ -18,7 +18,7 @@
       "query": "azure-storage-account-public-network-access"
     }
   ],
-  "remediationDescription": "### From Azure Portal\n\nFirst, follow Microsoft documentation and create shared access signature tokens for your blob containers. Then,\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n2. Under the `Security + networking` section, click `Networking`.\n3. Set `Public Network Access` to `Disabled`.\n\n### From Azure CLI\n\n```bash\naz storage account update --name <storage_account> --resource-group <resource_group> --public-network-access Disabled\n```\n\n### From PowerShell\n\n```bash\nSet-AzStorageAccount -ResourceGroupName <resource group name> -Name <storage account name> -PublicNetworkAccess Disabled\n```",
+  "remediationDescription": "### From Azure Portal\n\nFirst, follow Microsoft documentation and create shared access signature tokens for your blob containers. Then,\n\n1. Open the storage account in the Azure Portal using the `Open in Azure` button.\n2. Under the `Security + networking` section, click `Networking`.\n3. Set `Public Network Access` to `Disabled`.\n\n### From Azure CLI\n\n```bash\naz storage account update --name <storage_account> --resource-group <resource_group> --public-network-access Disabled\n```\n\n### From PowerShell\n\n```bash\nSet-AzStorageAccount -ResourceGroupName <rg_name> -Name <storage_account_name> -PublicNetworkAccess Disabled\n```",
   "isEnabled": true,
   "severity": 2
 }

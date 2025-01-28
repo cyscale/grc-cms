@@ -227,7 +227,7 @@
     {
       "name": "CC6.3",
       "slug": "soc2-cc6-3",
-      "body": "The entity authorizes, modifies, or removes access to data, software, functions, and other protected information assets based on roles, responsibilities, or the system design and changes, giving consideration to the concepts of least privilege and segregation of duties, to meet the entity’s objectives.",
+      "body": "The entity authorizes, modifies, or removes access to data, software, functions, and other protected information assets based on roles, responsibilities, or the system design and changes, giving consideration to the concepts of least privilege and segregation of duties, to meet the entity's objectives.",
       "controls": [
         {
           "control": "aws-1-4-0-iam-12"
@@ -328,7 +328,7 @@
     {
       "name": "CC6.7",
       "slug": "soc2-cc6-7",
-      "body": "The entity restricts the transmission, movement, and removal of information to authorized internal and external users and processes, and protects it during transmission, movement, or removal to meet the entity’s objectives.",
+      "body": "The entity restricts the transmission, movement, and removal of information to authorized internal and external users and processes, and protects it during transmission, movement, or removal to meet the entity's objectives.",
       "controls": [
         {
           "control": "aws-1-4-0-iam-12"

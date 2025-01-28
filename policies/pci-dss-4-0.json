@@ -164,7 +164,7 @@
     {
       "name": "4. Protect Cardholder Data with Strong Cryptography During Transmission Over Open, Public Networks",
       "slug": "pci-dss-4-0-cryptography",
-      "body": "The use of strong cryptography provides greater assurance in preserving data confidentiality, integrity, and non-repudiation.\n\nTo protect against compromise, PAN (Primary Account Number) must be encrypted during transmission over networks that are easily accessed by malicious individuals, including untrusted and public networks. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targeted by malicious individuals aiming to exploit these vulnerabilities to gain privileged access to cardholder data environments (CDE). Any transmissions of cardholder data over an entity’s internal network(s) will naturally bring that network into scope for PCI DSS since that network stores, processes, or transmits cardholder data. Any such networks must be evaluated and assessed against applicable PCI DSS requirements.",
+      "body": "The use of strong cryptography provides greater assurance in preserving data confidentiality, integrity, and non-repudiation.\n\nTo protect against compromise, PAN (Primary Account Number) must be encrypted during transmission over networks that are easily accessed by malicious individuals, including untrusted and public networks. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targeted by malicious individuals aiming to exploit these vulnerabilities to gain privileged access to cardholder data environments (CDE). Any transmissions of cardholder data over an entity's internal network(s) will naturally bring that network into scope for PCI DSS since that network stores, processes, or transmits cardholder data. Any such networks must be evaluated and assessed against applicable PCI DSS requirements.",
       "controls": [
         {
           "control": "aws-1-4-0-storage-1-2"
@@ -204,7 +204,7 @@
     {
       "name": "5. Protect All Systems and Networks from Malicious Software",
       "slug": "pci-dss-4-0-malicious-software",
-      "body": "Malicious software (malware) is software or firmware designed to infiltrate or damage a computer system without the owner's knowledge or consent, with the intent of compromising the confidentiality, integrity, or availability of the owner’s data, applications, or operating system.\n\nExamples include viruses, worms, Trojans, spyware, ransomware, keyloggers, and rootkits, malicious code, scripts, and links.\n\nMalware can enter the network during many business-approved activities, including employee e-mail (for example, via phishing) and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities.\n\nUsing anti-malware solutions that address all types of malware helps to protect systems from current and evolving malware threats.",
+      "body": "Malicious software (malware) is software or firmware designed to infiltrate or damage a computer system without the owner's knowledge or consent, with the intent of compromising the confidentiality, integrity, or availability of the owner's data, applications, or operating system.\n\nExamples include viruses, worms, Trojans, spyware, ransomware, keyloggers, and rootkits, malicious code, scripts, and links.\n\nMalware can enter the network during many business-approved activities, including employee e-mail (for example, via phishing) and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities.\n\nUsing anti-malware solutions that address all types of malware helps to protect systems from current and evolving malware threats.",
       "controls": [
         {
           "control": "azure-defender-endpoint-selected"
@@ -633,7 +633,7 @@
     {
       "name": "12. Support Information Security with Organizational Policies and Programs",
       "slug": "pci-dss-4-0-support-information-security",
-      "body": "The organization’s overall information security policy sets the tone for the whole entity and informs personnel what is expected of them. All personnel should be aware of the sensitivity of cardholder data and their responsibilities for protecting it.",
+      "body": "The organization's overall information security policy sets the tone for the whole entity and informs personnel what is expected of them. All personnel should be aware of the sensitivity of cardholder data and their responsibilities for protecting it.",
       "controls": [
         {
           "control": "azure-additional-email-address"

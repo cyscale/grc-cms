@@ -1,5 +1,5 @@
 {
-  "body": "Cyscale looks for encryption keys that haven’t been rotated in more than 90 days.",
+  "body": "Cyscale looks for encryption keys that haven't been rotated in more than 90 days.",
   "name": "Ensure encryption keys are rotated",
   "slug": "kms-keys-have-not-been-rotated",
   "isInsight": false,
@@ -52,6 +52,6 @@
   ],
   "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n- [Rotating AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)\n\n#### Azure\n- [Configure key rotation]\n(https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation)\n\n#### Alibaba\n- [Configure key rotation]\n(https://www.alibabacloud.com/help/en/key-management-service/latest/automatic-key-rotation)\n\n#### Google Cloud\n- [Configure key rotation]\n(https://cloud.google.com/kms/docs/rotating-keys)",
   "isEnabled": true,
-  "description": "Encryption keys that haven’t been rotated in more than 90 days",
+  "description": "Encryption keys that haven't been rotated in more than 90 days",
   "severity": 3
 }
