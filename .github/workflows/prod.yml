@@ -16,7 +16,7 @@ jobs:
     environment: development
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: 'Semantic Release'
         uses: go-semantic-release/action@v1
         with:
@@ -29,7 +29,7 @@ jobs:
     environment: production
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get GRC changed queries
@@ -69,128 +69,74 @@ jobs:
           files: |
             mitre/mappings/**
       - name: Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
           tenant-id: ${{ vars.AZ_TENANT_ID }}
           client-id: ${{ vars.AZ_CLIENT_ID }}
       - name: Deploy
-        uses: azure/cli@v1
+        uses: azure/cli@v2
         with:
-          azcliversion: 2.37.0
+          azcliversion: 2.68.0
           inlineScript: |
             # Handle GRC queries
             for file in ${{ steps.grc-changed-queries.outputs.all_changed_files }}; do
               slug=$(cat $file | jq -r '.slug') || continue
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "query" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "query", "operation": $operation}') || continue
 
               az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             for file in ${{ steps.grc-changed-queries.outputs.deleted_files }}; do
-              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-
-              slug=$(cat entity.json | jq -r '.slug') || continue
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "query" --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": "query", "operation": $operation}') || continue
-
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             # Handle GRC controls
             for file in ${{ steps.grc-changed-controls.outputs.all_changed_files }}; do
               slug=$(cat $file | jq -r '.slug') || continue
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "control" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "control", "operation": $operation}') || continue
 
               az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             for file in ${{ steps.grc-changed-controls.outputs.deleted_files }}; do
-              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-
-              slug=$(cat entity.json | jq -r '.slug') || continue
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "control" --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": "control", "operation": $operation}') || continue
-
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             # Handle GRC policies
             for file in ${{ steps.grc-changed-policies.outputs.all_changed_files }}; do
               slug=$(cat $file | jq -r '.slug') || continue
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "policy" --arg operation "modified" '{"blob": $blob, "slug": $slug, "type": "policy", "operation": $operation}') || continue
 
               az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             for file in ${{ steps.grc-changed-policies.outputs.deleted_files }}; do
-              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-
-              slug=$(cat entity.json | jq -r '.slug') || continue
-              message=$(jq --null-input --arg blob $file --arg slug $slug --arg type "policy" --arg operation "deleted" '{"blob": $blob, "slug": $slug, "type": "policy", "operation": $operation}') || continue
-
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q grc-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             # Handle MITRE tactics
             for file in ${{ steps.mitre-changed-tactics.outputs.all_changed_files }}; do
-              mid=$(cat $file | jq -r '.mid') || continue
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "tactic" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "tactic", "operation": $operation}') || continue
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
+              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             for file in ${{ steps.mitre-changed-tactics.outputs.deleted_files }}; do
-              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-
-              mid=$(cat entity.json | jq -r '.mid') || continue
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "tactic" --arg operation "deleted" '{"blob": $blob, "mid": $mid, "type": "tactic", "operation": $operation}') || continue
-
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             # Handle MITRE techniques
             for file in ${{ steps.mitre-changed-techniques.outputs.all_changed_files }}; do
-              mid=$(cat $file | jq -r '.mid') || continue
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "technique" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "technique", "operation": $operation}') || continue
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
+              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             for file in ${{ steps.mitre-changed-techniques.outputs.deleted_files }}; do
-              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-
-              mid=$(cat entity.json | jq -r '.mid') || continue
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "technique" --arg operation "deleted" '{"blob": $blob, "mid": $mid, "type": "technique", "operation": $operation}') || continue
-
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             # Handle MITRE mappings
             for file in ${{ steps.mitre-changed-mappings.outputs.all_changed_files }}; do
-              mid=$(cat $file | jq -r '.mid') || continue
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "mapping" --arg operation "modified" '{"blob": $blob, "mid": $mid, "type": "mapping", "operation": $operation}') || continue
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
+              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             for file in ${{ steps.mitre-changed-mappings.outputs.deleted_files }}; do
-              az storage blob download -f entity.json -c grc -n $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-
-              mid=$(cat entity.json | jq -r '.mid') || continue
-              message=$(jq --null-input --arg blob $file --arg mid $mid --arg type "mapping" --arg operation "deleted" '{"blob": $blob, "mid": $mid, "type": "mapping", "operation": $operation}') || continue
-
               az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-              az storage message put -q mitre-events --content "$(echo $message | tr -d '\r\n' | base64)" --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
             done
 
             rm -f entity.json
