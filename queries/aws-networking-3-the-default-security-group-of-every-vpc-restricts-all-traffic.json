@@ -1,1 +1,5 @@
-{"name":"The default security group of every VPC restricts all traffic","slug":"aws-networking-3-the-default-security-group-of-every-vpc-restricts-all-traffic","query":"{securityGroups(where: {groupName: \"default\", rules_NOT: null}) {...AssetFragment}}"}
+{
+  "name": "The default security group of every VPC restricts all traffic",
+  "slug": "aws-networking-3-the-default-security-group-of-every-vpc-restricts-all-traffic",
+  "query": "{\n  securityGroups(where: { groupName: \"default\", NOT: { rules_SOME: null } }) {\n    ...AssetFragment\n  }\n}"
+}
