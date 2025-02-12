@@ -61,17 +61,15 @@ jobs:
           role-to-assume: ${{ vars.GRC_CMS_UPLOAD_ROLE_ARN }}
           aws-region: ${{ vars.GRC_BUCKET_REGION }}
       - name: Deploy
-        with:
-          azcliversion: 2.68.0
-          inlineScript: |
-            # Handle GRC queries
-            for file in ${{ steps.grc-changed-queries.outputs.all_changed_files }}; do
-              aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
-            done
+        run: |
+          # Handle GRC queries
+          for file in ${{ steps.grc-changed-queries.outputs.all_changed_files }}; do
+            aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+          done
 
-            for file in ${{ steps.grc-changed-queries.outputs.deleted_files }}; do
-              aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }}/$file/
-            done
+          for file in ${{ steps.grc-changed-queries.outputs.deleted_files }}; do
+            aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+          done
 
 #            # Handle GRC controls
 #            for file in ${{ steps.grc-changed-controls.outputs.all_changed_files }}; do
