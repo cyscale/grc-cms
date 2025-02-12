@@ -1,0 +1,5 @@
+{
+  "name": "Test query",
+  "slug": "test-query-slug",
+  "query": "{}"
+}
