@@ -32,111 +32,27 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Get GRC changed queries
-        id: grc-changed-queries
-        uses: tj-actions/changed-files@v41
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
         with:
           files: |
             queries/**
-      - name: Get GRC changed controls
-        id: grc-changed-controls
-        uses: tj-actions/changed-files@v41
-        with:
-          files: |
             controls/**
-      - name: Get GRC changed policies
-        id: grc-changed-policies
-        uses: tj-actions/changed-files@v41
-        with:
-          files: |
             policies/**
-      - name: Get MITRE changed tactics
-        id: mitre-changed-tactics
-        uses: tj-actions/changed-files@v41
+            mitre/**
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          files: |
-            mitre/tactics/**
-      - name: Get MITRE changed techniques
-        id: mitre-changed-techniques
-        uses: tj-actions/changed-files@v41
-        with:
-          files: |
-            mitre/techniques/**
-      - name: Get MITRE changed mappings
-        id: mitre-changed-mappings
-        uses: tj-actions/changed-files@v41
-        with:
-          files: |
-            mitre/mappings/**
-      - name: Login
-        uses: azure/login@v2
-        with:
-          subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
-          tenant-id: ${{ vars.AZ_TENANT_ID }}
-          client-id: ${{ vars.AZ_CLIENT_ID }}
+          role-to-assume: ${{ vars.GRC_CMS_UPLOAD_ROLE_ARN }}
+          aws-region: ${{ vars.GRC_BUCKET_REGION }}
       - name: Deploy
-        uses: azure/cli@v2
-        with:
-          azcliversion: 2.68.0
-          inlineScript: |
-            # Handle GRC queries
-            for file in ${{ steps.grc-changed-queries.outputs.all_changed_files }}; do
-              slug=$(cat $file | jq -r '.slug') || continue
+        run: |
+          # Handle GRC queries
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            aws s3 cp $file s3://${{ vars.S3_BUCKET_NAME }}/$file
+          done
 
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            for file in ${{ steps.grc-changed-queries.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            # Handle GRC controls
-            for file in ${{ steps.grc-changed-controls.outputs.all_changed_files }}; do
-              slug=$(cat $file | jq -r '.slug') || continue
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            for file in ${{ steps.grc-changed-controls.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            # Handle GRC policies
-            for file in ${{ steps.grc-changed-policies.outputs.all_changed_files }}; do
-              slug=$(cat $file | jq -r '.slug') || continue
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            for file in ${{ steps.grc-changed-policies.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            # Handle MITRE tactics
-            for file in ${{ steps.mitre-changed-tactics.outputs.all_changed_files }}; do
-              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            for file in ${{ steps.mitre-changed-tactics.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            # Handle MITRE techniques
-            for file in ${{ steps.mitre-changed-techniques.outputs.all_changed_files }}; do
-              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            for file in ${{ steps.mitre-changed-techniques.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            # Handle MITRE mappings
-            for file in ${{ steps.mitre-changed-mappings.outputs.all_changed_files }}; do
-              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            for file in ${{ steps.mitre-changed-mappings.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login || continue
-            done
-
-            rm -f entity.json
+          for file in ${{ steps.changed-files.outputs.deleted_files }}; do
+            aws s3 rm s3://${{ vars.S3_BUCKET_NAME }}/$file
+          done
