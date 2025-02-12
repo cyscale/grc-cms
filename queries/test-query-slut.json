@@ -1,0 +1,5 @@
+{
+  "name": "Test deployment query",
+  "slug": "test-query-slut",
+  "query": "{\nvms{}\n}"
+}
