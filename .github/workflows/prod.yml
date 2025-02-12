@@ -50,9 +50,9 @@ jobs:
         run: |
           # Handle GRC queries
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            aws s3 cp $file s3://${{ vars.S3_BUCKET_NAME }}/$file
+            aws s3 cp $file s3://${{ vars.GRC_BUCKET_NAME }}/$file
           done
 
           for file in ${{ steps.changed-files.outputs.deleted_files }}; do
-            aws s3 rm s3://${{ vars.S3_BUCKET_NAME }}/$file
+            aws s3 rm s3://${{ vars.GRC_BUCKET_NAME }}/$file
           done
