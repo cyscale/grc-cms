@@ -55,75 +55,67 @@ jobs:
         with:
           files: |
             mitre/mappings/**
-      - name: Login
-        uses: azure/login@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
-          tenant-id: ${{ vars.AZ_TENANT_ID }}
-          client-id: ${{ vars.AZ_CLIENT_ID }}
+          role-to-assume: ${{ vars.GRC_CMS_UPLOAD_ROLE_ARN }}
+          aws-region: ${{ vars.GRC_BUCKET_REGION }}
       - name: Deploy
-        uses: azure/cli@v2
         with:
           azcliversion: 2.68.0
           inlineScript: |
             # Handle GRC queries
             for file in ${{ steps.grc-changed-queries.outputs.all_changed_files }}; do
-              slug=$(cat $file | jq -r '.slug')
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
             done
 
             for file in ${{ steps.grc-changed-queries.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+              aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }}/$file/
             done
 
-            # Handle GRC controls
-            for file in ${{ steps.grc-changed-controls.outputs.all_changed_files }}; do
-              slug=$(cat $file | jq -r '.slug')
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            for file in ${{ steps.grc-changed-controls.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            # Handle GRC policies
-            for file in ${{ steps.grc-changed-policies.outputs.all_changed_files }}; do
-              slug=$(cat $file | jq -r '.slug')
-
-              az storage blob upload -c grc --file $file --name $file --overwrite --metadata slug=$slug --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            for file in ${{ steps.grc-changed-policies.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            # Handle MITRE tactics
-            for file in ${{ steps.mitre-changed-tactics.outputs.all_changed_files }}; do
-              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            for file in ${{ steps.mitre-changed-tactics.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            # Handle MITRE techniques
-            for file in ${{ steps.mitre-changed-techniques.outputs.all_changed_files }}; do
-              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            for file in ${{ steps.mitre-changed-techniques.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            # Handle MITRE mappings
-            for file in ${{ steps.mitre-changed-mappings.outputs.all_changed_files }}; do
-              az storage blob upload -c grc --file $file --name $file --overwrite --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            for file in ${{ steps.mitre-changed-mappings.outputs.deleted_files }}; do
-              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
-            done
-
-            rm -f entity.json
+#            # Handle GRC controls
+#            for file in ${{ steps.grc-changed-controls.outputs.all_changed_files }}; do
+#              aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+#            done
+#
+#            for file in ${{ steps.grc-changed-controls.outputs.deleted_files }}; do
+#              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+#            done
+#
+#            # Handle GRC policies
+#            for file in ${{ steps.grc-changed-policies.outputs.all_changed_files }}; do
+#              aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+#            done
+#
+#            for file in ${{ steps.grc-changed-policies.outputs.deleted_files }}; do
+#              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+#            done
+#
+#            # Handle MITRE tactics
+#            for file in ${{ steps.mitre-changed-tactics.outputs.all_changed_files }}; do
+#              aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+#            done
+#
+#            for file in ${{ steps.mitre-changed-tactics.outputs.deleted_files }}; do
+#              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+#            done
+#
+#            # Handle MITRE techniques
+#            for file in ${{ steps.mitre-changed-techniques.outputs.all_changed_files }}; do
+#              aws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+#            done
+#
+#            for file in ${{ steps.mitre-changed-techniques.outputs.deleted_files }}; do
+#              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+#            done
+#
+#            # Handle MITRE mappings
+#            for file in ${{ steps.mitre-changed-mappings.outputs.all_changed_files }}; do
+#              aaws s3 cp $file/ s3://${{ secrets.S3_BUCKET_NAME }}/$file/
+#            done
+#
+#            for file in ${{ steps.mitre-changed-mappings.outputs.deleted_files }}; do
+#              az storage blob delete -c grc --name $file --account-name ${{ vars.AZ_STORAGE_ACCOUNT_NAME }} --auth-mode login
+#            done
+#
+#            rm -f entity.json
