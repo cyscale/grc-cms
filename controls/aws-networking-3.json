@@ -16,7 +16,7 @@
       ],
       "query": "aws-networking-3-the-default-security-group-of-every-vpc-restricts-all-traffic",
       "returnPath": "",
-      "applicableAssetsQuery": "query ($options: SecurityGroupOptions) {\n  securityGroups(options: $options, where: { groupName: \"default\" }) {\n    ...AssetFragment\n  }\n}",
+      "applicableAssetsQuery": "query ($options: SecurityGroupOptions, $failedAssetsIdentifiers: [ID!]) {\n  securityGroups(\n    options: $options\n    where: {\n      NOT: { identifier_IN: $failedAssetsIdentifiers }\n      groupName: \"default\"\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
       "isManual": false
     }
   ],
