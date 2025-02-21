@@ -15,7 +15,7 @@
         "CloudSQLInstance"
       ],
       "query": "gcp-query-local-infile-db-flag-mysql",
-      "applicableAssetsQuery": "query ($options: CloudSQLInstanceOptions) {\n  cloudSqlInstances(options: $options, where: { engine: \"mysql\" }) {\n    ...AssetFragment\n  }\n}",
+      "applicableAssetsQuery": "query ($options: CloudSQLInstanceOptions, $failedAssetsIdentifiers: [ID!]) {\n  cloudSqlInstances(\n    options: $options\n    where: { NOT: { identifier_IN: $failedAssetsIdentifiers }, engine: \"mysql\" }\n  ) {\n    ...AssetFragment\n  }\n}",
       "isManual": false
     }
   ],
