@@ -1,1 +1,5 @@
-{"name":"Basic Authentication is disabled on Kubernetes Engine Clusters","slug":"gcp-kubernetes-10-basic-authentication-is-disabled-on-kubernetes-engine-clusters","query":"gkeClusters(where:{masterAuthUsername:\"\" masterAuthPassword:\"\"}){...AssetFragment}"}
+{
+    "name":"Basic Authentication is disabled on Kubernetes Engine Clusters",
+    "slug":"gcp-kubernetes-10-basic-authentication-is-disabled-on-kubernetes-engine-clusters",
+    "query":"{gkeClusters(where:{OR:[{masterAuthUsername_NOT:\"\" masterAuthPassword_NOT:\"\"}]}){...AssetFragment}}"
+}
