@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure AWS Lambda functions are covered by Amazon Inspector",
+  "description": "AWS Lambda functions without Amazon Inspector vulnerability scanning coverage",
+  "slug": "aws-lambda-inspector-enabled",
+  "body": "Amazon Inspector provides continuous vulnerability assessment for eligible AWS Lambda functions and layers. Without Lambda standard scanning, dependency vulnerabilities reported by AWS are not surfaced for the function, which weakens vulnerability management for serverless workloads.\n\nEnable Lambda scanning for accounts and Regions where Lambda is used, then investigate any findings by severity, exploitability, and exposure. Note that AWS currently excludes Lambda functions encrypted with customer-managed KMS keys from Lambda scanning; those functions need compensating dependency and code scanning in CI/CD.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "aws-lambda-functions-without-inspector-coverage",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable Amazon Inspector Lambda standard scanning in the account and Region. Add Lambda code scanning when your organization wants provider-reported code findings in addition to dependency findings.\n\n### AWS CLI\n\nEnable Lambda vulnerability scanning in the Region that owns the function:\n\n```bash\naws inspector2 enable \\\n  --region {{asset.region}} \\\n  --resource-types AWS_LAMBDA_FUNCTION AWS_LAMBDA_CODE\n```\n\nConfirm account scan status:\n\n```bash\naws inspector2 batch-get-account-status \\\n  --region {{asset.region}}\n```\n\nCheck Lambda coverage after Inspector has had time to scan eligible functions:\n\n```bash\naws inspector2 list-coverage \\\n  --region {{asset.region}} \\\n  --filter-criteria 'resourceType=[{comparison=EQUALS,value=AWS_LAMBDA_FUNCTION}]'\n```\n\n### Rollout guidance\n\n1. Enable Inspector from the security tooling or audit account where possible, and delegate administration through AWS Organizations.\n2. Triage findings by severity, exploitability, public exposure, and function criticality.\n3. Ensure eligible functions are invoked or updated periodically enough for Inspector coverage, and document intentionally excluded functions with expiry dates.\n4. For functions encrypted with customer-managed KMS keys, document the exception and enforce dependency/code scanning in CI/CD because AWS Inspector Lambda scanning does not currently cover them.\n5. Add the setting to account-baseline automation so new Regions do not drift.\n\n### References\n\n- https://docs.aws.amazon.com/inspector/latest/user/scanning-lambda.html\n- https://docs.aws.amazon.com/cli/latest/reference/inspector2/enable.html",
+  "isEnabled": true
+}

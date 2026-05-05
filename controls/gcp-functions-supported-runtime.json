@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Google Cloud Functions use a supported runtime",
+  "description": "Google Cloud Functions using deprecated or decommissioned runtimes",
+  "slug": "gcp-functions-supported-runtime",
+  "body": "Google Cloud Functions runtimes follow a lifecycle with general availability, deprecation, and decommissioning phases. Deprecated runtimes lose runtime support, and decommissioned runtimes can block creation or updates and may eventually stop running.\n\nUpgrade functions before runtime decommissioning so security fixes, base image updates, and platform support remain available.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "gcp-functions-with-deprecated-runtime",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nUpgrade the function to a currently supported runtime. Rebuild dependencies, test triggers, and redeploy with the same operational settings used by the existing function.\n\n### gcloud CLI\n\nReplace `{{manual.targetRuntime}}` with the approved supported runtime, such as `nodejs22`, `python313`, `go125`, `java21`, `ruby34`, `php84`, or `dotnet8` where applicable. Keep the trigger, ingress, service account, environment, and generation flags from the current deployment.\n\n```bash\ngcloud functions deploy {{asset.name}} \\\n  --region {{asset.region}} \\\n  --runtime {{manual.targetRuntime}}\n```\n\nValidate the deployed runtime:\n\n```bash\ngcloud functions describe {{asset.name}} \\\n  --region {{asset.region}} \\\n  --format='value(runtime)'\n```\n\n### Rollout guidance\n\n1. Test the runtime change in a non-production project or with a duplicate function and the same trigger type.\n2. Rebuild native dependencies and confirm Functions Framework compatibility.\n3. Update Terraform, deployment manifests, or CI/CD templates so the old runtime cannot be redeployed.\n4. Prioritize functions with public HTTP endpoints, privileged service accounts, or sensitive data paths.\n\n### References\n\n- https://docs.cloud.google.com/functions/docs/runtime-support\n- https://docs.cloud.google.com/run/docs/runtimes/function-runtimes",
+  "isEnabled": true
+}

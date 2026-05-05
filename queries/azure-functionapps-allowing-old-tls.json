@@ -1,0 +1,5 @@
+{
+  "name": "Azure Function Apps allowing old TLS",
+  "slug": "azure-functionapps-allowing-old-tls",
+  "query": "{\n  functionApps(\n    where: { configs_SOME: { NOT: { minTlsVersion_IN: [\"1.2\", \"1.3\"] } } }\n  ) {\n    ...AssetFragment\n  }\n}"
+}

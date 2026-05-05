@@ -1,68 +1,100 @@
 {
-  "body": "Cyscale looks for managed databases that are not encrypted. Security attacks are inevitable, however, with encryption in place, intruders will not be able to analyse or understand the data they gain access to in the event of a breach.",
+  "body": "### Overview\n\nCyscale looks for managed databases that are not encrypted. Security attacks are inevitable, however, with encryption in place, intruders will not be able to analyse or understand the data they gain access to in the event of a breach.",
   "name": "Ensure databases are encrypted",
   "slug": "databases-with-no-encryption",
   "isInsight": false,
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["MySQLServer"],
+      "subjects": [
+        "MySQLServer"
+      ],
       "query": "azure-mysql-servers-with-no-encryption"
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["MySQLFlexibleServer"],
+      "subjects": [
+        "MySQLFlexibleServer"
+      ],
       "query": "azure-mysql-flexible-servers-with-no-encryption"
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["PostgreSQLServer"],
+      "subjects": [
+        "PostgreSQLServer"
+      ],
       "query": "azure-postgresql-servers-with-no-encryption"
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["PostgreSQLFlexibleServer"],
+      "subjects": [
+        "PostgreSQLFlexibleServer"
+      ],
       "query": "azure-postgresql-flexible-servers-with-no-encryption"
     },
     {
-      "cloudProviders": ["aws"],
+      "cloudProviders": [
+        "aws"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DBInstance"],
+      "subjects": [
+        "DBInstance"
+      ],
       "query": "aws-rds-with-no-encryption"
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "alibaba"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DBInstance"],
+      "subjects": [
+        "DBInstance"
+      ],
       "query": "apsaradb-rds-with-no-encryption"
     },
     {
-      "cloudProviders": ["gcp"],
+      "cloudProviders": [
+        "gcp"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CloudSQLInstance"],
+      "subjects": [
+        "CloudSQLInstance"
+      ],
       "query": "gcp-cloudsql-with-no-ecryption"
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["MariaDBServer"],
+      "subjects": [
+        "MariaDBServer"
+      ],
       "query": "azure-mariadb-servers-with-no-encryption"
     }
   ],
-  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\nIn AWS, you can only encrypt a database when you create it. However, you can create a snapshot of a database, encrypt that snapshot, and restore it as encrypted. \n\n\r\n\r\n**From the Console**\n\n\r\n\r\nPerform the following actions to create an encrypted database instance from the current one:\n\n\r\n\r\n1. Open the security settings using the \"Open in AWS\" menu option\r\n2. Select `Actions`, and then `Take a snapshot`\r\n3. Give it a name and click `Take snapshot`\r\n4. Select the newly created snapshot, and then `Actions`, `Copy snapshot`\r\n5. Select the region and give it a name\r\n6. Select a KMS key to encrypt the database with\r\n7. After you created the copy, select it\r\n8. Select `Actions`, and then `Restore snapshot`\r\n9. Select the appropriate settings and click `Restore DB Instance`\n\n\r\n\r\n**Default Value**\n\n\r\n\r\nBy default, encryption is turned on when creating a new database.\n\n\r\n\r\n**References**\n\n\r\n\r\n1. [Encrypting Amazon RDS resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html)\r\n2. [Copying a DB snapshot\r](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html)\r\n\n\n#### Azure\n* [Data encryption for Azure Database for MySQL by using the Azure portal](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-data-encryption-portal)\n* [Data encryption for Azure Database for MySQL - Flexible Server by using the Azure portal Preview](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-data-encryption-portal)\n* [Data encryption for Azure Database for PostgreSQL Single server by using the Azure portal](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-data-encryption-portal)\n* [Security in Azure Database for PostgreSQL - Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-security)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/faq#encryption)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/configure-disk-encryption-for-an-apsaradb-rds-for-mysql-instance)",
+  "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\nIn AWS, you can only encrypt a database when you create it. However, you can create a snapshot of a database, encrypt that snapshot, and restore it as encrypted. \n\n\n\n**From the Console**\n\n\n\nPerform the following actions to create an encrypted database instance from the current one:\n\n\n\n1. Open the security settings using the \"Open in AWS\" menu option\n2. Select `Actions`, and then `Take a snapshot`\n3. Give it a name and click `Take snapshot`\n4. Select the newly created snapshot, and then `Actions`, `Copy snapshot`\n5. Select the region and give it a name\n6. Select a KMS key to encrypt the database with\n7. After you created the copy, select it\n8. Select `Actions`, and then `Restore snapshot`\n9. Select the appropriate settings and click `Restore DB Instance`\n\n\n\n**Default Value**\n\n\n\nBy default, encryption is turned on when creating a new database.\n\n\n\n**References**\n\n\n\n1. [Encrypting Amazon RDS resources](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html)\n2. [Copying a DB snapshot\r](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html)\n\n\n#### Azure\n* [Data encryption for Azure Database for MySQL by using the Azure portal](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-data-encryption-portal)\n* [Data encryption for Azure Database for MySQL - Flexible Server by using the Azure portal Preview](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-data-encryption-portal)\n* [Data encryption for Azure Database for PostgreSQL Single server by using the Azure portal](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-data-encryption-portal)\n* [Security in Azure Database for PostgreSQL - Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-security)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/faq#encryption)\n\n#### Alibaba\n* [ApsaraDB](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/configure-disk-encryption-for-an-apsaradb-rds-for-mysql-instance)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Azure\nUse management group or subscription Azure Policy assignments, remediation tasks where supported, landing-zone standards, and IaC modules so drift is prevented at scale.\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n### Alibaba Cloud\nUse Resource Directory guardrails, account baselines, and IaC modules so the secure setting is applied consistently across environments.\n### Google Cloud\nUse organization or folder policies where available, shared project templates, logs and alerting baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
   "description": "Databases with no encryption",
   "severity": 3

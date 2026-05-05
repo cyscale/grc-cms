@@ -17,7 +17,8 @@
       "query": "eks-clusters-without-secrets-encryption"
     }
   ],
-  "remediationDescription": "This process can only be performed during Cluster Creation.\r\nEnable 'Secrets Encryption' during Amazon EKS cluster creation as described in the \r\nlinks within the 'References' section.\n\n**References**\n\n1. [https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/](https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/)",
+  "remediationDescription": "This process can only be performed during Cluster Creation.\nEnable 'Secrets Encryption' during Amazon EKS cluster creation as described in the \nlinks within the 'References' section.\n\n**References**\n\n1. [https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/](https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
-  "severity": 2
+  "severity": 2,
+  "description": "Kubernetes Secrets are encrypted using Customer Master Keys (CMKs) managed in AWS KMS"
 }

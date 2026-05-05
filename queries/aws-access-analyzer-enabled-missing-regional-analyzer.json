@@ -1,0 +1,5 @@
+{
+  "name": "Access analyzers not active",
+  "slug": "aws-access-analyzer-enabled-missing-regional-analyzer",
+  "query": "{ accessAnalyzers(where: { OR: [ { status_NOT: \"ACTIVE\" }, { type_NOT_IN: [\"ACCOUNT\", \"ORGANIZATION\"] } ] }) { ...AssetFragment } }"
+}

@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Function App runtime version is currently supported",
+  "description": "Function Apps with deprecated runtime stacks",
+  "slug": "azure-function-app-supported-runtime",
+  "body": "Function App runtime stacks eventually go out of support as language versions and platform images age. Unsupported runtimes can carry unpatched vulnerabilities, may block platform upgrades, and often prevent teams from consuming current security features.\n\nRuntime upgrades should be handled as a release-management activity: validate code compatibility, update dependencies, redeploy, and monitor the new version.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-with-unsupported-runtime",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nMove the Function App to a supported runtime stack. The exact command depends on the operating system and language stack, so validate the target runtime in a staging slot or non-production app first.\n\n### Azure CLI\n\nInspect the current runtime settings:\n\n```bash\naz functionapp config show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query '{linuxFxVersion:linuxFxVersion,nodeVersion:nodeVersion,pythonVersion:pythonVersion,javaVersion:javaVersion,powerShellVersion:powerShellVersion,netFrameworkVersion:netFrameworkVersion}'\n```\n\nFor Linux Function Apps, set the target runtime stack. Replace `{{manual.linuxFxVersion}}` with the approved stack value, for example a currently supported `PYTHON|...`, `NODE|...`, `DOTNET-ISOLATED|...`, or `JAVA|...` value.\n\n```bash\naz functionapp config set \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --linux-fx-version \"{{manual.linuxFxVersion}}\"\n```\n\nFor Windows Function Apps, update the language-specific setting supported by your stack and deployment model, then redeploy the function package from CI/CD.\n\n### Rollout guidance\n\n1. Update application dependencies and build images/packages against the target runtime.\n2. Use deployment slots for production Function Apps and swap only after health checks pass.\n3. Validate triggers, bindings, managed identity access, and outbound dependencies after redeploy.\n4. Add CI/CD checks so unsupported runtime stack values cannot be reintroduced.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/azure-functions/supported-languages\n- https://learn.microsoft.com/en-us/cli/azure/functionapp/config",
+  "isEnabled": true
+}

@@ -1,0 +1,35 @@
+{
+  "display_name": "Account Manipulation - T1098",
+  "mid": "T1098",
+  "controls": [
+    "aws-1-3-0-iam-16",
+    "aws-1-3-0-iam-18",
+    "aws-1-3-0-iam-7",
+    "aws-iam-16",
+    "aws-iam-18",
+    "aws-iam-7",
+    "aws-iam-8",
+    "cis-alibaba-1-0-0-iam-16",
+    "cis-alibaba-1-0-0-iam-7",
+    "cis-alibaba-1-0-0-iam-8",
+    "gcp-iam-7",
+    "gcp-iam-8",
+    "gcp-project-lvl-service-account-roles",
+    "gcp-separation-of-duties-service-account",
+    "gcp-service-account-admin-privileges",
+    "identities-allowing-external-access",
+    "service-ids-with-access-to-everything"
+  ],
+  "assets": [
+    "User",
+    "IAMUser",
+    "IAMRole",
+    "IAMGroup",
+    "IAMServiceAccount",
+    "ManagedIdentity",
+    "ServicePrincipal"
+  ],
+  "propagators": [
+    "IAMPolicy"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Cloud Run services are not publicly accessible",
+  "description": "Cloud Run services",
+  "slug": "publicly-accessible-cloud-run-services",
+  "body": "Cloud Run services that allow unauthenticated invocation are reachable without caller identity checks. Public access is sometimes intentional for websites or public APIs, but it should be explicitly approved and protected with compensating controls.\n\nFor internal services, APIs, webhooks, admin tools, and service-to-service workloads, require authenticated invocation and grant `roles/run.invoker` only to the users, groups, or service accounts that should call the service.",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudRunService"
+      ],
+      "query": "publicly-accessible-cloud-run-services",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nRequire authentication for the Cloud Run service and remove public `allUsers` / `allAuthenticatedUsers` invoker bindings unless the service is intentionally public and risk-accepted.\n\n### Google Cloud CLI\n\nRemove public invoker access from the service:\n\n```bash\ngcloud run services remove-iam-policy-binding {{asset.name}} \\\n  --project {{asset.cloudAccountID}} \\\n  --region {{asset.region}} \\\n  --member allUsers \\\n  --role roles/run.invoker\n```\n\nIf the service uses the newer Cloud Run invoker IAM check setting, ensure the invoker IAM check is enabled:\n\n```bash\ngcloud run services update {{asset.name}} \\\n  --project {{asset.cloudAccountID}} \\\n  --region {{asset.region}} \\\n  --invoker-iam-check\n```\n\nGrant invocation only to approved callers. Replace `{{manual.invokerMember}}` with a specific user, group, or service account principal.\n\n```bash\ngcloud run services add-iam-policy-binding {{asset.name}} \\\n  --project {{asset.cloudAccountID}} \\\n  --region {{asset.region}} \\\n  --member {{manual.invokerMember}} \\\n  --role roles/run.invoker\n```\n\n### Validation\n\n```bash\ngcloud run services get-iam-policy {{asset.name}} \\\n  --project {{asset.cloudAccountID}} \\\n  --region {{asset.region}}\n```\n\n### Rollout guidance\n\n1. Confirm whether the service is intended to be public. If yes, document the owner, business reason, and compensating controls.\n2. For private services, update clients to authenticate with IAM, service-to-service identity, or an approved API gateway.\n3. Monitor 401/403 responses after enforcing authentication to catch missed callers.\n4. Use organization policy and CI/CD checks to prevent accidental public services.\n\n### References\n\n- https://cloud.google.com/run/docs/authenticating/public\n- https://cloud.google.com/run/docs/securing/managing-access\n- https://cloud.google.com/sdk/gcloud/reference/run/services/update",
+  "isEnabled": true
+}

@@ -1,1 +1,22 @@
-{"name":"Ensure EC2 Instances are deployed in a VPC","slug":"aws-networking-7","body":"If you created your AWS account before December 4, 2013, you might have support for EC2-Classic in some AWS Regions. Some Amazon EC2 resources and features, such as enhanced networking and newer instance types, require a virtual private cloud (VPC).\n\nAWS and we recommend that you migrate to a VPC to take advantage of VPC-only features.","description":"","severity":2,"remediationDescription":"Follow the steps described in the [AWS Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html) on how to migrate from EC2-Classic to VPC","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["VM"],"query":"aws-networking-7-ec2-instances-are-deployed-in-a-vpc","returnPath":""}]}
+{
+  "name": "Ensure EC2 Instances are deployed in a VPC",
+  "slug": "aws-networking-7",
+  "body": "If you created your AWS account before December 4, 2013, you might have support for EC2-Classic in some AWS Regions. Some Amazon EC2 resources and features, such as enhanced networking and newer instance types, require a virtual private cloud (VPC).\n\nAWS and we recommend that you migrate to a VPC to take advantage of VPC-only features.",
+  "description": "EC2 Instances are deployed in a VPC",
+  "severity": 2,
+  "remediationDescription": "## AWS remediation\n\nInstances should run in VPC-based networking.\n\n### Console\n1. Create/select VPC and subnets.\n2. Launch replacement instances in VPC.\n3. Cut over traffic and retire legacy configuration.\n\n### AWS CLI\n~~~bash\naws ec2 run-instances \\\n  --image-id <ami-id> \\\n  --instance-type <instance-type> \\\n  --subnet-id <subnet-id> \\\n  --security-group-ids <sg-id>\n~~~\n\n### References\n- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html\n- https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "aws-networking-7-ec2-instances-are-deployed-in-a-vpc",
+      "returnPath": ""
+    }
+  ]
+}

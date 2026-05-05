@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure public AWS Lambda function URLs restrict CORS origins",
+  "description": "Public Lambda function URLs allowing wildcard CORS origins",
+  "slug": "aws-lambda-function-url-cors-restricted",
+  "body": "Lambda function URLs with `AuthType` set to `NONE` are reachable without AWS IAM authentication. If those public endpoints also allow wildcard CORS origins, browsers can call the function from any website, increasing the impact of weak application-layer authorization, unsafe methods, or token handling mistakes.\n\nFor browser-facing functions, restrict CORS to the exact trusted origins and methods that need access. For non-browser callers, remove CORS entirely.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "aws-lambda-function-urls-with-wildcard-cors",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nReplace wildcard CORS on public Lambda function URLs with explicit trusted origins, methods, and headers. If the endpoint is not intended for direct browser calls, remove the CORS configuration.\n\n### AWS CLI\n\nSet explicit allowed origins. Replace `{{manual.allowedOrigin}}` with the approved application origin.\n\n```bash\naws lambda update-function-url-config \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --cors AllowOrigins={{manual.allowedOrigin}},AllowMethods=GET,POST,AllowHeaders=content-type,authorization\n```\n\nIf the endpoint should not be public, require IAM authentication instead:\n\n```bash\naws lambda update-function-url-config \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --auth-type AWS_IAM\n```\n\n### Validation\n\n```bash\naws lambda get-function-url-config \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --query '{AuthType:AuthType,Cors:Cors}'\n```\n\n### References\n\n- https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html\n- https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html",
+  "isEnabled": true
+}

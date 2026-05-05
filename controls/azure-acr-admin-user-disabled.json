@@ -1,0 +1,25 @@
+{
+  "body": "ACR admin user exposes a shared username and password for the whole registry. It should normally be disabled in favor of Microsoft Entra ID, managed identities, and RBAC.\n\n### Why this matters\n\nShared credentials are harder to rotate, harder to scope, and much harder to attribute during investigations.",
+  "name": "Ensure Azure Container Registry admin user is disabled",
+  "slug": "azure-acr-admin-user-disabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ContainerRegistry"
+      ],
+      "query": "azure-acr-admin-user-disabled-registries-with-admin-user-enabled",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Azure Remediation\n\n> **Service-wide fix (recommended):** disable ACR admin user by policy and make Entra ID or managed identity auth the default registry access pattern.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many registries are affected or when teams still rely on shared registry credentials.\n\n### Azure portal\n\n1. Open the affected Container Registry.\n2. Go to `Access keys`.\n3. Set `Admin user` to `Disabled`.\n4. Confirm workloads authenticate with Entra ID, `AcrPull` / `AcrPush`, or repository-scoped permissions before removing the shared credential path.\n\n### Azure CLI\n\nDisable the admin user:\n\n~~~bash\naz acr update \\\n  --name <acr-name> \\\n  --resource-group <resource-group> \\\n  --admin-enabled false\n~~~\n\nValidate the setting:\n\n~~~bash\naz acr show \\\n  --name <acr-name> \\\n  --resource-group <resource-group> \\\n  --query adminUserEnabled\n~~~\n\n### Operational notes\n\n- Before disabling the admin user, identify old scripts, CI jobs, or third-party tools that still use registry username and password authentication.\n- Prefer managed identities for Azure-hosted workloads and Entra ID plus RBAC for users and automation outside Azure.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication",
+  "isEnabled": false,
+  "description": "Azure Container Registries with admin user enabled",
+  "severity": 2
+}

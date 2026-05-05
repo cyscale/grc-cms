@@ -1,0 +1,23 @@
+{
+  "body": "### Overview\n\nArtifact Registry repositories should not be exposed to unauthenticated or broadly authenticated principals such as `allUsers` or `allAuthenticatedUsers`. Public repositories increase the blast radius of accidental image disclosure and make supply-chain reconnaissance easier for attackers.",
+  "name": "Ensure Artifact Registry repositories are not publicly accessible",
+  "slug": "publicly-accessible-artifact-registry-repositories",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ArtifactRegistryRepository"
+      ],
+      "query": "publicly-accessible-artifact-registry-repositories"
+    }
+  ],
+  "remediationDescription": "#### From Google Cloud Console\n\n1. Open the affected Artifact Registry repository.\n2. Review IAM bindings on the repository.\n3. Remove `allUsers` and `allAuthenticatedUsers` members.\n4. Grant only the specific principals or service accounts that require repository access.\n\n#### Using gcloud\n\n```bash\ngcloud artifacts repositories remove-iam-policy-binding <repository> --location=<location> --member=<member> --role=<role>\n```",
+  "description": "Publicly accessible Artifact Registry repositories",
+  "severity": 3
+}

@@ -1,6 +1,20 @@
 {
   "display_name": "Brute Force - T1110",
   "mid": "T1110",
-  "controls": ["aws-iam-13"],
-  "assets": ["Connector", "User"]
+  "controls": [
+    "aws-iam-13",
+    "entra-custom-bad-password-list",
+    "entra-lockout-duration",
+    "entra-lockout-threshold",
+    "entra-mfa-policy-for-all-users",
+    "entra-mfa-risky-sign-ins",
+    "entra-notify-admins-on-admin-password-resets",
+    "entra-notify-users-on-password-reset",
+    "idp-users-with-old-password",
+    "okta-weak-password-policies"
+  ],
+  "assets": [
+    "Connector",
+    "User"
+  ]
 }

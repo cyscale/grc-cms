@@ -1,0 +1,25 @@
+{
+  "body": "Subnetwork-level hardening should include Private Google Access for workloads without external IP addresses and VPC Flow Logs for monitoring and forensic use.\n\n### Why this matters\n\nPrivate Google Access lets internal-only workloads reach Google APIs without public IP exposure, while Flow Logs give network visibility during investigations.\n\n### What this control should detect\n\nSubnetworks where either Private Google Access is disabled or VPC Flow Logs are disabled.",
+  "name": "Ensure subnetworks enable Private Google Access and Flow Logs",
+  "slug": "gcp-subnetwork-private-google-access-and-flow-logs",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Subnetwork"
+      ],
+      "query": "gcp-subnetwork-private-google-access-and-flow-logs-subnets-without-required-settings",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Google Cloud Remediation\n\n> **Service-wide fix (recommended):** make these subnet settings part of your Shared VPC or subnet provisioning standard so new private subnets are born compliant.\n\n### When to use service-wide remediation\n\nUse the service-wide path when multiple projects or teams create subnetworks from the same platform patterns.\n\n### Google Cloud console\n\n1. Open `VPC network` -> `VPC networks`.\n2. Select the affected subnet.\n3. Enable `Private Google Access`.\n4. Enable `Flow logs`.\n5. Confirm the logging destination and retention model used by your organization.\n\n### Google Cloud CLI\n\nEnable both settings on the subnet:\n\n~~~bash\ngcloud compute networks subnets update <subnet-name> \\\n  --region=<region> \\\n  --enable-private-ip-google-access \\\n  --enable-flow-logs\n~~~\n\nValidate the subnet:\n\n~~~bash\ngcloud compute networks subnets describe <subnet-name> \\\n  --region=<region>\n~~~\n\n### Operational notes\n\n- Private Google Access is most useful for workloads that do not have external IP addresses but still need to reach Google APIs and services.\n- Flow Logs are not a packet capture. They are sampled connection metadata, which is still very useful for detection and incident response.\n- If you need more control over Flow Logs volume or metadata fields, tune the Flow Logs settings after enabling the feature.\n\n### References\n\n- https://cloud.google.com/vpc/docs/private-google-access\n- https://docs.cloud.google.com/vpc/docs/configure-private-google-access\n- https://docs.cloud.google.com/vpc/docs/flow-logs\n- https://cloud.google.com/vpc/docs/using-flow-logs",
+  "isEnabled": false,
+  "description": "Subnetworks missing Private Google Access or Flow Logs",
+  "severity": 2
+}

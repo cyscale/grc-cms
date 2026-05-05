@@ -1,0 +1,37 @@
+{
+  "display_name": "Modify Authentication Process: Multi-Factor Authentication - T1556.006",
+  "mid": "T1556.006",
+  "controls": [
+    "admins-with-enabled-mfa",
+    "aws-iam-13",
+    "azure-compute-mfa-privileged-vms",
+    "azure-mfa-all-users",
+    "azure-mfa-privileged-users",
+    "azuread-legacy-remember-mfa-device",
+    "datastores-accessible-by-users-without-mfa",
+    "entra-lockout-duration",
+    "entra-lockout-threshold",
+    "entra-mfa-admin-portals",
+    "entra-mfa-azure-service-mgmt-api",
+    "entra-mfa-policy-for-admins",
+    "entra-mfa-policy-for-all-users",
+    "entra-mfa-risky-sign-ins",
+    "entra-min-number-of-methods-for-sspr",
+    "entra-notify-admins-on-admin-password-resets",
+    "entra-notify-users-on-password-reset",
+    "entra-require-mfa-to-register-devices",
+    "entra-security-defaults-enabled",
+    "entra-trusted-locations",
+    "users-without-mfa"
+  ],
+  "assets": [
+    "Connector",
+    "User",
+    "IAMUser",
+    "IAMServiceAccount",
+    "ManagedIdentity"
+  ],
+  "propagators": [
+    "IAMPolicy"
+  ]
+}

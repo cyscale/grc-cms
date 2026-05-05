@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Azure Function Apps have remote debugging disabled",
+  "description": "Azure Function Apps with remote debugging enabled",
+  "slug": "azure-function-app-remote-debugging-disabled",
+  "body": "Remote debugging opens additional management access paths to the Function App runtime and should only be enabled temporarily during active troubleshooting. Leaving it enabled in production increases the blast radius of compromised developer credentials or exposed management endpoints.\n\nDisable remote debugging except for short, approved maintenance windows.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-with-remote-debugging-enabled",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nDisable remote debugging on the Function App.\n\n### Azure CLI\n\n```bash\naz resource update \\\n  --ids {{asset.idFromProvider}}/config/web \\\n  --set properties.remoteDebuggingEnabled=false\n```\n\nValidate the setting:\n\n```bash\naz resource show \\\n  --ids {{asset.idFromProvider}}/config/web \\\n  --query 'properties.remoteDebuggingEnabled'\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts\n- https://learn.microsoft.com/en-us/azure/app-service/configure-common",
+  "isEnabled": true
+}

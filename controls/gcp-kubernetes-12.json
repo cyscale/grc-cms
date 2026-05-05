@@ -1,1 +1,22 @@
-{"name":"Ensure Kubernetes Cluster is created with Client Certificate enabled","slug":"gcp-kubernetes-12","body":"A client certificate is a base64-encoded public certificate used by clients to authenticate to the cluster endpoint.\n\n**Rationale**\n\nIf you disable client certificate generation to create a cluster without a client certificate. You will still be able to authenticate to the cluster with basic auth or IAM. But basic auth allows a user to authenticate to the cluster with a username and password which are stored in plain text without any encryption and might lead brute force attacks.","description":"","severity":2,"remediationDescription":"**Using Console**\n\n1. Go to Kubernetes GCP Console by visiting\nhttps://console.cloud.google.com/kubernetes/list?\n2. Click on CREATE CLUSTER\n3. Choose required name/value for cluster fields\n4. Click on More\n5. Set Client certificate to Enabled\n6. Click on Create\n\n**Using Command Line**\n\nTo enable Network policy for an existing cluster, run the following command:\n\n```bash\ngcloud container clusters create \\[CLUSTER_NAME\\] --zone \\[COMPUTE_ZONE\\] --issue-client-certificate\n```\n\n**Impact**\n\nCluster create command will create a new cluster with Client certificate enabled, But already existing once are remains unchanged.\n\n**Default Value**\n\nBy default, the Client certificate is enabled when you create a new cluster.\n\n**References**\n\n1. https://cloud.google.com/sdk/gcloud/reference/container/clusters/create","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["Cluster"],"query":"gcp-kubernetes-12-kubernetes-cluster-is-created-with-client-certificate-enabled","returnPath":""}]}
+{
+  "name": "Ensure legacy client certificate authentication is disabled on Kubernetes Engine Clusters",
+  "slug": "gcp-kubernetes-12",
+  "body": "Legacy GKE client certificate authentication issues an X.509 client certificate that can be used to authenticate to the Kubernetes API server. Google now recommends using IAM-backed access by default because client certificates add lifecycle, distribution, and revocation overhead.\n\n**Rationale**\n\nLong-lived client certificates are harder to rotate and govern than IAM-based cluster access. Unless you have a specific, documented use case, do not issue or rely on legacy client certificates for cluster administration.",
+  "description": "Cluster with legacy client certificate authentication enabled",
+  "severity": 2,
+  "remediationDescription": "**Using Command Line**\n\nFor new clusters, do not issue a legacy GKE client certificate:\n\n```bash\ngcloud container clusters create [CLUSTER_NAME]   --location [LOCATION]   --no-issue-client-certificate\n```\n\nValidate whether a cluster still has a legacy client certificate configured:\n\n```bash\ngcloud container clusters describe [CLUSTER_NAME]   --location [LOCATION]   --format='yaml(masterAuth)'\n```\n\n**Important limitation**\n\nGoogle documents that you cannot remove an already issued legacy client certificate from an existing cluster in place. For existing clusters, the practical remediation is to stop using certificate-based authentication, ensure RBAC and IAM-based access are in place, and replace or rebuild the cluster if your standard requires certificates to be fully absent.\n\n**Better platform fix**\n\nUse IAM credentials and the DNS-based endpoint for operator access. Only enable Kubernetes credentials such as client certificates when there is a clear technical requirement and compensating controls.\n\n**References**\n\n1. https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication\n2. https://cloud.google.com/kubernetes-engine/docs/concepts/network-isolation\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** stop issuing legacy client certificates in your cluster creation baseline and move operators to IAM-backed administration.\n\nUpdate cluster templates, platform pipelines, and runbooks so new clusters are created without legacy client certificates.\n\n## Operational rollout\n\n1. Identify whether any operators, CI jobs, or tools still rely on client-certificate authentication.\n2. Move those users to IAM-backed access first.\n3. For clusters that must be fully free of legacy certificates, rebuild or replace them under the new baseline.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Cluster"
+      ],
+      "query": "gcp-kubernetes-12-kubernetes-cluster-is-created-with-client-certificate-enabled",
+      "returnPath": ""
+    }
+  ]
+}

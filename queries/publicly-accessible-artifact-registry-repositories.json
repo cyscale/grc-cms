@@ -1,0 +1,5 @@
+{
+  "name": "Publicly accessible Artifact Registry repositories",
+  "slug": "publicly-accessible-artifact-registry-repositories",
+  "query": "{ artifactRegistryRepositories(where: { iamBindings_SOME: { OR: [ { members_INCLUDES: \"allAuthenticatedUsers\" }, { members_INCLUDES: \"allUsers\" } ] } }) { ...AssetFragment } }"
+}

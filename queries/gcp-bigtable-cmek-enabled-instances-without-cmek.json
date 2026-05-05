@@ -1,0 +1,5 @@
+{
+  "name": "Bigtable instances without CMEK",
+  "slug": "gcp-bigtable-cmek-enabled-instances-without-cmek",
+  "query": "{ bigTables(where: { encrypted: false }) { ...AssetFragment } }"
+}

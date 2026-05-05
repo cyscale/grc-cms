@@ -5,5 +5,25 @@
     "Bucket",
     "BlobContainer"
   ],
-  "controls": []
+  "controls": [
+    "aws-loadbalancing-1",
+    "aws-loadbalancing-2",
+    "aws-loadbalancing-3",
+    "azure-app-service-authentication",
+    "azure-app-service-basic-ftp-scm-auth",
+    "azure-app-service-ftp-deployment",
+    "azure-app-service-http-20",
+    "azure-app-service-https-only",
+    "azure-app-service-latest-tls",
+    "azure-app-service-managed-identity",
+    "azure-app-service-remote-debugging",
+    "azure-app-service-supported-java-stack",
+    "azure-application-gateway-waf-prevention-mode",
+    "azure-client-certs-web-app",
+    "azure-defender-for-app-services",
+    "azure-logging-http-app-service",
+    "gcp-load-balancers-logging",
+    "gcp-load-balancers-permit-ssl-weak-ciphers",
+    "ingresses-without-encrypted-traffic"
+  ]
 }

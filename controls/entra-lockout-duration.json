@@ -18,7 +18,8 @@
       "query": "entra-tenants-with-lockout-duration-too-low"
     }
   ],
-  "remediationDescription": "### Azure Portal\n\n1. Open the [Security | Authentication methods | Password protection](https://portal.azure.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/PasswordProtection).\n1. Set the `Lockout duration in seconds` to 60 or higher.\n1. Click `Save`,",
+  "remediationDescription": "### Azure Portal\n\n1. Open the [Security | Authentication methods | Password protection](https://portal.azure.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/PasswordProtection).\n1. Set the `Lockout duration in seconds` to 60 or higher.\n1. Click `Save`,\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Microsoft Entra ID\nUse tenant-wide Conditional Access, role settings, authentication policies, and identity governance baselines so the control is enforced centrally.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
-  "severity": 2
+  "severity": 2,
+  "description": "Account 'Lockout duration in seconds' is greater than or equal to '60'"
 }

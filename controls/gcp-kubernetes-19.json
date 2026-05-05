@@ -1,1 +1,22 @@
-{"name":"Ensure Kubernetes Engine uses HTTP load balancing","slug":"gcp-kubernetes-19","body":"HTTP/HTTPS load balancing provides global load balancing for HTTP/HTTPS requests destined for your cluster. Enabling HTTP/HTTPS load balancers will let the Kubernetes Engine to terminate unauthorized HTTP/HTTPS requests and make better context-aware load balancing decisions.","description":"","severity":2,"remediationDescription":"Before you proceed to enable HTTP load balancing, consult with your team to find out why it is disabled (it is enabled by default)\n\n.1. Login to GCP Portal\n2. Go to Kubernetes Engine (Left Panel)\n3. Select Kubernetes clusters\n4. From the list of clusters, choose the reported cluster\n5. Click on EDIT button\n6. Set 'HTTP load balancing' to Enabled\n7. Click on Save","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["Cluster"],"query":"gcp-kubernetes-19-kubernetes-engine-uses-http-load-balancing","returnPath":""}]}
+{
+  "name": "Ensure Kubernetes Engine uses HTTP load balancing",
+  "slug": "gcp-kubernetes-19",
+  "body": "The `HttpLoadBalancing` add-on enables GKE to manage HTTP and HTTPS load balancers for Ingress and related features. Disabling it can break supported ingress patterns and remove platform protections that depend on Google Cloud Load Balancing.\n\n**Rationale**\n\nThis is more of a platform capability control than a direct hardening control. If your environment uses GKE Ingress, container-native load balancing, or related load-balancer features, the add-on should remain enabled. If you do not use those features, document that decision explicitly instead of disabling the add-on by accident.",
+  "description": "Kubernetes Engine uses HTTP load balancing",
+  "severity": 2,
+  "remediationDescription": "**Using Google Cloud Console**\n\n1. Open `Kubernetes Engine` in Google Cloud Console.\n2. Select the affected cluster.\n3. Under `Networking`, edit `HTTP Load Balancing`.\n4. Enable the add-on and save the change.\n\n**Using Command Line**\n\nEnable the add-on:\n\n```bash\ngcloud container clusters update [CLUSTER_NAME]   --location [LOCATION]   --update-addons=HttpLoadBalancing=ENABLED\n```\n\nValidate the add-on state:\n\n```bash\ngcloud container clusters describe [CLUSTER_NAME]   --location [LOCATION]   --format='yaml(addonsConfig.httpLoadBalancing)'\n```\n\n**Important note**\n\nIn Autopilot clusters, this add-on cannot be disabled. If a finding appears there, verify the inventory data path before treating it as a real drift issue.\n\n**References**\n\n1. https://cloud.google.com/kubernetes-engine/docs/how-to/load-balance-ingress\n2. https://cloud.google.com/kubernetes-engine/docs/concepts/container-native-load-balancing\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** define whether GKE Ingress and related Google load-balancing features are part of your supported platform baseline, then keep this add-on aligned with that standard.\n\n## Operational rollout\n\n1. Confirm whether the cluster uses or is expected to support GKE Ingress features.\n2. Enable the add-on on supported clusters.\n3. Re-scan and document exceptions for clusters intentionally built without this capability.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Cluster"
+      ],
+      "query": "gcp-kubernetes-19-kubernetes-engine-uses-http-load-balancing",
+      "returnPath": ""
+    }
+  ]
+}

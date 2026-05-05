@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Function App is using the latest version of TLS encryption",
+  "description": "Function App is using the latest version of TLS encryption",
+  "slug": "azure-function-app-latest-tls",
+  "body": "Azure Function Apps should reject legacy TLS protocols for inbound connections. TLS 1.0 and TLS 1.1 are legacy protocols with known weaknesses, and Microsoft recommends requiring TLS 1.2 or later for Azure App Service platform resources, including Azure Functions.\n\nThis control helps ensure clients connect to the Function App and its SCM/Kudu management endpoint using modern transport security.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-allowing-old-tls",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nSet the Function App minimum inbound TLS version to TLS 1.2 or later. Also update the SCM/Kudu minimum TLS version because deployment, log streaming, and advanced tooling use that endpoint separately.\n\n### Azure CLI\n\nCheck the current site and SCM minimum TLS settings:\n\n```bash\naz functionapp show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query 'siteConfig.{siteTls:minTlsVersion,scmTls:scmMinTlsVersion}' \\\n  --output table\n```\n\nSet the main Function App endpoint to TLS 1.2 or later:\n\n```bash\naz functionapp config set \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --min-tls-version 1.2\n```\n\nSet the SCM/Kudu endpoint to TLS 1.2 or later:\n\n```bash\naz resource update \\\n  --ids \"{{asset.idFromProvider}}/config/web\" \\\n  --set properties.scmMinTlsVersion=1.2\n```\n\n### Rollout guidance\n\n1. Check recent traffic for TLS 1.0/1.1 clients before enforcing the change on critical public APIs.\n2. Coordinate client upgrades for legacy agents, embedded devices, older Java/.NET clients, and third-party webhook senders.\n3. Update deployment slots separately; each slot has independent TLS settings.\n4. Enforce the setting with Azure Policy after compatibility is confirmed.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/tls-minimum-version\n- https://learn.microsoft.com/en-us/azure/app-service/overview-tls",
+  "isEnabled": true
+}

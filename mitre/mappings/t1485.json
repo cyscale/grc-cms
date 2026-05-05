@@ -2,7 +2,20 @@
   "display_name": "Data Destruction - T1485 ",
   "mid": "T1485",
   "controls": [
-    "publicly-writable-object-containers"
+    "azure-admin-resource-locks",
+    "azure-alert-delete-nsg",
+    "azure-alert-delete-policy-assign",
+    "azure-alert-delete-public-ip-addr",
+    "azure-alert-delete-sec-solution",
+    "azure-alert-delete-sql-firewall",
+    "azure-mdc-vuln-assessment-for-machines",
+    "azure-soft-delete-containers-blobs",
+    "compute-with-exploitable-vulnerabilities",
+    "databases-without-deletion-protection",
+    "kms-keys-exposed-through-vulnerable-vms",
+    "kms-keys-scheduled-for-deletion",
+    "publicly-writable-object-containers",
+    "used-kms-keys-exposed-through-vulnerable-vms"
   ],
   "assets": [
     "Bucket"

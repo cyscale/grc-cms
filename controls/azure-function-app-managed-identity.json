@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Managed Identities Are Used for Function Apps",
+  "description": "Managed Identities not used for Function Apps",
+  "slug": "azure-function-app-managed-identity",
+  "body": "Managed identities let Azure Function Apps access Azure resources without storing client secrets, passwords, or long-lived credentials in app settings. A function without managed identity is more likely to rely on static credentials, which increases the impact of configuration disclosure, log leakage, and source-code exposure.\n\nUse a system-assigned identity for one-to-one lifecycle binding with the Function App, or a user-assigned identity when the same workload identity must be shared deliberately across apps.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-without-managed-identity",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable a managed identity for the Function App and migrate dependent Azure resource access away from static credentials. Grant only the minimum roles required by the function.\n\n### Azure CLI\n\nEnable a system-assigned managed identity:\n\n```bash\naz functionapp identity assign \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}}\n```\n\nCapture the assigned principal ID for role assignment planning:\n\n```bash\naz functionapp identity show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query principalId \\\n  --output tsv\n```\n\nGrant least-privilege access to the required resource scope. Replace `{{manual.roleName}}` and `{{manual.scope}}` with the approved role and resource scope.\n\n```bash\naz role assignment create \\\n  --assignee-object-id {{manual.principalId}} \\\n  --assignee-principal-type ServicePrincipal \\\n  --role \"{{manual.roleName}}\" \\\n  --scope \"{{manual.scope}}\"\n```\n\n### Rollout guidance\n\n1. Inventory app settings and Key Vault references used by the function.\n2. Replace secrets with managed identity authentication in SDKs or service clients.\n3. Remove obsolete secrets after successful deployment and monitor for authentication failures.\n4. Prefer narrow data-plane roles over broad subscription-level roles.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/overview-managed-identity\n- https://learn.microsoft.com/en-us/cli/azure/functionapp/identity",
+  "isEnabled": true
+}

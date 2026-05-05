@@ -1,0 +1,25 @@
+{
+  "body": "Customer-managed encryption keys (CMEK) provide stronger governance and key lifecycle control for regulated workloads.\n\n### Why this matters\n\nFor regulated data, teams often need provable control over key use, rotation, and disablement.\n\n### Important note\n\nSpanner CMEK is applied when you create a database or restore into a new database. It is not a simple in-place toggle for an existing database that already uses Google-managed encryption.",
+  "name": "Ensure Cloud Spanner uses CMEK for regulated data",
+  "slug": "gcp-spanner-cmek-enabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudSpannerDatabase"
+      ],
+      "query": "gcp-spanner-cmek-enabled-instances-without-cmek",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Google Cloud Remediation\n\n> **Service-wide fix (recommended):** define which Spanner workloads must use CMEK, pre-approve the key locations, and build the requirement into database creation workflows.\n\n### When to use service-wide remediation\n\nUse the service-wide path when multiple teams create Spanner databases in regulated projects.\n\n### Google Cloud console\n\n1. Open the Spanner instance that will host the database.\n2. Choose `Create database`.\n3. Expand `Show encryption options`.\n4. Select `Cloud KMS key` and choose the approved key.\n5. Create the database and verify the encryption information on the database details page.\n\n### Google Cloud CLI\n\nCreate a CMEK-protected database:\n\n~~~bash\ngcloud spanner databases create <database-name> \\\n  --instance=<instance-name> \\\n  --kms-key=projects/<kms-project>/locations/<kms-location>/keyRings/<keyring>/cryptoKeys/<key>\n~~~\n\nValidate the encryption configuration:\n\n~~~bash\ngcloud spanner databases describe <database-name> \\\n  --instance=<instance-name>\n~~~\n\n### Operational notes\n\n- This is not an in-place update for an existing non-CMEK database. The usual fix is to create a new CMEK-protected database and migrate by backup and restore or by export and import.\n- In multi-region or custom instance configurations, you might need multiple regional keys instead of a single key.\n- The Spanner service agent must be granted `roles/cloudkms.cryptoKeyEncrypterDecrypter` on the selected key or keys.\n\n### References\n\n- https://docs.cloud.google.com/spanner/docs/use-cmek\n- https://docs.cloud.google.com/sdk/gcloud/reference/spanner/databases/create\n- https://docs.cloud.google.com/spanner/docs/cmek",
+  "isEnabled": false,
+  "description": "Cloud Spanner databases without CMEK in regulated environments",
+  "severity": 2
+}

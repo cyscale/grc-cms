@@ -1,1 +1,22 @@
-{"name":"Ensure Kinesis Data Streams use encryption at rest","slug":"aws-integration-2","body":"With server-side encryption, your Kinesis stream producers and consumers don't need to manage master keys or cryptographic operations. Your data is automatically encrypted as it enters and leaves the Kinesis Data Streams service, so your data at rest is encrypted.","description":"","severity":2,"remediationDescription":"Go through the [AWS documentation](https://docs.aws.amazon.com/streams/latest/dev/what-is-sse.html) to get a deeper understanding of the implications of server-side encryption for Kinesis Data Streams. You can also find there the steps to enable it.","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["KinesisDataStream"],"query":"aws-integration-2-kinesis-data-streams-use-encryption-at-rest","returnPath":""}]}
+{
+  "name": "Ensure Kinesis Data Streams use encryption at rest",
+  "slug": "aws-integration-2",
+  "body": "With server-side encryption, your Kinesis stream producers and consumers don't need to manage master keys or cryptographic operations. Your data is automatically encrypted as it enters and leaves the Kinesis Data Streams service, so your data at rest is encrypted.",
+  "description": "Kinesis Data Streams not using encryption at rest",
+  "severity": 2,
+  "remediationDescription": "## AWS remediation\n\n### Console\n1. Open Kinesis Data Stream.\n2. Enable at-rest encryption with KMS.\n\n### AWS CLI\n~~~bash\naws kinesis start-stream-encryption \\\n  --stream-name <stream-name> \\\n  --encryption-type KMS \\\n  --key-id <kms-key-id-or-arn>\n~~~\n\n### References\n- https://docs.aws.amazon.com/streams/latest/dev/what-is-sse.html\n- https://docs.aws.amazon.com/cli/latest/reference/kinesis/start-stream-encryption.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "KinesisDataStream"
+      ],
+      "query": "aws-integration-2-kinesis-data-streams-use-encryption-at-rest",
+      "returnPath": ""
+    }
+  ]
+}

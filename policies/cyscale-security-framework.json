@@ -1084,6 +1084,60 @@
         },
         {
           "control": "gcp-secrets-not-in-env-variables"
+        },
+        {
+          "control": "azure-function-app-authentication"
+        },
+        {
+          "control": "azure-function-app-latest-tls"
+        },
+        {
+          "control": "azure-function-app-managed-identity"
+        },
+        {
+          "control": "azure-function-app-supported-runtime"
+        },
+        {
+          "control": "gcp-cloud-run-no-default-service-account"
+        },
+        {
+          "control": "gcp-functions-no-default-service-account"
+        },
+        {
+          "control": "publicly-accessible-cloud-run-services"
+        },
+        {
+          "control": "aws-lambda-supported-runtime"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "aws-lambda-inspector-enabled"
+        },
+        {
+          "control": "aws-lambda-function-url-cors-restricted"
+        },
+        {
+          "control": "gcp-functions-supported-runtime"
+        },
+        {
+          "control": "gcp-functions-restrict-ingress"
+        },
+        {
+          "control": "azure-function-app-https-only"
+        },
+        {
+          "control": "azure-function-app-auth-rejects-anonymous-requests"
+        },
+        {
+          "control": "azure-function-app-remote-debugging-disabled"
+        },
+        {
+          "control": "azure-function-app-basic-publishing-credentials-disabled"
+        },
+        {
+          "control": "alibaba-functions-supported-runtime"
         }
       ]
     },
@@ -1203,6 +1257,9 @@
         },
         {
           "control": "aws-scan-1"
+        },
+        {
+          "control": "container-images-with-exploitable-vulnerabilities"
         }
       ]
     }

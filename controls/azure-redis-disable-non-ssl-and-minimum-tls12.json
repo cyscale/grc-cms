@@ -1,0 +1,25 @@
+{
+  "body": "Redis often stores sensitive session and cache data. Non-SSL access and weak TLS versions increase interception risk.",
+  "name": "Ensure Azure Cache for Redis disables non-SSL port and enforces TLS 1.2+",
+  "slug": "azure-redis-disable-non-ssl-and-minimum-tls12",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "RedisInstance"
+      ],
+      "query": "azure-redis-disable-non-ssl-and-minimum-tls12-instances-with-insecure-transport",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Azure Remediation\n\n> **Service-wide fix (recommended):** make encrypted transport mandatory for all Redis deployments and treat non-TLS access as an exception-only compatibility setting.\n\n### When to use service-wide remediation\n\nUse the service-wide path when multiple caches still allow plaintext access or when application teams are unsure whether their clients are already TLS-capable.\n\n### Azure portal\n\n1. Open the Redis cache.\n2. Go to `Advanced settings`.\n3. Ensure `Allow access only via SSL` is enabled so the non-SSL port is disabled.\n4. Set `Minimum TLS version` to `1.2` or higher.\n5. Save and test the client connection path.\n\n### Azure CLI / API\n\nFor existing caches, use the Azure management API through `az rest` to disable the non-SSL port and require TLS 1.2:\n\n~~~bash\naz rest \\\n  --method patch \\\n  --url \"https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Cache/Redis/<redis-name>?api-version=2024-11-01\" \\\n  --body '{\"properties\":{\"enableNonSslPort\":false,\"minimumTlsVersion\":\"1.2\"}}'\n~~~\n\nPowerShell is also supported for setting the minimum TLS version:\n\n~~~powershell\nSet-AzRedisCache -Name <redis-name> -MinimumTlsVersion \"1.2\"\n~~~\n\nValidate the live settings:\n\n~~~bash\naz redis show \\\n  --name <redis-name> \\\n  --resource-group <resource-group> \\\n  --query '{enableNonSslPort:enableNonSslPort,minimumTlsVersion:minimumTlsVersion}'\n~~~\n\n### Operational notes\n\n- Microsoft retired TLS 1.0 and 1.1 for Azure Cache for Redis on April 1, 2025. If your applications still need those versions, fix the client libraries instead of preserving weak transport.\n- New long-term deployments should be planned with Azure Managed Redis in mind because Azure Cache for Redis is being retired.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-tls-configuration\n- https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-remove-tls-10-11\n- https://learn.microsoft.com/en-us/rest/api/redis/redis/update?view=rest-redis-2024-11-01",
+  "isEnabled": false,
+  "description": "Redis instances allowing non-SSL or weak TLS",
+  "severity": 3
+}

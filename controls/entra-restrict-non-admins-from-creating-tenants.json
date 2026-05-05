@@ -17,7 +17,8 @@
       "query": "entra-non-admin-users-can-create-tenants"
     }
   ],
-  "remediationDescription": "### From Azure Portal\n\n1. Open [Users | User settings](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set `Restrict non-admin users from creating tenants` to `Yes`\n\n### From PowerShell\n\n```bash\nImport-Module Microsoft.Graph.Identity.SignIns\nConnect-MgGraph -Scopes 'Policy.ReadWrite.Authorization'\nSelect-MgProfile -Name beta\n$params = @{\nDefaultUserRolePermissions = \n  @{\n  AllowedToCreateTenants = $false\n  }\n}\nUpdate-MgPolicyAuthorizationPolicy -AuthorizationPolicyId -BodyParameter\n$params\n```",
+  "remediationDescription": "### From Azure Portal\n\n1. Open [Users | User settings](https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings).\n2. Set `Restrict non-admin users from creating tenants` to `Yes`\n\n### From PowerShell\n\n```bash\nImport-Module Microsoft.Graph.Identity.SignIns\nConnect-MgGraph -Scopes 'Policy.ReadWrite.Authorization'\nSelect-MgProfile -Name beta\n$params = @{\nDefaultUserRolePermissions = \n  @{\n  AllowedToCreateTenants = $false\n  }\n}\nUpdate-MgPolicyAuthorizationPolicy -AuthorizationPolicyId -BodyParameter\n$params\n```\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Microsoft Entra ID\nUse tenant-wide Conditional Access, role settings, authentication policies, and identity governance baselines so the control is enforced centrally.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
-  "severity": 2
+  "severity": 2,
+  "description": "'Restrict non-admin users from creating tenants' is set to 'Yes'"
 }

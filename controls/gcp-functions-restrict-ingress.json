@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure HTTP Google Cloud Functions do not allow unrestricted ingress",
+  "description": "HTTP-triggered Google Cloud Functions allowing all ingress",
+  "slug": "gcp-functions-restrict-ingress",
+  "body": "HTTP-triggered functions with unrestricted ingress can be reached from the public internet when their authentication or IAM policy also permits it. Even when authentication is enabled, unrestricted ingress expands the attack surface for authentication bypasses, application bugs, and excessive probing.\n\nRestrict ingress to internal traffic or internal plus load balancer traffic unless the function is intentionally public and protected by compensating controls.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "gcp-functions-allowing-all-ingress",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nSet the function ingress policy to the narrowest mode that supports the expected callers. Use `internal-only` for private functions or `internal-and-gclb` when the function should be reachable only through an approved external HTTPS load balancer.\n\n### gcloud CLI\n\n```bash\ngcloud functions deploy {{asset.name}} \\\n  --region {{asset.region}} \\\n  --ingress-settings internal-and-gclb\n```\n\nFor strictly private functions, use:\n\n```bash\ngcloud functions deploy {{asset.name}} \\\n  --region {{asset.region}} \\\n  --ingress-settings internal-only\n```\n\nValidate ingress settings:\n\n```bash\ngcloud functions describe {{asset.name}} \\\n  --region {{asset.region}} \\\n  --format='value(ingressSettings)'\n```\n\n### References\n\n- https://cloud.google.com/functions/docs/networking/network-settings\n- https://cloud.google.com/functions/docs/securing/authenticating",
+  "isEnabled": true
+}

@@ -1,7 +1,19 @@
 {
   "display_name": "Transfer Data to Cloud Account - T1537",
   "mid": "T1537",
-  "controls": [],
+  "controls": [
+    "azure-https-transfer-enabled",
+    "azure-log-queue-read-write-delete",
+    "azure-servicebus-public-network-access-disabled",
+    "azure-storage-account-blob-anonymous-access",
+    "azure-storage-account-cross-tenant-replication",
+    "gcp-kms-cryptokeys-publicly-accessible",
+    "object-containers-with-public-access",
+    "publicly-accessible-disks",
+    "publicly-accessible-encryption-keys",
+    "publicly-accessible-vms",
+    "publicly-readable-object-containers"
+  ],
   "assets": [
     "Bucket",
     "BlobContainer"

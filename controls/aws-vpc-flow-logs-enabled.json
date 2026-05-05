@@ -1,0 +1,25 @@
+{
+  "body": "VPC Flow Logs capture network metadata that is essential for incident response and threat hunting.\n\n### Why this matters\n\nWithout Flow Logs, you have reduced visibility into suspicious east-west and north-south traffic patterns.\n\n### What this control should detect\n\nProduction VPCs that do not have VPC Flow Logs enabled to a central logging destination.",
+  "name": "Ensure VPC Flow Logs are enabled for production VPCs",
+  "slug": "aws-vpc-flow-logs-enabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VPC"
+      ],
+      "query": "aws-vpc-flow-logs-enabled-vpcs-without-flow-logs",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## AWS Remediation\n\n> **Service-wide fix (recommended):** require Flow Logs in every production VPC through landing-zone templates and account onboarding, then remediate the existing VPCs that are already deployed.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many VPCs are affected. Flow Logs are easiest to standardize at VPC creation time, with a central CloudWatch Logs group or S3 destination.\n\n### Console\n\n1. Open the Amazon VPC console.\n2. Select the affected VPC.\n3. Open the `Flow logs` tab and choose `Create flow log`.\n4. Select `All` traffic unless your policy explicitly wants a narrower filter.\n5. Choose the destination type: `CloudWatch Logs` or `Amazon S3`.\n6. If you use CloudWatch Logs, select an IAM role that allows delivery.\n7. Save and confirm the flow log becomes active.\n\n### AWS CLI\n\nSend Flow Logs to CloudWatch Logs:\n\n~~~bash\naws ec2 create-flow-logs \\\n  --resource-type VPC \\\n  --resource-ids <vpc-id> \\\n  --traffic-type ALL \\\n  --log-destination-type cloud-watch-logs \\\n  --log-group-name <log-group-name> \\\n  --deliver-logs-permission-arn <iam-role-arn>\n~~~\n\nSend Flow Logs to S3:\n\n~~~bash\naws ec2 create-flow-logs \\\n  --resource-type VPC \\\n  --resource-ids <vpc-id> \\\n  --traffic-type ALL \\\n  --log-destination-type s3 \\\n  --log-destination arn:aws:s3:::<bucket-name>/<optional-prefix>\n~~~\n\nValidate the result:\n\n~~~bash\naws ec2 describe-flow-logs \\\n  --filter Name=resource-id,Values=<vpc-id>\n~~~\n\n### Operational notes\n\n- Use a central logging account or approved logging bucket if your environment is multi-account.\n- Make sure the destination bucket policy or CloudWatch Logs role allows log delivery.\n- Flow Logs are not a packet capture. They provide network metadata that is useful for threat hunting, incident response, and troubleshooting.\n\n### References\n\n- https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html\n- https://docs.aws.amazon.com/cli/latest/reference/ec2/create-flow-logs.html",
+  "isEnabled": false,
+  "description": "VPCs without flow logs in AWS",
+  "severity": 2
+}
