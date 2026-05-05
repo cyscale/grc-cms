@@ -1,1 +1,22 @@
-{"name":"Ensure encrypted storage is used for VMs that might host a database","slug":"aws-ec2-2","body":"If you have to or choose to host the database on a virtual machine, encrypting the volumes is highly recommended.\n\nThe system determines this based on the VM name.","description":"","severity":2,"remediationDescription":"Consult the following [AWS article](https://aws.amazon.com/blogs/security/architecting-for-database-encryption-on-aws/) describing various alternatives for database encryption.","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["VM"],"query":"aws-ec2-2-encrypted-storage-is-used-for-vms-that-might-host-a-database","returnPath":""}]}
+{
+  "name": "Ensure encrypted storage is used for VMs that might host a database",
+  "slug": "aws-ec2-2",
+  "body": "If you have to or choose to host the database on a virtual machine, encrypting the volumes is highly recommended.\n\nThe system determines this based on the VM name.",
+  "description": "Virtual machines that might host a database without encrypted storage",
+  "severity": 2,
+  "remediationDescription": "## AWS remediation\n\n### Console\n1. Identify unencrypted attached EBS volumes.\n2. Snapshot each unencrypted volume.\n3. Copy snapshots with encryption enabled.\n4. Create encrypted volumes and replace old volumes in maintenance window.\n\n### AWS CLI\n~~~bash\naws ec2 enable-ebs-encryption-by-default\naws ec2 create-snapshot --volume-id <volume-id> --description \"migrate-to-encrypted\"\naws ec2 copy-snapshot --source-region <region> --source-snapshot-id <snapshot-id> --encrypted --kms-key-id <kms-key-id>\naws ec2 create-volume --availability-zone <az> --snapshot-id <encrypted-snapshot-id> --encrypted --kms-key-id <kms-key-id>\n~~~\n\n### References\n- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html\n- https://docs.aws.amazon.com/ebs/latest/userguide/encryption-by-default.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "aws-ec2-2-encrypted-storage-is-used-for-vms-that-might-host-a-database",
+      "returnPath": ""
+    }
+  ]
+}

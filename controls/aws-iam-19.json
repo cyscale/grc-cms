@@ -2,15 +2,19 @@
   "name": "Ensure IAM Role can be assumed only by specific Principals",
   "slug": "aws-iam-19",
   "body": "The list of principals able to assume a role should be limited as much as possible, and should not include \"*\", meaning that any authenticated identity across all of AWS can assume the role.",
-  "description": "",
+  "description": "IAM Role can be assumed only by specific Principals",
   "severity": 3,
-  "remediationDescription": "",
+  "remediationDescription": "## AWS remediation\n\n### Console\n1. Open IAM role trust policy.\n2. Remove broad principals such as wildcard principal.\n3. Allow only explicit trusted principals.\n4. Add conditions like sts:ExternalId when third-party access is required.\n\n### AWS CLI\n~~~bash\naws iam update-assume-role-policy \\\n  --role-name <role-name> \\\n  --policy-document file://trust-policy.json\n~~~\n\n### References\n- https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_update-role-trust-policy.html\n- https://docs.aws.amazon.com/cli/latest/reference/iam/update-assume-role-policy.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "rules": [
     {
-      "cloudProviders": ["aws"],
+      "cloudProviders": [
+        "aws"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["IAMRole"],
+      "subjects": [
+        "IAMRole"
+      ],
       "query": "aws-iam-19-iam-role-can-be-assumed-only-by-specific-principals",
       "returnPath": ""
     }

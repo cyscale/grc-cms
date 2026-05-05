@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure AWS Lambda functions that process regulated data use a customer-managed KMS key",
+  "description": "AWS Lambda functions without a customer-managed KMS key",
+  "slug": "aws-lambda-customer-managed-kms-key",
+  "body": "Lambda encrypts environment variables and related service data at rest by default. Regulated workloads sometimes require customer-managed KMS keys so key ownership, rotation, policy, and audit boundaries remain under the customer account.\n\nThis control is intentionally disabled by default because not every Lambda function needs a customer-managed key, and AWS Inspector currently does not scan Lambda functions encrypted with customer-managed KMS keys. Enable it only where regulatory or contractual key-control requirements outweigh that tradeoff, and pair it with CI/CD dependency and code scanning.",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "aws-lambda-functions-without-customer-managed-kms-key",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nAttach an approved customer-managed KMS key to the Lambda function only when the workload requires customer-controlled encryption. Ensure the function execution role can use the key for decrypt operations required by Lambda, and add compensating dependency/code scanning because AWS Inspector Lambda scanning does not currently cover CMK-encrypted functions.\n\n### AWS CLI\n\n```bash\naws lambda update-function-configuration \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --kms-key-arn {{manual.kmsKeyArn}}\n```\n\nValidate the key ARN:\n\n```bash\naws lambda get-function-configuration \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --query '{FunctionName:FunctionName,KMSKeyArn:KMSKeyArn}'\n```\n\n### References\n\n- https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars-encryption.html\n- https://docs.aws.amazon.com/lambda/latest/dg/security-dataprotection.html\n- https://docs.aws.amazon.com/inspector/latest/user/scanning-lambda.html",
+  "isEnabled": false
+}

@@ -1,5 +1,5 @@
 {
-  "body": "Cyscale looks for encryption keys that haven't been rotated in more than 90 days.",
+  "body": "### Overview\n\nCyscale looks for encryption keys that haven't been rotated in more than 90 days.",
   "name": "Ensure encryption keys are rotated",
   "slug": "kms-keys-have-not-been-rotated",
   "isInsight": false,
@@ -50,7 +50,7 @@
       "query": "kms-keys-havent-been-rotated"
     }
   ],
-  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n- [Rotating AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)\n\n#### Azure\n- [Configure key rotation]\n(https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation)\n\n#### Alibaba\n- [Configure key rotation]\n(https://www.alibabacloud.com/help/en/key-management-service/latest/automatic-key-rotation)\n\n#### Google Cloud\n- [Configure key rotation]\n(https://cloud.google.com/kms/docs/rotating-keys)",
+  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### AWS\n- [Rotating AWS KMS keys] (https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)\n\n#### Azure\n- [Configure key rotation]\n(https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation)\n\n#### Alibaba\n- [Configure key rotation]\n(https://www.alibabacloud.com/help/en/key-management-service/latest/automatic-key-rotation)\n\n#### Google Cloud\n- [Configure key rotation]\n(https://cloud.google.com/kms/docs/rotating-keys)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n### Azure\nUse management group or subscription Azure Policy assignments, remediation tasks where supported, landing-zone standards, and IaC modules so drift is prevented at scale.\n### Alibaba Cloud\nUse Resource Directory guardrails, account baselines, and IaC modules so the secure setting is applied consistently across environments.\n### Google Cloud\nUse organization or folder policies where available, shared project templates, logs and alerting baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
   "description": "Encryption keys that haven't been rotated in more than 90 days",
   "severity": 3

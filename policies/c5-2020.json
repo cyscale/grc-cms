@@ -1,0 +1,381 @@
+{
+  "name": "C5:2020 - Cloud Computing Compliance Criteria Catalogue (BSI Germany)",
+  "slug": "c5-2020",
+  "body": "## Statement\n\nThe Cloud Computing Compliance Criteria Catalogue (`C5`) is published by Germany's Federal Office for Information Security (`BSI`). It is used to assess whether a cloud service provider operates a cloud service with an appropriate baseline of security, transparency, and resilience.\n\nAs of `2026-04-08`, the official BSI material still identifies `C5:2020` as the current version and publishes `C5:2025` separately as a community draft. This file therefore maps against `C5:2020`.\n\nThis first version is intentionally scoped to **technical cloud controls only**. It maps only those C5 domains where the current Cyscale control catalog can provide meaningful continuous evidence through cloud or workload security checks.\n\nIt does **not** attempt to cover domains that are mainly documentary, contractual, HR, physical-security, or legal-process requirements. Those can be added later with dedicated evidence-based controls if needed.\n\nC5 distinguishes between:\n\n- `Type 1`: design and implementation of controls at a point in time.\n- `Type 2`: operating effectiveness of controls over a period of time.\n\nFor this technical baseline, the included areas are:\n\n- `OIS` Organisation of Information Security\n- `AM` Asset Management\n- `OPS` Operations\n- `IDM` Identity and Access Management\n- `CRY` Cryptography and Key Management\n- `COS` Communication Security\n- `DEV` Procurement, Development and Modification of Information Systems\n- `SIM` Security Incident Management\n- `BCM` Business Continuity Management\n- `COM` Compliance\n- `PSS` Product Safety and Security\n\nThe following C5 areas are intentionally out of scope for this first, controls-only version because they are not honestly measurable through the current CSPM control set alone:\n\n- `BC` General Conditions\n- `SP` Security Policies and Instructions\n- `HR` Human Resources\n- `PS` Physical Security\n- `PI` Portability and Interoperability\n- `SSO` Control and Monitoring of Service Providers and Suppliers\n- `INQ` Handling of Investigation Requests from Government Agencies\n\nOfficial sources:\n\n- [BSI C5 overview](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/kriterienkatalog-c5_node.html)\n- [BSI C5:2020 current version page](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/C5_AktuelleVersion/C5_AktuelleVersion_node.html)\n- [BSI C5:2020 criteria workbook](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2020/C5_2020_editable.xlsx?__blob=publicationFile&v=5)\n\n## Technical C5 Areas\n\n<Procedure slug=\"c5-2020-ois\"/>\n<Procedure slug=\"c5-2020-am\"/>\n<Procedure slug=\"c5-2020-ops\"/>\n<Procedure slug=\"c5-2020-idm\"/>\n<Procedure slug=\"c5-2020-cry\"/>\n<Procedure slug=\"c5-2020-cos\"/>\n<Procedure slug=\"c5-2020-dev\"/>\n<Procedure slug=\"c5-2020-sim\"/>\n<Procedure slug=\"c5-2020-bcm\"/>\n<Procedure slug=\"c5-2020-com\"/>\n<Procedure slug=\"c5-2020-pss\"/>",
+  "version": "2020",
+  "isStandard": true,
+  "enabled": true,
+  "procedures": [
+    {
+      "name": "OIS - Organisation of Information Security",
+      "slug": "c5-2020-ois",
+      "body": "This area covers how the provider organises security: management responsibility, risk governance, information security policy, security roles, and communication with relevant internal and external parties.\n\nThe mapping below focuses on technical signals that show whether privileged access is governed sensibly and whether separation of duties is enforced. These are not the whole OIS story, but they are the strongest continuous indicators available from the current control catalog.",
+      "controls": [
+        {
+          "control": "users-without-mfa"
+        },
+        {
+          "control": "gcp-project-lvl-service-account-roles"
+        },
+        {
+          "control": "gcp-separation-of-duties-service-account"
+        },
+        {
+          "control": "service-ids-with-access-to-everything"
+        },
+        {
+          "control": "azure-no-custom-admin-role"
+        },
+        {
+          "control": "idp-super-administrator-users"
+        },
+        {
+          "control": "okta-admin-redundancy"
+        }
+      ]
+    },
+    {
+      "name": "AM - Asset Management",
+      "slug": "c5-2020-am",
+      "body": "Asset Management in C5 covers knowing what assets exist, using them safely through their lifecycle, and classifying information according to protection needs.\n\nCurrent automated coverage is partial. The controls below are the best practical matches because they support asset recording, controlled change, retention, or prevention of accidental loss.",
+      "controls": [
+        {
+          "control": "aws-config-recorder-enabled-all-resources"
+        },
+        {
+          "control": "unused-service-identities"
+        },
+        {
+          "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "object-containers-without-versioning-enabled"
+        }
+      ]
+    },
+    {
+      "name": "OPS - Operations",
+      "slug": "c5-2020-ops",
+      "body": "`OPS` is one of the strongest areas for continuous technical monitoring. It covers secure regular operations such as logging, monitoring, vulnerability handling, malware protection, backup, patching, and operational change handling.\n\nThe controls below provide strong ongoing evidence that operational security controls are active and not drifting.",
+      "controls": [
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-config-recorder-enabled-all-resources"
+        },
+        {
+          "control": "aws-vpc-flow-logs-enabled"
+        },
+        {
+          "control": "azure-network-watcher-enabled"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "gcp-aggregated-log-sinks-configured"
+        },
+        {
+          "control": "gcp-alert-policies-high-risk-events"
+        },
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "container-images-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "microsoft-defender-for-containers"
+        }
+      ]
+    },
+    {
+      "name": "IDM - Identity and Access Management",
+      "slug": "c5-2020-idm",
+      "body": "This area covers identification of users and workloads, strong authentication, access approval, least privilege, segregation of duties, and control of privileged access.\n\nCyscale has good direct coverage here. The controls below are a solid technical baseline for C5 IDM readiness.",
+      "controls": [
+        {
+          "control": "users-without-mfa"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "datastores-accessible-by-users-without-mfa"
+        },
+        {
+          "control": "identities-allowing-external-access"
+        },
+        {
+          "control": "service-ids-with-access-to-everything"
+        },
+        {
+          "control": "gcp-instances-no-default-service-account"
+        },
+        {
+          "control": "k8s-service-account-default"
+        },
+        {
+          "control": "azure-mfa-privileged-users"
+        },
+        {
+          "control": "aws-iam-12"
+        }
+      ]
+    },
+    {
+      "name": "CRY - Cryptography and Key Management",
+      "slug": "c5-2020-cry",
+      "body": "This area requires appropriate encryption for data in transit and at rest, plus secure key management and key lifecycle controls.\n\nThe controls below focus on encryption coverage, minimum TLS posture, key exposure, and key rotation.",
+      "controls": [
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "ingresses-without-encrypted-traffic"
+        },
+        {
+          "control": "gcp-kms-cryptokeys-publicly-accessible"
+        },
+        {
+          "control": "gcp-kms-keys-rotated-90-days"
+        },
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "kms-keys-with-permissive-access-policy"
+        },
+        {
+          "control": "azure-key-vault-automatic-key-rotation"
+        },
+        {
+          "control": "azure-storage-account-minimum-tls"
+        },
+        {
+          "control": "gcp-ssl-policies-minimum-tls12"
+        },
+        {
+          "control": "gcp-bigtable-cmek-enabled"
+        },
+        {
+          "control": "gcp-spanner-cmek-enabled"
+        }
+      ]
+    },
+    {
+      "name": "COS - Communication Security",
+      "slug": "c5-2020-cos",
+      "body": "Communication Security covers how traffic is protected across networks, how management paths are separated, and how unnecessary public exposure is removed.\n\nThis area maps well to network exposure, private connectivity, segmentation, and flow-logging controls.",
+      "controls": [
+        {
+          "control": "management-ports-restricted-from-internet"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "publicly-accessible-queues"
+        },
+        {
+          "control": "publicly-accessible-functions"
+        },
+        {
+          "control": "aws-vpc-flow-logs-enabled"
+        },
+        {
+          "control": "azure-flow-logs-nsg"
+        },
+        {
+          "control": "gcp-subnetwork-private-google-access-and-flow-logs"
+        },
+        {
+          "control": "azure-key-vault-private-endpoint"
+        },
+        {
+          "control": "azure-storage-account-public-network-access"
+        },
+        {
+          "control": "azure-servicebus-public-network-access-disabled"
+        },
+        {
+          "control": "azure-acr-public-network-access-disabled"
+        },
+        {
+          "control": "gcp-sql-no-public-ips"
+        }
+      ]
+    },
+    {
+      "name": "DEV - Procurement, Development and Modification of Information Systems",
+      "slug": "c5-2020-dev",
+      "body": "This area covers secure procurement and development, secure change management, testing, approvals before production, and separation of environments.\n\nThe controls below are the strongest current matches because they monitor software supply-chain hygiene, secrets handling, runtime support, and exploitable weaknesses.",
+      "controls": [
+        {
+          "control": "container-images-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "aws-ecr-repository-immutability-and-scanning"
+        },
+        {
+          "control": "aws-ecs-8-secrets-in-vars"
+        },
+        {
+          "control": "gcp-secrets-not-in-env-variables"
+        },
+        {
+          "control": "k8s-prefer-using-secrets-as-files-over-secrets-as-env-var"
+        },
+        {
+          "control": "databases-with-outdated-engine-versions"
+        },
+        {
+          "control": "azure-app-service-supported-java-stack"
+        },
+        {
+          "control": "azure-latest-php-version"
+        },
+        {
+          "control": "azure-latest-python-version"
+        },
+        {
+          "control": "aws-ecs-10-latest-platform-version"
+        }
+      ]
+    },
+    {
+      "name": "SIM - Security Incident Management",
+      "slug": "c5-2020-sim",
+      "body": "Incident Management covers detecting, triaging, processing, documenting, reporting, and learning from security incidents.\n\nContinuous audit evidence here mainly comes from alerting, audit trails, and retained incident-relevant logs.",
+      "controls": [
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-sql-server-auditing"
+        },
+        {
+          "control": "gcp-aggregated-log-sinks-configured"
+        },
+        {
+          "control": "gcp-alert-policies-high-risk-events"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "gcp-logging-10"
+        }
+      ]
+    },
+    {
+      "name": "BCM - Business Continuity Management",
+      "slug": "c5-2020-bcm",
+      "body": "Business Continuity Management focuses on planning for disruption, defining recovery targets, protecting recoverability, and testing whether recovery plans actually work.\n\nThe controls below do not prove a full BCM programme, but they do provide strong technical signals for recoverability and accidental-loss prevention.",
+      "controls": [
+        {
+          "control": "gcp-db-automated-backups"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        },
+        {
+          "control": "azure-admin-resource-locks"
+        },
+        {
+          "control": "ssl-certificates-expiring-in-14-days"
+        }
+      ]
+    },
+    {
+      "name": "COM - Compliance",
+      "slug": "c5-2020-com",
+      "body": "Compliance covers identifying applicable legal, regulatory, self-imposed, and contractual requirements, then auditing whether the cloud service still meets them.\n\nThe controls below are the strongest current matches because they improve auditability, retained evidence, and visibility into whether important security controls are actually active.",
+      "controls": [
+        {
+          "control": "aws-access-analyzer-enabled"
+        },
+        {
+          "control": "aws-config-recorder-enabled-all-resources"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-sql-server-auditing"
+        },
+        {
+          "control": "azure-network-watcher-enabled"
+        },
+        {
+          "control": "gcp-aggregated-log-sinks-configured"
+        },
+        {
+          "control": "gcp-logging-1"
+        }
+      ]
+    },
+    {
+      "name": "PSS - Product Safety and Security",
+      "slug": "c5-2020-pss",
+      "body": "Product Safety and Security is one of the most cloud-specific C5 areas. It covers secure customer guidance, known-vulnerability handling, secure authentication and authorisation, logging, secure defaults, and security features exposed by the cloud service itself.\n\nThe controls below are the strongest current technical matches because they cover vulnerability hygiene, secure access, transport protection, and security monitoring.",
+      "controls": [
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "container-images-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "users-without-mfa"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "gcp-alert-policies-high-risk-events"
+        },
+        {
+          "control": "azure-app-service-https-only"
+        },
+        {
+          "control": "gcp-ssl-policies-minimum-tls12"
+        },
+        {
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
+        }
+      ]
+    }
+  ]
+}

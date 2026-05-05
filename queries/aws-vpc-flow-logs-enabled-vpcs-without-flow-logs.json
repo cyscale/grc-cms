@@ -1,0 +1,5 @@
+{
+  "name": "VPCs without flow logs",
+  "slug": "aws-vpc-flow-logs-enabled-vpcs-without-flow-logs",
+  "query": "{ vpcs(where: { cloudProvider: \"aws\", OR: [{ hasFlowLog: null }, { hasFlowLog_NONE: { flowLogStatus: \"ACTIVE\" } }] }) { ...AssetFragment } }"
+}

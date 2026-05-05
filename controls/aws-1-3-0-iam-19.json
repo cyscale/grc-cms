@@ -6,16 +6,20 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": ["aws"],
+      "cloudProviders": [
+        "aws"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["IAMServerCertificate"],
+      "subjects": [
+        "IAMServerCertificate"
+      ],
       "query": "aws-1-3-0-iam-19-all-the-expired-ssltls-certificates-stored-in-aws-iam-are-removed",
       "returnPath": ""
     }
   ],
-  "remediationDescription": "**From Command Line**\n\nRun the following command to delete the expired certificate:\n\n```bash\naws iam delete-server-certificate --server-certificate-name <certificateName>\n```\n\nWhen the preceding command is successful, it does not return any output.\n\n**Note**: By default, expired certificates never get deleted.",
+  "remediationDescription": "**From Command Line**\n\nRun the following command to delete the expired certificate:\n\n```bash\naws iam delete-server-certificate --server-certificate-name <certificateName>\n```\n\nWhen the preceding command is successful, it does not return any output.\n\n**Note**: By default, expired certificates never get deleted.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
-  "description": "",
+  "description": "All the expired SSL/TLS certificates stored in AWS IAM that were not removed",
   "severity": 2
 }

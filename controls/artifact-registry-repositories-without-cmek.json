@@ -1,0 +1,23 @@
+{
+  "body": "### Overview\n\nArtifact Registry supports customer-managed encryption keys (CMEK) through Cloud KMS. Using CMEK gives security teams stronger control over key rotation, separation of duties, and auditability for software supply-chain assets stored in the registry.",
+  "name": "Ensure Artifact Registry repositories use customer-managed encryption keys",
+  "slug": "artifact-registry-repositories-without-cmek",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ArtifactRegistryRepository"
+      ],
+      "query": "artifact-registry-repositories-without-cmek"
+    }
+  ],
+  "remediationDescription": "#### From Google Cloud Console\n\n1. Open the affected Artifact Registry repository.\n2. Edit the repository settings.\n3. Select a Cloud KMS key under customer-managed encryption.\n4. Save the repository configuration and validate the key policy allows the registry service to use it.\n\n#### Using gcloud\n\n```bash\ngcloud artifacts repositories create <repository> --repository-format=docker --location=<location> --kms-key=<kms-key-resource-name>\n```\n\nFor existing repositories, migrate or recreate them with CMEK where required by your policy baseline.",
+  "description": "Artifact Registry repositories without customer-managed encryption keys",
+  "severity": 2
+}

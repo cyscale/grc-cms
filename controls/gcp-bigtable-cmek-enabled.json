@@ -1,0 +1,25 @@
+{
+  "body": "CMEK on Bigtable helps meet key custody, separation-of-duties, and compliance requirements.\n\n### Why this matters\n\nFor regulated workloads, teams often need to control key rotation, key access, and key disablement in Cloud KMS.\n\n### Important note\n\nBigtable CMEK is a design-time decision. Existing non-CMEK instances are not usually something you can convert in place without a migration plan.",
+  "name": "Ensure Cloud Bigtable uses CMEK for regulated data",
+  "slug": "gcp-bigtable-cmek-enabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "BigTable"
+      ],
+      "query": "gcp-bigtable-cmek-enabled-instances-without-cmek",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Google Cloud Remediation\n\n> **Service-wide fix (recommended):** decide which Bigtable workloads require CMEK, standardize approved key locations, and enforce the pattern in project templates and provisioning pipelines.\n\n### When to use service-wide remediation\n\nUse the service-wide path when regulated environments create Bigtable instances repeatedly across multiple projects.\n\n### Google Cloud console\n\nFor a new instance or cluster, select `Customer-managed encryption key (CMEK)` and choose an approved Cloud KMS key in the same region as the cluster.\n\n### Google Cloud CLI\n\nCreate a CMEK-protected instance:\n\n~~~bash\ngcloud bigtable instances create <instance-id> \\\n  --display-name=\"<display-name>\" \\\n  --cluster-config=id=<cluster-id>,zone=<zone>,nodes=<nodes>,kms-key=projects/<kms-project>/locations/<kms-location>/keyRings/<keyring>/cryptoKeys/<key>\n~~~\n\nValidate the encryption settings:\n\n~~~bash\ngcloud bigtable instances describe <instance-id>\n~~~\n\n### Operational notes\n\n- You cannot usually retrofit CMEK onto an existing non-CMEK Bigtable deployment without moving data to a newly created CMEK-protected target.\n- Plan a migration path before enforcing this broadly. Common approaches are creating a new CMEK-protected instance or cluster, synchronizing data, cutting application traffic over, and then retiring the old instance.\n- The Bigtable service agent must have permission to use the selected KMS key.\n\n### References\n\n- https://cloud.google.com/bigtable/docs/use-cmek\n- https://docs.cloud.google.com/sdk/gcloud/reference/bigtable/instances/create\n- https://docs.cloud.google.com/bigtable/docs/modifying-instance",
+  "isEnabled": false,
+  "description": "Cloud Bigtable instances without CMEK in regulated environments",
+  "severity": 2
+}

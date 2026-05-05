@@ -1,0 +1,5 @@
+{
+  "name": "Azure Function Apps without authentication",
+  "slug": "azure-functionapps-without-authentication",
+  "query": "{\n  functionApps(where: { authSettings_NONE: { enabled: true } }) {\n    ...AssetFragment\n  }\n}"
+}

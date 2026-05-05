@@ -28,7 +28,7 @@
       "query": "k8s-clusterroles-with-wildcard-rules"
     }
   ],
-  "remediationDescription": "Where possible, replace any use of wildcards in ClusterRoles and Roles with specific objects or actions.\n\n**References**\n1. [https://kubernetes.io/docs/concepts/security/rbac-good-practices/#least-privilege](https://kubernetes.io/docs/concepts/security/rbac-good-practices/#least-privilege)\n",
+  "remediationDescription": "Where possible, replace any use of wildcards in ClusterRoles and Roles with specific objects or actions.\n\n**References**\n1. [https://kubernetes.io/docs/concepts/security/rbac-good-practices/#least-privilege](https://kubernetes.io/docs/concepts/security/rbac-good-practices/#least-privilege)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Kubernetes\nUse admission policies, baseline cluster configuration, GitOps templates, and namespace or workload guardrails so new deployments follow the control by default.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
   "description": "Do not generally admit Roles and ClusterRoles which make use of wildcard rights.",
   "severity": 3

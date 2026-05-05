@@ -1,0 +1,25 @@
+{
+  "body": "IAM Access Analyzer should be enabled in every in-scope AWS region so public and cross-account access findings are generated where resources exist.\n\n### Why this matters\n\nAccess Analyzer is regional. If a region has no analyzer, findings for resources in that region can be missed.\n\n### What this control should detect\n\nAWS accounts or connectors where one or more active regions do not have a supported account-level or organization-level analyzer.",
+  "name": "Ensure IAM Access Analyzer is enabled in all active regions",
+  "slug": "aws-access-analyzer-enabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "aws-1-4-0-iam-20-iam-access-analyzer-is-enabled-for-all-regions",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## AWS Remediation\n\n> **Service-wide fix (recommended):** enable an analyzer in every approved AWS region as part of account vending, region enablement, or Control Tower / landing-zone baselines.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many accounts or regions are affected. It is faster and prevents the same gap from reappearing when new regions are activated.\n\n### Console\n\n1. Open IAM in the target region.\n2. Select `Access Analyzer`.\n3. Choose `Create analyzer`.\n4. Select `Account` for a single-account analyzer, or `Organization` if you manage findings centrally for AWS Organizations.\n5. Enter a name and create the analyzer.\n6. Repeat in every in-scope region.\n\n### AWS CLI\n\nCreate an account-level analyzer in a region:\n\n~~~bash\naws accessanalyzer create-analyzer \\\n  --region <region> \\\n  --analyzer-name external-access \\\n  --type ACCOUNT\n~~~\n\nCreate an organization-level analyzer in a region:\n\n~~~bash\naws accessanalyzer create-analyzer \\\n  --region <region> \\\n  --analyzer-name org-external-access \\\n  --type ORGANIZATION\n~~~\n\nValidate that the analyzer exists and is active:\n\n~~~bash\naws accessanalyzer list-analyzers \\\n  --region <region> \\\n  --query 'analyzers[].{name:name,type:type,status:status}'\n~~~\n\n### Operational notes\n\n- `ORGANIZATION` analyzers require the right AWS Organizations permissions and are usually created from the management account or a delegated administrator.\n- AWS allows only one account-level analyzer per analyzer type per account and region, so standardize the analyzer name and rollout process.\n\n### References\n\n- https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html\n- https://docs.aws.amazon.com/cli/latest/reference/accessanalyzer/create-analyzer.html\n- https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-quotas.html",
+  "isEnabled": false,
+  "description": "AWS accounts or connectors missing IAM Access Analyzer coverage in one or more active regions",
+  "severity": 2
+}

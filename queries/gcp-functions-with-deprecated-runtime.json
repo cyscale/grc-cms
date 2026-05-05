@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud Functions using deprecated or decommissioned runtimes",
+  "slug": "gcp-functions-with-deprecated-runtime",
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: \"gcp\"\n      runtime_IN: [\n        \"nodejs18\"\n        \"nodejs16\"\n        \"nodejs14\"\n        \"nodejs12\"\n        \"nodejs10\"\n        \"nodejs8\"\n        \"nodejs6\"\n        \"python39\"\n        \"python38\"\n        \"python37\"\n        \"go123\"\n        \"go122\"\n        \"go121\"\n        \"go120\"\n        \"go119\"\n        \"go118\"\n        \"go116\"\n        \"go113\"\n        \"go111\"\n        \"java11\"\n        \"ruby32\"\n        \"ruby30\"\n        \"ruby27\"\n        \"ruby26\"\n        \"php81\"\n        \"php74\"\n        \"dotnet6\"\n        \"dotnet3\"\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}

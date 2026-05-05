@@ -6,91 +6,140 @@
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Deployment"],
+      "subjects": [
+        "Deployment"
+      ],
       "query": "k8s-deployments-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["StatefulSet"],
+      "subjects": [
+        "StatefulSet"
+      ],
       "query": "k8s-statefulsets-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["ReplicaSet"],
+      "subjects": [
+        "ReplicaSet"
+      ],
       "query": "k8s-replicasets-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DaemonSet"],
+      "subjects": [
+        "DaemonSet"
+      ],
       "query": "k8s-daemonsets-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Job"],
+      "subjects": [
+        "Job"
+      ],
       "query": "k8s-jobs-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CronJob"],
+      "subjects": [
+        "CronJob"
+      ],
       "query": "k8s-cronjobs-with-permissive-security-context-containerstemplates"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["StatefulSet"],
+      "subjects": [
+        "StatefulSet"
+      ],
       "query": "k8s-statefulsets-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["ReplicaSet"],
+      "subjects": [
+        "ReplicaSet"
+      ],
       "query": "k8s-replicasets-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Deployment"],
+      "subjects": [
+        "Deployment"
+      ],
       "query": "k8s-deployments-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["DaemonSet"],
+      "subjects": [
+        "DaemonSet"
+      ],
       "query": "k8s-daemonsets-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Job"],
+      "subjects": [
+        "Job"
+      ],
       "query": "k8s-jobs-podtemplates-with-permissive-security-context"
     },
     {
-      "cloudProviders": ["k8s"],
+      "cloudProviders": [
+        "k8s"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["CronJob"],
+      "subjects": [
+        "CronJob"
+      ],
       "query": "k8s-cronjobs-podtemplates-with-permissive-security-context"
     }
   ],
-  "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
+  "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Kubernetes\nUse admission policies, baseline cluster configuration, GitOps templates, and namespace or workload guardrails so new deployments follow the control by default.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
-  "severity": 1
+  "severity": 1,
+  "description": "Apply Security Context correctly to Pods and Containers"
 }

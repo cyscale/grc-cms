@@ -1,0 +1,25 @@
+{
+  "body": "Detection-only mode provides visibility but does not block attacks. Prevention mode is required for stronger protection on internet-facing workloads.",
+  "name": "Ensure Application Gateway WAF is enabled in Prevention mode",
+  "slug": "azure-application-gateway-waf-prevention-mode",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ApplicationGateway"
+      ],
+      "query": "azure-application-gateway-waf-prevention-mode-gateways-without-waf-prevention",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Azure Remediation\n\n> **Service-wide fix (recommended):** require a WAF policy on internet-facing Application Gateways and standardize a controlled move from `Detection` to `Prevention` after tuning exclusions and custom rules.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many gateways are affected or when teams create gateways without a standard WAF policy.\n\n### Azure portal\n\n1. Open the Application Gateway.\n2. Associate an existing WAF policy, or create one if none exists.\n3. Review false positives, exclusions, and any required custom rules.\n4. Set the WAF mode to `Prevention`.\n5. Confirm diagnostic logging is enabled so blocked requests are still visible during operations.\n\n### Azure CLI\n\nSet the WAF policy mode to Prevention:\n\n~~~bash\naz network application-gateway waf-policy policy-setting update \\\n  --resource-group <resource-group> \\\n  --policy-name <waf-policy-name> \\\n  --mode Prevention\n~~~\n\nValidate the policy mode:\n\n~~~bash\naz network application-gateway waf-policy policy-setting list \\\n  --resource-group <resource-group> \\\n  --policy-name <waf-policy-name>\n~~~\n\n### Operational notes\n\n- Microsoft recommends running a new WAF briefly in `Detection` mode first so you can tune exclusions before enforcing blocks in production.\n- If a gateway has no WAF policy attached, fixing only the mode is not enough. You must first attach a valid WAF policy.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview\n- https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/policy-overview\n- https://learn.microsoft.com/en-us/cli/azure/network/application-gateway/waf-policy/policy-setting?view=azure-cli-lts",
+  "isEnabled": false,
+  "description": "Application Gateways without WAF prevention mode",
+  "severity": 3
+}

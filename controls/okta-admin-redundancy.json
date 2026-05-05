@@ -1,1 +1,22 @@
-{"name":"Ensure at least two Okta admins are configured","slug":"okta-admin-redundancy","body":"While having too many administrators constitutes a security risk, having only one is also a risk especially when MFA is enforced. You should assign at least two Okta administrators for access redundancy.","description":"","severity":2,"remediationDescription":"From the Okta Admin Dashboard, go to Security → Administrators and press **+Add administrator**. You can read more about the various Okta administrator roles in the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Security/Administrators.htm).","rules":[{"cloudProviders":["okta"],"comparator":"eq","expectedResult":"[]","subjects":["Connector"],"query":"okta-admin-redundancy-at-least-two-okta-admins-are-configured","returnPath":""}]}
+{
+  "name": "Ensure at least two Okta admins are configured",
+  "slug": "okta-admin-redundancy",
+  "body": "While having too many administrators constitutes a security risk, having only one is also a risk especially when MFA is enforced. You should assign at least two Okta administrators for access redundancy.",
+  "description": "At least two Okta admins are configured",
+  "severity": 2,
+  "remediationDescription": "From the Okta Admin Dashboard, go to Security → Administrators and press **+Add administrator**. You can read more about the various Okta administrator roles in the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Security/Administrators.htm).\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Okta\nUse tenant-wide sign-on policies, MFA policies, admin-role governance, and identity lifecycle automation so the control is enforced centrally.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "okta"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Connector"
+      ],
+      "query": "okta-admin-redundancy-at-least-two-okta-admins-are-configured",
+      "returnPath": ""
+    }
+  ]
+}

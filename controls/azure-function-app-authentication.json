@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Function App Authentication is set up",
+  "description": "Function App Authentication is not configured",
+  "slug": "azure-function-app-authentication",
+  "body": "Azure Functions with HTTP endpoints should not rely on application code alone to reject unauthenticated requests. App Service Authentication provides a platform enforcement point before requests reach the function runtime.\n\nUnauthenticated Function Apps increase the public attack surface and can expose internal automation, webhooks, or APIs to abuse when authorization is missing, incomplete, or inconsistently implemented in code.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-without-authentication",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable App Service Authentication for the Function App and require unauthenticated requests to be rejected or redirected to your approved identity provider. Choose the provider and unauthenticated action that matches the function's invocation pattern.\n\n### Azure CLI\n\nReview the current authentication settings:\n\n```bash\naz webapp auth show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}}\n```\n\nEnable authentication and reject unauthenticated requests with HTTP 401. The `authV2` extension may be installed automatically by Azure CLI when required.\n\n```bash\naz webapp auth update \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --enabled true \\\n  --unauthenticated-client-action Return401\n```\n\nIf the function is meant to be called by users through a browser, configure the approved identity provider and use `RedirectToLoginPage` instead of `Return401` where appropriate.\n\n### Validation\n\n```bash\naz webapp auth show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query '{enabled:platform.enabled,unauthenticatedClientAction:globalValidation.unauthenticatedClientAction}'\n```\n\n### Rollout guidance\n\n1. Confirm which callers invoke the function and whether they use user auth, workload identity, managed identity, or signed webhook tokens.\n2. Add authentication in staging first and verify all legitimate callers can still invoke the function.\n3. For intentionally public webhooks, document the exception and enforce compensating controls such as signed requests, IP restrictions, rate limiting, and monitoring.\n4. Capture the setting in IaC or Azure Policy so new Function Apps inherit the secure baseline.\n\n### References\n\n- https://learn.microsoft.com/en-us/cli/azure/webapp/auth\n- https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization",
+  "isEnabled": true
+}

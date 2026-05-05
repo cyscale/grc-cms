@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Google Cloud Functions that process regulated data use customer-managed encryption keys",
+  "description": "Google Cloud Functions without customer-managed encryption keys",
+  "slug": "gcp-functions-cmek-enabled",
+  "body": "Google Cloud encrypts data at rest by default. For regulated serverless workloads, customer-managed encryption keys provide stronger key ownership, policy control, and audit separation for function source, build, and runtime artifacts.\n\nThis control is disabled by default because CMEK is not required for every function. Enable it for regulated or high-sensitivity projects.",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "gcp-functions-without-cmek",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nRedeploy the function with an approved Cloud KMS key and make sure the required service agents can use the key.\n\n### gcloud CLI\n\n```bash\ngcloud functions deploy {{asset.name}} \\\n  --region {{asset.region}} \\\n  --kms-key {{manual.kmsKeyName}}\n```\n\nValidate the key configuration:\n\n```bash\ngcloud functions describe {{asset.name}} \\\n  --region {{asset.region}} \\\n  --format='value(kmsKeyName)'\n```\n\n### References\n\n- https://cloud.google.com/functions/docs/securing/cmek\n- https://cloud.google.com/kms/docs/customer-managed-encryption",
+  "isEnabled": false
+}

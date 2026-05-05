@@ -1,0 +1,25 @@
+{
+  "body": "Container registries should use private endpoints where possible to minimize internet exposure.",
+  "name": "Ensure Azure Container Registry public network access is disabled",
+  "slug": "azure-acr-public-network-access-disabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ContainerRegistry"
+      ],
+      "query": "azure-acr-public-network-access-disabled-registries-with-public-network-enabled",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Azure Remediation\n\n> **Service-wide fix (recommended):** use Premium registries with Private Link, disable public access, and only keep trusted-service bypass enabled when there is a documented business need.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many registries are internet reachable or when teams still depend on public endpoints.\n\n### Azure portal\n\n1. Open the affected Container Registry.\n2. Go to `Networking`.\n3. On `Public access`, set `Public network access` to `Disabled`.\n4. Create or verify a `Private endpoint` for every network that must reach the registry.\n5. If the finding is caused by the trusted-services bypass, clear `Allow trusted Microsoft services to access this container registry` unless you explicitly need it.\n\n### Azure CLI\n\nDisable public network access:\n\n~~~bash\naz acr update \\\n  --name <acr-name> \\\n  --resource-group <resource-group> \\\n  --public-network-enabled false\n~~~\n\nDisable trusted-services bypass if it is not required:\n\n~~~bash\naz acr update \\\n  --name <acr-name> \\\n  --resource-group <resource-group> \\\n  --allow-trusted-services false\n~~~\n\nValidate the network settings:\n\n~~~bash\naz acr show \\\n  --name <acr-name> \\\n  --resource-group <resource-group> \\\n  --query '{publicNetworkAccess:publicNetworkAccess,networkRuleBypassOptions:networkRuleBypassOptions}'\n~~~\n\n### Operational notes\n\n- Private Link requires the Premium SKU.\n- If you disable public access, `az acr build` and some Azure DevOps scenarios can break unless you use a supported private connectivity design or self-hosted agents.\n- If Microsoft Defender for Cloud or another trusted service still needs access, document that exception instead of leaving bypass broadly enabled by default.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/container-registry/container-registry-private-link\n- https://learn.microsoft.com/en-us/azure/container-registry/allow-access-trusted-services",
+  "isEnabled": false,
+  "description": "Azure Container Registries with public network access enabled",
+  "severity": 3
+}

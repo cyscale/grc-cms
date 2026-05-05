@@ -1,0 +1,25 @@
+{
+  "body": "Detection without alerting delays incident response. A security alert that is disabled or has no notification target usually fails silently.\n\n### What this control should detect\n\nAlerting policies that are disabled or do not have any notification channels configured.",
+  "name": "Ensure security alert policies are enabled and notify responders",
+  "slug": "gcp-alert-policies-high-risk-events",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AlertPolicy"
+      ],
+      "query": "gcp-alert-policies-high-risk-events-missing-required-alert-policies",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Google Cloud Remediation\n\n> **Service-wide fix (recommended):** define a standard alerting pack for security-relevant logs and manage the policies from code so they stay enabled and wired to the right notification channels.\n\n### When to use service-wide remediation\n\nUse the service-wide path when multiple projects use the same security alerting baseline.\n\n### Google Cloud console\n\n1. Open `Monitoring` -> `Alerting`.\n2. Edit the affected policy.\n3. Make sure the policy is `Enabled`.\n4. Add one or more notification channels such as email, PagerDuty, Pub/Sub, or Webhook.\n5. If the alert is based on logs, make sure the required logs-based metric exists and still receives data.\n\n### Google Cloud CLI\n\nCreate or update the logs-based metric used by the alert:\n\n~~~bash\ngcloud logging metrics create <metric-name> \\\n  --description=\"Security event counter\" \\\n  --log-filter='<filter>'\n~~~\n\nCreate a policy from a JSON or YAML definition:\n\n~~~bash\ngcloud monitoring policies create --policy-from-file=<policy-file>.json\n~~~\n\nValidate the policy state:\n\n~~~bash\ngcloud monitoring policies list --format='table(name,displayName,enabled)'\n~~~\n\n### Operational notes\n\n- This control checks whether policies are enabled and have notification channels. It does not verify that you created every policy your organization might want.\n- Prefer code-managed alert policies for shared environments so a local UI change does not silently disable a critical notification path.\n\n### References\n\n- https://cloud.google.com/monitoring/alerts\n- https://docs.cloud.google.com/monitoring/alerts/using-alerting-api\n- https://cloud.google.com/sdk/gcloud/reference/monitoring/policies/create\n- https://cloud.google.com/sdk/gcloud/reference/logging/metrics/create",
+  "isEnabled": false,
+  "description": "Alerting policies that are disabled or have no notification channels configured",
+  "severity": 2
+}

@@ -18,7 +18,8 @@
       "query": "azure-subscriptions-without-server-vulnerability-providers"
     }
   ],
-  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open [Microsoft Defender for Cloud | Environment settings](https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/~/EnvironmentSettings)\n1. Select a subscription\n1. Click on `Settings & Monitoring`\n1. Set the `Status` of `Vulnerability assessment for machines` to `On`\n1. Click `Continue`\n\nRepeat the above for any additional subscriptions.",
+  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open [Microsoft Defender for Cloud | Environment settings](https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/~/EnvironmentSettings)\n1. Select a subscription\n1. Click on `Settings & Monitoring`\n1. Set the `Status` of `Vulnerability assessment for machines` to `On`\n1. Click `Continue`\n\nRepeat the above for any additional subscriptions.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Azure\nUse management group or subscription Azure Policy assignments, remediation tasks where supported, landing-zone standards, and IaC modules so drift is prevented at scale.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "isEnabled": true,
-  "severity": 1
+  "severity": 1,
+  "description": "'Vulnerability assessment for machines' component status is set to 'On'"
 }

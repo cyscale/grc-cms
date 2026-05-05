@@ -18,7 +18,7 @@
       "returnPath": ""
     }
   ],
-  "remediationDescription": "Perform the following to configure the OSS bucket to use SSE-KMS:\n\n\r\n\r\n**Via the management console**\n\n\r\n\r\n1. Login to the [`OSS Console`](https://oss.console.aliyun.com/overview)\r\n2. Under `Buckets`, select the target bucket\r\n3. Click `Basic Setting` in the top middle of the console\r\n4. Under the Server-Side Encryption section, click on `Configure`\r\n5. Click `KMS` and select the KMS service key (alias/acs/oss)",
-  "description": "",
+  "remediationDescription": "Perform the following to configure the OSS bucket to use SSE-KMS:\n\n\n\n**Via the management console**\n\n\n\n1. Login to the [`OSS Console`](https://oss.console.aliyun.com/overview)\n2. Under `Buckets`, select the target bucket\n3. Click `Basic Setting` in the top middle of the console\n4. Under the Server-Side Encryption section, click on `Configure`\n5. Click `KMS` and select the KMS service key (alias/acs/oss)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Alibaba Cloud\nUse Resource Directory guardrails, account baselines, and IaC modules so the secure setting is applied consistently across environments.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "description": "Server-side encryption is set to 'Encrypt with Service Key'",
   "severity": 2
 }

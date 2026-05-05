@@ -1,0 +1,5 @@
+{
+  "name": "Azure Function Apps with remote debugging enabled",
+  "slug": "azure-functionapps-with-remote-debugging-enabled",
+  "query": "{\n  functionApps(\n    where: {\n      configs_SOME: {\n        remoteDebuggingEnabled: true\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}

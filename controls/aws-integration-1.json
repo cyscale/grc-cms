@@ -1,1 +1,22 @@
-{"name":"Ensure data stored in SNS Topics is encrypted","slug":"aws-integration-1","body":"Amazon SNS is a publishers and subscribers messaging service. When you publish messages to encrypted topics, customer master keys (CMK), powered by AWS KMS, can be used to encrypt your messages.\n\nIf you operate in a regulated market, such as HIPAA for healthcare, PCI DSS for finance, or FedRAMP for government, you need to ensure sensitive data messages passed in this service are encrypted at rest.","description":"","severity":2,"remediationDescription":"For more information about encryption at rest for SNS topics and how to enable it, consult the [AWS Documentation](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html)","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["SNSTopic"],"query":"aws-integration-1-data-stored-in-sns-topics-is-encrypted","returnPath":""}]}
+{
+  "name": "Ensure data stored in SNS Topics is encrypted",
+  "slug": "aws-integration-1",
+  "body": "Amazon SNS is a publishers and subscribers messaging service. When you publish messages to encrypted topics, customer master keys (CMK), powered by AWS KMS, can be used to encrypt your messages.\n\nIf you operate in a regulated market, such as HIPAA for healthcare, PCI DSS for finance, or FedRAMP for government, you need to ensure sensitive data messages passed in this service are encrypted at rest.",
+  "description": "Data stored in SNS Topics is encrypted",
+  "severity": 2,
+  "remediationDescription": "## AWS remediation\n\n### Console\n1. Open SNS topic.\n2. Enable server-side encryption.\n3. Select KMS key.\n\n### AWS CLI\n~~~bash\naws sns set-topic-attributes \\\n  --topic-arn <topic-arn> \\\n  --attribute-name KmsMasterKeyId \\\n  --attribute-value <kms-key-id-or-arn>\n~~~\n\n### References\n- https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html\n- https://docs.aws.amazon.com/cli/latest/reference/sns/set-topic-attributes.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SNSTopic"
+      ],
+      "query": "aws-integration-1-data-stored-in-sns-topics-is-encrypted",
+      "returnPath": ""
+    }
+  ]
+}

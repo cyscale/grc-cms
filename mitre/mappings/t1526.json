@@ -1,0 +1,20 @@
+{
+  "display_name": "Cloud Service Discovery - T1526",
+  "mid": "T1526",
+  "controls": [
+    "azure-network-watcher-enabled",
+    "gcp-project-asset-inventory",
+    "gcp-vms-public-ip-addresses",
+    "unused-service-identities"
+  ],
+  "assets": [
+    "Connector",
+    "Project",
+    "SubscriptionDiagnosticSettings",
+    "VPC",
+    "StorageAccount"
+  ],
+  "propagators": [
+    "IAMPolicy"
+  ]
+}

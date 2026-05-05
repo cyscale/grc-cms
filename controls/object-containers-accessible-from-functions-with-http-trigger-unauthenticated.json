@@ -1,47 +1,67 @@
 {
-  "body": "Cyscale looks for buckets that are accessible from functions with HTTP triggers that allow unauthenticated traffic. Most FaaS services have mechanisms to enforce authentication at the service level",
+  "body": "### Overview\n\nCyscale looks for buckets that are accessible from functions with HTTP triggers that allow unauthenticated traffic. Most FaaS services have mechanisms to enforce authentication at the service level",
   "name": "Ensure buckets are not accessible from functions with http trigger unauthenticated",
   "slug": "object-containers-accessible-from-functions-with-http-trigger-unauthenticated",
   "isInsight": true,
   "alertForSecondaryOnly": false,
   "rules": [
     {
-      "cloudProviders": ["aws"],
+      "cloudProviders": [
+        "aws"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Bucket"],
+      "subjects": [
+        "Bucket"
+      ],
       "query": "aws-buckets-accessible-from-functions-with-http-trigger-unauthenticated"
     },
     {
-      "cloudProviders": ["gcp"],
+      "cloudProviders": [
+        "gcp"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Bucket"],
+      "subjects": [
+        "Bucket"
+      ],
       "query": "gcp-buckets-accessible-from-functions-with-http-trigger-unauthenticated"
     },
     {
-      "cloudProviders": ["azure"],
+      "cloudProviders": [
+        "azure"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["BlobContainer"],
+      "subjects": [
+        "BlobContainer"
+      ],
       "query": "azure-blob-containers-accessible-from-functions-with-http-trigger-unauthenticated"
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "alibaba"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Bucket"],
+      "subjects": [
+        "Bucket"
+      ],
       "query": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated-and-system-policy"
     },
     {
-      "cloudProviders": ["alibaba"],
+      "cloudProviders": [
+        "alibaba"
+      ],
       "comparator": "eq",
       "expectedResult": "[]",
-      "subjects": ["Bucket"],
+      "subjects": [
+        "Bucket"
+      ],
       "query": "alibaba-buckets-accessible-from-functions-with-http-trigger-unauthenticated-and-custom-policy"
     }
   ],
-  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* You can modify settings of the HTTP trigger based on your business requirements, including the Authentication and Request Method parameters. For more information, see [Update the configurations of a trigger](https://www.alibabacloud.com/help/en/function-compute/latest/manage-triggers)\n\n#### AWS\n* You can control access to your Lambda function URLs using the AuthType parameter combined with resource-based policies attached to your specific function. For more information, see [Security and auth model for Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html)\n\n#### Azure\n* [Securing Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts)\n\n#### Google Cloud\n* [Authenticating for invocation](https://cloud.google.com/functions/docs/securing/authenticating)",
+  "remediationDescription": "Depending on the provider and service that you use, check out the following resources:\n\n#### Alibaba\n* You can modify settings of the HTTP trigger based on your business requirements, including the Authentication and Request Method parameters. For more information, see [Update the configurations of a trigger](https://www.alibabacloud.com/help/en/function-compute/latest/manage-triggers)\n\n#### AWS\n* You can control access to your Lambda function URLs using the AuthType parameter combined with resource-based policies attached to your specific function. For more information, see [Security and auth model for Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html)\n\n#### Azure\n* [Securing Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts)\n\n#### Google Cloud\n* [Authenticating for invocation](https://cloud.google.com/functions/docs/securing/authenticating)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n### Google Cloud\nUse organization or folder policies where available, shared project templates, logs and alerting baselines, and IaC modules so new resources inherit the secure setting.\n### Azure\nUse management group or subscription Azure Policy assignments, remediation tasks where supported, landing-zone standards, and IaC modules so drift is prevented at scale.\n### Alibaba Cloud\nUse Resource Directory guardrails, account baselines, and IaC modules so the secure setting is applied consistently across environments.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "description": "Buckets accessible from HTTP functions without authentication",
   "severity": 1
 }

@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Azure Function App authentication rejects anonymous requests",
+  "description": "Azure Function Apps with App Service Authentication allowing anonymous requests",
+  "slug": "azure-function-app-auth-rejects-anonymous-requests",
+  "body": "Enabling App Service Authentication is not enough if unauthenticated requests are still allowed through to application code. That mode is valid for intentionally public endpoints, but it should not be the default for sensitive functions.\n\nRequire authentication or return an explicit 401/403 response for functions that are not designed to be public.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-allowing-anonymous-app-service-auth",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nConfigure App Service Authentication so unauthenticated requests are rejected or redirected to your approved identity provider.\n\n### Azure CLI\n\nReturn HTTP 401 for unauthenticated API callers:\n\n```bash\naz webapp auth update \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --enabled true \\\n  --unauthenticated-client-action Return401\n```\n\nFor browser-facing applications, use `RedirectToLoginPage` where appropriate after the provider is configured.\n\nValidate the global validation setting:\n\n```bash\naz webapp auth show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query '{enabled:platform.enabled,unauthenticatedClientAction:globalValidation.unauthenticatedClientAction}'\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization\n- https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts",
+  "isEnabled": true
+}

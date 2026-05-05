@@ -1,1 +1,22 @@
-{"name":"Ensure that object versioning is enabled on log-buckets","slug":"gcp-logging-3","body":"**Description**\nIt is recommended to enable object versioning on log-buckets.\n\n**Rationale**\n\nLogs can be exported by creating one or more sinks that include a logs filter and a destination. As Stackdriver Logging receives new log entries, they are compared against each sink. If a log entry matches a sink's filter, then a copy of the log entry is written to the destination.\n\nSinks can be configured to export logs in Storage buckets. To support the retrieval of objects that are deleted or overwritten, Object Versioning feature should be enabled on all such storage buckets where sinks are configured.","description":"","severity":1,"remediationDescription":"**Using Command-Line**\n\n1. To list all sinks destined to storage buckets:\n\n```bash\ngcloud logging sinks list | grep storage.googleapis.com\n```\n\n2. For every storage bucket listed above, verify that Object Versioning is Enabled:\n\u003e gsutil versioning set on gs://\u003cBucket\u003e\n```\n\n**Impact**\n\nNone\n\n**Default Value**\n\nBy Default Object Versioning is in Suspended state for a storage bucket. \n\n**References**\n\n1. https://cloud.google.com/storage/docs/object-versioning","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["Bucket"],"query":"gcp-logging-3-object-versioning-is-enabled-on-log-buckets","returnPath":""}]}
+{
+  "name": "Ensure that object versioning is enabled on log-buckets",
+  "slug": "gcp-logging-3",
+  "body": "**Description**\nIt is recommended to enable object versioning on log-buckets.\n\n**Rationale**\n\nLogs can be exported by creating one or more sinks that include a logs filter and a destination. As Stackdriver Logging receives new log entries, they are compared against each sink. If a log entry matches a sink's filter, then a copy of the log entry is written to the destination.\n\nSinks can be configured to export logs in Storage buckets. To support the retrieval of objects that are deleted or overwritten, Object Versioning feature should be enabled on all such storage buckets where sinks are configured.",
+  "description": "S3 bucket without object versioning enabled",
+  "severity": 1,
+  "remediationDescription": "**Using Command-Line**\n\n1. To list all sinks destined to storage buckets:\n\n```bash\ngcloud logging sinks list | grep storage.googleapis.com\n```\n\n2. For every storage bucket listed above, verify that Object Versioning is Enabled:\n> gsutil versioning set on gs://<Bucket>\n```\n\n**Impact**\n\nNone\n\n**Default Value**\n\nBy Default Object Versioning is in Suspended state for a storage bucket. \n\n**References**\n\n1. https://cloud.google.com/storage/docs/object-versioning\n\n\n### Google Cloud Console (Asset-Level)\n1. Open the affected project/resource from the finding details in Google Cloud Console.\n2. Navigate to the resource security/configuration settings.\n3. Apply the control-specific secure configuration.\n4. Save and re-run the check.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Google Cloud\nUse organization or folder policies where available, shared project templates, logs and alerting baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "gcp-logging-3-object-versioning-is-enabled-on-log-buckets",
+      "returnPath": ""
+    }
+  ]
+}

@@ -16,7 +16,7 @@ jobs:
     environment: development
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: 'Semantic Release'
         uses: go-semantic-release/action@v1
         with:
@@ -29,7 +29,7 @@ jobs:
     environment: production
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Get changed files
@@ -42,7 +42,7 @@ jobs:
             policies/**
             mitre/**
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ vars.GRC_CMS_UPLOAD_ROLE_ARN }}
           aws-region: ${{ vars.GRC_BUCKET_REGION }}

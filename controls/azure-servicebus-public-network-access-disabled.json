@@ -1,0 +1,25 @@
+{
+  "body": "Service Bus should not be directly reachable from public networks when private connectivity can be used.",
+  "name": "Ensure Service Bus namespaces disable public network access",
+  "slug": "azure-servicebus-public-network-access-disabled",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ServiceBusNamespace"
+      ],
+      "query": "azure-servicebus-public-network-access-disabled-namespaces-with-public-network-enabled",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Azure Remediation\n\n> **Service-wide fix (recommended):** move sensitive Service Bus workloads to private connectivity and make public exposure an explicit exception.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many namespaces are exposed or when messaging is part of a platform service used by multiple teams.\n\n### Azure portal\n\n1. Open the affected Service Bus namespace.\n2. Go to `Networking`.\n3. Set `Public network access` to `Disabled`.\n4. Create and approve a `Private endpoint` for each network that must connect.\n5. Validate that name resolution and client connectivity work over the private path.\n\n### Azure CLI\n\nUpdate the namespace network rule set to disable public network access:\n\n~~~bash\naz servicebus namespace network-rule-set update \\\n  --resource-group <resource-group> \\\n  --namespace-name <namespace-name> \\\n  --public-network-access Disabled\n~~~\n\nValidate the setting:\n\n~~~bash\naz servicebus namespace network-rule-set show \\\n  --resource-group <resource-group> \\\n  --namespace-name <namespace-name>\n~~~\n\n### Operational notes\n\n- Private endpoints and the Networking experience are strongest in Premium tier deployments. If your current tier cannot support the target architecture, plan a migration instead of accepting permanent public exposure.\n- If you must keep public access temporarily, restrict exposure with selected networks and IP rules while the private connectivity rollout is being completed.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/service-bus-messaging/network-security\n- https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-service-endpoints\n- https://learn.microsoft.com/en-us/cli/azure/servicebus/namespace/network-rule-set?view=azure-cli-lts",
+  "isEnabled": false,
+  "description": "Service Bus namespaces allowing public network access",
+  "severity": 3
+}

@@ -1,0 +1,25 @@
+{
+  "body": "Centralized logging helps preserve forensic and audit evidence even if project-level settings drift or a project owner changes retention locally.\n\n### Why this matters\n\nSecurity teams usually need at least one organization-level or folder-level sink that exports child-project logs to a central destination.\n\n### What this control should detect\n\nOrganization-level or folder-level log sinks that do not include child resources or do not point to a destination.",
+  "name": "Ensure organization and folder log sinks include children and have a destination",
+  "slug": "gcp-aggregated-log-sinks-configured",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "LogSink"
+      ],
+      "query": "gcp-aggregated-log-sinks-configured-missing-org-or-folder-sinks",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## Google Cloud Remediation\n\n> **Service-wide fix (recommended):** manage org-level or folder-level sinks centrally and export audit and security logs to a dedicated logging project, bucket, SIEM, BigQuery dataset, or Pub/Sub topic.\n\n### When to use service-wide remediation\n\nUse the service-wide path when multiple folders or projects need the same forensic logging baseline.\n\n### Google Cloud console\n\n1. Open `Cloud Logging` and switch scope to the organization or folder.\n2. Open `Logs Router`.\n3. Create a new sink or update the existing sink.\n4. Enable `Include logs ingested by children`.\n5. Point the sink to an approved destination.\n6. Grant the sink writer identity permission to write to that destination.\n\n### Google Cloud CLI\n\nCreate an aggregated sink at organization scope:\n\n~~~bash\ngcloud logging sinks create <sink-name> <destination> \\\n  --organization=<org-id> \\\n  --include-children \\\n  --log-filter='<filter>'\n~~~\n\nUpdate an existing sink so it includes child resources:\n\n~~~bash\ngcloud logging sinks update <sink-name> <destination> \\\n  --organization=<org-id> \\\n  --include-children \\\n  --log-filter='<filter>'\n~~~\n\nValidate the sink:\n\n~~~bash\ngcloud logging sinks describe <sink-name> --organization=<org-id>\n~~~\n\n### Operational notes\n\n- If the sink writes to a destination outside the current project, grant the sink `writerIdentity` permission on that destination or export will fail.\n- If no organization-level or folder-level sink exists yet, create one first instead of only fixing project-level logging.\n\n### References\n\n- https://cloud.google.com/logging/docs/export/configure_export_v2\n- https://cloud.google.com/logging/docs/export/aggregated_sinks\n- https://cloud.google.com/sdk/gcloud/reference/logging/sinks/create\n- https://docs.cloud.google.com/sdk/gcloud/reference/logging/sinks/update",
+  "isEnabled": false,
+  "description": "Organization-level or folder-level log sinks that do not include children or do not define a destination",
+  "severity": 2
+}

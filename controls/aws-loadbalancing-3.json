@@ -1,1 +1,22 @@
-{"name":"Ensure Network Load Balancer uses TLS Listener","slug":"aws-loadbalancing-3","body":"Use secure listeners to support encrypted communication between clients and your load balancers. You can use AWS Certificate Manager (ACM) or AWS Identity and Access Management (IAM) to manage the server certificates installed on your load balancer.\nYou can use the Server Name Indication (SNI) protocol to serve multiple secure websites using a single secure listener. SNI is automatically enabled for your load balancer when you associate more than one server certificate with a secure listener.","description":"","severity":2,"remediationDescription":"Follow the steps described in the [AWS Documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html) on how to create a TLS listener for Network Load Balancers.","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["LoadBalancer"],"query":"aws-loadbalancing-3-network-load-balancer-uses-tls-listener","returnPath":""}]}
+{
+  "name": "Ensure Network Load Balancer uses TLS Listener",
+  "slug": "aws-loadbalancing-3",
+  "body": "Use secure listeners to support encrypted communication between clients and your load balancers. You can use AWS Certificate Manager (ACM) or AWS Identity and Access Management (IAM) to manage the server certificates installed on your load balancer.\nYou can use the Server Name Indication (SNI) protocol to serve multiple secure websites using a single secure listener. SNI is automatically enabled for your load balancer when you associate more than one server certificate with a secure listener.",
+  "description": "Network Load Balancer uses TLS Listener",
+  "severity": 2,
+  "remediationDescription": "## AWS remediation\n\n### Console\n1. Open NLB listeners.\n2. Add TLS listener on port 443.\n3. Attach ACM certificate.\n\n### AWS CLI\n~~~bash\naws elbv2 create-listener \\\n  --load-balancer-arn <nlb-arn> \\\n  --protocol TLS \\\n  --port 443 \\\n  --certificates CertificateArn=<acm-certificate-arn> \\\n  --default-actions Type=forward,TargetGroupArn=<target-group-arn>\n~~~\n\n### References\n- https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html\n- https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-listener.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "LoadBalancer"
+      ],
+      "query": "aws-loadbalancing-3-network-load-balancer-uses-tls-listener",
+      "returnPath": ""
+    }
+  ]
+}

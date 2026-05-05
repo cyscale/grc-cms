@@ -18,7 +18,8 @@
       "isManual": false
     }
   ],
-  "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the web app using the `Open in Azure` button.\n1. Under `Setting` section, click on `Configuration`\n1. Under the `General Settings` tab, set `HTTPS Only` to `On` under `Platform Settings`\n\n### Remediate from Azure CLI\n\nTo set HTTPS-only traffic value for an existing app, run the following command:\n\n```bash\naz webapp update --resource-group <resourceGroupNmae> --name <appName> --set httpsOnly=true\n```\n\n### Remediate from PowerShell\n\n```powershell\nSet-AzWebApp -ResourceGroupName <ResourceGroupNmae> -Name <AppName> -HttpsOnly $true\n```",
+  "remediationDescription": "## Azure Remediation\n\n> **Service-wide fix (recommended):** enforce HTTPS-only at the App Service platform layer and combine it with minimum TLS version and certificate hygiene for internet-facing apps.\n\n### Azure portal\n\n1. Open the App Service.\n2. Go to `Configuration`.\n3. Under `General settings`, set `HTTPS Only` to `On`.\n4. Save the change.\n\n### Azure CLI\n\n```bash\naz webapp update   --resource-group <resource-group>   --name <app-name>   --set httpsOnly=true\n```\n\nValidate the setting:\n\n```bash\naz webapp show   --resource-group <resource-group>   --name <app-name>   --query httpsOnly\n```\n\n### PowerShell\n\n```powershell\nSet-AzWebApp -ResourceGroupName <resource-group> -Name <app-name> -HttpsOnly $true\n```\n\n### Operational notes\n\n- HTTPS-only redirects HTTP to HTTPS, but it does not by itself fix weak TLS versions or certificate problems. Pair it with the App Service TLS controls.\n- If the app sits behind Front Door, Application Gateway, or another reverse proxy, keep HTTPS-only enabled anyway unless you have a very specific platform design that terminates and re-encrypts elsewhere.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings\n- https://learn.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-lts",
   "isEnabled": true,
-  "severity": 3
+  "severity": 3,
+  "description": "'HTTPS Only' is set to 'On' for App Service"
 }

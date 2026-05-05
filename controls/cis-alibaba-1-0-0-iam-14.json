@@ -1,1 +1,22 @@
-{"name":"Ensure RAM password policy temporarily blocks logon after 5 incorrect logon attempts within an hour","slug":"cis-alibaba-1-0-0-iam-14","body":"","description":"","severity":2,"remediationDescription":"","rules":[{"cloudProviders":["alibaba"],"comparator":"eq","expectedResult":"[]","subjects":["IAMPasswordPolicy"],"query":"cis-alibaba-1-0-0-iam-14-ram-password-policy-temporarily-blocks-logon-after-5-incorrect-logon-attempts-within-an-hour","returnPath":""}]}
+{
+  "name": "Ensure RAM password policy temporarily blocks logon after 5 incorrect logon attempts within an hour",
+  "slug": "cis-alibaba-1-0-0-iam-14",
+  "body": "",
+  "description": "RAM password policy temporarily blocks logon after 5 incorrect logon attempts within an hour",
+  "severity": 2,
+  "remediationDescription": "## Remediation\n\n### Alibaba Cloud Console (Asset-Level)\n1. Open the affected asset from the finding details.\n2. Go to the related Alibaba Cloud service console (RAM, ActionTrail, VPC, OSS, RDS, ACK, KMS, or Security Center).\n3. Apply the secure setting required by this control (for example: disable public access, tighten policy, enable logging, enforce encryption, or enable deletion protection).\n4. Save changes and verify the resource is now compliant.\n\n### Alibaba Cloud CLI (Asset-Level)\n1. Configure CLI credentials:\n\n~~~bash\naliyun configure\n~~~\n\n2. Identify the affected resource and service using a Describe/List command, then apply the corresponding Modify/Update command for that service.\n\nCommon starting commands:\n\n~~~bash\naliyun ecs DescribeInstances --RegionId <region-id>\naliyun rds DescribeDBInstances --RegionId <region-id>\naliyun ram ListUsers\naliyun vpc DescribeVpcs --RegionId <region-id>\naliyun oss ls oss://<bucket-name>\n~~~\n\n### Validation\n- Re-run the control and confirm findings are cleared.\n- If an exception is required, document owner, reason, and expiration date.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Alibaba Cloud\nUse Resource Directory guardrails, account baselines, and IaC modules so the secure setting is applied consistently across environments.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "IAMPasswordPolicy"
+      ],
+      "query": "cis-alibaba-1-0-0-iam-14-ram-password-policy-temporarily-blocks-logon-after-5-incorrect-logon-attempts-within-an-hour",
+      "returnPath": ""
+    }
+  ]
+}

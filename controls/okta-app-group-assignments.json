@@ -1,1 +1,22 @@
-{"name":"Ensure application assignments are configured through groups","slug":"okta-app-group-assignments","body":"You can grant users access to applications directly or through groups. The latter is preferred because it greatly simplifies access management.","description":"","severity":2,"remediationDescription":"Go to the **Groups** page, under the Directory section, in the Okta Admin Dashboard, select or create the group, and on the **Applications** tab, press **Assign applications**.\nNow, you can remove the individual user assignment. We recommend following the assignment conversion process described in the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Provisioning/lcm/lcm-convert-user-group.htm).","rules":[{"cloudProviders":["okta"],"comparator":"eq","expectedResult":"[]","subjects":["User"],"query":"okta-app-group-assignments-application-assignments-are-configured-through-groups","returnPath":""}]}
+{
+  "name": "Ensure application assignments are configured through groups",
+  "slug": "okta-app-group-assignments",
+  "body": "You can grant users access to applications directly or through groups. The latter is preferred because it greatly simplifies access management.",
+  "description": "Application assignments are configured through groups",
+  "severity": 2,
+  "remediationDescription": "Go to the **Groups** page, under the Directory section, in the Okta Admin Dashboard, select or create the group, and on the **Applications** tab, press **Assign applications**.\nNow, you can remove the individual user assignment. We recommend following the assignment conversion process described in the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Provisioning/lcm/lcm-convert-user-group.htm).\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Okta\nUse tenant-wide sign-on policies, MFA policies, admin-role governance, and identity lifecycle automation so the control is enforced centrally.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "okta"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "User"
+      ],
+      "query": "okta-app-group-assignments-application-assignments-are-configured-through-groups",
+      "returnPath": ""
+    }
+  ]
+}

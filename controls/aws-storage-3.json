@@ -1,1 +1,22 @@
-{"name":"Ensure S3 bucket policy does not grant Allow permission to everyone","slug":"aws-storage-3","body":"The S3 bucket policy access permission settings are used to define who can access data and objects contained in a bucket. Users with access to S3 buckets are authorized to read, write, upload and delete objects and data in the bucket. This level of permission granted to Everyone may result in theft of data, compromised privacy, or unintended charges.","description":"","severity":2,"remediationDescription":"In general, bucket policies are used for managing cross-account permissions. You can find out more in the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-alternatives-guidelines.html). If this is the case, consider limiting the bucket policy only to specific principals. You can update the bucket policy from the **Permissions** tab of the S3 bucket.","rules":[{"cloudProviders":["aws"],"comparator":"eq","expectedResult":"[]","subjects":["Bucket"],"query":"aws-storage-3-s3-bucket-policy-does-not-grant-allow-permission-to-everyone","returnPath":""}]}
+{
+  "name": "Ensure S3 bucket policy does not grant Allow permission to everyone",
+  "slug": "aws-storage-3",
+  "body": "### Overview\n\nThe S3 bucket policy access permission settings are used to define who can access data and objects contained in a bucket. Users with access to S3 buckets are authorized to read, write, upload and delete objects and data in the bucket. This level of permission granted to Everyone may result in theft of data, compromised privacy, or unintended charges.",
+  "description": "S3 bucket policy does not grant Allow permission to everyone",
+  "severity": 2,
+  "remediationDescription": "## AWS remediation\n\n### Console\n1. Open S3 bucket permissions.\n2. Remove bucket policy statements that allow broad public principals.\n3. Keep Block Public Access enabled.\n\n### AWS CLI\n~~~bash\naws s3api put-public-access-block \\\n  --bucket <bucket-name> \\\n  --public-access-block-configuration 'BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true'\n~~~\n\n### References\n- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-alternatives-guidelines.html\n- https://docs.aws.amazon.com/cli/latest/reference/s3api/put-public-access-block.html\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Bucket"
+      ],
+      "query": "aws-storage-3-s3-bucket-policy-does-not-grant-allow-permission-to-everyone",
+      "returnPath": ""
+    }
+  ]
+}

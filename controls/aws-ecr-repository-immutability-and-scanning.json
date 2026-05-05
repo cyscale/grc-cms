@@ -1,0 +1,25 @@
+{
+  "body": "Container images should be protected from tag overwrite and scanned for vulnerabilities.\n\n### What this control should detect\n\nECR repositories that do not enforce image tag immutability and scan-on-push.",
+  "name": "Ensure ECR repositories use immutable tags and image scanning",
+  "slug": "aws-ecr-repository-immutability-and-scanning",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ECRRepository"
+      ],
+      "query": "aws-ecr-repository-immutability-and-scanning-noncompliant-repositories",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## AWS Remediation\n\n> **Service-wide fix (recommended):** set registry-wide scanning defaults first, then fix any repositories that still allow mutable tags or have repository-level scan-on-push disabled.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many repositories are affected. Registry-wide enhanced scanning with Amazon Inspector is the cleaner long-term model, while repository-level changes close the immediate gap that this control detects.\n\n### Service-wide AWS CLI\n\nEnable enhanced registry scanning for all repositories:\n\n~~~bash\naws ecr put-registry-scanning-configuration \\\n  --scan-type ENHANCED \\\n  --rules '[{\"scanFrequency\":\"CONTINUOUS_SCAN\",\"repositoryFilters\":[{\"filter\":\"*\",\"filterType\":\"WILDCARD\"}]}]'\n~~~\n\n### Console\n\n1. Open Amazon ECR.\n2. Open the affected repository.\n3. Edit repository settings.\n4. Set `Tag immutability` to `Immutable`.\n5. Enable `Scan on push` if the repository is still using repository-level basic scanning.\n\n### AWS CLI\n\nSet immutable tags:\n\n~~~bash\naws ecr put-image-tag-mutability \\\n  --repository-name <repository-name> \\\n  --image-tag-mutability IMMUTABLE\n~~~\n\nEnable repository scan-on-push:\n\n~~~bash\naws ecr put-image-scanning-configuration \\\n  --repository-name <repository-name> \\\n  --image-scanning-configuration scanOnPush=true\n~~~\n\nValidate the repository settings:\n\n~~~bash\naws ecr describe-repositories \\\n  --repository-names <repository-name> \\\n  --query 'repositories[].{name:repositoryName,immutability:imageTagMutability,scanOnPush:imageScanningConfiguration.scanOnPush}'\n~~~\n\n### Operational notes\n\n- Immutable tags prevent a later push from silently replacing a trusted image tag such as `prod` or `release`.\n- Enhanced scanning is generally better than relying only on per-repository basic scanning because it supports continuous vulnerability updates through Amazon Inspector.\n- If your delivery pipeline relies on reusing the same tag, change the pipeline to publish unique version tags before enforcing immutability.\n\n### References\n\n- https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html\n- https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html\n- https://docs.aws.amazon.com/cli/latest/reference/ecr/put-registry-scanning-configuration.html",
+  "isEnabled": false,
+  "description": "ECR repositories with mutable tags or no scanning",
+  "severity": 2
+}

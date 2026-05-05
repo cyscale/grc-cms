@@ -1,0 +1,24 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure Azure Function Apps require HTTPS only",
+  "description": "Azure Function Apps allowing HTTP traffic",
+  "slug": "azure-function-app-https-only",
+  "body": "Azure Function Apps should redirect or reject plain HTTP traffic so function invocations, headers, tokens, and payloads are protected in transit. HTTP support increases the chance of credential exposure and downgrade mistakes, especially for webhook-style endpoints.\n\nRequire HTTPS and combine it with a modern minimum TLS version for all Function Apps.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "FunctionApp"
+      ],
+      "query": "azure-functionapps-without-https-only",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable HTTPS-only access on the Function App.\n\n### Azure CLI\n\n```bash\naz functionapp update \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --set httpsOnly=true\n```\n\nValidate the setting:\n\n```bash\naz functionapp show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query '{name:name,httpsOnly:httpsOnly}'\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/azure-functions/security-concepts\n- https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings#enforce-https",
+  "isEnabled": true
+}

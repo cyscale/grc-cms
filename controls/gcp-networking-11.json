@@ -1,1 +1,22 @@
-{"name":"Ensure firewall rule does not allow all traffic for PostgreSQL DB (port 5432)","slug":"gcp-networking-11","body":"Allowing access from arbitrary IP addresses to this port increases the attack surface of your network. We recommend to allow traffic only from specific IP addresses. ","description":"","severity":2,"remediationDescription":"If the Firewall rule reported indeed needs to restrict all traffic, follow the instructions below:\n\n1. Login to GCP Console\n2. Go to 'VPC Network'\n3. Go to the 'Firewall'\n4. Click on the reported Firewall rule\n5. Click on 'EDIT'\n6. Modify Source IP ranges to specific IP\n7. Click on 'SAVE'","rules":[{"cloudProviders":["gcp"],"comparator":"eq","expectedResult":"[]","subjects":["Firewall"],"query":"gcp-networking-11-firewall-rule-does-not-allow-all-traffic-for-postgresql-db-port-5432","returnPath":""}]}
+{
+  "name": "Ensure firewall rule does not allow all traffic for PostgreSQL DB (port 5432)",
+  "slug": "gcp-networking-11",
+  "body": "### Overview\n\nAllowing access from arbitrary IP addresses to this port increases the attack surface of your network. We recommend to allow traffic only from specific IP addresses.",
+  "description": "Firewall rule does not allow all traffic for PostgreSQL DB (port 5432)",
+  "severity": 2,
+  "remediationDescription": "If the Firewall rule reported indeed needs to restrict all traffic, follow the instructions below:\n\n1. Login to GCP Console\n2. Go to 'VPC Network'\n3. Go to the 'Firewall'\n4. Click on the reported Firewall rule\n5. Click on 'EDIT'\n6. Modify Source IP ranges to specific IP\n7. Click on 'SAVE'\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Google Cloud\nUse organization or folder policies where available, shared project templates, logs and alerting baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Firewall"
+      ],
+      "query": "gcp-networking-11-firewall-rule-does-not-allow-all-traffic-for-postgresql-db-port-5432",
+      "returnPath": ""
+    }
+  ]
+}

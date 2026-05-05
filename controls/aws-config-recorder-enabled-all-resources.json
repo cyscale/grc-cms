@@ -1,0 +1,25 @@
+{
+  "body": "AWS Config is foundational for compliance monitoring. If recording is disabled or incomplete, many controls become blind.\n\n### What this control should detect\n\nAccounts/regions where Config recording is disabled, delivery channel is missing, or recording scope is incomplete.",
+  "name": "Ensure AWS Config recorder is enabled and recording all supported resources",
+  "slug": "aws-config-recorder-enabled-all-resources",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "ConfigurationRecorder"
+      ],
+      "query": "aws-config-recorder-enabled-all-resources-recorders-not-complete",
+      "returnPath": ""
+    }
+  ],
+  "remediationDescription": "## AWS Remediation\n\n> **Service-wide fix (recommended):** standardize AWS Config in every required region with the same recorder settings, delivery channel, and log bucket controls.\n\n### When to use service-wide remediation\n\nUse the service-wide path when many accounts or regions are affected. AWS Config is a platform dependency for many compliance controls, so inconsistent regional setup creates large blind spots.\n\n### Console\n\n1. Open AWS Config in the affected region.\n2. Go to `Settings`.\n3. Configure the recorder to record `All resources`.\n4. Turn on global resource recording if your standard requires IAM and other global resource coverage.\n5. Configure a delivery channel to an approved S3 bucket. Add SNS if your process uses notifications.\n6. Start recording and confirm the recorder status is `Recording`.\n\n### AWS CLI\n\nCreate or update the recorder:\n\n~~~bash\naws configservice put-configuration-recorder \\\n  --configuration-recorder name=default,roleARN=<role-arn>,recordingGroup={allSupported=true,includeGlobalResourceTypes=true}\n~~~\n\nCreate or update the delivery channel:\n\n~~~bash\naws configservice put-delivery-channel \\\n  --delivery-channel name=default,s3BucketName=<config-bucket-name>\n~~~\n\nStart recording:\n\n~~~bash\naws configservice start-configuration-recorder \\\n  --configuration-recorder-name default\n~~~\n\nValidate status:\n\n~~~bash\naws configservice describe-configuration-recorder-status\naws configservice describe-configuration-recorders\n~~~\n\n### Operational notes\n\n- The IAM role used by AWS Config must trust `config.amazonaws.com` and have permission to write configuration history and snapshots to the destination bucket.\n- Make sure the S3 bucket policy permits AWS Config delivery from every in-scope account and region.\n- If you manage multiple accounts, use StackSets, Control Tower customizations, or your landing-zone pipeline instead of fixing accounts one by one.\n\n### References\n\n- https://docs.aws.amazon.com/config/latest/developerguide/manage-delivery-channel.html\n- https://docs.aws.amazon.com/config/latest/developerguide/managing-recorder_console-start.html",
+  "isEnabled": false,
+  "description": "AWS Config recorder not enabled or not recording all resources",
+  "severity": 2
+}

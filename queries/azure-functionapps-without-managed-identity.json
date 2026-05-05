@@ -1,0 +1,5 @@
+{
+  "name": "Azure Function Apps without managed identity",
+  "slug": "azure-functionapps-without-managed-identity",
+  "query": "{\n  functionApps(where: { managedIdentities_NONE: {} }) {\n    ...AssetFragment\n  }\n}"
+}

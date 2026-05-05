@@ -1,0 +1,5 @@
+{
+  "name": "AWS Lambda functions without Amazon Inspector coverage",
+  "slug": "aws-lambda-functions-without-inspector-coverage",
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: \"aws\"\n      inspectorEnabled: false\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+}
