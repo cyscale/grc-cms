@@ -1,5 +1,5 @@
 {
   "name": "ECR repositories without immutability and scan-on-push",
   "slug": "aws-ecr-repository-immutability-and-scanning-noncompliant-repositories",
-  "query": "{ ecrRepositories(where: { OR: [ { imageScanningConfigurationScanOnPush: false }, { imageTagMutability_NOT: \"IMMUTABLE\" } ] }) { ...AssetFragment } }"
+  "query": "{ ecrRepositories(where: { OR: [ { imageScanningConfigurationScanOnPush: { eq: false } }, { NOT: { imageTagMutability: { eq: \"IMMUTABLE\" } } } ] }) { ...AssetFragment } }"
 }

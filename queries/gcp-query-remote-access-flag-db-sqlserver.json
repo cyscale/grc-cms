@@ -1,5 +1,5 @@
 {
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: \"sqlserver\"\n      cloudProvider: \"gcp\"\n      OR: [{ dbFlags_NONE: { name: \"remote access\" }}, {dbFlags_SOME: {name: \"remote access\", value: \"on\"}}]\n     \n    }\n  ) {\n     ...AssetFragment\n  }\n}",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: { eq: \"sqlserver\" }\n      cloudProvider: { eq: \"gcp\" }\n      OR: [{ dbFlags_NONE: { name: { eq: \"remote access\" } }}, {dbFlags_SOME: {name: { eq: \"remote access\" }, value: { eq: \"on\" }}}]\n     \n    }\n  ) {\n     ...AssetFragment\n  }\n}",
   "slug": "gcp-query-remote-access-flag-db-sqlserver",
   "name": "Ensure 'remote access' database flag for Cloud SQL SQL Server instance is set to 'off'"
 }

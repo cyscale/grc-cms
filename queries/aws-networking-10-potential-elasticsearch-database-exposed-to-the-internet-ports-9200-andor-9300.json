@@ -1,1 +1,5 @@
-{"name":"Potential Elasticsearch database exposed to the internet (ports 9200 and/or 9300)","slug":"aws-networking-10-potential-elasticsearch-database-exposed-to-the-internet-ports-9200-andor-9300","query":"{ securityGroups(where: {vms_NOT: null, rules_SOME: {direction: \"Inbound\", AND: [{OR: [{sources_INCLUDES: \"cidr:0.0.0.0/0\"}, {sources_INCLUDES: \"cidr:::/0\"}]}, {OR: [{destFromPort_LTE: 9200, destToPort_GTE: 9200}, {destFromPort_LTE: 9300, destToPort_GTE: 9300}]}]}}) {...AssetFragment}}"}
+{
+  "name": "Potential Elasticsearch database exposed to the internet (ports 9200 and/or 9300)",
+  "slug": "aws-networking-10-potential-elasticsearch-database-exposed-to-the-internet-ports-9200-andor-9300",
+  "query": "{ securityGroups(where: {vms_SOME: {}, rules_SOME: {direction: { eq: \"Inbound\" }, AND: [{OR: [{sources_INCLUDES: \"cidr:0.0.0.0/0\"}, {sources_INCLUDES: \"cidr:::/0\"}]}, {OR: [{destFromPort_LTE: 9200, destToPort_GTE: 9200}, {destFromPort_LTE: 9300, destToPort_GTE: 9300}]}]}}) {...AssetFragment}}"
+}

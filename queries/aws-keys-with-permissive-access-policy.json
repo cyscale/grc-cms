@@ -1,5 +1,5 @@
 {
   "name": "AWS Keys With Permissive Access Policy",
   "slug": "aws-keys-with-permissive-access-policy",
-  "query": "{kmsKeys( where: { OR: [ { AND: {policyDocument_MATCHES: \".*arn:aws:iam::[0-9*]+:root.*\", managementType: \"CustomerManaged\"} } { keyPolicy: { statements_SOME: { effect: \"Allow\" conditions: [] principals_INCLUDES: \"AWS|*\" } } } ] } ) {...AssetFragment}}"
+  "query": "{kmsKeys( where: { OR: [ { AND: {policyDocument_MATCHES: \".*arn:aws:iam::[0-9*]+:root.*\", managementType: { eq: \"CustomerManaged\" }} } { keyPolicy: { statements_SOME: { effect: { eq: \"Allow\" } conditions: { eq: [] } principals_INCLUDES: \"AWS|*\" } } } ] } ) {...AssetFragment}}"
 }

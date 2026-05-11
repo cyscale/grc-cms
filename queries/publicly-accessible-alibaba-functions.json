@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Functions for Alibaba",
   "slug": "publicly-accessible-alibaba-functions",
-  "query": "{\n  functions(\n    where: {\n      cloudProvider: \"alibaba\"\n      triggers_SOME: {\n        triggerType: \"http\"\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"alibaba\" }\n      triggers_SOME: {\n        triggerType: { eq: \"http\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

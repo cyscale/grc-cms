@@ -1,5 +1,5 @@
 {
   "name": "Databases without delete protection Azure",
   "slug": "databases-without-delete-protection-azure",
-  "query": "{ databases(where: { deletionPrevention: \"disabled\" }) {...AssetFragment} } "
+  "query": "{ databases(where: { deletionPrevention: { eq: \"disabled\" } }) {...AssetFragment} } "
 }

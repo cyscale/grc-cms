@@ -1,5 +1,5 @@
 {
   "name": "Entra with permissive guest invite restrictions",
   "slug": "entra-permissive-guest-invite-restrictions",
-  "query": "{\n  connectors(\n    where: {\n      authorizationPolicy: {\n        NOT: { allowInvitesFrom: \"adminsAndGuestInviters\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(\n    where: {\n      authorizationPolicy: {\n        NOT: { allowInvitesFrom: { eq: \"adminsAndGuestInviters\" } }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

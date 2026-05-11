@@ -1,5 +1,5 @@
 {
   "name": "Service Bus namespaces with public network enabled",
   "slug": "azure-servicebus-public-network-access-disabled-namespaces-with-public-network-enabled",
-  "query": "{ serviceBusNamespaces(where: { publicNetworkAccess_NOT: \"Disabled\" }) { ...AssetFragment } }"
+  "query": "{ serviceBusNamespaces(where: { NOT: { publicNetworkAccess: { eq: \"Disabled\" } } }) { ...AssetFragment } }"
 }

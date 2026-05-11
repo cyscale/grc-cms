@@ -1,5 +1,5 @@
 {
   "name": "The expiration date is set on all keys",
   "slug": "azure-1-3-0-security-1-the-expiration-date-is-set-on-all-keys",
-  "query": "{kmsKeys(where:{expires:null}){...AssetFragment}}"
+  "query": "{kmsKeys(where:{expires: { eq: null }}){...AssetFragment}}"
 }

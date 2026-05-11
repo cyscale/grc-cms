@@ -1,5 +1,5 @@
 {
   "name": "Kubernetes Deployments in default namespace",
   "slug": "k8s-deployments-in-default-namespace",
-  "query": "{\n  namespaces(where: { internalName: \"default\" }) {\n    deployments {\n      ...AssetFragment\n    }\n  }\n}"
+  "query": "{\n  namespaces(where: { internalName: { eq: \"default\" } }) {\n    deployments {\n      ...AssetFragment\n    }\n  }\n}"
 }

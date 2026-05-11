@@ -1,5 +1,5 @@
 {
   "name": "Buckets without versioning enabled",
   "slug": "object-containers-without-versioning-enabled",
-  "query": "{ objectContainers (where: {versioningEnabled: false}) {...AssetFragment} } "
+  "query": "{ objectContainers (where: {versioningEnabled: { eq: false }}) {...AssetFragment} } "
 }

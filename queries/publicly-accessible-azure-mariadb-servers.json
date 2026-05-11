@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure MariaDB Servers",
   "slug": "publicly-accessible-azure-mariadb-servers",
-  "query": "{\n  mariaDbServers(\n    where: {\n      publicAccessBlocked: false\n      firewallRules_SOME: {\n        startIPAddress: \"0.0.0.0\"\n        endIPAddress: \"255.255.255.255\"\n      }\n    }\n  ) {...AssetFragment}\n}"
+  "query": "{\n  mariaDbServers(\n    where: {\n      publicAccessBlocked: { eq: false }\n      firewallRules_SOME: {\n        startIPAddress: { eq: \"0.0.0.0\" }\n        endIPAddress: { eq: \"255.255.255.255\" }\n      }\n    }\n  ) {...AssetFragment}\n}"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Azure Function Apps with unsupported runtime",
   "slug": "azure-functionapps-with-unsupported-runtime",
-  "query": "{\n  functionApps(\n    where: {\n      configs_SOME: {\n        isDeprecated: true\n        OR: [\n          { nodeVersion_NOT: \"\" }\n          { pythonVersion_NOT: \"\" }\n          { javaVersion_NOT: \"\" }\n          { powerShellVersion_NOT: \"\" }\n          { netFrameworkVersion_NOT: \"\" }\n          { linuxFxVersion_NOT: \"\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  functionApps(\n    where: {\n      configs_SOME: {\n        isDeprecated: { eq: true }\n        OR: [\n          { NOT: { nodeVersion: { eq: \"\" } } }\n          { NOT: { pythonVersion: { eq: \"\" } } }\n          { NOT: { javaVersion: { eq: \"\" } } }\n          { NOT: { powerShellVersion: { eq: \"\" } } }\n          { NOT: { netFrameworkVersion: { eq: \"\" } } }\n          { NOT: { linuxFxVersion: { eq: \"\" } } }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

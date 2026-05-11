@@ -1,5 +1,5 @@
 {
   "name": "Subnets without Private Google Access or Flow Logs",
   "slug": "gcp-subnetwork-private-google-access-and-flow-logs-subnets-without-required-settings",
-  "query": "{ subnetworks(where: { OR: [ { privateIpGoogleAccess: false }, { enableFlowLogs: false } ] }) { ...AssetFragment } }"
+  "query": "{ subnetworks(where: { OR: [ { privateIpGoogleAccess: { eq: false } }, { enableFlowLogs: { eq: false } } ] }) { ...AssetFragment } }"
 }

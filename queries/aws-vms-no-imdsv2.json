@@ -1,5 +1,5 @@
 {
   "name": "Retrieve AWS VMs without IMDSv2 required",
   "slug": "aws-vms-no-imdsv2",
-  "query": "{\n  vms(\n    where: { NOT: { metadataOptionHTTPTokens: \"required\" } }\n  ) {...AssetFragment}\n}\n"
+  "query": "{\n  vms(\n    where: { NOT: { metadataOptionHTTPTokens: { eq: \"required\" } } }\n  ) {...AssetFragment}\n}\n"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Missing aggregated log sinks",
   "slug": "gcp-aggregated-log-sinks-configured-missing-org-or-folder-sinks",
-  "query": "{ logSinks(where: { OR: [ { includeChildren: false }, { destination: \"\" } ] }) { ...AssetFragment } }"
+  "query": "{ logSinks(where: { OR: [ { includeChildren: { eq: false } }, { destination: { eq: \"\" } } ] }) { ...AssetFragment } }"
 }

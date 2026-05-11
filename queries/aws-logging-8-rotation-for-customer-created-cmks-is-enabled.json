@@ -1,1 +1,1 @@
-{"name":"Rotation for customer created CMKs is enabled","slug":"aws-logging-8-rotation-for-customer-created-cmks-is-enabled","query":"kmsKeys(where:{automaticRotationEnabled:false, managementType:\"CustomerManaged\"}){...AssetFragment}"}
+{"name":"Rotation for customer created CMKs is enabled","slug":"aws-logging-8-rotation-for-customer-created-cmks-is-enabled","query":"kmsKeys(where:{automaticRotationEnabled: { eq: false }, managementType: { eq: \"CustomerManaged\" }}){...AssetFragment}"}

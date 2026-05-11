@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure MariaDB Servers with no/old TLS",
   "slug": "publicly-accessible-azure-mariadb-servers-with-no-old-tls",
-  "query": "{\n  mariaDbServers (\n    where: {\n      AND: [\n        { publicAccessBlocked: false }\n        {\n          firewallRules_SOME: {\n            startIPAddress: \"0.0.0.0\"\n            endIPAddress: \"255.255.255.255\"\n          }\n        }\n        { OR: [{ tlsStatus: \"disabled\" }, { tlsMinimumVersion_LT: 1.2 }] }\n      ]\n    }\n  ) {...AssetFragment}\n}"
+  "query": "{\n  mariaDbServers (\n    where: {\n      AND: [\n        { publicAccessBlocked: { eq: false } }\n        {\n          firewallRules_SOME: {\n            startIPAddress: { eq: \"0.0.0.0\" }\n            endIPAddress: { eq: \"255.255.255.255\" }\n          }\n        }\n        { OR: [{ tlsStatus: { eq: \"disabled\" } }, { tlsMinimumVersion_LT: 1.2 }] }\n      ]\n    }\n  ) {...AssetFragment}\n}"
 }

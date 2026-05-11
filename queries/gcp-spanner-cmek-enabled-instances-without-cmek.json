@@ -1,5 +1,5 @@
 {
   "name": "Spanner databases without CMEK",
   "slug": "gcp-spanner-cmek-enabled-instances-without-cmek",
-  "query": "{ cloudSpannerDatabases(where: { encrypted: false }) { ...AssetFragment } }"
+  "query": "{ cloudSpannerDatabases(where: { encrypted: { eq: false } }) { ...AssetFragment } }"
 }

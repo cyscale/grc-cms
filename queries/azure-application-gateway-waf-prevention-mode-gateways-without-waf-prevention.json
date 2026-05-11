@@ -1,5 +1,5 @@
 {
   "name": "Application gateways without WAF prevention mode",
   "slug": "azure-application-gateway-waf-prevention-mode-gateways-without-waf-prevention",
-  "query": "{ applicationGateways(where: { OR: [ { webApplicationFirewallEnabled: false }, { webApplicationFirewallMode_NOT: \"Prevention\" } ] }) { ...AssetFragment } }"
+  "query": "{ applicationGateways(where: { OR: [ { webApplicationFirewallEnabled: { eq: false } }, { NOT: { webApplicationFirewallMode: { eq: \"Prevention\" } } } ] }) { ...AssetFragment } }"
 }

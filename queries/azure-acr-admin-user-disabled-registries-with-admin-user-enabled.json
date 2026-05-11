@@ -1,5 +1,5 @@
 {
   "name": "Container registries with admin user enabled",
   "slug": "azure-acr-admin-user-disabled-registries-with-admin-user-enabled",
-  "query": "{ containerRegistries(where: { adminUserEnabled: true }) { ...AssetFragment } }"
+  "query": "{ containerRegistries(where: { adminUserEnabled: { eq: true } }) { ...AssetFragment } }"
 }

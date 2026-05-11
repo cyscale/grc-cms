@@ -1,5 +1,5 @@
 {
   "name": "Kubernetes Endpoints in default namespace",
   "slug": "k8s-endpoints-in-default-namespace",
-  "query": "{\n  namespaces(where: {internalName: \"default\"}) {\n    endpoints (where: {internalName_NOT: \"kubernetes\"}){\n      ...AssetFragment\n    }\n  }  \n}"
+  "query": "{\n  namespaces(where: {internalName: { eq: \"default\" }}) {\n    endpoints (where: {NOT: { internalName: { eq: \"kubernetes\" } }}){\n      ...AssetFragment\n    }\n  }  \n}"
 }

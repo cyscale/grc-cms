@@ -1,5 +1,5 @@
 {
   "name": "SageMaker Notebooks with root access enabled",
   "slug": "sage-maker-notebook-with-root-access-enabled",
-  "query": "{\n  sageMakerNoteBooks(\n    where: {\n     NOT: { rootAccess: \"Disabled\" } \n    }\n  ) {...AssetFragment}\n}"
+  "query": "{\n  sageMakerNoteBooks(\n    where: {\n     NOT: { rootAccess: { eq: \"Disabled\" } } \n    }\n  ) {...AssetFragment}\n}"
 }

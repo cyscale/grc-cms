@@ -1,1 +1,5 @@
-{"name":"VPC flow logging is enabled in all VPCs","slug":"aws-logging-9-vpc-flow-logging-is-enabled-in-all-vpcs","query":"vpcs(where: {OR: [{hasFlowLog: null}, {hasFlowLog_NONE: {flowLogStatus: \"ACTIVE\"}}]}){...AssetFragment}"}
+{
+  "name": "VPC flow logging is enabled in all VPCs",
+  "slug": "aws-logging-9-vpc-flow-logging-is-enabled-in-all-vpcs",
+  "query": "vpcs(where: {OR: [{hasFlowLog_NONE: {}}, {hasFlowLog_NONE: {flowLogStatus: { eq: \"ACTIVE\" }}}]}){...AssetFragment}"
+}

@@ -1,1 +1,5 @@
-{"name":"Server-side encryption is set to 'Encrypt with BYOK'","slug":"cis-alibaba-1-0-0-storage-9-server-side-encryption-is-set-to-encrypt-with-byok","query":"buckets(where: { OR:[{encryptionKeyIDFromProvider: \"\" },{encryptionKeyIDFromProvider: null }, {encryptionKey:{managementType:\"ProviderManaged\"}}]}){...AssetFragment}"}
+{
+  "name": "Server-side encryption is set to 'Encrypt with BYOK'",
+  "slug": "cis-alibaba-1-0-0-storage-9-server-side-encryption-is-set-to-encrypt-with-byok",
+  "query": "buckets(where: { OR:[{encryptionKeyIDFromProvider: { eq: \"\" } },{encryptionKeyIDFromProvider: null }, {encryptionKey:{managementType: { eq: \"ProviderManaged\" }}}]}){...AssetFragment}"
+}

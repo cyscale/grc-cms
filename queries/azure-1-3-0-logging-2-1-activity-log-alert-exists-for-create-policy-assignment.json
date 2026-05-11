@@ -1,1 +1,5 @@
-{"name":"Activity Log Alert exists for Create Policy Assignment","slug":"azure-1-3-0-logging-2-1-activity-log-alert-exists-for-create-policy-assignment","query":"query ($subscriptionResourceId: String!) {\n  AzureActivityLogAlertsForAction(\n    subscriptionResourceId: $subscriptionResourceId\n    equals:\"microsoft.authorization/policyassignments/write\"){...AssetFragment}}"}
+{
+  "name": "Activity Log Alert exists for Create Policy Assignment",
+  "slug": "azure-1-3-0-logging-2-1-activity-log-alert-exists-for-create-policy-assignment",
+  "query": "query ($subscriptionResourceId: String!) {\n  AzureActivityLogAlertsForAction(\n    subscriptionResourceId: $subscriptionResourceId\n    equals: \"microsoft.authorization/policyassignments/write\"){...AssetFragment}}"
+}

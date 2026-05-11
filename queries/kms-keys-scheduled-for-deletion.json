@@ -1,5 +1,5 @@
 {
   "name": "Encryption Keys scheduled for deletion",
-  "query": "{ kmsKeys(where: {scheduleForDeletion: true, dataStores_SOME: { identifier_NOT: null }}) {...AssetFragment} }",
+  "query": "{ kmsKeys(where: {scheduleForDeletion: { eq: true }, dataStores_SOME: { NOT: { identifier: null } }}) {...AssetFragment} }",
   "slug": "kms-keys-scheduled-for-deletion"
 }

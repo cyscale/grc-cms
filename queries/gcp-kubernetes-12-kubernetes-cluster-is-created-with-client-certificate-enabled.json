@@ -1,5 +1,5 @@
 {
   "name": "Legacy client certificate authentication is disabled on Kubernetes Engine Clusters",
   "slug": "gcp-kubernetes-12-kubernetes-cluster-is-created-with-client-certificate-enabled",
-  "query": "gkeClusters(where:{masterAuthClientKey_NOT:\"\"}){...AssetFragment}"
+  "query": "gkeClusters(where:{NOT: { masterAuthClientKey: { eq: \"\" } }}){...AssetFragment}"
 }
