@@ -1,5 +1,5 @@
 {
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: \"gcp\"\n      ipAddresses_SOME: { NOT: { type: \"PRIVATE\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: { eq: \"gcp\" }\n      ipAddresses_SOME: { NOT: { type: { eq: \"PRIVATE\" } } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
   "name": "Ensure Instance IP assignment is set to private",
   "slug": "gcp-query-instance-ip-assignment-private"
 }

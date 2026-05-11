@@ -1,5 +1,5 @@
 {
   "name": "Okta Super Administrator Users",
   "slug": "okta-super-administrator-users",
-  "query": "{\n    users(where: {isSuperAdmin: true}) {...AssetFragment}\n}"
+  "query": "{\n    users(where: {isSuperAdmin: { eq: true }}) {...AssetFragment}\n}"
 }

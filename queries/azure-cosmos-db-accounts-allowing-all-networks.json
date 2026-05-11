@@ -1,5 +1,5 @@
 {
   "name": "Azure Cosmos DB Accounts Allowing All Networks",
   "slug": "azure-cosmos-db-accounts-allowing-all-networks",
-  "query": "{\n  cosmosDbAccounts(where: { isVirtualNetworkFilterEnabled: false }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  cosmosDbAccounts(where: { isVirtualNetworkFilterEnabled: { eq: false } }) {\n    ...AssetFragment\n  }\n}"
 }

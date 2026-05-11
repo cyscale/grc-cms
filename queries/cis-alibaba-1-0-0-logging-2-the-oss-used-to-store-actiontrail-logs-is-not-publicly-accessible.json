@@ -1,1 +1,5 @@
-{"name":"The OSS used to store ActionTrail logs is not publicly accessible","slug":"cis-alibaba-1-0-0-logging-2-the-oss-used-to-store-actiontrail-logs-is-not-publicly-accessible","query":"{buckets(where: {OR: [ {acl: \"public-read\"}, {acl: \"public-read-write\"}], trails_NOT: null}){...AssetFragment}}"}
+{
+  "name": "The OSS used to store ActionTrail logs is not publicly accessible",
+  "slug": "cis-alibaba-1-0-0-logging-2-the-oss-used-to-store-actiontrail-logs-is-not-publicly-accessible",
+  "query": "{buckets(where: {OR: [ {acl: { eq: \"public-read\" }}, {acl: { eq: \"public-read-write\" }}], trails_SOME: {}}){...AssetFragment}}"
+}

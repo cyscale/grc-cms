@@ -1,1 +1,1 @@
-{"name":"Cloud SQL database instances require all incoming connections to use SSL","slug":"gcp-sql-1-cloud-sql-database-instances-require-all-incoming-connections-to-use-ssl","query":"cloudSqlInstances(where:{settingsIPConfigurationRequireSsl:false}){...AssetFragment}"}
+{"name":"Cloud SQL database instances require all incoming connections to use SSL","slug":"gcp-sql-1-cloud-sql-database-instances-require-all-incoming-connections-to-use-ssl","query":"cloudSqlInstances(where:{settingsIPConfigurationRequireSsl: { eq: false }}){...AssetFragment}"}

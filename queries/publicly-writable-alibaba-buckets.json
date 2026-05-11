@@ -1,5 +1,5 @@
 {
   "name": "Publicly Writable Alibaba Buckets",
   "slug": "publicly-writable-alibaba-buckets",
-  "query": "{ buckets( where: { cloudProvider: \"alibaba\" publicAccessBlocked: false OR: [ { acl_IN: [\"public-read-write\"] } { bucketPolicy: { statements_SOME: { effect: \"Allow\" OR: [ { actions_INCLUDES: \"oss:PutObject\" } { actions_INCLUDES: \"oss:PutObjectAcl\" } { actions_INCLUDES: \"oss:*\" } { actions_INCLUDES: \"*\" } ] principals_INCLUDES: \"*\" } } } ] } ) {...AssetFragment} } "
+  "query": "{ buckets( where: { cloudProvider: { eq: \"alibaba\" } publicAccessBlocked: { eq: false } OR: [ { acl_IN: [\"public-read-write\"] } { bucketPolicy: { statements_SOME: { effect: { eq: \"Allow\" } OR: [ { actions_INCLUDES: \"oss:PutObject\" } { actions_INCLUDES: \"oss:PutObjectAcl\" } { actions_INCLUDES: \"oss:*\" } { actions_INCLUDES: \"*\" } ] principals_INCLUDES: \"*\" } } } ] } ) {...AssetFragment} } "
 }

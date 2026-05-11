@@ -1,5 +1,5 @@
 {
   "name": "Kubernetes namespaces without network policies",
   "slug": "k8s-namespaces-without-network-policies",
-  "query": "{\n  namespaces(where: {networkPolicies: null}) {\n    ...AssetFragment\n  }  \n}"
+  "query": "{\n  namespaces(where: {networkPolicies_NONE: {}}) {\n    ...AssetFragment\n  }  \n}"
 }

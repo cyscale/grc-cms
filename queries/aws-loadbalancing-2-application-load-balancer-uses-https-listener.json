@@ -1,1 +1,1 @@
-{"name":"Application Load Balancer uses HTTPS Listener","slug":"aws-loadbalancing-2-application-load-balancer-uses-https-listener","query":"{loadBalancers(where:{type:\"application\",listensOnHTTPListener_NONE:{hasCertificate:true}}){...AssetFragment}}"}
+{"name":"Application Load Balancer uses HTTPS Listener","slug":"aws-loadbalancing-2-application-load-balancer-uses-https-listener","query":"{loadBalancers(where:{type: { eq: \"application\" },listensOnHTTPListener_NONE:{hasCertificate: { eq: true }}}){...AssetFragment}}"}

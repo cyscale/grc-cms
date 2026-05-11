@@ -1,5 +1,5 @@
 {
   "name": "Azure SQL Servers without Entra admin",
   "slug": "azure-sql-servers-without-entra-admin",
-  "query": "{\n  sqlServers(\n    where: {\n      NOT: { entraAdministrator: { administratorType: \"ActiveDirectory\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  sqlServers(\n    where: {\n      NOT: { entraAdministrator: { administratorType: { eq: \"ActiveDirectory\" } } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

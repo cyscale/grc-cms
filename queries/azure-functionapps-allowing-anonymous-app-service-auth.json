@@ -1,5 +1,5 @@
 {
   "name": "Azure Function Apps allowing anonymous App Service Authentication requests",
   "slug": "azure-functionapps-allowing-anonymous-app-service-auth",
-  "query": "{\n  functionApps(\n    where: {\n      authSettings_SOME: {\n        enabled: true\n        OR: [\n          { unauthenticatedClientAction: \"AllowAnonymous\" }\n          { unauthenticatedClientAction: \"\" }\n          { unauthenticatedClientAction: null }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  functionApps(\n    where: {\n      authSettings_SOME: {\n        enabled: { eq: true }\n        OR: [\n          { unauthenticatedClientAction: { eq: \"AllowAnonymous\" } }\n          { unauthenticatedClientAction: { eq: \"\" } }\n          { unauthenticatedClientAction: { eq: null } }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

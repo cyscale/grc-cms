@@ -1,1 +1,1 @@
-{"name":"Application assignments are configured through groups","slug":"okta-app-group-assignments-application-assignments-are-configured-through-groups","query":"users(where: { applicationsConnection_SOME: {edge: {scope_NOT: \"GROUP\"}}}) {...AssetFragment}"}
+{"name":"Application assignments are configured through groups","slug":"okta-app-group-assignments-application-assignments-are-configured-through-groups","query":"users(where: { applicationsConnection_SOME: {edge: {NOT: { scope: { eq: \"GROUP\" } }}}}) {...AssetFragment}"}

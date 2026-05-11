@@ -1,5 +1,5 @@
 {
   "name": "Container registries with public network enabled",
   "slug": "azure-acr-public-network-access-disabled-registries-with-public-network-enabled",
-  "query": "{ containerRegistries(where: { OR: [ { publicNetworkAccess_NOT: \"Disabled\" }, { networkRuleBypassOptions_INCLUDES: \"AzureServices\" } ] }) { ...AssetFragment } }"
+  "query": "{ containerRegistries(where: { OR: [ { NOT: { publicNetworkAccess: { eq: \"Disabled\" } } }, { networkRuleBypassOptions_INCLUDES: \"AzureServices\" } ] }) { ...AssetFragment } }"
 }

@@ -1,1 +1,1 @@
-{"name":"Kinesis Data Streams use encryption at rest","slug":"aws-integration-2-kinesis-data-streams-use-encryption-at-rest","query":"{kinesisDataStreams(where:{encryptionType:\"NONE\"}){...AssetFragment}}"}
+{"name":"Kinesis Data Streams use encryption at rest","slug":"aws-integration-2-kinesis-data-streams-use-encryption-at-rest","query":"{kinesisDataStreams(where:{encryptionType: { eq: \"NONE\" }}){...AssetFragment}}"}

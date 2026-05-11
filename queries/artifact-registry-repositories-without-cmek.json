@@ -1,5 +1,5 @@
 {
   "name": "Artifact Registry repositories without customer-managed encryption keys",
   "slug": "artifact-registry-repositories-without-cmek",
-  "query": "{ artifactRegistryRepositories(where: { OR: [ { kmsKeyName: \"\" }, { kmsKeyName: null } ] }) { ...AssetFragment } }"
+  "query": "{ artifactRegistryRepositories(where: { OR: [ { kmsKeyName: { eq: \"\" } }, { kmsKeyName: null } ] }) { ...AssetFragment } }"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Missing required high-risk alert policies",
   "slug": "gcp-alert-policies-high-risk-events-missing-required-alert-policies",
-  "query": "{ alertPolicies(where: { OR: [ { enabled: false }, { notificationChannels: \"\" } ] }) { ...AssetFragment } }"
+  "query": "{ alertPolicies(where: { OR: [ { enabled: { eq: false } }, { notificationChannels: { eq: \"\" } } ] }) { ...AssetFragment } }"
 }

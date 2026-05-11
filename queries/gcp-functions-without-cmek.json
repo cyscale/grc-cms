@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud Functions without customer-managed encryption keys",
   "slug": "gcp-functions-without-cmek",
-  "query": "{\n  functions(\n    where: {\n      cloudProvider: \"gcp\"\n      OR: [\n        { kmsKeyName: null }\n        { kmsKeyName: \"\" }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"gcp\" }\n      OR: [\n        { kmsKeyName: null }\n        { kmsKeyName: { eq: \"\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

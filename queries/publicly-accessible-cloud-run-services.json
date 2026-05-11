@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Cloud Run Services",
   "slug": "publicly-accessible-cloud-run-services",
-  "query": "{\n  cloudRunServices(where: { allowsUnauthenticatedInvocation: true }) {\n    ...AssetFragment\n  }\n}\n"
+  "query": "{\n  cloudRunServices(where: { allowsUnauthenticatedInvocation: { eq: true } }) {\n    ...AssetFragment\n  }\n}\n"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Azure VMs with unmanaged disks",
   "slug": "azure-vms-with-unmanaged-disks",
-  "query": "{\n  vms(where: { diskAttachments_SOME: { NOT: { vhdURI: \"\" } } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  vms(where: { diskAttachments_SOME: { NOT: { vhdURI: { eq: \"\" } } } }) {\n    ...AssetFragment\n  }\n}"
 }

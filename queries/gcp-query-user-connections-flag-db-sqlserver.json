@@ -1,5 +1,5 @@
 {
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: \"gcp\"\n      engine: \"sqlserver\"\n      dbFlags_SOME: { name: \"user connections\" }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      cloudProvider: { eq: \"gcp\" }\n      engine: { eq: \"sqlserver\" }\n      dbFlags_SOME: { name: { eq: \"user connections\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
   "slug": "gcp-query-user-connections-flag-db-sqlserver",
   "name": "Ensure 'user connections' database flag for Cloud Sql Sql Server instance is set to a non-limiting value"
 }

@@ -1,1 +1,5 @@
-{"name":"All users have MFA configured","slug":"okta-mfa-all-users-have-mfa-configured","query":"users(where:{ AND: [{ OR: [{ factors: null }, { factors: [] }] }, {applications_NOT: null}] }) {...AssetFragment}"}
+{
+  "name": "All users have MFA configured",
+  "slug": "okta-mfa-all-users-have-mfa-configured",
+  "query": "users(where:{ AND: [{ OR: [{ factors: { eq: null } }, { factors: { eq: [] } }] }, {applications_SOME: {}}] }) {...AssetFragment}"
+}

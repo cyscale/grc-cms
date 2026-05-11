@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Azure PostgreSQL Single Servers",
   "slug": "publicly-accessible-azure-postgres-single-servers",
-  "query": "{ postgreSqlServers( where: { publicAccessBlocked: false firewallRules_SOME: { startIPAddress: \"0.0.0.0\" endIPAddress: \"255.255.255.255\" } } ) {...AssetFragment} } "
+  "query": "{ postgreSqlServers( where: { publicAccessBlocked: { eq: false } firewallRules_SOME: { startIPAddress: { eq: \"0.0.0.0\" } endIPAddress: { eq: \"255.255.255.255\" } } } ) {...AssetFragment} } "
 }

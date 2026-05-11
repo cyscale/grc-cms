@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Functions for AWS",
   "slug": "publicly-accessible-aws-functions",
-  "query": "{\n  functions(\n    where: {\n      AND: [\n        { functionURL_NOT: \"\" }\n        { authType: \"NONE\" }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
+  "query": "{\n  functions(\n    where: {\n      AND: [\n        { NOT: { functionURL: { eq: \"\" } } }\n        { authType: { eq: \"NONE\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}\n"
 }

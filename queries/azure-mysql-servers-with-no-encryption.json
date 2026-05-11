@@ -1,5 +1,5 @@
 {
   "name": "Azure MySQL Servers with no encryption",
   "slug": "azure-mysql-servers-with-no-encryption",
-  "query": "{ mySqlServers (where: {encrypted: false}) {...AssetFragment} }"
+  "query": "{ mySqlServers (where: {encrypted: { eq: false }}) {...AssetFragment} }"
 }

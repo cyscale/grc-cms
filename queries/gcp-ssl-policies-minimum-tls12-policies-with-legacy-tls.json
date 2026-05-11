@@ -1,5 +1,5 @@
 {
   "name": "SSL policies with legacy TLS",
   "slug": "gcp-ssl-policies-minimum-tls12-policies-with-legacy-tls",
-  "query": "{ sslPolicies(where: { OR: [ { minTlsVersion_IN: [\"TLS_1_0\", \"TLS_1_1\"] }, { profile: \"COMPATIBLE\" } ] }) { ...AssetFragment } }"
+  "query": "{ sslPolicies(where: { OR: [ { minTlsVersion_IN: [\"TLS_1_0\", \"TLS_1_1\"] }, { profile: { eq: \"COMPATIBLE\" } } ] }) { ...AssetFragment } }"
 }

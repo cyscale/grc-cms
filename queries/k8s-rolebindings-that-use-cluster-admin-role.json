@@ -1,5 +1,5 @@
 {
   "name": "Kubernetes RoleBindings that use cluster-admin role",
   "slug": "k8s-rolebindings-that-use-cluster-admin-role",
-  "query": "{\n  clusterRoles(where: {internalName: \"cluster-admin\"}) {\n    roleBindings(where: {subjects_SOME: {name_NOT: \"\"}}) {\n      ...AssetFragment\n    }\n  }\n}"
+  "query": "{\n  clusterRoles(where: {internalName: { eq: \"cluster-admin\" }}) {\n    roleBindings(where: {subjects_SOME: {NOT: { name: { eq: \"\" } }}}) {\n      ...AssetFragment\n    }\n  }\n}"
 }

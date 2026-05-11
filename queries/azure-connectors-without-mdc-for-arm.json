@@ -1,5 +1,5 @@
 {
   "name": "Azure Subscriptions without Microsoft Defender for Resource Manager",
   "slug": "azure-connectors-without-mdc-for-arm",
-  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: \"Arm\", pricingTier: \"Free\" } }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(\n    where: { pricing_SOME: { name: { eq: \"Arm\" }, pricingTier: { eq: \"Free\" } } }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

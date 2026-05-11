@@ -1,5 +1,5 @@
 {
   "name": "Azure SQL Servers without auditing",
   "slug": "azure-sql-servers-without-auditing",
-  "query": "{\n  sqlServers(where: { blobAuditingPolicies_NONE: { state: \"Enabled\" } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  sqlServers(where: { blobAuditingPolicies_NONE: { state: { eq: \"Enabled\" } } }) {\n    ...AssetFragment\n  }\n}"
 }

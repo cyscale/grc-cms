@@ -1,5 +1,5 @@
 {
   "name": "Retrieve AWS Launch Template Without Encrypted EBS",
   "slug": "aws-launch-tempalte-has-encrypted-ebs",
-  "query": "{\n  launchTemplateVersions(\n    where: { blockDeviceMappings_SOME: { encrypted: \"false\" } }\n  ) {...AssetFragment}\n}\n"
+  "query": "{\n  launchTemplateVersions(\n    where: { blockDeviceMappings_SOME: { encrypted: { eq: \"false\" } } }\n  ) {...AssetFragment}\n}\n"
 }

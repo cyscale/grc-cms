@@ -1,1 +1,1 @@
-{"name":"Logging is enabled for Cloud Storage buckets","slug":"gcp-storage-2-logging-is-enabled-for-cloud-storage-buckets","query":"buckets(where:{loggingLogBucket_NOT:\"\"}){...AssetFragment}"}
+{"name":"Logging is enabled for Cloud Storage buckets","slug":"gcp-storage-2-logging-is-enabled-for-cloud-storage-buckets","query":"buckets(where:{NOT: { loggingLogBucket: { eq: \"\" } }}){...AssetFragment}"}

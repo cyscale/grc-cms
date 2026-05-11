@@ -1,5 +1,5 @@
 {
   "name": "Azure Storage Accounts Allowing Public Network Access",
   "slug": "azure-storage-account-public-network-access",
-  "query": "{\n  storageAccounts(where: { NOT: { publicNetworkAccess: \"Disabled\" } }) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  storageAccounts(where: { NOT: { publicNetworkAccess: { eq: \"Disabled\" } } }) {\n    ...AssetFragment\n  }\n}"
 }

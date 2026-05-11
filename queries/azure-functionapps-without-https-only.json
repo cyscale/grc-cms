@@ -1,5 +1,5 @@
 {
   "name": "Azure Function Apps without HTTPS only",
   "slug": "azure-functionapps-without-https-only",
-  "query": "{\n  functionApps(\n    where: {\n      httpsOnly: false\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  functionApps(\n    where: {\n      httpsOnly: { eq: false }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }

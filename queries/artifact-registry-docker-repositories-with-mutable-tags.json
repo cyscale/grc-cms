@@ -1,5 +1,5 @@
 {
   "name": "Artifact Registry Docker repositories with mutable tags",
   "slug": "artifact-registry-docker-repositories-with-mutable-tags",
-  "query": "{ artifactRegistryRepositories(where: { format: \"DOCKER\", dockerImmutableTags: false }) { ...AssetFragment } }"
+  "query": "{ artifactRegistryRepositories(where: { format: { eq: \"DOCKER\" }, dockerImmutableTags: { eq: false } }) { ...AssetFragment } }"
 }
