@@ -1,0 +1,487 @@
+{
+  "name": "NIS 2 Directive (EU) 2022/2555",
+  "slug": "nis-2-directive",
+  "body": "## Statement\n\nThe NIS 2 Directive establishes a common cybersecurity baseline for essential and important entities operating in the European Union. This framework translates the Directive's governance, cybersecurity risk-management, and significant-incident reporting expectations into practical cloud, identity, workload, logging, resilience, and vulnerability controls.\n\nThis mapping is built around the core operational obligations in Directive (EU) 2022/2555:\n\n- Article 20: governance, management accountability, oversight, and cybersecurity training.\n- Article 21: risk-based technical, operational, and organisational cybersecurity risk-management measures.\n- Article 22: supply-chain risk considerations for critical ICT services, systems, and products.\n- Article 23: significant-incident reporting and communication readiness.\n- Article 24: alignment with recognised cybersecurity certification schemes where required or appropriate.\n\nThe controls below are not a legal determination of NIS 2 applicability. They provide an operational evidence layer for cloud and identity environments so teams can demonstrate that proportionate measures are implemented, monitored, and continuously improved.\n\n## Coverage\n\n<Procedure slug=\"nis2-article-20-governance-and-accountability\"/>\n<Procedure slug=\"nis2-article-21-risk-analysis-and-system-security\"/>\n<Procedure slug=\"nis2-article-21-incident-handling\"/>\n<Procedure slug=\"nis2-article-21-business-continuity-and-crisis-management\"/>\n<Procedure slug=\"nis2-article-21-supply-chain-security\"/>\n<Procedure slug=\"nis2-article-21-secure-acquisition-development-and-vulnerability-handling\"/>\n<Procedure slug=\"nis2-article-21-effectiveness-assessment\"/>\n<Procedure slug=\"nis2-article-21-cyber-hygiene-and-training\"/>\n<Procedure slug=\"nis2-article-21-cryptography-and-encryption\"/>\n<Procedure slug=\"nis2-article-21-access-control-and-asset-management\"/>\n<Procedure slug=\"nis2-article-21-mfa-and-secure-communications\"/>\n<Procedure slug=\"nis2-article-23-significant-incident-reporting\"/>\n\n## References\n\n- Directive (EU) 2022/2555, Articles 20-24: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022L2555",
+  "version": "1.0",
+  "isStandard": true,
+  "enabled": true,
+  "targetCloudProviders": [
+    "aws",
+    "azure",
+    "gcp",
+    "k8s",
+    "entra",
+    "okta",
+    "googleworkspace"
+  ],
+  "procedures": [
+    {
+      "name": "Article 20 - Governance and management accountability",
+      "slug": "nis2-article-20-governance-and-accountability",
+      "body": "Management bodies should approve cybersecurity risk-management measures, oversee implementation, understand risk exposure, and ensure clear security roles, contacts, and escalation paths. These controls provide evidence for administrative ownership, privileged-account resilience, security contactability, and emergency support readiness.",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-1"
+        },
+        {
+          "control": "aws-1-3-0-iam-2"
+        },
+        {
+          "control": "aws-iam-16"
+        },
+        {
+          "control": "essential-contacts-not-set-for-organization"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
+        },
+        {
+          "control": "google-workspace-admin-redundancy"
+        },
+        {
+          "control": "okta-admin-redundancy"
+        },
+        {
+          "control": "idp-super-administrator-users"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(a) - Risk analysis and information system security",
+      "slug": "nis2-article-21-risk-analysis-and-system-security",
+      "body": "Entities should maintain a risk-based information-system security baseline supported by inventory, configuration recording, exposure analysis, and security telemetry. These controls evidence that cloud and identity environments can be assessed, monitored, and governed consistently.",
+      "controls": [
+        {
+          "control": "aws-1-4-0-iam-20"
+        },
+        {
+          "control": "aws-logging-5"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-logging-1"
+        },
+        {
+          "control": "azure-diagnostic-setting-subscription-activity-logs"
+        },
+        {
+          "control": "azure-application-insights-are-configured"
+        },
+        {
+          "control": "microsoft-defender-for-containers"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(b) - Incident handling",
+      "slug": "nis2-article-21-incident-handling",
+      "body": "Incident handling requires timely detection, triage, containment, response, and recovery. The mapped controls focus on high-risk administrative changes, suspicious API activity, policy changes, network control changes, and alerting channels that support incident response teams.",
+      "controls": [
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "aws-monitoring-4"
+        },
+        {
+          "control": "aws-monitoring-5"
+        },
+        {
+          "control": "aws-monitoring-10"
+        },
+        {
+          "control": "aws-monitoring-11"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "azure-notify-alerts-high-severity"
+        },
+        {
+          "control": "azure-alert-create-policy"
+        },
+        {
+          "control": "azure-alert-delete-policy-assign"
+        },
+        {
+          "control": "azure-alert-create-update-sec-solution"
+        },
+        {
+          "control": "azure-alert-delete-sec-solution"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(c) - Business continuity, backup, disaster recovery, and crisis management",
+      "slug": "nis2-article-21-business-continuity-and-crisis-management",
+      "body": "Continuity measures should preserve recoverability of systems, data, cryptographic material, and critical services. These controls support backup coverage, object versioning, soft delete, delete-protection, and protection against accidental or malicious key loss.",
+      "controls": [
+        {
+          "control": "object-containers-without-versioning-enabled"
+        },
+        {
+          "control": "azure-soft-delete-containers-blobs"
+        },
+        {
+          "control": "gcp-db-automated-backups"
+        },
+        {
+          "control": "databases-without-deletion-protection"
+        },
+        {
+          "control": "azure-expiration-keys-key-vault"
+        },
+        {
+          "control": "azure-expiration-secrets-key-vault"
+        },
+        {
+          "control": "kms-keys-scheduled-for-deletion"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(d) and Article 22 - Supply chain security",
+      "slug": "nis2-article-21-supply-chain-security",
+      "body": "Supply-chain security should cover direct suppliers, service providers, external identities, service identities, registries, and build/runtime dependencies. These controls help identify excessive trust, externally exposed principals, public registries, and unsafe service identity patterns.",
+      "controls": [
+        {
+          "control": "identities-allowing-external-access"
+        },
+        {
+          "control": "aws-1-4-0-iam-20"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "gcp-service-account-admin-privileges"
+        },
+        {
+          "control": "service-ids-with-access-to-everything"
+        },
+        {
+          "control": "nodegroup-roles-with-ecr-write-access"
+        },
+        {
+          "control": "publicly-accessible-artifact-registry-repositories"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(e) - Secure acquisition, development, maintenance, and vulnerability handling",
+      "slug": "nis2-article-21-secure-acquisition-development-and-vulnerability-handling",
+      "body": "Secure acquisition and maintenance should reduce exploitable vulnerabilities, unsupported runtimes, mutable artifacts, unsafe metadata services, and insecure secret handling across applications and infrastructure. These controls provide technical evidence for vulnerability management and secure lifecycle practices.",
+      "controls": [
+        {
+          "control": "compute-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "container-images-with-exploitable-vulnerabilities"
+        },
+        {
+          "control": "ecr-ensure-scan-on-push-is-enabled"
+        },
+        {
+          "control": "artifact-registry-docker-repositories-with-mutable-tags"
+        },
+        {
+          "control": "aws-lambda-supported-runtime"
+        },
+        {
+          "control": "azure-function-app-supported-runtime"
+        },
+        {
+          "control": "gcp-functions-supported-runtime"
+        },
+        {
+          "control": "databases-with-outdated-engine-versions"
+        },
+        {
+          "control": "vm-disallow-imds-v1"
+        },
+        {
+          "control": "launch-templates-disallow-imds-v1"
+        },
+        {
+          "control": "sage-maker-notebooks-disallow-imds-v1"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(f) - Assessing effectiveness of cybersecurity measures",
+      "slug": "nis2-article-21-effectiveness-assessment",
+      "body": "Effectiveness assessment requires evidence that cybersecurity measures are operating and auditable. These controls focus on audit logging, validation, retention, log sinks, security activity visibility, and policy-change monitoring.",
+      "controls": [
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "aws-logging-4"
+        },
+        {
+          "control": "aws-logging-7"
+        },
+        {
+          "control": "aws-logging-9"
+        },
+        {
+          "control": "gcp-logging-2"
+        },
+        {
+          "control": "gcp-logging-3"
+        },
+        {
+          "control": "gcp-logging-4"
+        },
+        {
+          "control": "gcp-logging-5"
+        },
+        {
+          "control": "azure-key-vault-logging-enabled"
+        },
+        {
+          "control": "azure-sql-server-auditing"
+        },
+        {
+          "control": "azure-sql-server-auditing-retention"
+        },
+        {
+          "control": "azure-networking-nsg-flow-log-retention"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(g) - Cyber hygiene and cybersecurity training",
+      "slug": "nis2-article-21-cyber-hygiene-and-training",
+      "body": "Cyber hygiene includes secure authentication, credential rotation, password quality, privileged-account discipline, and baseline hardening. Training and awareness should reinforce these practices and make insecure exceptions visible to accountable owners.",
+      "controls": [
+        {
+          "control": "users-without-mfa"
+        },
+        {
+          "control": "admins-with-enabled-mfa"
+        },
+        {
+          "control": "aws-iam-4"
+        },
+        {
+          "control": "aws-iam-5"
+        },
+        {
+          "control": "aws-iam-6"
+        },
+        {
+          "control": "aws-iam-7"
+        },
+        {
+          "control": "aws-iam-8"
+        },
+        {
+          "control": "aws-iam-9"
+        },
+        {
+          "control": "aws-iam-10"
+        },
+        {
+          "control": "aws-iam-11"
+        },
+        {
+          "control": "idp-users-with-old-password"
+        },
+        {
+          "control": "okta-weak-password-policies"
+        },
+        {
+          "control": "entra-custom-bad-password-list"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(h) - Cryptography and encryption",
+      "slug": "nis2-article-21-cryptography-and-encryption",
+      "body": "Cryptography and encryption policies should protect data at rest and in transit, prevent public exposure of keys, require managed key rotation, and preserve control over regulated workloads. These controls map directly to encryption and key-management evidence across cloud services.",
+      "controls": [
+        {
+          "control": "databases-with-no-encryption"
+        },
+        {
+          "control": "azure-encryption-on-sql-database"
+        },
+        {
+          "control": "azure-storage-encryption-cmk"
+        },
+        {
+          "control": "azure-sql-server-tde-cmk-encryption"
+        },
+        {
+          "control": "artifact-registry-repositories-without-cmek"
+        },
+        {
+          "control": "sage-maker-notebooks-encrypted"
+        },
+        {
+          "control": "eks-clusters-without-aws-kms-encryption"
+        },
+        {
+          "control": "kms-keys-have-not-been-rotated"
+        },
+        {
+          "control": "gcp-kms-keys-rotated-90-days"
+        },
+        {
+          "control": "publicly-accessible-encryption-keys"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(i) - Human resources security, access control, and asset management",
+      "slug": "nis2-article-21-access-control-and-asset-management",
+      "body": "Access control and asset management should enforce least privilege, restrict privileged roles, minimise exposed assets, and maintain visibility over cloud resources and identities. These controls cover IAM policy quality, privileged-role constraints, Kubernetes access, public exposure, and object-store access.",
+      "controls": [
+        {
+          "control": "aws-1-3-0-iam-16"
+        },
+        {
+          "control": "aws-1-3-0-iam-15"
+        },
+        {
+          "control": "aws-iam-18"
+        },
+        {
+          "control": "aws-iam-19"
+        },
+        {
+          "control": "gcp-iam-8"
+        },
+        {
+          "control": "k8s-cluster-admin-role-usage"
+        },
+        {
+          "control": "k8s-minimize-access-to-secrets"
+        },
+        {
+          "control": "azure-key-vault-rbac"
+        },
+        {
+          "control": "entra-number-of-global-administrators"
+        },
+        {
+          "control": "azure-no-custom-admin-role"
+        },
+        {
+          "control": "object-containers-with-public-access"
+        },
+        {
+          "control": "publicly-accessible-vms"
+        },
+        {
+          "control": "publicly-accessible-databases"
+        },
+        {
+          "control": "publicly-readable-object-containers"
+        },
+        {
+          "control": "publicly-writable-object-containers"
+        }
+      ]
+    },
+    {
+      "name": "Article 21(2)(j) - Multi-factor authentication and secure communications",
+      "slug": "nis2-article-21-mfa-and-secure-communications",
+      "body": "Where appropriate, entities should use multi-factor or continuous authentication and secure communications. These controls map to tenant-wide MFA, privileged-user MFA, admin-portal MFA, risky-sign-in MFA, modern TLS, and encrypted ingress.",
+      "controls": [
+        {
+          "control": "entra-mfa-policy-for-admins"
+        },
+        {
+          "control": "entra-mfa-policy-for-all-users"
+        },
+        {
+          "control": "entra-mfa-admin-portals"
+        },
+        {
+          "control": "entra-mfa-azure-service-mgmt-api"
+        },
+        {
+          "control": "entra-mfa-risky-sign-ins"
+        },
+        {
+          "control": "azure-mfa-all-users"
+        },
+        {
+          "control": "azure-mfa-privileged-users"
+        },
+        {
+          "control": "azure-app-service-latest-tls"
+        },
+        {
+          "control": "azure-function-app-latest-tls"
+        },
+        {
+          "control": "azure-storage-account-minimum-tls"
+        },
+        {
+          "control": "gcp-load-balancers-permit-ssl-weak-ciphers"
+        },
+        {
+          "control": "gcp-db-require-incoming-conn-ssl"
+        },
+        {
+          "control": "databases-with-no-old-tls"
+        },
+        {
+          "control": "aws-networking-6"
+        },
+        {
+          "control": "ingresses-without-encrypted-traffic"
+        }
+      ]
+    },
+    {
+      "name": "Article 23 - Significant-incident reporting and communication readiness",
+      "slug": "nis2-article-23-significant-incident-reporting",
+      "body": "Significant-incident reporting depends on detection, evidence preservation, internal escalation, and current contact information. These controls support readiness for early warning, incident notification, ongoing updates, final reporting, and communication with affected service recipients where needed.",
+      "controls": [
+        {
+          "control": "essential-contacts-not-set-for-organization"
+        },
+        {
+          "control": "aws-1-3-0-iam-2"
+        },
+        {
+          "control": "azure-security-alert-emails-owners"
+        },
+        {
+          "control": "azure-additional-email-address"
+        },
+        {
+          "control": "aws-monitoring-1"
+        },
+        {
+          "control": "gcp-logging-6"
+        },
+        {
+          "control": "azure-notify-alerts-high-severity"
+        },
+        {
+          "control": "azure-diagnostic-setting-subscription-activity-logs"
+        },
+        {
+          "control": "aws-logging-1"
+        },
+        {
+          "control": "aws-logging-2"
+        },
+        {
+          "control": "gcp-logging-2"
+        }
+      ]
+    }
+  ]
+}
