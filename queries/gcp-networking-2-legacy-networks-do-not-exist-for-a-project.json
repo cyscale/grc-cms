@@ -1,1 +1,1 @@
-{"name":"Legacy networks do not exist for a project","slug":"gcp-networking-2-legacy-networks-do-not-exist-for-a-project","query":"vpcs(where:{NOT: { IPv4Range: { eq: \"\" } } NOT: { gatewayIPv4: { eq: \"\" } }}){...AssetFragment}"}
+{"name":"Legacy networks do not exist for a project","slug":"gcp-networking-2-legacy-networks-do-not-exist-for-a-project","query":"vpcs(where:{AND: [{NOT: { IPv4Range: { eq: \"\" } }}, {NOT: { gatewayIPv4: { eq: \"\" } }}]}){...AssetFragment}"}

@@ -1,5 +1,5 @@
 {
   "name": "Data stored in SNS Topics is encrypted",
   "slug": "aws-integration-1-data-stored-in-sns-topics-is-encrypted",
-  "query": "{snsTopics(where:{hasSNSTopicAttribute_NONE:{key: { eq: \"KmsMasterKeyId\" },OR:[{NOT: { value: null }},{NOT: { value: { eq: \"\" } }}]}}){...AssetFragment}}"
+  "query": "{snsTopics(where:{hasSNSTopicAttribute_NONE:{key: { eq: \"KmsMasterKeyId\" }}}){...AssetFragment}}"
 }
