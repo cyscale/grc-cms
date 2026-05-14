@@ -1,5 +1,5 @@
 {
   "name": "Entra Conditional Access Policies - Admin MFA",
-  "query": "{\n  connectors(\n    where: {\n      cloudProvider: { eq: \"entra\" }\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          NOT: {\n            excludeUsers: { eq: [] }\n            OR: { includeUsers: { eq: [] }, includeGroups: { eq: [] }, includeRoles: { eq: [] } }\n          }\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n        }\n        grantControls: { builtInControls: [\"mfa\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  connectors(\n    where: {\n      cloudProvider: { eq: \"entra\" }\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          NOT: {\n            excludeUsers: { eq: [] }\n            OR: [\n              { includeUsers: { eq: [] } }\n              { includeGroups: { eq: [] } }\n              { includeRoles: { eq: [] } }\n            ]\n          }\n          includeApplications_INCLUDES: \"All\"\n          clientAppTypes_INCLUDES: \"all\"\n        }\n        grantControls: { builtInControls_INCLUDES: \"mfa\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}",
   "slug": "entra-conditional-access-admins-mfa"
 }

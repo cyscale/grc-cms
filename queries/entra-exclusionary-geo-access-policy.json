@@ -1,5 +1,5 @@
 {
   "name": "Entra Exclusionary Geographic Access Policy",
   "slug": "entra-exclusionary-geo-access-policy",
-  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers: [\"All\"]\n          includeApplications: [\"All\"]\n          clientAppTypes: [\"all\"]\n          NOT: { includeLocations: { eq: [] } }\n        }\n        grantControls: { builtInControls: [\"block\"] }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  connectors(\n    where: {\n      conditionalAccessPolicies_NONE: {\n        conditions: {\n          includeUsers_INCLUDES: \"All\"\n          includeApplications_INCLUDES: \"All\"\n          clientAppTypes_INCLUDES: \"all\"\n          NOT: { includeLocations: { eq: [] } }\n        }\n        grantControls: { builtInControls_INCLUDES: \"block\" }\n      }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
 }
