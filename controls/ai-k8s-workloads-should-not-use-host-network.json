@@ -1,0 +1,30 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI Kubernetes workloads should not use host networking",
+  "description": "AI-related Kubernetes workloads attached to the node network namespace",
+  "slug": "ai-k8s-workloads-should-not-use-host-network",
+  "body": "AI runtimes and agents should not use host networking unless there is a clear infrastructure requirement. Host networking bypasses normal service isolation and can expose model endpoints, agent tools, or metadata paths beyond the intended pod boundary.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Pod",
+        "Deployment",
+        "StatefulSet",
+        "DaemonSet",
+        "Job",
+        "CronJob"
+      ],
+      "query": "ai-k8s-workloads-should-not-use-host-network",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nRemove host networking from AI workloads and expose only the required service ports through Kubernetes Services, Ingress, or a private gateway.\n\n1. Review why host networking is enabled.\n2. Move traffic to normal pod networking or a dedicated gateway.\n3. Add network policies and endpoint authentication for model and agent services.",
+  "isEnabled": true
+}

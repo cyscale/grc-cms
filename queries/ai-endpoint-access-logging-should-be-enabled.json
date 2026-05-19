@@ -1,0 +1,5 @@
+{
+  "name": "AI endpoint access logging should be enabled",
+  "slug": "ai-endpoint-access-logging-should-be-enabled",
+  "query": "{\n  vertexAIEndpoints(where: { deployedModels_SOME: { OR: [ { enableAccessLogging: { eq: false } } { disableContainerLogging: { eq: true } } ] } }) { ...AssetFragment }\n}"
+}

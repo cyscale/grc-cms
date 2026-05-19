@@ -1,0 +1,28 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI agents should not run with unrestricted tool permissions",
+  "description": "AI agent workloads with unrestricted tool access or default service account tokens",
+  "slug": "ai-agent-tool-permissions-should-be-restricted",
+  "body": "AI agents can turn permissions into actions. If an agent has unrestricted tools, wildcard policies, or broad runtime tokens, prompt injection can become data access, infrastructure changes, or lateral movement.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure",
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Pod",
+        "Deployment",
+        "Service Account"
+      ],
+      "query": "ai-agent-tool-permissions-should-be-restricted",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nScope agent tools to the smallest action set needed by the use case. Disable default service account token mounting for Kubernetes AI workloads unless the token is required, and use dedicated service accounts with bounded permissions.\n\n### Rollout guidance\n\n1. Identify agent workloads and their enabled tools.\n2. Remove wildcard tools and administrative permissions.\n3. Add explicit allowlists, approval gates, and audit logging for high-impact tools.\n4. Re-scan after the agent configuration is updated.",
+  "isEnabled": true
+}

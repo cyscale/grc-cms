@@ -1,0 +1,5 @@
+{
+  "name": "AI Kubernetes workloads should not use host networking",
+  "slug": "ai-k8s-workloads-should-not-use-host-network",
+  "query": "{\n  pods(where: { assetCategory: { eq: \"AI Services\" }, hostNetwork: { eq: true } }) { ...AssetFragment }\n  deployments(where: { assetCategory: { eq: \"AI Services\" }, podTemplate: { hostNetwork: { eq: true } } }) { ...AssetFragment }\n  statefulSets(where: { assetCategory: { eq: \"AI Services\" }, podTemplate: { hostNetwork: { eq: true } } }) { ...AssetFragment }\n  daemonSets(where: { assetCategory: { eq: \"AI Services\" }, podTemplate: { hostNetwork: { eq: true } } }) { ...AssetFragment }\n  jobs(where: { assetCategory: { eq: \"AI Services\" }, cronJobName: { eq: \"\" }, podTemplate: { hostNetwork: { eq: true } } }) { ...AssetFragment }\n  cronJobs(where: { assetCategory: { eq: \"AI Services\" }, podTemplate: { hostNetwork: { eq: true } } }) { ...AssetFragment }\n}"
+}

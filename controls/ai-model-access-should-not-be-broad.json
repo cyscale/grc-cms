@@ -1,0 +1,29 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI models should not be reachable through broad identities",
+  "description": "AI model endpoints using administrative, owner, editor, or wildcard identities",
+  "slug": "ai-model-access-should-not-be-broad",
+  "body": "AI models and endpoints should run with least privilege. Broad identities can allow model extraction, unauthorized deployment changes, data access through tools, or lateral movement into storage and vector databases used by AI workloads.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "gcp",
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "IAM Role",
+        "Service Account"
+      ],
+      "query": "ai-model-access-should-not-be-broad",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nReplace broad model and endpoint identities with workload-specific roles. Grant only the actions required to invoke, deploy, or read the specific models and datasets used by the workload.\n\n### Rollout guidance\n\n1. Inventory the identities used by AI endpoints and training jobs.\n2. Replace owner, contributor, editor, administrator, and wildcard policies with scoped permissions.\n3. Separate deployment identities from runtime inference identities.\n4. Re-scan and track temporary exceptions with expiry dates.",
+  "isEnabled": true
+}

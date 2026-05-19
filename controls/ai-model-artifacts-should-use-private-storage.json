@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI model artifacts should use private storage",
+  "description": "AI model artifacts referenced from public or generic HTTP locations",
+  "slug": "ai-model-artifacts-should-use-private-storage",
+  "body": "Model artifacts can contain proprietary model weights, embedded data patterns, configuration, or sensitive training outputs. Production AI services should load model artifacts from private, access-controlled storage instead of generic public HTTP locations.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Model",
+        "Storage"
+      ],
+      "query": "ai-model-artifacts-should-use-private-storage",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nMove model artifacts to private cloud storage with least-privilege access, encryption, and audit logging. Avoid direct public HTTP artifact URLs for production models.\n\n1. Copy artifacts into an approved private bucket or artifact registry.\n2. Restrict access to the model deployment identity.\n3. Enable encryption, logging, and lifecycle policies for model artifact storage.",
+  "isEnabled": true
+}

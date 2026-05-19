@@ -1,0 +1,29 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI services should have owner tags",
+  "description": "AI services, models, endpoints, or feature stores without ownership tags",
+  "slug": "ai-services-should-have-owner-tags",
+  "body": "AI services need clear ownership because they combine cloud permissions, model behavior, data paths, runtime cost, and business risk. Missing ownership makes triage, exception handling, and incident response slower.",
+  "severity": 1,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Model",
+        "Endpoint",
+        "Feature Store"
+      ],
+      "query": "ai-services-should-have-owner-tags",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nAdd a consistent owner tag such as `owner`, `service-owner`, or `team` to AI services and related model/data assets.\n\n1. Assign an accountable service owner.\n2. Add ownership tags through IaC or provider tags.\n3. Use ownership during alert routing, review, and exception workflows.",
+  "isEnabled": true
+}

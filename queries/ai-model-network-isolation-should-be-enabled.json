@@ -1,0 +1,5 @@
+{
+  "name": "AI model network isolation should be enabled",
+  "slug": "ai-model-network-isolation-should-be-enabled",
+  "query": "{\n  sageMakerModels(where: { enableNetworkIsolation: { eq: false } }) { ...AssetFragment }\n}"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "AI models should not be reachable through broad identities",
+  "slug": "ai-model-access-should-not-be-broad",
+  "query": "{\n  sageMakerModels(where: { executionRoleARN_MATCHES: \".*:role/(admin|administrator|owner|power|full).*\" }) { ...AssetFragment }\n  vertexAIEndpoints(where: { deployedModels_SOME: { serviceAccount_MATCHES: \"(?i).*(admin|owner|editor|power).*\" } }) { ...AssetFragment }\n  azureMachineLearningEndpoints(where: { OR: [ { roleIDs_INCLUDES: \"Owner\" } { roleIDs_INCLUDES: \"Contributor\" } { roleIDs_INCLUDES: \"User Access Administrator\" } { roleIDs_INCLUDES: \"Administrator\" } ] }) { ...AssetFragment }\n}"
+}

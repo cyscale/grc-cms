@@ -1,0 +1,5 @@
+{
+  "name": "AI vector and search stores should not be public",
+  "slug": "ai-vector-stores-should-not-be-public",
+  "query": "{\n  azureAISearchServices(where: { publicEndpoint: { eq: true } }) { ...AssetFragment }\n}"
+}

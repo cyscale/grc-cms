@@ -1,0 +1,26 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI feature stores should have retention configured",
+  "description": "AI feature stores without online data retention",
+  "slug": "ai-feature-stores-should-have-retention",
+  "body": "Feature stores often hold derived customer, behavioral, operational, or business-sensitive data. Online feature data should have retention configured so stale training and inference data does not accumulate indefinitely.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Feature Store",
+        "Data"
+      ],
+      "query": "ai-feature-stores-should-have-retention",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nConfigure online feature-store retention based on the model use case and data classification. Align retention with privacy, audit, and retraining needs.\n\n1. Classify the feature data.\n2. Set a retention period for online storage.\n3. Validate backup, replay, and retraining requirements before deleting historical data.",
+  "isEnabled": true
+}

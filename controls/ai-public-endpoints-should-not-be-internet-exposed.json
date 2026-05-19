@@ -1,0 +1,30 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI endpoints should not be internet exposed",
+  "description": "AI model, agent, and inference endpoints exposed to the internet",
+  "slug": "ai-public-endpoints-should-not-be-internet-exposed",
+  "body": "Public AI endpoints increase the blast radius of prompt injection, data extraction, model abuse, and denial-of-wallet attacks. AI inference and agent endpoints should be private by default and exposed only through approved gateways with authentication, rate limits, logging, and abuse controls.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "gcp",
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Endpoint",
+        "Service",
+        "Ingress"
+      ],
+      "query": "ai-public-endpoints-should-not-be-internet-exposed",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nMove AI endpoints behind private networking or an approved application gateway. Require authentication and authorization, restrict source networks, enable request logging, and apply rate limits.\n\n### Azure\nDisable public network access where supported and use private endpoints for Azure AI Foundry, Azure OpenAI, Azure Machine Learning, AI Search, and Bot Services.\n\n### GCP\nPrefer private endpoints or Private Service Connect for Vertex AI endpoints. Review deployed model service accounts before exposing an endpoint.\n\n### Kubernetes\nAvoid internet-facing `LoadBalancer`, `NodePort`, or Ingress resources for AI workloads unless they are fronted by approved identity, WAF, and rate-limit controls.\n\n## Operational rollout\n\n1. Identify public AI endpoints and classify production or sensitive workloads first.\n2. Move access through private networking or an approved gateway.\n3. Re-scan and document any exception with an owner, business reason, and expiry date.",
+  "isEnabled": true
+}

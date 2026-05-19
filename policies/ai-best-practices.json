@@ -1,0 +1,106 @@
+{
+  "enabled": true,
+  "name": "AI Best Practices",
+  "isStandard": true,
+  "slug": "ai-best-practices",
+  "version": "1.1.0",
+  "body": "AI Best Practices gives security, cloud, and AI platform teams a focused baseline for discovering, securing, and continuously monitoring AI services across cloud and Kubernetes environments.\n\nThe framework is designed for AI-SPM use cases: finding public AI endpoints, reducing excessive model and agent permissions, protecting training data, embeddings, vector stores, feature stores, and model artifacts, hardening AI workbenches and Kubernetes runtimes, and ensuring guardrails and telemetry are configured before AI systems are exposed to users or business workflows.\n\n<Procedure slug=\"ai-best-practices-discovery-and-exposure\"/>\n<Procedure slug=\"ai-best-practices-identity-and-access\"/>\n<Procedure slug=\"ai-best-practices-data-and-model-protection\"/>\n<Procedure slug=\"ai-best-practices-runtime-safety\"/>\n<Procedure slug=\"ai-best-practices-observability-and-response\"/>\n<Procedure slug=\"ai-best-practices-workbench-hardening\"/>\n",
+  "targetCloudProviders": [
+    "aws",
+    "azure",
+    "gcp",
+    "k8s"
+  ],
+  "procedures": [
+    {
+      "name": "1. Discovery and Exposure Management",
+      "slug": "ai-best-practices-discovery-and-exposure",
+      "body": "AI services, model endpoints, agents, and AI-backed Kubernetes workloads should be inventoried and private by default. Public exposure should be deliberate, authenticated, logged, rate-limited, and approved by the service owner.",
+      "controls": [
+        {
+          "control": "ai-public-endpoints-should-not-be-internet-exposed"
+        },
+        {
+          "control": "ai-vector-stores-should-not-be-public"
+        },
+        {
+          "control": "ai-services-should-have-owner-tags"
+        }
+      ]
+    },
+    {
+      "name": "2. Identity and Model Access",
+      "slug": "ai-best-practices-identity-and-access",
+      "body": "AI workloads should use scoped identities and least-privilege access. Model invocation, model deployment, agent tools, datasets, vector stores, and cloud APIs should not be reachable through administrative, wildcard, owner, editor, or default runtime identities.",
+      "controls": [
+        {
+          "control": "ai-model-access-should-not-be-broad"
+        },
+        {
+          "control": "ai-agent-tool-permissions-should-be-restricted"
+        },
+        {
+          "control": "ai-model-network-isolation-should-be-enabled"
+        }
+      ]
+    },
+    {
+      "name": "3. Data and Model Protection",
+      "slug": "ai-best-practices-data-and-model-protection",
+      "body": "Training datasets, feature stores, prompts, embeddings, model artifacts, and notebook storage should be protected as sensitive data. Encryption, key control, and restricted data-store access reduce the impact of model theft, prompt leakage, and unauthorized data extraction.",
+      "controls": [
+        {
+          "control": "ai-training-data-should-be-encrypted"
+        },
+        {
+          "control": "ai-model-artifacts-should-use-private-storage"
+        },
+        {
+          "control": "ai-feature-stores-should-have-retention"
+        },
+        {
+          "control": "sage-maker-notebooks-encrypted"
+        }
+      ]
+    },
+    {
+      "name": "4. Runtime Safety and Guardrails",
+      "slug": "ai-best-practices-runtime-safety",
+      "body": "Production AI services should have content safety, responsible AI, abuse prevention, approval, and monitoring controls appropriate to their use case. Guardrails help reduce unsafe output, prompt-injection impact, data disclosure, and unreviewed autonomous actions.",
+      "controls": [
+        {
+          "control": "ai-guardrails-should-be-configured"
+        },
+        {
+          "control": "ai-k8s-workloads-should-not-run-privileged"
+        },
+        {
+          "control": "ai-k8s-workloads-should-not-use-host-network"
+        }
+      ]
+    },
+    {
+      "name": "5. Observability and Response",
+      "slug": "ai-best-practices-observability-and-response",
+      "body": "AI services should produce enough telemetry for security teams to investigate prompt injection, abusive usage, model access, agent actions, data extraction, and denial-of-wallet patterns. Logging and ownership are prerequisites for useful alert routing and incident response.",
+      "controls": [
+        {
+          "control": "ai-endpoint-access-logging-should-be-enabled"
+        }
+      ]
+    },
+    {
+      "name": "6. AI Workbench Hardening",
+      "slug": "ai-best-practices-workbench-hardening",
+      "body": "AI notebooks and workbench environments often bridge identities, code, secrets, datasets, and model artifacts. They should be hardened like privileged development environments, with root access and legacy metadata access disabled unless explicitly justified.",
+      "controls": [
+        {
+          "control": "sage-maker-notebooks-disallow-imds-v1"
+        },
+        {
+          "control": "sage-maker-notebooks-root-access"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "AI feature stores should have retention configured",
+  "slug": "ai-feature-stores-should-have-retention",
+  "query": "{\n  vertexAIFeaturestores(where: { onlineStorageTTLDays_LTE: 0 }) { ...AssetFragment }\n}"
+}

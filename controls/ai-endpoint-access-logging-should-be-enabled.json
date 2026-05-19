@@ -1,0 +1,26 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI endpoint access logging should be enabled",
+  "description": "AI endpoints without access or container logging",
+  "slug": "ai-endpoint-access-logging-should-be-enabled",
+  "body": "AI inference endpoints should produce enough telemetry to investigate abuse, prompt injection attempts, anomalous invocation volume, data leakage, and unauthorized access. Missing endpoint logging makes AI incidents difficult to detect and reconstruct.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Endpoint",
+        "Logging"
+      ],
+      "query": "ai-endpoint-access-logging-should-be-enabled",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable access logging and container logging for AI endpoints. Route logs to the approved SIEM or monitoring pipeline with retention aligned to incident response requirements.\n\n1. Enable endpoint access logging.\n2. Avoid disabling deployed model container logs unless approved.\n3. Add monitoring for spikes, failures, unusual callers, and denied requests.",
+  "isEnabled": true
+}

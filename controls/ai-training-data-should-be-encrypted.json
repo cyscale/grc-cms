@@ -1,0 +1,29 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI training data and feature stores should be encrypted",
+  "description": "Training datasets, feature stores, or AI project stores without encryption metadata",
+  "slug": "ai-training-data-should-be-encrypted",
+  "body": "Training data, feature stores, and model artifacts often contain proprietary, regulated, or customer-derived data. They should be encrypted at rest with provider-managed or customer-managed keys according to the account security baseline.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Dataset",
+        "Feature Store",
+        "Model"
+      ],
+      "query": "ai-training-data-should-be-encrypted",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable encryption for AI datasets, feature stores, and model artifact stores. Prefer customer-managed keys where policy requires key ownership, rotation, or separation of duties.\n\n### Rollout guidance\n\n1. Locate affected datasets, feature stores, and model artifact locations.\n2. Enable encryption or migrate data into encrypted stores.\n3. Restrict key usage to the AI workload identities that require it.\n4. Re-scan after the next connector sync.",
+  "isEnabled": true
+}

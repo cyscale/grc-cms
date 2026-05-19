@@ -1,0 +1,26 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI vector and search stores should not be public",
+  "description": "AI search or vector-store services reachable from public paths",
+  "slug": "ai-vector-stores-should-not-be-public",
+  "body": "Vector stores and AI search indexes frequently contain embeddings, document chunks, retrieval metadata, or business knowledge used by AI systems. Public access can expose sensitive retrieval data and increase prompt-injection and data-extraction impact.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Vector Store",
+        "Search"
+      ],
+      "query": "ai-vector-stores-should-not-be-public",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nDisable public access to AI search and vector-store services where possible. Use private networking, scoped identities, query-key rotation, and request logging.\n\n1. Move access to private endpoints or approved gateways.\n2. Review index keys and callers.\n3. Remove anonymous or broadly shared query access.",
+  "isEnabled": true
+}

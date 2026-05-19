@@ -1,0 +1,30 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI Kubernetes workloads should not run privileged",
+  "description": "AI-related Kubernetes workloads using privileged runtime settings",
+  "slug": "ai-k8s-workloads-should-not-run-privileged",
+  "body": "Self-hosted AI workloads often run model servers, agents, MCP servers, notebook servers, and GPU runtimes. Privileged containers, privilege escalation, writable root filesystems, or powerful Linux capabilities can turn prompt injection or dependency compromise into node-level impact.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Pod",
+        "Deployment",
+        "StatefulSet",
+        "DaemonSet",
+        "Job",
+        "CronJob"
+      ],
+      "query": "ai-k8s-workloads-should-not-run-privileged",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nRun AI workloads with restricted pod security settings. Disable privileged mode and privilege escalation, drop unnecessary capabilities, and use read-only root filesystems where supported.\n\n1. Identify AI workloads using privileged runtime settings.\n2. Remove unnecessary host and kernel-level access.\n3. Apply namespace policy, workload admission controls, and runtime monitoring for exceptions.",
+  "isEnabled": true
+}

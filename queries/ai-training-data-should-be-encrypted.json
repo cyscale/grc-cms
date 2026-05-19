@@ -1,0 +1,5 @@
+{
+  "name": "AI training data and feature stores should be encrypted",
+  "slug": "ai-training-data-should-be-encrypted",
+  "query": "{\n  sageMakerFeatureGroups(where: { encrypted: { eq: false } }) { ...AssetFragment }\n  vertexAIDatasets(where: { encrypted: { eq: false } }) { ...AssetFragment }\n  vertexAIFeaturestores(where: { encrypted: { eq: false } }) { ...AssetFragment }\n  azureMachineLearningModels(where: { encrypted: { eq: false } }) { ...AssetFragment }\n  azureAIFoundryProjects(where: { encrypted: { eq: false } }) { ...AssetFragment }\n}"
+}

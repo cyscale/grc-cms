@@ -1,0 +1,25 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI model network isolation should be enabled",
+  "description": "AI models that can reach external networks during inference or training",
+  "slug": "ai-model-network-isolation-should-be-enabled",
+  "body": "Network-isolated model containers reduce model exfiltration, supply-chain callback, prompt-injection pivot, and unapproved data egress risk. AI model runtimes should not have arbitrary outbound network reachability unless the use case requires it and the egress path is explicitly controlled.",
+  "severity": 3,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "Model"
+      ],
+      "query": "ai-model-network-isolation-should-be-enabled",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable network isolation for SageMaker models where supported. If the model needs controlled egress, route traffic through approved private endpoints, proxies, or VPC controls with logging and allowlists.\n\n1. Identify model containers without network isolation.\n2. Validate whether external network access is required.\n3. Enable network isolation or document a time-bound exception with compensating egress controls.",
+  "isEnabled": true
+}

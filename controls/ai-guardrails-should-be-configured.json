@@ -1,0 +1,26 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "AI guardrails should be configured",
+  "description": "AI services without visible content safety, guardrail, or responsible AI configuration",
+  "slug": "ai-guardrails-should-be-configured",
+  "body": "AI services should have guardrails appropriate to their use case. Missing content filters, responsible AI policies, safety classifiers, or guardrail configurations increase the chance of unsafe output, policy bypass, and unreviewed data disclosure.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AI Services",
+        "AI Foundry Project",
+        "Azure OpenAI Deployment"
+      ],
+      "query": "ai-guardrails-should-be-configured",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nConfigure provider-supported content safety, responsible AI, and guardrail settings for each production AI service. For services where guardrails are external to the provider resource, document the compensating control and link it to the service owner.\n\n### Rollout guidance\n\n1. Identify production AI services and their intended risk profile.\n2. Enable content safety, prompt/output filters, groundedness checks, or provider guardrails where supported.\n3. Add monitoring for guardrail bypass and unsafe-response events.\n4. Re-scan and track any service-specific exception with expiry.",
+  "isEnabled": true
+}
