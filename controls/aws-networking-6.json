@@ -4,6 +4,14 @@
   "body": "### Overview\n\nRemove insecure ciphers for your ELB Predefined or Custom Security Policy, to reduce the risk of the SSL connection between the client and the load balancer being exploited.",
   "description": "Weak TLS Protocols that are used for ELB",
   "severity": 2,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "tls-retirement",
+  "timedControlDeadlineType": "security-baseline",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html",
+  "timedControlSummary": "AWS load balancers should be moved away from weak TLS policies before legacy-client compatibility becomes a blocker.",
+  "timedControlDisruptionRisk": "Changing listener policies can break legacy clients if compatibility is not tested ahead of time.",
   "remediationDescription": "Follow the steps described in the [AWS Documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-certificates.html#update-security-policy) on how to update the security policy of a load balancer. Choose a security policy that does not allow SSL 3.0 and/or TLS 1.0, which are known weak ciphers.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
   "rules": [
     {

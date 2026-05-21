@@ -4,6 +4,14 @@
   "slug": "azure-latest-python-version",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-python",
+  "timedControlSummary": "Azure App Service apps using unsupported Python stacks should be migrated before runtime support windows close.",
+  "timedControlDisruptionRisk": "Python runtime upgrades can require package rebuilds, dependency changes, and deployment-slot validation.",
   "rules": [
     {
       "cloudProviders": [

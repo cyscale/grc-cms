@@ -4,6 +4,14 @@
   "slug": "azure-app-service-latest-tls",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2027-05-31",
+  "timedControlCategory": "tls-retirement",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/tls-minimum-version",
+  "timedControlSummary": "Azure App Service resources must reject TLS 1.0 and 1.1 before Microsoft enforcement.",
+  "timedControlDisruptionRisk": "Enforcing TLS late can break legacy clients, agents, webhook senders, and older libraries without a validation window.",
   "rules": [
     {
       "isManual": false,

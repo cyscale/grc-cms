@@ -4,6 +4,14 @@
   "slug": "gcp-ssl-policies-minimum-tls12",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "tls-retirement",
+  "timedControlDeadlineType": "security-baseline",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+  "timedControlSummary": "Google Cloud SSL policies should be ready for modern TLS baselines before legacy-client compatibility windows close.",
+  "timedControlDisruptionRisk": "Updating SSL policies without client validation can break older integrations and public endpoints.",
   "rules": [
     {
       "cloudProviders": [

@@ -1,0 +1,5 @@
+{
+  "name": "Kubernetes nodes with unsupported operating system versions",
+  "slug": "k8s-nodes-with-unsupported-os-versions",
+  "query": "{\n  kubernetesNodes(\n    where: {\n      osImage_MATCHES: \"(?i).*(ubuntu.*(18[._-]?04|20[._-]?04|bionic|focal)|centos.*7|rhel.*7|red hat.*7|debian.*10|buster|windows.*server.*2012|windows.*server.*2016).*\"\n    }\n  ) {\n    ...AssetFragment\n    osImage\n    kernelVersion\n    containerRuntimeVersion\n  }\n}"
+}

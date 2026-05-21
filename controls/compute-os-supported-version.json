@@ -1,0 +1,246 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "Ensure compute instances use supported operating system versions",
+  "description": "Compute instances running unsupported OS versions",
+  "slug": "compute-os-supported-version",
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "os-end-of-support",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://ubuntu.com/security/esm",
+  "timedControlSummary": "Operating system releases on compute instances eventually leave standard support or security maintenance. Instances should be upgraded before their OS lifecycle deadline.",
+  "timedControlDisruptionRisk": "Unsupported OS versions stop receiving standard security updates and can become incompatible with agents, extensions, package repositories, and compliance baselines.",
+  "timedControlRules": [
+    {
+      "key": "ubuntu-18.04",
+      "matchRegex": {
+        "imageName": "(?i).*(ubuntu.*(18[._-]?04|bionic)).*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2023-05-31",
+      "deadlineType": "os-end-of-standard-support",
+      "sourceURL": "https://ubuntu.com/18-04",
+      "summary": "Ubuntu 18.04 LTS has reached the end of standard support.",
+      "disruptionRisk": "VMs left on Ubuntu 18.04 require ESM coverage or migration to keep receiving security maintenance.",
+      "recommendedTarget": "Ubuntu 22.04 LTS or Ubuntu 24.04 LTS",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "ubuntu-18.04",
+      "matchRegex": {
+        "osImage": "(?i).*(ubuntu.*(18[._-]?04|1804|bionic)).*"
+      },
+      "observedField": "osImage",
+      "dueDate": "2023-05-31",
+      "deadlineType": "os-end-of-standard-support",
+      "sourceURL": "https://ubuntu.com/18-04",
+      "summary": "Ubuntu 18.04 LTS has reached the end of standard support.",
+      "disruptionRisk": "VMs left on Ubuntu 18.04 require ESM coverage or migration to keep receiving security maintenance.",
+      "recommendedTarget": "Ubuntu 22.04 LTS or Ubuntu 24.04 LTS",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "ubuntu-20.04",
+      "matchRegex": {
+        "imageName": "(?i).*(ubuntu.*(20[._-]?04|focal)).*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2025-05-31",
+      "deadlineType": "os-end-of-standard-support",
+      "sourceURL": "https://ubuntu.com/blog/2024/11/21/ubuntu-20-04-lts-end-of-life-standard-support-is-coming-to-an-end-heres-how-to-prepare/",
+      "summary": "Ubuntu 20.04 LTS has reached the end of standard support.",
+      "disruptionRisk": "VMs left on Ubuntu 20.04 require ESM coverage or migration to keep receiving security maintenance.",
+      "recommendedTarget": "Ubuntu 22.04 LTS or Ubuntu 24.04 LTS",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "ubuntu-20.04",
+      "matchRegex": {
+        "osImage": "(?i).*(ubuntu.*(20[._-]?04|2004|focal)).*"
+      },
+      "observedField": "osImage",
+      "dueDate": "2025-05-31",
+      "deadlineType": "os-end-of-standard-support",
+      "sourceURL": "https://ubuntu.com/blog/2024/11/21/ubuntu-20-04-lts-end-of-life-standard-support-is-coming-to-an-end-heres-how-to-prepare/",
+      "summary": "Ubuntu 20.04 LTS has reached the end of standard support.",
+      "disruptionRisk": "VMs left on Ubuntu 20.04 require ESM coverage or migration to keep receiving security maintenance.",
+      "recommendedTarget": "Ubuntu 22.04 LTS or Ubuntu 24.04 LTS",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "azure-ubuntu-20.04",
+      "matchRegex": {
+        "storageProfileImageReferencePublisher": "(?i).*canonical.*",
+        "storageProfileImageReferenceSku": "(?i).*(20[_-]?04|focal).*"
+      },
+      "observedField": "storageProfileImageReferenceSku",
+      "dueDate": "2025-05-31",
+      "deadlineType": "os-end-of-standard-support",
+      "sourceURL": "https://ubuntu.com/blog/2024/11/21/ubuntu-20-04-lts-end-of-life-standard-support-is-coming-to-an-end-heres-how-to-prepare/",
+      "summary": "Ubuntu 20.04 LTS has reached the end of standard support.",
+      "disruptionRisk": "VMs left on Ubuntu 20.04 require ESM coverage or migration to keep receiving security maintenance.",
+      "recommendedTarget": "Ubuntu 22.04 LTS or Ubuntu 24.04 LTS",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "centos-7",
+      "matchRegex": {
+        "imageName": "(?i).*centos.*7.*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2024-06-30",
+      "deadlineType": "os-end-of-life",
+      "sourceURL": "https://www.centos.org/centos-linux/",
+      "summary": "CentOS Linux 7 has reached end of life.",
+      "disruptionRisk": "CentOS 7 no longer receives upstream security fixes.",
+      "recommendedTarget": "Rocky Linux 9, AlmaLinux 9, RHEL 9, or a supported provider image",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "centos-7",
+      "matchRegex": {
+        "osImage": "(?i).*centos.*7.*"
+      },
+      "observedField": "osImage",
+      "dueDate": "2024-06-30",
+      "deadlineType": "os-end-of-life",
+      "sourceURL": "https://www.centos.org/centos-linux/",
+      "summary": "CentOS Linux 7 has reached end of life.",
+      "disruptionRisk": "CentOS 7 no longer receives upstream security fixes.",
+      "recommendedTarget": "Rocky Linux 9, AlmaLinux 9, RHEL 9, or a supported provider image",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "rhel-7",
+      "matchRegex": {
+        "imageName": "(?i).*(rhel|red hat).*7.*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2024-06-30",
+      "deadlineType": "os-end-of-maintenance",
+      "sourceURL": "https://access.redhat.com/articles/7005471",
+      "summary": "Red Hat Enterprise Linux 7 has moved from Maintenance Support to Extended Life Phase.",
+      "disruptionRisk": "RHEL 7 requires Extended Life Cycle Support or migration to keep receiving security maintenance.",
+      "recommendedTarget": "RHEL 8 or RHEL 9",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "debian-10",
+      "matchRegex": {
+        "osImage": "(?i).*(debian.*10|buster).*"
+      },
+      "observedField": "osImage",
+      "dueDate": "2024-06-30",
+      "deadlineType": "os-end-of-life",
+      "sourceURL": "https://www.debian.org/News/2024/20240615",
+      "summary": "Debian 10 Buster LTS has reached end of life.",
+      "disruptionRisk": "Debian 10 no longer receives Debian LTS security updates.",
+      "recommendedTarget": "Debian 12 or a current provider-supported image",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "debian-11",
+      "matchRegex": {
+        "osImage": "(?i).*(debian.*11|bullseye).*"
+      },
+      "observedField": "osImage",
+      "dueDate": "2026-08-31",
+      "deadlineType": "os-end-of-lts",
+      "sourceURL": "https://www.debian.org/releases/bullseye/",
+      "summary": "Debian 11 Bullseye LTS ends on August 31, 2026.",
+      "disruptionRisk": "Debian 11 instances should be planned for migration before LTS security maintenance ends.",
+      "recommendedTarget": "Debian 12",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "amazon-linux-2",
+      "matchRegex": {
+        "imageName": "(?i).*(amazon linux 2|amzn2).*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2026-06-30",
+      "deadlineType": "os-end-of-support",
+      "sourceURL": "https://aws.amazon.com/amazon-linux-2/faqs/",
+      "summary": "Amazon Linux 2 reaches end of support on June 30, 2026.",
+      "disruptionRisk": "Amazon Linux 2 instances should be migrated before AWS ends support and security maintenance.",
+      "recommendedTarget": "Amazon Linux 2023",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "windows-server-2012",
+      "matchRegex": {
+        "imageName": "(?i).*windows.*server.*2012.*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2023-10-10",
+      "deadlineType": "os-end-of-support",
+      "sourceURL": "https://learn.microsoft.com/en-us/lifecycle/announcements/windows-server-2012-r2-end-of-support",
+      "summary": "Windows Server 2012 and 2012 R2 have reached end of support.",
+      "disruptionRisk": "Windows Server 2012 workloads require ESU coverage or migration to keep receiving security updates.",
+      "recommendedTarget": "Windows Server 2022 or Windows Server 2025",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "windows-server-2012",
+      "matchRegex": {
+        "osNameEn": "(?i).*windows.*server.*2012.*"
+      },
+      "observedField": "osNameEn",
+      "dueDate": "2023-10-10",
+      "deadlineType": "os-end-of-support",
+      "sourceURL": "https://learn.microsoft.com/en-us/lifecycle/announcements/windows-server-2012-r2-end-of-support",
+      "summary": "Windows Server 2012 and 2012 R2 have reached end of support.",
+      "disruptionRisk": "Windows Server 2012 workloads require ESU coverage or migration to keep receiving security updates.",
+      "recommendedTarget": "Windows Server 2022 or Windows Server 2025",
+      "notificationWindowsDays": [90, 30, 7]
+    },
+    {
+      "key": "windows-server-2016",
+      "matchRegex": {
+        "imageName": "(?i).*windows.*server.*2016.*"
+      },
+      "observedField": "imageName",
+      "dueDate": "2027-01-12",
+      "deadlineType": "os-end-of-support",
+      "sourceURL": "https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016",
+      "summary": "Windows Server 2016 extended support ends on January 12, 2027.",
+      "disruptionRisk": "Windows Server 2016 workloads should be planned for migration before security updates end.",
+      "recommendedTarget": "Windows Server 2022 or Windows Server 2025",
+      "notificationWindowsDays": [180, 90, 30, 7]
+    }
+  ],
+  "body": "Compute workloads depend on the operating system lifecycle just as much as they depend on cloud service lifecycle dates. When a VM image or installed OS release reaches end of standard support, end of maintenance, or end of life, the workload may stop receiving security patches and can become incompatible with cloud agents, backup tools, EDR sensors, package repositories, and compliance baselines.\n\nThis control tracks VM and compute instance OS versions that are already unsupported or have a known lifecycle deadline. It uses provider image metadata and Cyscale's OS-outdated signal where available, then attaches the matched OS lifecycle context to each failed asset.",
+  "severity": 2,
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws",
+        "azure",
+        "gcp",
+        "alibaba"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "VM"
+      ],
+      "query": "compute-assets-with-unsupported-os-versions",
+      "isManual": false
+    },
+    {
+      "cloudProviders": [
+        "k8s"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Node"
+      ],
+      "query": "k8s-nodes-with-unsupported-os-versions",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nUpgrade or replace the affected compute instance with an image whose operating system is still in standard support or covered by an approved extended security maintenance program.\n\n### Recommended rollout\n\n1. Identify the OS lifecycle context on each failed asset and group assets by OS family and version.\n2. Confirm whether the workload is covered by an extended security maintenance subscription such as Ubuntu Pro/ESM, Red Hat ELS, Windows Server ESU, or an equivalent provider program.\n3. Prefer migration to a current OS image over relying on extended support indefinitely.\n4. Rebuild immutable images, launch templates, scale sets, managed instance groups, and IaC modules so new compute instances do not reintroduce unsupported OS versions.\n5. For stateful servers, create backups and test application compatibility before in-place upgrades or replacement.\n6. Re-run assessment and track exceptions with owner, business reason, and expiry date.\n\n### Provider guidance\n\n- AWS: migrate Amazon Linux 2 instances to Amazon Linux 2023 before the Amazon Linux 2 end-of-support date, and replace old AMIs in launch templates and Auto Scaling groups.\n- Azure: update VM image references, VM scale set models, and Azure Compute Gallery images to supported OS releases.\n- Google Cloud: replace deprecated public images and custom images with supported image families.\n- Alibaba Cloud: migrate ECS instances created from unsupported public or custom images to a supported OS release.\n\n### References\n\n- https://ubuntu.com/security/esm\n- https://www.centos.org/centos-linux/\n- https://access.redhat.com/articles/7005471\n- https://www.debian.org/News/2024/20240615\n- https://aws.amazon.com/amazon-linux-2/faqs/\n- https://learn.microsoft.com/en-us/lifecycle/announcements/windows-server-2012-r2-end-of-support\n- https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016\n\n## Service-wide remediation\n\nUse approved golden images, image pipelines, cloud image catalogs, IaC policy checks, and CI/CD guardrails to prevent unsupported OS versions from being deployed. Treat OS lifecycle deadlines as part of vulnerability and asset lifecycle management.",
+  "isEnabled": true
+}

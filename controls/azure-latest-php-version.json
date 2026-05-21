@@ -4,6 +4,14 @@
   "slug": "azure-latest-php-version",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-php",
+  "timedControlSummary": "Azure App Service apps using unsupported PHP stacks should be migrated before runtime support windows close.",
+  "timedControlDisruptionRisk": "PHP runtime upgrades can break dependencies, extensions, and application compatibility without staged validation.",
   "rules": [
     {
       "cloudProviders": [

@@ -4,6 +4,14 @@
   "slug": "azure-app-service-supported-java-stack",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-java",
+  "timedControlSummary": "Azure App Service apps using unsupported Java stacks should be moved to supported runtimes.",
+  "timedControlDisruptionRisk": "Java stack changes can require framework, application server, and JVM compatibility testing.",
   "rules": [
     {
       "isManual": false,

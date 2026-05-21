@@ -4,6 +4,14 @@
   "slug": "azure-redis-disable-non-ssl-and-minimum-tls12",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2027-03-31",
+  "timedControlCategory": "service-retirement",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [180, 90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-whats-new",
+  "timedControlSummary": "Azure Cache for Redis deployments should be planned for secure transport now and service retirement migration.",
+  "timedControlDisruptionRisk": "Cache retirement and weak transport settings can affect application sessions, queues, and latency-sensitive workloads.",
   "rules": [
     {
       "cloudProviders": [

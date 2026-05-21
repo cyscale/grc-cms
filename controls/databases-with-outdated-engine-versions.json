@@ -4,6 +4,14 @@
   "slug": "databases-with-outdated-engine-versions",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [180, 90, 30, 7],
+  "timedControlSourceURL": "https://endoflife.date/",
+  "timedControlSummary": "Managed databases on outdated engines should be upgraded before support windows close.",
+  "timedControlDisruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
   "rules": [
     {
       "cloudProviders": [

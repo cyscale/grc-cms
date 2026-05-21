@@ -4,6 +4,14 @@
   "slug": "azure-storage-account-minimum-tls",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-02-03",
+  "timedControlCategory": "tls-retirement",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-migrate-to-tls2",
+  "timedControlSummary": "Azure Storage accounts should reject TLS 1.0 and 1.1 before service-side retirement affects clients.",
+  "timedControlDisruptionRisk": "Older clients can fail to read or write storage data after legacy TLS support is removed.",
   "rules": [
     {
       "isManual": false,

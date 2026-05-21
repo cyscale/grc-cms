@@ -4,6 +4,14 @@
   "slug": "azure-mysql-flex-tls-versions",
   "isInsight": false,
   "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "tls-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-connect-tls-ssl",
+  "timedControlSummary": "Azure MySQL Flexible Servers should reject legacy TLS versions before client compatibility windows close.",
+  "timedControlDisruptionRisk": "Database clients using old TLS libraries can fail after TLS policy enforcement.",
   "rules": [
     {
       "isManual": false,
