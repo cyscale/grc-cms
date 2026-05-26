@@ -1,18 +1,22 @@
 {
   "name": "Ensure weak TLS Protocols are not used for ELB",
   "slug": "aws-networking-6",
-  "body": "### Overview\n\nRemove insecure ciphers for your ELB Predefined or Custom Security Policy, to reduce the risk of the SSL connection between the client and the load balancer being exploited.",
-  "description": "Weak TLS Protocols that are used for ELB",
+  "body": "### Overview\n\nCyscale fails this control when an internet-facing AWS load balancer listener uses an SSL policy that permits old TLS versions such as TLS 1.0 or TLS 1.1. The query checks the listener SSL policy on internet-facing ELBs.\n\nUse a modern ELB security policy that only allows TLS 1.2 or newer.",
+  "description": "Internet-facing AWS load balancers using SSL policies that allow weak TLS protocols.",
   "severity": 2,
   "isTimedControl": true,
   "timedControlDueDate": "",
   "timedControlCategory": "tls-retirement",
   "timedControlDeadlineType": "security-baseline",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html",
   "timedControlSummary": "AWS load balancers should be moved away from weak TLS policies before legacy-client compatibility becomes a blocker.",
   "timedControlDisruptionRisk": "Changing listener policies can break legacy clients if compatibility is not tested ahead of time.",
-  "remediationDescription": "Follow the steps described in the [AWS Documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-certificates.html#update-security-policy) on how to update the security policy of a load balancer. Choose a security policy that does not allow SSL 3.0 and/or TLS 1.0, which are known weak ciphers.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### AWS\nUse AWS Organizations guardrails, AWS Config rules or conformance packs where they fit, approved account baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "## Remediation\n\nUpdate each affected HTTPS/TLS listener to a modern SSL policy.\n\n1. Open **EC2 > Load Balancers**.\n2. Select the affected internet-facing load balancer.\n3. Open **Listeners** and choose each HTTPS or TLS listener.\n4. Change the security policy to a modern TLS 1.2+ policy, such as `ELBSecurityPolicy-TLS13-1-2-2021-06` or the current AWS recommended policy for your load balancer type.\n5. Save the listener configuration and test client compatibility.\n\nCLI example for ALB/NLB listeners:\n\n```bash\naws elbv2 modify-listener --listener-arn <listener-arn> --ssl-policy ELBSecurityPolicy-TLS13-1-2-2021-06 --region {{asset.region}}\n```\n\nCyscale will pass when no internet-facing listener uses one of the weak SSL policies listed in the control query.",
   "rules": [
     {
       "cloudProviders": [
