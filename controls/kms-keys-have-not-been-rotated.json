@@ -1,5 +1,5 @@
 {
-  "body": "### Overview\n\nThis control identifies cases where an encryption key has not been rotated for more than 90 days. Regular key rotation reduces exposure from long-lived key material and supports cryptographic hygiene.\n\nThe check uses the key rotation age returned by Cyscale's encryption key rotation queries.",
+  "body": "### Overview\n\nThis control ensures that **encryption keys are rotated within the expected 90-day lifecycle window**.\n\n### What is checked\n\nThe assessment evaluates key rotation metadata across supported providers and identifies keys whose last rotation is older than the configured 90-day threshold.\n\n### Why it matters\n\nRegular key rotation limits the useful lifetime of key material, supports cryptographic hygiene, and reduces exposure if a key or dependent credential is mishandled. Rotation also validates that workloads can tolerate routine key lifecycle operations.\n\n### What good looks like\n\nKeys should use automatic rotation where supported. For key types that cannot rotate automatically, teams should use documented replacement procedures, keep older key versions available for decryption, and verify dependent services before retiring old material.",
   "name": "Ensure encryption keys are rotated",
   "slug": "kms-keys-have-not-been-rotated",
   "isInsight": false,

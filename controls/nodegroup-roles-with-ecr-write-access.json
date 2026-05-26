@@ -1,5 +1,5 @@
 {
-  "body": "### Overview\n\nThis control identifies cases where an EKS node group role has ECR write permissions. Worker nodes usually need to pull container images, not push, delete, or mutate images in registries.\n\nRestrict node roles to read-only ECR permissions and move image publishing permissions to CI/CD roles.",
+  "body": "### Overview\n\nThis control ensures that **Amazon EKS node group roles can pull images from ECR without being able to write or delete images**.\n\n### What is checked\n\nThe assessment identifies EKS node group IAM roles with ECR write permissions such as image push, layer upload, or delete actions.\n\n### Why it matters\n\nWorker nodes usually need read-only registry access. If a node role can write to ECR, a compromised node or workload may be able to overwrite images, delete images, or publish malicious images into trusted repositories.\n\n### What good looks like\n\nNode group roles should use AmazonEC2ContainerRegistryReadOnly or an equivalent least-privilege policy. Image publishing should be limited to CI/CD roles with clear ownership, logging, and deployment controls.",
   "name": "Minimize cluster access to read-only for Amazon ECR",
   "slug": "nodegroup-roles-with-ecr-write-access",
   "isInsight": false,
