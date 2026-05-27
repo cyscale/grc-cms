@@ -7,7 +7,11 @@
   "timedControlDueDate": "",
   "timedControlCategory": "runtime-retirement",
   "timedControlDeadlineType": "provider-rolling",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://cloud.google.com/functions/docs/runtime-support",
   "timedControlSummary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
   "timedControlDisruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",

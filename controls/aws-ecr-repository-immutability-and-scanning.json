@@ -1,5 +1,5 @@
 {
-  "body": "Container images should be protected from tag overwrite and scanned for vulnerabilities.\n\n### What this control should detect\n\nECR repositories that do not enforce image tag immutability and scan-on-push.",
+  "body": "### Security intent\n\nThis control hardens workloads by ensuring that **eCR repositories use immutable tags and image scanning**.\n\n### Workload state reviewed\n\nThe assessment reviews eCR repositories with mutable tags or no scanning in AWS. It focuses on the workload, runtime, image, role, network, or platform setting relevant to this control.\n\n### Remediation focus\n\nTreat compute findings as workload changes. Confirm ownership, update infrastructure as code or deployment templates, roll out in batches where needed, and validate that new resources inherit the corrected baseline.",
   "name": "Ensure ECR repositories use immutable tags and image scanning",
   "slug": "aws-ecr-repository-immutability-and-scanning",
   "isInsight": false,

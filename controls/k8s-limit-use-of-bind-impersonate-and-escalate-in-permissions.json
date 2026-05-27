@@ -114,7 +114,7 @@
       "returnPath": "clusterRoleBindings"
     }
   ],
-  "remediationDescription": "Where possible, remove the impersonate, bind and escalate rights from subjects.\n\n**References**\n\n1. [https://workbench.cisecurity.org/sections/1126661/recommendations/1838597](https://workbench.cisecurity.org/sections/1126661/recommendations/1838597)\n\n2. [https://www.impidio.com/blog/kubernetes-rbac-security-pitfalls](https://www.impidio.com/blog/kubernetes-rbac-security-pitfalls)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Kubernetes\nUse admission policies, baseline cluster configuration, GitOps templates, and namespace or workload guardrails so new deployments follow the control by default.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "Where possible, remove the impersonate, bind and escalate rights from subjects.\n\n**References**\n\n1. [https://workbench.cisecurity.org/sections/1126661/recommendations/1838597](https://workbench.cisecurity.org/sections/1126661/recommendations/1838597)\n\n2. [https://www.impidio.com/blog/kubernetes-rbac-security-pitfalls](https://www.impidio.com/blog/kubernetes-rbac-security-pitfalls)",
   "isEnabled": true,
   "severity": 2,
   "description": "Limit the not using of bind, impersonate and escalate permissions"

@@ -3,7 +3,7 @@
   "name": "AI feature stores should have retention configured",
   "description": "AI feature stores without online data retention",
   "slug": "ai-feature-stores-should-have-retention",
-  "body": "Feature stores often hold derived customer, behavioral, operational, or business-sensitive data. Online feature data should have retention configured so stale training and inference data does not accumulate indefinitely.",
+  "body": "### Security intent\n\nThis control hardens workloads by ensuring that **AI feature stores should have retention configured**.\n\n### Workload state reviewed\n\nThe assessment reviews AI feature stores without online data retention in Google Cloud. It focuses on the workload, runtime, image, role, network, or platform setting relevant to this control.\n\n### Remediation focus\n\nTreat compute findings as workload changes. Confirm ownership, update infrastructure as code or deployment templates, roll out in batches where needed, and validate that new resources inherit the corrected baseline.",
   "severity": 2,
   "rules": [
     {

@@ -18,7 +18,7 @@
       "returnPath": ""
     }
   ],
-  "remediationDescription": "### Console\n\n1. Open the security settings using the \\\"Open in Alibaba\\\" menu option\n1. In the **Password Strength Settings** section, click **Edit**.\n1. In the **Password Length** field, enter 14 or a greater number and click **OK**\n\n### CLI\n\n```sh\naliyun ram SetPasswordPolicy --MinimumPasswordLength 14\n```\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Alibaba Cloud\nUse Resource Directory guardrails, account baselines, and IaC modules so the secure setting is applied consistently across environments.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "### Console\n\n1. Open the security settings using the \\\"Open in Alibaba\\\" menu option\n1. In the **Password Strength Settings** section, click **Edit**.\n1. In the **Password Length** field, enter 14 or a greater number and click **OK**\n\n### CLI\n\n```sh\naliyun ram SetPasswordPolicy --MinimumPasswordLength 14\n```",
   "description": "RAM password policies not enforcing long passwords",
   "severity": 2
 }

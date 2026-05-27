@@ -3,7 +3,7 @@
   "name": "AI services should have owner tags",
   "description": "AI services, models, endpoints, or feature stores without ownership tags",
   "slug": "ai-services-should-have-owner-tags",
-  "body": "AI services need clear ownership because they combine cloud permissions, model behavior, data paths, runtime cost, and business risk. Missing ownership makes triage, exception handling, and incident response slower.",
+  "body": "### Security intent\n\nThis control reduces unnecessary exposure by ensuring that **AI services should have owner tags**.\n\n### Network condition reviewed\n\nThe assessment reviews AI services, models, endpoints, or feature stores without ownership tags in AWS, Azure / Microsoft Entra, and Google Cloud. It focuses on rules, endpoints, listeners, or policies that make the service reachable in a riskier way than intended.\n\n### Expected posture\n\nPublic reachability should be deliberate, documented, and tightly scoped. Administrative and data-plane paths should use private connectivity, strong TLS, explicit source ranges, and provider-native controls rather than broad internet access.",
   "severity": 1,
   "rules": [
     {

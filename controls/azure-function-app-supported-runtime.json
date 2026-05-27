@@ -7,7 +7,11 @@
   "timedControlDueDate": "2026-09-14",
   "timedControlCategory": "runtime-retirement",
   "timedControlDeadlineType": "provider-enforced",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
   "timedControlSummary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
   "timedControlDisruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",

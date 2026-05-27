@@ -17,7 +17,7 @@
       "query": "api-keys-rotation"
     }
   ],
-  "remediationDescription": "#### From Google Cloud Console:\n\n1. Click on the `Open in Google Cloud`. \n2. Once on the page of the API Key, click on `Regenerate Key`\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Google Cloud\nUse organization or folder policies where available, shared project templates, logs and alerting baselines, and IaC modules so new resources inherit the secure setting.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "### GCP\n\n1. Open Google Cloud Console and go to APIs & Services > Credentials.\n2. Select the affected API key and confirm its current application and API restrictions.\n3. Create a replacement key with the same restrictions before changing the application.\n4. Update the application, secret store, or deployment configuration to use the replacement key.\n5. Verify traffic and application logs for the expected API calls.\n6. Delete the old key after the replacement is confirmed in production.\n\nReference: https://cloud.google.com/docs/authentication/api-keys#rotating",
   "description": "API keys not rotated for more than 90 days",
   "severity": 2
 }

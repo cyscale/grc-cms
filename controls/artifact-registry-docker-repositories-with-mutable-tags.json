@@ -1,5 +1,5 @@
 {
-  "body": "### Overview\n\nMutable image tags make it easier to overwrite trusted image references and weaken software supply-chain controls. For production Docker repositories, immutable tags help preserve provenance, improve rollback safety, and reduce the risk of unreviewed image swaps.",
+  "body": "### Control intent\n\nThis control supports the baseline requirement to **artifact Registry Docker repositories enforce immutable tags**.\n\n### Configuration reviewed\n\nThe assessment reviews artifact Registry Docker repositories with mutable tags in Google Cloud.\n\n### Expected operation\n\nKeep the setting owned, documented, and enforced through policy or infrastructure as code where possible. If an exception is required, record the owner, reason, compensating controls, and expiry date.",
   "name": "Ensure Artifact Registry Docker repositories enforce immutable tags",
   "slug": "artifact-registry-docker-repositories-with-mutable-tags",
   "isInsight": false,

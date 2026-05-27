@@ -3,7 +3,7 @@
   "name": "AI Kubernetes workloads should not run privileged",
   "description": "AI-related Kubernetes workloads using privileged runtime settings",
   "slug": "ai-k8s-workloads-should-not-run-privileged",
-  "body": "Self-hosted AI workloads often run model servers, agents, MCP servers, notebook servers, and GPU runtimes. Privileged containers, privilege escalation, writable root filesystems, or powerful Linux capabilities can turn prompt injection or dependency compromise into node-level impact.",
+  "body": "### Security intent\n\nThis control hardens workloads by ensuring that **AI Kubernetes workloads should not run privileged**.\n\n### Workload state reviewed\n\nThe assessment reviews AI-related Kubernetes workloads using privileged runtime settings in Kubernetes. It focuses on the workload, runtime, image, role, network, or platform setting relevant to this control.\n\n### Remediation focus\n\nTreat compute findings as workload changes. Confirm ownership, update infrastructure as code or deployment templates, roll out in batches where needed, and validate that new resources inherit the corrected baseline.",
   "severity": 3,
   "rules": [
     {

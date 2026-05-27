@@ -17,7 +17,7 @@
       "query": "query-k8s-check-restrictions-on-the-creation-of-hostnetwork-containers"
     }
   ],
-  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the admission of hostNetwork containers.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Kubernetes\nUse admission policies, baseline cluster configuration, GitOps templates, and namespace or workload guardrails so new deployments follow the control by default.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "### Kubernetes\n\n1. Find workloads that set spec.hostNetwork to true.\n2. Remove hostNetwork: true from application manifests unless the workload is a justified infrastructure component.\n3. Use Services, Ingress, Gateway API, or CNI-native networking instead of binding application pods directly to the node network namespace.\n4. Enforce the restricted Pod Security Standard or an admission policy that blocks hostNetwork in user namespaces.\n5. Re-deploy and confirm replacement pods no longer share the host network namespace.\n\nReference: https://kubernetes.io/docs/concepts/security/pod-security-standards/",
   "isEnabled": true,
   "description": "Do not generally permit containers to be run with the hostNetwork flag set to true.",
   "severity": 2

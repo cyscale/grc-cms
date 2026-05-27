@@ -138,7 +138,7 @@
       "query": "k8s-cronjobs-podtemplates-with-permissive-security-context"
     }
   ],
-  "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Kubernetes\nUse admission policies, baseline cluster configuration, GitOps templates, and namespace or workload guardrails so new deployments follow the control by default.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "Follow the Kubernetes documentation and apply security contexts to your pods. For a suggested list of security contexts, you may refer to the CIS Security Benchmark for Docker Containers.\n\n[https://workbench.cisecurity.org/sections/1126667/recommendations/1838636](https://workbench.cisecurity.org/sections/1126667/recommendations/1838636)",
   "isEnabled": true,
   "severity": 1,
   "description": "Apply Security Context correctly to Pods and Containers"

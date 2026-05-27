@@ -1,5 +1,5 @@
 {
-  "body": "Detection without alerting delays incident response. A security alert that is disabled or has no notification target usually fails silently.\n\n### What this control should detect\n\nAlerting policies that are disabled or do not have any notification channels configured.",
+  "body": "### Control intent\n\nThis control verifies that **security alert policies are enabled and notify responders** in Google Cloud.\n\n### Signal reviewed\n\nThe assessment checks for alerting policies that are disabled or have no notification channels configured and highlights environments where security telemetry or alerting coverage is incomplete.\n\n### Why it is operationally important\n\nSecurity teams need reliable telemetry before an incident starts. Missing audit logs, weak retention, or absent alerts can make investigation, evidence collection, and response timelines materially worse.",
   "name": "Ensure security alert policies are enabled and notify responders",
   "slug": "gcp-alert-policies-high-risk-events",
   "isInsight": false,

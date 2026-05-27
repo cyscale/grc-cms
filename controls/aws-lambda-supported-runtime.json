@@ -7,7 +7,11 @@
   "timedControlDueDate": "",
   "timedControlCategory": "runtime-retirement",
   "timedControlDeadlineType": "provider-rolling",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
   "timedControlSummary": "Deprecated Lambda runtimes can lose patch support and later be blocked for create or update workflows.",
   "timedControlDisruptionRisk": "Runtime migrations can break builds, dependencies, native layers, and traffic shifting if left until provider enforcement.",
@@ -23,7 +27,11 @@
       "summary": "AWS Lambda Node.js 18 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "nodejs22.x",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     },
     {
       "key": "aws-lambda-python3.9",
@@ -36,7 +44,11 @@
       "summary": "AWS Lambda Python 3.9 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "python3.13",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     },
     {
       "key": "aws-lambda-dotnet6",
@@ -49,7 +61,11 @@
       "summary": "AWS Lambda .NET 6 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "dotnet8",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     },
     {
       "key": "aws-lambda-python3.8",
@@ -62,7 +78,11 @@
       "summary": "AWS Lambda Python 3.8 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "python3.13",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     },
     {
       "key": "aws-lambda-nodejs16.x",
@@ -75,7 +95,11 @@
       "summary": "AWS Lambda Node.js 16 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "nodejs22.x",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     },
     {
       "key": "aws-lambda-java8",
@@ -88,7 +112,11 @@
       "summary": "AWS Lambda Java 8 runtime on Amazon Linux is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "java21",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     },
     {
       "key": "aws-lambda-go1.x",
@@ -101,7 +129,11 @@
       "summary": "AWS Lambda Go 1.x runtime is deprecated and should be migrated to a custom runtime.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "provided.al2023",
-      "notificationWindowsDays": [90, 30, 7]
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
     }
   ],
   "body": "AWS Lambda runtimes eventually reach deprecation when the language runtime or underlying operating system stops receiving community and vendor security updates. Functions left on deprecated runtimes can continue to run, but they accumulate unpatched vulnerability risk, may become unsupported by AWS, and can later be blocked from create or update workflows.\n\nTreat deprecated runtimes as a software supply-chain and operational resilience issue: upgrade the runtime, validate dependencies, publish a new version, and shift traffic through aliases so rollback remains possible.",
@@ -120,6 +152,6 @@
       "isManual": false
     }
   ],
-  "remediationDescription": "## Remediation\n\nUpgrade the affected Lambda function to a supported runtime after validating application and dependency compatibility. Prefer moving to the newest supported LTS/runtime family for the language rather than the next-oldest supported version.\n\n### AWS CLI\n\nUpdate the function runtime. Replace `{{manual.targetRuntime}}` with the approved runtime, for example `nodejs22.x`, `python3.13`, `java21`, `dotnet8`, or another runtime supported by AWS for your deployment package type.\n\n```bash\naws lambda update-function-configuration \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --runtime {{manual.targetRuntime}}\n```\n\nWait for the update to complete before publishing or shifting traffic:\n\n```bash\naws lambda wait function-updated \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}}\n```\n\nValidate the runtime now in use:\n\n```bash\naws lambda get-function-configuration \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --query '{FunctionName:FunctionName,Runtime:Runtime,LastUpdateStatus:LastUpdateStatus}'\n```\n\n### Rollout guidance\n\n1. Test the function with the new runtime in a staging account or with a canary alias before production traffic shift.\n2. Rebuild native dependencies and layers for the target runtime and architecture.\n3. Publish a new version and shift traffic gradually with aliases when the function is customer-facing or high-impact.\n4. Remove deprecated runtime references from IaC modules so new deployments cannot reintroduce the issue.\n\n### References\n\n- https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html\n- https://docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html\n\n## Service-wide remediation\n\nUse AWS Health notifications, Trusted Advisor deprecated runtime checks, CI/CD policy checks, and IaC module defaults to prevent deprecated runtimes from being deployed. Track runtime end-of-support dates as part of vulnerability management.",
+  "remediationDescription": "## Remediation\n\nUpgrade the affected Lambda function to a supported runtime after validating application and dependency compatibility. Prefer moving to the newest supported LTS/runtime family for the language rather than the next-oldest supported version.\n\n### AWS CLI\n\nUpdate the function runtime. Replace `{{manual.targetRuntime}}` with the approved runtime, for example `nodejs22.x`, `python3.13`, `java21`, `dotnet8`, or another runtime supported by AWS for your deployment package type.\n\n```bash\naws lambda update-function-configuration \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --runtime {{manual.targetRuntime}}\n```\n\nWait for the update to complete before publishing or shifting traffic:\n\n```bash\naws lambda wait function-updated \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}}\n```\n\nValidate the runtime now in use:\n\n```bash\naws lambda get-function-configuration \\\n  --region {{asset.region}} \\\n  --function-name {{asset.name}} \\\n  --query '{FunctionName:FunctionName,Runtime:Runtime,LastUpdateStatus:LastUpdateStatus}'\n```\n\n### Rollout guidance\n\n1. Test the function with the new runtime in a staging account or with a canary alias before production traffic shift.\n2. Rebuild native dependencies and layers for the target runtime and architecture.\n3. Publish a new version and shift traffic gradually with aliases when the function is customer-facing or high-impact.\n4. Remove deprecated runtime references from IaC modules so new deployments cannot reintroduce the issue.\n\n### References\n\n- https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html\n- https://docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html",
   "isEnabled": true
 }

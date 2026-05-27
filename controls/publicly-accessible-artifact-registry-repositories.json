@@ -1,5 +1,5 @@
 {
-  "body": "### Overview\n\nArtifact Registry repositories should not be exposed to unauthenticated or broadly authenticated principals such as `allUsers` or `allAuthenticatedUsers`. Public repositories increase the blast radius of accidental image disclosure and make supply-chain reconnaissance easier for attackers.",
+  "body": "### Control intent\n\nThis control supports the baseline requirement to **artifact Registry repositories are not publicly accessible**.\n\n### Configuration reviewed\n\nThe assessment reviews publicly accessible Artifact Registry repositories in Google Cloud.\n\n### Expected operation\n\nKeep the setting owned, documented, and enforced through policy or infrastructure as code where possible. If an exception is required, record the owner, reason, compensating controls, and expiry date.",
   "name": "Ensure Artifact Registry repositories are not publicly accessible",
   "slug": "publicly-accessible-artifact-registry-repositories",
   "isInsight": false,

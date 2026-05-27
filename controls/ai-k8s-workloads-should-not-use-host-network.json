@@ -3,7 +3,7 @@
   "name": "AI Kubernetes workloads should not use host networking",
   "description": "AI-related Kubernetes workloads attached to the node network namespace",
   "slug": "ai-k8s-workloads-should-not-use-host-network",
-  "body": "AI runtimes and agents should not use host networking unless there is a clear infrastructure requirement. Host networking bypasses normal service isolation and can expose model endpoints, agent tools, or metadata paths beyond the intended pod boundary.",
+  "body": "### Security intent\n\nThis control reduces unnecessary exposure by ensuring that **AI Kubernetes workloads should not use host networking**.\n\n### Network condition reviewed\n\nThe assessment reviews AI-related Kubernetes workloads attached to the node network namespace in Kubernetes. It focuses on rules, endpoints, listeners, or policies that make the service reachable in a riskier way than intended.\n\n### Expected posture\n\nPublic reachability should be deliberate, documented, and tightly scoped. Administrative and data-plane paths should use private connectivity, strong TLS, explicit source ranges, and provider-native controls rather than broad internet access.",
   "severity": 3,
   "rules": [
     {

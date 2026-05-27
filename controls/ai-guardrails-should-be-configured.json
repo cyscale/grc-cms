@@ -3,7 +3,7 @@
   "name": "AI guardrails should be configured",
   "description": "AI services without visible content safety, guardrail, or responsible AI configuration",
   "slug": "ai-guardrails-should-be-configured",
-  "body": "AI services should have guardrails appropriate to their use case. Missing content filters, responsible AI policies, safety classifiers, or guardrail configurations increase the chance of unsafe output, policy bypass, and unreviewed data disclosure.",
+  "body": "### Security intent\n\nThis control hardens workloads by ensuring that **AI guardrails should be configured**.\n\n### Workload state reviewed\n\nThe assessment reviews AI services without visible content safety, guardrail, or responsible AI configuration in Azure / Microsoft Entra. It focuses on the workload, runtime, image, role, network, or platform setting relevant to this control.\n\n### Remediation focus\n\nTreat compute findings as workload changes. Confirm ownership, update infrastructure as code or deployment templates, roll out in batches where needed, and validate that new resources inherit the corrected baseline.",
   "severity": 2,
   "rules": [
     {

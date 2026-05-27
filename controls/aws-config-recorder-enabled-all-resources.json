@@ -1,5 +1,5 @@
 {
-  "body": "AWS Config is foundational for compliance monitoring. If recording is disabled or incomplete, many controls become blind.\n\n### What this control should detect\n\nAccounts/regions where Config recording is disabled, delivery channel is missing, or recording scope is incomplete.",
+  "body": "### Security intent\n\nThis control reduces unnecessary exposure by ensuring that **aWS Config recorder is enabled and recording all supported resources**.\n\n### Network condition reviewed\n\nThe assessment reviews aWS Config recorder not enabled or not recording all resources in AWS. It focuses on rules, endpoints, listeners, or policies that make the service reachable in a riskier way than intended.\n\n### Expected posture\n\nPublic reachability should be deliberate, documented, and tightly scoped. Administrative and data-plane paths should use private connectivity, strong TLS, explicit source ranges, and provider-native controls rather than broad internet access.",
   "name": "Ensure AWS Config recorder is enabled and recording all supported resources",
   "slug": "aws-config-recorder-enabled-all-resources",
   "isInsight": false,

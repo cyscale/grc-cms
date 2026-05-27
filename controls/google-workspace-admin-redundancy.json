@@ -1,5 +1,5 @@
 {
-  "body": "While having too many administrators constitutes a security risk, having only one is also a risk especially when MFA is enforced. You should assign at least two Google Workspace super administrators for access redundancy.\r\n\r\nThis also reduces the need to share administrator accounts among users",
+  "body": "### Security intent\n\nThis control validates that **at least two Google Workspace Super Admins are configured** across Google Workspace.\n\n### Access condition reviewed\n\nThe assessment focuses on google Workspace accounts without admin redundancy. It reviews the identity, credential, role, or policy state that creates the access condition described by the control.\n\n### Practitioner note\n\nIdentity findings deserve careful cleanup rather than blind deletion. Confirm ownership and business need, remove unnecessary standing access, and prefer federation, groups, roles, MFA, and short-lived credentials over direct long-lived grants.",
   "name": "Ensure at least two Google Workspace Super Admins are configured",
   "slug": "google-workspace-admin-redundancy",
   "isInsight": false,
@@ -17,7 +17,7 @@
       "query": "at-least-two-admins-gw"
     }
   ],
-  "remediationDescription": "Assign another user with the Super Admin role.\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Google Workspace\nUse organization-wide admin settings, security baselines, and delegated admin governance so the control is enforced centrally.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "### Google Workspace\n\n1. Open the Google Admin console and go to Directory > Users.\n2. Select the backup administrator account, or create a dedicated named account for a second administrator.\n3. Go to Admin roles and privileges.\n4. Assign the Super Admin role only to the approved backup administrator.\n5. Require strong MFA for every Super Admin account.\n6. Confirm there are at least two active Super Admins and that both are owned by separate people or approved break-glass procedures.\n\nReference: https://support.google.com/a/answer/2405986",
   "isEnabled": true,
   "description": "Google Workspace accounts without admin redundancy",
   "severity": 2

@@ -1,5 +1,5 @@
 {
-  "body": "ACR admin user exposes a shared username and password for the whole registry. It should normally be disabled in favor of Microsoft Entra ID, managed identities, and RBAC.\n\n### Why this matters\n\nShared credentials are harder to rotate, harder to scope, and much harder to attribute during investigations.",
+  "body": "### Security intent\n\nThis control validates that **azure Container Registry admin user is disabled** across Azure / Microsoft Entra.\n\n### Access condition reviewed\n\nThe assessment focuses on azure Container Registries with admin user enabled. It reviews the identity, credential, role, or policy state that creates the access condition described by the control.\n\n### Practitioner note\n\nIdentity findings deserve careful cleanup rather than blind deletion. Confirm ownership and business need, remove unnecessary standing access, and prefer federation, groups, roles, MFA, and short-lived credentials over direct long-lived grants.",
   "name": "Ensure Azure Container Registry admin user is disabled",
   "slug": "azure-acr-admin-user-disabled",
   "isInsight": false,

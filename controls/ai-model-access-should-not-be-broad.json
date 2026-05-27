@@ -3,7 +3,7 @@
   "name": "AI models should not be reachable through broad identities",
   "description": "AI model endpoints using administrative, owner, editor, or wildcard identities",
   "slug": "ai-model-access-should-not-be-broad",
-  "body": "AI models and endpoints should run with least privilege. Broad identities can allow model extraction, unauthorized deployment changes, data access through tools, or lateral movement into storage and vector databases used by AI workloads.",
+  "body": "### Security intent\n\nThis control validates that **AI models should not be reachable through broad identities** across AWS, Azure / Microsoft Entra, Google Cloud, and Kubernetes.\n\n### Access condition reviewed\n\nThe assessment focuses on AI model endpoints using administrative, owner, editor, or wildcard identities. It reviews the identity, credential, role, or policy state that creates the access condition described by the control.\n\n### Practitioner note\n\nIdentity findings deserve careful cleanup rather than blind deletion. Confirm ownership and business need, remove unnecessary standing access, and prefer federation, groups, roles, MFA, and short-lived credentials over direct long-lived grants.",
   "severity": 3,
   "rules": [
     {

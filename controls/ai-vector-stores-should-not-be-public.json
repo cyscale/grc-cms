@@ -3,7 +3,7 @@
   "name": "AI vector and search stores should not be public",
   "description": "AI search or vector-store services reachable from public paths",
   "slug": "ai-vector-stores-should-not-be-public",
-  "body": "Vector stores and AI search indexes frequently contain embeddings, document chunks, retrieval metadata, or business knowledge used by AI systems. Public access can expose sensitive retrieval data and increase prompt-injection and data-extraction impact.",
+  "body": "### Security intent\n\nThis control hardens workloads by ensuring that **AI vector and search stores should not be public**.\n\n### Workload state reviewed\n\nThe assessment reviews AI search or vector-store services reachable from public paths in Azure / Microsoft Entra. It focuses on the workload, runtime, image, role, network, or platform setting relevant to this control.\n\n### Remediation focus\n\nTreat compute findings as workload changes. Confirm ownership, update infrastructure as code or deployment templates, roll out in batches where needed, and validate that new resources inherit the corrected baseline.",
   "severity": 3,
   "rules": [
     {

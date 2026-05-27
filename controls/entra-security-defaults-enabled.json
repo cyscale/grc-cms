@@ -18,7 +18,7 @@
       "isManual": false
     }
   ],
-  "remediationDescription": "From Azure Portal \n\n\nTo enable security defaults in your directory: \n1. Open [Entra ID Tenant | Properties](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties)\n3. Select `Manage security defaults`\n4. Set `Security defaults` to `Enabled` \n5. Select Save\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Microsoft Entra ID\nUse tenant-wide Conditional Access, role settings, authentication policies, and identity governance baselines so the control is enforced centrally.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "From Azure Portal \n\n\nTo enable security defaults in your directory: \n1. Open [Entra ID Tenant | Properties](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties)\n3. Select `Manage security defaults`\n4. Set `Security defaults` to `Enabled` \n5. Select Save",
   "isEnabled": true,
   "severity": 2,
   "description": "Connector without security Defaults enabled"

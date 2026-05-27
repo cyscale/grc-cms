@@ -3,7 +3,7 @@
   "name": "AI training data and feature stores should be encrypted",
   "description": "Training datasets, feature stores, or AI project stores without encryption metadata",
   "slug": "ai-training-data-should-be-encrypted",
-  "body": "Training data, feature stores, and model artifacts often contain proprietary, regulated, or customer-derived data. They should be encrypted at rest with provider-managed or customer-managed keys according to the account security baseline.",
+  "body": "### Security intent\n\nThis control protects cryptographic boundaries by ensuring that **AI training data and feature stores should be encrypted**.\n\n### Key state reviewed\n\nThe assessment reviews training datasets, feature stores, or AI project stores without encryption metadata in AWS, Azure / Microsoft Entra, and Google Cloud. It focuses on key access, lifecycle, rotation, deletion, exposure, or encryption usage depending on the control.\n\n### Specialist guidance\n\nEncryption controls should be remediated with dependency awareness. Before disabling, rotating, deleting, or replacing a key, confirm which services use it, validate decrypt paths, and keep old key material available until dependent workloads are safely migrated.",
   "severity": 2,
   "rules": [
     {

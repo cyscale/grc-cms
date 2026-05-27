@@ -17,7 +17,7 @@
       "query": "query-k8s-pod-host-ports"
     }
   ],
-  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the\nadmission of containers which use `hostPort` sections.\n\n**Default Value**\n\nBy default, there are no restrictions on the use of HostPorts.\n\n**References**\n1.  [https://kubernetes.io/docs/concepts/security/pod-security-standards/](https://kubernetes.io/docs/concepts/security/pod-security-standards/)\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Kubernetes\nUse admission policies, baseline cluster configuration, GitOps templates, and namespace or workload guardrails so new deployments follow the control by default.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "Add policies to each namespace in the cluster which has user workloads to restrict the\nadmission of containers which use `hostPort` sections.\n\n**Default Value**\n\nBy default, there are no restrictions on the use of HostPorts.\n\n**References**\n1.  [https://kubernetes.io/docs/concepts/security/pod-security-standards/](https://kubernetes.io/docs/concepts/security/pod-security-standards/)",
   "isEnabled": true,
   "severity": 3,
   "description": "Minimize the admission of containers which use HostPorts"

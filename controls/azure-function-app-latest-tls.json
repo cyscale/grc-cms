@@ -7,7 +7,11 @@
   "timedControlDueDate": "2027-05-31",
   "timedControlCategory": "tls-retirement",
   "timedControlDeadlineType": "provider-enforced",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/tls-minimum-version",
   "timedControlSummary": "Azure Function Apps and SCM endpoints must require TLS 1.2 or later before platform enforcement.",
   "timedControlDisruptionRisk": "Legacy deployment clients or runtime callers can fail once older TLS versions are blocked.",

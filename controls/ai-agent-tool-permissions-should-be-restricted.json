@@ -3,7 +3,7 @@
   "name": "AI agents should not run with unrestricted tool permissions",
   "description": "AI agent workloads with unrestricted tool access or default service account tokens",
   "slug": "ai-agent-tool-permissions-should-be-restricted",
-  "body": "AI agents can turn permissions into actions. If an agent has unrestricted tools, wildcard policies, or broad runtime tokens, prompt injection can become data access, infrastructure changes, or lateral movement.",
+  "body": "### Security intent\n\nThis control hardens workloads by ensuring that **AI agents should not run with unrestricted tool permissions**.\n\n### Workload state reviewed\n\nThe assessment reviews AI agent workloads with unrestricted tool access or default service account tokens in Azure / Microsoft Entra and Kubernetes. It focuses on the workload, runtime, image, role, network, or platform setting relevant to this control.\n\n### Remediation focus\n\nTreat compute findings as workload changes. Confirm ownership, update infrastructure as code or deployment templates, roll out in batches where needed, and validate that new resources inherit the corrected baseline.",
   "severity": 3,
   "rules": [
     {

@@ -8,7 +8,11 @@
   "timedControlDueDate": "",
   "timedControlCategory": "runtime-retirement",
   "timedControlDeadlineType": "provider-rolling",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-python",
   "timedControlSummary": "Azure App Service apps using unsupported Python stacks should be migrated before runtime support windows close.",
   "timedControlDisruptionRisk": "Python runtime upgrades can require package rebuilds, dependency changes, and deployment-slot validation.",
@@ -27,7 +31,7 @@
       "applicableAssetsQuery": "query ($options: SiteOptions, $failedAssetsIdentifiers: [ID!]) {\n  sites(\n    options: $options\n    where: {\n      NOT: { identifier_IN: $failedAssetsIdentifiers }\n      siteConfig: { NOT: { pythonVersion: \"\" } }\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
     }
   ],
-  "remediationDescription": "### From Azure Console\n\n1. Open the web app using the `Open in Azure` button.\n2. Select `Configuration`\n3. Go to `General settings`\n4. Under the `Stack settings`, for Python, select for `Major version` and `Minor version` the latest stable and supported release\n\n### Using Azure Command Line Interface\n\nTo see the list of supported runtimes:\n\n```bash\naz webapp list-runtimes\n```\n\nTo set the latest Python version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <resourceGroup> --name <applicationName> [--linux-fx-version <pythonRuntimeVersion>] [--windows-fx-version <pythonRuntimeVersion>] \n```\n\n## Service-wide remediation\n\n> **Recommended when many resources are affected:** fix the platform baseline first so new resources inherit the secure setting, then remediate the existing flagged resources in batches.\n\n### Azure\nUse management group or subscription Azure Policy assignments, remediation tasks where supported, landing-zone standards, and IaC modules so drift is prevented at scale.\n\n## Operational rollout\n\n1. Fix the baseline first at the account, subscription, project, cluster, or tenant scope that owns this control.\n2. Remediate the currently affected resources in batches, starting with internet-exposed and production assets.\n3. Re-scan and track approved exceptions with an owner and expiry date.",
+  "remediationDescription": "### From Azure Console\n\n1. Open the web app using the `Open in Azure` button.\n2. Select `Configuration`\n3. Go to `General settings`\n4. Under the `Stack settings`, for Python, select for `Major version` and `Minor version` the latest stable and supported release\n\n### Using Azure Command Line Interface\n\nTo see the list of supported runtimes:\n\n```bash\naz webapp list-runtimes\n```\n\nTo set the latest Python version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <resourceGroup> --name <applicationName> [--linux-fx-version <pythonRuntimeVersion>] [--windows-fx-version <pythonRuntimeVersion>] \n```",
   "isEnabled": true,
   "severity": 2,
   "description": "'Python version' is currently supported (if in use)"

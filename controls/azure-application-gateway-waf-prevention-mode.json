@@ -1,5 +1,5 @@
 {
-  "body": "Detection-only mode provides visibility but does not block attacks. Prevention mode is required for stronger protection on internet-facing workloads.",
+  "body": "### Control intent\n\nThis control supports the baseline requirement to **application Gateway WAF is enabled in Prevention mode**.\n\n### Configuration reviewed\n\nThe assessment reviews application Gateways without WAF prevention mode in Azure / Microsoft Entra.\n\n### Expected operation\n\nKeep the setting owned, documented, and enforced through policy or infrastructure as code where possible. If an exception is required, record the owner, reason, compensating controls, and expiry date.",
   "name": "Ensure Application Gateway WAF is enabled in Prevention mode",
   "slug": "azure-application-gateway-waf-prevention-mode",
   "isInsight": false,

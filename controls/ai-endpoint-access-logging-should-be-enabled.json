@@ -3,7 +3,7 @@
   "name": "AI endpoint access logging should be enabled",
   "description": "AI endpoints without access or container logging",
   "slug": "ai-endpoint-access-logging-should-be-enabled",
-  "body": "AI inference endpoints should produce enough telemetry to investigate abuse, prompt injection attempts, anomalous invocation volume, data leakage, and unauthorized access. Missing endpoint logging makes AI incidents difficult to detect and reconstruct.",
+  "body": "### Control intent\n\nThis control verifies that **AI endpoint access logging should be enabled** in Google Cloud.\n\n### Signal reviewed\n\nThe assessment checks for AI endpoints without access or container logging and highlights environments where security telemetry or alerting coverage is incomplete.\n\n### Why it is operationally important\n\nSecurity teams need reliable telemetry before an incident starts. Missing audit logs, weak retention, or absent alerts can make investigation, evidence collection, and response timelines materially worse.",
   "severity": 2,
   "rules": [
     {

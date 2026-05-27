@@ -1,5 +1,5 @@
 {
-  "body": "Service Bus should not be directly reachable from public networks when private connectivity can be used.",
+  "body": "### Security intent\n\nThis control reduces unnecessary exposure by ensuring that **service Bus namespaces disable public network access**.\n\n### Network condition reviewed\n\nThe assessment reviews service Bus namespaces allowing public network access in Azure / Microsoft Entra. It focuses on rules, endpoints, listeners, or policies that make the service reachable in a riskier way than intended.\n\n### Expected posture\n\nPublic reachability should be deliberate, documented, and tightly scoped. Administrative and data-plane paths should use private connectivity, strong TLS, explicit source ranges, and provider-native controls rather than broad internet access.",
   "name": "Ensure Service Bus namespaces disable public network access",
   "slug": "azure-servicebus-public-network-access-disabled",
   "isInsight": false,
