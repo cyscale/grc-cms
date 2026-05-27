@@ -1,5 +1,5 @@
 {
   "name": "Alibaba Cloud Function Compute functions using deprecated runtimes",
   "slug": "alibaba-functions-with-deprecated-runtime",
-  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"alibaba\" }\n      runtime_IN: [\n        \"nodejs10\"\n        \"nodejs8\"\n        \"nodejs6\"\n        \"nodejs4.4\"\n        \"python2.7\"\n        \"dotnetcore2.1\"\n      ]\n    }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"alibaba\" }\n      runtime_IN: [\n        \"nodejs10\"\n        \"nodejs8\"\n        \"nodejs6\"\n        \"nodejs4.4\"\n        \"python2.7\"\n        \"dotnetcore2.1\"\n      ]\n    }\n  ) {\n    ...AssetFragment\n    runtime\n  }\n}"
 }

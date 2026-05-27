@@ -1,5 +1,5 @@
 {
   "name": "Redis instances with insecure transport settings",
   "slug": "azure-redis-disable-non-ssl-and-minimum-tls12-instances-with-insecure-transport",
-  "query": "{ redisInstances(where: { OR: [ { enableNonSslPort: { eq: true } }, { minimumTlsVersion_IN: [\"1.0\", \"1.1\"] } ] }) { ...AssetFragment } }"
+  "query": "{ redisInstances(where: { OR: [ { enableNonSslPort: { eq: true } }, { minimumTlsVersion_IN: [\"1.0\", \"1.1\"] } ] }) { ...AssetFragment enableNonSslPort minimumTlsVersion } }"
 }

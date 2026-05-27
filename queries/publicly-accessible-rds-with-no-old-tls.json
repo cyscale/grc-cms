@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible RDS with no/old TLS",
   "slug": "publicly-accessible-rds-with-no-old-tls",
-  "query": "{ dbInstances( where: { AND: [ { publicAccessBlocked: { eq: false } } { securityGroups_SOME: { rules_SOME: { sources_INCLUDES: \"cidr:0.0.0.0/0\" } } } { OR: [ { tlsStatus: { eq: \"\" } } { tlsStatus: { eq: \"disabled\" } } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) {...AssetFragment} } "
+  "query": "{ dbInstances( where: { AND: [ { publicAccessBlocked: { eq: false } } { securityGroups_SOME: { rules_SOME: { sources_INCLUDES: \"cidr:0.0.0.0/0\" } } } { OR: [ { tlsStatus: { eq: \"\" } } { tlsStatus: { eq: \"disabled\" } } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) {...AssetFragment tlsStatus tlsMinimumVersion} } "
 }

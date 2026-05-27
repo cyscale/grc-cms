@@ -1,5 +1,5 @@
 {
   "name": "Publicly Accessible Alibaba ApsaraDB Instances with no/old TLS",
   "slug": "publicly-accessible-alibaba-apsaradb-instances-with-no-old-tls",
-  "query": "{ dbInstances( where: { AND: [ { publicAccessBlocked: { eq: false } } { whitelist: { rules_SOME: { sources_INCLUDES: \"cidr:0.0.0.0/0\" } } } { OR: [ { tlsStatus: { eq: \"disabled\" } } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) {...AssetFragment} } "
+  "query": "{ dbInstances( where: { AND: [ { publicAccessBlocked: { eq: false } } { whitelist: { rules_SOME: { sources_INCLUDES: \"cidr:0.0.0.0/0\" } } } { OR: [ { tlsStatus: { eq: \"disabled\" } } { tlsMinimumVersion_LT: 1.2 } ] } ] } ) {...AssetFragment tlsStatus tlsMinimumVersion} } "
 }

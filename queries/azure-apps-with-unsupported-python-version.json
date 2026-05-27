@@ -1,5 +1,5 @@
 {
-  "query": "{\n  sites(\n    where: { siteConfig: { NOT: { pythonVersion: { eq: \"\" } }, isDeprecated: { eq: true } } }\n  ) {\n    ...AssetFragment\n  }\n}",
+  "query": "{\n  sites(\n    where: { siteConfig: { NOT: { pythonVersion: { eq: \"\" } }, isDeprecated: { eq: true } } }\n  ) {\n    ...AssetFragment\n    siteConfig {\n      pythonVersion\n    }\n  }\n}",
   "slug": "azure-apps-with-unsupported-python-version",
   "name": "Azure app services running unsupported Python versions"
 }

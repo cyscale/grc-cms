@@ -1,5 +1,5 @@
 {
   "name": "Azure app services running unsupported PHP versions",
   "slug": "azure-apps-with-unsupported-php-version",
-  "query": "{\n  sites(\n    where: { siteConfig: { NOT: { phpVersion: { eq: \"\" } }, isDeprecated: { eq: true } } }\n  ) {\n    ...AssetFragment\n  }\n}"
+  "query": "{\n  sites(\n    where: { siteConfig: { NOT: { phpVersion: { eq: \"\" } }, isDeprecated: { eq: true } } }\n  ) {\n    ...AssetFragment\n    siteConfig {\n      phpVersion\n    }\n  }\n}"
 }
