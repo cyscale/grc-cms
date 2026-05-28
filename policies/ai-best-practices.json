@@ -3,6 +3,9 @@
   "name": "AI Best Practices",
   "isStandard": true,
   "slug": "ai-best-practices",
+  "requiredModules": [
+    "ai_security"
+  ],
   "version": "1.1.0",
   "body": "AI Best Practices gives security, cloud, and AI platform teams a focused baseline for discovering, securing, and continuously monitoring AI services across cloud and Kubernetes environments.\n\nThe framework is designed for AI-SPM use cases: finding public AI endpoints, reducing excessive model and agent permissions, protecting training data, embeddings, vector stores, feature stores, and model artifacts, hardening AI workbenches and Kubernetes runtimes, and ensuring guardrails and telemetry are configured before AI systems are exposed to users or business workflows.\n\n<Procedure slug=\"ai-best-practices-discovery-and-exposure\"/>\n<Procedure slug=\"ai-best-practices-identity-and-access\"/>\n<Procedure slug=\"ai-best-practices-data-and-model-protection\"/>\n<Procedure slug=\"ai-best-practices-runtime-safety\"/>\n<Procedure slug=\"ai-best-practices-observability-and-response\"/>\n<Procedure slug=\"ai-best-practices-workbench-hardening\"/>\n",
   "targetCloudProviders": [
