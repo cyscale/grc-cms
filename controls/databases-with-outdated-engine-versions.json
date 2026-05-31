@@ -113,5 +113,159 @@
   "remediationDescription": "Depending on the provider and the service you use, check out the following resources:\n\n#### AWS\n\n**From the Console**\n\n\n\nPerform the following actions to upgrade to the newest database engine version:\n\n\n\n1. Open the security settings using the \"Open in AWS\" menu option\n2. Select `Modify`\n3. Under `Settings`, `DB engine version`, select the newest version possible \n4. Click `Continue` and `Modify DB Instance`\n\n\n\n**From the AWS CLI**\n\n\n\n```bash\naws rds modify-db-instance --db-instance-identifier <dbInstanceIdentifier> --engine-version <newVersion>\n```\n\n\n\n**References**\n\n\n\n1. [Upgrading a DB instance engine version](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html)\n\n#### Azure\n* [PostgreSQL Single Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [PostgreSQL Flexible Server](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-upgrade-using-dump-and-restore)\n* [MySQL Single Server](https://learn.microsoft.com/en-us/azure/mysql/single-server/how-to-major-version-upgrade)\n\n#### Google Cloud\n* [Cloud SQL](https://cloud.google.com/sql/docs/postgres/upgrade-major-db-version-inplace)\n\n#### Alibaba\n* [ApsaraDB RDS for MySQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-mysql-instance-2)\n* [ApsaraDB RDS for PostgreSQL](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-the-major-engine-version-of-an-apsaradb-rds-for-postgresql-instance-1)\n* [ApsaraDB RDS for SQL Server](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/upgrade-an-instance-from-sql-server-2012-to-sql-server-2016)",
   "isEnabled": true,
   "description": "Databases with outdated engine versions",
-  "severity": 3
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "database-engine-mysql-asset-type",
+      "matchRegex": {
+        "internalAssetType": "MySQL"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to MySQL 8.0 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-postgresql-asset-type",
+      "matchRegex": {
+        "internalAssetType": "PostgreSQL"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to PostgreSQL 13 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-mariadb-asset-type",
+      "matchRegex": {
+        "internalAssetType": "MariaDB"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to MariaDB 10.11 LTS or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-mysql",
+      "matchRegex": {
+        "engine": "(?i)^mysql$"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to MySQL 8.0 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-postgresql",
+      "matchRegex": {
+        "engine": "(?i)^(postgres|postgresql)$"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to PostgreSQL 13 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-mariadb",
+      "matchRegex": {
+        "engine": "(?i)^mariadb$"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to MariaDB 10.11 LTS or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-sqlserver",
+      "matchRegex": {
+        "engine": "(?i)sqlserver"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to SQL Server 2019 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-engine-version",
+      "matchRegex": {
+        "engineVersion": ".+"
+      },
+      "observedField": "engineVersion",
+      "recommendedTarget": "Upgrade to the provider-supported version for this database engine.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://endoflife.date/",
+      "summary": "Managed databases on outdated engines should be upgraded before support windows close.",
+      "disruptionRisk": "Database engine upgrades can require application testing, maintenance windows, backups, and rollback planning.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

@@ -1,0 +1,5 @@
+{
+  "name": "GitHub repositories with Dependabot alerts",
+  "slug": "github-repositories-with-dependabot-alerts",
+  "query": "{\n  gitHubRepositories(where: { criticalDependabotAlertsOpen_GT: 0 }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    criticalDependabotAlertsOpen\n  }\n}"
+}

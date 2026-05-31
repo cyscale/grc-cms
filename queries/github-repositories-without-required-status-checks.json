@@ -1,0 +1,5 @@
+{
+  "name": "GitHub repositories without required status checks",
+  "slug": "github-repositories-without-required-status-checks",
+  "query": "{\n  gitHubRepositories(where: { requiresStatusChecks: false }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    defaultBranch\n  }\n}"
+}

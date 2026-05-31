@@ -32,5 +32,115 @@
     }
   ],
   "remediationDescription": "## Remediation\n\nMove the Function App to a supported runtime stack. The exact command depends on the operating system and language stack, so validate the target runtime in a staging slot or non-production app first.\n\n### Azure CLI\n\nInspect the current runtime settings:\n\n```bash\naz functionapp config show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query '{linuxFxVersion:linuxFxVersion,nodeVersion:nodeVersion,pythonVersion:pythonVersion,javaVersion:javaVersion,powerShellVersion:powerShellVersion,netFrameworkVersion:netFrameworkVersion}'\n```\n\nFor Linux Function Apps, set the target runtime stack. Replace `{{manual.linuxFxVersion}}` with the approved stack value, for example a currently supported `PYTHON|...`, `NODE|...`, `DOTNET-ISOLATED|...`, or `JAVA|...` value.\n\n```bash\naz functionapp config set \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --linux-fx-version \"{{manual.linuxFxVersion}}\"\n```\n\nFor Windows Function Apps, update the language-specific setting supported by your stack and deployment model, then redeploy the function package from CI/CD.\n\n### Rollout guidance\n\n1. Update application dependencies and build images/packages against the target runtime.\n2. Use deployment slots for production Function Apps and swap only after health checks pass.\n3. Validate triggers, bindings, managed identity access, and outbound dependencies after redeploy.\n4. Add CI/CD checks so unsupported runtime stack values cannot be reintroduced.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/azure-functions/supported-languages\n- https://learn.microsoft.com/en-us/cli/azure/functionapp/config",
-  "isEnabled": true
+  "isEnabled": true,
+  "timedControlRules": [
+    {
+      "key": "azure-function-app-node-runtime",
+      "matchRegex": {
+        "configs.nodeVersion": ".+"
+      },
+      "observedField": "configs.nodeVersion",
+      "recommendedTarget": "Set Node.js runtime to 20 or newer on Azure Functions v4.",
+      "dueDate": "2026-09-14",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
+      "summary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
+      "disruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "azure-function-app-python-runtime",
+      "matchRegex": {
+        "configs.pythonVersion": ".+"
+      },
+      "observedField": "configs.pythonVersion",
+      "recommendedTarget": "Set Python runtime to 3.12 on Azure Functions v4.",
+      "dueDate": "2026-09-14",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
+      "summary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
+      "disruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "azure-function-app-java-runtime",
+      "matchRegex": {
+        "configs.javaVersion": ".+"
+      },
+      "observedField": "configs.javaVersion",
+      "recommendedTarget": "Set Java runtime to 17 or 21 on Azure Functions v4.",
+      "dueDate": "2026-09-14",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
+      "summary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
+      "disruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "azure-function-app-powershell-runtime",
+      "matchRegex": {
+        "configs.powerShellVersion": ".+"
+      },
+      "observedField": "configs.powerShellVersion",
+      "recommendedTarget": "Set PowerShell runtime to 7.4 on Azure Functions v4.",
+      "dueDate": "2026-09-14",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
+      "summary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
+      "disruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "azure-function-app-dotnet-runtime",
+      "matchRegex": {
+        "configs.netFrameworkVersion": ".+"
+      },
+      "observedField": "configs.netFrameworkVersion",
+      "recommendedTarget": "Set runtime to .NET 8 isolated worker on Azure Functions v4.",
+      "dueDate": "2026-09-14",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
+      "summary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
+      "disruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "azure-function-app-linux-runtime",
+      "matchRegex": {
+        "configs.linuxFxVersion": ".+"
+      },
+      "observedField": "configs.linuxFxVersion",
+      "recommendedTarget": "Set Linux worker runtime to a supported Azure Functions v4 stack, for example NODE|20, PYTHON|3.12, JAVA|21, or DOTNET-ISOLATED|8.0.",
+      "dueDate": "2026-09-14",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions",
+      "summary": "Unsupported Azure Functions runtimes should be migrated before provider support and platform guarantees end.",
+      "disruptionRisk": "Late runtime migrations can block deployments or require urgent code and dependency changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

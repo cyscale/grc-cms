@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitHub repositories should require status checks before merge",
+  "description": "Repositories where the default branch does not require status checks",
+  "slug": "github-repositories-should-require-status-checks",
+  "body": "### Security intent\n\nThis control flags repositories where Cyscale did not observe required status checks on the default branch.\n\n### Assessment context\n\nRequired checks help prevent changes from bypassing CI, tests, and security gates.",
+  "severity": 2,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "github"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "github-repositories-without-required-status-checks",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nUpdate the default branch protection rule or repository ruleset to require successful status checks before merge.",
+  "isEnabled": true
+}

@@ -32,5 +32,133 @@
     }
   ],
   "remediationDescription": "## Remediation\n\nUpgrade the function to a currently supported runtime. Rebuild dependencies, test triggers, and redeploy with the same operational settings used by the existing function.\n\n### gcloud CLI\n\nReplace `{{manual.targetRuntime}}` with the approved supported runtime, such as `nodejs22`, `python313`, `go125`, `java21`, `ruby34`, `php84`, or `dotnet8` where applicable. Keep the trigger, ingress, service account, environment, and generation flags from the current deployment.\n\n```bash\ngcloud functions deploy {{asset.name}} \\\n  --region {{asset.region}} \\\n  --runtime {{manual.targetRuntime}}\n```\n\nValidate the deployed runtime:\n\n```bash\ngcloud functions describe {{asset.name}} \\\n  --region {{asset.region}} \\\n  --format='value(runtime)'\n```\n\n### Rollout guidance\n\n1. Test the runtime change in a non-production project or with a duplicate function and the same trigger type.\n2. Rebuild native dependencies and confirm Functions Framework compatibility.\n3. Update Terraform, deployment manifests, or CI/CD templates so the old runtime cannot be redeployed.\n4. Prioritize functions with public HTTP endpoints, privileged service accounts, or sensitive data paths.\n\n### References\n\n- https://docs.cloud.google.com/functions/docs/runtime-support\n- https://docs.cloud.google.com/run/docs/runtimes/function-runtimes",
-  "isEnabled": true
+  "isEnabled": true,
+  "timedControlRules": [
+    {
+      "key": "gcp-function-nodejs-runtime",
+      "matchRegex": {
+        "runtime": "^nodejs"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to nodejs22 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-function-python-runtime",
+      "matchRegex": {
+        "runtime": "^python"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to python312 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-function-go-runtime",
+      "matchRegex": {
+        "runtime": "^go"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to go124 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-function-java-runtime",
+      "matchRegex": {
+        "runtime": "^java"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to java21 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-function-ruby-runtime",
+      "matchRegex": {
+        "runtime": "^ruby"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to ruby33 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-function-php-runtime",
+      "matchRegex": {
+        "runtime": "^php"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to php83 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-function-dotnet-runtime",
+      "matchRegex": {
+        "runtime": "^dotnet"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to dotnet8.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Deprecated Google Cloud Functions runtimes need migration before decommissioning blocks safe redeployments.",
+      "disruptionRisk": "Runtime decommissioning can prevent updates and force unplanned application changes.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

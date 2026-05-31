@@ -32,5 +32,25 @@
     }
   ],
   "remediationDescription": "## Remediation\n\nSet the Function App minimum inbound TLS version to TLS 1.2 or later. Also update the SCM/Kudu minimum TLS version because deployment, log streaming, and advanced tooling use that endpoint separately.\n\n### Azure CLI\n\nCheck the current site and SCM minimum TLS settings:\n\n```bash\naz functionapp show \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --query 'siteConfig.{siteTls:minTlsVersion,scmTls:scmMinTlsVersion}' \\\n  --output table\n```\n\nSet the main Function App endpoint to TLS 1.2 or later:\n\n```bash\naz functionapp config set \\\n  --resource-group {{asset.azureResourceGroup}} \\\n  --name {{asset.name}} \\\n  --min-tls-version 1.2\n```\n\nSet the SCM/Kudu endpoint to TLS 1.2 or later:\n\n```bash\naz resource update \\\n  --ids \"{{asset.idFromProvider}}/config/web\" \\\n  --set properties.scmMinTlsVersion=1.2\n```\n\n### Rollout guidance\n\n1. Check recent traffic for TLS 1.0/1.1 clients before enforcing the change on critical public APIs.\n2. Coordinate client upgrades for legacy agents, embedded devices, older Java/.NET clients, and third-party webhook senders.\n3. Update deployment slots separately; each slot has independent TLS settings.\n4. Enforce the setting with Azure Policy after compatibility is confirmed.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/tls-minimum-version\n- https://learn.microsoft.com/en-us/azure/app-service/overview-tls",
-  "isEnabled": true
+  "isEnabled": true,
+  "timedControlRules": [
+    {
+      "key": "azure-function-app-minimum-tls",
+      "matchRegex": {
+        "configs.minTlsVersion": ".+"
+      },
+      "observedField": "configs.minTlsVersion",
+      "recommendedTarget": "Set minimum TLS version to 1.2 or 1.3.",
+      "dueDate": "2027-05-31",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/app-service/tls-minimum-version",
+      "summary": "Azure Function Apps and SCM endpoints must require TLS 1.2 or later before platform enforcement.",
+      "disruptionRisk": "Legacy deployment clients or runtime callers can fail once older TLS versions are blocked.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

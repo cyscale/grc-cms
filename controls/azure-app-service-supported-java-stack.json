@@ -37,5 +37,25 @@
   "remediationDescription": "### Remediate from Azure Portal\n\n1. Open the app using the `Open in Azure` button.\n1. Under `Settings` section, click on `Configuration`\n1. Click on the `General settings` pane and ensure that for a `Stack` of `Java` the `Major Version` and `Minor Version` reflect a currently supported release, and that the `Java web server version` is set to the `auto-update` option.\n\n### Remediate from Azure CLI\n\nTo see the list of supported runtimes:\n\n```bash\naz webapp list-runtimes\n```\n\nTo set a currently supported Java version for an existing app, run the following command:\n\n```bash\naz webapp config set --resource-group <RESOURCE_GROUP_NAME> --name <APP_NAME> [--java-version <JAVA_VERSION> --java-container <JAVA_CONTAINER> --java-container-version <JAVA_CONTAINER_VERSION> [--windows-fx-version <JAVA_RUNTIME_VERSION>] [--linux-fx-version <JAVA_RUNTIME_VERSION>]\n```",
   "isEnabled": true,
   "severity": 2,
-  "description": "'Java version' is currently supported (if in use)"
+  "description": "'Java version' is currently supported (if in use)",
+  "timedControlRules": [
+    {
+      "key": "azure-app-service-java-version",
+      "matchRegex": {
+        "siteConfig.javaVersion": ".+"
+      },
+      "observedField": "siteConfig.javaVersion",
+      "recommendedTarget": "Set Java stack to Java 17 or Java 21.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-java",
+      "summary": "Azure App Service apps using unsupported Java stacks should be moved to supported runtimes.",
+      "disruptionRisk": "Java stack changes can require framework, application server, and JVM compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

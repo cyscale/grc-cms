@@ -1,0 +1,5 @@
+{
+  "name": "GitHub repositories without required pull request review",
+  "slug": "github-repositories-without-required-pr-review",
+  "query": "{\n  gitHubRepositories(where: { requiresPRReview: false }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    defaultBranch\n  }\n}"
+}

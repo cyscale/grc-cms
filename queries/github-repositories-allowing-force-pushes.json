@@ -1,0 +1,5 @@
+{
+  "name": "GitHub repositories allowing force pushes",
+  "slug": "github-repositories-allowing-force-pushes",
+  "query": "{\n  gitHubRepositories(where: { allowsForcePushes: true }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    defaultBranch\n  }\n}"
+}

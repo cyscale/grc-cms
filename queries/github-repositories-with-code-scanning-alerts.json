@@ -1,0 +1,5 @@
+{
+  "name": "GitHub repositories with code scanning alerts",
+  "slug": "github-repositories-with-code-scanning-alerts",
+  "query": "{\n  gitHubRepositories(where: { highCriticalCodeScanningAlertsOpen_GT: 0 }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    highCriticalCodeScanningAlertsOpen\n  }\n}"
+}

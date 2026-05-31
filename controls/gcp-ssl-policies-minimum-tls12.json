@@ -33,5 +33,43 @@
   "remediationDescription": "## Google Cloud Remediation\n\n> **Service-wide fix (recommended):** standardize a small set of approved SSL policies and attach them to every external HTTPS proxy and proxy Network Load Balancer that should not accept legacy TLS.\n\n### When to use service-wide remediation\n\nUse the service-wide path when the same SSL policy can be shared across many proxies.\n\n### Google Cloud console\n\n1. Open `Network security` -> `SSL policies`.\n2. Edit the affected policy or create a new approved policy.\n3. Set the minimum TLS version to `TLS 1.2`.\n4. Prefer the `MODERN` profile unless you have a documented compatibility requirement.\n5. Attach the policy to the affected target HTTPS or target SSL proxies.\n\n### Google Cloud CLI\n\nUpdate the SSL policy:\n\n~~~bash\ngcloud compute ssl-policies update <policy-name> \\\n  --min-tls-version=1.2 \\\n  --profile=MODERN\n~~~\n\nAttach it to a target HTTPS proxy:\n\n~~~bash\ngcloud compute target-https-proxies update <proxy-name> \\\n  --ssl-policy=<policy-name>\n~~~\n\nValidate the policy:\n\n~~~bash\ngcloud compute ssl-policies describe <policy-name>\n~~~\n\n### Operational notes\n\n- This control also flags the `COMPATIBLE` profile because it usually keeps older cipher support for broad backward compatibility. Only keep it if you have a documented client compatibility requirement.\n- Updating the policy alone is not enough if the affected proxy is still attached to a different SSL policy.\n\n### References\n\n- https://cloud.google.com/load-balancing/docs/use-ssl-policies\n- https://cloud.google.com/sdk/gcloud/reference/compute/ssl-policies/update\n- https://docs.cloud.google.com/sdk/gcloud/reference/compute/target-https-proxies/update\n- https://docs.cloud.google.com/compute/docs/reference/rest/v1/sslPolicies",
   "isEnabled": false,
   "description": "SSL policies allowing legacy TLS versions",
-  "severity": 3
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "gcp-ssl-policy-minimum-tls",
+      "matchRegex": {
+        "minTlsVersion": ".+"
+      },
+      "observedField": "minTlsVersion",
+      "recommendedTarget": "Set minTlsVersion to TLS_1_2.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud SSL policies should be ready for modern TLS baselines before legacy-client compatibility windows close.",
+      "disruptionRisk": "Updating SSL policies without client validation can break older integrations and public endpoints.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-ssl-policy-profile",
+      "matchRegex": {
+        "profile": "^COMPATIBLE$"
+      },
+      "observedField": "profile",
+      "recommendedTarget": "Set profile to MODERN or RESTRICTED.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud SSL policies should be ready for modern TLS baselines before legacy-client compatibility windows close.",
+      "disruptionRisk": "Updating SSL policies without client validation can break older integrations and public endpoints.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

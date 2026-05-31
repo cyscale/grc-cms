@@ -30,5 +30,151 @@
       "query": "gcp-1-1-0-networking-9-no-https-or-ssl-proxy-load-balancers-permit-ssl-policies-with-weak-cipher-suites"
     }
   ],
-  "description": "There that are not no HTTPS or SSL proxy load balancers permit SSL policies with weak cipher suites"
+  "description": "There that are not no HTTPS or SSL proxy load balancers permit SSL policies with weak cipher suites",
+  "timedControlRules": [
+    {
+      "key": "gcp-load-balancer-https-proxy-missing-ssl-policy",
+      "matchRegex": {
+        "httpsProxies.sslPolicy": "^$"
+      },
+      "observedField": "httpsProxies.sslPolicy",
+      "recommendedTarget": "Attach an SSL policy with minTlsVersion TLS_1_2 and profile MODERN or RESTRICTED.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-ssl-proxy-missing-ssl-policy",
+      "matchRegex": {
+        "sslProxies.sslPolicy": "^$"
+      },
+      "observedField": "sslProxies.sslPolicy",
+      "recommendedTarget": "Attach an SSL policy with minTlsVersion TLS_1_2 and profile MODERN or RESTRICTED.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-https-proxy-ssl-policy-profile",
+      "matchRegex": {
+        "httpsProxies.hasSSLPolicy.profile": "^COMPATIBLE$"
+      },
+      "observedField": "httpsProxies.hasSSLPolicy.profile",
+      "recommendedTarget": "Set SSL policy profile to MODERN or RESTRICTED.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-ssl-proxy-ssl-policy-profile",
+      "matchRegex": {
+        "sslProxies.hasSSLPolicy.profile": "^COMPATIBLE$"
+      },
+      "observedField": "sslProxies.hasSSLPolicy.profile",
+      "recommendedTarget": "Set SSL policy profile to MODERN or RESTRICTED.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-https-proxy-minimum-tls",
+      "matchRegex": {
+        "httpsProxies.hasSSLPolicy.minTlsVersion": ".+"
+      },
+      "observedField": "httpsProxies.hasSSLPolicy.minTlsVersion",
+      "recommendedTarget": "Set SSL policy minTlsVersion to TLS_1_2.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-ssl-proxy-minimum-tls",
+      "matchRegex": {
+        "sslProxies.hasSSLPolicy.minTlsVersion": ".+"
+      },
+      "observedField": "sslProxies.hasSSLPolicy.minTlsVersion",
+      "recommendedTarget": "Set SSL policy minTlsVersion to TLS_1_2.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-https-proxy-ciphers",
+      "matchRegex": {
+        "httpsProxies.hasSSLPolicy.enabledFeatures": ".+"
+      },
+      "observedField": "httpsProxies.hasSSLPolicy.enabledFeatures",
+      "recommendedTarget": "Remove RSA key-exchange, CBC, and 3DES cipher suites from enabledFeatures.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "gcp-load-balancer-ssl-proxy-ciphers",
+      "matchRegex": {
+        "sslProxies.hasSSLPolicy.enabledFeatures": ".+"
+      },
+      "observedField": "sslProxies.hasSSLPolicy.enabledFeatures",
+      "recommendedTarget": "Remove RSA key-exchange, CBC, and 3DES cipher suites from enabledFeatures.",
+      "dueDate": "",
+      "deadlineType": "security-baseline",
+      "sourceURL": "https://cloud.google.com/load-balancing/docs/use-ssl-policies",
+      "summary": "Google Cloud load balancers should use SSL policies that are ready for modern TLS-only clients and baselines.",
+      "disruptionRisk": "Tightening TLS and cipher policy can break older clients without staged compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

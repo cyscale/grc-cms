@@ -118,5 +118,43 @@
       ],
       "query": "publicly-accessible-azure-sql-databases-with-no-old-tls"
     }
+  ],
+  "timedControlRules": [
+    {
+      "key": "database-tls-disabled",
+      "matchRegex": {
+        "tlsStatus": "^(|disabled)$"
+      },
+      "observedField": "tlsStatus",
+      "recommendedTarget": "Enable TLS and require encrypted database connections.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
+      "summary": "Managed databases should be ready for provider TLS 1.2+ enforcement and legacy-client retirement.",
+      "disruptionRisk": "Database clients using legacy TLS can fail once providers disable old protocol versions.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "database-minimum-tls-version",
+      "matchRegex": {
+        "tlsMinimumVersion": ".+"
+      },
+      "observedField": "tlsMinimumVersion",
+      "recommendedTarget": "Set database minimum TLS version to TLS 1.2 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
+      "summary": "Managed databases should be ready for provider TLS 1.2+ enforcement and legacy-client retirement.",
+      "disruptionRisk": "Database clients using legacy TLS can fail once providers disable old protocol versions.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
   ]
 }

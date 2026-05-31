@@ -1,0 +1,51 @@
+{
+  "enabled": true,
+  "name": "Code Security Best Practices",
+  "isStandard": true,
+  "slug": "code-security-best-practices",
+  "requiredModules": [
+    "code_security"
+  ],
+  "version": "1.0.0",
+  "body": "Code Security Best Practices gives security and engineering teams a baseline for monitoring source repositories and GitHub-native security findings in Cyscale.\n\nThis first version focuses on GitHub App based inventory, open dependency alerts, code scanning alerts, secret scanning alerts, and default branch protection posture. Later versions can add Cyscale-managed scanning for SBOMs, secrets, IaC, containers, licenses, and repository-to-runtime impact analysis.\n\n<Procedure slug=\"code-security-github-alerts\"/>\n\n<Procedure slug=\"code-security-github-repository-posture\"/>\n",
+  "targetCloudProviders": [
+    "github"
+  ],
+  "procedures": [
+    {
+      "name": "1. GitHub Security Findings",
+      "slug": "code-security-github-alerts",
+      "body": "Repositories should not carry unresolved GitHub-native security findings. Dependency vulnerabilities, code scanning results, and exposed secrets should be triaged, remediated, or explicitly dismissed with a documented reason.",
+      "controls": [
+        {
+          "control": "github-repositories-should-not-have-dependabot-alerts"
+        },
+        {
+          "control": "github-repositories-should-not-have-code-scanning-alerts"
+        },
+        {
+          "control": "github-repositories-should-not-have-secret-scanning-alerts"
+        }
+      ]
+    },
+    {
+      "name": "2. GitHub Repository Posture",
+      "slug": "code-security-github-repository-posture",
+      "body": "Repositories should protect default branches and require reviewed, verified changes before merge.",
+      "controls": [
+        {
+          "control": "github-repositories-should-have-default-branch-protection"
+        },
+        {
+          "control": "github-repositories-should-require-pull-request-review"
+        },
+        {
+          "control": "github-repositories-should-require-status-checks"
+        },
+        {
+          "control": "github-repositories-should-not-allow-force-pushes"
+        }
+      ]
+    }
+  ]
+}

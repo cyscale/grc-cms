@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitHub repositories should require pull request review before merge",
+  "description": "Repositories where the default branch does not require pull request review",
+  "slug": "github-repositories-should-require-pull-request-review",
+  "body": "### Security intent\n\nThis control flags repositories where Cyscale did not observe a pull request review requirement on the default branch.\n\n### Assessment context\n\nPull request review gives teams a control point for code quality, security review, and change accountability.",
+  "severity": 2,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "github"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "github-repositories-without-required-pr-review",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nUpdate the default branch protection rule or repository ruleset to require pull request reviews before merge.",
+  "isEnabled": true
+}

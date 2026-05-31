@@ -1,5 +1,5 @@
 {
   "name": "DBInstances with outdated engines",
   "slug": "dbinstances-with-outdated-engines",
-  "query": "{\n  dbInstances\n  (\n    where: {\n      cyscaleEngineIsOutdated: { eq: true }\n    }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}\n"
+  "query": "{\n  dbInstances\n  (\n    where: {\n      cyscaleEngineIsOutdated: { eq: true }\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}\n"
 }

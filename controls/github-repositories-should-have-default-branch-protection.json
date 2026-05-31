@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitHub repositories should have default branch protection",
+  "description": "Repositories where the default branch is not protected",
+  "slug": "github-repositories-should-have-default-branch-protection",
+  "body": "### Security intent\n\nThis control flags repositories where Cyscale did not observe branch protection on the default branch.\n\n### Assessment context\n\nDefault branch protection reduces accidental or unauthorized changes to production source branches and should be configured with repository rulesets or classic branch protection.",
+  "severity": 2,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "github"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "github-repositories-without-default-branch-protection",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nEnable a repository ruleset or branch protection rule for the default branch. Require pull request review and status checks before merging changes.",
+  "isEnabled": true
+}

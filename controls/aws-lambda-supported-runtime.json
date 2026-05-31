@@ -26,7 +26,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda Node.js 18 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "nodejs22.x",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
       "notificationWindowsDays": [
         90,
         30,
@@ -43,7 +43,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda Python 3.9 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "python3.13",
+      "recommendedTarget": "Set runtime to python3.13 or newer.",
       "notificationWindowsDays": [
         90,
         30,
@@ -60,7 +60,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda .NET 6 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "dotnet8",
+      "recommendedTarget": "Set runtime to dotnet8.",
       "notificationWindowsDays": [
         90,
         30,
@@ -77,7 +77,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda Python 3.8 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "python3.13",
+      "recommendedTarget": "Set runtime to python3.13 or newer.",
       "notificationWindowsDays": [
         90,
         30,
@@ -94,7 +94,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda Node.js 16 runtime is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "nodejs22.x",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
       "notificationWindowsDays": [
         90,
         30,
@@ -111,7 +111,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda Java 8 runtime on Amazon Linux is deprecated and should be upgraded.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "java21",
+      "recommendedTarget": "Set runtime to java21 or newer.",
       "notificationWindowsDays": [
         90,
         30,
@@ -128,7 +128,7 @@
       "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
       "summary": "AWS Lambda Go 1.x runtime is deprecated and should be migrated to a custom runtime.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
-      "recommendedTarget": "provided.al2023",
+      "recommendedTarget": "Migrate to provided.al2023 or a custom runtime on Amazon Linux 2023.",
       "notificationWindowsDays": [
         90,
         30,

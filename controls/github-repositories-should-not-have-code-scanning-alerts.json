@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitHub repositories should not have open high or critical code scanning alerts",
+  "description": "Repositories with open high or critical GitHub code scanning alerts",
+  "slug": "github-repositories-should-not-have-code-scanning-alerts",
+  "body": "### Security intent\n\nThis control flags repositories where GitHub reports open high or critical code scanning alerts, such as CodeQL or other configured scanner findings.\n\n### Assessment context\n\nCyscale imports GitHub code scanning alert metadata and assesses the repository as failing while one or more high or critical code scanning alerts remain open.",
+  "severity": 2,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "github"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "github-repositories-with-code-scanning-alerts",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nReview the code scanning alert in GitHub, fix the vulnerable code path or configuration issue, and merge the remediation through the normal pull request workflow. Dismiss only false positives with a documented reason.",
+  "isEnabled": true
+}

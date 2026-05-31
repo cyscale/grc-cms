@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitHub repositories should not allow force pushes on protected branches",
+  "description": "Repositories where force pushes are allowed on the default protected branch",
+  "slug": "github-repositories-should-not-allow-force-pushes",
+  "body": "### Security intent\n\nThis control flags repositories where Cyscale observed force pushes allowed on the default branch protection rule.\n\n### Assessment context\n\nForce pushes can rewrite reviewed history and weaken auditability of changes to protected source branches.",
+  "severity": 2,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "github"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "github-repositories-allowing-force-pushes",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nDisable force pushes in the default branch protection rule or repository ruleset. Limit bypass permissions to narrowly scoped administrators or automation accounts.",
+  "isEnabled": true
+}

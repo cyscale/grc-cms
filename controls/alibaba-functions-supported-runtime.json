@@ -7,7 +7,11 @@
   "timedControlDueDate": "",
   "timedControlCategory": "runtime-retirement",
   "timedControlDeadlineType": "provider-rolling",
-  "timedControlNotificationWindowsDays": [90, 30, 7],
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
   "timedControlSourceURL": "https://www.alibabacloud.com/help/en/functioncompute/fc/user-guide/runtime-overview-3",
   "timedControlSummary": "Deprecated Function Compute runtimes should be upgraded before support or deployment paths are removed.",
   "timedControlDisruptionRisk": "Unsupported runtimes can stop receiving security fixes and may block urgent function updates.",
@@ -28,5 +32,61 @@
     }
   ],
   "remediationDescription": "## Remediation\n\nUpdate the Function Compute runtime to a supported version. Keep the existing handler, trigger, environment, and deployment package settings unless the runtime migration requires code changes.\n\n### Alibaba Cloud CLI / OpenAPI\n\nUse the Function Compute `UpdateFunction` operation to set the new runtime. Replace `{{manual.serviceName}}` and `{{manual.targetRuntime}}` with the owning service and approved runtime, such as `nodejs20`, `python3.10`, `java11`, or another runtime supported in your Region.\n\n```bash\naliyun fc-open UpdateFunction \\\n  --region {{asset.region}} \\\n  --serviceName {{manual.serviceName}} \\\n  --functionName {{asset.name}} \\\n  --body '{\"runtime\":\"{{manual.targetRuntime}}\"}'\n```\n\nValidate the runtime after the update:\n\n```bash\naliyun fc-open GetFunction \\\n  --region {{asset.region}} \\\n  --serviceName {{manual.serviceName}} \\\n  --functionName {{asset.name}}\n```\n\n### Rollout guidance\n\n1. Test the migrated function with the same triggers and event payloads before production rollout.\n2. Rebuild native dependencies for the new runtime environment.\n3. Update IaC and deployment templates so deprecated runtime identifiers cannot be reintroduced.\n4. Prioritize public HTTP functions and functions with privileged RAM roles.\n\n### References\n\n- https://www.alibabacloud.com/help/en/functioncompute/fc/user-guide/runtime-overview-3\n- https://www.alibabacloud.com/help/en/functioncompute/fc-2-0/developer-reference/api-fc-open-2021-04-06-updatefunction",
-  "isEnabled": true
+  "isEnabled": true,
+  "timedControlRules": [
+    {
+      "key": "alibaba-function-nodejs-runtime",
+      "matchRegex": {
+        "runtime": "^nodejs"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to nodejs18 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://www.alibabacloud.com/help/en/functioncompute/fc/user-guide/runtime-overview-3",
+      "summary": "Deprecated Function Compute runtimes should be upgraded before support or deployment paths are removed.",
+      "disruptionRisk": "Unsupported runtimes can stop receiving security fixes and may block urgent function updates.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "alibaba-function-python-runtime",
+      "matchRegex": {
+        "runtime": "^python2\\.7$"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Set runtime to python3.10 or newer.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://www.alibabacloud.com/help/en/functioncompute/fc/user-guide/runtime-overview-3",
+      "summary": "Deprecated Function Compute runtimes should be upgraded before support or deployment paths are removed.",
+      "disruptionRisk": "Unsupported runtimes can stop receiving security fixes and may block urgent function updates.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "alibaba-function-dotnet-runtime",
+      "matchRegex": {
+        "runtime": "^dotnetcore"
+      },
+      "observedField": "runtime",
+      "recommendedTarget": "Move to a supported .NET runtime or a custom container runtime.",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://www.alibabacloud.com/help/en/functioncompute/fc/user-guide/runtime-overview-3",
+      "summary": "Deprecated Function Compute runtimes should be upgraded before support or deployment paths are removed.",
+      "disruptionRisk": "Unsupported runtimes can stop receiving security fixes and may block urgent function updates.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
 }

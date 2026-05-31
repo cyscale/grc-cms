@@ -1,0 +1,5 @@
+{
+  "name": "GitHub repositories without default branch protection",
+  "slug": "github-repositories-without-default-branch-protection",
+  "query": "{\n  gitHubRepositories(where: { defaultBranchProtected: false }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    defaultBranch\n  }\n}"
+}

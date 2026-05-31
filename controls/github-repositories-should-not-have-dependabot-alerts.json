@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitHub repositories should not have open critical Dependabot alerts",
+  "description": "Repositories with open critical GitHub Dependabot security alerts",
+  "slug": "github-repositories-should-not-have-dependabot-alerts",
+  "body": "### Security intent\n\nThis control flags repositories where GitHub reports open critical Dependabot security alerts for vulnerable dependencies.\n\n### Assessment context\n\nCyscale imports the GitHub alert metadata through the GitHub App installation and assesses the repository as failing while one or more critical Dependabot alerts remain open.",
+  "severity": 3,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "github"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "github-repositories-with-dependabot-alerts",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nReview the Dependabot alert in GitHub, upgrade the affected dependency or remove it, and merge the fix after tests pass. If the alert is not exploitable, dismiss it in GitHub with a documented reason.",
+  "isEnabled": true
+}
