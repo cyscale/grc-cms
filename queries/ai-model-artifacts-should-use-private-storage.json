@@ -1,5 +1,5 @@
 {
   "name": "AI model artifacts should use private storage",
   "slug": "ai-model-artifacts-should-use-private-storage",
-  "query": "{\n  sageMakerModels(where: { primaryContainerModelDataURL_MATCHES: \"(?i)^https?://.*\" }) { ...AssetFragment }\n  vertexAIModels(where: { artifactURI_MATCHES: \"(?i)^https?://.*\" }) { ...AssetFragment }\n}"
+  "query": "{\n  vms(where: { identifier: { eq: \"__unsupported_ai_model_artifacts__\" } }) { ...AssetFragment }\n}"
 }

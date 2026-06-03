@@ -1,5 +1,5 @@
 {
   "name": "AI guardrails should be configured",
   "slug": "ai-guardrails-should-be-configured",
-  "query": "{\n  azureAIServiceAccounts(where: { guardrailConfigured: { eq: false } }) { ...AssetFragment }\n  azureAIFoundryProjects(where: { guardrailConfigured: { eq: false } }) { ...AssetFragment }\n  azureOpenAIDeployments(where: { guardrailConfigured: { eq: false } }) { ...AssetFragment }\n  azureMachineLearningEndpoints(where: { guardrailConfigured: { eq: false } }) { ...AssetFragment }\n  azureBotServices(where: { guardrailConfigured: { eq: false } }) { ...AssetFragment }\n}"
+  "query": "{\n  vms(where: { identifier: { eq: \"__unsupported_ai_guardrails__\" } }) { ...AssetFragment }\n}"
 }

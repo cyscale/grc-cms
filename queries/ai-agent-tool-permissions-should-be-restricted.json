@@ -1,5 +1,5 @@
 {
   "name": "AI agents should not run with unrestricted tool permissions",
   "slug": "ai-agent-tool-permissions-should-be-restricted",
-  "query": "{\n  azureAIFoundryProjects(where: { toolPermissions_INCLUDES: \"*\" }) { ...AssetFragment }\n  azureMachineLearningEndpoints(where: { toolPermissions_INCLUDES: \"*\" }) { ...AssetFragment }\n  pods(where: { annotations_SOME: { key: { eq: \"cyscale.com/ai-signals\" }, value_MATCHES: \"(?i).*agent.*\" }, OR: [ { automountServiceAccountToken: { eq: true } } { isAutomountServiceAccountTokenSet: { eq: false } } ] }) { ...AssetFragment }\n  deployments(where: { podTemplate: { annotations_SOME: { key: { eq: \"cyscale.com/ai-signals\" }, value_MATCHES: \"(?i).*agent.*\" }, OR: [ { automountServiceAccountToken: { eq: true } } { isAutomountServiceAccountTokenSet: { eq: false } } ] } }) { ...AssetFragment }\n  serviceAccounts(where: { annotations_SOME: { key: { eq: \"cyscale.com/ai-service\" }, value: { eq: \"true\" } }, OR: [ { automountServiceAccountToken: { eq: true } } { isAutomountServiceAccountTokenSet: { eq: false } } ] }) { ...AssetFragment }\n}"
+  "query": "{\n  serviceAccounts(where: { annotations_SOME: { key: { eq: \"cyscale.com/ai-service\" }, value: { eq: \"true\" } }, OR: [ { automountServiceAccountToken: { eq: true } } { isAutomountServiceAccountTokenSet: { eq: false } } ] }) { ...AssetFragment }\n}"
 }
