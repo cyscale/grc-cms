@@ -17,6 +17,40 @@
   "timedControlDisruptionRisk": "Runtime migrations can break builds, dependencies, native layers, and traffic shifting if left until provider enforcement.",
   "timedControlRules": [
     {
+      "key": "aws-lambda-nodejs20.x",
+      "matchField": "runtime",
+      "matchValue": "nodejs20.x",
+      "observedField": "runtime",
+      "dueDate": "2026-04-30",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 20 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-ruby3.2",
+      "matchField": "runtime",
+      "matchValue": "ruby3.2",
+      "observedField": "runtime",
+      "dueDate": "2026-03-31",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Ruby 3.2 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to ruby3.4 or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
       "key": "aws-lambda-nodejs18.x",
       "matchField": "runtime",
       "matchValue": "nodejs18.x",
@@ -129,6 +163,295 @@
       "summary": "AWS Lambda Go 1.x runtime is deprecated and should be migrated to a custom runtime.",
       "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
       "recommendedTarget": "Migrate to provided.al2023 or a custom runtime on Amazon Linux 2023.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-provided",
+      "matchField": "runtime",
+      "matchValue": "provided",
+      "observedField": "runtime",
+      "dueDate": "2024-01-08",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda OS-only provided runtime on Amazon Linux is deprecated and should be migrated.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Migrate to provided.al2023.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-ruby2.7",
+      "matchField": "runtime",
+      "matchValue": "ruby2.7",
+      "observedField": "runtime",
+      "dueDate": "2023-12-07",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Ruby 2.7 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to ruby3.4 or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs14.x",
+      "matchField": "runtime",
+      "matchValue": "nodejs14.x",
+      "observedField": "runtime",
+      "dueDate": "2023-12-04",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 14 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-python3.7",
+      "matchField": "runtime",
+      "matchValue": "python3.7",
+      "observedField": "runtime",
+      "dueDate": "2023-12-04",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Python 3.7 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to python3.13 or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-dotnetcore3.1",
+      "matchField": "runtime",
+      "matchValue": "dotnetcore3.1",
+      "observedField": "runtime",
+      "dueDate": "2023-04-03",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda .NET Core 3.1 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to dotnet8.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs12.x",
+      "matchField": "runtime",
+      "matchValue": "nodejs12.x",
+      "observedField": "runtime",
+      "dueDate": "2023-03-31",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 12 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-python3.6",
+      "matchField": "runtime",
+      "matchValue": "python3.6",
+      "observedField": "runtime",
+      "dueDate": "2022-07-18",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Python 3.6 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to python3.13 or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-dotnetcore2.1",
+      "matchField": "runtime",
+      "matchValue": "dotnetcore2.1",
+      "observedField": "runtime",
+      "dueDate": "2022-01-05",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda .NET Core 2.1 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to dotnet8.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs10.x",
+      "matchField": "runtime",
+      "matchValue": "nodejs10.x",
+      "observedField": "runtime",
+      "dueDate": "2021-07-30",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 10 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-ruby2.5",
+      "matchField": "runtime",
+      "matchValue": "ruby2.5",
+      "observedField": "runtime",
+      "dueDate": "2021-07-30",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Ruby 2.5 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to ruby3.4 or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-python2.7",
+      "matchField": "runtime",
+      "matchValue": "python2.7",
+      "observedField": "runtime",
+      "dueDate": "2021-07-15",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Python 2.7 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to python3.13 or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs8.10",
+      "matchField": "runtime",
+      "matchValue": "nodejs8.10",
+      "observedField": "runtime",
+      "dueDate": "2020-03-06",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 8.10 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs4.3",
+      "matchField": "runtime",
+      "matchValue": "nodejs4.3",
+      "observedField": "runtime",
+      "dueDate": "2020-03-05",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 4.3 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs4.3-edge",
+      "matchField": "runtime",
+      "matchValue": "nodejs4.3-edge",
+      "observedField": "runtime",
+      "dueDate": "2020-03-05",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 4.3 edge runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-nodejs6.10",
+      "matchField": "runtime",
+      "matchValue": "nodejs6.10",
+      "observedField": "runtime",
+      "dueDate": "2019-08-12",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda Node.js 6.10 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to nodejs22.x or newer.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-dotnetcore1.0",
+      "matchField": "runtime",
+      "matchValue": "dotnetcore1.0",
+      "observedField": "runtime",
+      "dueDate": "2019-06-27",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda .NET Core 1.0 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to dotnet8.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "aws-lambda-dotnetcore2.0",
+      "matchField": "runtime",
+      "matchValue": "dotnetcore2.0",
+      "observedField": "runtime",
+      "dueDate": "2019-05-30",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda .NET Core 2.0 runtime is deprecated and should be upgraded.",
+      "disruptionRisk": "Function create and update workflows are blocked after AWS runtime enforcement dates.",
+      "recommendedTarget": "Set runtime to dotnet8.",
       "notificationWindowsDays": [
         90,
         30,

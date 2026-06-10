@@ -1,5 +1,5 @@
 {
   "name": "Config recorders not fully enabled",
   "slug": "aws-config-recorder-enabled-all-resources-recorders-not-complete",
-  "query": "{ configurationRecorders(where: { OR: [ { recording: { eq: false } }, { allSupported: { eq: false } }, { includeGlobalResourceTypes: { eq: false } } ] }) { ...AssetFragment } }"
+  "query": "{ configurationRecorders(where: { OR: [ { hasConfigurationRecorderStatus_NONE: {} }, { hasConfigurationRecorderStatus_SOME: { recording: { eq: false } } }, { recordingGroupAllSupported: { eq: false } }, { recordingGroupIncludeGlobalResourceTypes: { eq: false } } ] }) { ...AssetFragment } }"
 }
