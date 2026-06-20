@@ -121,7 +121,7 @@
         "internalAssetType": "MySQL"
       },
       "observedField": "engineVersion",
-      "recommendedTarget": "Upgrade to MySQL 8.0 or newer.",
+      "recommendedTarget": "Upgrade to MySQL 8.4 LTS or another provider-supported MySQL version.",
       "dueDate": "",
       "deadlineType": "provider-rolling",
       "sourceURL": "https://endoflife.date/",
@@ -178,7 +178,7 @@
         "engine": "(?i)^mysql$"
       },
       "observedField": "engineVersion",
-      "recommendedTarget": "Upgrade to MySQL 8.0 or newer.",
+      "recommendedTarget": "Upgrade to MySQL 8.4 LTS or another provider-supported MySQL version.",
       "dueDate": "",
       "deadlineType": "provider-rolling",
       "sourceURL": "https://endoflife.date/",
