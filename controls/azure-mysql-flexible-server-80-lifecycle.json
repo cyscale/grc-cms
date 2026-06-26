@@ -1,0 +1,58 @@
+{
+  "body": "### Why this matters\n\nAzure Database for MySQL Flexible Server MySQL 8.0 is approaching Azure Standard Support end on December 31, 2026. Databases on older major versions are more likely to miss security fixes, enter paid extended support, or face provider-driven upgrade restrictions.\n\n### What this control checks\n\nThis control finds Azure Database for MySQL Flexible Server resources whose engine version matches `MySQL 8.0`. The recommended target is MySQL 8.4.\n\n### Operational note\n\nMajor database upgrades should be treated as application releases. Take backups, test extensions and client drivers, run compatibility tests, and schedule maintenance windows before upgrading production systems. The lifecycle date for this check is `2026-12-31`.",
+  "name": "Ensure Azure MySQL Flexible Servers are not running MySQL 8.0",
+  "description": "Azure MySQL Flexible Servers running MySQL 8.0 lifecycle version",
+  "slug": "azure-mysql-flexible-server-80-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-12-31",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "extended-support-start",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+  "timedControlSummary": "Azure Database for MySQL Flexible Servers on MySQL 8.0 should be upgraded before Azure Standard Support ends.",
+  "timedControlDisruptionRisk": "Late MySQL upgrades can trigger extended support charges and require urgent application compatibility work.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "MySQLFlexibleServer"
+      ],
+      "query": "azure-mysql-flexible-server-80-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Azure remediation\n\n> **Service-wide database upgrade program (recommended):** group MySQL Flexible Server upgrades by application or subscription. This reduces repeated testing for SQL modes, parameters, client drivers, HA, replicas, backup retention, and maintenance windows.\n\n### Azure Portal\n\n1. Open **Azure Database for MySQL flexible servers**.\n2. Select the affected server and confirm backups, HA, replicas, and maintenance window.\n3. Use the server upgrade workflow to move to a supported major version such as `8.4`.\n4. Validate application connectivity and performance after the upgrade.\n\n### Azure CLI\n\nInspect the current version:\n\n```bash\naz mysql flexible-server show \\\n  --resource-group <resource-group> \\\n  --name <server-name> \\\n  --query '{name:name,version:version,state:state}'\n```\n\nUpgrade when ready:\n\n```bash\naz mysql flexible-server upgrade \\\n  --resource-group <resource-group> \\\n  --name <server-name> \\\n  --version 8.4\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "azure-mysql-flexible-server-8.0",
+      "matchField": "engineVersion",
+      "matchValue": "8.0",
+      "observedField": "engineVersion",
+      "dueDate": "2026-12-31",
+      "deadlineType": "extended-support-start",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+      "summary": "Azure Database for MySQL Flexible Servers on MySQL 8.0 should be upgraded before Azure Standard Support ends.",
+      "disruptionRisk": "Late MySQL upgrades can trigger extended support charges and require urgent application compatibility work.",
+      "recommendedTarget": "Upgrade to MySQL 8.4.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

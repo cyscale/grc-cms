@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Service apps running unsupported Node.js stacks",
+  "slug": "azure-app-service-supported-node-stack",
+  "query": "{\n  sites(\n    where: { siteConfig: { NOT: { nodeVersion: { eq: \"\" } }, isDeprecated: { eq: true } } }\n  ) {\n    ...AssetFragment\n    siteConfig {\n      nodeVersion\n      linuxFxVersion\n    }\n  }\n}"
+}

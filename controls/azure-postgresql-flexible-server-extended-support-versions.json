@@ -1,0 +1,59 @@
+{
+  "body": "### Why this matters\n\nAzure Database for PostgreSQL currently lists PostgreSQL 11, 12, and 13 as Extended Support versions. Extended-support engines are older major versions and should be upgraded before they become harder or more expensive to operate.\n\n### What this control checks\n\nThis control finds PostgreSQL Flexible Servers whose engine version starts with `11`, `12`, or `13`. The recommended target is PostgreSQL 14 or newer, with PostgreSQL 16, 17, or 18 preferred when compatible.\n\n### Operational note\n\nPostgreSQL major upgrades require testing extensions, query plans, connection poolers, logical replication, backups, and application compatibility before production rollout.",
+  "name": "Ensure Azure PostgreSQL Flexible Servers are not on extended-support versions",
+  "description": "Azure PostgreSQL Flexible Servers running PostgreSQL 11, 12, or 13 extended-support versions",
+  "slug": "azure-postgresql-flexible-server-extended-support-versions",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-supported-versions",
+  "timedControlSummary": "Azure PostgreSQL Flexible Servers on PostgreSQL 11, 12, or 13 should be upgraded from extended-support versions.",
+  "timedControlDisruptionRisk": "Leaving PostgreSQL on extended-support versions increases security, compatibility, and future upgrade risk.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "PostgreSQLFlexibleServer"
+      ],
+      "query": "azure-postgresql-flexible-server-extended-support-versions",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Azure remediation\n\n> **Service-wide PostgreSQL upgrade program (recommended):** upgrade all PostgreSQL Flexible Servers on extended-support versions by application group. This gives teams one tested plan for extensions, parameter changes, read replicas, connection pooling, and application compatibility.\n\n### Azure Portal\n\n1. Open **Azure Database for PostgreSQL flexible servers**.\n2. Select the affected server and review backups, maintenance window, extensions, replicas, and application compatibility.\n3. Use the **Major version upgrade** feature to upgrade to a supported version such as PostgreSQL 14 or newer.\n4. Validate extensions, query plans, connection pools, and application migrations.\n\n### Azure CLI\n\nInspect the current version:\n\n```bash\naz postgres flexible-server show \\\n  --resource-group <resource-group> \\\n  --name <server-name> \\\n  --query '{name:name,version:version,state:state}'\n```\n\nStart a major version upgrade after testing:\n\n```bash\naz postgres flexible-server upgrade \\\n  --resource-group <resource-group> \\\n  --name <server-name> \\\n  --version <target-major-version>\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-supported-versions",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "azure-postgresql-flexible-server-extended-support",
+      "matchRegex": {
+        "engineVersion": "^(11|12|13)(\\.|$)"
+      },
+      "observedField": "engineVersion",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-supported-versions",
+      "summary": "Azure PostgreSQL Flexible Servers on PostgreSQL 11, 12, or 13 should be upgraded from extended-support versions.",
+      "disruptionRisk": "Leaving PostgreSQL on extended-support versions increases security, compatibility, and future upgrade risk.",
+      "recommendedTarget": "Upgrade to PostgreSQL 14 or newer, preferably PostgreSQL 16, 17, or 18 after compatibility testing.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

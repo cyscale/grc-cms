@@ -1,0 +1,5 @@
+{
+  "name": "Azure PostgreSQL Flexible Servers on extended support versions",
+  "slug": "azure-postgresql-flexible-server-extended-support-versions",
+  "query": "{\n  postgreSqlFlexibleServers(\n    where: {\n      OR: [\n        { engineVersion_STARTS_WITH: \"11\" }\n        { engineVersion_STARTS_WITH: \"12\" }\n        { engineVersion_STARTS_WITH: \"13\" }\n      ]\n    }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
+}

@@ -1,0 +1,90 @@
+{
+  "body": "### Why this matters\n\nAmazon SageMaker Notebook Instances running on Amazon Linux 2 platform identifiers (`notebook-al2-v1`, `notebook-al2-v2`, or `notebook-al2-v3`) stop receiving security updates after June 30, 2026. AWS also documents that AL2 notebook instances are vulnerable to `CVE-2026-24747` because the required PyTorch fix path depends on AL2023 rather than AL2.\n\n### What this control checks\n\nThis control finds SageMaker Notebook Instances whose `platformIdentifier` is still set to an AL2 platform. These notebooks should be migrated to `notebook-al2023-v1` before the provider cutoff.\n\n### Operational note\n\nAWS documents this as an in-place platform migration that preserves data in `/home/ec2-user/SageMaker/`, but teams still need to validate lifecycle configuration scripts, package installation steps, kernels, and instance-type compatibility on AL2023.",
+  "name": "Ensure SageMaker Notebook Instances use a supported platform identifier",
+  "description": "SageMaker notebook instances running deprecated Amazon Linux 2 platforms",
+  "slug": "sage-maker-notebooks-supported-platform",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-07-01",
+  "timedControlCategory": "service-retirement",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2.html",
+  "timedControlSummary": "SageMaker Notebook Instances on Amazon Linux 2 should be migrated before July 1, 2026, when stopped AL2 notebooks can no longer be restarted.",
+  "timedControlDisruptionRisk": "Late migration leaves notebooks without security updates and can block restarts or force rushed changes to lifecycle scripts, kernels, and instance types.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "SageMakerNoteBook"
+      ],
+      "query": "aws-sage-maker-notebooks-with-deprecated-al2-platforms",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## AWS remediation\n\n> **Service-wide migration (recommended):** migrate all remaining SageMaker Notebook Instances from AL2 to `notebook-al2023-v1` as one tracked platform upgrade. This is better than fixing notebooks one by one because AL2023 changes package management (`yum` to `dnf`), default platform behavior, supported instance types, and available ML images.\n\n### Before you migrate\n\n1. Inventory the affected notebook instances and note their `platformIdentifier`, `instanceType`, lifecycle configuration, and any custom bootstrap steps.\n2. Review lifecycle configuration scripts and replace `yum` commands with `dnf` where needed.\n3. Confirm the notebook uses an instance type supported on AL2023. AWS documents that `ml.p2`, `ml.p3`, `ml.p3dn`, `ml.inf1`, and `ml.g3` are not supported on AL2023 notebook instances.\n4. Test the change on a non-production notebook first, especially if the notebook depends on custom kernels, native libraries, or older PyTorch builds.\n\n### AWS Console\n\n1. Open the SageMaker AI console and go to `Notebook instances`.\n2. Select the affected notebook instance.\n3. If the notebook is not already `Stopped`, choose `Stop` and wait for the status to become `Stopped`.\n4. Choose `Edit`.\n5. Change `Platform identifier` to `notebook-al2023-v1`.\n6. If the current instance type is not supported on AL2023, choose a supported instance type before saving.\n7. Choose `Update notebook instance`, then start the notebook and validate notebooks, kernels, lifecycle scripts, and package installs.\n\n### AWS CLI\n\nInspect the current platform and instance type:\n\n```bash\naws sagemaker describe-notebook-instance \\\n  --notebook-instance-name <notebook-name> \\\n  --query '{NotebookInstanceName:NotebookInstanceName,PlatformIdentifier:PlatformIdentifier,InstanceType:InstanceType,NotebookInstanceStatus:NotebookInstanceStatus}'\n```\n\nStop the notebook if needed:\n\n```bash\naws sagemaker stop-notebook-instance \\\n  --notebook-instance-name <notebook-name>\naws sagemaker wait notebook-instance-stopped \\\n  --notebook-instance-name <notebook-name>\n```\n\nUpdate the notebook to AL2023:\n\n```bash\naws sagemaker update-notebook-instance \\\n  --notebook-instance-name <notebook-name> \\\n  --platform-identifier notebook-al2023-v1\n```\n\nIf the current instance type is not supported on AL2023, change the instance type in the same update:\n\n```bash\naws sagemaker update-notebook-instance \\\n  --notebook-instance-name <notebook-name> \\\n  --platform-identifier notebook-al2023-v1 \\\n  --instance-type <supported-instance-type>\n```\n\nStart the notebook again and wait until it is back in service:\n\n```bash\naws sagemaker start-notebook-instance \\\n  --notebook-instance-name <notebook-name>\naws sagemaker wait notebook-instance-in-service \\\n  --notebook-instance-name <notebook-name>\n```\n\nValidate the new platform:\n\n```bash\naws sagemaker describe-notebook-instance \\\n  --notebook-instance-name <notebook-name> \\\n  --query '{PlatformIdentifier:PlatformIdentifier,InstanceType:InstanceType,NotebookInstanceStatus:NotebookInstanceStatus}'\n```\n\n### Deadlines to plan around\n\n- `June 30, 2026`: Amazon Linux 2 notebook instances reach end of support and stop receiving security updates or bug fixes.\n- `July 1, 2026`: you can no longer create new or restart stopped AL2 notebook instances.\n- `July 15, 2026`: SageMaker AI starts attempting to upgrade remaining AL2 notebook instances to AL2023.\n\n### References\n\n- https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2.html\n- https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2023.html\n- https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-update.html\n- https://docs.aws.amazon.com/cli/latest/reference/sagemaker/update-notebook-instance.html\n- https://docs.aws.amazon.com/cli/latest/reference/sagemaker/wait/\n- https://aws.amazon.com/amazon-linux-2/faqs/",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "sagemaker-notebook-al2-v1",
+      "matchField": "platformIdentifier",
+      "matchValue": "notebook-al2-v1",
+      "observedField": "platformIdentifier",
+      "dueDate": "2026-07-01",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2.html",
+      "summary": "SageMaker Notebook Instances on the deprecated notebook-al2-v1 platform should be migrated to AL2023 before restart restrictions apply.",
+      "disruptionRisk": "AL2 notebook instances stop receiving security updates and cannot be safely left for last-minute migration.",
+      "recommendedTarget": "Set platformIdentifier to notebook-al2023-v1 and use a notebook instance type supported on AL2023.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "sagemaker-notebook-al2-v2",
+      "matchField": "platformIdentifier",
+      "matchValue": "notebook-al2-v2",
+      "observedField": "platformIdentifier",
+      "dueDate": "2026-07-01",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2.html",
+      "summary": "SageMaker Notebook Instances on the deprecated notebook-al2-v2 platform should be migrated to AL2023 before restart restrictions apply.",
+      "disruptionRisk": "AL2 notebook instances stop receiving security updates and cannot be safely left for last-minute migration.",
+      "recommendedTarget": "Set platformIdentifier to notebook-al2023-v1 and use a notebook instance type supported on AL2023.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    },
+    {
+      "key": "sagemaker-notebook-al2-v3",
+      "matchField": "platformIdentifier",
+      "matchValue": "notebook-al2-v3",
+      "observedField": "platformIdentifier",
+      "dueDate": "2026-07-01",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2.html",
+      "summary": "SageMaker Notebook Instances on notebook-al2-v3 should be migrated to AL2023 before July 1, 2026.",
+      "disruptionRisk": "AL2 notebook instances stop receiving security updates and cannot be restarted after the provider cutoff if they are stopped.",
+      "recommendedTarget": "Set platformIdentifier to notebook-al2023-v1 and use a notebook instance type supported on AL2023.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

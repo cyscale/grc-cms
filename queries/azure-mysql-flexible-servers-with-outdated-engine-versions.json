@@ -1,5 +1,5 @@
 {
   "name": "Azure MySQL Flexible Servers with outdated engine versions",
   "slug": "azure-mysql-flexible-servers-with-outdated-engine-versions",
-  "query": "{ mySqlFlexibleServers (where: {engineVersion_NOT_IN: [\"8.0\", \"5.7\"]}) {...AssetFragment} }"
+  "query": "{\n  mySqlFlexibleServers(\n    where: { engineVersion_NOT_IN: [\"5.7\", \"8.0\", \"8.4\", \"9.5\"] }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
 }

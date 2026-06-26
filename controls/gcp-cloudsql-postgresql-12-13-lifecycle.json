@@ -1,0 +1,60 @@
+{
+  "body": "### Why this matters\n\nCloud SQL for PostgreSQL 12 entered extended support on February 1, 2025, and PostgreSQL 13 reaches extended support on February 1, 2026. These versions should be upgraded before cost, support, and compatibility pressure increases.\n\n### What this control checks\n\nThis control finds Cloud SQL PostgreSQL instances whose engine version starts with `12` or `13`. The recommended target is PostgreSQL 14 or newer, with PostgreSQL 16, 17, or 18 preferred where compatible.\n\n### Operational note\n\nPostgreSQL upgrades require testing extensions, query plans, connection poolers, logical replication, backups, and application behavior before production rollout.",
+  "name": "Ensure Cloud SQL for PostgreSQL instances are not running PostgreSQL 12 or 13",
+  "description": "Cloud SQL for PostgreSQL instances running PostgreSQL 12 or 13 lifecycle versions",
+  "slug": "gcp-cloudsql-postgresql-12-13-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-02-01",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "extended-support-start",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://cloud.google.com/sql/docs/postgres/db-versions",
+  "timedControlSummary": "Cloud SQL PostgreSQL 12 is already in extended support and PostgreSQL 13 reaches extended support on February 1, 2026.",
+  "timedControlDisruptionRisk": "Leaving Cloud SQL PostgreSQL on older major versions can create extended-support costs and reduce security and compatibility headroom.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "query": "gcp-cloudsql-postgresql-12-13-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Google Cloud remediation\n\n> **Service-wide database upgrade program (recommended):** upgrade affected Cloud SQL instances by engine family and application group. This keeps compatibility testing, maintenance windows, rollback plans, and extended-support cost tracking consistent.\n\n### Google Cloud Console\n\n1. Open **Cloud SQL > Instances**.\n2. Select the affected instance and confirm backups, maintenance window, replicas, and application compatibility.\n3. Use the major version upgrade workflow to move to a supported target such as `POSTGRES_14 or newer`.\n4. Validate application connectivity, query behavior, and monitoring after the upgrade.\n\n### gcloud CLI\n\nInspect the current database version:\n\n```bash\ngcloud sql instances describe <instance-name> \\\n  --format='value(databaseVersion,state)'\n```\n\nStart the major version upgrade after testing:\n\n```bash\ngcloud sql instances patch <instance-name> \\\n  --database-version <target-database-version>\n```\n\n### References\n\n- https://cloud.google.com/sql/docs/postgres/db-versions\n- https://cloud.google.com/sql/docs/mysql/upgrade-major-db-version-inplace",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "gcp-cloudsql-postgresql-12-13",
+      "matchRegex": {
+        "engine": "^(postgres|postgresql)$",
+        "engineVersion": "^(12|13)(\\.|$)"
+      },
+      "observedField": "engineVersion",
+      "dueDate": "2026-02-01",
+      "deadlineType": "extended-support-start",
+      "sourceURL": "https://cloud.google.com/sql/docs/postgres/db-versions",
+      "summary": "Cloud SQL PostgreSQL 12 is already in extended support and PostgreSQL 13 reaches extended support on February 1, 2026.",
+      "disruptionRisk": "Leaving Cloud SQL PostgreSQL on older major versions can create extended-support costs and reduce security and compatibility headroom.",
+      "recommendedTarget": "Upgrade to PostgreSQL 14 or newer, preferably PostgreSQL 16, 17, or 18 after compatibility testing.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "body": "### Why this matters\n\nAmazon RDS for MariaDB MariaDB 10.5 is deprecated for Amazon RDS for MariaDB and reaches RDS standard support end in August 2026. Databases on older major versions are more likely to miss security fixes, enter paid extended support, or face provider-driven upgrade restrictions.\n\n### What this control checks\n\nThis control finds Amazon RDS for MariaDB resources whose engine version matches `MariaDB 10.5`. The recommended target is MariaDB 10.11, 11.4, or 11.8.\n\n### Operational note\n\nMajor database upgrades should be treated as application releases. Take backups, test extensions and client drivers, run compatibility tests, and schedule maintenance windows before upgrading production systems. The lifecycle date for this check is `2026-08-31`.",
+  "name": "Ensure Amazon RDS MariaDB instances are not running MariaDB 10.5",
+  "description": "Amazon RDS MariaDB instances running MariaDB 10.5 lifecycle version",
+  "slug": "aws-rds-mariadb-105-deprecated",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-08-31",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "end-of-standard-support",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MariaDB.Concepts.VersionMgmt.html",
+  "timedControlSummary": "Amazon RDS MariaDB instances on MariaDB 10.5 should be upgraded before the lifecycle date.",
+  "timedControlDisruptionRisk": "Late RDS engine upgrades can cause extended support charges, forced upgrade pressure, and application compatibility issues.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "aws-rds-mariadb-105-deprecated",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## AWS remediation\n\n> **Service-wide database upgrade program (recommended):** plan the upgrade across all affected RDS instances for the engine family. This lets teams test client drivers, parameter groups, option groups, backups, replicas, and rollback once instead of rediscovering issues per database.\n\n### AWS Console\n\n1. Open the Amazon RDS console and select the affected DB instance.\n2. Confirm backups and maintenance window. Create a manual snapshot for rollback.\n3. Choose **Modify**.\n4. Set **DB engine version** to a supported target such as `MariaDB 10.11, 11.4, or 11.8`.\n5. Review parameter group and option group compatibility.\n6. Choose whether to apply during the next maintenance window or immediately.\n\n### AWS CLI\n\nInspect current engine details:\n\n```bash\naws rds describe-db-instances \\\n  --db-instance-identifier <db-instance-id> \\\n  --query 'DBInstances[0].{Engine:Engine,EngineVersion:EngineVersion,Status:DBInstanceStatus}'\n```\n\nList available target versions:\n\n```bash\naws rds describe-db-engine-versions \\\n  --engine mariadb \\\n  --query 'DBEngineVersions[].EngineVersion' \\\n  --output text\n```\n\nCreate a manual snapshot:\n\n```bash\naws rds create-db-snapshot \\\n  --db-instance-identifier <db-instance-id> \\\n  --db-snapshot-identifier <snapshot-name>\n```\n\nUpgrade the DB instance:\n\n```bash\naws rds modify-db-instance \\\n  --db-instance-identifier <db-instance-id> \\\n  --engine-version <target-engine-version> \\\n  --allow-major-version-upgrade \\\n  --apply-immediately\n```\n\n### References\n\n- https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "aws-rds-mariadb-105-deprecated-rule",
+      "matchRegex": {
+        "engine": "^mariadb$",
+        "engineVersion": "^10\\.5"
+      },
+      "observedField": "engineVersion",
+      "dueDate": "2026-08-31",
+      "deadlineType": "end-of-standard-support",
+      "sourceURL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MariaDB.Concepts.VersionMgmt.html",
+      "summary": "Amazon RDS MariaDB instances on MariaDB 10.5 should be upgraded before the lifecycle date.",
+      "disruptionRisk": "Late RDS engine upgrades can cause extended support charges, forced upgrade pressure, and application compatibility issues.",
+      "recommendedTarget": "Upgrade to MariaDB 10.11, 11.4, or 11.8.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

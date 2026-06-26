@@ -1,0 +1,5 @@
+{
+  "name": "GKE clusters running Kubernetes 1.30",
+  "slug": "gcp-gke-130-kubernetes-lifecycle",
+  "query": "{\n  gkeClusters(\n    where: {\n      OR: [\n        { currentMasterVersion_STARTS_WITH: \"1.30\" }\n        { currentNodeVersion_STARTS_WITH: \"1.30\" }\n        { nodePools_SOME: { version_STARTS_WITH: \"1.30\" } }\n      ]\n    }\n  ) {\n    ...AssetFragment\n    currentMasterVersion\n    currentNodeVersion\n    releaseChannel\n    nodePools {\n      name\n      version\n      managementAutoUpgrade\n    }\n  }\n}"
+}

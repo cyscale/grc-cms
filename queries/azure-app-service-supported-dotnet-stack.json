@@ -1,0 +1,5 @@
+{
+  "name": "Azure App Service apps running unsupported .NET stacks",
+  "slug": "azure-app-service-supported-dotnet-stack",
+  "query": "{\n  sites(\n    where: { siteConfig: { NOT: { netFrameworkVersion: { eq: \"\" } }, isDeprecated: { eq: true } } }\n  ) {\n    ...AssetFragment\n    siteConfig {\n      netFrameworkVersion\n      linuxFxVersion\n    }\n  }\n}"
+}

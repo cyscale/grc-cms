@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud SQL MySQL instances running MySQL 5.7",
+  "slug": "gcp-cloudsql-mysql-57-extended-support",
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: { eq: \"mysql\" }\n      engineVersion_STARTS_WITH: \"5.7\"\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
+}

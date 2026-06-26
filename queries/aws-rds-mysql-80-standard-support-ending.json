@@ -1,0 +1,5 @@
+{
+  "name": "AWS RDS MySQL instances running MySQL 8.0",
+  "slug": "aws-rds-mysql-80-standard-support-ending",
+  "query": "{\n  dbInstances(\n    where: {\n      cloudProvider: { eq: \"aws\" }\n      engine: { eq: \"mysql\" }\n      engineVersion_STARTS_WITH: \"8.0\"\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
+}

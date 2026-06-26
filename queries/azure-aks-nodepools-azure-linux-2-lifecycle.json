@@ -1,0 +1,5 @@
+{
+  "name": "Azure AKS node pools using Azure Linux 2.0",
+  "slug": "azure-aks-nodepools-azure-linux-2-lifecycle",
+  "query": "{\n  aksNodePools(where: { osSKU: { eq: \"AzureLinux\" } }) {\n    ...AssetFragment\n    osSKU\n    orchestratorVersion\n    nodeImageVersion\n    provisioningState\n  }\n}"
+}

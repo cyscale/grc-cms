@@ -1,0 +1,60 @@
+{
+  "body": "### Why this matters\n\nAmazon RDS for MySQL MySQL 8.0 is approaching Amazon RDS end of standard support on July 31, 2026. Databases on older major versions are more likely to miss security fixes, enter paid extended support, or face provider-driven upgrade restrictions.\n\n### What this control checks\n\nThis control finds Amazon RDS for MySQL resources whose engine version matches `MySQL 8.0`. The recommended target is MySQL 8.4.\n\n### Operational note\n\nMajor database upgrades should be treated as application releases. Take backups, test extensions and client drivers, run compatibility tests, and schedule maintenance windows before upgrading production systems. The lifecycle date for this check is `2026-07-31`.",
+  "name": "Ensure Amazon RDS MySQL instances are not running MySQL 8.0",
+  "description": "Amazon RDS MySQL instances running MySQL 8.0 lifecycle version",
+  "slug": "aws-rds-mysql-80-standard-support-ending",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-07-31",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "end-of-standard-support",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html",
+  "timedControlSummary": "Amazon RDS MySQL instances on MySQL 8.0 should be upgraded before the lifecycle date.",
+  "timedControlDisruptionRisk": "Late RDS engine upgrades can cause extended support charges, forced upgrade pressure, and application compatibility issues.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "DBInstance"
+      ],
+      "query": "aws-rds-mysql-80-standard-support-ending",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## AWS remediation\n\n> **Service-wide database upgrade program (recommended):** plan the upgrade across all affected RDS instances for the engine family. This lets teams test client drivers, parameter groups, option groups, backups, replicas, and rollback once instead of rediscovering issues per database.\n\n### AWS Console\n\n1. Open the Amazon RDS console and select the affected DB instance.\n2. Confirm backups and maintenance window. Create a manual snapshot for rollback.\n3. Choose **Modify**.\n4. Set **DB engine version** to a supported target such as `MySQL 8.4`.\n5. Review parameter group and option group compatibility.\n6. Choose whether to apply during the next maintenance window or immediately.\n\n### AWS CLI\n\nInspect current engine details:\n\n```bash\naws rds describe-db-instances \\\n  --db-instance-identifier <db-instance-id> \\\n  --query 'DBInstances[0].{Engine:Engine,EngineVersion:EngineVersion,Status:DBInstanceStatus}'\n```\n\nList available target versions:\n\n```bash\naws rds describe-db-engine-versions \\\n  --engine mysql \\\n  --query 'DBEngineVersions[].EngineVersion' \\\n  --output text\n```\n\nCreate a manual snapshot:\n\n```bash\naws rds create-db-snapshot \\\n  --db-instance-identifier <db-instance-id> \\\n  --db-snapshot-identifier <snapshot-name>\n```\n\nUpgrade the DB instance:\n\n```bash\naws rds modify-db-instance \\\n  --db-instance-identifier <db-instance-id> \\\n  --engine-version <target-engine-version> \\\n  --allow-major-version-upgrade \\\n  --apply-immediately\n```\n\n### References\n\n- https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "aws-rds-mysql-80-standard-support-ending-rule",
+      "matchRegex": {
+        "engine": "^mysql$",
+        "engineVersion": "^8\\.0"
+      },
+      "observedField": "engineVersion",
+      "dueDate": "2026-07-31",
+      "deadlineType": "end-of-standard-support",
+      "sourceURL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html",
+      "summary": "Amazon RDS MySQL instances on MySQL 8.0 should be upgraded before the lifecycle date.",
+      "disruptionRisk": "Late RDS engine upgrades can cause extended support charges, forced upgrade pressure, and application compatibility issues.",
+      "recommendedTarget": "Upgrade to MySQL 8.4.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

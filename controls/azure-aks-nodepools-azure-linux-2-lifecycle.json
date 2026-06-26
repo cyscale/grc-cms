@@ -1,0 +1,58 @@
+{
+  "body": "### Why this matters\n\nMicrosoft states that AKS no longer supports or provides security updates for Azure Linux 2.0 after November 30, 2025, and that node images are removed beginning March 31, 2026. Node pools left on Azure Linux 2.0 can become difficult to scale or repair.\n\n### What this control checks\n\nThis control finds AKS node pools whose `osSKU` is `AzureLinux`, which represents the Azure Linux 2.0 node image family in the AKS lifecycle notice. These node pools should move to `AzureLinux3` or another supported OS SKU.\n\n### Operational note\n\nNode OS migrations replace nodes and can affect daemonsets, CNI behavior, kernel dependencies, and workload scheduling. Validate node pool settings and use surge upgrades for production clusters.",
+  "name": "Ensure AKS node pools are migrated from Azure Linux 2.0",
+  "description": "AKS node pools using Azure Linux 2.0 before image removal",
+  "slug": "azure-aks-nodepools-azure-linux-2-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-03-31",
+  "timedControlCategory": "os-end-of-support",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions",
+  "timedControlSummary": "AKS node pools using Azure Linux 2.0 should be migrated to Azure Linux 3 before scaling and image availability are affected.",
+  "timedControlDisruptionRisk": "After Azure Linux 2.0 image removal, AKS node pools can be unable to scale and can remain on a frozen node image without security updates.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AKSNodePool"
+      ],
+      "query": "azure-aks-nodepools-azure-linux-2-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Azure remediation\n\n> **Node-image migration program (recommended):** migrate all Azure Linux 2.0 node pools by cluster or subscription. This is more reliable than ad hoc node pool changes because daemonsets, CNI plugins, workload scheduling, and base image dependencies need one tested migration path.\n\n### Azure Portal\n\n1. Open the affected AKS cluster.\n2. Review each node pool using Azure Linux 2.0.\n3. Create a replacement node pool using `osSku AzureLinux3` and a supported Kubernetes version.\n4. Cordon and drain workloads from the old node pool.\n5. Delete the old Azure Linux 2.0 node pool after workloads are healthy.\n\n### Azure CLI\n\nInspect node pools:\n\n```bash\naz aks nodepool list \\\n  --resource-group <resource-group> \\\n  --cluster-name <cluster-name> \\\n  --query '[].{name:name,osSku:osSku,version:orchestratorVersion,nodeImageVersion:nodeImageVersion}' \\\n  --output table\n```\n\nCreate a replacement Azure Linux 3 node pool:\n\n```bash\naz aks nodepool add \\\n  --resource-group <resource-group> \\\n  --cluster-name <cluster-name> \\\n  --name <new-nodepool-name> \\\n  --os-sku AzureLinux3 \\\n  --kubernetes-version <supported-version> \\\n  --node-count <count>\n```\n\nDrain and remove the old node pool after validation:\n\n```bash\nkubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data\naz aks nodepool delete \\\n  --resource-group <resource-group> \\\n  --cluster-name <cluster-name> \\\n  --name <old-nodepool-name>\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions\n- https://learn.microsoft.com/en-us/azure/aks/upgrade-aks-cluster",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "azure-aks-azure-linux-2",
+      "matchField": "osSKU",
+      "matchValue": "AzureLinux",
+      "observedField": "osSKU",
+      "dueDate": "2026-03-31",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions",
+      "summary": "AKS node pools using Azure Linux 2.0 should be migrated to Azure Linux 3 before scaling and image availability are affected.",
+      "disruptionRisk": "After Azure Linux 2.0 image removal, AKS node pools can be unable to scale and can remain on a frozen node image without security updates.",
+      "recommendedTarget": "Create replacement node pools with osSku AzureLinux3 and drain/delete Azure Linux 2.0 node pools.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "body": "### Why this matters\n\nAzure App Service Node.js runtimes are periodically deprecated when the upstream language version ages out or has significant vulnerabilities. Apps can keep running for a while after a runtime is hidden from the portal, but future platform removal can create urgent deployment or availability risk.\n\n### What this control checks\n\nThis control finds App Service apps using a deprecated Node.js stack according to the runtime metadata collected from Azure.\n\n### Operational note\n\nRuntime upgrades should be released like application changes: update dependencies, test startup and build behavior, use deployment slots for production apps, and validate telemetry after the swap.",
+  "name": "Ensure App Service Node.js runtime is currently supported",
+  "description": "App Service apps using deprecated Node.js stacks",
+  "slug": "azure-app-service-supported-node-stack",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-nodejs",
+  "timedControlSummary": "Azure App Service apps using unsupported Node.js stacks should be moved to a currently supported runtime.",
+  "timedControlDisruptionRisk": "Late Node.js runtime migrations can break builds, dependencies, native modules, and deployment workflows when the platform removes old runtimes.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-service-supported-node-stack",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Azure remediation\n\n> **Service-wide runtime upgrade (recommended):** upgrade all App Service Node.js apps in an application portfolio together where possible. This makes dependency updates, package-lock refreshes, build image changes, and CI/CD validation reusable.\n\n### Azure Portal\n\n1. Open the affected App Service app.\n2. Go to **Settings > Configuration > General settings**.\n3. Change the Node.js runtime stack to a supported version, such as Node.js 24 LTS.\n4. Save, redeploy if required, and validate startup, health checks, and logs.\n\n### Azure CLI\n\nCheck the current runtime:\n\n```bash\naz webapp config show \\\n  --resource-group <resource-group> \\\n  --name <app-name> \\\n  --query '{linuxFxVersion:linuxFxVersion,nodeVersion:nodeVersion}'\n```\n\nList supported runtimes:\n\n```bash\naz webapp list-runtimes --os linux | grep NODE\naz webapp list-runtimes --os windows | grep NODE\n```\n\nFor Linux App Service apps, set the supported runtime stack:\n\n```bash\naz webapp config set \\\n  --resource-group <resource-group> \\\n  --name <app-name> \\\n  --linux-fx-version \"NODE|24-lts\"\n```\n\nFor Windows App Service apps, set the app setting:\n\n```bash\naz webapp config appsettings set \\\n  --resource-group <resource-group> \\\n  --name <app-name> \\\n  --settings WEBSITE_NODE_DEFAULT_VERSION=\"~24\"\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/configure-language-nodejs",
+  "isEnabled": true,
+  "severity": 2,
+  "timedControlRules": [
+    {
+      "key": "azure-app-service-node-runtime",
+      "matchRegex": {
+        "siteConfig.nodeVersion": ".+"
+      },
+      "observedField": "siteConfig.nodeVersion",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-nodejs",
+      "summary": "Azure App Service apps using unsupported Node.js stacks should be moved to a currently supported runtime.",
+      "disruptionRisk": "Late Node.js runtime migrations can break builds, dependencies, native modules, and deployment workflows when the platform removes old runtimes.",
+      "recommendedTarget": "Set Node.js to a supported App Service runtime, for example NODE|24-lts on Linux or WEBSITE_NODE_DEFAULT_VERSION=~24 on Windows.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

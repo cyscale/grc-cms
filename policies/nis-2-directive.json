@@ -191,6 +191,9 @@
           "control": "aws-lambda-supported-runtime"
         },
         {
+          "control": "sage-maker-notebooks-supported-platform"
+        },
+        {
           "control": "azure-function-app-supported-runtime"
         },
         {

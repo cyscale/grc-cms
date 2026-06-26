@@ -102,6 +102,9 @@
         },
         {
           "control": "sage-maker-notebooks-root-access"
+        },
+        {
+          "control": "sage-maker-notebooks-supported-platform"
         }
       ]
     }

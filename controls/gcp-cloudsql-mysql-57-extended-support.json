@@ -1,0 +1,60 @@
+{
+  "body": "### Why this matters\n\nCloud SQL for MySQL MySQL 5.7 is in Cloud SQL extended support since February 1, 2025. Databases on older major versions are more likely to miss security fixes, enter paid extended support, or face provider-driven upgrade restrictions.\n\n### What this control checks\n\nThis control finds Cloud SQL for MySQL resources whose engine version matches `MySQL 5.7`. The recommended target is MySQL 8.0 or 8.4.\n\n### Operational note\n\nMajor database upgrades should be treated as application releases. Take backups, test extensions and client drivers, run compatibility tests, and schedule maintenance windows before upgrading production systems. The lifecycle date for this check is `2025-02-01`.",
+  "name": "Ensure Cloud SQL for MySQL instances are not running MySQL 5.7",
+  "description": "Cloud SQL for MySQL instances running MySQL 5.7 extended-support version",
+  "slug": "gcp-cloudsql-mysql-57-extended-support",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2025-02-01",
+  "timedControlCategory": "engine-retirement",
+  "timedControlDeadlineType": "extended-support-start",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://cloud.google.com/sql/docs/mysql/db-versions",
+  "timedControlSummary": "Cloud SQL for MySQL instances on MySQL 5.7 should be upgraded from extended support.",
+  "timedControlDisruptionRisk": "Cloud SQL MySQL 5.7 instances are in extended support and can incur extra charges while remaining on an older database engine.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "CloudSQLInstance"
+      ],
+      "query": "gcp-cloudsql-mysql-57-extended-support",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Google Cloud remediation\n\n> **Service-wide database upgrade program (recommended):** upgrade affected Cloud SQL instances by engine family and application group. This keeps compatibility testing, maintenance windows, rollback plans, and extended-support cost tracking consistent.\n\n### Google Cloud Console\n\n1. Open **Cloud SQL > Instances**.\n2. Select the affected instance and confirm backups, maintenance window, replicas, and application compatibility.\n3. Use the major version upgrade workflow to move to a supported target such as `MYSQL_8_0 or MYSQL_8_4`.\n4. Validate application connectivity, query behavior, and monitoring after the upgrade.\n\n### gcloud CLI\n\nInspect the current database version:\n\n```bash\ngcloud sql instances describe <instance-name> \\\n  --format='value(databaseVersion,state)'\n```\n\nStart the major version upgrade after testing:\n\n```bash\ngcloud sql instances patch <instance-name> \\\n  --database-version <target-database-version>\n```\n\n### References\n\n- https://cloud.google.com/sql/docs/mysql/db-versions\n- https://cloud.google.com/sql/docs/mysql/upgrade-major-db-version-inplace",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "gcp-cloudsql-mysql-57",
+      "matchRegex": {
+        "engine": "^mysql$",
+        "engineVersion": "^5\\.7"
+      },
+      "observedField": "engineVersion",
+      "dueDate": "2025-02-01",
+      "deadlineType": "extended-support-start",
+      "sourceURL": "https://cloud.google.com/sql/docs/mysql/db-versions",
+      "summary": "Cloud SQL for MySQL instances on MySQL 5.7 should be upgraded from extended support.",
+      "disruptionRisk": "Cloud SQL MySQL 5.7 instances are in extended support and can incur extra charges while remaining on an older database engine.",
+      "recommendedTarget": "Upgrade to MySQL 8.0 or 8.4 after compatibility testing.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

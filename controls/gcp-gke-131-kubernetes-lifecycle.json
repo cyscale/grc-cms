@@ -1,0 +1,60 @@
+{
+  "body": "### Why this matters\n\nGoogle Kubernetes Engine Kubernetes 1.31 is at the end of extended support. Older Kubernetes versions receive fewer fixes, can move into extended support, and may eventually be automatically upgraded by the provider.\n\n### What this control checks\n\nThis control finds clusters whose Kubernetes version starts with `1.31`. Upgrade the control plane, node pools, managed add-ons, and workload dependencies before the lifecycle date.\n\n### Operational note\n\nTreat Kubernetes upgrades as platform releases. Check deprecated APIs, admission policies, add-on compatibility, node images, PodDisruptionBudgets, and workload readiness before changing production clusters. The lifecycle date for this check is `2026-10-22`.",
+  "name": "Ensure GKE clusters are not running Kubernetes 1.31",
+  "description": "GKE clusters running Kubernetes 1.31 lifecycle version",
+  "slug": "gcp-gke-131-kubernetes-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-10-22",
+  "timedControlCategory": "kubernetes-version-retirement",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://cloud.google.com/kubernetes-engine/docs/release-schedule",
+  "timedControlSummary": "GKE clusters on Kubernetes 1.31 should be upgraded before the end of extended support date.",
+  "timedControlDisruptionRisk": "Late GKE upgrades can trigger automatic upgrades on provider timing, expose deprecated APIs, and leave node pools behind the control plane.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "GKECluster"
+      ],
+      "query": "gcp-gke-131-kubernetes-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Google Cloud remediation\n\n> **Release-channel upgrade (recommended):** align clusters to an appropriate GKE release channel and upgrade clusters in groups. This keeps lifecycle dates, auto-upgrade behavior, maintenance windows, and node pool settings consistent.\n\n### Google Cloud Console\n\n1. Open **Kubernetes Engine > Clusters**.\n2. Select the affected cluster and review the control plane version, node pool versions, release channel, and upgrade notifications.\n3. Upgrade the control plane to a supported version such as `1.34`.\n4. Upgrade node pools after the control plane is healthy.\n5. Validate workloads, ingress, network policy, add-ons, and autoscaling after node replacement.\n\n### gcloud CLI\n\nReview the current cluster version and release channel:\n\n```bash\ngcloud container clusters describe <cluster-name> \\\n  --location <location> \\\n  --format='value(currentMasterVersion,currentNodeVersion,releaseChannel.channel)'\n```\n\nUpgrade the control plane:\n\n```bash\ngcloud container clusters upgrade <cluster-name> \\\n  --location <location> \\\n  --master \\\n  --cluster-version 1.34\n```\n\nUpgrade a node pool:\n\n```bash\ngcloud container clusters upgrade <cluster-name> \\\n  --location <location> \\\n  --node-pool <node-pool-name> \\\n  --cluster-version 1.34\n```\n\n### References\n\n- https://cloud.google.com/kubernetes-engine/docs/release-schedule\n- https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "gcp-gke-kubernetes-1.31",
+      "matchRegex": {
+        "currentMasterVersion": "^1\\.31",
+        "currentNodeVersion": "^1\\.31"
+      },
+      "observedField": "currentMasterVersion",
+      "dueDate": "2026-10-22",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://cloud.google.com/kubernetes-engine/docs/release-schedule",
+      "summary": "GKE clusters on Kubernetes 1.31 should be upgraded before the end of extended support date.",
+      "disruptionRisk": "Late GKE upgrades can trigger automatic upgrades on provider timing, expose deprecated APIs, and leave node pools behind the control plane.",
+      "recommendedTarget": "Upgrade the GKE control plane and node pools to Kubernetes 1.34 or another supported release-channel target.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

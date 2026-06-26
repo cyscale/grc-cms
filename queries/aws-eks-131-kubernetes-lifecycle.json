@@ -1,0 +1,5 @@
+{
+  "name": "AWS EKS clusters running Kubernetes 1.31",
+  "slug": "aws-eks-131-kubernetes-lifecycle",
+  "query": "{\n  eksClusters(where: { version_STARTS_WITH: \"1.31\" }) {\n    ...AssetFragment\n    version\n    platformVersion\n    status\n  }\n}"
+}

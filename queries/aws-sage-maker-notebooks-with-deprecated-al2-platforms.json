@@ -1,0 +1,5 @@
+{
+  "name": "SageMaker notebook instances with deprecated AL2 platform identifiers",
+  "slug": "aws-sage-maker-notebooks-with-deprecated-al2-platforms",
+  "query": "{\n  sageMakerNoteBooks(\n    where: {\n      platformIdentifier_IN: [\n        \"notebook-al2-v1\"\n        \"notebook-al2-v2\"\n        \"notebook-al2-v3\"\n      ]\n    }\n  ) {\n    ...AssetFragment\n    platformIdentifier\n  }\n}\n"
+}

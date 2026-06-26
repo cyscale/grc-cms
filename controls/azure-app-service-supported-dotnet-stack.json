@@ -1,0 +1,57 @@
+{
+  "body": "### Why this matters\n\nAzure App Service .NET runtimes are periodically deprecated when the upstream framework version ages out or has significant vulnerabilities. Apps can keep running for a while after a runtime is hidden from the portal, but future platform removal can create urgent deployment or availability risk.\n\n### What this control checks\n\nThis control finds App Service apps using a deprecated .NET stack according to the runtime metadata collected from Azure.\n\n### Operational note\n\nRuntime upgrades should be released like application changes: retarget frameworks, update dependencies, test startup and hosting behavior, use deployment slots for production apps, and validate telemetry after the swap.",
+  "name": "Ensure App Service .NET runtime is currently supported",
+  "description": "App Service apps using deprecated .NET stacks",
+  "slug": "azure-app-service-supported-dotnet-stack",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "provider-rolling",
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-dotnetcore",
+  "timedControlSummary": "Azure App Service apps using unsupported .NET stacks should be moved to a currently supported runtime.",
+  "timedControlDisruptionRisk": "Late .NET runtime migrations can require framework retargeting, dependency upgrades, deployment changes, and production restart planning.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Site"
+      ],
+      "query": "azure-app-service-supported-dotnet-stack",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Azure remediation\n\n> **Service-wide runtime upgrade (recommended):** upgrade App Service .NET apps as a release train. This allows teams to test target frameworks, NuGet dependencies, hosting model changes, and CI/CD build images consistently.\n\n### Azure Portal\n\n1. Open the affected App Service app.\n2. Go to **Settings > Configuration > General settings**.\n3. Change the .NET runtime stack to a supported version, such as .NET 8 or the latest supported runtime approved by your engineering baseline.\n4. Redeploy the compiled application and validate startup, health checks, and logs.\n\n### Azure CLI\n\nCheck the current runtime:\n\n```bash\naz webapp config show \\\n  --resource-group <resource-group> \\\n  --name <app-name> \\\n  --query '{linuxFxVersion:linuxFxVersion,netFrameworkVersion:netFrameworkVersion}'\n```\n\nList supported Linux runtimes:\n\n```bash\naz webapp list-runtimes --os linux | grep DOTNET\n```\n\nFor Linux App Service apps, set the supported runtime stack:\n\n```bash\naz webapp config set \\\n  --resource-group <resource-group> \\\n  --name <app-name> \\\n  --linux-fx-version \"DOTNETCORE|8.0\"\n```\n\nFor Windows App Service apps, update the framework/runtime setting in **Configuration > General settings**, then redeploy the application built for the target framework.\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/app-service/configure-language-dotnetcore",
+  "isEnabled": true,
+  "severity": 2,
+  "timedControlRules": [
+    {
+      "key": "azure-app-service-dotnet-runtime",
+      "matchRegex": {
+        "siteConfig.netFrameworkVersion": ".+"
+      },
+      "observedField": "siteConfig.netFrameworkVersion",
+      "dueDate": "",
+      "deadlineType": "provider-rolling",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/app-service/configure-language-dotnetcore",
+      "summary": "Azure App Service apps using unsupported .NET stacks should be moved to a currently supported runtime.",
+      "disruptionRisk": "Late .NET runtime migrations can require framework retargeting, dependency upgrades, deployment changes, and production restart planning.",
+      "recommendedTarget": "Set .NET to a supported App Service runtime, for example DOTNETCORE|8.0 or the latest approved supported runtime.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

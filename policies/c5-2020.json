@@ -243,6 +243,9 @@
           "control": "databases-with-outdated-engine-versions"
         },
         {
+          "control": "sage-maker-notebooks-supported-platform"
+        },
+        {
           "control": "azure-app-service-supported-java-stack"
         },
         {
