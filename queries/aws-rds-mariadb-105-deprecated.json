@@ -1,5 +1,5 @@
 {
   "name": "AWS RDS MariaDB instances running MariaDB 10.5",
   "slug": "aws-rds-mariadb-105-deprecated",
-  "query": "{\n  dbInstances(\n    where: {\n      cloudProvider: { eq: \"aws\" }\n      engine: { eq: \"mariadb\" }\n      engineVersion_STARTS_WITH: \"10.5\"\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
+  "query": "{\n  dbInstances(\n    where: {\n      cloudProvider: { eq: \"aws\" }\n      engine: { eq: \"mariadb\" }\n      engineVersion_MATCHES: \"^10\\\\.5(\\\\.|$)\"\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
 }

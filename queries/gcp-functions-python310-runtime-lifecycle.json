@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud Functions using Python 3.10 runtime",
+  "slug": "gcp-functions-python310-runtime-lifecycle",
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"gcp\" }\n      runtime: { eq: \"python310\" }\n    }\n  ) {\n    ...AssetFragment\n    runtime\n  }\n}"
+}

@@ -1,5 +1,5 @@
 {
   "name": "Azure MySQL Flexible Servers running MySQL 8.0",
   "slug": "azure-mysql-flexible-server-80-lifecycle",
-  "query": "{\n  mySqlFlexibleServers(where: { engineVersion_STARTS_WITH: \"8.0\" }) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
+  "query": "{\n  mySqlFlexibleServers(where: { engineVersion_MATCHES: \"^8\\\\.0(\\\\.|$)\" }) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
 }

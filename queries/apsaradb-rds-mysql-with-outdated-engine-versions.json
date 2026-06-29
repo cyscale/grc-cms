@@ -1,5 +1,5 @@
 {
-  "name": "ApsaraDB RDS MySQL with oudated engine versions",
+  "name": "ApsaraDB RDS MySQL with outdated engine versions",
   "slug": "apsaradb-rds-mysql-with-outdated-engine-versions",
-  "query": "{ dbInstances (where: { cloudProvider: { eq: \"alibaba\" } engine: { eq: \"mysql\" } engineVersion_NOT_IN: [\"8.0\", \"5.7\"]}) {...AssetFragment} }"
+  "query": "{\n  dbInstances(\n    where: {\n      cloudProvider: { eq: \"alibaba\" }\n      engine: { eq: \"mysql\" }\n      NOT: {\n        OR: [\n          { engineVersion_MATCHES: \"^5\\\\.7(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^8\\\\.0(\\\\.|$)\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
 }

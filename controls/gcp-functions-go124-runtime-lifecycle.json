@@ -1,0 +1,56 @@
+{
+  "body": "### Why this matters\n\nGoogle Cloud Functions Go 1.24 has a published deprecation date of September 2, 2026 and decommission date of March 2, 2027. Functions should be migrated before redeployments become risky or blocked by runtime lifecycle restrictions.\n\n### What this control checks\n\nThis control finds Google Cloud Functions using the `go124` runtime. Upgrade to `go125` or newer after testing dependencies and build behavior.\n\n### Operational note\n\nGo runtime upgrades can require module updates, rebuilds of native dependencies, and validation of startup, HTTP handlers, background functions, and CloudEvents handlers.",
+  "name": "Ensure Google Cloud Functions are not using Go 1.24",
+  "description": "Google Cloud Functions using Go 1.24 before deprecation",
+  "slug": "gcp-functions-go124-runtime-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-09-02",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "runtime-retirement",
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+  "timedControlSummary": "Google Cloud Functions on Go 1.24 should be migrated before the September 2, 2026 deprecation date.",
+  "timedControlDisruptionRisk": "Late runtime migrations can block safe redeployments and require urgent code or dependency changes.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "gcp-functions-go124-runtime-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Google Cloud remediation\n\n> **Runtime migration program (recommended):** migrate functions by application or runtime family. This lets teams validate Go modules, buildpacks, triggers, IAM, and observability consistently.\n\n### Google Cloud Console\n\n1. Open **Cloud Functions** and select the affected function.\n2. Review triggers, environment variables, service account, ingress, and build settings.\n3. Update the runtime to `go125` or newer.\n4. Redeploy through your normal release process and validate logs, metrics, and trigger delivery.\n\n### gcloud CLI\n\nInspect the current runtime:\n\n```bash\ngcloud functions describe <function-name> \\\n  --region <region> \\\n  --format='value(runtime,status)'\n```\n\nRedeploy with a supported runtime, keeping your existing trigger and source flags:\n\n```bash\ngcloud functions deploy <function-name> \\\n  --region <region> \\\n  --runtime go125\n```\n\n### References\n\n- https://cloud.google.com/functions/docs/runtime-support\n- https://cloud.google.com/sdk/gcloud/reference/functions/deploy",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "gcp-functions-go124",
+      "matchField": "runtime",
+      "matchValue": "go124",
+      "observedField": "runtime",
+      "dueDate": "2026-09-02",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Google Cloud Functions on Go 1.24 should be migrated before the September 2, 2026 deprecation date.",
+      "disruptionRisk": "Late runtime migrations can block safe redeployments and require urgent code or dependency changes.",
+      "recommendedTarget": "Set runtime to go125 or newer after compatibility testing.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

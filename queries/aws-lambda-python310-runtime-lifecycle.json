@@ -1,0 +1,5 @@
+{
+  "name": "AWS Lambda functions using Python 3.10 runtime",
+  "slug": "aws-lambda-python310-runtime-lifecycle",
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"aws\" }\n      runtime: { eq: \"python3.10\" }\n    }\n  ) {\n    ...AssetFragment\n    runtime\n  }\n}"
+}

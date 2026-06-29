@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud SQL PostgreSQL instances running PostgreSQL 12 or 13",
   "slug": "gcp-cloudsql-postgresql-12-13-lifecycle",
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      OR: [\n        { engine: { eq: \"postgres\" }, engineVersion_STARTS_WITH: \"12\" }\n        { engine: { eq: \"postgresql\" }, engineVersion_STARTS_WITH: \"12\" }\n        { engine: { eq: \"postgres\" }, engineVersion_STARTS_WITH: \"13\" }\n        { engine: { eq: \"postgresql\" }, engineVersion_STARTS_WITH: \"13\" }\n      ]\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      OR: [\n        { engine: { eq: \"postgres\" }, engineVersion_MATCHES: \"^12(\\\\.|$)\" }\n        { engine: { eq: \"postgresql\" }, engineVersion_MATCHES: \"^12(\\\\.|$)\" }\n        { engine: { eq: \"postgres\" }, engineVersion_MATCHES: \"^13(\\\\.|$)\" }\n        { engine: { eq: \"postgresql\" }, engineVersion_MATCHES: \"^13(\\\\.|$)\" }\n      ]\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
 }

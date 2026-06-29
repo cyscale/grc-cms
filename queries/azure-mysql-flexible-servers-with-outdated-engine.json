@@ -1,5 +1,5 @@
 {
-  "query": "{\n  mySqlFlexibleServers\n  (\n    where: {\n      cyscaleEngineIsOutdated: { eq: true }\n    }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}\n",
+  "query": "{\n  mySqlFlexibleServers(\n    where: {\n      cyscaleEngineIsOutdated: { eq: true }\n      NOT: {\n        OR: [\n          { engineVersion_MATCHES: \"^5\\\\.7(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^8\\\\.0(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^8\\\\.4(\\\\.|$)\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n    engineVersion\n    cyscaleEngineIsOutdated\n  }\n}\n",
   "slug": "azure-mysql-flexible-servers-with-outdated-engine",
   "name": "Azure MySQL Flexible servers with outdated engine"
 }

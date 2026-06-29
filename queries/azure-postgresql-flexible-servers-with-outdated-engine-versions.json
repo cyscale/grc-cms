@@ -1,5 +1,5 @@
 {
   "name": "Azure PostgreSQL Flexible Servers with outdated engine versions",
   "slug": "azure-postgresql-flexible-servers-with-outdated-engine-versions",
-  "query": "{\n  postgreSqlFlexibleServers(\n    where: { engineVersion_NOT_IN: [\"11\", \"12\", \"13\", \"14\", \"15\", \"16\", \"17\", \"18\"] }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
+  "query": "{\n  postgreSqlFlexibleServers(\n    where: {\n      NOT: {\n        OR: [\n          { engineVersion_MATCHES: \"^11(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^12(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^13(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^14(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^15(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^16(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^17(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^18(\\\\.|$)\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
 }

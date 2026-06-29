@@ -1,0 +1,58 @@
+{
+  "body": "### Why this matters\n\nAzure Kubernetes Service Kubernetes 1.34 has a published AKS end-of-life date of November 30, 2026. Older Kubernetes versions receive fewer fixes, can move into reduced platform support, and can limit safe upgrade paths.\n\n### What this control checks\n\nThis control finds clusters whose Kubernetes version starts with `1.34`. Upgrade the control plane, node pools, managed add-ons, and workload dependencies before the lifecycle date.\n\n### Operational note\n\nTreat Kubernetes upgrades as platform releases. Check deprecated APIs, admission policies, add-on compatibility, node images, PodDisruptionBudgets, and workload readiness before changing production clusters. The lifecycle date for this check is `2026-11-30`.",
+  "name": "Ensure AKS clusters are not running Kubernetes 1.34",
+  "description": "AKS clusters running Kubernetes 1.34 lifecycle version",
+  "slug": "azure-aks-134-kubernetes-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-11-30",
+  "timedControlCategory": "kubernetes-version-retirement",
+  "timedControlDeadlineType": "provider-enforced",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions",
+  "timedControlSummary": "AKS clusters on Kubernetes 1.34 should be upgraded before the published AKS lifecycle date.",
+  "timedControlDisruptionRisk": "Late AKS upgrades can limit supported upgrade paths, force rushed node pool replacement, and leave workloads on stale Kubernetes APIs.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "azure"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "AKSCluster"
+      ],
+      "query": "azure-aks-134-kubernetes-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Azure remediation\n\n> **Fleet-level upgrade (recommended):** upgrade AKS clusters by subscription, landing zone, or application environment. This reduces repeated compatibility work for Kubernetes APIs, add-ons, node pool images, Azure Policy, and workload identity.\n\n### Azure Portal\n\n1. Open the affected AKS cluster in the Azure portal.\n2. Go to **Settings > Cluster configuration** or **Upgrade**.\n3. Review available Kubernetes versions and upgrade insights.\n4. Upgrade the control plane to a supported version such as `1.36`.\n5. Upgrade each node pool and validate workloads after the nodes are replaced.\n\n### Azure CLI\n\nList available upgrades:\n\n```bash\naz aks get-upgrades \\\n  --resource-group <resource-group> \\\n  --name <cluster-name> \\\n  --output table\n```\n\nUpgrade the cluster:\n\n```bash\naz aks upgrade \\\n  --resource-group <resource-group> \\\n  --name <cluster-name> \\\n  --kubernetes-version 1.36 \\\n  --yes\n```\n\nUpgrade a node pool separately if needed:\n\n```bash\naz aks nodepool upgrade \\\n  --resource-group <resource-group> \\\n  --cluster-name <cluster-name> \\\n  --name <nodepool-name> \\\n  --kubernetes-version 1.36\n```\n\n### References\n\n- https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions\n- https://learn.microsoft.com/en-us/azure/aks/upgrade-aks-cluster",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "azure-aks-kubernetes-1.34",
+      "matchField": "kubernetesVersion",
+      "matchValue": "1.34",
+      "observedField": "kubernetesVersion",
+      "dueDate": "2026-11-30",
+      "deadlineType": "provider-enforced",
+      "sourceURL": "https://learn.microsoft.com/en-us/azure/aks/supported-kubernetes-versions",
+      "summary": "AKS clusters on Kubernetes 1.34 should be upgraded before the published AKS lifecycle date.",
+      "disruptionRisk": "Late AKS upgrades can limit supported upgrade paths, force rushed node pool replacement, and leave workloads on stale Kubernetes APIs.",
+      "recommendedTarget": "Upgrade the AKS cluster and node pools to Kubernetes 1.36 or another supported AKS version.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

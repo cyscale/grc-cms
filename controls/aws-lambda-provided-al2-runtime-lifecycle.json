@@ -1,0 +1,56 @@
+{
+  "body": "### Why this matters\n\nAWS Lambda `provided.al2` custom runtimes are based on Amazon Linux 2 and have a Lambda deprecation date of July 31, 2026. After deprecation, create and update restrictions follow, and teams can be forced into urgent custom runtime rebuilds.\n\n### What this control checks\n\nThis control finds AWS Lambda functions using the `provided.al2` runtime. Migrate custom runtimes to `provided.al2023` and rebuild native dependencies against Amazon Linux 2023 before the lifecycle date.\n\n### Operational note\n\nCustom runtime migrations require testing bootstrap behavior, native libraries, OpenSSL/glibc compatibility, Lambda extensions, and deployment packages or container build images.",
+  "name": "Ensure AWS Lambda custom runtimes are not using provided.al2",
+  "description": "AWS Lambda functions using the provided.al2 runtime before deprecation",
+  "slug": "aws-lambda-provided-al2-runtime-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-07-31",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "runtime-retirement",
+  "timedControlNotificationWindowsDays": [
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+  "timedControlSummary": "AWS Lambda functions on provided.al2 should be migrated before the July 31, 2026 deprecation date.",
+  "timedControlDisruptionRisk": "Late custom runtime migrations can block function updates and require urgent rebuilds of native dependencies.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "aws-lambda-provided-al2-runtime-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## AWS remediation\n\n> **Service-wide custom-runtime migration (recommended):** migrate all Lambda custom runtimes on Amazon Linux 2 together where possible. This lets platform teams rebuild shared layers, native dependencies, extensions, and CI/CD packaging once.\n\n### AWS Console\n\n1. Open the Lambda function.\n2. Review the runtime, layers, extensions, and deployment package build process.\n3. Rebuild the custom runtime and dependencies for Amazon Linux 2023.\n4. Change the runtime to `provided.al2023` and deploy through a staging alias or canary release.\n5. Validate logs, cold starts, native dependencies, and integrations before full traffic shift.\n\n### AWS CLI\n\nInspect the current runtime:\n\n```bash\naws lambda get-function-configuration \\\n  --function-name <function-name> \\\n  --query '{Runtime:Runtime,State:State,LastModified:LastModified}'\n```\n\nUpdate the runtime after rebuilding the deployment package:\n\n```bash\naws lambda update-function-configuration \\\n  --function-name <function-name> \\\n  --runtime provided.al2023\n```\n\n### References\n\n- https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html\n- https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "aws-lambda-provided.al2",
+      "matchField": "runtime",
+      "matchValue": "provided.al2",
+      "observedField": "runtime",
+      "dueDate": "2026-07-31",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda functions on provided.al2 should be migrated before the July 31, 2026 deprecation date.",
+      "disruptionRisk": "Late custom runtime migrations can block function updates and require urgent rebuilds of native dependencies.",
+      "recommendedTarget": "Migrate to provided.al2023 and rebuild custom runtime artifacts for Amazon Linux 2023.",
+      "notificationWindowsDays": [
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

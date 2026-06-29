@@ -1,5 +1,5 @@
 {
   "name": "Azure PostgreSQL Servers with outdated engine versions",
   "slug": "azure-postgresql-servers-with-outdated-engine-versions",
-  "query": "{\n  postgreSqlServers(\n    where: { engineVersion_NOT_IN: [\"11\", \"12\", \"13\", \"14\", \"15\"] }\n  ) {...AssetFragment}\n}\n"
+  "query": "{\n  postgreSqlServers(\n    where: {\n      NOT: {\n        OR: [\n          { engineVersion_MATCHES: \"^11(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^12(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^13(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^14(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^15(\\\\.|$)\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
 }

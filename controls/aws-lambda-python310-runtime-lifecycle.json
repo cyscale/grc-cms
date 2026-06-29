@@ -1,0 +1,58 @@
+{
+  "body": "### Why this matters\n\nAWS Lambda Python 3.10 has a Lambda deprecation date of October 31, 2026. Functions should be migrated before create and update restrictions begin and before teams lose security and platform headroom.\n\n### What this control checks\n\nThis control finds AWS Lambda functions using `python3.10`. Upgrade to a supported Python Lambda runtime such as `python3.13` or newer after dependency and packaging validation.\n\n### Operational note\n\nPython runtime upgrades can break native wheels, Lambda layers, dependency pins, packaging workflows, and libraries that use removed or changed language behavior.",
+  "name": "Ensure AWS Lambda functions are not using Python 3.10",
+  "description": "AWS Lambda functions using Python 3.10 before deprecation",
+  "slug": "aws-lambda-python310-runtime-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-10-31",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "runtime-retirement",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+  "timedControlSummary": "AWS Lambda functions on Python 3.10 should be migrated before the October 31, 2026 deprecation date.",
+  "timedControlDisruptionRisk": "Late runtime migrations can block function updates and require urgent dependency rebuilds.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "aws-lambda-python310-runtime-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## AWS remediation\n\n> **Runtime migration program (recommended):** migrate Lambda Python functions by application or shared dependency set. This lets teams validate layers, native wheels, CI/CD packaging, and observability once.\n\n### AWS Console\n\n1. Open the Lambda function.\n2. Review runtime, layers, environment variables, deployment package, and test events.\n3. Update dependencies and rebuild the function package for the target Python runtime.\n4. Change the runtime to a supported version such as `python3.13` or newer.\n5. Deploy through an alias, canary, or staged rollout and validate logs and metrics.\n\n### AWS CLI\n\nInspect the current runtime:\n\n```bash\naws lambda get-function-configuration \\\n  --function-name <function-name> \\\n  --query '{Runtime:Runtime,State:State,LastModified:LastModified}'\n```\n\nUpdate the runtime after compatibility testing:\n\n```bash\naws lambda update-function-configuration \\\n  --function-name <function-name> \\\n  --runtime python3.13\n```\n\n### References\n\n- https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html\n- https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "aws-lambda-python3.10",
+      "matchField": "runtime",
+      "matchValue": "python3.10",
+      "observedField": "runtime",
+      "dueDate": "2026-10-31",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html",
+      "summary": "AWS Lambda functions on Python 3.10 should be migrated before the October 31, 2026 deprecation date.",
+      "disruptionRisk": "Late runtime migrations can block function updates and require urgent dependency rebuilds.",
+      "recommendedTarget": "Set runtime to python3.13 or newer after dependency testing.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
   "name": "Azure AKS clusters running Kubernetes 1.32",
   "slug": "azure-aks-132-kubernetes-lifecycle",
-  "query": "{\n  aksClusters(where: { kubernetesVersion_STARTS_WITH: \"1.32\" }) {\n    ...AssetFragment\n    kubernetesVersion\n    provisioningState\n    powerStateCode\n  }\n}"
+  "query": "{\n  aksClusters(where: { kubernetesVersion_MATCHES: \"^1\\\\.32(\\\\.|-|$)\" }) {\n    ...AssetFragment\n    kubernetesVersion\n    provisioningState\n    powerStateCode\n  }\n}"
 }

@@ -1,5 +1,5 @@
 {
   "name": "Azure MySQL Flexible Servers running MySQL 5.7",
   "slug": "azure-mysql-flexible-server-57-lifecycle",
-  "query": "{\n  mySqlFlexibleServers(where: { engineVersion_STARTS_WITH: \"5.7\" }) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
+  "query": "{\n  mySqlFlexibleServers(where: { engineVersion_MATCHES: \"^5\\\\.7(\\\\.|$)\" }) {\n    ...AssetFragment\n    engineVersion\n  }\n}"
 }

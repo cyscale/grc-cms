@@ -1,0 +1,58 @@
+{
+  "body": "### Why this matters\n\nGoogle Cloud Functions Python 3.10 has a published deprecation date of October 4, 2026 and decommission date of April 4, 2027. Functions should be migrated before runtime lifecycle restrictions affect safe redeployment.\n\n### What this control checks\n\nThis control finds Google Cloud Functions using the `python310` runtime. Upgrade to `python312` or newer after dependency and packaging validation.\n\n### Operational note\n\nPython runtime upgrades can require package rebuilds, dependency updates, and validation of handlers, CloudEvents payloads, native wheels, and build behavior.",
+  "name": "Ensure Google Cloud Functions are not using Python 3.10",
+  "description": "Google Cloud Functions using Python 3.10 before deprecation",
+  "slug": "gcp-functions-python310-runtime-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-10-04",
+  "timedControlCategory": "runtime-retirement",
+  "timedControlDeadlineType": "runtime-retirement",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+  "timedControlSummary": "Google Cloud Functions on Python 3.10 should be migrated before the October 4, 2026 deprecation date.",
+  "timedControlDisruptionRisk": "Late runtime migrations can block safe redeployments and require urgent dependency changes.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "gcp"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Function"
+      ],
+      "query": "gcp-functions-python310-runtime-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Google Cloud remediation\n\n> **Runtime migration program (recommended):** migrate functions by application or runtime family. This lets teams validate dependencies, buildpacks, triggers, IAM, and observability consistently.\n\n### Google Cloud Console\n\n1. Open **Cloud Functions** and select the affected function.\n2. Review triggers, environment variables, service account, ingress, and build settings.\n3. Update the runtime to `python312` or newer.\n4. Redeploy through your normal release process and validate logs, metrics, and trigger delivery.\n\n### gcloud CLI\n\nInspect the current runtime:\n\n```bash\ngcloud functions describe <function-name> \\\n  --region <region> \\\n  --format='value(runtime,status)'\n```\n\nRedeploy with a supported runtime, keeping your existing trigger and source flags:\n\n```bash\ngcloud functions deploy <function-name> \\\n  --region <region> \\\n  --runtime python312\n```\n\n### References\n\n- https://cloud.google.com/functions/docs/runtime-support\n- https://cloud.google.com/sdk/gcloud/reference/functions/deploy",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "gcp-functions-python310",
+      "matchField": "runtime",
+      "matchValue": "python310",
+      "observedField": "runtime",
+      "dueDate": "2026-10-04",
+      "deadlineType": "runtime-retirement",
+      "sourceURL": "https://cloud.google.com/functions/docs/runtime-support",
+      "summary": "Google Cloud Functions on Python 3.10 should be migrated before the October 4, 2026 deprecation date.",
+      "disruptionRisk": "Late runtime migrations can block safe redeployments and require urgent dependency changes.",
+      "recommendedTarget": "Set runtime to python312 or newer after compatibility testing.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

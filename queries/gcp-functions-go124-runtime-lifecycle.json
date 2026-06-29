@@ -1,0 +1,5 @@
+{
+  "name": "Google Cloud Functions using Go 1.24 runtime",
+  "slug": "gcp-functions-go124-runtime-lifecycle",
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"gcp\" }\n      runtime: { eq: \"go124\" }\n    }\n  ) {\n    ...AssetFragment\n    runtime\n  }\n}"
+}

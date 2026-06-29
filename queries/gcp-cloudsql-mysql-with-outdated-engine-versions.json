@@ -1,5 +1,5 @@
 {
   "name": "Google Cloud Cloud SQL MySQL with outdated engine versions",
   "slug": "gcp-cloudsql-mysql-with-outdated-engine-versions",
-  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: { eq: \"mysql\" }\n      engineVersion_NOT_IN: [\"5.7\", \"8.0\", \"8.4\"]\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
+  "query": "{\n  cloudSqlInstances(\n    where: {\n      engine: { eq: \"mysql\" }\n      NOT: {\n        OR: [\n          { engineVersion_MATCHES: \"^5\\\\.7(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^8\\\\.0(\\\\.|$)\" }\n          { engineVersion_MATCHES: \"^8\\\\.4(\\\\.|$)\" }\n        ]\n      }\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
 }

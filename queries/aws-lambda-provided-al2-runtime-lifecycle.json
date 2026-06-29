@@ -1,0 +1,5 @@
+{
+  "name": "AWS Lambda functions using provided.al2 runtime",
+  "slug": "aws-lambda-provided-al2-runtime-lifecycle",
+  "query": "{\n  functions(\n    where: {\n      cloudProvider: { eq: \"aws\" }\n      runtime: { eq: \"provided.al2\" }\n    }\n  ) {\n    ...AssetFragment\n    runtime\n  }\n}"
+}

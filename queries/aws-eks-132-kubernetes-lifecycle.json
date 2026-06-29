@@ -1,5 +1,5 @@
 {
   "name": "AWS EKS clusters running Kubernetes 1.32",
   "slug": "aws-eks-132-kubernetes-lifecycle",
-  "query": "{\n  eksClusters(where: { version_STARTS_WITH: \"1.32\" }) {\n    ...AssetFragment\n    version\n    platformVersion\n    status\n  }\n}"
+  "query": "{\n  eksClusters(where: { version_MATCHES: \"^1\\\\.32(\\\\.|-|$)\" }) {\n    ...AssetFragment\n    version\n    platformVersion\n    status\n  }\n}"
 }

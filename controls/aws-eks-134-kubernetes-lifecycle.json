@@ -1,0 +1,58 @@
+{
+  "body": "### Why this matters\n\nAmazon EKS Kubernetes 1.34 reaches the end of standard support on December 2, 2026. After standard support ends, clusters enter EKS extended support, which can add cost and increases pressure to upgrade before the provider eventually auto-upgrades unsupported control planes.\n\n### What this control checks\n\nThis control finds clusters whose Kubernetes version starts with `1.34`. Upgrade the control plane, node groups, Fargate workloads, managed add-ons, and workload dependencies before the lifecycle date.\n\n### Operational note\n\nTreat Kubernetes upgrades as platform releases. Check deprecated APIs, admission policies, add-on compatibility, node images, PodDisruptionBudgets, and workload readiness before changing production clusters. The lifecycle date for this check is `2026-12-02`.",
+  "name": "Ensure Amazon EKS clusters are not running Kubernetes 1.34",
+  "description": "EKS clusters running Kubernetes 1.34 lifecycle version",
+  "slug": "aws-eks-134-kubernetes-lifecycle",
+  "isInsight": false,
+  "alertForSecondaryOnly": false,
+  "isTimedControl": true,
+  "timedControlDueDate": "2026-12-02",
+  "timedControlCategory": "kubernetes-version-retirement",
+  "timedControlDeadlineType": "extended-support-start",
+  "timedControlNotificationWindowsDays": [
+    180,
+    90,
+    30,
+    7
+  ],
+  "timedControlSourceURL": "https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html",
+  "timedControlSummary": "Amazon EKS clusters on Kubernetes 1.34 should be upgraded before standard support ends on December 2, 2026.",
+  "timedControlDisruptionRisk": "Late EKS upgrades can trigger extended support charges, automatic control plane upgrades, and unplanned node/add-on compatibility work.",
+  "rules": [
+    {
+      "cloudProviders": [
+        "aws"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "EKSCluster"
+      ],
+      "query": "aws-eks-134-kubernetes-lifecycle",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## AWS remediation\n\n> **Service-wide platform upgrade (recommended):** upgrade clusters by environment or application group instead of fixing one cluster at a time. This lets platform teams validate Kubernetes API removals, EKS add-ons, node AMIs, and workload policies once and reuse the rollout plan.\n\n### AWS Console\n\n1. Open the Amazon EKS console and select the affected cluster.\n2. Review the cluster version, upgrade insights, installed add-ons, node groups, and Fargate profiles.\n3. Resolve upgrade insight findings, especially removed Kubernetes APIs.\n4. Choose **Update now** for the control plane and select a supported Kubernetes version such as `1.35`.\n5. After the control plane upgrade completes, update EKS add-ons, managed node groups, self-managed nodes, and restart Fargate workloads.\n\n### AWS CLI\n\nInspect the current cluster version and upgrade policy:\n\n```bash\naws eks describe-cluster \\\n  --name <cluster-name> \\\n  --region <region> \\\n  --query 'cluster.{name:name,version:version,status:status,upgradePolicy:upgradePolicy}'\n```\n\nReview available versions and support dates:\n\n```bash\naws eks describe-cluster-versions \\\n  --region <region> \\\n  --query 'clusterVersions[].{version:clusterVersion,status:status,endOfStandardSupport:endOfStandardSupportDate,endOfExtendedSupport:endOfExtendedSupportDate}'\n```\n\nUpgrade the control plane:\n\n```bash\naws eks update-cluster-version \\\n  --name <cluster-name> \\\n  --region <region> \\\n  --kubernetes-version 1.35\n```\n\nUpdate managed node groups after the control plane upgrade:\n\n```bash\naws eks update-nodegroup-version \\\n  --cluster-name <cluster-name> \\\n  --nodegroup-name <node-group-name> \\\n  --region <region> \\\n  --kubernetes-version 1.35\n```\n\n### References\n\n- https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html\n- https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html",
+  "isEnabled": true,
+  "severity": 3,
+  "timedControlRules": [
+    {
+      "key": "aws-eks-kubernetes-1.34",
+      "matchField": "version",
+      "matchValue": "1.34",
+      "observedField": "version",
+      "dueDate": "2026-12-02",
+      "deadlineType": "extended-support-start",
+      "sourceURL": "https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html",
+      "summary": "Amazon EKS clusters on Kubernetes 1.34 should be upgraded before standard support ends on December 2, 2026.",
+      "disruptionRisk": "Late EKS upgrades can trigger extended support charges, automatic control plane upgrades, and unplanned node/add-on compatibility work.",
+      "recommendedTarget": "Upgrade the EKS control plane, node groups, Fargate workloads, and add-ons to Kubernetes 1.35 or another version in standard support.",
+      "notificationWindowsDays": [
+        180,
+        90,
+        30,
+        7
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
   "name": "AWS RDS SqlServer with outdated engine versions",
   "slug": "aws-rds-sqlserver-with-outdated-engine-versions",
-  "query": "{ dbInstances (where: { cloudProvider: { eq: \"aws\" } engine: { eq: \"sqlserver-ex\" } OR: [ {engineVersion_STARTS_WITH: \"11\"}, {engineVersion_STARTS_WITH: \"10\"}, {engineVersion_STARTS_WITH: \"9\"}, {engineVersion_STARTS_WITH: \"8\"}, {engineVersion_STARTS_WITH: \"7\"}, {engineVersion_STARTS_WITH: \"6\"}, ] }) {...AssetFragment} }"
+  "query": "{\n  dbInstances(\n    where: {\n      cloudProvider: { eq: \"aws\" }\n      engine: { eq: \"sqlserver-ex\" }\n      engineVersion_MATCHES: \"^(6|7|8|9|10|11)(\\\\.|$)\"\n    }\n  ) {\n    ...AssetFragment\n    engine\n    engineVersion\n  }\n}"
 }
