@@ -6,10 +6,11 @@
   "requiredModules": [
     "code_security"
   ],
-  "version": "1.0.0",
-  "body": "Code Security Best Practices gives security and engineering teams a baseline for monitoring source repositories and GitHub-native security findings in Cyscale.\n\nThis first version focuses on GitHub App based inventory, open dependency alerts, code scanning alerts, secret scanning alerts, and default branch protection posture. Later versions can add Cyscale-managed scanning for SBOMs, secrets, IaC, containers, licenses, and repository-to-runtime impact analysis.\n\n<Procedure slug=\"code-security-github-alerts\"/>\n\n<Procedure slug=\"code-security-github-repository-posture\"/>\n",
+  "version": "1.1.0",
+  "body": "Code Security Best Practices gives security and engineering teams a baseline for monitoring source repositories and native security findings in Cyscale.\n\nThis version focuses on GitHub App and GitLab OAuth based inventory, open dependency alerts, code scanning or SAST alerts, secret scanning or secret detection alerts, and GitHub default branch protection posture. GitLab connector sync imports accessible projects and GitLab-native dependency scanning, SAST, and secret detection vulnerabilities. Cyscale code scans for GitLab repositories are launched manually or for repositories that opt in to auto-scan on sync.\n\n<Procedure slug=\"code-security-github-alerts\"/>\n\n<Procedure slug=\"code-security-github-repository-posture\"/>\n\n<Procedure slug=\"code-security-gitlab-alerts\"/>\n",
   "targetCloudProviders": [
-    "github"
+    "github",
+    "gitlab"
   ],
   "procedures": [
     {
@@ -44,6 +45,22 @@
         },
         {
           "control": "github-repositories-should-not-allow-force-pushes"
+        }
+      ]
+    },
+    {
+      "name": "3. GitLab Security Findings",
+      "slug": "code-security-gitlab-alerts",
+      "body": "GitLab repositories should not carry unresolved GitLab-native vulnerability findings. Dependency scanning, SAST, and secret detection findings imported during connector sync should be triaged, remediated, or explicitly dismissed with a documented reason. Cyscale code scan coverage for GitLab repositories should also be reviewed from Code Security because scans are started manually or for repositories with auto-scan enabled.",
+      "controls": [
+        {
+          "control": "gitlab-repositories-should-not-have-dependency-scanning-alerts"
+        },
+        {
+          "control": "gitlab-repositories-should-not-have-sast-alerts"
+        },
+        {
+          "control": "gitlab-repositories-should-not-have-secret-detection-alerts"
         }
       ]
     }

@@ -1,0 +1,5 @@
+{
+  "name": "GitLab repositories with dependency scanning alerts",
+  "slug": "gitlab-repositories-with-dependency-scanning-alerts",
+  "query": "{\n  gitLabRepositories(where: { criticalDependabotAlertsOpen_GT: 0 }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    criticalDependabotAlertsOpen\n  }\n}"
+}

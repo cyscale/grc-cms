@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitLab repositories should not have open critical dependency scanning alerts",
+  "description": "Repositories with open critical GitLab dependency scanning vulnerabilities",
+  "slug": "gitlab-repositories-should-not-have-dependency-scanning-alerts",
+  "body": "### Security intent\n\nThis control flags repositories where GitLab reports open critical dependency scanning vulnerabilities.\n\n### Assessment context\n\nCyscale imports GitLab vulnerability metadata during connector sync and assesses the repository as failing while one or more critical dependency scanning vulnerabilities remain detected or confirmed.",
+  "severity": 3,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "gitlab"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "gitlab-repositories-with-dependency-scanning-alerts",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nReview the dependency scanning vulnerability in GitLab, upgrade the affected dependency or remove it, and merge the fix after tests and pipelines pass. Dismiss only false positives or accepted risks with a documented reason.",
+  "isEnabled": true
+}

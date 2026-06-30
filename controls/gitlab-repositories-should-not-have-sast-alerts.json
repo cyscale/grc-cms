@@ -1,0 +1,27 @@
+{
+  "alertForSecondaryOnly": false,
+  "name": "GitLab repositories should not have open high or critical SAST alerts",
+  "description": "Repositories with open high or critical GitLab SAST vulnerabilities",
+  "slug": "gitlab-repositories-should-not-have-sast-alerts",
+  "body": "### Security intent\n\nThis control flags repositories where GitLab reports open high or critical SAST vulnerabilities.\n\n### Assessment context\n\nGitLab SAST findings identify potentially vulnerable code paths. Cyscale imports GitLab vulnerability metadata during connector sync and assesses the repository as failing while one or more high or critical SAST vulnerabilities remain detected or confirmed.",
+  "severity": 2,
+  "requiredModules": [
+    "code_security"
+  ],
+  "rules": [
+    {
+      "cloudProviders": [
+        "gitlab"
+      ],
+      "comparator": "eq",
+      "expectedResult": "[]",
+      "subjects": [
+        "Code Security"
+      ],
+      "query": "gitlab-repositories-with-sast-alerts",
+      "isManual": false
+    }
+  ],
+  "remediationDescription": "## Remediation\n\nReview the SAST vulnerability in GitLab, fix the vulnerable code path, and merge the remediation through the normal merge request workflow. Dismiss only false positives or accepted risks with a documented reason.",
+  "isEnabled": true
+}

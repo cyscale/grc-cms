@@ -1,0 +1,5 @@
+{
+  "name": "GitLab repositories with SAST alerts",
+  "slug": "gitlab-repositories-with-sast-alerts",
+  "query": "{\n  gitLabRepositories(where: { highCriticalCodeScanningAlertsOpen_GT: 0 }) {\n    ...AssetFragment\n    fullName\n    htmlURL\n    highCriticalCodeScanningAlertsOpen\n  }\n}"
+}
